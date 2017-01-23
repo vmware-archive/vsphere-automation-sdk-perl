@@ -1,7 +1,23 @@
 # VMware vSphere Automation SDK for Perl
+## Table of Contents
+* [Abstract](#abstract)
+* [Table of Contents](https://github.com/vmware/vsphere-automation-sdk-perl-samples#table-of-contents)
+* [Introduction](https://github.com/vmware/vsphere-automation-sdk-perl-samples#introduction)
+* [Intended Audience](https://github.com/vmware/vsphere-automation-sdk-perl-samples#intended-audience)
+* [Prerequisites](https://github.com/vmware/vsphere-automation-sdk-perl-samples#prerequisites)
+* [Supported Platforms](https://github.com/vmware/vsphere-automation-sdk-perl-samples#supported-platforms)
+* [Supported Perl Versions](https://github.com/vmware/vsphere-automation-sdk-perl-samples#supported-perl-versions)
+* [What's in the SDK Package?](https://github.com/vmware/vsphere-automation-sdk-perl-samples#whats-in-the-sdk-package)
+* [Download and Installation Instructions](https://github.com/vmware/vsphere-automation-sdk-perl-samples#download-and-installation-instructions)
+* [How to run the samples?](https://github.com/vmware/vsphere-automation-sdk-perl-samples#how-to-run-the-samples)
+* [API Documentation and Programming Guide](https://github.com/vmware/vsphere-automation-sdk-perl-samples#api-documentation-and-programming-guide)
 
+## Abstract
+This document for the vSphere Automation SDK for perl describes -
+   1. How to run the samples in this repository
+   2. The procedure for contributing new samples.
 
-Introduction
+## Introduction
 -----------------------------------------------------------------------------
 
 The VMware vSphere Automation SDKs provide support for your client application infrastructure with services to perform management operations in your vSphere environment. The vSphere Automation SDK for Perl also contains samples that demonstrate how the libraries work with other vSphere APIs.
@@ -27,7 +43,7 @@ This README contains the following topics:
     * How to run the samples?
     * API Documentation and Programming Guide
 
-Intended Audience
+## Intended Audience
 -----------------------------------------------------------------------------
 
 The VMware vSphere Automation SDK for Perl is intended for the following audiences:
@@ -35,7 +51,7 @@ The VMware vSphere Automation SDK for Perl is intended for the following audienc
     * Developers who want to write new applications for vSphere 6.5.
     * Developers migrating an existing vSphere application to use new features.
 
-Prerequisites
+## Prerequisites
 -----------------------------------------------------------------------------
 1. Download the latest ActiveState Perl or Strawberry Perl
 2. Need to install CPAN modules using below commands.
@@ -51,7 +67,7 @@ Prerequisites
 For more info, please refer to https://www.vmware.com/support/developer/viperltoolkit/
 
 
-Supported Platforms
+## Supported Platforms
 -----------------------------------------------------------------------------
 
     * Red Hat Enterprise Linux (RHEL) 7 (Server) 64 bit
@@ -62,13 +78,13 @@ Supported Platforms
     * Ubuntu 15.10 (LTS) 64bit
     * Windows 10 64 bit
 
-Supported Perl Versions
+## Supported Perl Versions
 -----------------------------------------------------------------------------
 
     * Linux: Perl 5.10+
     * Windows: ActivePerl 5.14+
 
-What's in the SDK Package?
+## What's in the SDK Package?
 -----------------------------------------------------------------------------
 
 The vsphere-automation-sdk-perl-master.zip file contains the
@@ -82,7 +98,7 @@ following:
     +samples
     +README
 
-Download and Installation Instructions
+## Download and Installation Instructions
 -----------------------------------------------------------------------------
 
 1. Please pick up one of the supported linux/windows platform from the
@@ -100,7 +116,7 @@ supported platform list.
      
    
 
-How to run the samples?
+## How to run the samples?
 -----------------------------------------------------------------------------
 
 The samples directory in this distribution has sample scripts, showing how
@@ -184,7 +200,7 @@ to call the VMware-vSphere-Automation-SDK-Perl API.
 
    #perl vm_template_capture.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --datacenter 'datacenter name' --datastore  'datastore name' --cleanup 'true or false'
 
-API Documentation and Programming Guide
+## API Documentation and Programming Guide
 -----------------------------------------------------------------------------
 The API documentation for the samples can be found here :
 
