@@ -1,13 +1,14 @@
 
-####################################################
-# Copyright 2016 VMware, Inc.  All rights reserved.
-####################################################
+##########################################################
+# Copyright 2016, 2017 VMware, Inc.  All rights reserved.
+##########################################################
 #
 # @file NetworkHelper.pm
 # The file implements NetworkHelper perl module.
 #
-# @copy 2016, VMware Inc.
-#
+# @author: VMware, Inc.
+# @copyright: copyright 2016, 2017 VMware, Inc.  All rights reserved.
+# @vcenter version: 6.5+
 
 #
 # @class NetworkHelper
