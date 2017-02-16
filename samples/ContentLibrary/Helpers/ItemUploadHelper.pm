@@ -1,13 +1,14 @@
 
-####################################################
-# Copyright 2016 VMware, Inc.  All rights reserved.
-####################################################
+##########################################################
+# Copyright 2016, 2017 VMware, Inc.  All rights reserved.
+##########################################################
 #
 # @file ItemUploadHelper.pm
 # The file implements ItemUploadHelper perl module.
 #
-# @copy 2016, VMware Inc.
-#
+# @author: VMware, Inc.
+# @copyright: copyright 2016, 2017 VMware, Inc.  All rights reserved.
+# @vcenter version: 6.0+
 
 #
 # @class ItemUploadHelper

@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# @author: VMware, Inc.
+# @copyright: copyright 2016, 2017 VMware, Inc.  All rights reserved.
+# @vcenter version: 6.0+
+
 #
 # Perl Core Modules
 #
