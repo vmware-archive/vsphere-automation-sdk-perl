@@ -58,12 +58,12 @@ The version 6.5 SDK enables programmatic access to the following services:
       * ppm install Crypt::X509
       * ppm install Data::UUID
     * In case of other platform, you can use yum command to install these modules or can follow below steps:
-      a. Need to download all required module from CPAN (for example: UUID module is a required module. we will download this module as CPAN module at root location)
-      b. Extract it
-      c. [root@inhd0740 ~]# cd UUID
-      d. [root@inhd0740 ~]#./ Makefile.pl
-      e. [root@inhd0740 ~]# make
-      f. [root@inhd0740 ~]# make install
+      * Need to download all required module from CPAN (for example: UUID module is a required module. we will download this module as CPAN module at root location)
+      * Extract it
+      * [root@inhd0740 ~]# cd UUID
+      * [root@inhd0740 ~]#./ Makefile.pl
+      * [root@inhd0740 ~]# make
+      * [root@inhd0740 ~]# make install
 3. VMware vSphere Automation SDK for Perl 6.5 requires vSphere SDK for Perl 6.5 to be installed first in the targeted client platform. The vSphere SDK for Perl 6.5 interactive installer will install all the required dependencies modules for vSphere Automation SDK for Perl 6.5 as well.
 4. Need to copy python27.dll from <vCLI_install_directory>/bin to <vCLI_install_directory>/Perl/lib/VMware on Windows only.
 
