@@ -1,21 +1,35 @@
 # VMware vSphere Automation SDK for Perl
 ## Table of Contents
 * [Abstract](#abstract)
-* [Table of Contents](https://github.com/vmware/vsphere-automation-sdk-perl-samples#table-of-contents)
-* [Introduction](https://github.com/vmware/vsphere-automation-sdk-perl-samples#introduction)
-* [Intended Audience](https://github.com/vmware/vsphere-automation-sdk-perl-samples#intended-audience)
-* [Prerequisites](https://github.com/vmware/vsphere-automation-sdk-perl-samples#prerequisites)
-* [Supported Platforms](https://github.com/vmware/vsphere-automation-sdk-perl-samples#supported-platforms)
-* [Supported Perl Versions](https://github.com/vmware/vsphere-automation-sdk-perl-samples#supported-perl-versions)
-* [What's in the SDK Package?](https://github.com/vmware/vsphere-automation-sdk-perl-samples#whats-in-the-sdk-package)
-* [Download and Installation Instructions](https://github.com/vmware/vsphere-automation-sdk-perl-samples#download-and-installation-instructions)
-* [How to run the samples?](https://github.com/vmware/vsphere-automation-sdk-perl-samples#how-to-run-the-samples)
-* [API Documentation and Programming Guide](https://github.com/vmware/vsphere-automation-sdk-perl-samples#api-documentation-and-programming-guide)
+- [Quick Start Guide](#quick-start-guide)
+  - [Prerequisites](#prerequisites)
+  - [Supported Platforms](#supported-platforms)
+  - [Supported Perl Versions](#supported-perl-versions)
+  - [What's in the SDK Package?](#whats-in-the-sdk-package)
+  - [Download and Installation Instructions](#download-and-installation-instructions)
+  - [How to run the samples?](#how-to-run-the-samples)
+- [API Documentation and Programming Guide](#api-documentation-and-programming-guide)
+- [Submitting samples](#submitting-samples)
+  - [Required Information](#required-information)
+  - [Suggested Information](#suggested-information)
+  - [Contribution Process](#contribution-process)
+- [Resource Maintenance](#resource-maintenance)
+  - [Maintenance Ownership](#maintenance-ownership)
+  - [Filing Issues](#filing-issues)
+  - [Resolving Issues](#resolving-issues)
+  - [VMware Sample Exchange](#vmware-sample-exchange)
+- [Repository Administrator Resources](#repository-administrator-resources)
+  - [Board Members](#board-members)
+  - [Approval of Additions](#approval-of-additions)
 
 ## Abstract
 This document for the vSphere Automation SDK for perl describes -
    1. How to run the samples in this repository
    2. The procedure for contributing new samples.
+
+## Supported vCenter Releases:
+vCenter 6.0 and 6.5. 
+Certain APIs and samples that are introduced in 6.5 release, such as vCenter, Virtual Machine and Appliance Management. Please refer to the notes in each sample for detailed compatibility information. 
 
 ## Introduction
 -----------------------------------------------------------------------------
@@ -32,25 +46,6 @@ The version 6.5 SDK enables programmatic access to the following services:
     * Virtual Machines
     * vCenter Server Appliance management
 
-This README contains the following topics:
-
-    * Intended Audience
-    * Prerequisites
-    * Supported Platforms
-    * Supported Perl Versions
-    * What's in the SDK Package?
-    * Download and Installation Instructions
-    * How to run the samples?
-    * API Documentation and Programming Guide
-
-## Intended Audience
------------------------------------------------------------------------------
-
-The VMware vSphere Automation SDK for Perl is intended for the following audiences:
-
-    * Developers who want to write new applications for vSphere 6.5.
-    * Developers migrating an existing vSphere application to use new features.
-
 ## Prerequisites
 -----------------------------------------------------------------------------
 1. Download the latest ActiveState Perl or Strawberry Perl
@@ -61,6 +56,14 @@ The VMware vSphere Automation SDK for Perl is intended for the following audienc
       * ppm install Crypt::OpenSSL:RSA
       * ppm install Exception::Class
       * ppm install Crypt::X509
+      * ppm install Data::UUID
+    * In case of other platform, you can use yum command to install these modules or can follow below steps:
+      a. Need to download all required module from CPAN (for example: UUID module is a required module. we will download this module as CPAN module at root location)
+      b. Extract it
+      c. [root@inhd0740 ~]# cd UUID
+      d. [root@inhd0740 ~]#./ Makefile.pl
+      e. [root@inhd0740 ~]# make
+      f. [root@inhd0740 ~]# make install
 3. VMware vSphere Automation SDK for Perl 6.5 requires vSphere SDK for Perl 6.5 to be installed first in the targeted client platform. The vSphere SDK for Perl 6.5 interactive installer will install all the required dependencies modules for vSphere Automation SDK for Perl 6.5 as well.
 4. Need to copy python27.dll from <vCLI_install_directory>/bin to <vCLI_install_directory>/Perl/lib/VMware on Windows only.
 
@@ -95,6 +98,7 @@ following:
     +lib
         +runtime
         +sdk
+        +README
     +samples
     +README
 
@@ -102,13 +106,14 @@ following:
 -----------------------------------------------------------------------------
 
 1. Please pick up one of the supported linux/windows platform from the
-supported platform list.
-2. Load the GitHub repository page: https://github.com/vmware/vsphere-automation-sdk-perl-samples to download the repository
-3. Click on the green “Clone or Download” button and then click “Download ZIP”
-4. Once downloaded, extract the zip file to the location of your choosing
-5. At this point, you now have a local copy of the repository
+[Supported Platforms](#supported-platforms) list.
+2. Follow [Prerequisites](#prerequisites) section to install all required module. 
+3. Load the GitHub repository page: https://github.com/vmware/vsphere-automation-sdk-perl-samples to download the repository
+4. Click on the green “Clone or Download” button and then click “Download ZIP”
+5. Once downloaded, extract the zip file to the location of your choosing
+6. At this point, you now have a local copy of the repository
 
-6. Set PERL5LIB env variable or perl include path using these commands:
+7. Set PERL5LIB env variable or perl include path using these commands:
    * On windows platform:
      set perl5lib=%perl5lib%;C:\vsphere-automation-sdk-perl-master\lib\runtime;C:\vsphere-automation-sdk-perl-master\lib\sdk;C:\vsphere-automation-sdk-perl-master\samples
    * On other plateforms:
@@ -171,6 +176,10 @@ to call the VMware-vSphere-Automation-SDK-Perl API.
    #cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Adapter
 
    #perl scsi_adapter_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
+   
+   #cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm
+   
+   #perl power_life_cycle.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
 
    #cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/ContentUpdate
 
@@ -202,14 +211,55 @@ to call the VMware-vSphere-Automation-SDK-Perl API.
 
 ## API Documentation and Programming Guide
 -----------------------------------------------------------------------------
-The API documentation for the samples can be found here :
+The API documentation for the samples can be found here :TODO
 
-The programming guide for vSphere Automation SDK for Perl can be found here: 
+The programming guide for vSphere Automation SDK for Perl can be found here:TODO
 
-Copyright and Licence
------------------------------------------------------------------------------
+## Submitting samples
+### Required Information
+The following information must be included in the README.md or in the sample docstring in case README already exists in same folder.
+* Author Name
+  * This can include full name, email address or other identifiable piece of information that would allow interested parties to contact author with questions.
+* Date
+  * Date the sample was originally written
+* Minimal/High Level Description
+  * What does the sample do ?
+* Any KNOWN limitations or dependencies
 
-Copyright (c) 2017 VMware, Inc.
+### Suggested Information
+The following information should be included when possible. Inclusion of information provides valuable information to consumers of the resource.
+* vSphere version against which the sample was developed/tested
+* SDK version against which the sample was developed/tested
+* Perl version against which the sample was developed/tested
 
--The End-
+### Contribution Process
+
+* Follow the [GitHub process](https://help.github.com/articles/fork-a-repo)
+  * Please use one branch per sample or change-set
+  * Please use one commit and pull request per sample
+  * Please post the sample output along with the pull request
+  * If you include a license with your sample, use the project license
+
+## Resource Maintenance
+### Maintenance Ownership
+Ownership of any and all submitted samples are maintained by the submitter.
+### Filing Issues
+Any bugs or other issues should be filed within GitHub by way of the repository’s Issue Tracker.
+### Resolving Issues
+Any community member can resolve issues within the repository, however only the board member can approve the update. Once approved, assuming the resolution involves a pull request, only a board member will be able to merge and close the request.
+
+### VMware Sample Exchange
+It is highly recommended to add any and all submitted samples to the VMware Sample Exchange:  <https://code.vmware.com/samples>
+
+Sample Exchange can be allowed to access your GitHub resources, by way of a linking process, where they can be indexed and searched by the community. There are VMware social media accounts which will advertise resources posted to the site and there's no additional accounts needed, as the VMware Sample Exchange uses MyVMware credentials.     
+
+## Repository Administrator Resources
+### Board Members
+
+Board members are volunteers from the SDK community and VMware staff members, board members are not held responsible for any issues which may occur from running of samples from this repository.
+
+Members:
+
+### Approval of Additions
+Items added to the repository, including items from the Board members, require 2 votes from the board members before being added to the repository. The approving members will have ideally downloaded and tested the item. When two “Approved for Merge” comments are added from board members, the pull can then be committed to the repository.
 
