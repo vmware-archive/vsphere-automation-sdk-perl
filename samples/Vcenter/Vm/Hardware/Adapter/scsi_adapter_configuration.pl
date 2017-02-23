@@ -112,7 +112,7 @@ sub run {
    );
    list_all_scsi_adapters();
 
-   log_info( MSG => "#### Example: Create SATA adapter with defaults" );
+   log_info( MSG => "#### Example: Create SCSI adapter with defaults" );
    my $scsi_create_spec =
      new Com::Vmware::Vcenter::Vm::Hardware::Adapter::Scsi::CreateSpec();
    my $scsi_id =
@@ -173,6 +173,11 @@ sub cleanup {
 sub list_all_scsi_adapters {
    log_info( MSG => "#### Example: List of all SCSI adapters on the VM." );
    my $scsi_summaries = $scsi_service->list( 'vm' => $vm_id );
+
+   if (scalar(@$scsi_summaries) == 0){
+      print "\n\nThere is no more SCSI buses available on virtual machine.";
+      exit;
+   }
    foreach my $scsi_summary (@$scsi_summaries) {
       my $scsi_id = $scsi_summary->get_adapter();
       my $scsi_info =

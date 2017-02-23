@@ -115,6 +115,10 @@ sub run {
    log_info( MSG => "\n\n#### Example: List of all SATA adapters on the VM." );
    $sataSummaries = $sata_service->list( 'vm' => $vmId );
 
+   if (scalar(@$sataSummaries) == 0){
+      print "\n\nThere is no more SATA buses available on virtual machine.";
+      exit;
+   }
    my $sata_index = 1;
    foreach my $sataSummary (@$sataSummaries) {
       log_info(
