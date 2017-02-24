@@ -54,15 +54,15 @@ set_verbosity( 'level' => 3 );
 
 # Initialize the global variable
 my (
-   %params,                    $sampleBase,
-   $vmfolder_name,             $cluster_name,
-   $stubFactory,               $stubConfig,
-   $datacenter_name,           $vm_service,
-   $datastore_name,            $standardportgroup_name,
-   $distributedportgroup_name, $isodatastorepath,
-   $exhaustiveVMId
+   %params,                 $sampleBase,
+   $vm_name,                $vmfolder_name,
+   $cluster_name,           $stubFactory,
+   $stubConfig,             $datacenter_name,
+   $vm_service,             $datastore_name,
+   $standardportgroup_name, $distributedportgroup_name,
+   $isodatastorepath,       $exhaustiveVMId
 ) = ();
-my $EXHAUSTIVE_VM_NAME                   = "Sample-Exhaustive-VM";
+
 my $SERIAL_PORT_NETWORK_SERVICE_LOCATION = "tcp://localhost:16000";
 my $GB                                   = 1024 * 1024 * 1024;
 my $vmGuestOS   = Com::Vmware::Vcenter::Vm::GuestOS::WINDOWS_9_64;
@@ -70,12 +70,13 @@ my $mac_address = '11:23:58:13:21:34';
 
 # Declare the mandatory parameter list
 my @required_options = (
-   'username',          'password',
-   'lsurl',             'server',
-   'datacenter',        'clustername',
-   'vmfolder',          'datastore',
-   'standardportgroup', 'distributedportgroup',
-   'isodatastorepath',  'cleanup'
+   'username',             'password',
+   'lsurl',                'server',
+   'vmname',               'datacenter',
+   'clustername',          'vmfolder',
+   'datastore',            'standardportgroup',
+   'distributedportgroup', 'isodatastorepath',
+   'cleanup'
 );
 
 sub init {
@@ -84,26 +85,27 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,       "server=s",
-      "lsurl=s",      "username=s",
-      "password=s",   "privatekey:s",
-      "servercert:s", "cert:s",
-      "vmfolder:s",   "cleanup:s",
-      "datastore:s",  "clustername:s",
-      "datacenter:s", "standardportgroup:s",
-      "distributedportgroup:s", "isodatastorepath:s", "mgmtnode:s",
+      \%params,              "server=s",
+      "lsurl=s",             "username=s",
+      "password=s",          "privatekey:s",
+      "servercert:s",        "cert:s",
+      "vmname:s",            "vmfolder:s",
+      "cleanup:s",           "datastore:s",
+      "clustername:s",       "datacenter:s",
+      "standardportgroup:s", "distributedportgroup:s",
+      "isodatastorepath:s",  "mgmtnode:s",
       "help:s"
      )
      or die
 "\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
-                         --privatekey <private key> --servercert <server cert> --cert <cert> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --isodatastorepath <iso datastore path> --cleanup <true or false> or --help\n";
+                         --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --isodatastorepath <iso datastore path> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
 "exhaustive_vm.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
       print
-"               --privatekey <private key> --servercert <server cert> --cert <cert> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --isodatastorepath <iso datastore path> --cleanup <true or false> \n";
+"               --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --isodatastorepath <iso datastore path> --cleanup <true or false> \n";
       exit;
    }
 
@@ -121,6 +123,7 @@ sub init {
       exit;
    }
 
+   $vm_name                   = $params{'vmname'};
    $datacenter_name           = $params{'datacenter'};
    $cluster_name              = $params{'clustername'};
    $vmfolder_name             = $params{'vmfolder'};
@@ -381,7 +384,7 @@ sub createExhaustiveVM() {
 
    # Create a VM with above configuration
    my $vm_createspec = new Com::Vmware::Vcenter::VM::CreateSpec();
-   $vm_createspec->set_name( 'name' => $EXHAUSTIVE_VM_NAME );
+   $vm_createspec->set_name( 'name' => $vm_name );
    $vm_createspec->set_guest_OS( 'guest_OS' => $vmGuestOS );
    $vm_createspec->set_boot_devices( 'boot_devices' => \@bootDevices );
    $vm_createspec->set_placement( 'placement' => $vmPlacementSpec );
@@ -401,8 +404,8 @@ sub createExhaustiveVM() {
         . "'" );
    $exhaustiveVMId = $vm_service->create( 'spec' => $vm_createspec );
 
-   log_info( MSG => "Created exhaustive VM : '"
-        . $EXHAUSTIVE_VM_NAME
+   log_info( MSG => "Created exhaustive VM : '" 
+        . $vm_name
         . "' with id: '"
         . $exhaustiveVMId
         . "'" );

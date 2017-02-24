@@ -50,18 +50,18 @@ set_verbosity( 'level' => 3 );
 
 # Initialize the global variable
 my (
-   %params,         $sampleBase, $vmfolder_name,   $cluster_name,
-   $stubFactory,    $stubConfig, $datacenter_name, $vm_service,
-   $datastore_name, $defaultVMId
+   %params,       $sampleBase,     $vm_name,    $vmfolder_name,
+   $cluster_name, $stubFactory,    $stubConfig, $datacenter_name,
+   $vm_service,   $datastore_name, $defaultVMId
 ) = ();
-my $DEFAULT_VM_NAME = "Sample-Default-VM";
-my $vmGuestOS       = Com::Vmware::Vcenter::Vm::GuestOS::WINDOWS_9_64;
+
+my $vmGuestOS = Com::Vmware::Vcenter::Vm::GuestOS::WINDOWS_9_64;
 
 # Declare the mandatory parameter list
 my @required_options = (
-   'username',   'password',    'lsurl',    'server',
-   'datacenter', 'clustername', 'vmfolder', 'datastore',
-   'cleanup'
+   'username',  'password',   'lsurl',       'server',
+   'vmname',    'datacenter', 'clustername', 'vmfolder',
+   'datastore', 'cleanup'
 );
 
 sub init {
@@ -70,22 +70,21 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,     "server=s",     "lsurl=s",       "username=s",
-      "password=s", "privatekey:s", "servercert:s",  "cert:s",
-      "vmfolder:s", "datastore:s",  "clustername:s", "datacenter:s",
-      "mgmtnode:s",
-      "cleanup:s", "help:s"
+      \%params,       "server=s",     "lsurl=s",      "username=s",
+      "password=s",   "privatekey:s", "servercert:s", "cert:s",
+      "vmname:s",     "vmfolder:s",   "datastore:s",  "clustername:s",
+      "datacenter:s", "mgmtnode:s",   "cleanup:s",    "help:s"
      )
      or die
 "\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
-                         --privatekey <private key> --servercert <server cert> --cert <cert> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --cleanup <value should be true or false> or --help\n";
+                         --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --cleanup <value should be true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
 "default_vm.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
       print
-"               --privatekey <private key> --servercert <server cert> --cert <cert> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --cleanup <value should be true or false> \n";
+"               --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --cleanup <value should be true or false> \n";
       exit;
    }
 
@@ -103,6 +102,7 @@ sub init {
       exit;
    }
 
+   $vm_name         = $params{'vmname'};
    $datacenter_name = $params{'datacenter'};
    $cluster_name    = $params{'clustername'};
    $vmfolder_name   = $params{'vmfolder'};
@@ -151,17 +151,16 @@ sub createDefaultVM() {
    my $vmPlacementSpec = $args{'vmPlacementSpec'};
    my $vm_createspec   = new Com::Vmware::Vcenter::VM::CreateSpec();
    $vm_createspec->set_guest_OS( 'guest_OS' => $vmGuestOS );
-   $vm_createspec->set_name( 'name' => $DEFAULT_VM_NAME );
+   $vm_createspec->set_name( 'name' => $vm_name );
    $vm_createspec->set_placement( 'placement' => $vmPlacementSpec );
    log_info( MSG => "#### Example: Creating default VM with spec: '"
         . $vm_createspec
         . "'" );
    $defaultVMId = $vm_service->create( 'spec' => $vm_createspec );
-   log_info( MSG => "Created default VM : '"
-        . $DEFAULT_VM_NAME
-        . "' with id: '"
-        . $defaultVMId
-        . "'" );
+   log_info(
+      MSG => "Created default VM : '" . $vm_name
+        . "' with id: '" . $defaultVMId . "'"
+   );
    my $vmInfo = $vm_service->get( 'vm' => $defaultVMId );
 
    #print Dumper($vmInfo);
