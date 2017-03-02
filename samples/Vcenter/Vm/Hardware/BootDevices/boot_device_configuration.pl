@@ -156,10 +156,15 @@ sub run {
         "\n\n####Validate whether the vm has required minimum number of devices"
    );
    my $vmInfo = $vm_service->get( 'vm' => $vmId );
-   if (  scalar( $vmInfo->get_cdroms() ) < 1
-      || scalar( $vmInfo->get_floppies() ) < 1
-      || scalar( $vmInfo->get_disks() ) < 3
-      || scalar( $vmInfo->get_nics() ) < 1 )
+   my $floppies = $vmInfo->get_floppies();
+   my $cdroms   = $vmInfo->get_cdroms();
+   my $disks    = $vmInfo->get_disks();
+   my $nics     = $vmInfo->get_nics();
+
+   if (  scalar keys %$cdroms < 1
+      || scalar keys %$floppies < 1
+      || scalar keys %$disks < 3
+      || scalar keys %$nics < 1 )
    {
       log_info( MSG =>
 "\nSelected VM does not have the required minimum number of devices: i.e. 1 Ethernet adapter, 1 CD-ROM, 1 Floppy drive, 3 disks"
