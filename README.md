@@ -44,7 +44,6 @@ The version 6.5 SDK enables programmatic access to the following services:
     * Tagging
     * Content Library
     * Virtual Machines
-    * vCenter Server Appliance management
 
 ## Prerequisites
 -----------------------------------------------------------------------------
