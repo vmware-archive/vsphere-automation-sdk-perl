@@ -8,7 +8,7 @@
   - [What's in the SDK Package?](#whats-in-the-sdk-package)
   - [Download and Installation Instructions](#download-and-installation-instructions)
   - [How to run the samples?](#how-to-run-the-samples)
-- [API Documentation and Programming Guide](#api-documentation-and-programming-guide)
+- [API Documentation](#api-documentation)
 - [Submitting samples](#submitting-samples)
   - [Required Information](#required-information)
   - [Suggested Information](#suggested-information)
@@ -21,7 +21,7 @@
 - [Repository Administrator Resources](#repository-administrator-resources)
   - [Board Members](#board-members)
   - [Approval of Additions](#approval-of-additions)
-
+- [VMware Resources](#vmware-resources)
 ## Abstract
 This document for the vSphere Automation SDK for perl describes -
    1. How to run the samples in this repository
@@ -63,7 +63,7 @@ The version 6.5 SDK enables programmatic access to the following services:
       * [root@inhd0740 ~]#./ Makefile.pl
       * [root@inhd0740 ~]# make
       * [root@inhd0740 ~]# make install
-3. VMware vSphere Automation SDK for Perl 6.5 requires vSphere SDK for Perl 6.5 to be installed first in the targeted client platform. The vSphere SDK for Perl 6.5 interactive installer will install all the required dependencies modules for vSphere Automation SDK for Perl 6.5 as well.
+3. VMware vSphere Automation SDK for Perl 6.5 requires vSphere SDK for Perl 6.5 (https://code.vmware.com/web/sdk/65/vsphere-perl) to be installed first in the targeted client platform. The vSphere SDK for Perl 6.5 interactive installer will install all the required dependencies modules for vSphere Automation SDK for Perl 6.5 as well.
 4. Need to copy python27.dll from <vCLI_install_directory>/bin to <vCLI_install_directory>/Perl/lib/VMware on Windows only.
 
 For more info, please refer to https://www.vmware.com/support/developer/viperltoolkit/
@@ -208,13 +208,15 @@ to call the VMware-vSphere-Automation-SDK-Perl API.
 
    #perl vm_template_capture.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --datacenter 'datacenter name' --datastore  'datastore name' --cleanup 'true or false'
 
-## API Documentation and Programming Guide
------------------------------------------------------------------------------
-The API documentation for the samples can be found here :TODO
-
-The programming guide for vSphere Automation SDK for Perl can be found here:TODO
+## API Documentation
+The API documentation can be found [here] (doc/client.zip)
 
 ## Submitting samples
+
+### Developer Certificate of Origin
+
+Before you start working with this project, please read our [Developer Certificate of Origin](https://cla.vmware.com/dco). All contributions to this repository must be signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on as an open-source patch.
+
 ### Required Information
 The following information must be included in the README.md or in the sample docstring in case README already exists in same folder.
 * Author Name
@@ -262,3 +264,10 @@ Members:
 ### Approval of Additions
 Items added to the repository, including items from the Board members, require 2 votes from the board members before being added to the repository. The approving members will have ideally downloaded and tested the item. When two “Approved for Merge” comments are added from board members, the pull can then be committed to the repository.
 
+## VMware Resources
+
+* [vSphere Automation SDK Overview](http://pubs.vmware.com/vsphere-65/index.jsp#com.vmware.vapi.progguide.doc/GUID-AF73991C-FC1C-47DF-8362-184B6544CFDE.html)
+* [VMware Code](https://code.vmware.com/home)
+* [VMware Developer Community](https://communities.vmware.com/community/vmtn/developer)
+* VMware vSphere [REST API Reference documentation](https://vdc-repo.vmware.com/vmwb-repository/dcr-public/1cd28284-3b72-4885-9e31-d1c6d9e26686/9a0dbc46-b15f-47cd-af1d-dc64615b03df/doc/index.html).
+* [VMware Perl forum](https://code.vmware.com/forums/7562/vsphere-automation-sdk-for-perl)
