@@ -85,6 +85,7 @@ For more info, please refer to https://www.vmware.com/support/developer/viperlto
 
     * Linux: Perl 5.10+
     * Windows: ActivePerl 5.14+
+               Strawberry Perl 5.24.1.1+
 
 ## What's in the SDK Package?
 -----------------------------------------------------------------------------
@@ -94,12 +95,14 @@ following:
 
 +vsphere-automation-sdk-perl-master
 
+    +doc
     +lib
         +runtime
         +sdk
-        +README
+        +README.md
     +samples
-    +README
+    +README.md
+    +LICENSE
 
 ## Download and Installation Instructions
 -----------------------------------------------------------------------------
