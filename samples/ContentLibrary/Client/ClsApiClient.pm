@@ -1,5 +1,6 @@
 ##########################################################
 # Copyright 2016, 2017 VMware, Inc.  All rights reserved.
+# SODX-License-Identifier: MIT
 ##########################################################
 #
 # @file ClsApiClient.pm

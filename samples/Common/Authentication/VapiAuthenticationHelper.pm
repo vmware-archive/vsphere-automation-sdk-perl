@@ -1,6 +1,7 @@
 
 ####################################################
 # Copyright 2016 VMware, Inc.  All rights reserved.
+# SODX-License-Identifier: MIT
 ####################################################
 #
 # @file VapiAuthenticationHelper.pm
