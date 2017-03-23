@@ -65,8 +65,8 @@ sub init {
    GetOptions(
       \%params,     "server=s",     "lsurl=s",      "username=s",
       "password=s", "privatekey:s", "servercert:s", "cert:s",
-      "vmname:s",   "datastore:s",  "datacenter:s", "cleanup:s",
-      "help:s"
+      "vmname:s",   "datastore:s",  "datacenter:s", "mgmtnode:s",
+      "cleanup:s",  "help:s"
      )
 
      or die
