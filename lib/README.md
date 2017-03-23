@@ -5,4 +5,4 @@ For perl developers, client libraries are supplied for testing and development p
 Name                                | Description
 ------------------------------------| -------------
 runtime	                            | vAPI runtime responsible for serialization/de-serialization of objects and wire protocol
-sdk                                 | vAPI client code
+sdk                                 | client stubs for vSphere Automation APIs
