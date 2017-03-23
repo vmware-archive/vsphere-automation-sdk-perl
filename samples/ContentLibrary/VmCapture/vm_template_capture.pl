@@ -71,7 +71,7 @@ sub init {
 
      or die
 "\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
-                         --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --datastore <datastore name> --datacenter <datacenter name> --cleanup <true or false> or --help\n";
+                         --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --datastore <datastore name> --datacenter <datacenter name> --cleanup <true or false> --mgmtnode <management node name> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
