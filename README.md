@@ -32,8 +32,6 @@ vCenter 6.0 and 6.5.
 Certain APIs and samples that are introduced in 6.5 release, such as vCenter, Virtual Machine and Appliance Management. Please refer to the notes in each sample for detailed compatibility information. 
 
 ## Introduction
------------------------------------------------------------------------------
-
 The VMware vSphere Automation SDKs provide support for your client application infrastructure with services to perform management operations in your vSphere environment. The vSphere Automation SDK for Perl also contains samples that demonstrate how the libraries work with other vSphere APIs.
 
 The version 6.5 SDK enables programmatic access to the following services:
@@ -46,7 +44,6 @@ The version 6.5 SDK enables programmatic access to the following services:
     * Virtual Machines
 
 ## Prerequisites
------------------------------------------------------------------------------
 1. Download the latest ActiveState Perl or Strawberry Perl
 2. Need to install CPAN modules using below commands.
     * In case of windows, you can use these commands:
@@ -70,8 +67,6 @@ For more info, please refer to https://www.vmware.com/support/developer/viperlto
 
 
 ## Supported Platforms
------------------------------------------------------------------------------
-
     * Red Hat Enterprise Linux (RHEL) 7 (Server) 64 bit
     * Red Hat Enterprise Linux (RHEL) 6.6 (Server) 64 bit
     * SLES 12 64 bit
@@ -81,15 +76,11 @@ For more info, please refer to https://www.vmware.com/support/developer/viperlto
     * Windows 10 64 bit
 
 ## Supported Perl Versions
------------------------------------------------------------------------------
-
     * Linux: Perl 5.10+
     * Windows: ActivePerl 5.14+
                Strawberry Perl 5.24.1.1+
 
 ## What's in the SDK Package?
------------------------------------------------------------------------------
-
 The vsphere-automation-sdk-perl-master.zip file contains the
 following:
 
@@ -105,8 +96,6 @@ following:
     +LICENSE
 
 ## Download and Installation Instructions
------------------------------------------------------------------------------
-
 1. Please pick up one of the supported linux/windows platform from the
 [Supported Platforms](#supported-platforms) list.
 2. Follow [Prerequisites](#prerequisites) section to install all required module. 
@@ -120,12 +109,8 @@ following:
      set perl5lib=%perl5lib%;C:\vsphere-automation-sdk-perl-master\lib\runtime;C:\vsphere-automation-sdk-perl-master\lib\sdk;C:\vsphere-automation-sdk-perl-master\samples
    * On other plateforms:
      export PERL5LIB=$PERL5LIB:'SDK-root-directory-path'/lib/sdk:'SDK-root-directory-path'/lib/runtime:'SDK-root-directory-path'/samples
-     
-   
 
 ## How to run the samples?
------------------------------------------------------------------------------
-
 The samples directory in this distribution has sample scripts, showing how
 to call the VMware-vSphere-Automation-SDK-Perl API.
 
