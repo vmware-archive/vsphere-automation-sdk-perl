@@ -1,7 +1,10 @@
 #!/usr/bin/perl
 
 #
+########################################################
+# Copyright (c) VMware, Inc. 2017.  All Rights Reserved.
 # SPDX-License-Identifier: MIT
+########################################################
 #
 # DISCLAIMER. THIS PROGRAM IS PROVIDED TO YOU "AS IS" WITHOUT
 # WARRANTIES OR CONDITIONS # OF ANY KIND, WHETHER ORAL OR WRITTEN,
@@ -11,6 +14,7 @@
 #
 
 $__author__ = 'VMware, Inc.';
+$__copyright__ = 'Copyright 2017 VMware, Inc. All rights reserved.';
 $__vcenter_version__ = '6.5+';
 
 #
