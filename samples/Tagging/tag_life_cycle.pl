@@ -1,10 +1,21 @@
 #!/usr/bin/perl
 
 #
-# @author: VMware, Inc.
-# @copyright: copyright 2014, 2016, 2017 VMware, Inc.  All rights reserved.
-# @SPDX-License-Identifier: MIT
-# @vcenter version: 6.0+
+####################################################################
+# Copyright (c) VMware, Inc. 2014, 2016, 2017.  All Rights Reserved.
+# SPDX-License-Identifier: MIT
+####################################################################
+#
+# DISCLAIMER. THIS PROGRAM IS PROVIDED TO YOU "AS IS" WITHOUT
+# WARRANTIES OR CONDITIONS # OF ANY KIND, WHETHER ORAL OR WRITTEN,
+# EXPRESS OR IMPLIED. THE AUTHOR SPECIFICALLY # DISCLAIMS ANY IMPLIED
+# WARRANTIES OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY # QUALITY,
+# NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
+#
+
+$__author__ = 'VMware, Inc.';
+$__copyright__ = 'Copyright 2014, 2016, 2017 VMware, Inc. All rights reserved.';
+$__vcenter_version__ = '6.0+';
 
 #
 # Perl Core Modules

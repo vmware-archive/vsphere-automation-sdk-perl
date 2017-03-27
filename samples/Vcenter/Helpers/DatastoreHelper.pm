@@ -1,15 +1,19 @@
-
-##########################################################
-# Copyright 2016, 2017 VMware, Inc.  All rights reserved.
+#
+##############################################################
+# Copyright (c) VMware, Inc. 2016, 2017.  All Rights Reserved.
 # SPDX-License-Identifier: MIT
-##########################################################
+##############################################################
 #
-# @file DatastoreHelper.pm
-# The file implements DatastoreHelper perl module.
+# DISCLAIMER. THIS PROGRAM IS PROVIDED TO YOU "AS IS" WITHOUT
+# WARRANTIES OR CONDITIONS # OF ANY KIND, WHETHER ORAL OR WRITTEN,
+# EXPRESS OR IMPLIED. THE AUTHOR SPECIFICALLY # DISCLAIMS ANY IMPLIED
+# WARRANTIES OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY # QUALITY,
+# NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
 #
-# @author: VMware, Inc.
-# @copyright: copyright 2016, 2017 VMware, Inc.  All rights reserved.
-# @vcenter version: 6.5+
+
+$__author__ = 'VMware, Inc.';
+$__copyright__ = 'Copyright 2016, 2017 VMware, Inc. All rights reserved.';
+$__vcenter_version__ = '6.5+';
 
 #
 # @class DatastoreHelper

@@ -1,14 +1,18 @@
-
-####################################################
-# Copyright 2016 VMware, Inc.  All rights reserved.
+#
+##############################################################
+# Copyright (c) VMware, Inc. 2016, 2017.  All Rights Reserved.
 # SPDX-License-Identifier: MIT
-####################################################
+##############################################################
 #
-# @file VapiAuthenticationHelper.pm
-# The file implements VapiAuthenticationHelper perl module.
+# DISCLAIMER. THIS PROGRAM IS PROVIDED TO YOU "AS IS" WITHOUT
+# WARRANTIES OR CONDITIONS # OF ANY KIND, WHETHER ORAL OR WRITTEN,
+# EXPRESS OR IMPLIED. THE AUTHOR SPECIFICALLY # DISCLAIMS ANY IMPLIED
+# WARRANTIES OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY # QUALITY,
+# NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
 #
-# @copy 2016, VMware Inc.
-#
+
+$__author__ = 'VMware, Inc.';
+$__copyright__ = 'Copyright 2016, 2017 VMware, Inc. All rights reserved.';
 
 #
 # @class VapiAuthenticationHelper
