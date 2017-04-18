@@ -48,12 +48,14 @@ set_verbosity( 'level' => 3 );
 
 # Initialize the global variable
 my (
-   %params,      $sampleBase, $tag_name,          $category_name, $cluster_name,
-   $stubFactory, $stubConfig, $category_service,  $tagging_service,
-   $category_id, $tag_id,     $tag_assoc_service, $cluster_tag_id
+   %params,        $sampleBase,        $tag_name,        $tag_description,
+   $category_name, $tag_category_desc, $cluster_name,    $stubFactory,
+   $stubConfig,    $category_service,  $tagging_service, $category_id,
+   $tag_id,        $tag_assoc_service, $cluster_tag_id
 ) = ();
-my $tag_description = "This tag is created by vAPI Perl sample tagging_workflow.pl";
-my $CARDINALITY_MULTIPLE = Com::Vmware::Cis::Tagging::CategoryModel::Cardinality::MULTIPLE;
+my $CARDINALITY_MULTIPLE =
+  Com::Vmware::Cis::Tagging::CategoryModel::Cardinality::MULTIPLE;
+
 # Declare the mandatory parameter list
 my @required_options = ( 'username', 'password', 'lsurl', 'server', 'cleanup' );
 
@@ -63,21 +65,21 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,     "server=s",      "lsurl=s",      "username=s",
-      "password=s", "privatekey:s",  "servercert:s", "cert:s",
-      "tagname:s",  "clustername:s", "mgmtnode:s",   "cleanup:s",
-      "help:s"
+      \%params,         "server=s",      "lsurl=s",        "username=s",
+      "password=s",     "privatekey:s",  "servercert:s",   "cert:s",
+      "tagname:s",      "clustername:s", "categoryname:s", "tagdesc:s",
+      "categorydesc:s", "mgmtnode:s",    "cleanup:s",      "help:s"
      )
      or die
 "\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
-                         --privatekey <private key> --cert <cert> --tagname <tag name> --clustername <cluster name> --mgmtnode <management node name found on server> --cleanup <value should be true or false> or --help\n";
+                         --privatekey <private key> --cert <cert> --tagname <tag name> --tagdesc <tag description> --clustername <cluster name> --categoryname <category name> --categorydesc <category description> --mgmtnode <management node name found on server> --cleanup <value should be true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
 "tagging_workflow.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
       print
-"               --privatekey <private key> --cert <cert> --tagname <tag name> --clustername <cluster name> --cleanup <value should be true or false> \n";
+"               --privatekey <private key> --cert <cert> --tagname <tag name> --tagdesc <tag description> --clustername <cluster name> --categoryname <category name> --categorydesc <category description> --mgmtnode <management node name found on server> --cleanup <value should be true or false> \n";
       exit;
    }
 
@@ -95,8 +97,11 @@ sub init {
       exit;
    }
 
-   $tag_name     = $params{'tagname'};
-   $cluster_name = $params{'clustername'};
+   $tag_name          = $params{'tagname'};
+   $cluster_name      = $params{'clustername'};
+   $category_name     = $params{'categoryname'};
+   $tag_description   = $params{'tagdesc'};
+   $tag_category_desc = $params{'categorydesc'};
 
    #
    # If tag name is not supplied use the default
@@ -104,7 +109,17 @@ sub init {
    if ( !defined($tag_name) ) {
       $tag_name = "Sample-Tag";
    }
-   $category_name = $tag_name . "-Category";
+   if ( !defined($category_name) ) {
+      $category_name = $tag_name . "-Category";
+   }
+   if ( !defined($tag_description) ) {
+      $tag_description =
+        "This tag is created by vAPI Perl sample tagging_workflow.pl";
+   }
+   if ( !defined($tag_category_desc) ) {
+      $tag_category_desc =
+        "This tag category is created by vAPI Perl sample tagging_workflow.pl";
+   }
 
    $sampleBase  = new Common::SampleBase( 'params' => \%params );
    $stubConfig  = $sampleBase->{'stub_config'};
@@ -157,7 +172,7 @@ sub run {
    log_info( MSG => "Creating a new Tag category '$category_name' ..." );
    $category_id = createTagCategory(
       'category_name' => $category_name,
-      'description'   => $tag_description,
+      'description'   => $tag_category_desc,
       'cardinality'   => $CARDINALITY_MULTIPLE
    );
    log_info( MSG => "Tag category create result: '$category_id'" );
@@ -169,6 +184,18 @@ sub run {
       'category_id' => $category_id
    );
    log_info( MSG => "Tag create result: '$tag_id'" );
+
+   #
+   # Read the tag
+   #
+   log_info( MSG => "Reading the tag '$tag_name' from tagging service ..." );
+   getTag( 'tag_id' => $tag_id );
+
+   #
+   # Update the asset tag
+   #
+   log_info( MSG => "Updating the tag '$tag_name' ..." );
+   updateTag( 'tag_id' => $tag_id, 'description' => $tag_description );
 
    log_info( MSG => "Attaching tag to the cluster '" . $cluster_name . "'" );
 
@@ -248,6 +275,28 @@ sub createTag {
 }
 
 #
+# Reads a tag
+#
+sub getTag {
+   my %args     = @_;
+   my $tag_name = $args{'tag_id'};
+
+   return $tagging_service->get( 'tag_id' => $tag_id );
+}
+
+#
+# Updates a tag
+#
+sub updateTag {
+   my %args            = @_;
+   my $tag_id          = $args{'tag_id'};
+   my $tag_description = $args{'description'};
+   my $spec            = new Com::Vmware::Cis::Tagging::Tag::UpdateSpec();
+   $spec->set_description( 'description' => $tag_description );
+   $tagging_service->update( 'tag_id' => $tag_id, 'update_spec' => $spec );
+}
+
+#
 # This sample demonstrates tagging Cluster by using vSphere Automation SDK for Perl and vSphere Perl SDK.
 # Step 1:  Connect to the vapi service endpoint.
 # Step 2:  Use the basic authentication to login to vAPI service endpoint.
@@ -255,8 +304,9 @@ sub createTag {
 # Step 4:  Get the cluster Moref by using vSphere Perl SDK.
 # Step 5:  Create a new Tag Category.
 # Step 6:  Create a new Tag.
-# Step 7:  Attach the Tag.
-# Step 8:  Cleanup - Detach the Tag and delete the Tag and Tag Category.
+# Step 7:  Read and Update the Tag
+# Step 8:  Attach the Tag.
+# Step 9:  Cleanup - Detach the Tag and delete the Tag and Tag Category.
 #
 
 # Call main
