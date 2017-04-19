@@ -86,6 +86,7 @@ following:
 
 +vsphere-automation-sdk-perl-master
 
+    +bin
     +doc
     +lib
         +runtime
