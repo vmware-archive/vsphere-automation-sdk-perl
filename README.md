@@ -55,8 +55,8 @@ The version 6.5 SDK enables programmatic access to the following services:
       * ppm install Data::UUID
     * In case of other platform, you can use yum command to install these modules or can follow below steps:
       * Need to download all required module from CPAN (for example: UUID module is a required module. we will download this module as CPAN module at root location)
-      * Extract it
-      * [root@inhd0740 ~]# cd UUID
+      * Extract it using command "tar -zxvf UUID-0.27.tar.gz"
+      * [root@inhd0740 ~]# cd UUID-0.27
       * [root@inhd0740 ~]#./ Makefile.pl
       * [root@inhd0740 ~]# make
       * [root@inhd0740 ~]# make install
@@ -115,87 +115,11 @@ following:
 The samples directory in this distribution has sample scripts, showing how
 to call the VMware-vSphere-Automation-SDK-Perl API.
 
-    $ cd vsphere-automation-sdk-perl-master/samples/Tagging
+Use a command like the following to get list of VMs present in vCenter.
 
-    $ perl tag_life_cycle.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --cleanup 'true or false'
-
-    $ perl tagging_workflow.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Create/DefaultVM
-
-    $ perl default_vm.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmfolder 'vm folder name' --datastore 'datastore name' --clustername 'cluster name' --datacenter 'datacenter name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Create/BasicVM
-
-    $ perl basic_vm.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmfolder 'vm folder name' --datastore 'datastore name' --clustername 'cluster name' --datacenter 'datacenter name' --standardportgroup 'standard portgroup name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Create/ExhaustiveVM
-
-    $ perl exhaustive_vm.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmfolder 'vm folder name' --datastore 'datastore name' --clustername 'cluster name' --datacenter 'datacenter name' --standardportgroup 'standard portgroup name' --distributedportgroup  'distributed portgroup name' --isodatastorepath [datastore1] --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Cpu
-
-    $ perl cpu_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Memory
-
-    $ perl memory_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Cdrom
-
-    $ perl cdrom_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --isodatastorepath [datastore_name]iso/iso_datastore_file_name.iso --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Ethernet
-
-    $ perl ethernet_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --datacenter 'datacenter name' --standardportgroup 'standard portgroup name' --distributedportgroup  'distributed portgroup name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Boot
-
-    $ perl boot_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/BootDevices
-
-    $ perl boot_device_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Adapter
-
-    $ perl sata_adapter_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm/Hardware/Adapter
-
-    $ perl scsi_adapter_configuration.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
-   
     $ cd vsphere-automation-sdk-perl-master/samples/Vcenter/Vm
-   
-    $ perl power_life_cycle.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --cleanup 'true or false'
 
-    $ cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/ContentUpdate
-
-    $ perl content_update.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --clname 'existing content library name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/CRUD
-
-    $ perl library_crud.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --datastore 'datastore name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/ISOMount
-
-    $ perl iso_mount.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --isoitemnametomount  'iso item name to mount' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/OvfDeploy
-
-    $ perl deploy_ovf_template.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --libraryitemname 'library item name' --clustername 'cluster name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/OvfImportExport
-
-    $ perl ovf_import_export.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --clname 'content library name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/PublishSubscribe
-
-    $ perl publish_subscribe.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --datastore 'datastore name' --datacenter 'datacenter name' --cleanup 'true or false'
-
-    $ cd vsphere-automation-sdk-perl-master/samples/ContentLibrary/VMCapture
-
-    $ perl vm_template_capture.pl --lsurl https://server_ip/lookupservice/sdk --server https://server_ip --username 'user name' --password 'password' --vmname 'vm name' --datacenter 'datacenter name' --datastore  'datastore name' --cleanup 'true or false'
+    $ perl list_vms.pl --server https://vCenter_server_ip --username 'user name' --password 'password'
 
 ## API Documentation
 The API documentation can be found [here] (doc/client.zip)
@@ -258,5 +182,5 @@ Items added to the repository, including items from the Board members, require 2
 * [vSphere Automation SDK Overview](http://pubs.vmware.com/vsphere-65/index.jsp#com.vmware.vapi.progguide.doc/GUID-AF73991C-FC1C-47DF-8362-184B6544CFDE.html)
 * [VMware Code](https://code.vmware.com/home)
 * [VMware Developer Community](https://communities.vmware.com/community/vmtn/developer)
-* VMware vSphere [REST API Reference documentation](https://vdc-repo.vmware.com/vmwb-repository/dcr-public/1cd28284-3b72-4885-9e31-d1c6d9e26686/9a0dbc46-b15f-47cd-af1d-dc64615b03df/doc/index.html).
+* VMware vSphere [REST API Reference documentation](https://code.vmware.com/web/dp/doc/preview?id=4645).
 * [VMware Perl forum](https://code.vmware.com/forums/7562/vsphere-automation-sdk-for-perl)
