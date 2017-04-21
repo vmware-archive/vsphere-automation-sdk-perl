@@ -51,14 +51,18 @@ sub new {
    my $params = $args{'params'};
    my %params = %$params;
 
-   $ip       = $params{'server'};
-   $ls_url   = $params{'lsurl'};
+   $ip     = $params{'server'};
+   my $loc = index($ip, "https");
+   if ($loc == -1) {
+      $ip = 'https://' . $ip;
+   }
    $username = $params{'username'};
    $password = $params{'password'};
    my $private_key = $params{'privatekey'};
    my $cert        = $params{'cert'};
    my $server_cert = $params{'servercert'};
    $mgmtnode = $params{'mgmtnode'};
+   $ls_url = $ip . '/lookupservice/sdk';
 
    my $lookup_service = new LookupService( 'lookup_url' => $ls_url );
    get_mgmt_node( 'lookup_service' => $lookup_service );

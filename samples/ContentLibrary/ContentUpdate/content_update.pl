@@ -80,7 +80,7 @@ my $resource_dir = catdir( dirname($Bin), '..', 'resources' );
 
 # Declare the mandatory parameter list
 my @required_options =
-  ( 'username', 'password', 'lsurl', 'server', 'clname', 'cleanup' );
+  ( 'username', 'password', 'server', 'clname', 'cleanup' );
 
 sub init {
 
@@ -88,19 +88,19 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,     "server=s",     "lsurl=s",      "username=s",
+      \%params,     "server=s",     "username=s",
       "password=s", "privatekey:s", "servercert:s", "cert:s",
       "clname:s",   "mgmtnode:s",   "cleanup:s",    "help:s"
      )
 
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --servercert <server cert> --cert <cert> --clname <content library name> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"content_update.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"content_update.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --servercert <server cert> --cert <cert> --clname <content library name> --cleanup <true or false>\n";
       exit;

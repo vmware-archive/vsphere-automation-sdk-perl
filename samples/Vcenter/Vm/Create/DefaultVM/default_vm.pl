@@ -72,7 +72,7 @@ my $vmGuestOS = Com::Vmware::Vcenter::Vm::GuestOS::WINDOWS_9_64;
 
 # Declare the mandatory parameter list
 my @required_options = (
-   'username',  'password',   'lsurl',       'server',
+   'username',  'password',   'server',
    'vmname',    'datacenter', 'clustername', 'vmfolder',
    'datastore', 'cleanup'
 );
@@ -83,19 +83,19 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,       "server=s",     "lsurl=s",      "username=s",
+      \%params,       "server=s",           "username=s",
       "password=s",   "privatekey:s", "servercert:s", "cert:s",
       "vmname:s",     "vmfolder:s",   "datastore:s",  "clustername:s",
       "datacenter:s", "mgmtnode:s",   "cleanup:s",    "help:s"
      )
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --cleanup <value should be true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"default_vm.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"default_vm.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --cleanup <value should be true or false> \n";
       exit;

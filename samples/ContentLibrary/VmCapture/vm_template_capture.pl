@@ -65,7 +65,7 @@ my (
 
 # Declare the mandatory parameter list
 my @required_options = (
-   'username', 'password',  'lsurl',      'server',
+   'username', 'password',  'server',
    'vmname',   'datastore', 'datacenter', 'cleanup'
 );
 
@@ -75,20 +75,20 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,     "server=s",     "lsurl=s",      "username=s",
+      \%params,     "server=s",           "username=s",
       "password=s", "privatekey:s", "servercert:s", "cert:s",
       "vmname:s",   "datastore:s",  "datacenter:s", "mgmtnode:s",
       "cleanup:s",  "help:s"
      )
 
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --datastore <datastore name> --datacenter <datacenter name> --cleanup <true or false> --mgmtnode <management node name> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"vm_template_capture.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"vm_template_capture.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --datastore <datastore name> --datacenter <datacenter name> --cleanup <true or false>\n";
       exit;

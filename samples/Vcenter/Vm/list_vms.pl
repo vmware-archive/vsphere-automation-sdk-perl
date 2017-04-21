@@ -48,7 +48,7 @@ set_verbosity( 'level' => 3 );
 my ( %params, $sampleBase, $stubFactory, $stubConfig, $vm_service ) = ();
 
 # Declare the mandatory parameter list
-my @required_options = ( 'username', 'password', 'lsurl', 'server' );
+my @required_options = ( 'username', 'password', 'server' );
 
 sub init {
 
@@ -56,18 +56,18 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,     "server=s",     "lsurl=s",      "username=s",
+      \%params,     "server=s",     "username=s",
       "password=s", "privatekey:s", "servercert:s", "cert:s",
       "mgmtnode:s", "help:s"
      )
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --servercert <server cert> --cert <cert> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"list_vms.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"list_vms.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --servercert <server cert> --cert <cert>\n";
       exit;

@@ -60,7 +60,7 @@ my (
 # Declare the mandatory parameter list
 my @required_options = (
    'username',          'password',
-   'lsurl',             'server',
+   'server',
    'vmname',            'datacenter',
    'standardportgroup', 'distributedportgroup',
    'cleanup'
@@ -73,7 +73,7 @@ sub init {
    #
    GetOptions(
       \%params,              "server=s",
-      "lsurl=s",             "username=s",
+      "username=s",
       "password=s",          "privatekey:s",
       "servercert:s",        "cert:s",
       "vmname:s",            "datacenter:s",
@@ -82,13 +82,13 @@ sub init {
       "help:s"
      )
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"ethernet_configuration.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"ethernet_configuration.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --cleanup <true or false>\n";
       exit;

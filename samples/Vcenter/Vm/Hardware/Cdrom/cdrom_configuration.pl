@@ -57,7 +57,7 @@ my (
 
 # Declare the mandatory parameter list
 my @required_options = (
-   'username', 'password',         'lsurl', 'server',
+   'username', 'password',         'server',
    'vmname',   'isodatastorepath', 'cleanup'
 );
 
@@ -68,7 +68,7 @@ sub init {
    #
    GetOptions(
       \%params,       "server=s",
-      "lsurl=s",      "username=s",
+      "username=s",
       "password=s",   "privatekey:s",
       "servercert:s", "cert:s",
       "vmname:s",  "isodatastorepath:s", "mgmtnode:s",
@@ -76,13 +76,13 @@ sub init {
      )
 
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --isodatastorepath <ios datastore path> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"cdrom_configuration.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"cdrom_configuration.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --isodatastorepath <iso datastore path> --cleanup <true or false>\n";
       exit;

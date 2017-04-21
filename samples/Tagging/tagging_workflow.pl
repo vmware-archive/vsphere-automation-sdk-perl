@@ -57,7 +57,7 @@ my $CARDINALITY_MULTIPLE =
   Com::Vmware::Cis::Tagging::CategoryModel::Cardinality::MULTIPLE;
 
 # Declare the mandatory parameter list
-my @required_options = ( 'username', 'password', 'lsurl', 'server', 'cleanup' );
+my @required_options = ( 'username', 'password', 'server', 'cleanup' );
 
 sub init {
 
@@ -65,19 +65,19 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,         "server=s",      "lsurl=s",        "username=s",
+      \%params,         "server=s",      "username=s",
       "password=s",     "privatekey:s",  "servercert:s",   "cert:s",
       "tagname:s",      "clustername:s", "categoryname:s", "tagdesc:s",
       "categorydesc:s", "mgmtnode:s",    "cleanup:s",      "help:s"
      )
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --cert <cert> --tagname <tag name> --tagdesc <tag description> --clustername <cluster name> --categoryname <category name> --categorydesc <category description> --mgmtnode <management node name found on server> --cleanup <value should be true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"tagging_workflow.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"tagging_workflow.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --cert <cert> --tagname <tag name> --tagdesc <tag description> --clustername <cluster name> --categoryname <category name> --categorydesc <category description> --mgmtnode <management node name found on server> --cleanup <value should be true or false> \n";
       exit;

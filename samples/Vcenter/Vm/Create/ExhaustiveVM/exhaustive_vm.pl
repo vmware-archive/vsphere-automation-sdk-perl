@@ -84,7 +84,7 @@ my $mac_address = '11:23:58:13:21:34';
 # Declare the mandatory parameter list
 my @required_options = (
    'username',             'password',
-   'lsurl',                'server',
+   'server',
    'vmname',               'datacenter',
    'clustername',          'vmfolder',
    'datastore',            'standardportgroup',
@@ -99,7 +99,7 @@ sub init {
    #
    GetOptions(
       \%params,              "server=s",
-      "lsurl=s",             "username=s",
+                   "username=s",
       "password=s",          "privatekey:s",
       "servercert:s",        "cert:s",
       "vmname:s",            "vmfolder:s",
@@ -110,13 +110,13 @@ sub init {
       "help:s"
      )
      or die
-"\nValid options are --server <server> --username <user> --password <password> --lsurl <lookup service url>
+"\nValid options are --server <server> --username <user> --password <password>
                          --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --isodatastorepath <iso datastore path> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
-"exhaustive_vm.pl --server <server> --username <user> --password <password> --lsurl <lookup service url> \n";
+"exhaustive_vm.pl --server <server> --username <user> --password <password> \n";
       print
 "               --privatekey <private key> --servercert <server cert> --cert <cert> --vmname <vm name> --vmfolder <vmfolder name> --datastore <datastore name> --clustername <cluster name> --datacenter <datacenter name> --standardportgroup <standard portgroup name> --distributedportgroup <distributed portgroup name> --isodatastorepath <iso datastore path> --cleanup <true or false> \n";
       exit;
