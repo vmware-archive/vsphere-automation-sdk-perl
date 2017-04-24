@@ -44,24 +44,108 @@ The version 6.5 SDK enables programmatic access to the following services:
     * Virtual Machines
 
 ## Prerequisites
-1. Download the latest ActiveState Perl or Strawberry Perl
-2. Need to install CPAN modules using below commands.
-    * In case of windows, you can use these commands:
-      * ppm install XML::LibXML
-      * ppm install UUID::Random
-      * ppm install Crypt::OpenSSL:RSA
-      * ppm install Exception::Class
-      * ppm install Crypt::X509
-      * ppm install Data::UUID
-    * In case of other platform, you can use yum command to install these modules or can follow below steps:
-      * Need to download all required module from CPAN (for example: UUID module is a required module. we will download this module as CPAN module at root location)
-      * Extract it using command "tar -zxvf UUID-0.27.tar.gz"
-      * [root@inhd0740 ~]# cd UUID-0.27
-      * [root@inhd0740 ~]#./ Makefile.pl
-      * [root@inhd0740 ~]# make
-      * [root@inhd0740 ~]# make install
-3. VMware vSphere Automation SDK for Perl 6.5 requires vSphere SDK for Perl 6.5 (https://code.vmware.com/web/sdk/65/vsphere-perl) to be installed first in the targeted client platform. The vSphere SDK for Perl 6.5 interactive installer will install all the required dependencies modules for vSphere Automation SDK for Perl 6.5 as well.
-4. Need to copy python27.dll from <vCLI_install_directory>/bin to <vCLI_install_directory>/Perl/lib/VMware on Windows only.
+
+**In case of windows platform-**
+
+1. Download the latest ActiveState Perl 64-bits (https://www.activestate.com/activeperl/downloads) or Strawberry Perl (http://strawberryperl.com/).
+2. Need to install few required CPAN modules using below commands:
+
+```cmd
+  ppm install XML::LibXML
+  ppm install UUID::Random
+  ppm install Crypt::OpenSSL:RSA
+  ppm install Exception::Class
+  ppm install Crypt::X509
+  ppm install Data::UUID
+```
+
+3. Download and install the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.exe) from (https://code.vmware.com/web/sdk/65/vsphere-perl).
+4. Need to copy python27.dll from vSphere_SDK_install_directory/bin to vSphere_SDK_install_directory/Perl/lib/VMware.
+
+**In case of RHEL platform-**
+
+1. Need to install few required CPAN modules using below commands:
+
+```cmd
+yum install e2fsprogs-devel libuuid-devel openssl-devel perl-devel
+yum install glibc.i686 zlib.i686
+yum install perl-XML-LibXML libncurses.so.5 perl-Crypt-SSLeay perl-Time-Piece
+```
+
+2. $rm -rf /usr/lib64/perl5/auto/Crypt/OpenSSL/RSA/RSA.so
+3. perl -MCPAN -e 'install Crypt::OpenSSL::RSA'
+4. Download the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://code.vmware.com/web/sdk/65/vsphere-perl) and follow below mentioned steps to install.
+
+```cmd
+Untar the vSphere SDK for Perl 6.5 binary that you downloaded.
+$tar –zxvf VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz
+A vmware-vsphere-vcli-distrib directory is created.
+Log in as superuser and run the installer.
+$cd vmware-vsphere-cli-distrib
+$./vmware-install.pl
+To accept the license terms, enter yes and press Enter.
+To install Perl modules locally, enter yes and press Enter.
+Specify an installation directory, or press Enter to accept the default, which is /usr/bin.
+```
+
+**In case of SLES platform-**
+
+1. Need to install few required CPAN modules using below commands:
+
+```cmd
+yast -i openssl-devel libuuid-devel libuuid-devel-32bit e2fsprogs-devel
+```
+
+2. Need to download modules LWP::Protocol::https-6.06 and Net::Https 6.06 from CPAN site (http://search.cpan.org/) and follow below mentioned steps:
+
+```cmd
+$tar -zxvf downloaded_module.tar.gz
+$cd extracted_folder_name
+$./ Makefile.pl
+$make
+$make install
+```
+
+3. Download the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://code.vmware.com/web/sdk/65/vsphere-perl) and follow below mentioned steps to install.
+
+```cmd
+Untar the vSphere SDK for Perl 6.5 binary that you downloaded.
+$tar –zxvf VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz
+A vmware-vsphere-vcli-distrib directory is created.
+Log in as superuser and run the installer.
+$cd vmware-vsphere-cli-distrib
+$./vmware-install.pl
+To accept the license terms, enter yes and press Enter.
+To install Perl modules from CPAN, enter yes and press Enter.
+Specify an installation directory, or press Enter to accept the default, which is /usr/bin.
+```
+
+**In case of Ubuntu platform-**
+
+1. Need to install few required CPAN modules using below commands:
+
+```cmd
+For Ubuntu-15.10 64 bits-
+$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev perl libssl-dev perldoc libxml-libxml-perl libcrypt-ssleay-perl libsoap-lite-perl
+
+For Ubuntu-16.04 64 bits-
+$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev libssl-dev perl-doc libxml-libxml-perl libcrypt-ssleay-perl libsoap-lite-perl libmodule-build-perl
+```
+
+2. Download the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://code.vmware.com/web/sdk/65/vsphere-perl) and follow below mentioned steps to install.
+
+```cmd
+Untar the vSphere SDK for Perl 6.5 binary that you downloaded.
+$tar –zxvf VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz
+A vmware-vsphere-vcli-distrib directory is created.
+Log in as superuser and run the installer.
+$cd vmware-vsphere-cli-distrib
+$./vmware-install.pl
+To accept the license terms, enter yes and press Enter.
+To install Perl modules from CPAN, enter yes and press Enter.
+Specify an installation directory, or press Enter to accept the default, which is /usr/bin.
+```
+
 
 For more info, please refer to https://www.vmware.com/support/developer/viperltoolkit/
 
@@ -106,11 +190,12 @@ following:
 6. At this point, you now have a local copy of the repository
 
 7. Set PERL5LIB env variable or perl include path using these commands:
+```cmd
    * On windows platform:
-     set perl5lib=%perl5lib%;C:\vsphere-automation-sdk-perl-master\lib\runtime;C:\vsphere-automation-sdk-perl-master\lib\sdk;C:\vsphere-automation-sdk-perl-master\samples
+     set PERL5LIB=%PERL5LIB%;SDK-root-directory-path\lib\runtime;SDK-root-directory-path\lib\sdk;SDK-root-directory-path\samples
    * On other plateforms:
-     export PERL5LIB=$PERL5LIB:'SDK-root-directory-path'/lib/sdk:'SDK-root-directory-path'/lib/runtime:'SDK-root-directory-path'/samples
-
+     export PERL5LIB=$PERL5LIB:SDK-root-directory-path/lib/sdk:SDK-root-directory-path/lib/runtime:SDK-root-directory-path/samples
+```
 ## How to run the samples?
 The samples directory in this distribution has sample scripts, showing how
 to call the VMware-vSphere-Automation-SDK-Perl API.
