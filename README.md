@@ -258,7 +258,7 @@ Sample Exchange can be allowed to access your GitHub resources, by way of a link
 Board members are volunteers from the SDK community and VMware staff members, board members are not held responsible for any issues which may occur from running of samples from this repository.
 
 Members:
-* Kapil Yadev (VMware)
+* Kapil Yadav (VMware)
 * Steve Trefethen (VMware)
 
 ### Approval of Additions
