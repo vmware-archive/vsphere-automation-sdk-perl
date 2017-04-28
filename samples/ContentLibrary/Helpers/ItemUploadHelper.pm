@@ -29,6 +29,7 @@ use File::Basename;
 use File::Copy;
 use File::Temp qw/ tempdir tempfile /;
 use File::Spec qw/rel2abs/;
+use Data::UUID;
 
 #
 # vApi runtime libraries
@@ -41,12 +42,13 @@ use Com::Vmware::Vapi::Util::Logger
 #
 use Com::Vmware::Content::Library::Item::Updatesession::File;
 use Com::Vmware::Content::Library::Item::UpdateSessionModel;
+use Com::Vmware::Content::LibraryModel;
 
 #
 # Helper class
 #
 
-##@method perform_upload ()
+##@method upload_files ()
 # Performing upload into library item using the update session.
 #
 # @param update_session_service
@@ -58,7 +60,7 @@ use Com::Vmware::Content::Library::Item::UpdateSessionModel;
 # @param vCenter's password
 # @return None
 #
-sub perform_upload {
+sub upload_files {
    my (%args) = @_;
 
    my $update_session_service      = $args{'update_session_service'};
@@ -81,7 +83,7 @@ sub perform_upload {
    );
 
    # Add the files to the item and PUT the file to the transfer URL
-   upload_files(
+   upload_files_in_session(
       'update_session_file_service' => $update_session_file_service,
       'session_id'                  => $session_id,
       'filenames'                   => $filenames,
@@ -181,7 +183,7 @@ sub create_upload_session {
    return $session_id;
 }
 
-##@method upload_files ()
+##@method upload_files_in_session ()
 # Uploading files into library item using the update session file service.
 #
 # @param update_session_file_service
@@ -190,7 +192,7 @@ sub create_upload_session {
 # @param file_locations
 # @return None
 #
-sub upload_files {
+sub upload_files_in_session {
    my (%args)                      = @_;
    my $update_session_file_service = $args{'update_session_file_service'};
    my $session_id                  = $args{'session_id'};
@@ -261,6 +263,15 @@ sub upload_file {
       'update_session_id' => $session_id,
       'file_name'         => $filename
    );
+
+   do {
+      sleep(10);
+      $file_info = $update_session_file_service->get(
+         'update_session_id' => $session_id,
+         'file_name'         => $filename
+      );
+
+   } while ( $file_info->get_bytes_transferred() != $file_info->get_size() );
    return $file_info;
 }
 
@@ -307,7 +318,7 @@ sub copy_resource_to_file {
 }
 
 ##@method upload ()
-# Copying resource file into temp directory.
+# upload file (i.e. ovf/iso) on the server.
 #
 # @param url
 # @param fh
@@ -334,4 +345,93 @@ sub upload {
    my $result = $ua->request($request);
    return;
 }
+
+##@method create_library_item ()
+# Create a library item in the specified library.
+#
+# @param item_service
+# @param library_id
+# @param name
+# @param library_item_type
+#
+# @return library item
+#
+sub create_library_item {
+   my (%args)            = @_;
+   my $item_service      = $args{'item_service'};
+   my $library_id        = $args{'library_id'};
+   my $library_item_name = $args{'name'};
+   my $item_type         = $args{'library_item_type'};
+
+   my $lib_item_spec = get_library_item_spec(
+      'library_id'        => $library_id,
+      'name'              => $library_item_name,
+      'description'       => 'item update',
+      'library_item_type' => $item_type
+   );
+   my $client_token = Data::UUID->new();
+   my $lib_item_id  = $item_service->create(
+      'client_token' => $client_token,
+      'create_spec'  => $lib_item_spec
+   );
+   my $library_item = $item_service->get( 'library_item_id' => $lib_item_id );
+   return $library_item->get_id();
+}
+
+##@method get_library_item_spec ()
+# Construct a library item spec.
+#
+# @param library_id
+# @param name
+# @param description
+# @param library_item_type
+#
+# @return library item spec
+#
+sub get_library_item_spec {
+   my (%args)        = @_;
+   my $library_id    = $args{'library_id'};
+   my $name          = $args{'name'};
+   my $description   = $args{'description'};
+   my $type          = $args{'library_item_type'};
+   my $lib_item_spec = new Com::Vmware::Content::Library::ItemModel();
+   $lib_item_spec->set_name( 'name' => $name );
+   $lib_item_spec->set_description( 'description' => $description );
+   $lib_item_spec->set_library_id( 'library_id' => $library_id );
+   $lib_item_spec->set_type( 'type' => $type );
+   return $lib_item_spec;
+}
+
+##@method create_local_library ()
+# Create a local library.
+#
+# @param storage_backings Storage for the library
+# @param lib_name Name of the library
+#
+# @return id of the created library
+#
+sub create_local_library {
+   my (%args)                = @_;
+   my $local_library_service = $args{'local_library_service'};
+   my $storage_backings      = $args{'storage_backings'};
+   my $lib_name              = $args{'lib_name'};
+   my $create_spec           = new Com::Vmware::Content::LibraryModel();
+   $create_spec->set_name( 'name' => $lib_name );
+   $create_spec->set_storage_backings(
+      'storage_backings' => $storage_backings );
+   $create_spec->set_type(
+      'type' => Com::Vmware::Content::LibraryModel::LibraryType::LOCAL );
+   $create_spec->set_description(
+      'description' => 'Local library backed by VC datastore' );
+   my $client_token = Data::UUID->new();
+
+   # Create a local content library backed the VC datastore
+   my $library_id = $local_library_service->create(
+      'create_spec'  => $create_spec,
+      'client_token' => $client_token
+   );
+   log_info( MSG => "Local library created, ID: " . $library_id );
+   return $library_id;
+}
+
 1;

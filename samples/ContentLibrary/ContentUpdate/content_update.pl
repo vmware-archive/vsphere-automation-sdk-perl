@@ -134,10 +134,10 @@ sub setup {
       'stub_config'  => $stubConfig
    );
 
-   # Get the Item Service
+   # Get the Library Item Service
    $item_service = $client->get_item_service();
 
-   # Get the OVF Library Item Service
+   # Get the Library Service
    $library_service = $client->get_library_service();
 
    # Get the Update Session Service
@@ -159,110 +159,8 @@ sub run {
    }
    log_info( MSG => "Found library with id: $library_id" );
 
-# Content update scenario 1:
-# Update OVF library item by creating an update session for the OVF item,
-# removing all existing files in the session, then adding all new files into the same update session,
-# and completing the session to finish the content update.
-
-   # Create an OVF item and upload initial content
-   $ovf_item_id = create_ovf_item();
-   my $ovf_item = $item_service->get( 'library_item_id' => $ovf_item_id );
-   my $content_version_before_update = $ovf_item->get_content_version();
-   log_info( MSG =>
-"OVF library item created: $ovf_item_id, content version: $content_version_before_update"
-   );
-
-   # Update the OVF item with new OVF template via UpdateSession API
-   my $update_session_model =
-     new Com::Vmware::Content::Library::Item::UpdateSessionModel();
-   $update_session_model->set_library_item_id(
-      'library_item_id' => $ovf_item_id );
-   my $session_id = $update_session_service->create(
-      client_token => Data::UUID->new(),
-      create_spec  => $update_session_model
-   );
-
-   # Delete all existing files
-   del_existing_files($session_id);
-
-   # Upload new files and complete the update session
-   my $file_path_hash = get_vm_template_files( OVF_ITEM_TWO_FOLDER_NAME,
-      OVF_ITEM_TWO_OVF_FILE_NAME, OVF_ITEM_TWO_VMDK_FILE_NAME );
-
-   ContentLibrary::Helpers::ItemUploadHelper::upload_file(
-      'update_session_file_service' => $update_session_file_service,
-      'session_id'                  => $session_id,
-      'filename'                    => File::Basename::basename(
-         $file_path_hash->{ (OVF_ITEM_TWO_OVF_FILE_NAME) }
-      ),
-      'file_location' => $file_path_hash->{ (OVF_ITEM_TWO_OVF_FILE_NAME) }
-   );
-
-   ContentLibrary::Helpers::ItemUploadHelper::upload_file(
-      'update_session_file_service' => $update_session_file_service,
-      'session_id'                  => $session_id,
-      'filename'                    => File::Basename::basename(
-         $file_path_hash->{ (OVF_ITEM_TWO_VMDK_FILE_NAME) }
-      ),
-      'file_location' => $file_path_hash->{ (OVF_ITEM_TWO_VMDK_FILE_NAME) }
-   );
-
-   $update_session_service->complete( 'update_session_id' => $session_id );
-
-   # Verify that the item content version increases by one
-   $ovf_item = $item_service->get( 'library_item_id' => $ovf_item_id );
-   my $content_version_after_update = $ovf_item->get_content_version();
-   log_info( MSG =>
-"OVF library item updated: $ovf_item_id, content version: $content_version_after_update"
-   );
-
-   # Content update scenario 2:
-   # Update ISO library item by creating an update session for the
-   # item, then adding the new ISO file using the same session file
-   # name into the update session, which will update the existing
-   # ISO file upon session complete.
-
- # Create a new ISO item in the content library and upload the initial ISO file.
-   $iso_item_id = create_iso_item();
-   my $iso_item = $item_service->get( 'library_item_id' => $iso_item_id );
-   $content_version_before_update = $iso_item->get_content_version();
-   log_info( MSG =>
-"ISO library item created: $iso_item_id, content version: $content_version_before_update"
-   );
-
-   # Replace the existing ISO file in the ISO item with a new ISO
-   # file with the same session file name via UpdateSession API.
-   $update_session_model =
-     new Com::Vmware::Content::Library::Item::UpdateSessionModel();
-   $update_session_model->set_library_item_id(
-      'library_item_id' => $iso_item_id );
-
-   $session_id = $update_session_service->create(
-      client_token => Data::UUID->new(),
-      create_spec  => $update_session_model
-   );
-
-   # Delete all existing files
-   del_existing_files($session_id);
-
-   my $iso_file_path =
-     get_iso_file( ISO_ITEM_FOLDER_NAME, ISO_ITEM_TWO_ISO_FILE_NAME );
-
-   my $file_info = ContentLibrary::Helpers::ItemUploadHelper::upload_file(
-      'update_session_file_service' => $update_session_file_service,
-      'session_id'                  => $session_id,
-      'filename'                    => File::Basename::basename($iso_file_path),
-      'file_location'               => $iso_file_path
-   );
-
-   $update_session_service->complete( 'update_session_id' => $session_id );
-
-   # Verify that item content version increases by one
-   $iso_item = $item_service->get( 'library_item_id' => $iso_item_id );
-   $content_version_after_update = $iso_item->get_content_version();
-   log_info( MSG =>
-"ISO library item updated: $iso_item_id, content version: $content_version_after_update"
-   );
+   delete_and_upload_scenario();
+   replace_scenario();
 }
 
 # Clean resources created from this sample
@@ -277,43 +175,12 @@ sub cleanup {
    }
 }
 
-# Create an OVF item with OVF files uploaded
-sub create_ovf_item {
-   my $ovf_lib_item =
-     create_library_item( $library_id, $ovf_item_name, OVF_ITEM_TYPE );
-
-   my $file_path_hash = get_vm_template_files( OVF_ITEM_ONE_FOLDER_NAME,
-      OVF_ITEM_ONE_OVF_FILE_NAME, OVF_ITEM_ONE_VMDK_FILE_NAME );
-
-   my $file_locations = [
-      $file_path_hash->{ (OVF_ITEM_ONE_OVF_FILE_NAME) },
-      $file_path_hash->{ (OVF_ITEM_ONE_VMDK_FILE_NAME) }
-   ];
-
-   ContentLibrary::Helpers::ItemUploadHelper::perform_upload(
-      'update_session_service'      => $update_session_service,
-      'update_session_file_service' => $update_session_file_service,
-      'item_service'                => $item_service,
-      'lib_item_id'                 => $ovf_lib_item->get_id(),
-      'file_locations'              => $file_locations
-   );
-   return $ovf_lib_item->get_id();
-}
-
-# Create an ISO item with ISO file uploaded
-sub create_iso_item {
-   my $iso_file_path =
-     get_iso_file( ISO_ITEM_FOLDER_NAME, ISO_ITEM_ONE_ISO_FILE_NAME );
-   my $iso_lib_item =
-     create_library_item( $library_id, $iso_item_name, ISO_ITEM_TYPE );
-   ContentLibrary::Helpers::ItemUploadHelper::perform_upload(
-      'update_session_service'      => $update_session_service,
-      'update_session_file_service' => $update_session_file_service,
-      'item_service'                => $item_service,
-      'lib_item_id'                 => $iso_lib_item->get_id(),
-      'file_locations'              => [$iso_file_path]
-   );
-   return $iso_lib_item->get_id();
+# Get the content version
+sub get_item_version {
+   my (%args) = @_;
+   my $item_id = $args{'item_id'};
+   my $item_model = $item_service->get( 'library_item_id' => $item_id );
+   return $item_model->get_content_version();
 }
 
 # Generate and return OVF and VMDK files from class resources with the
@@ -363,29 +230,173 @@ sub get_iso_file {
    return $iso_file;
 }
 
-# Create a library item in the specified library
-sub create_library_item {
-   my ( $library_id, $library_item_name, $item_type ) = @_;
-   my $lib_item_spec =
-     get_library_item_spec( $library_id, $library_item_name, 'item update',
-      $item_type );
-   my $client_token = Data::UUID->new();
-   my $lib_item_id  = $item_service->create(
-      'client_token' => $client_token,
-      'create_spec'  => $lib_item_spec
+sub delete_and_upload_scenario {
+
+   # Content update scenario 1:
+   # Update OVF library item by creating an update session for the OVF item,
+   # removing all existing files in the session, then adding all new files into the same update session,
+   # and completing the session to finish the content update.
+
+   # Create a new library item in the content library for uploading the files
+   my $ovf_item_id =
+     ContentLibrary::Helpers::ItemUploadHelper::create_library_item(
+      item_service      => $item_service,
+      library_id        => $library_id,
+      name              => 'demo-ovf-item',
+      library_item_type => 'ovf'
+     );
+
+   log_info( MSG =>
+"Library item created id: $ovf_item_id, OVF Library item version (at creation): "
+        . get_item_version( 'item_id' => $ovf_item_id ) );
+
+   # Upload a VM template to the CL
+   my $file_path_hash = get_vm_template_files( OVF_ITEM_ONE_FOLDER_NAME,
+      OVF_ITEM_ONE_OVF_FILE_NAME, OVF_ITEM_ONE_VMDK_FILE_NAME );
+
+   my $file_locations = [
+      $file_path_hash->{ (OVF_ITEM_ONE_OVF_FILE_NAME) },
+      $file_path_hash->{ (OVF_ITEM_ONE_VMDK_FILE_NAME) }
+   ];
+
+   ContentLibrary::Helpers::ItemUploadHelper::upload_files(
+      'update_session_service'      => $update_session_service,
+      'update_session_file_service' => $update_session_file_service,
+      'item_service'                => $item_service,
+      'lib_item_id'                 => $ovf_item_id,
+      'file_locations'              => $file_locations
    );
-   return $item_service->get( 'library_item_id' => $lib_item_id );
+   log_info(
+      MSG => "Uploaded ovf and vmdk files to library item: $ovf_item_id" );
+   my $original_version =
+     get_item_version( 'item_id' => $ovf_item_id );
+   log_info( MSG =>
+"OVF Library item version (on original content upload): $original_version"
+   );
+
+   # Create a new session and perform content update
+   my $update_session_model =
+     new Com::Vmware::Content::Library::Item::UpdateSessionModel();
+   $update_session_model->set_library_item_id(
+      'library_item_id' => $ovf_item_id );
+   my $session_id = $update_session_service->create(
+      client_token => Data::UUID->new(),
+      create_spec  => $update_session_model
+   );
+
+   # Delete all existing files
+   del_existing_files($session_id);
+
+   # Upload new files and complete the update session
+   $file_path_hash = get_vm_template_files( OVF_ITEM_TWO_FOLDER_NAME,
+      OVF_ITEM_TWO_OVF_FILE_NAME, OVF_ITEM_TWO_VMDK_FILE_NAME );
+
+   $file_locations = [
+      $file_path_hash->{ (OVF_ITEM_TWO_OVF_FILE_NAME) },
+      $file_path_hash->{ (OVF_ITEM_TWO_VMDK_FILE_NAME) }
+   ];
+   ContentLibrary::Helpers::ItemUploadHelper::upload_files_in_session(
+      'update_session_file_service' => $update_session_file_service,
+      'session_id'                  => $session_id,
+      'filenames'                   => [
+         File::Basename::basename(
+            $file_path_hash->{ (OVF_ITEM_TWO_OVF_FILE_NAME) }
+         ),
+         File::Basename::basename(
+            $file_path_hash->{ (OVF_ITEM_TWO_VMDK_FILE_NAME) }
+         )
+      ],
+      'file_locations' => $file_locations
+   );
+
+   $update_session_service->complete( 'update_session_id' => $session_id );
+   $update_session_service->delete( 'update_session_id' => $session_id );
+
+   # Verify that the item content version increases by one
+   my $updated_version =
+     get_item_version( 'item_id' => $ovf_item_id );
+   log_info( MSG =>
+        "OVF Library item version (after content update): $updated_version" );
+   if ( $updated_version < $original_version ) {
+      log_info( MSG => "Content update should increase the version" );
+      exit;
+   }
 }
 
-# Construct a library item spec
-sub get_library_item_spec {
-   my ( $library_id, $name, $description, $type ) = @_;
-   my $lib_item_spec = new Com::Vmware::Content::Library::ItemModel();
-   $lib_item_spec->set_name( 'name' => $name );
-   $lib_item_spec->set_description( 'description' => $description );
-   $lib_item_spec->set_library_id( 'library_id' => $library_id );
-   $lib_item_spec->set_type( 'type' => $type );
-   return $lib_item_spec;
+sub replace_scenario {
+
+   # Content update scenario 2:
+   # Update ISO library item by creating an update session for the
+   # item, then adding the new ISO file using the same session file
+   # name into the update session, which will update the existing
+   # ISO file upon session complete.
+
+   my $iso_file_path =
+     get_iso_file( ISO_ITEM_FOLDER_NAME, ISO_ITEM_ONE_ISO_FILE_NAME );
+
+   my $iso_lib_item =
+     ContentLibrary::Helpers::ItemUploadHelper::create_library_item(
+      item_service      => $item_service,
+      library_id        => $library_id,
+      name              => $iso_item_name,
+      library_item_type => ISO_ITEM_TYPE
+     );
+
+   log_info( MSG => "ISO Library item version (on creation) : "
+        . get_item_version( 'item_id' => $iso_lib_item ) );
+
+   # Upload an iso file to the CL
+   ContentLibrary::Helpers::ItemUploadHelper::upload_files(
+      'update_session_service'      => $update_session_service,
+      'update_session_file_service' => $update_session_file_service,
+      'item_service'                => $item_service,
+      'lib_item_id'                 => $iso_lib_item,
+      'file_locations'              => [$iso_file_path]
+   );
+
+   my $original_version =
+     get_item_version( 'item_id' => $iso_lib_item );
+   log_info( MSG =>
+"ISO Library item version (on original content upload): $original_version"
+   );
+
+   # Replace the existing ISO file in the ISO item with a new ISO
+   # file with the same session file name via UpdateSession API.
+   my $update_session_model =
+     new Com::Vmware::Content::Library::Item::UpdateSessionModel();
+   $update_session_model->set_library_item_id(
+      'library_item_id' => $iso_lib_item );
+
+   my $session_id = $update_session_service->create(
+      client_token => Data::UUID->new(),
+      create_spec  => $update_session_model
+   );
+
+   # Delete all existing files
+   del_existing_files($session_id);
+
+   $iso_file_path =
+     get_iso_file( ISO_ITEM_FOLDER_NAME, ISO_ITEM_TWO_ISO_FILE_NAME );
+
+   ContentLibrary::Helpers::ItemUploadHelper::upload_files_in_session(
+      'update_session_file_service' => $update_session_file_service,
+      'session_id'                  => $session_id,
+      'filenames'      => [ File::Basename::basename($iso_file_path) ],
+      'file_locations' => [$iso_file_path]
+   );
+
+   $update_session_service->complete( 'update_session_id' => $session_id );
+   $update_session_service->delete( 'update_session_id' => $session_id );
+
+   # Verify that the item content version increases by one
+   my $updated_version =
+     get_item_version( 'item_id' => $iso_lib_item );
+   log_info( MSG =>
+        "ISO Library item version (after content update): $updated_version" );
+   if ( $updated_version < $original_version ) {
+      log_info( MSG => "Content update should increase the version" );
+      exit;
+   }
 }
 
 # Delete all existing files from library item
@@ -395,6 +406,7 @@ sub del_existing_files {
    my $existing_files =
      $update_session_file_service->list( 'update_session_id' => $session_id );
    foreach my $file (@$existing_files) {
+      log_info( MSG => "deleting " . $file->get_name() );
       $update_session_file_service->remove(
          'update_session_id' => $session_id,
          'file_name'         => $file->get_name()
