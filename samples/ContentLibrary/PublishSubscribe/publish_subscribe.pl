@@ -385,7 +385,7 @@ sub create_library_item {
    close($fh);
 
    # Upload file to the library item
-   ContentLibrary::Helpers::ItemUploadHelper::perform_upload(
+   ContentLibrary::Helpers::ItemUploadHelper::upload_files(
       'update_session_service'      => $update_session_service,
       'update_session_file_service' => $update_session_file_service,
       'item_service'                => $item_service,

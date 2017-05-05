@@ -175,7 +175,7 @@ sub run {
    log_info( MSG => "Library item created : " . $libItem->get_id() );
 
    # Upload the files in the OVF package into the library item
-   ContentLibrary::Helpers::ItemUploadHelper::perform_upload(
+   ContentLibrary::Helpers::ItemUploadHelper::upload_files(
       'update_session_service' => $client->get_update_session_service(),
       'update_session_file_service' =>
         $client->get_update_session_file_service(),
