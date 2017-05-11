@@ -27,7 +27,6 @@ package ContentLibrary::Helpers::ClsApiHelper;
 use warnings;
 use strict;
 use Time::HiRes qw/gettimeofday/;
-use List::Util;
 
 #
 # vApi runtime libraries
@@ -317,8 +316,22 @@ sub has_same_items {
         $self->get_client()->get_item_service()
         ->get( 'library_item_id' => $item_id );
       my $source_id = $subscribed_item->get_source_id();
-      if ( !( List::Util::any { $_ eq $item_id } @$synced_ids )
-         && ( List::Util::any { $_ eq $source_id } @$published_item_ids ) )
+      my $flag_for_item_id = 0;
+      foreach my $sync_id (@$synced_ids){
+         if($sync_id eq $item_id){
+            $flag_for_item_id = 1;
+            last;
+         }
+      }
+      my $flag_for_publish_id = 0;
+      foreach my $publish_id (@$published_item_ids){
+         if($publish_id eq $source_id){
+            $flag_for_publish_id = 1;
+            last;
+         }
+      }
+
+      if ( !$flag_for_item_id &&  $flag_for_publish_id)
       {
          push @$synced_ids, $item_id;
       }
