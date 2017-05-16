@@ -35,11 +35,7 @@ use Com::Vmware::Vapi::Util::Logger
 use Common::SampleBase;
 use Vcenter::Helpers::VmHelper;
 use ContentLibrary::Client::ClsApiClient;
-
-#
-# Perl CPAN Modules
-#
-use UUID::Random;
+use ContentLibrary::Helpers::ClsApiHelper;
 
 #
 # Generated SDK's
@@ -237,8 +233,8 @@ sub deployVMFromOvfItem {
       'annotation' => $ovfSummary->get_annotation() );
 
    # Calling the deploy and getting the deployment result.
-   use Data::UUID;
-   my $uuid = Data::UUID->new();
+   use ContentLibrary::Helpers::ClsApiHelper;
+   my $uuid = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
 
    my $deploymentResult = $library_item_service->deploy(
       'client_token'        => $uuid,

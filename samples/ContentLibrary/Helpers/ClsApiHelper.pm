@@ -27,6 +27,7 @@ package ContentLibrary::Helpers::ClsApiHelper;
 use warnings;
 use strict;
 use Time::HiRes qw/gettimeofday/;
+use UUID;
 
 #
 # vApi runtime libraries
@@ -109,6 +110,19 @@ sub wait_for_item_sync {
    );
    return $sync_helper->wait_for_item_sync(
       'subscribed_item_id' => $subscribed_item_id );
+}
+
+## @method generate_uuid
+# Returns the UUID.
+#
+#@return UUID
+#
+sub generate_uuid {
+   my $uuid;
+   my $result;
+   UUID::generate($uuid);
+   UUID::unparse($uuid, $result);
+   return sprintf("%s", $result);
 }
 1;
 

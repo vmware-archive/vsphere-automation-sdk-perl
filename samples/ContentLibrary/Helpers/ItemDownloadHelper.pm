@@ -28,6 +28,11 @@ use strict;
 use LWP::Simple;
 
 #
+# Sample helper module
+#
+use ContentLibrary::Helpers::ClsApiHelper;
+
+#
 # vApi runtime libraries
 #
 use Com::Vmware::Vapi::Util::Logger
@@ -72,7 +77,7 @@ sub perform_download {
    my $downloadSessionId = createDownloadSession(
       'download_service' => $download_service,
       'lib_item_id'      => $lib_item_id,
-      'client_token'     => Data::UUID->new()
+      'client_token'     => ContentLibrary::Helpers::ClsApiHelper::generate_uuid()
    );
    &downloadFiles(
       'download_service'      => $download_service,

@@ -35,13 +35,9 @@ use Com::Vmware::Vapi::Util::Logger
 #
 use Common::SampleBase;
 use ContentLibrary::Client::ClsApiClient;
+use ContentLibrary::Helpers::ClsApiHelper;
 use ContentLibrary::Helpers::ItemUploadHelper;
 use ContentLibrary::Helpers::ItemDownloadHelper;
-
-#
-# Perl CPAN Modules
-#
-use Data::UUID;
 
 # Generated SDK's
 #
@@ -166,7 +162,7 @@ sub run {
    $createSpec->set_type( 'type' => "ovf" );
 
    # Create a new library item in the content library for uploading the files
-   my $clientToken = Data::UUID->new();
+   my $clientToken = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    my $libItemId =
      $client->get_item_service()
      ->create( 'client_token' => $clientToken, 'create_spec' => $createSpec );

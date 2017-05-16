@@ -22,7 +22,6 @@ $__vcenter_version__ = '6.0+';
 #
 use Getopt::Long;
 use strict;
-use Data::UUID;
 use FindBin qw($Bin);
 use File::Basename qw(dirname);
 use File::Spec::Functions qw(catdir);
@@ -37,6 +36,7 @@ use Com::Vmware::Vapi::Util::Logger
 # Sample helper module
 #
 use Common::SampleBase;
+use ContentLibrary::Helpers::ClsApiHelper;
 use ContentLibrary::Client::ClsApiClient;
 use ContentLibrary::Helpers::ItemUploadHelper;
 
@@ -280,7 +280,7 @@ sub delete_and_upload_scenario {
    $update_session_model->set_library_item_id(
       'library_item_id' => $ovf_item_id );
    my $session_id = $update_session_service->create(
-      client_token => Data::UUID->new(),
+      client_token => ContentLibrary::Helpers::ClsApiHelper::generate_uuid(),
       create_spec  => $update_session_model
    );
 
@@ -368,7 +368,7 @@ sub replace_scenario {
       'library_item_id' => $iso_lib_item );
 
    my $session_id = $update_session_service->create(
-      client_token => Data::UUID->new(),
+      client_token => ContentLibrary::Helpers::ClsApiHelper::generate_uuid(),
       create_spec  => $update_session_model
    );
 

@@ -22,7 +22,6 @@ $__vcenter_version__ = '6.0+';
 #
 use Getopt::Long;
 use strict;
-use Data::UUID;
 
 #
 # VMware runtime library
@@ -37,6 +36,7 @@ use Common::SampleBase;
 use Vcenter::Helpers::VmHelper;
 use Vcenter::Helpers::DatastoreHelper;
 use ContentLibrary::Client::ClsApiClient;
+use ContentLibrary::Helpers::ClsApiHelper;
 
 #
 # Generated SDK's
@@ -221,7 +221,7 @@ sub create_local_lib {
    $create_spec->set_storage_backings( 'storage_backings' => [$storage] );
 
    # Create a local content library backed the VC datastore
-   my $client_token = Data::UUID->new();
+   my $client_token = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    my $library_id   = $local_library_service->create(
       'client_token' => $client_token,
       'create_spec'  => $create_spec

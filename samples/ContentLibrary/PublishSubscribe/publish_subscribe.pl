@@ -23,7 +23,6 @@ $__vcenter_version__ = '6.0+';
 use Exception::Class;
 use Getopt::Long;
 use strict;
-use Data::UUID;
 use File::Spec::Functions qw(catdir);
 
 #
@@ -187,7 +186,7 @@ sub run {
       'storage_backings' => [$storage_backing] );
 
    # Create the published library and add a library item
-   my $publish_token = Data::UUID->new();
+   my $publish_token = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    $published_lib_id = $local_library_service->create(
       'client_token' => $publish_token,
       'create_spec'  => $publish_spec
@@ -230,7 +229,7 @@ sub run {
       'storage_backings' => [$storage_backing] );
 
    # Create the subscribed library
-   my $subscription_token = Data::UUID->new();
+   my $subscription_token = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    $subscribed_lib_id = $subscribed_library_service->create(
       'client_token' => $subscription_token,
       'create_spec'  => $subscription_spec
@@ -366,7 +365,7 @@ sub create_library_item {
    $create_spec->set_name( 'name' => $item_name );
 
    # Create the library item
-   my $client_token = Data::UUID->new();
+   my $client_token = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    my $lib_item_id  = $item_service->create(
       'client_token' => $client_token,
       'create_spec'  => $create_spec

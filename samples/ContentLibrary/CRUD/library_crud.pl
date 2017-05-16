@@ -34,11 +34,7 @@ use Com::Vmware::Vapi::Util::Logger
 #
 use Common::SampleBase;
 use ContentLibrary::Client::ClsApiClient;
-
-#
-# Perl CPAN Modules
-#
-use Data::UUID;
+use ContentLibrary::Helpers::ClsApiHelper;
 
 #
 # Generated SDK's
@@ -151,7 +147,7 @@ sub run {
    $createSpec->set_storage_backings( 'storage_backings' => [$storage] );
 
    # Create a local content library backed the VC datastore using vAPIs
-   my $clientToken = new Data::UUID();
+   my $clientToken = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    my $libraryId =
      $client->get_local_library_service()
      ->create( 'client_token' => $clientToken, 'create_spec' => $createSpec );

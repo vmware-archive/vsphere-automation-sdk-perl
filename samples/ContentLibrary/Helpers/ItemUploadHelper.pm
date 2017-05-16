@@ -29,7 +29,11 @@ use File::Basename;
 use File::Copy;
 use File::Temp qw/ tempdir tempfile /;
 use File::Spec qw/rel2abs/;
-use Data::UUID;
+
+#
+# Sample helper module
+#
+use ContentLibrary::Helpers::ClsApiHelper;
 
 #
 # vApi runtime libraries
@@ -175,7 +179,7 @@ sub create_upload_session {
    $create_spec->set_library_item_id( 'library_item_id' => $lib_item_id );
    $create_spec->set_library_item_content_version(
       'library_item_content_version' => $current_version );
-   my $client_token = Data::UUID->new();
+   my $client_token = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    my $session_id   = $update_session_service->create(
       'client_token' => $client_token,
       'create_spec'  => $create_spec
@@ -369,7 +373,7 @@ sub create_library_item {
       'description'       => 'item update',
       'library_item_type' => $item_type
    );
-   my $client_token = Data::UUID->new();
+   my $client_token = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
    my $lib_item_id  = $item_service->create(
       'client_token' => $client_token,
       'create_spec'  => $lib_item_spec
@@ -423,7 +427,7 @@ sub create_local_library {
       'type' => Com::Vmware::Content::LibraryModel::LibraryType::LOCAL );
    $create_spec->set_description(
       'description' => 'Local library backed by VC datastore' );
-   my $client_token = Data::UUID->new();
+   my $client_token = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
 
    # Create a local content library backed the VC datastore
    my $library_id = $local_library_service->create(
