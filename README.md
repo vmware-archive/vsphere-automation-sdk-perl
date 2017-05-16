@@ -56,7 +56,6 @@ The version 6.5 SDK enables programmatic access to the following services:
   ppm install Crypt::OpenSSL:RSA
   ppm install Exception::Class
   ppm install Crypt::X509
-  ppm install Data::UUID
 ```
 
 3. Download and install the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.exe) from (https://code.vmware.com/web/sdk/65/vsphere-perl).
