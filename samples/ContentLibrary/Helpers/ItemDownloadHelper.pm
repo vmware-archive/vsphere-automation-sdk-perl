@@ -41,7 +41,7 @@ use Com::Vmware::Vapi::Util::Logger
 #
 # Generated SDK's
 #
-use Com::Vmware::Content::Library::Item::DownloadSession::File;
+use Com::Vmware::Content::Library::Item::Downloadsession::File;
 use Com::Vmware::Content::Library::Item::DownloadSessionModel;
 use Com::Vmware::Content::Library::Item::DownloadSession;
 
