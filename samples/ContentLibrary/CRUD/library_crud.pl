@@ -69,21 +69,22 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,          "server=s",     "username=s",
-      "password=s",      "privatekey:s", "servercert:s", "cert:s",
-      "datastorename:s", "mgmtnode:s",   "cleanup:s",    "help:s"
+      \%params, "server=s", "username=s",
+      "password=s", "privatekey:s", "servercert:s", "cert:s",
+      "clname:s", "datastorename:s", "mgmtnode:s", "cleanup:s", "help:s"
      )
 
      or die
 "\nValid options are --server <server> --username <user> --password <password>
-                         --privatekey <private key> --servercert <server cert> --cert <cert> --datastorename <datastore name> --cleanup <true or false> or --help\n";
+                         --privatekey <private key> --servercert <server cert> --cert <cert> --clname <content library name> 
+                         --datastorename <datastore name> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
       print
 "library_crud.pl --server <server> --username <user> --password <password> \n";
       print
-"               --privatekey <private key> --servercert <server cert> --cert <cert> --datastorename <datastore name> --cleanup <true or false>\n";
+"               --privatekey <private key> --servercert <server cert> --cert <cert> --clname <content library name> --datastorename <datastore name> --cleanup <true or false>\n";
       exit;
    }
 
@@ -100,9 +101,12 @@ sub init {
       print $mandatory_params_list;
       exit;
    }
+   
+   if ( defined( $params{'clname'} ) ) {
+        $lib_name = $params{'clname'};
+    }
 
    $datastore_name = $params{'datastorename'};
-
    $sampleBase  = new Common::SampleBase( 'params' => \%params );
    $stubConfig  = $sampleBase->{'stub_config'};
    $stubFactory = $sampleBase->{'stub_factory'};
