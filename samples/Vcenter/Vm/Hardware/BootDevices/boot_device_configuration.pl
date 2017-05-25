@@ -51,6 +51,7 @@ use Com::Vmware::Vcenter::Vm::Hardware::Disk;
 use Com::Vmware::Vcenter::Vm::Hardware::Ethernet;
 use Com::Vmware::Vcenter::Vm::Hardware::Floppy;
 use Com::Vmware::Vcenter::Vm::Hardware::Memory;
+use Com::Vmware::Vcenter::Vm::Hardware::Parallel;
 use Com::Vmware::Vcenter::Vm::Power;
 
 # Set the logger level
