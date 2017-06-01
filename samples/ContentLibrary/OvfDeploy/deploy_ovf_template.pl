@@ -67,7 +67,7 @@ my (
 
 # Declare the mandatory parameter list
 my @required_options = (
-   'username',    'password',        'server',
+   'username', 'password', 'server',
    'clustername', 'libraryitemname', 'cleanup'
 );
 
@@ -77,12 +77,12 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params,       "server=s",
-      "username=s",
-      "password=s",   "privatekey:s",
+      \%params, "server=s",
+      "username=s", "vmname:s",
+      "password=s", "privatekey:s",
       "servercert:s", "cert:s",
       "clustername:s", "libraryitemname:s", "mgmtnode:s",
-      "cleanup:s",     "help:s"
+      "cleanup:s", "help:s"
      )
 
      or die
@@ -94,7 +94,7 @@ sub init {
       print
 "deploy_ovf_template.pl --server <server> --username <user> --password <password> \n";
       print
-"               --privatekey <private key> --servercert <server cert> --cert <cert> --clustername <cluster name> --libraryitemname <library item name> --cleanup <true or false>\n";
+"               --privatekey <private key> --servercert <server cert> --cert <cert> --clustername <cluster name> --vmname <vm name> --libraryitemname <library item name> --cleanup <true or false>\n";
       exit;
    }
 
@@ -114,6 +114,7 @@ sub init {
 
    $cluster_name      = $params{'clustername'};
    $library_item_name = $params{'libraryitemname'};
+   $vmName            = $params{'vmname'};   
    $sampleBase        = new Common::SampleBase( 'params' => \%params );
    $stubConfig        = $sampleBase->{'stub_config'};
    $stubFactory       = $sampleBase->{'stub_factory'};
