@@ -87,7 +87,7 @@ sub init {
 
      or die
 "\nValid options are --server <server> --username <user> --password <password>
-                         --privatekey <private key> --servercert <server cert> --cert <cert> --clustername <cluster name> --libraryitemname <library item name> --cleanup <true or false> or --help\n";
+                         --privatekey <private key> --servercert <server cert> --cert <cert> --clustername <cluster name> --vmname <vm name> --libraryitemname <library item name> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
       print "\nCommand to execute sample:\n";
