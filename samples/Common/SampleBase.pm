@@ -198,13 +198,18 @@ sub get_datastore_view {
    Util::connect( $ip . '/sdk', $username, $password );
    my $datastore_view = undef;
    if ( defined $datastore_name ) {
-      $datastore_view = Vim::find_entity_view(
+      my $datastore_views = Vim::find_entity_views(
          view_type => 'Datastore',
          filter    => { name => $datastore_name }
       );
+      $datastore_view = $datastore_views->[0];
+      if (scalar(@$datastore_views) > 1){
+         $datastore_view = $datastore_views->[1];
+      }
       if ( !defined($datastore_view) || !defined( $datastore_view->{'name'} ) )
       {
-         die "\nCould not find datastore '" . $datastore_name . "' ..";
+         log_info( MSG => "\nCould not find datastore '" . $datastore_name . "' ..");
+         exit;
       }
    }
    else {
