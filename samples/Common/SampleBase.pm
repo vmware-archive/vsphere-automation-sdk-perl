@@ -99,6 +99,9 @@ sub new {
 sub get_mgmt_node {
    my %args           = @_;
    my $lookup_service = $args{'lookup_service'};
+   if (defined $args{'mgmt_node'}){
+      $mgmtnode = $args{'mgmt_node'};
+   }
 
    # Get all management nodes available on server
    my %mgmt_nodes = $lookup_service->find_vim_urls();
@@ -125,6 +128,7 @@ sub get_mgmt_node {
       if ( grep $_ eq $mgmtnode, @temp_node_array ) {
          $ip     = 'https://' . $mgmtnode;
          $ls_url = 'https://' . $mgmtnode . '/lookupservice/sdk';
+         return $ip;
       }
       else {
          log_info( MSG => "Not found management node <"
@@ -133,6 +137,7 @@ sub get_mgmt_node {
          exit;
       }
    }
+   return undef;
 }
 
 #
