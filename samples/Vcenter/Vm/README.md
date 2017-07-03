@@ -5,6 +5,7 @@ This directory contains samples for vCenter virtual machine APIs:
     * Create a basic virtual machine                            - Create/BasicVM/basic_vm.pl
     * Create a exhaustive virtual machine                       - Create/ExhaustiveVM/exhaustive_vm.pl
     * Demonstrates how to get list of VMs present in vCenter    - list_vms.pl
+    * Demonstrates how to delete user specified VM in vCenter   - delete_vm.pl
 
 2. Virtual machine power lifecycle (requires an existing virtual machine):
     * Manage virtual machine power state                        - power_life_cycle.pl
