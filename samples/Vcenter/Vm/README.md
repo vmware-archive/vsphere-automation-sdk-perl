@@ -18,6 +18,7 @@ This directory contains samples for vCenter virtual machine APIs:
     * Configure CD-ROM devices for a virtual machine            - Hardware/Cdrom/cdrom_configuration.pl
     * Configure CPU settings for a virtual machine              - Hardware/Cpu/cpu_configuration.pl
     * Configure virtual ethernet adapters of a virtual machine  - Hardware/Ethernet/ethernet_configuration.pl
+    * Configure Floppy settings for a virtual machine           - Hardware/Floppy/floppy_configuration.pl
     * Configure Memory settings of a virtual machine            - Hardware/Memory/memory_configuration.pl
     
    
