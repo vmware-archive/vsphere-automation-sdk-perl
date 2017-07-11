@@ -56,6 +56,7 @@ The version 6.5 SDK enables programmatic access to the following services:
   ppm install Crypt::OpenSSL:RSA
   ppm install Exception::Class
   ppm install Crypt::X509
+  ppm install Data::Compare
 ```
 
 3. Download and install the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.exe) from (https://code.vmware.com/web/sdk/65/vsphere-perl).
@@ -73,7 +74,8 @@ yum install perl-XML-LibXML libncurses.so.5 perl-Crypt-SSLeay perl-Time-Piece
 
 2. $rm -rf /usr/lib64/perl5/auto/Crypt/OpenSSL/RSA/RSA.so
 3. perl -MCPAN -e 'install Crypt::OpenSSL::RSA'
-4. Download the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://code.vmware.com/web/sdk/65/vsphere-perl) and follow below mentioned steps to install.
+4. perl -MCPAN -e 'install Data::Compare'
+5. Download the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://code.vmware.com/web/sdk/65/vsphere-perl) and follow below mentioned steps to install.
 
 ```cmd
 Untar the vSphere SDK for Perl 6.5 binary that you downloaded.
@@ -95,7 +97,7 @@ Specify an installation directory, or press Enter to accept the default, which i
 yast -i openssl-devel libuuid-devel libuuid-devel-32bit e2fsprogs-devel
 ```
 
-2. Need to download modules LWP::Protocol::https-6.06 and Net::Https 6.06 from CPAN site (http://search.cpan.org/) and follow below mentioned steps:
+2. Need to download modules Data::Compare, LWP::Protocol::https-6.06 and Net::Https 6.06 from CPAN site (http://search.cpan.org/) and follow below mentioned steps:
 
 ```cmd
 $tar -zxvf downloaded_module.tar.gz
@@ -125,10 +127,10 @@ Specify an installation directory, or press Enter to accept the default, which i
 
 ```cmd
 For Ubuntu-15.10 64 bits-
-$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev perl libssl-dev perldoc libxml-libxml-perl libcrypt-ssleay-perl libsoap-lite-perl
+$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev perl libssl-dev perldoc libxml-libxml-perl libcrypt-ssleay-perl libdata-compare-perl libsoap-lite-perl
 
 For Ubuntu-16.04 64 bits-
-$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev libssl-dev perl-doc libxml-libxml-perl libcrypt-ssleay-perl libsoap-lite-perl libmodule-build-perl
+$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev libssl-dev perl-doc libxml-libxml-perl libcrypt-ssleay-perl libsoap-lite-perl libdata-compare-perl libmodule-build-perl
 ```
 
 2. Download the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://code.vmware.com/web/sdk/65/vsphere-perl) and follow below mentioned steps to install.

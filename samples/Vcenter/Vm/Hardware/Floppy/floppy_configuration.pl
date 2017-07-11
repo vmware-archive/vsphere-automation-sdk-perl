@@ -34,7 +34,6 @@ use Com::Vmware::Vapi::Util::Logger
 # Sample helper module
 #
 use Common::SampleBase;
-use Common::Vim::Inventory;
 use Vcenter::Helpers::VmHelper;
 
 #
