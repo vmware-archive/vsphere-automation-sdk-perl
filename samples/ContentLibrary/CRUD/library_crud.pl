@@ -126,7 +126,7 @@ sub run {
    }
 
    my $datastore_view =
-     $sampleBase->get_datastore_view( 'datastore_name' => $datastore_name );
+     Common::SampleBase::get_datastore_view( 'datastore_name' => $datastore_name );
    my $datastore_moref = $datastore_view->{'mo_ref'};
 
    if ($datastore_moref) {

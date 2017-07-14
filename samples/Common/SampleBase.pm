@@ -192,7 +192,7 @@ sub get_cluster_view {
 # @return datastore's view
 #
 sub get_datastore_view {
-   my ( $self, %args ) = @_;
+   my ( %args ) = @_;
    my $datastore_name = $args{'datastore_name'};
 
    #
