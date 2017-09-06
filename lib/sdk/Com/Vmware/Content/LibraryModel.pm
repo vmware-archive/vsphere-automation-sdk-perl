@@ -300,9 +300,7 @@ sub set_storage_backings {
 # The type (LOCAL, SUBSCRIBED) of this library. <p>
 # 
 # This value can be used to determine what additional services and information can be
-#     available for this library. This  *field*  is not used for the  ``create``  and 
-#     ``update``   *methods* . It will always be present in the result of a  ``get``  
-#     *method* .</p>
+#     available for this library.</p>
 #
 # optional#
 sub get_type {
@@ -317,9 +315,7 @@ sub get_type {
 # The type (LOCAL, SUBSCRIBED) of this library. <p>
 # 
 # This value can be used to determine what additional services and information can be
-#     available for this library. This  *field*  is not used for the  ``create``  and 
-#     ``update``   *methods* . It will always be present in the result of a  ``get``  
-#     *method* .</p>
+#     available for this library.</p>
 #
 sub set_type {
    my ($self, %args) = @_;

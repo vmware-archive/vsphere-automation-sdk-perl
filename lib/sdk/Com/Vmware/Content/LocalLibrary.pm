@@ -199,13 +199,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library specified by  ``library_id``  does not exist.
 #
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the library specified by  ``library_id``  is a published library with JSON
-#     persistence enabled (see 
-#     :attr:`Com::Vmware::Content::Library::PublishInfo.persist_json_enabled` ) and the
-#     content of the library has been deleted from the storage backings (see 
-#     :attr:`Com::Vmware::Content::LibraryModel.storage_backings` ) associated with it.
-#
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library specified by  ``library_id``  is not a local library.
 #
@@ -214,9 +207,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 # if the  :attr:`Com::Vmware::Content::LibraryModel.version`  of  ``update_spec``  is
 #     not equal to the current version of the library.
-# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
-# if the  :attr:`Com::Vmware::Content::Library::PublishInfo.current_password`  in the 
-#     ``update_spec``  does not match the existing password of the published library.
 #
 
 sub update {

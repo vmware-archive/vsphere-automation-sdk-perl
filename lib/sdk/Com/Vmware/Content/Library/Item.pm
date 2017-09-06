@@ -121,13 +121,6 @@ sub new {
 # if the copy operation failed because the source or destination library item is not
 #     accessible.
 #
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the content of the source library item specified by  ``source_library_item_id`` ,
-#     or the content of the target library specified by the library ID (see 
-#     :attr:`Com::Vmware::Content::Library::ItemModel.library_id` ) property of 
-#     ``destination_create_spec``  has been deleted from the storage backings (see null)
-#     associated with it.
-#
 
 sub copy {
    my ($self, %args) = @_;
@@ -186,12 +179,6 @@ sub copy {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 # if the  :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  property of 
 #     ``destinationCreateSpec``  refers to a subscribed library.
-#
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the content of the library specified by the library ID (see 
-#     :attr:`Com::Vmware::Content::Library::ItemModel.library_id` ) property of 
-#     ``create_spec``  has been deleted from the storage backings (see null) associated with
-#     it.
 #
 
 sub create {
@@ -369,12 +356,6 @@ sub find {
 #  <li>description exceeds 1024 characters</li>
 #  <li>version is not equal to the current version of the library item</li>
 #  </ul>
-#
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the library item belongs to a published library with JSON persistence enabled (see 
-#     :attr:`Com::Vmware::Content::Library::PublishInfo.persist_json_enabled` ) and the
-#     content of the library item specified by  ``library_item_id``  has been deleted from
-#     the storage backings (see null) associated with it.
 #
 
 sub update {

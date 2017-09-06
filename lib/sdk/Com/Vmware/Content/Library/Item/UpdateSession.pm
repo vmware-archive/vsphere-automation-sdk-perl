@@ -283,9 +283,8 @@ sub keep_alive {
 
 
 ## @method cancel ()
-# Cancels the update session and sets its state to 
-# :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel::State.CANCELED` . This 
-# *method*  will free up any temporary resources currently associated with the session. <p>
+# Cancels the update session and deletes it. This  *method*  will free up any temporary
+# resources currently associated with the session. <p>
 # 
 #  This  *method*  is not allowed if the session has been already completed. </p>
 # 

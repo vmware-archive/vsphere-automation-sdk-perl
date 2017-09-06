@@ -158,10 +158,6 @@ sub validate {
 #     requested for a file or datastore source endpoint (that is, not HTTP or HTTPs based
 #     endpoint).
 #
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the content of the library item associated with the update session has been deleted
-#     from the storage backings (see null) associated with it.
-#
 
 sub add {
    my ($self, %args) = @_;

@@ -157,16 +157,7 @@ sub delete {
 #  if the library specified by  ``library_id``  is not a subscribed library.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the library specified by  ``library_id``  does not synchronize on-demand, or if the
-#     content of the library specified by  ``library_id``  has been deleted from the storage
-#     backings (see  :attr:`Com::Vmware::Content::LibraryModel.storage_backings` )
-#     associated with it. <p>
-# 
-# For instance, this {@term error) is reported on evicting an on-demand subscribed
-#     library that was restored from backup, and the library was deleted after the backup
-#     was taken, thus resulting in its content being deleted from the associated storage
-#     backings. In this scenario, the metadata of the library is present on a restore, while
-#     its content has been deleted.</p>
+#  if the library specified by  ``library_id``  does not synchronize on-demand.
 #
 
 sub evict {
@@ -249,17 +240,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library specified by  ``library_id``  is not a subscribed library.
 #
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the content of the library specified by  ``library_id``  has been deleted from the
-#     storage backings (see  :attr:`Com::Vmware::Content::LibraryModel.storage_backings` )
-#     associated with it. <p>
-# 
-# For instance, this {@term error) is reported on synchronizing a subscribed library
-#     that was restored from backup, and the library was deleted after the backup was taken,
-#     thus resulting in its content being deleted from the associated storage backings. In
-#     this scenario, the metadata of the library is present on a restore, while its content
-#     has been deleted.</p>
-#
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if some parameter in the subscribed library subscription info is invalid.
 #
@@ -295,13 +275,6 @@ sub sync {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library specified by  ``library_id``  does not exist.
-#
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the  ``update_spec``  updates the subscription URL (see 
-#     :attr:`Com::Vmware::Content::Library::SubscriptionInfo.subscription_url` ) and the
-#     content of the library specified by  ``library_id``  has been deleted from the storage
-#     backings (see  :attr:`Com::Vmware::Content::LibraryModel.storage_backings` )
-#     associated with it.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library specified by  ``library_id``  is not a subscribed library.

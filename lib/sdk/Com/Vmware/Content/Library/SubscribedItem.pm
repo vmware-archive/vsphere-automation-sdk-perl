@@ -82,16 +82,6 @@ sub new {
 # if the library item specified by  ``library_item_id``  is a member of a subscribed
 #     library that does not synchronize on-demand.
 #
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the content of the library item specified by  ``library_item_id``  has been deleted
-#     from the storage backings (see null) associated with it. <p>
-# 
-# For instance, this {@term error) is reported on evicting a library item in an
-#     on-demand subscribed library that was restored from backup, and the library item was
-#     deleted after backup, thus resulting in its content being deleted from the associated
-#     storage backings. In this scenario, the metadata of the library item is present on a
-#     restore, while its content has been deleted.</p>
-#
 
 sub evict {
    my ($self, %args) = @_;
@@ -147,16 +137,6 @@ sub evict {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 # if the library item specified by  ``library_item_id``  is not a member of a subscribed
 #     library.
-#
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the content of the library item specified by  ``library_item_id``  has been deleted
-#     from the storage backings (see null) associated with it. <p>
-# 
-# For instance, this {@term error) is reported on synchronizing a library item in a
-#     subscribed library that was restored from backup, and the library item was deleted
-#     after backup, thus resulting in its content being deleted from the associated storage
-#     backings. In this scenario, the metadata of the library item is present on a restore,
-#     while its content has been deleted.</p>
 #
 
 sub sync {

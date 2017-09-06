@@ -2,7 +2,7 @@
 # Copyright (C) 2013 - 2014 VMware, Inc.
 ########################################################################
 
-## @file ActivationStub.pm
+## @file ShellStub.pm
 # Auto generated vAPI skeleton file.
 # DO NOT MODIFY!
 #
@@ -10,12 +10,12 @@
 
 #use Com::Vmware::Vapi::Std::Errors;
 
-package Com::Vmware::Vapi::Vcenter::ActivationStub;
+package Com::Vmware::Appliance::Access::ShellStub;
 
-## @class Com::Vmware::Vapi::Vcenter::Activation
+## @class Com::Vmware::Appliance::Access::Shell
 #
-#The {@name Activation} {@term service} provides {@term operations} for
-#tasks cancelation.
+#{@name Shell} {@term service} provides {@term operations}
+#Get/Set enabled state of BASH.
 #
 
 #
@@ -68,42 +68,61 @@ sub new
    my $api_provider = $args {api_provider};
    $class = ref($class) || $class;
       #
-   # properties for cancel operation
+   # properties for set operation
    #
-   my $cancel_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+   my $set_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
       'name' => 'operation-input',
       'fields' => {
-                   'activation_id' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                   'config' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Access', 'type_name' => 'Shell::ShellConfig'),
       }
    );
-   my $cancel_error_dict = {
-      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
-      'com.vmware.vapi.std.errors.not_allowed_in_current_state' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotAllowedInCurrentState'),
-      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
-      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
-      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+   my $set_error_dict = {
+      'com.vmware.vapi.std.errors.error' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Error'),
 
       };
 
-   my $cancel_input_validator_list = [
+   my $set_input_validator_list = [
    ];
-   my $cancel_output_validator_list = [];
+   my $set_output_validator_list = [];
+
+   #
+   # properties for get operation
+   #
+   my $get_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {}
+   );
+   my $get_error_dict = {
+      'com.vmware.vapi.std.errors.error' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Error'),
+
+      };
+
+   my $get_input_validator_list = [
+   ];
+   my $get_output_validator_list = [];
 
    #
    # All the methods (operations) info in a hash
    #
    my $operations = {
-      'cancel' => {
-                'input_type'=> $cancel_input_type,
+      'set' => {
+                'input_type'=> $set_input_type,
                 'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
-                'errors'=> $cancel_error_dict,
-                'input_validator_list'=> $cancel_input_validator_list,
-                'output_validator_list'=> $cancel_output_validator_list,
+                'errors'=> $set_error_dict,
+                'input_validator_list'=> $set_input_validator_list,
+                'output_validator_list'=> $set_output_validator_list,
+            },
+      'get' => {
+                'input_type'=> $get_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Access', 'type_name' => 'Shell::ShellConfig'),
+                'errors'=> $get_error_dict,
+                'input_validator_list'=> $get_input_validator_list,
+                'output_validator_list'=> $get_output_validator_list,
             },
    };
 
    my $self = $class->SUPER::new ('api_provider' => $api_provider,
-                                  'iface_name' => 'com.vmware.vapi.vcenter.activation',
+                                  'iface_name' => 'com.vmware.appliance.access.shell',
                                   'operations' => $operations
                                  );
    bless $self, $class;

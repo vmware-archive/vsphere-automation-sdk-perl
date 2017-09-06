@@ -2,7 +2,7 @@
 # Copyright (C) 2013 - 2014 VMware, Inc.
 ########################################################################
 
-## @file Activation.pm
+## @file Domains.pm
 # Auto generated vAPI skeleton file.
 # DO NOT MODIFY!
 #
@@ -10,12 +10,12 @@
 
 #use Com::Vmware::Vapi::Std::Errors;
 
-## @class Com::Vmware::Vapi::Vcenter::Activation
-# The  ``Com::Vmware::Vapi::Vcenter::Activation``   *interface*  provides  *methods* 
-#     for tasks cancelation.
+## @class Com::Vmware::Appliance::Networking::Dns::Domains
+# ``Com::Vmware::Appliance::Networking::Dns::Domains``   *interface*  provides 
+#     *methods*  DNS search domains.
 #
 
-package Com::Vmware::Vapi::Vcenter::Activation;
+package Com::Vmware::Appliance::Networking::Dns::Domains;
 
 #
 # Core Perl modules
@@ -28,7 +28,7 @@ use Carp;
 # Vapi Perl modules
 #
 use Com::Vmware::Vapi::Bindings::Type::StructType;
-use Com::Vmware::Vapi::Vcenter::ActivationStub;
+use Com::Vmware::Appliance::Networking::Dns::DomainsStub;
 
 #
 # Base class
@@ -57,61 +57,84 @@ sub new {
    return $self;
 }
 
-## @method cancel ()
-# Sends a request to cancel the task associated with the provided  ``activation_id`` .
+## @method add ()
+# Add domain to DNS search domains.
 #
-# @param activation_id [REQUIRED]  the  ``activation_id``  associated with a vCenter Server task to be canceled.
-# The value must be an identifier for the resource type
-#     getQualifiedName(com.vmware.Activation).
-# . The value must be str.
+# @param domain [REQUIRED] Domain to add.
+# . The value must be String.
 #
-# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
-#  if a vCenter Server task with the given  ``activation_id``  was not found.
-#
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the vCenter Server task associated with the given  ``activation_id``  is not
-#     cancelable.
-#
-# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-#  if the user is not authorized to cancel the task.
-#
-# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
-#  if the user is not authenticated.
-#
-# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
-# if the task cancelation cannot be performed due to vCenter server is unreachable or it
-#     is not properly configured.
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# Generic error
 #
 
-sub cancel {
+sub add {
    my ($self, %args) = @_;
-   my $activation_id = $args {activation_id};
+   my $domain = $args {domain};
 
-   $self->validate_args (method_name => 'cancel',
+   $self->validate_args (method_name => 'add',
                          method_args => \%args);
    
-   return $self->invoke (method_name => 'cancel',
+   return $self->invoke (method_name => 'add',
                          method_args => \%args);
+}
+
+
+## @method set ()
+# Set DNS search domains.
+#
+# @param domains [REQUIRED] List of domains.
+# . The value must be Array of String.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# Generic error
+#
+
+sub set {
+   my ($self, %args) = @_;
+   my $domains = $args {domains};
+
+   $self->validate_args (method_name => 'set',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'set',
+                         method_args => \%args);
+}
+
+
+## @method list ()
+# Get list of DNS search domains.
+#
+# @retval 
+# List of domains.
+# The return type will be Array of String
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# Generic error
+#
+
+sub list {
+   my ($self, %args) = @_;
+   return $self->invoke(method_name => 'list', method_args =>  {});
 }
 
 
 1;
 
 #########################################################################################
-# Begins enumerations for the Com::Vmware::Vapi::Vcenter::Activation service
+# Begins enumerations for the Com::Vmware::Appliance::Networking::Dns::Domains service
 #########################################################################################
 
 
 
 #########################################################################################
-# Ends enumerations for the Com::Vmware::Vapi::Vcenter::Activation service
+# Ends enumerations for the Com::Vmware::Appliance::Networking::Dns::Domains service
 #########################################################################################
 
 #########################################################################################
-# Begins structures for the Com::Vmware::Vapi::Vcenter::Activation service
+# Begins structures for the Com::Vmware::Appliance::Networking::Dns::Domains service
 #########################################################################################
 
 
 #########################################################################################
-# Ends structures for the Com::Vmware::Vapi::Vcenter::Activation service
+# Ends structures for the Com::Vmware::Appliance::Networking::Dns::Domains service
 #########################################################################################

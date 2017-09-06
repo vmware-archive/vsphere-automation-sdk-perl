@@ -175,9 +175,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-# if the virtual machine is running (powered on).
-#
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if the virtual machine is not found.
 #

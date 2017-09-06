@@ -431,9 +431,6 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::DARWIN_16_64 #
 #Mac OS 10.12 (64 bit)
 #
-# Constant Com::Vmware::Vcenter::Vm::GuestOS::DARWIN_17_64 #
-#Mac OS 10.13 (64 bit)
-#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::VMKERNEL #
 #VMware ESX 4
 #
@@ -597,7 +594,6 @@ use constant {
     DARWIN_14_64 =>  'DARWIN_14_64',
     DARWIN_15_64 =>  'DARWIN_15_64',
     DARWIN_16_64 =>  'DARWIN_16_64',
-    DARWIN_17_64 =>  'DARWIN_17_64',
     VMKERNEL =>  'VMKERNEL',
     VMKERNEL_5 =>  'VMKERNEL_5',
     VMKERNEL_6 =>  'VMKERNEL_6',

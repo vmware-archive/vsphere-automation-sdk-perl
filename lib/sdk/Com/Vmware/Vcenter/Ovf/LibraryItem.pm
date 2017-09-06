@@ -954,7 +954,7 @@ sub set_provisioning {
 #
 # The  ``Com::Vmware::Vcenter::Ovf::LibraryItem::StorageGroupMapping::Type``  
 #     *enumerated type*  defines the supported types of storage targets for sections of type
-#     vmw:StorageGroupSection in the OVF descriptor.
+#     vmw:StroageGroupSection in the OVF descriptor.
 #
 #
 #
