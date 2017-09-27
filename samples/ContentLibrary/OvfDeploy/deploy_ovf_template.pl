@@ -56,15 +56,16 @@ set_verbosity( 'level' => 3 );
 
 # Initialize the global variable
 my (
-   %params,  $sampleBase,  $vmName,     $cluster_name,
-   $client,  $stubFactory, $stubConfig, $library_item_name,
-   $vmMoRef, $vm_views
+   %params,       $sampleBase,        $vmName,
+   $cluster_name, $client,            $stubFactory,
+   $stubConfig,   $library_item_name, $vmId,
+   $vm_power_service,  $vm_service
 ) = ();
 
 # Declare the mandatory parameter list
 my @required_options = (
-   'username', 'password', 'server',
-   'clustername', 'libraryitemname', 'cleanup'
+   'server',          'username', 'password', 'clustername',
+   'libraryitemname', 'cleanup'
 );
 
 sub init {
@@ -73,25 +74,20 @@ sub init {
    # User inputs
    #
    GetOptions(
-      \%params, "server=s",
-      "username=s", "vmname:s",
-      "password=s", "privatekey:s",
-      "servercert:s", "cert:s",
-      "clustername:s", "libraryitemname:s", "mgmtnode:s",
-      "cleanup:s", "help:s"
+      \%params,            "server=s",
+      "username=s",        "password=s",
+      "privatekey:s",      "cert:s",
+      "clustername:s",     "libraryitemname:s",
+      "mgmtnode:s",        "cleanup:s",
+      "vmname:s",          "help:s"
      )
 
      or die
 "\nValid options are --server <server> --username <user> --password <password>
-                         --privatekey <private key> --servercert <server cert> --cert <cert> --clustername <cluster name> --vmname <vm name> --libraryitemname <library item name> --cleanup <true or false> or --help\n";
+                         --privatekey <private key> --cert <cert> --mgmtnode <management node> --clustername <cluster name> --libraryitemname <library item name> --vmname <vm name> --cleanup <true or false> or --help\n";
 
    if ( defined( $params{'help'} ) ) {
-      print "\nCommand to execute sample:\n";
-      print
-"deploy_ovf_template.pl --server <server> --username <user> --password <password> \n";
-      print
-"               --privatekey <private key> --servercert <server cert> --cert <cert> --clustername <cluster name> --vmname <vm name> --libraryitemname <library item name> --cleanup <true or false>\n";
-      exit;
+      getUsage();
    }
 
    my $mandatory_params_list = 'Missing mandatory parameter(s) i.e. ';
@@ -104,13 +100,14 @@ sub init {
       }
    }
    if ( $flag == 1 ) {
+      $mandatory_params_list =~ s/, $//;
       print $mandatory_params_list;
       exit;
    }
 
    $cluster_name      = $params{'clustername'};
    $library_item_name = $params{'libraryitemname'};
-   $vmName            = $params{'vmname'};   
+   $vmName            = $params{'vmname'};
    $sampleBase        = new Common::SampleBase( 'params' => \%params );
    $stubConfig        = $sampleBase->{'stub_config'};
    $stubFactory       = $sampleBase->{'stub_factory'};
@@ -119,6 +116,22 @@ sub init {
 sub setup {
    $client = new ContentLibrary::Client::ClsApiClient(
       'stub_factory' => $stubFactory,
+      'stub_config'  => $stubConfig
+   );
+
+   #
+   # Get the vm power Service
+   #
+   $vm_power_service = $stubFactory->create_stub(
+      'service_name' => 'Com::Vmware::Vcenter::Vm::Power',
+      'stub_config'  => $stubConfig
+   );
+
+   #
+   # Get the VM Service
+   #
+   $vm_service = $stubFactory->create_stub(
+      'service_name' => 'Com::Vmware::Vcenter::VM',
       'stub_config'  => $stubConfig
    );
 
@@ -160,7 +173,7 @@ sub run {
    # Deploy a VM from the library item on the given cluster
    log_info( MSG => "Deploying Vm : " . $vmName );
 
-   my $vmId = deployVMFromOvfItem(
+   $vmId = deployVMFromOvfItem(
       'respool_moref' => $respool_moref,
       'vm_name'       => $vmName,
       'item_id'       => $itemId
@@ -169,29 +182,21 @@ sub run {
       log_info( MSG => "Vm created : " . $vmId );
    }
 
-   # Power on the VM and wait for the power on operation to complete
-   $vmMoRef = ManagedObjectReference->new(
-      type  => 'VirtualMachine',
-      value => $vmId
-   );
-   $vm_views = Vim::find_entity_views(
-      view_type => 'VirtualMachine',
-      filter    => { 'config.name' => $vmName }
-   );
-   &poweron_vm();
+   # Power on the VM
+   $vm_power_service->start( 'vm' => $vmId );
 }
 
 #
 # Cleanup any data created by the sample run, if cleanup=true
 #
 sub cleanup() {
-   if ( defined($vmMoRef) ) {
+   if ( defined($vmId) ) {
 
-      # Power off the VM and wait for the power off operation to complete
-      &poweroff_vm();
+      # Powers off a powered-on or suspended virtual machine
+      $vm_power_service->stop( 'vm' => $vmId );
 
       # Delete the VM
-      &vmdelete();
+      $vm_service->delete( 'vm' => $vmId );
    }
 }
 
@@ -221,7 +226,7 @@ sub deployVMFromOvfItem {
    $deploymentSpec->set_name( 'name' => $vmName );
    $deploymentSpec->set_accept_all_EULA( 'accept_all_EULA' => 1 );
 
-# Retrieve the library items OVF information and use it for populating deployment spec.
+   # Retrieve the library items OVF information and use it for populating deployment spec.
    my $library_item_service = $client->get_library_item_service();
 
    my $ovfSummary = $library_item_service->filter(
@@ -234,7 +239,6 @@ sub deployVMFromOvfItem {
       'annotation' => $ovfSummary->get_annotation() );
 
    # Calling the deploy and getting the deployment result.
-   use ContentLibrary::Helpers::ClsApiHelper;
    my $uuid = ContentLibrary::Helpers::ClsApiHelper::generate_uuid();
 
    my $deploymentResult = $library_item_service->deploy(
@@ -251,126 +255,29 @@ sub deployVMFromOvfItem {
    }
 }
 
-# This is required to delete the VM
-sub vmdelete() {
-   if ( !@$vm_views ) {
-      Util::trace( 0,
-         "\nThere is no virtual machine with name '$vmName' registered\n" );
-      return;
-   }
-   foreach (@$vm_views) {
-      my $mor_host = $_->runtime->host;
-      my $hostname = Vim::get_view( mo_ref => $mor_host )->name;
-      eval {
-         $_->Destroy();
-         Util::trace( 0,
-                "\nDeletion of VM '$vmName' successfully"
-              . " completed under host $hostname." );
-      };
-      if ($@) {
-         if ( ref($@) eq 'SoapFault' ) {
-            if ( ref( $@->detail ) eq 'InvalidPowerState' ) {
-               Util::trace( 0,
-                      "\nVM '$vmName' under host $hostname must be powered off"
-                    . " for this operation\n" );
-            }
-            elsif ( ref( $@->detail ) eq 'HostNotConnected' ) {
-               Util::trace( 0,
-                      "\nUnable to communicate with the remote host,"
-                    . " since it is disconnected\n" );
-            }
-            else {
-               Util::trace( 0, "\nFault: " . $@ . "\n" );
-            }
-         }
-         else {
-            Util::trace( 0, "\nFault: " . $@ . "\n" );
-         }
-      }
-   }
-}
+#
+# Prints sample usage
+#
+sub getUsage{
+   print "\nUsage:\n";
+   print "deploy_ovf_template.pl --server <server> --username <user> --password <password> --mgmtnode <management node> --clustername <cluster name>\n";
+   print "                                --libraryitemname <library item name> --vmname<vm name> --privatekey <private key> --cert <cert> --cleanup <true or false>\n";
+   print "Sample Options:\n\n";
 
-sub poweron_vm {
-   foreach (@$vm_views) {
-      my $mor_host = $_->runtime->host;
-      my $hostname = Vim::get_view( mo_ref => $mor_host )->name;
-      eval {
-         $_->PowerOnVM();
-         Util::trace( 0,
-                "\nvirtual machine '"
-              . $_->name
-              . "' under host $hostname powered on." );
-      };
-      if ($@) {
-         if ( ref($@) eq 'SoapFault' ) {
-            Util::trace( 0,
-               "\nError in '" . $_->name . "' under host $hostname: " );
-            if ( ref( $@->detail ) eq 'NotSupported' ) {
-               Util::trace( 0, "Virtual machine is marked as a template " );
-            }
-            elsif ( ref( $@->detail ) eq 'InvalidPowerState' ) {
-               Util::trace( 0,
-                      "The attempted operation"
-                    . " cannot be performed in the current state" );
-            }
-            elsif ( ref( $@->detail ) eq 'InvalidState' ) {
-               Util::trace( 0,
-                      "Current State of the "
-                    . " virtual machine is not supported for this operation" );
-            }
-            else {
-               Util::trace( 0,
-                  "VM '" . $_->name . "' can't be powered on \n" . $@ . "" );
-            }
-         }
-         else {
-            Util::trace( 0,
-               "VM '" . $_->name . "' can't be powered on \n" . $@ . "" );
-         }
-      }
-   }
-}
-
-sub poweroff_vm {
-   foreach (@$vm_views) {
-      my $mor_host = $_->runtime->host;
-      my $hostname = Vim::get_view( mo_ref => $mor_host )->name;
-      eval {
-         $_->PowerOffVM();
-         Util::trace( 0,
-                "\nvirtual machine '"
-              . $_->name
-              . "' under host $hostname powered off. " );
-      };
-
-      if ($@) {
-         if ( ref($@) eq 'SoapFault' ) {
-            Util::trace( 0,
-               "\nError in '" . $_->name . "' under host $hostname: " );
-            if ( ref( $@->detail ) eq 'InvalidPowerState' ) {
-               Util::trace( 0,
-                      "The attempted operation"
-                    . " cannot be performed in the current state" );
-            }
-            elsif ( ref( $@->detail ) eq 'InvalidState' ) {
-               Util::trace( 0,
-                      "Current State of the"
-                    . " virtual machine is not supported for this operation" );
-            }
-            elsif ( ref( $@->detail ) eq 'NotSupported' ) {
-               Util::trace( 0, "Virtual machine is marked as template" );
-            }
-            else {
-               Util::trace( 0,
-                  "VM '" . $_->name . "' can't be powered off \n" . $@ . "" );
-            }
-         }
-         else {
-            Util::trace( 0,
-               "VM '" . $_->name . "' can't be powered off \n" . $@ . "" );
-         }
-      }
-   }
+   print "  --server                      Hostname of vCenter Server\n";
+   print "  --username                    Username to login to vCenter Server\n";
+   print "  --password                    Password to login to vCenter Server\n";
+   print "  --mgmtnode                    It is mandatory parameter if your VC setup has multiple Nodes\n";
+   print "                                It can take only Node's host name. IP address is not allowed\n";
+   print "  --clustername                 The name of cluster to be used\n";
+   print "  --libraryitemname             The name of the library item to deploy. The library item should contain an OVF package.\n";
+   print "  --vmname                      The name of VM\n";
+   print "  --privatekey                  OPTIONAL: Private key file\n";
+   print "  --cert                        OPTIONAL: vCenter Server's certificate file\n\n";
+   print "  --cleanup                     Cleanup reverts the data updated by the sample run, if cleanup=true\n";
+   print "  --help                        Display this help screen.\n";
+   print "This is ONLY FOR THE PURPOSE OF DEVELOPMENT ENVIRONMENT.";
+   exit;
 }
 
 #
