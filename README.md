@@ -178,6 +178,8 @@ following:
         +sdk
         +README.md
     +samples
+    +sample-template
+    +CONTRIBUTING.md
     +README.md
     +LICENSE
 
