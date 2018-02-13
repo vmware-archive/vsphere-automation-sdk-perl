@@ -136,12 +136,11 @@ sub loginBySamlBearerToken {
    log_info( MSG => $sso_url );
 
    log_info( MSG => "Getting the SSO token..." );
-   my $ssoConnection = new SSOConnection( 'sso_url' => $sso_url );
-   $ssoConnection->login(
+   my $ssoConnection = new VMware::SSOConnection( 'sso_url' => $sso_url );
+   $ssoConnection->get_bearer_saml_token(
       'user_name'   => $username,
       'password'    => $password,
-      'public_key'  => $cert,
-      'private_key' => $private_key
+      'cert'        => $cert
    );
    my $token = $ssoConnection->get_token();
 

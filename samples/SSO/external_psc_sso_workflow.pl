@@ -106,12 +106,10 @@ sub init {
    log_info( MSG =>
 "Step 3: Connect to the Single Sign-On URL and retrieve the SAML bearer token."
    );
-   my $ssoConnection = new SSOConnection( 'sso_url' => $sso_url );
-   $ssoConnection->login(
+   my $ssoConnection = new VMware::SSOConnection( 'sso_url' => $sso_url );
+   $ssoConnection->get_bearer_saml_token(
       'user_name'   => $params{'username'},
-      'password'    => $params{'password'},
-      'public_key'  => $params{'cert'},
-      'private_key' => $params{'privatekey'}
+      'password'    => $params{'password'}
    );
    my $token = $ssoConnection->get_token();
 
