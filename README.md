@@ -53,13 +53,14 @@ The version 6.5 SDK enables programmatic access to the following services:
 ```cmd
   ppm install XML::LibXML
   ppm install UUID::Random
-  ppm install Crypt::OpenSSL::RSA
+  ppm install Crypt::OpenSSL:RSA
   ppm install Exception::Class
   ppm install Crypt::X509
   ppm install Data::Compare
 ```
 
 3. Download and install the vSphere SDK for Perl 6.5 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.exe) from (https://code.vmware.com/web/sdk/65/vsphere-perl).
+4. Need to copy python27.dll from vSphere_SDK_install_directory/bin to vSphere_SDK_install_directory/Perl/lib/VMware.
 
 **In case of RHEL platform-**
 
