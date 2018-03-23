@@ -53,7 +53,7 @@ The version 6.5 SDK enables programmatic access to the following services:
 ```cmd
   ppm install XML::LibXML
   ppm install UUID::Random
-  ppm install Crypt::OpenSSL:RSA
+  ppm install Crypt::OpenSSL::RSA
   ppm install Exception::Class
   ppm install Crypt::X509
   ppm install Data::Compare
