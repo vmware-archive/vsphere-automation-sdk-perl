@@ -204,7 +204,8 @@ sub get {
 # if the specified storage address is in use.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
-# if the specified storage address is out of bounds.
+# if the specified storage address is out of bounds or if the specified storage policy
+#     is invalid.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceBusy 
 # if the virtual machine is busy performing another operation.
@@ -699,11 +700,13 @@ sub new {
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
    $self->{name} = $args{'name'};
    $self->{capacity} = $args{'capacity'};
+   $self->{storage_policy} = $args{'storage_policy'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Vm::Hardware::Disk::VmdkCreateSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.vm.hardware.disk.vmdk_create_spec');
    $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'capacity', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::LongType()));
+   $self->set_binding_field('key' => 'storage_policy', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm::Hardware', 'type_name' => 'Disk::StoragePolicySpec')));
    bless $self, $class;
    return $self;
 }
@@ -755,6 +758,34 @@ sub get_capacity {
 sub set_capacity {
    my ($self, %args) = @_;
    $self->{'capacity'} = $args{'capacity'}; 
+   return;	
+}
+
+## @method get_storage_policy ()
+# Gets the value of 'storage_policy' property.
+#
+# @retval storage_policy - The current value of the field.
+# The  ``Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec``   *class* 
+#     contains information about the storage policy that is to be associated the with VMDK
+#     file. This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_storage_policy {
+   my ($self, %args) = @_;
+   return $self->{'storage_policy'}; 	
+}
+
+## @method set_storage_policy ()
+# Sets the given value for 'storage_policy' property.
+# 
+# @param storage_policy  - New value for the field.
+# The  ``Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec``   *class* 
+#     contains information about the storage policy that is to be associated the with VMDK
+#     file. This  *field*  was added in vSphere API 6.7
+#
+sub set_storage_policy {
+   my ($self, %args) = @_;
+   $self->{'storage_policy'} = $args{'storage_policy'}; 
    return;	
 }
 
@@ -989,6 +1020,78 @@ sub get_capacity {
 sub set_capacity {
    my ($self, %args) = @_;
    $self->{'capacity'} = $args{'capacity'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec
+#
+#
+# The  ``Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec``   *class* 
+#     contains information about the storage policy be associated with a VMDK file. This 
+#     *class*  was added in vSphere API 6.7
+
+package Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{policy} = $args{'policy'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.vm.hardware.disk.storage_policy_spec');
+   $self->set_binding_field('key' => 'policy', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_policy ()
+# Gets the value of 'policy' property.
+#
+# @retval policy - The current value of the field.
+# Identifier of the storage policy which should be associated with the VMDK file. This 
+#     *field*  was added in vSphere API 6.7
+#
+# ID#
+sub get_policy {
+   my ($self, %args) = @_;
+   return $self->{'policy'}; 	
+}
+
+## @method set_policy ()
+# Sets the given value for 'policy' property.
+# 
+# @param policy  - New value for the field.
+# Identifier of the storage policy which should be associated with the VMDK file. This 
+#     *field*  was added in vSphere API 6.7
+#
+sub set_policy {
+   my ($self, %args) = @_;
+   $self->{'policy'} = $args{'policy'}; 
    return;	
 }
 

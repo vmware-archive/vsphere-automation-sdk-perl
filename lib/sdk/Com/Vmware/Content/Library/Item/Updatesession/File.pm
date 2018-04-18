@@ -83,6 +83,9 @@ sub new {
 # :attr:`Com::Vmware::Content::Library::Item::Updatesession::File::ValidationResult.invalid_files`
 #  will contain the list of invalid files.
 #
+# Note:
+# Privileges required for this operation are System.Anonymous.
+#
 # @param update_session_id [REQUIRED]  Identifier of the update session to validate.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.item.UpdateSession).
@@ -130,6 +133,9 @@ sub validate {
 # instantaneous import of files for efficient backup and restore scenarios. In all other
 # cases, a copy is performed rather than a move.</p>
 #
+# Note:
+# Privileges required for this operation are System.Anonymous.
+#
 # @param update_session_id [REQUIRED]  Identifier of the update session to be modified.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.item.UpdateSession).
@@ -158,6 +164,10 @@ sub validate {
 #     requested for a file or datastore source endpoint (that is, not HTTP or HTTPs based
 #     endpoint).
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the content of the library item associated with the update session has been deleted
+#     from the storage backings (see null) associated with it.
+#
 
 sub add {
    my ($self, %args) = @_;
@@ -175,6 +185,9 @@ sub add {
 ## @method remove ()
 # Requests a file to be removed. The file will only be effectively removed when the update
 # session is completed.
+#
+# Note:
+# Privileges required for this operation are System.Anonymous.
 #
 # @param update_session_id [REQUIRED]  Identifier of the update session.
 # The value must be an identifier for the resource type
@@ -207,6 +220,9 @@ sub remove {
 ## @method list ()
 # Lists all files in the library item associated with the update session.
 #
+# Note:
+# Privileges required for this operation are System.Read, System.Anonymous.
+#
 # @param update_session_id [REQUIRED]  Identifier of the update session.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.item.UpdateSession).
@@ -221,6 +237,11 @@ sub remove {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the update session doesn&apos;t exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``libraryItemId``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {
@@ -239,6 +260,9 @@ sub list {
 # Retrieves information about a specific file in the snapshot of the library item at the
 # time when the update session was created.
 #
+# Note:
+# Privileges required for this operation are System.Read, System.Anonymous.
+#
 # @param update_session_id [REQUIRED]  Identifier of the update session.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.item.UpdateSession).
@@ -256,6 +280,11 @@ sub list {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 # if the file doesn&apos;t exist in the library item associated with the update session.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``libraryItemId``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {

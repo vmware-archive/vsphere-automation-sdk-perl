@@ -257,6 +257,9 @@ sub upgrade {
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_13 #
 #Hardware version 13.
+#
+# Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_14 #
+#Hardware version 14. This  *constant*  was added in vSphere API 6.7
 
 package Com::Vmware::Vcenter::Vm::Hardware::Version;
 
@@ -271,6 +274,7 @@ use constant {
     VMX_11 =>  'VMX_11',
     VMX_12 =>  'VMX_12',
     VMX_13 =>  'VMX_13',
+    VMX_14 =>  'VMX_14',
 };
 
 #

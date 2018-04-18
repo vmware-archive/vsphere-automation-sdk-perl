@@ -15,7 +15,7 @@ package Com::Vmware::Appliance::Health::SystemStub;
 ## @class Com::Vmware::Appliance::Health::System
 #
 #{@name System} {@term service} provides {@term operations}
-#Get overall health of system.
+#Get overall health of the system.
 #
 
 #

@@ -59,10 +59,11 @@ sub new {
 }
 
 ## @method get ()
-# Get information on available software updates available in remote VUM repository. red
-# indicates that security updates are available. orange indicates that non security updates
-# are available. green indicates that there are no updates available. gray indicates that
-# there was an error retreiving information on software updates.
+# Get information on available software updates available in the remote vSphere Update
+# Manager repository. Red indicates that security updates are available. Orange indicates
+# that non-security updates are available. Green indicates that there are no updates
+# available. Gray indicates that there was an error retreiving information on software
+# updates.
 #
 # @retval 
 # software updates available.
@@ -87,12 +88,12 @@ sub get {
 ## @class Com::Vmware::Appliance::Health::Softwarepackages::HealthLevel
 #
 # ``Com::Vmware::Appliance::Health::Softwarepackages::HealthLevel``   *enumerated type* 
-#     Defines health levels
+#     Defines health levels.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Health::Softwarepackages::HealthLevel::ORANGE #
-#The service health is degraded. The service might have serious problems
+#The service health is degraded. The service might have serious problems.
 #
 # Constant Com::Vmware::Appliance::Health::Softwarepackages::HealthLevel::GRAY #
 #No health data is available for this service.
@@ -101,7 +102,7 @@ sub get {
 #Service is healthy.
 #
 # Constant Com::Vmware::Appliance::Health::Softwarepackages::HealthLevel::RED #
-#The service is unavaiable and is not functioning properly or will stop functioning soon.
+#The service is unavaiable, not functioning properly, or will stop functioning soon.
 #
 # Constant Com::Vmware::Appliance::Health::Softwarepackages::HealthLevel::YELLOW #
 #The service is healthy state, but experiencing some levels of problems.

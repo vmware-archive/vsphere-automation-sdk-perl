@@ -58,7 +58,7 @@ sub new {
 }
 
 ## @method cancel ()
-# Cancel the backup job
+# Cancel the restore job
 #
 # @retval 
 # RestoreJobStatus Structure
@@ -185,29 +185,29 @@ sub new {
 #
 #
 #
-# Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::FTPS #
-#Destination is FTPS server
+# Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::FTP #
+#Destination is FTP server
 #
 # Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::HTTP #
 #Destination is HTTP server
 #
-# Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::SCP #
-#Destination is SSH server
+# Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::FTPS #
+#Destination is FTPS server
 #
 # Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::HTTPS #
 #Destination is HTTPS server
 #
-# Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::FTP #
-#Destination is FTP server
+# Constant Com::Vmware::Appliance::Recovery::Restore::Job::LocationType::SCP #
+#Destination is SSH server
 
 package Com::Vmware::Appliance::Recovery::Restore::Job::LocationType;
 
 use constant {
-    FTPS =>  'FTPS',
-    HTTP =>  'HTTP',
-    SCP =>  'SCP',
-    HTTPS =>  'HTTPS',
     FTP =>  'FTP',
+    HTTP =>  'HTTP',
+    FTPS =>  'FTPS',
+    HTTPS =>  'HTTPS',
+    SCP =>  'SCP',
 };
 
 #
@@ -551,6 +551,9 @@ sub new {
    $self->{location} = $args{'location'};
    $self->{location_user} = $args{'location_user'};
    $self->{location_password} = $args{'location_password'};
+   $self->{sso_admin_user_name} = $args{'sso_admin_user_name'};
+   $self->{sso_admin_user_password} = $args{'sso_admin_user_password'};
+   $self->{ignore_warnings} = $args{'ignore_warnings'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Recovery::Restore::Job::RestoreRequest');
    $self->set_binding_name('name' => 'com.vmware.appliance.recovery.restore.job.restore_request');
@@ -559,6 +562,9 @@ sub new {
    $self->set_binding_field('key' => 'location', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'location_user', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'location_password', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SecretType()));
+   $self->set_binding_field('key' => 'sso_admin_user_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'sso_admin_user_password', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SecretType()));
+   $self->set_binding_field('key' => 'ignore_warnings', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
    bless $self, $class;
    return $self;
 }
@@ -680,6 +686,80 @@ sub get_location_password {
 sub set_location_password {
    my ($self, %args) = @_;
    $self->{'location_password'} = $args{'location_password'}; 
+   return;	
+}
+
+## @method get_sso_admin_user_name ()
+# Gets the value of 'sso_admin_user_name' property.
+#
+# @retval sso_admin_user_name - The current value of the field.
+# Administrators Username for SSO. This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_sso_admin_user_name {
+   my ($self, %args) = @_;
+   return $self->{'sso_admin_user_name'}; 	
+}
+
+## @method set_sso_admin_user_name ()
+# Sets the given value for 'sso_admin_user_name' property.
+# 
+# @param sso_admin_user_name  - New value for the field.
+# Administrators Username for SSO. This  *field*  was added in vSphere API 6.7
+#
+sub set_sso_admin_user_name {
+   my ($self, %args) = @_;
+   $self->{'sso_admin_user_name'} = $args{'sso_admin_user_name'}; 
+   return;	
+}
+
+## @method get_sso_admin_user_password ()
+# Gets the value of 'sso_admin_user_password' property.
+#
+# @retval sso_admin_user_password - The current value of the field.
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_sso_admin_user_password {
+   my ($self, %args) = @_;
+   return $self->{'sso_admin_user_password'}; 	
+}
+
+## @method set_sso_admin_user_password ()
+# Sets the given value for 'sso_admin_user_password' property.
+# 
+# @param sso_admin_user_password  - New value for the field.
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+#
+sub set_sso_admin_user_password {
+   my ($self, %args) = @_;
+   $self->{'sso_admin_user_password'} = $args{'sso_admin_user_password'}; 
+   return;	
+}
+
+## @method get_ignore_warnings ()
+# Gets the value of 'ignore_warnings' property.
+#
+# @retval ignore_warnings - The current value of the field.
+# The flag to ignore warnings during restore. This  *field*  was added in vSphere API
+#     6.7
+#
+# Optional#
+sub get_ignore_warnings {
+   my ($self, %args) = @_;
+   return $self->{'ignore_warnings'}; 	
+}
+
+## @method set_ignore_warnings ()
+# Sets the given value for 'ignore_warnings' property.
+# 
+# @param ignore_warnings  - New value for the field.
+# The flag to ignore warnings during restore. This  *field*  was added in vSphere API
+#     6.7
+#
+sub set_ignore_warnings {
+   my ($self, %args) = @_;
+   $self->{'ignore_warnings'} = $args{'ignore_warnings'}; 
    return;	
 }
 

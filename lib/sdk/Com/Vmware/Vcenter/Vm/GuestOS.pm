@@ -108,10 +108,22 @@
 #Windows Hyper-V
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::FREEBSD #
-#FreeBSD
+#FreeBSD 10 or earlier
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::FREEBSD_64 #
-#FreeBSD x64
+#FreeBSD 10 x64 or earlier
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::FREEBSD_11 #
+#FreeBSD 11. This  *constant*  was added in vSphere API 6.7
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::FREEBSD_12 #
+#FreeBSD 12 or later. This  *constant*  was added in vSphere API 6.7
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::FREEBSD_11_64 #
+#FreeBSD 11 x64. This  *constant*  was added in vSphere API 6.7
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::FREEBSD_12_64 #
+#FreeBSD 12 x64 or later. This  *constant*  was added in vSphere API 6.7
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::REDHAT #
 #Red Hat Linux 2.1
@@ -149,6 +161,9 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::RHEL_7_64 #
 #Red Hat Enterprise Linux 7 (64 bit)
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::RHEL_8_64 #
+#Red Hat Enterprise Linux 8 (64 bit). This  *constant*  was added in vSphere API 6.7
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::CENTOS #
 #CentOS 4/5
 #
@@ -167,6 +182,9 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::CENTOS_7_64 #
 #CentOS 7 (64-bit)
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::CENTOS_8_64 #
+#CentOS 8 (64-bit). This  *constant*  was added in vSphere API 6.7
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::ORACLE_LINUX #
 #Oracle Linux 4/5
 #
@@ -184,6 +202,9 @@
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::ORACLE_LINUX_7_64 #
 #Oracle Linux 7 (64-bit)
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::ORACLE_LINUX_8_64 #
+#Oracle Linux 8 (64-bit). This  *constant*  was added in vSphere API 6.7
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::SUSE #
 #Suse Linux
@@ -214,6 +235,9 @@
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::SLES_12_64 #
 #Suse Linux Enterprise Server 12 (64 bit)
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::SLES_15_64 #
+#Suse Linux Enterprise Server 15 (64 bit). This  *constant*  was added in vSphere API 6.7
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::NLD_9 #
 #Novell Linux Desktop 9
@@ -305,6 +329,9 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::ASIANUX_7_64 #
 #Asianux Server 7 (64 bit)
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::ASIANUX_8_64 #
+#Asianux Server 8 (64 bit). This  *constant*  was added in vSphere API 6.7
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::OPENSUSE #
 #OpenSUSE Linux
 #
@@ -340,6 +367,12 @@
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::OTHER_3X_LINUX_64 #
 #Linux 3.x Kernel (64 bit)
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::OTHER_4X_LINUX #
+#Linux 4.x Kernel. This  *constant*  was added in vSphere API 6.7
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::OTHER_4X_LINUX_64 #
+#Linux 4.x Kernel (64 bit). This  *constant*  was added in vSphere API 6.7
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::OTHER_LINUX #
 #Linux 2.2x Kernel
@@ -431,6 +464,12 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::DARWIN_16_64 #
 #Mac OS 10.12 (64 bit)
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::DARWIN_17_64 #
+#Mac OS 10.13 (64 bit). This  *constant*  was added in vSphere API 6.7
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::DARWIN_18_64 #
+#Mac OS 10.14 (64 bit). This  *constant*  was added in vSphere API 6.7
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::VMKERNEL #
 #VMware ESX 4
 #
@@ -488,6 +527,10 @@ use constant {
     WINDOWS_HYPERV =>  'WINDOWS_HYPERV',
     FREEBSD =>  'FREEBSD',
     FREEBSD_64 =>  'FREEBSD_64',
+    FREEBSD_11 =>  'FREEBSD_11',
+    FREEBSD_12 =>  'FREEBSD_12',
+    FREEBSD_11_64 =>  'FREEBSD_11_64',
+    FREEBSD_12_64 =>  'FREEBSD_12_64',
     REDHAT =>  'REDHAT',
     RHEL_2 =>  'RHEL_2',
     RHEL_3 =>  'RHEL_3',
@@ -500,18 +543,21 @@ use constant {
     RHEL_6_64 =>  'RHEL_6_64',
     RHEL_7 =>  'RHEL_7',
     RHEL_7_64 =>  'RHEL_7_64',
+    RHEL_8_64 =>  'RHEL_8_64',
     CENTOS =>  'CENTOS',
     CENTOS_64 =>  'CENTOS_64',
     CENTOS_6 =>  'CENTOS_6',
     CENTOS_6_64 =>  'CENTOS_6_64',
     CENTOS_7 =>  'CENTOS_7',
     CENTOS_7_64 =>  'CENTOS_7_64',
+    CENTOS_8_64 =>  'CENTOS_8_64',
     ORACLE_LINUX =>  'ORACLE_LINUX',
     ORACLE_LINUX_64 =>  'ORACLE_LINUX_64',
     ORACLE_LINUX_6 =>  'ORACLE_LINUX_6',
     ORACLE_LINUX_6_64 =>  'ORACLE_LINUX_6_64',
     ORACLE_LINUX_7 =>  'ORACLE_LINUX_7',
     ORACLE_LINUX_7_64 =>  'ORACLE_LINUX_7_64',
+    ORACLE_LINUX_8_64 =>  'ORACLE_LINUX_8_64',
     SUSE =>  'SUSE',
     SUSE_64 =>  'SUSE_64',
     SLES =>  'SLES',
@@ -522,6 +568,7 @@ use constant {
     SLES_11_64 =>  'SLES_11_64',
     SLES_12 =>  'SLES_12',
     SLES_12_64 =>  'SLES_12_64',
+    SLES_15_64 =>  'SLES_15_64',
     NLD_9 =>  'NLD_9',
     OES =>  'OES',
     SJDS =>  'SJDS',
@@ -552,6 +599,7 @@ use constant {
     ASIANUX_4_64 =>  'ASIANUX_4_64',
     ASIANUX_5_64 =>  'ASIANUX_5_64',
     ASIANUX_7_64 =>  'ASIANUX_7_64',
+    ASIANUX_8_64 =>  'ASIANUX_8_64',
     OPENSUSE =>  'OPENSUSE',
     OPENSUSE_64 =>  'OPENSUSE_64',
     FEDORA =>  'FEDORA',
@@ -564,6 +612,8 @@ use constant {
     OTHER_26X_LINUX_64 =>  'OTHER_26X_LINUX_64',
     OTHER_3X_LINUX =>  'OTHER_3X_LINUX',
     OTHER_3X_LINUX_64 =>  'OTHER_3X_LINUX_64',
+    OTHER_4X_LINUX =>  'OTHER_4X_LINUX',
+    OTHER_4X_LINUX_64 =>  'OTHER_4X_LINUX_64',
     OTHER_LINUX =>  'OTHER_LINUX',
     GENERIC_LINUX =>  'GENERIC_LINUX',
     OTHER_LINUX_64 =>  'OTHER_LINUX_64',
@@ -594,6 +644,8 @@ use constant {
     DARWIN_14_64 =>  'DARWIN_14_64',
     DARWIN_15_64 =>  'DARWIN_15_64',
     DARWIN_16_64 =>  'DARWIN_16_64',
+    DARWIN_17_64 =>  'DARWIN_17_64',
+    DARWIN_18_64 =>  'DARWIN_18_64',
     VMKERNEL =>  'VMKERNEL',
     VMKERNEL_5 =>  'VMKERNEL_5',
     VMKERNEL_6 =>  'VMKERNEL_6',

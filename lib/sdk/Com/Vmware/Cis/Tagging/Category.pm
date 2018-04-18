@@ -396,6 +396,7 @@ sub new {
    $self->{description} = $args{'description'};
    $self->{cardinality} = $args{'cardinality'};
    $self->{associable_types} = $args{'associable_types'};
+   $self->{category_id} = $args{'category_id'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Cis::Tagging::Category::CreateSpec');
    $self->set_binding_name('name' => 'com.vmware.cis.tagging.category.create_spec');
@@ -403,6 +404,7 @@ sub new {
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'cardinality', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Cis::Tagging', 'type_name' => 'CategoryModel::Cardinality'));
    $self->set_binding_field('key' => 'associable_types', 'value' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
+   $self->set_binding_field('key' => 'category_id', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    bless $self, $class;
    return $self;
 }
@@ -500,6 +502,30 @@ sub get_associable_types {
 sub set_associable_types {
    my ($self, %args) = @_;
    $self->{'associable_types'} = $args{'associable_types'}; 
+   return;	
+}
+
+## @method get_category_id ()
+# Gets the value of 'category_id' property.
+#
+# @retval category_id - The current value of the field.
+# This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_category_id {
+   my ($self, %args) = @_;
+   return $self->{'category_id'}; 	
+}
+
+## @method set_category_id ()
+# Sets the given value for 'category_id' property.
+# 
+# @param category_id  - New value for the field.
+# This  *field*  was added in vSphere API 6.7
+#
+sub set_category_id {
+   my ($self, %args) = @_;
+   $self->{'category_id'} = $args{'category_id'}; 
    return;	
 }
 

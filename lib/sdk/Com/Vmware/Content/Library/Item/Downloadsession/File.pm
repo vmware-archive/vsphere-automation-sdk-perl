@@ -75,6 +75,9 @@ sub new {
 # Lists the information of all the files in the library item associated with the download
 # session.
 #
+# Note:
+# Privileges required for this operation are System.Read, System.Anonymous.
+#
 # @param download_session_id [REQUIRED]  Identifier of the download session.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.item.DownloadSession).
@@ -88,6 +91,11 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the download session associated with  ``download_session_id``  doesn&apos;t exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``libraryItemId``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {
@@ -104,6 +112,9 @@ sub list {
 
 ## @method prepare ()
 # Requests a file to be prepared for download.
+#
+# Note:
+# Privileges required for this operation are System.Anonymous.
 #
 # @param download_session_id [REQUIRED]  Identifier of the download session.
 # The value must be an identifier for the resource type
@@ -159,6 +170,9 @@ sub prepare {
 ## @method get ()
 # Retrieves file download information for a specific file.
 #
+# Note:
+# Privileges required for this operation are System.Read, System.Anonymous.
+#
 # @param download_session_id [REQUIRED]  Identifier of the download session.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.item.DownloadSession).
@@ -177,6 +191,11 @@ sub prepare {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if there is no file with the specified  ``file_name`` .
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``libraryItemId``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {

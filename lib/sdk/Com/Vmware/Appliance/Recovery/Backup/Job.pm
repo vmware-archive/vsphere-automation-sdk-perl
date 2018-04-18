@@ -11,8 +11,8 @@
 #use Com::Vmware::Vapi::Std::Errors;
 
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job
-# ``Com::Vmware::Appliance::Recovery::Backup::Job``   *interface*  provides  *methods* 
-#     Performs backup restore operations
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job``   *interface*  provides 
+#     *methods*  to be performed on a backup job.
 #
 
 package Com::Vmware::Appliance::Recovery::Backup::Job;
@@ -58,7 +58,7 @@ sub new {
 }
 
 ## @method cancel ()
-# Cancel the backup job
+# Cancel the backup job.
 #
 # @param id [REQUIRED] ID (ID of job)
 # The value must be an identifier for the resource type
@@ -70,10 +70,10 @@ sub new {
 # The return type will be Com::Vmware::Appliance::Recovery::Backup::Job::ReturnResult
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
-# ID is not found
+# if backup associated with id does not exist.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# Generic error
+# if any error occurs during the execution of the operation.
 #
 
 sub cancel {
@@ -99,10 +99,10 @@ sub cancel {
 # The return type will be Com::Vmware::Appliance::Recovery::Backup::Job::BackupJobStatus
 #
 # @throw Com::Vmware::Vapi::Std::Errors::FeatureInUse 
-# A backup or restore is already in progress
+# A backup or restore is already in progress.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# Generic error
+# if any error occurs during the execution of the operation.
 #
 
 sub create {
@@ -127,7 +127,7 @@ sub create {
 # The return type will be Array of str
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# Generic error
+# if any error occurs during the execution of the operation.
 #
 
 sub list {
@@ -149,10 +149,10 @@ sub list {
 # The return type will be Com::Vmware::Appliance::Recovery::Backup::Job::BackupJobStatus
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
-# ID is not found
+# if backup associated with id does not exist.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# Generic error
+# if any error occurs during the execution of the operation.
 #
 
 sub get {
@@ -175,19 +175,21 @@ sub get {
 
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::ReturnStatus
 #
-# ``Com::Vmware::Appliance::Recovery::Backup::Job::ReturnStatus``   *enumerated type* 
-#     Defines the state of precheck
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::ReturnStatus``   *enumerated
+#     type*  defines the return type for the cancel operation. You specify the return status
+#     when you return the result of cancel job. See  class
+#     Com::Vmware::Appliance::Recovery::Backup::Job::ReturnResult .
 #
 #
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::ReturnStatus::FAIL #
-#Check failed
+#Cancel operation failed.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::ReturnStatus::WARNING #
-#Passed with warnings
+#Cancel operation passed with warnings.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::ReturnStatus::OK #
-#Check passed
+#Cancel operation succeeded.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::ReturnStatus;
 
@@ -224,34 +226,36 @@ sub new {
 1;
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::LocationType
 #
-# ``Com::Vmware::Appliance::Recovery::Backup::Job::LocationType``   *enumerated type* 
-#     Defines type of all locations for backup/restore
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::LocationType``   *enumerated
+#     type*  defines the type of destination location for backup/restore. You specify the
+#     location type when you create a backup job. See  class
+#     Com::Vmware::Appliance::Recovery::Backup::Job::BackupRequest .
 #
 #
-#
-# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::FTPS #
-#Destination is FTPS server
-#
-# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::HTTP #
-#Destination is HTTP server
-#
-# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::SCP #
-#Destination is SSH server
-#
-# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::HTTPS #
-#Destination is HTTPS server
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::FTP #
-#Destination is FTP server
+#Destination is FTP server.
+#
+# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::HTTP #
+#Destination is HTTP server.
+#
+# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::FTPS #
+#Destination is FTPS server.
+#
+# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::HTTPS #
+#Destination is HTTPS server.
+#
+# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::SCP #
+#Destination is SSH server.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::LocationType;
 
 use constant {
-    FTPS =>  'FTPS',
-    HTTP =>  'HTTP',
-    SCP =>  'SCP',
-    HTTPS =>  'HTTPS',
     FTP =>  'FTP',
+    HTTP =>  'HTTP',
+    FTPS =>  'FTPS',
+    HTTPS =>  'HTTPS',
+    SCP =>  'SCP',
 };
 
 #
@@ -281,22 +285,22 @@ sub new {
 1;
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState
 #
-# ``Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState``  
-#     *enumerated type*  Defines state of backup/restore process
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState``  
+#     *enumerated type*  defines the possible states of a backup/restore process.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState::FAILED #
-#Failed
+#Backup/Restore job failed.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState::INPROGRESS #
-#In progress
+#Backup/Restore job is in progress.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState::NONE #
-#Not started
+#Backup/Restore job is not started.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState::SUCCEEDED #
-#Completed successfully
+#Backup/Restore job completed successfully.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::BackupRestoreProcessState;
 
@@ -345,8 +349,8 @@ sub new {
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::LocalizableMessage
 #
 #
-# ``Com::Vmware::Appliance::Recovery::Backup::Job::LocalizableMessage``   *class* 
-#     Structure representing message
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::LocalizableMessage``   *class* 
+#     represents a localizable message.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::LocalizableMessage;
 
@@ -391,7 +395,7 @@ sub new {
 # Gets the value of 'id' property.
 #
 # @retval id - The current value of the field.
-# id in message bundle
+# Id in message bundle.
 #
 # String#
 sub get_id {
@@ -403,7 +407,7 @@ sub get_id {
 # Sets the given value for 'id' property.
 # 
 # @param id  - New value for the field.
-# id in message bundle
+# Id in message bundle.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -415,7 +419,7 @@ sub set_id {
 # Gets the value of 'default_message' property.
 #
 # @retval default_message - The current value of the field.
-# text in english
+# Text in english.
 #
 # String#
 sub get_default_message {
@@ -427,7 +431,7 @@ sub get_default_message {
 # Sets the given value for 'default_message' property.
 # 
 # @param default_message  - New value for the field.
-# text in english
+# Text in english.
 #
 sub set_default_message {
    my ($self, %args) = @_;
@@ -439,7 +443,7 @@ sub set_default_message {
 # Gets the value of 'args' property.
 #
 # @retval args - The current value of the field.
-# nested data
+# Nested data.
 #
 # List#
 sub get_args {
@@ -451,7 +455,7 @@ sub get_args {
 # Sets the given value for 'args' property.
 # 
 # @param args  - New value for the field.
-# nested data
+# Nested data.
 #
 sub set_args {
    my ($self, %args) = @_;
@@ -466,8 +470,8 @@ sub set_args {
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::ReturnResult
 #
 #
-# ``Com::Vmware::Appliance::Recovery::Backup::Job::ReturnResult``   *class*  Structure
-#     representing precheck result
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::ReturnResult``   *class* 
+#     contains the result information for the cancel operation.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::ReturnResult;
 
@@ -510,7 +514,7 @@ sub new {
 # Gets the value of 'status' property.
 #
 # @retval status - The current value of the field.
-# Check status
+# Status of the cancel operation.
 #
 # ReturnStatus#
 sub get_status {
@@ -522,7 +526,7 @@ sub get_status {
 # Sets the given value for 'status' property.
 # 
 # @param status  - New value for the field.
-# Check status
+# Status of the cancel operation.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -534,7 +538,7 @@ sub set_status {
 # Gets the value of 'messages' property.
 #
 # @retval messages - The current value of the field.
-# List of messages
+# List of messages.
 #
 # List#
 sub get_messages {
@@ -546,7 +550,7 @@ sub get_messages {
 # Sets the given value for 'messages' property.
 # 
 # @param messages  - New value for the field.
-# List of messages
+# List of messages.
 #
 sub set_messages {
    my ($self, %args) = @_;
@@ -561,8 +565,8 @@ sub set_messages {
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::BackupRequest
 #
 #
-# ``Com::Vmware::Appliance::Recovery::Backup::Job::BackupRequest``   *class*  Structure
-#     representing requested backup piece
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::BackupRequest``   *class* 
+#     represents a requested backup piece.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::BackupRequest;
 
@@ -615,8 +619,9 @@ sub new {
 # Gets the value of 'parts' property.
 #
 # @retval parts - The current value of the field.
-# a list of optional parts. Run backup parts APIs to get list of optional parts and
-#     description
+# List of optional parts that will be included in the backup. Use the 
+#     :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`   *method*  to get
+#     information about the supported parts.
 #
 # List#
 sub get_parts {
@@ -628,8 +633,9 @@ sub get_parts {
 # Sets the given value for 'parts' property.
 # 
 # @param parts  - New value for the field.
-# a list of optional parts. Run backup parts APIs to get list of optional parts and
-#     description
+# List of optional parts that will be included in the backup. Use the 
+#     :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`   *method*  to get
+#     information about the supported parts.
 #
 sub set_parts {
    my ($self, %args) = @_;
@@ -641,7 +647,7 @@ sub set_parts {
 # Gets the value of 'backup_password' property.
 #
 # @retval backup_password - The current value of the field.
-# a password for a backup piece The backupPassword must adhere to the following password
+# Password for a backup piece. The backupPassword must adhere to the following password
 #     requirements: At least 8 characters, cannot be more than 20 characters in length. At
 #     least 1 uppercase letter. At least 1 lowercase letter. At least 1 numeric digit. At
 #     least 1 special character (i.e. any character not in [0-9,a-z,A-Z]). Only visible
@@ -657,7 +663,7 @@ sub get_backup_password {
 # Sets the given value for 'backup_password' property.
 # 
 # @param backup_password  - New value for the field.
-# a password for a backup piece The backupPassword must adhere to the following password
+# Password for a backup piece. The backupPassword must adhere to the following password
 #     requirements: At least 8 characters, cannot be more than 20 characters in length. At
 #     least 1 uppercase letter. At least 1 lowercase letter. At least 1 numeric digit. At
 #     least 1 special character (i.e. any character not in [0-9,a-z,A-Z]). Only visible
@@ -673,7 +679,7 @@ sub set_backup_password {
 # Gets the value of 'location_type' property.
 #
 # @retval location_type - The current value of the field.
-# a type of location
+# Type of backup location.
 #
 # LocationType#
 sub get_location_type {
@@ -685,7 +691,7 @@ sub get_location_type {
 # Sets the given value for 'location_type' property.
 # 
 # @param location_type  - New value for the field.
-# a type of location
+# Type of backup location.
 #
 sub set_location_type {
    my ($self, %args) = @_;
@@ -697,7 +703,7 @@ sub set_location_type {
 # Gets the value of 'location' property.
 #
 # @retval location - The current value of the field.
-# path or url
+# Path or URL of the backup location.
 #
 # String#
 sub get_location {
@@ -709,7 +715,7 @@ sub get_location {
 # Sets the given value for 'location' property.
 # 
 # @param location  - New value for the field.
-# path or url
+# Path or URL of the backup location.
 #
 sub set_location {
    my ($self, %args) = @_;
@@ -721,7 +727,7 @@ sub set_location {
 # Gets the value of 'location_user' property.
 #
 # @retval location_user - The current value of the field.
-# username for location
+# Username for the given location.
 #
 # Optional#
 sub get_location_user {
@@ -733,7 +739,7 @@ sub get_location_user {
 # Sets the given value for 'location_user' property.
 # 
 # @param location_user  - New value for the field.
-# username for location
+# Username for the given location.
 #
 sub set_location_user {
    my ($self, %args) = @_;
@@ -745,7 +751,7 @@ sub set_location_user {
 # Gets the value of 'location_password' property.
 #
 # @retval location_password - The current value of the field.
-# password for location
+# Password for the given location.
 #
 # Optional#
 sub get_location_password {
@@ -757,7 +763,7 @@ sub get_location_password {
 # Sets the given value for 'location_password' property.
 # 
 # @param location_password  - New value for the field.
-# password for location
+# Password for the given location.
 #
 sub set_location_password {
    my ($self, %args) = @_;
@@ -769,7 +775,7 @@ sub set_location_password {
 # Gets the value of 'comment' property.
 #
 # @retval comment - The current value of the field.
-# Custom comment
+# Custom comment provided by the user.
 #
 # Optional#
 sub get_comment {
@@ -781,7 +787,7 @@ sub get_comment {
 # Sets the given value for 'comment' property.
 # 
 # @param comment  - New value for the field.
-# Custom comment
+# Custom comment provided by the user.
 #
 sub set_comment {
    my ($self, %args) = @_;
@@ -796,8 +802,8 @@ sub set_comment {
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::BackupJobStatus
 #
 #
-# ``Com::Vmware::Appliance::Recovery::Backup::Job::BackupJobStatus``   *class* 
-#     Structure representing backup restore status
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::BackupJobStatus``   *class* 
+#     represents the status of a backup/restore job.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::BackupJobStatus;
 
@@ -848,7 +854,7 @@ sub new {
 # Gets the value of 'id' property.
 #
 # @retval id - The current value of the field.
-# TimeStamp based ID
+# TimeStamp based ID.
 #
 # String#
 sub get_id {
@@ -860,7 +866,7 @@ sub get_id {
 # Sets the given value for 'id' property.
 # 
 # @param id  - New value for the field.
-# TimeStamp based ID
+# TimeStamp based ID.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -872,7 +878,7 @@ sub set_id {
 # Gets the value of 'state' property.
 #
 # @retval state - The current value of the field.
-# process state
+# The state of the backup job.
 #
 # BackupRestoreProcessState#
 sub get_state {
@@ -884,7 +890,7 @@ sub get_state {
 # Sets the given value for 'state' property.
 # 
 # @param state  - New value for the field.
-# process state
+# The state of the backup job.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -896,7 +902,7 @@ sub set_state {
 # Gets the value of 'messages' property.
 #
 # @retval messages - The current value of the field.
-# list of messages
+# List of messages.
 #
 # List#
 sub get_messages {
@@ -908,7 +914,7 @@ sub get_messages {
 # Sets the given value for 'messages' property.
 # 
 # @param messages  - New value for the field.
-# list of messages
+# List of messages.
 #
 sub set_messages {
    my ($self, %args) = @_;
@@ -920,7 +926,7 @@ sub set_messages {
 # Gets the value of 'progress' property.
 #
 # @retval progress - The current value of the field.
-# percentage complete
+# Progress of the job in percentage.
 #
 # long#
 sub get_progress {
@@ -932,7 +938,7 @@ sub get_progress {
 # Sets the given value for 'progress' property.
 # 
 # @param progress  - New value for the field.
-# percentage complete
+# Progress of the job in percentage.
 #
 sub set_progress {
    my ($self, %args) = @_;
@@ -944,7 +950,7 @@ sub set_progress {
 # Gets the value of 'start_time' property.
 #
 # @retval start_time - The current value of the field.
-# Time when this backup was started.
+# Time when the backup was started.
 #
 # DateTime#
 sub get_start_time {
@@ -956,7 +962,7 @@ sub get_start_time {
 # Sets the given value for 'start_time' property.
 # 
 # @param start_time  - New value for the field.
-# Time when this backup was started.
+# Time when the backup was started.
 #
 sub set_start_time {
    my ($self, %args) = @_;
@@ -968,7 +974,7 @@ sub set_start_time {
 # Gets the value of 'end_time' property.
 #
 # @retval end_time - The current value of the field.
-# Time when this backup was finished.
+# Time when the backup was finished.
 #
 # Optional#
 sub get_end_time {
@@ -980,7 +986,7 @@ sub get_end_time {
 # Sets the given value for 'end_time' property.
 # 
 # @param end_time  - New value for the field.
-# Time when this backup was finished.
+# Time when the backup was finished.
 #
 sub set_end_time {
    my ($self, %args) = @_;

@@ -75,9 +75,16 @@ sub new {
 # 
 #  Future server versions might support additional flags.</p>
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @retval 
 # A  *list*  of supported export flags.
 # The return type will be Array of Com::Vmware::Vcenter::Ovf::ExportFlag::Info
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {

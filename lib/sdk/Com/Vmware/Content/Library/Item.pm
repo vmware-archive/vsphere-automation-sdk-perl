@@ -78,6 +78,9 @@ sub new {
 # 
 #  A library item cannot be copied into a subscribed library.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.AddLibraryItem, System.Read.
+#
 # @param client_token [OPTIONAL] A unique token generated on the client for each copy request. The token should be a
 #     universally unique identifier (UUID), for example: 
 #     ``b8a2a2e3-2314-43cd-a871-6ede0f429751`` . This token can be used to guarantee
@@ -121,6 +124,21 @@ sub new {
 # if the copy operation failed because the source or destination library item is not
 #     accessible.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the content of the source library item specified by  ``source_library_item_id`` ,
+#     or the content of the target library specified by the library ID (see 
+#     :attr:`Com::Vmware::Content::Library::ItemModel.library_id` ) property of 
+#     ``destination_create_spec``  has been deleted from the storage backings (see null)
+#     associated with it.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``source_library_item_id``  requires  ``System.Read`` . </li>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  requires 
+#     ``ContentLibrary.AddLibraryItem`` . </li>
+# </ul>
+#
 
 sub copy {
    my ($self, %args) = @_;
@@ -146,6 +164,9 @@ sub copy {
 # <p>
 # 
 #  A library item cannot be created in a subscribed library.</p>
+#
+# Note:
+# Privileges required for this operation are ContentLibrary.AddLibraryItem.
 #
 # @param client_token [OPTIONAL] A unique token generated on the client for each creation request. The token should be
 #     a universally unique identifier (UUID), for example: 
@@ -180,6 +201,18 @@ sub copy {
 # if the  :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  property of 
 #     ``destinationCreateSpec``  refers to a subscribed library.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the content of the library specified by the library ID (see 
+#     :attr:`Com::Vmware::Content::Library::ItemModel.library_id` ) property of 
+#     ``create_spec``  has been deleted from the storage backings (see null) associated with
+#     it.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  requires 
+#     ``ContentLibrary.AddLibraryItem`` . </li>
+# </ul>
+#
 
 sub create {
    my ($self, %args) = @_;
@@ -208,6 +241,9 @@ sub create {
 # library. Removing an item from a subscribed library requires deleting the item from the
 # original published local library and syncing the subscribed library.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.DeleteLibraryItem.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item to delete.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -219,6 +255,11 @@ sub create {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library item with the specified  ``library_item_id``  does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``ContentLibrary.DeleteLibraryItem`` . </li>
+# </ul>
 #
 
 sub delete {
@@ -236,6 +277,9 @@ sub delete {
 ## @method get ()
 # Returns the  class Com::Vmware::Content::Library::ItemModel  with the given identifier.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item to return.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -248,6 +292,11 @@ sub delete {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if no item with the given  ``library_item_id``  exists.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {
@@ -265,6 +314,9 @@ sub get {
 ## @method list ()
 # Returns the identifiers of all items in the given library.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param library_id [REQUIRED]  Identifier of the library whose items should be returned.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -278,6 +330,11 @@ sub get {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library associated with  ``library_id``  does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {
@@ -296,6 +353,9 @@ sub list {
 # Returns identifiers of all the visible (as determined by authorization policy) library
 # items matching the requested  class Com::Vmware::Content::Library::Item::FindSpec .
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param spec [REQUIRED]  Specification describing what properties to filter on.
 # . The value must be Com::Vmware::Content::Library::Item::FindSpec.
 #
@@ -308,6 +368,13 @@ sub list {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if no properties are specified in the  ``spec`` .
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Content::Library::Item::FindSpec.library_id`  requires 
+#     ``System.Read`` . </li>
+# </ul>
 #
 
 sub find {
@@ -334,6 +401,9 @@ sub find {
 # Those items must be updated in the source published library and synchronized to the
 # subscribed library.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.UpdateLibraryItem.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item to update.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -356,6 +426,17 @@ sub find {
 #  <li>description exceeds 1024 characters</li>
 #  <li>version is not equal to the current version of the library item</li>
 #  </ul>
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the library item belongs to a published library with JSON persistence enabled (see 
+#     :attr:`Com::Vmware::Content::Library::PublishInfo.persist_json_enabled` ) and the
+#     content of the library item specified by  ``library_item_id``  has been deleted from
+#     the storage backings (see null) associated with it.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``ContentLibrary.UpdateLibraryItem`` . </li>
+# </ul>
 #
 
 sub update {

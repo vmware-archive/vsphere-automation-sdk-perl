@@ -61,7 +61,7 @@ sub new {
 # Get health status of applmgmt services.
 #
 # @retval 
-# health status.
+# health status
 # The return type will be String
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 

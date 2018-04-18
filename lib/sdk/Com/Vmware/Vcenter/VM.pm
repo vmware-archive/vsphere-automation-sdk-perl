@@ -175,6 +175,9 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the virtual machine is running (powered on).
+#
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if the virtual machine is not found.
 #
@@ -408,7 +411,7 @@ sub set_host {
 # Gets the value of 'cluster' property.
 #
 # @retval cluster - The current value of the field.
-# Cluster onto which the virtual machine should be placed. <p>
+# Cluster into which the virtual machine should be placed. <p>
 # 
 # If  ``cluster``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
 #     belong to  ``cluster`` . </p>
@@ -428,7 +431,7 @@ sub get_cluster {
 # Sets the given value for 'cluster' property.
 # 
 # @param cluster  - New value for the field.
-# Cluster onto which the virtual machine should be placed. <p>
+# Cluster into which the virtual machine should be placed. <p>
 # 
 # If  ``cluster``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
 #     belong to  ``cluster`` . </p>
@@ -469,6 +472,78 @@ sub get_datastore {
 sub set_datastore {
    my ($self, %args) = @_;
    $self->{'datastore'} = $args{'datastore'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::StoragePolicySpec
+#
+#
+# The  ``Com::Vmware::Vcenter::VM::StoragePolicySpec``   *class*  contains information
+#     about the storage policy to be associated with a virtual machine object. This  *class*
+#      was added in vSphere API 6.7
+
+package Com::Vmware::Vcenter::VM::StoragePolicySpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::StoragePolicySpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{policy} = $args{'policy'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::StoragePolicySpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.storage_policy_spec');
+   $self->set_binding_field('key' => 'policy', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_policy ()
+# Gets the value of 'policy' property.
+#
+# @retval policy - The current value of the field.
+# Identifier of the storage policy which should be associated with the virtual machine.
+#     This  *field*  was added in vSphere API 6.7
+#
+# ID#
+sub get_policy {
+   my ($self, %args) = @_;
+   return $self->{'policy'}; 	
+}
+
+## @method set_policy ()
+# Sets the given value for 'policy' property.
+# 
+# @param policy  - New value for the field.
+# Identifier of the storage policy which should be associated with the virtual machine.
+#     This  *field*  was added in vSphere API 6.7
+#
+sub set_policy {
+   my ($self, %args) = @_;
+   $self->{'policy'} = $args{'policy'}; 
    return;	
 }
 
@@ -523,6 +598,7 @@ sub new {
    $self->{serial_ports} = $args{'serial_ports'};
    $self->{sata_adapters} = $args{'sata_adapters'};
    $self->{scsi_adapters} = $args{'scsi_adapters'};
+   $self->{storage_policy} = $args{'storage_policy'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::CreateSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.VM.create_spec');
@@ -542,6 +618,7 @@ sub new {
    $self->set_binding_field('key' => 'serial_ports', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm::Hardware', 'type_name' => 'Serial::CreateSpec'))));
    $self->set_binding_field('key' => 'sata_adapters', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm::Hardware::Adapter', 'type_name' => 'Sata::CreateSpec'))));
    $self->set_binding_field('key' => 'scsi_adapters', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm::Hardware::Adapter', 'type_name' => 'Scsi::CreateSpec'))));
+   $self->set_binding_field('key' => 'storage_policy', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::StoragePolicySpec')));
    bless $self, $class;
    return $self;
 }
@@ -927,6 +1004,34 @@ sub get_scsi_adapters {
 sub set_scsi_adapters {
    my ($self, %args) = @_;
    $self->{'scsi_adapters'} = $args{'scsi_adapters'}; 
+   return;	
+}
+
+## @method get_storage_policy ()
+# Gets the value of 'storage_policy' property.
+#
+# @retval storage_policy - The current value of the field.
+# The  ``Com::Vmware::Vcenter::VM::StoragePolicySpec``   *class*  contains information
+#     about the storage policy that is to be associated with the virtual machine home (which
+#     contains the configuration and log files). This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_storage_policy {
+   my ($self, %args) = @_;
+   return $self->{'storage_policy'}; 	
+}
+
+## @method set_storage_policy ()
+# Sets the given value for 'storage_policy' property.
+# 
+# @param storage_policy  - New value for the field.
+# The  ``Com::Vmware::Vcenter::VM::StoragePolicySpec``   *class*  contains information
+#     about the storage policy that is to be associated with the virtual machine home (which
+#     contains the configuration and log files). This  *field*  was added in vSphere API 6.7
+#
+sub set_storage_policy {
+   my ($self, %args) = @_;
+   $self->{'storage_policy'} = $args{'storage_policy'}; 
    return;	
 }
 

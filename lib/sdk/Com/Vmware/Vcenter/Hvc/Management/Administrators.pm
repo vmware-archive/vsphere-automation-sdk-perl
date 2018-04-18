@@ -13,7 +13,8 @@
 ## @class Com::Vmware::Vcenter::Hvc::Management::Administrators
 # The  ``Com::Vmware::Vcenter::Hvc::Management::Administrators``  provides  *methods* 
 #     to update, delete, and list groups in the local sso group. This is limited to the
-#     Hybrid Linked Mode service.
+#     Hybrid Linked Mode service. <b>Warning:</b> This  *interface*  is available as
+#     technical preview. It may be changed in a future release.
 #
 
 package Com::Vmware::Vcenter::Hvc::Management::Administrators;
@@ -59,7 +60,8 @@ sub new {
 }
 
 ## @method add ()
-# Add the local sso group with the new group.
+# Add the local sso group with the new group. <b>Warning:</b> This  *method*  is available
+# as technical preview. It may be changed in a future release.
 #
 # @param group_name [REQUIRED] Name of the new group to be added. Ex - xyz@abc.com where xyz is the group name and
 #     abc.com is the domain name
@@ -85,7 +87,8 @@ sub add {
 
 
 ## @method remove ()
-# Remove the group from the local sso group.
+# Remove the group from the local sso group. <b>Warning:</b> This  *method*  is available as
+# technical preview. It may be changed in a future release.
 #
 # @param group_name [REQUIRED] Name of the group to be remove. Ex - xyz@abc.com where xyz is the group name and
 #     abc.com is the domain name
@@ -111,7 +114,8 @@ sub remove {
 
 
 ## @method get ()
-# Enumerates the set of all the groups in the local sso group.
+# Enumerates the set of all the groups in the local sso group. <b>Warning:</b> This 
+# *method*  is available as technical preview. It may be changed in a future release.
 #
 # @retval 
 # The  *set*  of all the groups.

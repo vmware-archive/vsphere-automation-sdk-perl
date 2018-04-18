@@ -8,6 +8,7 @@
 #
 #
 
+#use Com::Vmware::Appliance::Networking::Interfaces;
 #use Com::Vmware::Vapi::Std::Errors;
 
 ## @class Com::Vmware::Appliance::Networking::Interfaces
@@ -86,6 +87,9 @@ sub list {
 # @retval 
 # Network interface information.
 # The return type will be Com::Vmware::Appliance::Networking::Interfaces::InterfaceInfo
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if the specified interface is not found.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
@@ -199,12 +203,16 @@ sub new {
    $self->{name} = $args{'name'};
    $self->{status} = $args{'status'};
    $self->{mac} = $args{'mac'};
+   $self->{ipv4} = $args{'ipv4'};
+   $self->{ipv6} = $args{'ipv6'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Networking::Interfaces::InterfaceInfo');
    $self->set_binding_name('name' => 'com.vmware.appliance.networking.interfaces.interface_info');
    $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Networking', 'type_name' => 'Interfaces::InterfaceStatus'));
    $self->set_binding_field('key' => 'mac', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'ipv4', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Networking::Interfaces', 'type_name' => 'Ipv4::Info')));
+   $self->set_binding_field('key' => 'ipv6', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Networking::Interfaces', 'type_name' => 'Ipv6::Info')));
    bless $self, $class;
    return $self;
 }
@@ -278,6 +286,54 @@ sub get_mac {
 sub set_mac {
    my ($self, %args) = @_;
    $self->{'mac'} = $args{'mac'}; 
+   return;	
+}
+
+## @method get_ipv4 ()
+# Gets the value of 'ipv4' property.
+#
+# @retval ipv4 - The current value of the field.
+# IPv4 Address information. This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_ipv4 {
+   my ($self, %args) = @_;
+   return $self->{'ipv4'}; 	
+}
+
+## @method set_ipv4 ()
+# Sets the given value for 'ipv4' property.
+# 
+# @param ipv4  - New value for the field.
+# IPv4 Address information. This  *field*  was added in vSphere API 6.7
+#
+sub set_ipv4 {
+   my ($self, %args) = @_;
+   $self->{'ipv4'} = $args{'ipv4'}; 
+   return;	
+}
+
+## @method get_ipv6 ()
+# Gets the value of 'ipv6' property.
+#
+# @retval ipv6 - The current value of the field.
+# IPv6 Address information. This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_ipv6 {
+   my ($self, %args) = @_;
+   return $self->{'ipv6'}; 	
+}
+
+## @method set_ipv6 ()
+# Sets the given value for 'ipv6' property.
+# 
+# @param ipv6  - New value for the field.
+# IPv6 Address information. This  *field*  was added in vSphere API 6.7
+#
+sub set_ipv6 {
+   my ($self, %args) = @_;
+   $self->{'ipv6'} = $args{'ipv6'}; 
    return;	
 }
 

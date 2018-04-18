@@ -74,6 +74,9 @@ sub new {
 # 
 #  Future server versions might support additional flags.</p>
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param rp [REQUIRED]  The identifier of resource pool target for retrieving the import flag(s).
 # The value must be an identifier for the resource type getQualifiedName(ResourcePool).
 # . The value must be str.
@@ -84,6 +87,12 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  If the resource pool associated with  ``rp``  does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# <li> The resource  ``ResourcePool``  referenced by the  *parameter*   ``rp``  requires
+#      ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {

@@ -83,12 +83,12 @@ sub get {
 ## @class Com::Vmware::Appliance::Health::Storage::HealthLevel
 #
 # ``Com::Vmware::Appliance::Health::Storage::HealthLevel``   *enumerated type*  Defines
-#     health levels
+#     health levels.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Health::Storage::HealthLevel::ORANGE #
-#The service health is degraded. The service might have serious problems
+#The service health is degraded. The service might have serious problems.
 #
 # Constant Com::Vmware::Appliance::Health::Storage::HealthLevel::GRAY #
 #No health data is available for this service.
@@ -97,7 +97,7 @@ sub get {
 #Service is healthy.
 #
 # Constant Com::Vmware::Appliance::Health::Storage::HealthLevel::RED #
-#The service is unavaiable and is not functioning properly or will stop functioning soon.
+#The service is unavaiable, not functioning properly, or will stop functioning soon.
 #
 # Constant Com::Vmware::Appliance::Health::Storage::HealthLevel::YELLOW #
 #The service is healthy state, but experiencing some levels of problems.

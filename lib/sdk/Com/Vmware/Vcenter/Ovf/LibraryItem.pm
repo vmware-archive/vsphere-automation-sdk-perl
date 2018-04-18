@@ -108,6 +108,9 @@ sub new {
 # ``ovf_library_item_id`` . It uses the deployment specification in  ``deployment_spec``  to
 # deploy the OVF package to the location specified by  ``target`` . </p>
 #
+# Note:
+# Privileges required for this operation are System.Read, VApp.Import.
+#
 # @param client_token [OPTIONAL] Client-generated token used to retry a request if the client fails to get a response
 #     from the server. If the original request succeeded, the result of that request will be
 #     returned, otherwise the operation will be retried.
@@ -160,6 +163,30 @@ sub new {
 # <li> *Method*  execution requires Datastore.AllocateSpace for target datastore if
 #     specified. </li>
 #  </ul>
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``ovf_library_item_id``  requires  ``System.Read`` . </li>
+# <li> The resource  ``HostSystem``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeploymentTarget.host_id`  requires 
+#     ``System.Read`` . </li>
+# <li> The resource  ``Network``  referenced by the  *map*  value of  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::ResourcePoolDeploymentSpec.network_mappings`
+#      requires  ``System.Read`` . </li>
+# <li> The resource  ``StorageProfile``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::ResourcePoolDeploymentSpec.storage_profile_id`
+#      requires  ``System.Read`` . </li>
+# <li> The resource  ``Datastore``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::ResourcePoolDeploymentSpec.default_datastore_id`
+#      requires  ``System.Read`` . </li>
+# <li> The resource  ``ResourcePool``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeploymentTarget.resource_pool_id` 
+#     requires  ``VApp.Import`` . </li>
+# <li> The resource  ``Folder``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeploymentTarget.folder_id`  requires 
+#     ``VApp.Import`` . </li>
+# </ul>
 #
 
 sub deploy {
@@ -186,6 +213,9 @@ sub deploy {
 # *method*  can be used to populate the deployment specification (see  class
 # Com::Vmware::Vcenter::Ovf::LibraryItem::ResourcePoolDeploymentSpec  when deploying the OVF
 # package to the deployment target specified by  ``target`` . </p>
+#
+# Note:
+# Privileges required for this operation are System.Read.
 #
 # @param ovf_library_item_id [REQUIRED]  Identifier of the content library item containing the OVF package to query.
 # The value must be an identifier for the resource type
@@ -214,6 +244,21 @@ sub deploy {
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
 # if there was an error accessing the OVF package at the specified 
 #     ``ovf_library_item_id`` .
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``ovf_library_item_id``  requires  ``System.Read`` . </li>
+# <li> The resource  ``ResourcePool``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeploymentTarget.resource_pool_id` 
+#     requires  ``System.Read`` . </li>
+# <li> The resource  ``HostSystem``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeploymentTarget.host_id`  requires 
+#     ``System.Read`` . </li>
+# <li> The resource  ``Folder``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeploymentTarget.folder_id`  requires 
+#     ``System.Read`` . </li>
+# </ul>
 #
 
 sub filter {
@@ -237,6 +282,9 @@ sub filter {
 # specification. The OVF package may be stored as in a newly created library item or in an
 # in an existing library item. For an existing library item whose content is updated by this
 #  *method* , the original content is overwritten. </p>
+#
+# Note:
+# Privileges required for this operation are System.Read, VApp.Export, ContentLibrary.AddLibraryItem.
 #
 # @param client_token [OPTIONAL] Client-generated token used to retry a request if the client fails to get a response
 #     from the server. If the original request succeeded, the result of that request will be
@@ -280,6 +328,19 @@ sub filter {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceBusy 
 #  if the specified virtual machine or virtual appliance is busy.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# <li> The  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeployableIdentity.id`  requires 
+#     ``VApp.Export`` . </li>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::CreateTarget.library_id`  requires 
+#     ``ContentLibrary.AddLibraryItem`` . </li>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::CreateTarget.library_item_id`  requires
+#      ``System.Read`` . </li>
+# </ul>
 #
 
 sub create {
@@ -954,7 +1015,7 @@ sub set_provisioning {
 #
 # The  ``Com::Vmware::Vcenter::Ovf::LibraryItem::StorageGroupMapping::Type``  
 #     *enumerated type*  defines the supported types of storage targets for sections of type
-#     vmw:StroageGroupSection in the OVF descriptor.
+#     vmw:StorageGroupSection in the OVF descriptor.
 #
 #
 #

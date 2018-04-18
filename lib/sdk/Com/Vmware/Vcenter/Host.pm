@@ -94,6 +94,9 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 # if the host folder id does not support vSphere compute resource as its children type.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if there is no folder associated with the  ``folder``   *field*  in the system.
+#
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceInUse 
 # if the host is already being managed by another vCenter Server
 #

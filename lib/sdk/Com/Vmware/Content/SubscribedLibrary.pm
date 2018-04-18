@@ -66,6 +66,9 @@ sub new {
 # Library Service will attempt to synchronize to the remote source. This is an asynchronous
 # operation so the content of the published library may not immediately appear.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.CreateSubscribedLibrary.
+#
 # @param client_token [OPTIONAL] Unique token generated on the client for each creation request. The token should be a
 #     universally unique identifier (UUID), for example: 
 #     ``b8a2a2e3-2314-43cd-a871-6ede0f429751`` . This token can be used to guarantee
@@ -92,6 +95,11 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
 #  if subscribing to a published library which cannot be accessed.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li>  *Method*  execution requires  ``ContentLibrary.CreateSubscribedLibrary`` .
+#     </li>
+# </ul>
 #
 
 sub create {
@@ -114,6 +122,9 @@ sub create {
 # task to remove all cached content for the library. If the asynchronous task fails, file
 # content may remain on the storage backing. This content will require manual removal.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.DeleteSubscribedLibrary.
+#
 # @param library_id [REQUIRED]  Identifier of the subscribed library to delete.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -124,6 +135,11 @@ sub create {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library referenced by  ``library_id``  does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.DeleteSubscribedLibrary`` . </li>
+# </ul>
 #
 
 sub delete {
@@ -145,6 +161,9 @@ sub delete {
 # storage capacity. This  *method*  will only work when a subscribed library is synchronized
 # on-demand.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.EvictSubscribedLibrary.
+#
 # @param library_id [REQUIRED]  Identifier of the subscribed library whose content should be evicted.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -157,7 +176,21 @@ sub delete {
 #  if the library specified by  ``library_id``  is not a subscribed library.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
-#  if the library specified by  ``library_id``  does not synchronize on-demand.
+# if the library specified by  ``library_id``  does not synchronize on-demand, or if the
+#     content of the library specified by  ``library_id``  has been deleted from the storage
+#     backings (see  :attr:`Com::Vmware::Content::LibraryModel.storage_backings` )
+#     associated with it. <p>
+# 
+# For instance, this {@term error) is reported on evicting an on-demand subscribed
+#     library that was restored from backup, and the library was deleted after the backup
+#     was taken, thus resulting in its content being deleted from the associated storage
+#     backings. In this scenario, the metadata of the library is present on a restore, while
+#     its content has been deleted.</p>
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.EvictSubscribedLibrary`` . </li>
+# </ul>
 #
 
 sub evict {
@@ -175,6 +208,9 @@ sub evict {
 ## @method get ()
 # Returns a given subscribed library.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param library_id [REQUIRED]  Identifier of the subscribed library to return.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -190,6 +226,11 @@ sub evict {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library associated with  ``library_id``  is not a subscribed library.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {
@@ -207,11 +248,18 @@ sub get {
 ## @method list ()
 # Returns the identifiers of all subscribed libraries in the Content Library.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @retval 
 # The  *list*  of identifiers of all subscribed libraries in the Content Library.
 # The value will be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
 # The return type will be Array of str
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {
@@ -229,6 +277,9 @@ sub list {
 # Calling this  *method*  on a library that is already in the process of synchronizing will
 # have no effect.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.SyncLibrary.
+#
 # @param library_id [REQUIRED]  Identifier of the subscribed library to synchronize.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -240,11 +291,27 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library specified by  ``library_id``  is not a subscribed library.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the content of the library specified by  ``library_id``  has been deleted from the
+#     storage backings (see  :attr:`Com::Vmware::Content::LibraryModel.storage_backings` )
+#     associated with it. <p>
+# 
+# For instance, this {@term error) is reported on synchronizing a subscribed library
+#     that was restored from backup, and the library was deleted after the backup was taken,
+#     thus resulting in its content being deleted from the associated storage backings. In
+#     this scenario, the metadata of the library is present on a restore, while its content
+#     has been deleted.</p>
+#
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if some parameter in the subscribed library subscription info is invalid.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
 #  if the published library cannot be contacted or found.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.SyncLibrary`` . </li>
+# </ul>
 #
 
 sub sync {
@@ -265,6 +332,9 @@ sub sync {
 # This is an incremental update to the subscribed library.  *Fields*  that are  *null*  in
 # the update specification will be left unchanged.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.UpdateSubscribedLibrary.
+#
 # @param library_id [REQUIRED]  Identifier of the subscribed library to update.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -276,18 +346,35 @@ sub sync {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library specified by  ``library_id``  does not exist.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the  ``update_spec``  updates the subscription URL (see 
+#     :attr:`Com::Vmware::Content::Library::SubscriptionInfo.subscription_url` ) and the
+#     content of the library specified by  ``library_id``  has been deleted from the storage
+#     backings (see  :attr:`Com::Vmware::Content::LibraryModel.storage_backings` )
+#     associated with it.
+#
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library specified by  ``library_id``  is not a subscribed library.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if the  ``update_spec``  is not valid.
-# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
-# if the  :attr:`Com::Vmware::Content::LibraryModel.version`  of  ``update_spec``  is
-#     not equal to the current version of the library.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
 # if the subscription info is being updated but the published library cannot be
 #     contacted or found.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ResourceBusy 
+# if the  :attr:`Com::Vmware::Content::LibraryModel.version`  of  ``update_spec``  is 
+#     *null*  and the library is being concurrently updated by another user.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ConcurrentChange 
+# if the  :attr:`Com::Vmware::Content::LibraryModel.version`  of  ``update_spec``  is
+#     not equal to the current version of the library.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.UpdateSubscribedLibrary`` . </li>
+# </ul>
 #
 
 sub update {
@@ -308,12 +395,19 @@ sub update {
 # password. The resulting  class Com::Vmware::Content::SubscribedLibrary::ProbeResult  
 # *class*  describes whether or not the subscription configuration is successful.
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.ProbeSubscription.
+#
 # @param subscription_info [REQUIRED]  The subscription info to be probed.
 # . The value must be Com::Vmware::Content::Library::SubscriptionInfo.
 #
 # @retval 
 # The subscription info probe result.
 # The return type will be Com::Vmware::Content::SubscribedLibrary::ProbeResult
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``ContentLibrary.ProbeSubscription`` . </li>
+# </ul>
 #
 
 sub probe {

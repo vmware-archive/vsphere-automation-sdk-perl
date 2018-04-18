@@ -106,6 +106,17 @@ sub prepare_request {
       $request->header( 'Content-Type' =>
            $Com::Vmware::Vapi::Protocol::Common::Http::Constants::HttpConstants::HEADER_CONTENT_TYPE
       );
+      my $perl_version = $];
+      if ($^O eq 'MSWin32'){
+         require Win32;
+         my $os_name = Win32::GetOSDisplayName();
+         $request->header( 'user-agent' => "vAPI Perl/$perl_version ($os_name)" );
+      }
+      else{
+         use POSIX ();
+         my ($sysname, $nodename, $release, $version, $machine) = POSIX::uname;
+         $request->header( 'user-agent' => "vAPI Perl/$perl_version ($sysname; $release; $machine)" );
+      }
       $request->content($content);
    }
 

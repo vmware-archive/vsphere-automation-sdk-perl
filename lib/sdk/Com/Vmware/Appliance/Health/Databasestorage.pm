@@ -61,7 +61,7 @@ sub new {
 # Get database storage health.
 #
 # @retval 
-# Database storage health.
+# Database storage health
 # The return type will be Com::Vmware::Appliance::Health::Databasestorage::HealthLevel
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
@@ -83,24 +83,24 @@ sub get {
 ## @class Com::Vmware::Appliance::Health::Databasestorage::HealthLevel
 #
 # ``Com::Vmware::Appliance::Health::Databasestorage::HealthLevel``   *enumerated type* 
-#     Defines health levels
+#     Defines service health levels.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Health::Databasestorage::HealthLevel::ORANGE #
-#The service health is degraded. The service might have serious problems
+#The service health is degraded. The service might have serious problems.
 #
 # Constant Com::Vmware::Appliance::Health::Databasestorage::HealthLevel::GRAY #
 #No health data is available for this service.
 #
 # Constant Com::Vmware::Appliance::Health::Databasestorage::HealthLevel::GREEN #
-#Service is healthy.
+#The service is healthy.
 #
 # Constant Com::Vmware::Appliance::Health::Databasestorage::HealthLevel::RED #
-#The service is unavaiable and is not functioning properly or will stop functioning soon.
+#The service is unavaiable, not functioning properly, or will stop functioning soon.
 #
 # Constant Com::Vmware::Appliance::Health::Databasestorage::HealthLevel::YELLOW #
-#The service is healthy state, but experiencing some levels of problems.
+#The service is healthy but experiencing some problems.
 
 package Com::Vmware::Appliance::Health::Databasestorage::HealthLevel;
 

@@ -382,7 +382,7 @@ sub set_function {
 # Gets the value of 'start_time' property.
 #
 # @retval start_time - The current value of the field.
-# Starting time
+# Start time in UTC
 #
 # DateTime#
 sub get_start_time {
@@ -394,7 +394,7 @@ sub get_start_time {
 # Sets the given value for 'start_time' property.
 # 
 # @param start_time  - New value for the field.
-# Starting time
+# Start time in UTC
 #
 sub set_start_time {
    my ($self, %args) = @_;
@@ -406,7 +406,7 @@ sub set_start_time {
 # Gets the value of 'end_time' property.
 #
 # @retval end_time - The current value of the field.
-# Ending time
+# End time in UTC
 #
 # DateTime#
 sub get_end_time {
@@ -418,7 +418,7 @@ sub get_end_time {
 # Sets the given value for 'end_time' property.
 # 
 # @param end_time  - New value for the field.
-# Ending time
+# End time in UTC
 #
 sub set_end_time {
    my ($self, %args) = @_;
@@ -579,7 +579,7 @@ sub set_function {
 # Gets the value of 'start_time' property.
 #
 # @retval start_time - The current value of the field.
-# Starting time
+# Start time in UTC
 #
 # DateTime#
 sub get_start_time {
@@ -591,7 +591,7 @@ sub get_start_time {
 # Sets the given value for 'start_time' property.
 # 
 # @param start_time  - New value for the field.
-# Starting time
+# Start time in UTC
 #
 sub set_start_time {
    my ($self, %args) = @_;
@@ -603,7 +603,7 @@ sub set_start_time {
 # Gets the value of 'end_time' property.
 #
 # @retval end_time - The current value of the field.
-# Ending time
+# End time in UTC
 #
 # DateTime#
 sub get_end_time {
@@ -615,7 +615,7 @@ sub get_end_time {
 # Sets the given value for 'end_time' property.
 # 
 # @param end_time  - New value for the field.
-# Ending time
+# End time in UTC
 #
 sub set_end_time {
    my ($self, %args) = @_;

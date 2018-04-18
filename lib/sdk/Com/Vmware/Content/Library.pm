@@ -69,6 +69,9 @@ sub new {
 ## @method get ()
 # Returns a given  class Com::Vmware::Content::LibraryModel .
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param library_id [REQUIRED]  Identifier of the library to return.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -81,6 +84,11 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the specified library does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {
@@ -98,11 +106,18 @@ sub get {
 ## @method list ()
 # Returns the identifiers of all libraries of any type in the Content Library.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @retval 
 # The  *list*  of all identifiers of all libraries in the Content Library.
 # The value will be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
 # The return type will be Array of str
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {
@@ -114,6 +129,9 @@ sub list {
 ## @method find ()
 # Returns a list of all the visible (as determined by authorization policy) libraries
 # matching the requested  class Com::Vmware::Content::Library::FindSpec .
+#
+# Note:
+# Privileges required for this operation are System.Read.
 #
 # @param spec [REQUIRED]  Specification describing what properties to filter on.
 # . The value must be Com::Vmware::Content::Library::FindSpec.
@@ -127,6 +145,10 @@ sub list {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if no properties are specified in the  ``spec`` .
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub find {
@@ -156,6 +178,9 @@ sub find {
 # :func:`Com::Vmware::Content::LocalLibrary.update`  and 
 # :func:`Com::Vmware::Content::SubscribedLibrary.update` .</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.UpdateLibrary.
+#
 # @param library_id [REQUIRED]  Identifier of the library to update.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -172,6 +197,11 @@ sub find {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 # if the  :attr:`Com::Vmware::Content::LibraryModel.version`  of  ``update_spec``  is
 #     not equal to the current version of the library.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.UpdateLibrary`` . </li>
+# </ul>
 #
 
 sub update {

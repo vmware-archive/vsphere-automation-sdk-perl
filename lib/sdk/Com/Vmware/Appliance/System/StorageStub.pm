@@ -8,6 +8,7 @@
 #
 #
 
+#use Com::Vmware::Vapi::Std;
 #use Com::Vmware::Vapi::Std::Errors;
 
 package Com::Vmware::Appliance::System::StorageStub;
@@ -100,6 +101,22 @@ sub new
    my $resize_output_validator_list = [];
 
    #
+   # properties for resize_ex operation
+   #
+   my $resize_ex_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {}
+   );
+   my $resize_ex_error_dict = {
+      'com.vmware.vapi.std.errors.error' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Error'),
+
+      };
+
+   my $resize_ex_input_validator_list = [
+   ];
+   my $resize_ex_output_validator_list = [];
+
+   #
    # All the methods (operations) info in a hash
    #
    my $operations = {
@@ -116,6 +133,13 @@ sub new
                 'errors'=> $resize_error_dict,
                 'input_validator_list'=> $resize_input_validator_list,
                 'output_validator_list'=> $resize_output_validator_list,
+            },
+      'resize_ex' => {
+                'input_type'=> $resize_ex_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::MapType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StructType('name' => 'map-entry', 'fields' => {'key' => new Com::Vmware::Vapi::Bindings::Type::StringType(), 'value' =>  new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::System', 'type_name' => 'Storage::StorageChange')}))),
+                'errors'=> $resize_ex_error_dict,
+                'input_validator_list'=> $resize_ex_input_validator_list,
+                'output_validator_list'=> $resize_ex_output_validator_list,
             },
    };
 

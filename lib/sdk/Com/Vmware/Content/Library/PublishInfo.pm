@@ -35,6 +35,7 @@ sub new {
    $self->{publish_url} = $args{'publish_url'};
    $self->{user_name} = $args{'user_name'};
    $self->{password} = $args{'password'};
+   $self->{current_password} = $args{'current_password'};
    $self->{persist_json_enabled} = $args{'persist_json_enabled'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Content::Library::PublishInfo');
@@ -44,6 +45,7 @@ sub new {
    $self->set_binding_field('key' => 'publish_url', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::URIType()));
    $self->set_binding_field('key' => 'user_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'password', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SecretType()));
+   $self->set_binding_field('key' => 'current_password', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SecretType()));
    $self->set_binding_field('key' => 'persist_json_enabled', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
    bless $self, $class;
    return $self;
@@ -159,7 +161,7 @@ sub set_user_name {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# The password to require for authentication.
+# The new password to require for authentication.
 #
 # optional#
 sub get_password {
@@ -171,11 +173,35 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# The password to require for authentication.
+# The new password to require for authentication.
 #
 sub set_password {
    my ($self, %args) = @_;
    $self->{'password'} = $args{'password'}; 
+   return;	
+}
+
+## @method get_current_password ()
+# Gets the value of 'current_password' property.
+#
+# @retval current_password - The current value of the field.
+# The current password to verify. This  *field*  is available starting in vSphere 6.7.
+#
+# optional#
+sub get_current_password {
+   my ($self, %args) = @_;
+   return $self->{'current_password'}; 	
+}
+
+## @method set_current_password ()
+# Sets the given value for 'current_password' property.
+# 
+# @param current_password  - New value for the field.
+# The current password to verify. This  *field*  is available starting in vSphere 6.7.
+#
+sub set_current_password {
+   my ($self, %args) = @_;
+   $self->{'current_password'} = $args{'current_password'}; 
    return;	
 }
 

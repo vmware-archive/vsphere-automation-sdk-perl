@@ -430,12 +430,14 @@ sub new {
    $self->{name} = $args{'name'};
    $self->{description} = $args{'description'};
    $self->{category_id} = $args{'category_id'};
+   $self->{tag_id} = $args{'tag_id'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Cis::Tagging::Tag::CreateSpec');
    $self->set_binding_name('name' => 'com.vmware.cis.tagging.tag.create_spec');
    $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'category_id', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'tag_id', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    bless $self, $class;
    return $self;
 }
@@ -509,6 +511,30 @@ sub get_category_id {
 sub set_category_id {
    my ($self, %args) = @_;
    $self->{'category_id'} = $args{'category_id'}; 
+   return;	
+}
+
+## @method get_tag_id ()
+# Gets the value of 'tag_id' property.
+#
+# @retval tag_id - The current value of the field.
+# This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_tag_id {
+   my ($self, %args) = @_;
+   return $self->{'tag_id'}; 	
+}
+
+## @method set_tag_id ()
+# Sets the given value for 'tag_id' property.
+# 
+# @param tag_id  - New value for the field.
+# This  *field*  was added in vSphere API 6.7
+#
+sub set_tag_id {
+   my ($self, %args) = @_;
+   $self->{'tag_id'} = $args{'tag_id'}; 
    return;	
 }
 

@@ -69,6 +69,9 @@ sub new {
 ## @method get ()
 # Retrieves the storage information for a specific file in a library item.
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.ReadStorage.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item whose storage information should be retrieved.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -86,6 +89,11 @@ sub new {
 #  if the specified library item does not exist.
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the specified file does not exist in the given library item.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``ContentLibrary.ReadStorage`` . </li>
+# </ul>
 #
 
 sub get {
@@ -104,6 +112,9 @@ sub get {
 ## @method list ()
 # Lists all storage items for a given library item.
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.ReadStorage.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item whose storage information should be listed.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -115,6 +126,11 @@ sub get {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the specified library item does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``ContentLibrary.ReadStorage`` . </li>
+# </ul>
 #
 
 sub list {
@@ -203,7 +219,8 @@ sub new {
 # Gets the value of 'storage_backing' property.
 #
 # @retval storage_backing - The current value of the field.
-# The storage backing on which this object resides.
+# The storage backing on which this object resides. This might not be the same as the
+#     default storage backing associated with the library.
 #
 # StorageBacking#
 sub get_storage_backing {
@@ -215,7 +232,8 @@ sub get_storage_backing {
 # Sets the given value for 'storage_backing' property.
 # 
 # @param storage_backing  - New value for the field.
-# The storage backing on which this object resides.
+# The storage backing on which this object resides. This might not be the same as the
+#     default storage backing associated with the library.
 #
 sub set_storage_backing {
    my ($self, %args) = @_;

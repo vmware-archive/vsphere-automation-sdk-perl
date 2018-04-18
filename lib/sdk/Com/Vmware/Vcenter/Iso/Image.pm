@@ -62,6 +62,9 @@ sub new {
 ## @method mount ()
 # Mounts an ISO image from a content library on a virtual machine.
 #
+# Note:
+# Privileges required for this operation are System.Read, VirtualMachine.Config.AddRemoveDevice, ContentLibrary.DownloadSession.
+#
 # @param library_item [REQUIRED] The identifier of the library item having the ISO image to mount on the virtual
 #     machine.
 # The value must be an identifier for the resource type
@@ -88,6 +91,14 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # When the operation is not allowed on the virtual machine in its current state.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``VirtualMachine.Config.AddRemoveDevice`` . </li>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item``  requires  ``ContentLibrary.DownloadSession`` . </li>
+# </ul>
 #
 
 sub mount {
@@ -106,6 +117,9 @@ sub mount {
 ## @method unmount ()
 # Unmounts a previously mounted CD-ROM using an ISO image as a backing.
 #
+# Note:
+# Privileges required for this operation are System.Read, VirtualMachine.Config.AddRemoveDevice.
+#
 # @param vm [REQUIRED] The identifier of the virtual machine from which to unmount the virtual CD-ROM.
 # The value must be an identifier for the resource type
 #     getQualifiedName(VirtualMachine).
@@ -122,6 +136,14 @@ sub mount {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # When the operation is not allowed on the virtual machine in its current state.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``VirtualMachine.Config.AddRemoveDevice`` . </li>
+# <li> The resource  ``com.vmware.vcenter.vm.hardware.Cdrom``  referenced by the 
+#     *parameter*   ``cdrom``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub unmount {

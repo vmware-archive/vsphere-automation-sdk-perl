@@ -104,7 +104,7 @@ sub attach {
 # then the individual  *method*  is a no-op and an error will not be added to 
 # :attr:`Com::Vmware::Cis::Tagging::TagAssociation::BatchResult.error_messages` . To invoke
 # this  *method* , you need the read privilege on the object and the attach tag privilege on
-# each tag.
+# each tag. This  *method*  was added in vSphere API 6.5
 #
 # @param object_id [REQUIRED]  The identifier of the input object.
 # . The value must be Com::Vmware::Vapi::Std::DynamicID.
@@ -142,7 +142,7 @@ sub attach_multiple_tags_to_object {
 # then the individual  *method*  is a no-op and an error will not be added to 
 # :attr:`Com::Vmware::Cis::Tagging::TagAssociation::BatchResult.error_messages` . To invoke
 # this  *method* , you need the attach tag privilege on the tag and the read privilege on
-# each object.
+# each object. This  *method*  was added in vSphere API 6.5
 #
 # @param tag_id [REQUIRED]  The identifier of the input tag.
 # The value must be an identifier for the resource type
@@ -217,7 +217,7 @@ sub detach {
 # object, then the individual  *method*  is a no-op and an error will not be added to 
 # :attr:`Com::Vmware::Cis::Tagging::TagAssociation::BatchResult.error_messages` . To invoke
 # this  *method* , you need the read privilege on the object and the attach tag privilege
-# each tag.
+# each tag. This  *method*  was added in vSphere API 6.5
 #
 # @param object_id [REQUIRED]  The identifier of the input object.
 # . The value must be Com::Vmware::Vapi::Std::DynamicID.
@@ -255,7 +255,7 @@ sub detach_multiple_tags_from_object {
 # object, then the individual  *method*  is a no-op and an error will not be added to 
 # :attr:`Com::Vmware::Cis::Tagging::TagAssociation::BatchResult.error_messages` . To invoke
 # this  *method* , you need the attach tag privilege on the tag and the read privilege on
-# each object.
+# each object. This  *method*  was added in vSphere API 6.5
 #
 # @param tag_id [REQUIRED]  The identifier of the input tag.
 # The value must be an identifier for the resource type
@@ -329,7 +329,8 @@ sub list_attached_objects {
 # describing the input tag identifiers and the objects they are attached to. To invoke this 
 # *method* , you need the read privilege on each input tag. The 
 # :attr:`Com::Vmware::Cis::Tagging::TagAssociation::TagToObjects.object_ids`  will only
-# contain those objects for which you have the read privilege.
+# contain those objects for which you have the read privilege. This  *method*  was added in
+# vSphere API 6.5
 #
 # @param tag_ids [REQUIRED]  The identifiers of the input tags.
 # The value must be an identifier for the resource type
@@ -390,7 +391,8 @@ sub list_attached_tags {
 # describing the input object identifiers and the tags attached to each object. To invoke
 # this  *method* , you need the read privilege on each input object. The 
 # :attr:`Com::Vmware::Cis::Tagging::TagAssociation::ObjectToTags.tag_ids`  will only contain
-# those tags for which you have the read privilege.
+# those tags for which you have the read privilege. This  *method*  was added in vSphere API
+# 6.5
 #
 # @param object_ids [REQUIRED]  The identifiers of the input objects.
 # . The value must be Array of Com::Vmware::Vapi::Std::DynamicID.
@@ -467,7 +469,7 @@ sub list_attachable_tags {
 #
 # The  ``Com::Vmware::Cis::Tagging::TagAssociation::BatchResult``   *class*  describes
 #     the result of performing the same  *method*  on several tags or objects in a single
-#     invocation.
+#     invocation. This  *class*  was added in vSphere API 6.5
 
 package Com::Vmware::Cis::Tagging::TagAssociation::BatchResult;
 
@@ -511,7 +513,8 @@ sub new {
 #
 # @retval success - The current value of the field.
 # This is true if the batch  *method*  completed without any errors. Otherwise it is
-#     false and all or some  *methods*  have failed.
+#     false and all or some  *methods*  have failed. This  *field*  was added in vSphere API
+#     6.5
 #
 # boolean#
 sub get_success {
@@ -524,7 +527,8 @@ sub get_success {
 # 
 # @param success  - New value for the field.
 # This is true if the batch  *method*  completed without any errors. Otherwise it is
-#     false and all or some  *methods*  have failed.
+#     false and all or some  *methods*  have failed. This  *field*  was added in vSphere API
+#     6.5
 #
 sub set_success {
    my ($self, %args) = @_;
@@ -536,7 +540,7 @@ sub set_success {
 # Gets the value of 'error_messages' property.
 #
 # @retval error_messages - The current value of the field.
-# The  *list*  of error messages.
+# The  *list*  of error messages. This  *field*  was added in vSphere API 6.5
 #
 # List#
 sub get_error_messages {
@@ -548,7 +552,7 @@ sub get_error_messages {
 # Sets the given value for 'error_messages' property.
 # 
 # @param error_messages  - New value for the field.
-# The  *list*  of error messages.
+# The  *list*  of error messages. This  *field*  was added in vSphere API 6.5
 #
 sub set_error_messages {
    my ($self, %args) = @_;
@@ -567,7 +571,7 @@ sub set_error_messages {
 #     a tag and its related objects. Use the 
 #     :func:`Com::Vmware::Cis::Tagging::TagAssociation.list_attached_objects_on_tags`  
 #     *method*  to retrieve a  *list*  with each element containing a tag and the objects to
-#     which it is attached.
+#     which it is attached. This  *class*  was added in vSphere API 6.5
 
 package Com::Vmware::Cis::Tagging::TagAssociation::TagToObjects;
 
@@ -610,7 +614,7 @@ sub new {
 # Gets the value of 'tag_id' property.
 #
 # @retval tag_id - The current value of the field.
-# The identifier of the tag.
+# The identifier of the tag. This  *field*  was added in vSphere API 6.5
 #
 # ID#
 sub get_tag_id {
@@ -622,7 +626,7 @@ sub get_tag_id {
 # Sets the given value for 'tag_id' property.
 # 
 # @param tag_id  - New value for the field.
-# The identifier of the tag.
+# The identifier of the tag. This  *field*  was added in vSphere API 6.5
 #
 sub set_tag_id {
    my ($self, %args) = @_;
@@ -634,7 +638,7 @@ sub set_tag_id {
 # Gets the value of 'object_ids' property.
 #
 # @retval object_ids - The current value of the field.
-# The identifiers of the related objects.
+# The identifiers of the related objects. This  *field*  was added in vSphere API 6.5
 #
 # List#
 sub get_object_ids {
@@ -646,7 +650,7 @@ sub get_object_ids {
 # Sets the given value for 'object_ids' property.
 # 
 # @param object_ids  - New value for the field.
-# The identifiers of the related objects.
+# The identifiers of the related objects. This  *field*  was added in vSphere API 6.5
 #
 sub set_object_ids {
    my ($self, %args) = @_;
@@ -665,7 +669,7 @@ sub set_object_ids {
 #     an object and its related tags. Use the 
 #     :func:`Com::Vmware::Cis::Tagging::TagAssociation.list_attached_tags_on_objects`  
 #     *method*  to retrieve a  *list*  with each element containing an object and the tags
-#     attached to it.
+#     attached to it. This  *class*  was added in vSphere API 6.5
 
 package Com::Vmware::Cis::Tagging::TagAssociation::ObjectToTags;
 
@@ -708,7 +712,7 @@ sub new {
 # Gets the value of 'object_id' property.
 #
 # @retval object_id - The current value of the field.
-# The identifier of the object.
+# The identifier of the object. This  *field*  was added in vSphere API 6.5
 #
 # DynamicID#
 sub get_object_id {
@@ -720,7 +724,7 @@ sub get_object_id {
 # Sets the given value for 'object_id' property.
 # 
 # @param object_id  - New value for the field.
-# The identifier of the object.
+# The identifier of the object. This  *field*  was added in vSphere API 6.5
 #
 sub set_object_id {
    my ($self, %args) = @_;
@@ -732,7 +736,7 @@ sub set_object_id {
 # Gets the value of 'tag_ids' property.
 #
 # @retval tag_ids - The current value of the field.
-# The identifiers of the related tags.
+# The identifiers of the related tags. This  *field*  was added in vSphere API 6.5
 #
 # List#
 sub get_tag_ids {
@@ -744,7 +748,7 @@ sub get_tag_ids {
 # Sets the given value for 'tag_ids' property.
 # 
 # @param tag_ids  - New value for the field.
-# The identifiers of the related tags.
+# The identifiers of the related tags. This  *field*  was added in vSphere API 6.5
 #
 sub set_tag_ids {
    my ($self, %args) = @_;

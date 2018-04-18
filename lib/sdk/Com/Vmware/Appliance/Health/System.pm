@@ -12,7 +12,7 @@
 
 ## @class Com::Vmware::Appliance::Health::System
 # ``Com::Vmware::Appliance::Health::System``   *interface*  provides  *methods*  Get
-#     overall health of system.
+#     overall health of the system.
 #
 
 package Com::Vmware::Appliance::Health::System;
@@ -61,7 +61,7 @@ sub new {
 # Get last check timestamp of the health of the system.
 #
 # @retval 
-# System health last check timestamp.
+# System health last check timestamp
 # The return type will be datetime.datetime
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
@@ -78,7 +78,7 @@ sub lastcheck {
 # Get overall health of system.
 #
 # @retval 
-# System health.
+# System health
 # The return type will be Com::Vmware::Appliance::Health::System::HealthLevel
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
@@ -100,12 +100,12 @@ sub get {
 ## @class Com::Vmware::Appliance::Health::System::HealthLevel
 #
 # ``Com::Vmware::Appliance::Health::System::HealthLevel``   *enumerated type*  Defines
-#     health levels
+#     health levels.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Health::System::HealthLevel::ORANGE #
-#The service health is degraded. The service might have serious problems
+#The service health is degraded. The service might have serious problems.
 #
 # Constant Com::Vmware::Appliance::Health::System::HealthLevel::GRAY #
 #No health data is available for this service.
@@ -114,7 +114,7 @@ sub get {
 #Service is healthy.
 #
 # Constant Com::Vmware::Appliance::Health::System::HealthLevel::RED #
-#The service is unavaiable and is not functioning properly or will stop functioning soon.
+#The service is unavaiable, not functioning properly, or will stop functioning soon.
 #
 # Constant Com::Vmware::Appliance::Health::System::HealthLevel::YELLOW #
 #The service is healthy state, but experiencing some levels of problems.

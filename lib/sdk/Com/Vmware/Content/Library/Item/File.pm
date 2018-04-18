@@ -63,6 +63,9 @@ sub new {
 ## @method get ()
 # Retrieves the information for a single file in a library item by its name.
 #
+# Note:
+# Privileges required for this operation are System.Read, System.Anonymous.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item whose file information should be returned.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -80,6 +83,11 @@ sub new {
 #  if  ``library_item_id``  refers to a library item that does not exist.
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if  ``name``  refers to a file that does not exist in the library item.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {
@@ -98,6 +106,9 @@ sub get {
 ## @method list ()
 # Lists all of the files that are stored within a given library item.
 #
+# Note:
+# Privileges required for this operation are System.Read, System.Anonymous.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item whose files should be listed.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -109,6 +120,11 @@ sub get {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if  ``library_item_id``  refers to a library item that does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {

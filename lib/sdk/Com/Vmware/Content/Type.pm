@@ -83,10 +83,17 @@ sub new {
 # Returns a  *list*  of  class Com::Vmware::Content::Type::Info  instances which describe
 # the type support plugins in this Content Library.
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.TypeIntrospection.
+#
 # @retval 
 # The  *list*  of  class Com::Vmware::Content::Type::Info  instances which describe the
 #     type support plugins in this Content Library.
 # The return type will be Array of Com::Vmware::Content::Type::Info
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``ContentLibrary.TypeIntrospection`` . </li>
+# </ul>
 #
 
 sub list {

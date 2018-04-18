@@ -148,29 +148,29 @@ sub new {
 #
 #
 #
-# Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::FTPS #
-#Destination is FTPS server
+# Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::FTP #
+#Destination is FTP server
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::HTTP #
 #Destination is HTTP server
 #
-# Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::SCP #
-#Destination is SSH server
+# Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::FTPS #
+#Destination is FTPS server
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::HTTPS #
 #Destination is HTTPS server
 #
-# Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::FTP #
-#Destination is FTP server
+# Constant Com::Vmware::Appliance::Recovery::Backup::LocationType::SCP #
+#Destination is SSH server
 
 package Com::Vmware::Appliance::Recovery::Backup::LocationType;
 
 use constant {
-    FTPS =>  'FTPS',
-    HTTP =>  'HTTP',
-    SCP =>  'SCP',
-    HTTPS =>  'HTTPS',
     FTP =>  'FTP',
+    HTTP =>  'HTTP',
+    FTPS =>  'FTPS',
+    HTTPS =>  'HTTPS',
+    SCP =>  'SCP',
 };
 
 #

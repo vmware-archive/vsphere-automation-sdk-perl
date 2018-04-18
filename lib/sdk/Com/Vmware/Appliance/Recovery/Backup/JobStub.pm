@@ -14,8 +14,8 @@ package Com::Vmware::Appliance::Recovery::Backup::JobStub;
 
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job
 #
-#{@name Job} {@term service} provides {@term operations}
-#Performs backup restore operations
+#The {@name Job} {@term service} provides {@term operations}
+#to be performed on a backup job.
 #
 
 #

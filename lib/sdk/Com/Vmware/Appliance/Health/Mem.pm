@@ -83,7 +83,7 @@ sub get {
 ## @class Com::Vmware::Appliance::Health::Mem::HealthLevel
 #
 # ``Com::Vmware::Appliance::Health::Mem::HealthLevel``   *enumerated type*  Defines
-#     health levels
+#     health levels.
 #
 #
 #
@@ -97,7 +97,7 @@ sub get {
 #Service is healthy.
 #
 # Constant Com::Vmware::Appliance::Health::Mem::HealthLevel::RED #
-#The service is unavaiable and is not functioning properly or will stop functioning soon.
+#The service is unavaiable, not functioning properly, or will stop functioning soon.
 #
 # Constant Com::Vmware::Appliance::Health::Mem::HealthLevel::YELLOW #
 #The service is healthy state, but experiencing some levels of problems.

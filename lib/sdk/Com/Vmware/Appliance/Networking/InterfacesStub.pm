@@ -8,6 +8,7 @@
 #
 #
 
+#use Com::Vmware::Appliance::Networking::Interfaces;
 #use Com::Vmware::Vapi::Std::Errors;
 
 package Com::Vmware::Appliance::Networking::InterfacesStub;
@@ -93,6 +94,7 @@ sub new
       }
    );
    my $get_error_dict = {
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
       'com.vmware.vapi.std.errors.error' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Error'),
 
       };

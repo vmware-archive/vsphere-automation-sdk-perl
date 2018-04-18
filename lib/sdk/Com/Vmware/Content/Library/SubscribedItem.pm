@@ -66,6 +66,9 @@ sub new {
 # cache up-to-date with the published source. Evicting the library item will set 
 # :attr:`Com::Vmware::Content::Library::ItemModel.cached`  to false.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.EvictLibraryItem.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item whose content should be evicted.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -81,6 +84,21 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementConfiguration 
 # if the library item specified by  ``library_item_id``  is a member of a subscribed
 #     library that does not synchronize on-demand.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the content of the library item specified by  ``library_item_id``  has been deleted
+#     from the storage backings (see null) associated with it. <p>
+# 
+# For instance, this {@term error) is reported on evicting a library item in an
+#     on-demand subscribed library that was restored from backup, and the library item was
+#     deleted after backup, thus resulting in its content being deleted from the associated
+#     storage backings. In this scenario, the metadata of the library item is present on a
+#     restore, while its content has been deleted.</p>
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``ContentLibrary.EvictLibraryItem`` . </li>
+# </ul>
 #
 
 sub evict {
@@ -122,6 +140,9 @@ sub evict {
 # This  *method*  will return immediately and create an asynchronous task to perform the
 # synchronization.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.SyncLibraryItem.
+#
 # @param library_item_id [REQUIRED]  Identifier of the library item to synchronize.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.library.Item).
@@ -137,6 +158,21 @@ sub evict {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 # if the library item specified by  ``library_item_id``  is not a member of a subscribed
 #     library.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the content of the library item specified by  ``library_item_id``  has been deleted
+#     from the storage backings (see null) associated with it. <p>
+# 
+# For instance, this {@term error) is reported on synchronizing a library item in a
+#     subscribed library that was restored from backup, and the library item was deleted
+#     after backup, thus resulting in its content being deleted from the associated storage
+#     backings. In this scenario, the metadata of the library item is present on a restore,
+#     while its content has been deleted.</p>
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``ContentLibrary.SyncLibraryItem`` . </li>
+# </ul>
 #
 
 sub sync {

@@ -65,6 +65,9 @@ sub new {
 ## @method create ()
 # Creates a new local library.
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.CreateLocalLibrary.
+#
 # @param client_token [OPTIONAL] A unique token generated on the client for each creation request. The token should be
 #     a universally unique identifier (UUID), for example: 
 #     ``b8a2a2e3-2314-43cd-a871-6ede0f429751`` . This token can be used to guarantee
@@ -88,6 +91,10 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unsupported 
 #  if using multiple storage backings.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``ContentLibrary.CreateLocalLibrary`` . </li>
+# </ul>
 #
 
 sub create {
@@ -110,6 +117,9 @@ sub create {
 # to remove all cached content for the library. If the asynchronous task fails, file content
 # may remain on the storage backing. This content will require manual removal.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.DeleteLocalLibrary.
+#
 # @param library_id [REQUIRED]  Identifier of the local library to delete.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -120,6 +130,11 @@ sub create {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library specified by  ``library_id``  does not exist.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.DeleteLocalLibrary`` . </li>
+# </ul>
 #
 
 sub delete {
@@ -137,6 +152,9 @@ sub delete {
 ## @method get ()
 # Returns a given local library.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param library_id [REQUIRED]  Identifier of the local library to return.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -152,6 +170,11 @@ sub delete {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library specified by  ``library_id``  is not a local library.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {
@@ -169,11 +192,18 @@ sub get {
 ## @method list ()
 # Returns the identifiers of all local libraries in the Content Library.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @retval 
 # The  *list*  of identifiers of all local libraries in the Content Library.
 # The value will be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
 # The return type will be Array of str
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub list {
@@ -188,6 +218,9 @@ sub list {
 # This is an incremental update to the local library.  *Fields*  that are  *null*  in the
 # update specification will be left unchanged.</p>
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.UpdateLocalLibrary.
+#
 # @param library_id [REQUIRED]  Identifier of the local library to update.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.content.Library).
@@ -199,14 +232,34 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library specified by  ``library_id``  does not exist.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the library specified by  ``library_id``  is a published library with JSON
+#     persistence enabled (see 
+#     :attr:`Com::Vmware::Content::Library::PublishInfo.persist_json_enabled` ) and the
+#     content of the library has been deleted from the storage backings (see 
+#     :attr:`Com::Vmware::Content::LibraryModel.storage_backings` ) associated with it.
+#
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 #  if the library specified by  ``library_id``  is not a local library.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if the  ``update_spec``  is not valid.
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if the  :attr:`Com::Vmware::Content::Library::PublishInfo.current_password`  in the 
+#     ``update_spec``  does not match the existing password of the published library.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ResourceBusy 
+# if the  :attr:`Com::Vmware::Content::LibraryModel.version`  of  ``update_spec``  is 
+#     *null*  and the library is being concurrently updated by another user.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ConcurrentChange 
 # if the  :attr:`Com::Vmware::Content::LibraryModel.version`  of  ``update_spec``  is
 #     not equal to the current version of the library.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.UpdateLocalLibrary`` . </li>
+# </ul>
 #
 
 sub update {

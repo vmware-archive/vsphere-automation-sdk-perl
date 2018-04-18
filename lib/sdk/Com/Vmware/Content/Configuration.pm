@@ -67,12 +67,19 @@ sub new {
 # properties. In the case of a system crash or failure, some of the properties could be left
 # unchanged while others may be updated.
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.UpdateConfiguration.
+#
 # @param model [REQUIRED] The  class Com::Vmware::Content::ConfigurationModel  specifying the settings to
 #     update.
 # . The value must be Com::Vmware::Content::ConfigurationModel.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if one of the configuration properties is not within the proper range.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``ContentLibrary.UpdateConfiguration`` . </li>
+# </ul>
 #
 
 sub update {
@@ -90,10 +97,17 @@ sub update {
 ## @method get ()
 # Retrieves the current configuration values.
 #
+# Note:
+# Privileges required for this operation are ContentLibrary.GetConfiguration.
+#
 # @retval 
 # The  class Com::Vmware::Content::ConfigurationModel  instance representing the
 #     configuration of the Content Library Service.
 # The return type will be Com::Vmware::Content::ConfigurationModel
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``ContentLibrary.GetConfiguration`` . </li>
+# </ul>
 #
 
 sub get {

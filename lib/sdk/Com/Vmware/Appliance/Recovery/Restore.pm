@@ -96,29 +96,29 @@ sub validate {
 #
 #
 #
-# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::FTPS #
-#Destination is FTPS server
+# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::FTP #
+#Destination is FTP server
 #
 # Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::HTTP #
 #Destination is HTTP server
 #
-# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::SCP #
-#Destination is SSH server
+# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::FTPS #
+#Destination is FTPS server
 #
 # Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::HTTPS #
 #Destination is HTTPS server
 #
-# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::FTP #
-#Destination is FTP server
+# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::SCP #
+#Destination is SSH server
 
 package Com::Vmware::Appliance::Recovery::Restore::LocationType;
 
 use constant {
-    FTPS =>  'FTPS',
-    HTTP =>  'HTTP',
-    SCP =>  'SCP',
-    HTTPS =>  'HTTPS',
     FTP =>  'FTP',
+    HTTP =>  'HTTP',
+    FTPS =>  'FTPS',
+    HTTPS =>  'HTTPS',
+    SCP =>  'SCP',
 };
 
 #
@@ -193,6 +193,8 @@ sub new {
    $self->{location} = $args{'location'};
    $self->{location_user} = $args{'location_user'};
    $self->{location_password} = $args{'location_password'};
+   $self->{sso_admin_user_name} = $args{'sso_admin_user_name'};
+   $self->{sso_admin_user_password} = $args{'sso_admin_user_password'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Recovery::Restore::RestoreRequest');
    $self->set_binding_name('name' => 'com.vmware.appliance.recovery.restore.restore_request');
@@ -201,6 +203,8 @@ sub new {
    $self->set_binding_field('key' => 'location', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'location_user', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'location_password', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SecretType()));
+   $self->set_binding_field('key' => 'sso_admin_user_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'sso_admin_user_password', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SecretType()));
    bless $self, $class;
    return $self;
 }
@@ -322,6 +326,54 @@ sub get_location_password {
 sub set_location_password {
    my ($self, %args) = @_;
    $self->{'location_password'} = $args{'location_password'}; 
+   return;	
+}
+
+## @method get_sso_admin_user_name ()
+# Gets the value of 'sso_admin_user_name' property.
+#
+# @retval sso_admin_user_name - The current value of the field.
+# Administrators username for SSO. This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_sso_admin_user_name {
+   my ($self, %args) = @_;
+   return $self->{'sso_admin_user_name'}; 	
+}
+
+## @method set_sso_admin_user_name ()
+# Sets the given value for 'sso_admin_user_name' property.
+# 
+# @param sso_admin_user_name  - New value for the field.
+# Administrators username for SSO. This  *field*  was added in vSphere API 6.7
+#
+sub set_sso_admin_user_name {
+   my ($self, %args) = @_;
+   $self->{'sso_admin_user_name'} = $args{'sso_admin_user_name'}; 
+   return;	
+}
+
+## @method get_sso_admin_user_password ()
+# Gets the value of 'sso_admin_user_password' property.
+#
+# @retval sso_admin_user_password - The current value of the field.
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+#
+# Optional#
+sub get_sso_admin_user_password {
+   my ($self, %args) = @_;
+   return $self->{'sso_admin_user_password'}; 	
+}
+
+## @method set_sso_admin_user_password ()
+# Sets the given value for 'sso_admin_user_password' property.
+# 
+# @param sso_admin_user_password  - New value for the field.
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+#
+sub set_sso_admin_user_password {
+   my ($self, %args) = @_;
+   $self->{'sso_admin_user_password'} = $args{'sso_admin_user_password'}; 
    return;	
 }
 
@@ -486,6 +538,7 @@ sub new {
    $self->{parts} = $args{'parts'};
    $self->{version} = $args{'version'};
    $self->{boxname} = $args{'boxname'};
+   $self->{sso_login_required} = $args{'sso_login_required'};
    $self->{comment} = $args{'comment'};
    $self->{applicable} = $args{'applicable'};
    $self->{messages} = $args{'messages'};
@@ -496,6 +549,7 @@ sub new {
    $self->set_binding_field('key' => 'parts', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'version', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'boxname', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'sso_login_required', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
    $self->set_binding_field('key' => 'comment', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'applicable', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
    $self->set_binding_field('key' => 'messages', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Recovery', 'type_name' => 'Restore::LocalizableMessage')));
@@ -596,6 +650,32 @@ sub get_boxname {
 sub set_boxname {
    my ($self, %args) = @_;
    $self->{'boxname'} = $args{'boxname'}; 
+   return;	
+}
+
+## @method get_sso_login_required ()
+# Gets the value of 'sso_login_required' property.
+#
+# @retval sso_login_required - The current value of the field.
+# Is SSO login required for the vCenter server. This  *field*  was added in vSphere API
+#     6.7
+#
+# optional#
+sub get_sso_login_required {
+   my ($self, %args) = @_;
+   return $self->{'sso_login_required'}; 	
+}
+
+## @method set_sso_login_required ()
+# Sets the given value for 'sso_login_required' property.
+# 
+# @param sso_login_required  - New value for the field.
+# Is SSO login required for the vCenter server. This  *field*  was added in vSphere API
+#     6.7
+#
+sub set_sso_login_required {
+   my ($self, %args) = @_;
+   $self->{'sso_login_required'} = $args{'sso_login_required'}; 
    return;	
 }
 

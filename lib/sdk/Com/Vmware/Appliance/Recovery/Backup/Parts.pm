@@ -58,14 +58,14 @@ sub new {
 }
 
 ## @method list ()
-# Get a list of the backup parts
+# Gets a list of the backup parts.
 #
 # @retval 
-# list of parts
+# Information about each of the backup parts.
 # The return type will be Array of Com::Vmware::Appliance::Recovery::Backup::Parts::Part
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# Generic error
+# if any error occurs during the execution of the operation.
 #
 
 sub list {
@@ -75,19 +75,19 @@ sub list {
 
 
 ## @method get ()
-# Get size of the optional part
+# Gets the size (in MB) of the part.
 #
-# @param id [REQUIRED] part id
+# @param id [REQUIRED] Identifier of the part.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.appliance.recovery.backup.parts).
 # . The value must be str.
 #
 # @retval 
-# int size
+# long Size of the part in megabytes.
 # The return type will be Long
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# Generic error
+# if any error occurs during the execution of the operation.
 #
 
 sub get {
@@ -364,7 +364,7 @@ sub set_description {
 # Gets the value of 'selected_by_default' property.
 #
 # @retval selected_by_default - The current value of the field.
-# Is part selected by default in UI
+# Is this part selected by default in the user interface.
 #
 # boolean#
 sub get_selected_by_default {
@@ -376,7 +376,7 @@ sub get_selected_by_default {
 # Sets the given value for 'selected_by_default' property.
 # 
 # @param selected_by_default  - New value for the field.
-# Is part selected by default in UI
+# Is this part selected by default in the user interface.
 #
 sub set_selected_by_default {
    my ($self, %args) = @_;
@@ -388,7 +388,7 @@ sub set_selected_by_default {
 # Gets the value of 'optional' property.
 #
 # @retval optional - The current value of the field.
-# Estimated size of this piece
+# Is this part optional.
 #
 # boolean#
 sub get_optional {
@@ -400,7 +400,7 @@ sub get_optional {
 # Sets the given value for 'optional' property.
 # 
 # @param optional  - New value for the field.
-# Estimated size of this piece
+# Is this part optional.
 #
 sub set_optional {
    my ($self, %args) = @_;

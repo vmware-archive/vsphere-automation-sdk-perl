@@ -13,7 +13,8 @@
 ## @class Com::Vmware::Vcenter::Hvc::Links
 # The  ``Com::Vmware::Vcenter::Hvc::Links``   *interface*  provides  *methods*  to
 #     create, delete, get information, and list hybrid links between the local and foreign
-#     Platform Service Controller (PSC).
+#     Platform Service Controller (PSC). <b>Warning:</b> This  *interface*  is available as
+#     technical preview. It may be changed in a future release.
 #
 
 package Com::Vmware::Vcenter::Hvc::Links;
@@ -59,7 +60,8 @@ sub new {
 }
 
 ## @method create ()
-# Creates a new hybrid link between the local and foreign PSC.
+# Creates a new hybrid link between the local and foreign PSC. <b>Warning:</b> This 
+# *method*  is available as technical preview. It may be changed in a future release.
 #
 # @param spec [REQUIRED] Specification for the new link to be created.
 # . The value must be Com::Vmware::Vcenter::Hvc::Links::CreateSpec.
@@ -82,6 +84,15 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # If the user is not authorized.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidRequest 
+# If the SSL certificate of the foreign PSC cannot be validated by comparing with the
+#     thumbprint provided in 
+#     :attr:`Com::Vmware::Vcenter::Hvc::Links::CreateSpec.ssl_thumbprint`  or if 
+#     :attr:`Com::Vmware::Vcenter::Hvc::Links::CreateSpec.ssl_thumbprint`  is  *null* . The
+#     value of the {@link InvalidRequest#data)  *field*  will be a  *class*  that contains
+#     all the  *fields*  defined in  class Com::Vmware::Vcenter::Hvc::Links::CertificateInfo
+#     .
+#
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
@@ -99,7 +110,8 @@ sub create {
 
 
 ## @method delete ()
-# Deletes an existing hybrid link.
+# Deletes an existing hybrid link. <b>Warning:</b> This  *method*  is available as technical
+# preview. It may be changed in a future release.
 #
 # @param link [REQUIRED] Identifier of the hybrid link.
 # The value must be an identifier for the resource type
@@ -129,7 +141,8 @@ sub delete {
 
 
 ## @method list ()
-# Enumerates the list of registered hybrid links.
+# Enumerates the list of registered hybrid links. <b>Warning:</b> This  *method*  is
+# available as technical preview. It may be changed in a future release.
 #
 # @retval 
 # The  *list*  of hybrid link information.
@@ -165,7 +178,8 @@ sub list {
 #
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Summary``   *class*  contains information
-#     about the hybrid link.
+#     about the hybrid link. <b>Warning:</b> This  *class*  is available as technical
+#     preview. It may be changed in a future release.
 
 package Com::Vmware::Vcenter::Hvc::Links::Summary;
 
@@ -208,7 +222,8 @@ sub new {
 # Gets the value of 'link' property.
 #
 # @retval link - The current value of the field.
-# Unique identifier for the link.
+# Unique identifier for the link. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 # ID#
 sub get_link {
@@ -220,7 +235,8 @@ sub get_link {
 # Sets the given value for 'link' property.
 # 
 # @param link  - New value for the field.
-# Unique identifier for the link.
+# Unique identifier for the link. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 sub set_link {
    my ($self, %args) = @_;
@@ -233,6 +249,8 @@ sub set_link {
 #
 # @retval display_name - The current value of the field.
 # The display name is set to the domain name which was set during create.
+#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
+#     a future release.
 #
 # String#
 sub get_display_name {
@@ -245,6 +263,8 @@ sub get_display_name {
 # 
 # @param display_name  - New value for the field.
 # The display name is set to the domain name which was set during create.
+#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
+#     a future release.
 #
 sub set_display_name {
    my ($self, %args) = @_;
@@ -260,7 +280,8 @@ sub set_display_name {
 #
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::CreateSpec``   *class*  is the specification
-#     used for the hybrid link creation.
+#     used for the hybrid link creation. <b>Warning:</b> This  *class*  is available as
+#     technical preview. It may be changed in a future release.
 
 package Com::Vmware::Vcenter::Hvc::Links::CreateSpec;
 
@@ -293,6 +314,8 @@ sub new {
    $self->{domain_name} = $args{'domain_name'};
    $self->{username} = $args{'username'};
    $self->{password} = $args{'password'};
+   $self->{ssl_thumbprint} = $args{'ssl_thumbprint'};
+   $self->{admin_groups} = $args{'admin_groups'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Hvc::Links::CreateSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.hvc.links.create_spec');
@@ -301,6 +324,8 @@ sub new {
    $self->set_binding_field('key' => 'domain_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'username', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'password', 'value' => new Com::Vmware::Vapi::Bindings::Type::SecretType());
+   $self->set_binding_field('key' => 'ssl_thumbprint', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'admin_groups', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()))));
    bless $self, $class;
    return $self;
 }
@@ -309,7 +334,8 @@ sub new {
 # Gets the value of 'psc_hostname' property.
 #
 # @retval psc_hostname - The current value of the field.
-# The PSC hostname for the domain to be linked.
+# The PSC hostname for the domain to be linked. <b>Warning:</b> This  *field*  is
+#     available as technical preview. It may be changed in a future release.
 #
 # String#
 sub get_psc_hostname {
@@ -321,7 +347,8 @@ sub get_psc_hostname {
 # Sets the given value for 'psc_hostname' property.
 # 
 # @param psc_hostname  - New value for the field.
-# The PSC hostname for the domain to be linked.
+# The PSC hostname for the domain to be linked. <b>Warning:</b> This  *field*  is
+#     available as technical preview. It may be changed in a future release.
 #
 sub set_psc_hostname {
    my ($self, %args) = @_;
@@ -333,7 +360,8 @@ sub set_psc_hostname {
 # Gets the value of 'port' property.
 #
 # @retval port - The current value of the field.
-# The HTTPS port of the PSC to be linked.
+# The HTTPS port of the PSC to be linked. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 # Optional#
 sub get_port {
@@ -345,7 +373,8 @@ sub get_port {
 # Sets the given value for 'port' property.
 # 
 # @param port  - New value for the field.
-# The HTTPS port of the PSC to be linked.
+# The HTTPS port of the PSC to be linked. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 sub set_port {
    my ($self, %args) = @_;
@@ -357,7 +386,8 @@ sub set_port {
 # Gets the value of 'domain_name' property.
 #
 # @retval domain_name - The current value of the field.
-# The domain to which the PSC belongs.
+# The domain to which the PSC belongs. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 # String#
 sub get_domain_name {
@@ -369,7 +399,8 @@ sub get_domain_name {
 # Sets the given value for 'domain_name' property.
 # 
 # @param domain_name  - New value for the field.
-# The domain to which the PSC belongs.
+# The domain to which the PSC belongs. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 sub set_domain_name {
    my ($self, %args) = @_;
@@ -381,7 +412,8 @@ sub set_domain_name {
 # Gets the value of 'username' property.
 #
 # @retval username - The current value of the field.
-# The administrator username of the PSC.
+# The administrator username of the PSC. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 # String#
 sub get_username {
@@ -393,7 +425,8 @@ sub get_username {
 # Sets the given value for 'username' property.
 # 
 # @param username  - New value for the field.
-# The administrator username of the PSC.
+# The administrator username of the PSC. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -405,7 +438,8 @@ sub set_username {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# The administrator password of the PSC.
+# The administrator password of the PSC. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 # Secret#
 sub get_password {
@@ -417,11 +451,139 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# The administrator password of the PSC.
+# The administrator password of the PSC. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
 #
 sub set_password {
    my ($self, %args) = @_;
    $self->{'password'} = $args{'password'}; 
+   return;	
+}
+
+## @method get_ssl_thumbprint ()
+# Gets the value of 'ssl_thumbprint' property.
+#
+# @retval ssl_thumbprint - The current value of the field.
+# The ssl thumbprint of the server. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
+#
+# Optional#
+sub get_ssl_thumbprint {
+   my ($self, %args) = @_;
+   return $self->{'ssl_thumbprint'}; 	
+}
+
+## @method set_ssl_thumbprint ()
+# Sets the given value for 'ssl_thumbprint' property.
+# 
+# @param ssl_thumbprint  - New value for the field.
+# The ssl thumbprint of the server. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
+#
+sub set_ssl_thumbprint {
+   my ($self, %args) = @_;
+   $self->{'ssl_thumbprint'} = $args{'ssl_thumbprint'}; 
+   return;	
+}
+
+## @method get_admin_groups ()
+# Gets the value of 'admin_groups' property.
+#
+# @retval admin_groups - The current value of the field.
+# List of groups to be added to enable administrator access to. <b>Warning:</b> This 
+#     *field*  is available as technical preview. It may be changed in a future release.
+#
+# Optional#
+sub get_admin_groups {
+   my ($self, %args) = @_;
+   return $self->{'admin_groups'}; 	
+}
+
+## @method set_admin_groups ()
+# Sets the given value for 'admin_groups' property.
+# 
+# @param admin_groups  - New value for the field.
+# List of groups to be added to enable administrator access to. <b>Warning:</b> This 
+#     *field*  is available as technical preview. It may be changed in a future release.
+#
+sub set_admin_groups {
+   my ($self, %args) = @_;
+   $self->{'admin_groups'} = $args{'admin_groups'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Hvc::Links::CertificateInfo
+#
+#
+# The  ``Com::Vmware::Vcenter::Hvc::Links::CertificateInfo``   *class*  contains
+#     information about the SSL certificate for a destination PSC endpoint. <b>Warning:</b>
+#     This  *class*  is available as technical preview. It may be changed in a future
+#     release.
+
+package Com::Vmware::Vcenter::Hvc::Links::CertificateInfo;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Hvc::Links::CertificateInfo structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{ssl_thumbprint} = $args{'ssl_thumbprint'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Hvc::Links::CertificateInfo');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.hvc.links.certificate_info');
+   $self->set_binding_field('key' => 'ssl_thumbprint', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_ssl_thumbprint ()
+# Gets the value of 'ssl_thumbprint' property.
+#
+# @retval ssl_thumbprint - The current value of the field.
+# The SHA-256 thumbprint of the SSL certificate for the destination PSC endpoint.
+#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
+#     a future release.
+#
+# String#
+sub get_ssl_thumbprint {
+   my ($self, %args) = @_;
+   return $self->{'ssl_thumbprint'}; 	
+}
+
+## @method set_ssl_thumbprint ()
+# Sets the given value for 'ssl_thumbprint' property.
+# 
+# @param ssl_thumbprint  - New value for the field.
+# The SHA-256 thumbprint of the SSL certificate for the destination PSC endpoint.
+#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
+#     a future release.
+#
+sub set_ssl_thumbprint {
+   my ($self, %args) = @_;
+   $self->{'ssl_thumbprint'} = $args{'ssl_thumbprint'}; 
    return;	
 }
 

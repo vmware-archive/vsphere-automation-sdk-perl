@@ -218,14 +218,11 @@ sub new {
 #Input parameter is a list.
 #
 # Constant Com::Vmware::Vapi::Metadata::Cli::Command::GenericType::OPTIONAL_LIST #
-#Input parameter is an optional of type list. <p>
-# 
-#  New in vSphere 6.5.</p>
+#Input parameter is an optional of type list. This  *constant*  was added in vSphere API
+# 6.5
 #
 # Constant Com::Vmware::Vapi::Metadata::Cli::Command::GenericType::LIST_OPTIONAL #
-#Input parameter is a list of optionals. <p>
-# 
-#  New in vSphere 6.5.</p>
+#Input parameter is a list of optionals. This  *constant*  was added in vSphere API 6.5
 
 package Com::Vmware::Vapi::Metadata::Cli::Command::GenericType;
 

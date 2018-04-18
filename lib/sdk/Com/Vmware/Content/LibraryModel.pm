@@ -263,12 +263,18 @@ sub set_name {
 # Gets the value of 'storage_backings' property.
 #
 # @retval storage_backings - The current value of the field.
-# The list of storage backings which are available for this library. <p>
+# The list of default storage backings which are available for this library. <p>
 # 
-# A  class Com::Vmware::Content::Library::StorageBacking  defines a storage location
-#     which can be used to store files for the library items in this library. Multiple
-#     storage locations are not currently supported but may become supported in future
-#     releases.</p>
+# A  class Com::Vmware::Content::Library::StorageBacking  defines a default storage
+#     location which can be used to store files for library items in this library. Some
+#     library items, for instance, virtual machine template items, support files that may be
+#     distributed across various storage backings. One or more item files may or may not be
+#     located on the default storage backing. </p>
+# 
+# <p>
+# 
+# Multiple default storage locations are not currently supported but may become
+#     supported in future releases.</p>
 #
 # optional#
 sub get_storage_backings {
@@ -280,12 +286,18 @@ sub get_storage_backings {
 # Sets the given value for 'storage_backings' property.
 # 
 # @param storage_backings  - New value for the field.
-# The list of storage backings which are available for this library. <p>
+# The list of default storage backings which are available for this library. <p>
 # 
-# A  class Com::Vmware::Content::Library::StorageBacking  defines a storage location
-#     which can be used to store files for the library items in this library. Multiple
-#     storage locations are not currently supported but may become supported in future
-#     releases.</p>
+# A  class Com::Vmware::Content::Library::StorageBacking  defines a default storage
+#     location which can be used to store files for library items in this library. Some
+#     library items, for instance, virtual machine template items, support files that may be
+#     distributed across various storage backings. One or more item files may or may not be
+#     located on the default storage backing. </p>
+# 
+# <p>
+# 
+# Multiple default storage locations are not currently supported but may become
+#     supported in future releases.</p>
 #
 sub set_storage_backings {
    my ($self, %args) = @_;
@@ -300,7 +312,9 @@ sub set_storage_backings {
 # The type (LOCAL, SUBSCRIBED) of this library. <p>
 # 
 # This value can be used to determine what additional services and information can be
-#     available for this library.</p>
+#     available for this library. This  *field*  is not used for the  ``create``  and 
+#     ``update``   *methods* . It will always be present in the result of a  ``get``  
+#     *method* .</p>
 #
 # optional#
 sub get_type {
@@ -315,7 +329,9 @@ sub get_type {
 # The type (LOCAL, SUBSCRIBED) of this library. <p>
 # 
 # This value can be used to determine what additional services and information can be
-#     available for this library.</p>
+#     available for this library. This  *field*  is not used for the  ``create``  and 
+#     ``update``   *methods* . It will always be present in the result of a  ``get``  
+#     *method* .</p>
 #
 sub set_type {
    my ($self, %args) = @_;
