@@ -19,7 +19,7 @@ This document for the vSphere Automation SDK for perl describes -
    2. The procedure for contributing new samples.
 
 ## Supported vCenter Releases:
-vCenter 6.0, 6.5 and 6.6.2.
+vCenter 6.0, 6.5 and 6.7.
 Please refer to the notes in each sample for detailed compatibility information.
 
 ## Introduction
@@ -116,7 +116,7 @@ Apart from the above, each individual sample may require additional setup. Pleas
 1. Please pick up one of the supported linux/windows platform from the
 [Supported Platforms](#supported-platforms) list.
 2. Install all required perl modules (prerequisites) as per your choosen platform.
-3. Download the vSphere SDK for Perl 6.7 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://my.vmware.com/group/vmware/get-download?downloadGroup=VSP67SDK) and follow below mentioned steps to install in case of linux platform.
+3. Download the vSphere SDK for Perl 6.7 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://my.vmware.com/group/vmware/details?downloadGroup=VS-PERL-SDK67&productId=742) and follow below mentioned steps to install in case of linux platform.
 ```cmd
 Untar the vSphere SDK for Perl 6.7 binary that you downloaded.
 $tar –zxvf VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz
