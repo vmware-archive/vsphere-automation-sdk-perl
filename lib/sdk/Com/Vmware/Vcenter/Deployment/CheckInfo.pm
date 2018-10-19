@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Deployment::CheckInfo``   *class*  describes the result
-#     of the appliance deployment check. This  *class*  was added in vSphere API 6.7
+#     of the appliance deployment check. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::CheckInfo;
 
@@ -45,7 +45,7 @@ sub new {
 # Gets the value of 'status' property.
 #
 # @retval status - The current value of the field.
-# Status of the check. This  *field*  was added in vSphere API 6.7
+# Status of the check. This  *field*  was added in vSphere API 6.7.
 #
 # CheckStatus#
 sub get_status {
@@ -57,7 +57,7 @@ sub get_status {
 # Sets the given value for 'status' property.
 # 
 # @param status  - New value for the field.
-# Status of the check. This  *field*  was added in vSphere API 6.7
+# Status of the check. This  *field*  was added in vSphere API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -69,7 +69,7 @@ sub set_status {
 # Gets the value of 'result' property.
 #
 # @retval result - The current value of the field.
-# Result of the check. This  *field*  was added in vSphere API 6.7
+# Result of the check. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_result {
@@ -81,7 +81,7 @@ sub get_result {
 # Sets the given value for 'result' property.
 # 
 # @param result  - New value for the field.
-# Result of the check. This  *field*  was added in vSphere API 6.7
+# Result of the check. This  *field*  was added in vSphere API 6.7.
 #
 sub set_result {
    my ($self, %args) = @_;

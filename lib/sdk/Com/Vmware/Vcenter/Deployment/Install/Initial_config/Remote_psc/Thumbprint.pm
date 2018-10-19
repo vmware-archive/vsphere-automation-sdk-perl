@@ -14,7 +14,7 @@
 # The 
 #     ``Com::Vmware::Vcenter::Deployment::Install::Initial_config::Remote_psc::Thumbprint`` 
 #     *interface*  provides  *methods*  to get the thumbprint of the remote PSC. This 
-#     *interface*  was added in vSphere API 6.7
+#     *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::Install::Initial_config::Remote_psc::Thumbprint;
@@ -60,7 +60,7 @@ sub new {
 }
 
 ## @method get ()
-# Gets the SHA1 thumbprint of the remote PSC. This  *method*  was added in vSphere API 6.7
+# Gets the SHA1 thumbprint of the remote PSC. This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] Information used to connect to the remote PSC.
 # . The value must be
@@ -111,7 +111,7 @@ sub get {
 # The 
 #     ``Com::Vmware::Vcenter::Deployment::Install::Initial_config::Remote_psc::Thumbprint::RemoteSpec``
 #     *class*  contains the information used to connect to the remote PSC. This  *class* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Install::Initial_config::Remote_psc::Thumbprint::RemoteSpec;
 
@@ -155,7 +155,7 @@ sub new {
 #
 # @retval address - The current value of the field.
 # The IP address or DNS resolvable name of the remote PSC. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # String#
 sub get_address {
@@ -168,7 +168,7 @@ sub get_address {
 # 
 # @param address  - New value for the field.
 # The IP address or DNS resolvable name of the remote PSC. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -180,7 +180,7 @@ sub set_address {
 # Gets the value of 'https_port' property.
 #
 # @retval https_port - The current value of the field.
-# The HTTPS port of the remote PSC. This  *field*  was added in vSphere API 6.7
+# The HTTPS port of the remote PSC. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_https_port {
@@ -192,7 +192,7 @@ sub get_https_port {
 # Sets the given value for 'https_port' property.
 # 
 # @param https_port  - New value for the field.
-# The HTTPS port of the remote PSC. This  *field*  was added in vSphere API 6.7
+# The HTTPS port of the remote PSC. This  *field*  was added in vSphere API 6.7.
 #
 sub set_https_port {
    my ($self, %args) = @_;

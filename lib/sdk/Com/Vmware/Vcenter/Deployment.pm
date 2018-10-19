@@ -16,7 +16,7 @@
 ## @class Com::Vmware::Vcenter::Deployment
 # The  ``Com::Vmware::Vcenter::Deployment``   *interface*  provides  *methods*  to get
 #     the status of the vCenter appliance deployment. This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment;
@@ -63,7 +63,7 @@ sub new {
 
 ## @method get ()
 # Get the current status of the appliance deployment. This  *method*  was added in vSphere
-# API 6.7
+# API 6.7.
 #
 # @retval 
 # Info structure containing the status information about the appliance.
@@ -84,7 +84,7 @@ sub get {
 
 ## @method rollback ()
 # Rollback a failed appliance so it can be configured once again. This  *method*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unsupported 
 # if the appliance is not in FAILED state.
@@ -119,7 +119,7 @@ sub rollback {
 #
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Task``   *class*  contains  *fields*  to
-#     describe a particular deployment task. This  *class*  was added in vSphere API 6.7
+#     describe a particular deployment task. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Task;
 
@@ -195,7 +195,8 @@ sub new {
 # Gets the value of 'progress' property.
 #
 # @retval progress - The current value of the field.
-# The progress info of this deployment task. This  *field*  was added in vSphere API 6.7
+# The progress info of this deployment task. This  *field*  was added in vSphere API
+#     6.7.
 #
 # optional#
 sub get_progress {
@@ -207,7 +208,8 @@ sub get_progress {
 # Sets the given value for 'progress' property.
 # 
 # @param progress  - New value for the field.
-# The progress info of this deployment task. This  *field*  was added in vSphere API 6.7
+# The progress info of this deployment task. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_progress {
    my ($self, %args) = @_;
@@ -219,7 +221,7 @@ sub set_progress {
 # Gets the value of 'result' property.
 #
 # @retval result - The current value of the field.
-# Result of the task. This  *field*  was added in vSphere API 6.7
+# Result of the task. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_result {
@@ -231,7 +233,7 @@ sub get_result {
 # Sets the given value for 'result' property.
 # 
 # @param result  - New value for the field.
-# Result of the task. This  *field*  was added in vSphere API 6.7
+# Result of the task. This  *field*  was added in vSphere API 6.7.
 #
 sub set_result {
    my ($self, %args) = @_;
@@ -267,7 +269,7 @@ sub set_description {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 # ID#
 sub get_service {
@@ -279,7 +281,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -291,7 +293,7 @@ sub set_service {
 # Gets the value of 'operation' property.
 #
 # @retval operation - The current value of the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 # ID#
 sub get_operation {
@@ -303,7 +305,7 @@ sub get_operation {
 # Sets the given value for 'operation' property.
 # 
 # @param operation  - New value for the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 sub set_operation {
    my ($self, %args) = @_;
@@ -515,7 +517,7 @@ sub set_user {
 #
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Info``   *class*  contains  *fields*  to
-#     describe the state of the appliance. This  *class*  was added in vSphere API 6.7
+#     describe the state of the appliance. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Info;
 
@@ -595,7 +597,7 @@ sub new {
 # Gets the value of 'state' property.
 #
 # @retval state - The current value of the field.
-# State of the vCenter Server Appliance. This  *field*  was added in vSphere API 6.7
+# State of the vCenter Server Appliance. This  *field*  was added in vSphere API 6.7.
 #
 # ApplianceState#
 sub get_state {
@@ -607,7 +609,7 @@ sub get_state {
 # Sets the given value for 'state' property.
 # 
 # @param state  - New value for the field.
-# State of the vCenter Server Appliance. This  *field*  was added in vSphere API 6.7
+# State of the vCenter Server Appliance. This  *field*  was added in vSphere API 6.7.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -620,7 +622,7 @@ sub set_state {
 #
 # @retval progress - The current value of the field.
 # The progress info of the current appliance status. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # optional#
 sub get_progress {
@@ -633,7 +635,7 @@ sub get_progress {
 # 
 # @param progress  - New value for the field.
 # The progress info of the current appliance status. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_progress {
    my ($self, %args) = @_;
@@ -646,7 +648,7 @@ sub set_progress {
 #
 # @retval subtask_order - The current value of the field.
 # The ordered list of subtasks for this deployment operation. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 # Optional#
 sub get_subtask_order {
@@ -659,7 +661,7 @@ sub get_subtask_order {
 # 
 # @param subtask_order  - New value for the field.
 # The ordered list of subtasks for this deployment operation. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 sub set_subtask_order {
    my ($self, %args) = @_;
@@ -672,7 +674,7 @@ sub set_subtask_order {
 #
 # @retval subtasks - The current value of the field.
 # The map of the deployment subtasks and their status infomation. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # Optional#
 sub get_subtasks {
@@ -685,7 +687,7 @@ sub get_subtasks {
 # 
 # @param subtasks  - New value for the field.
 # The map of the deployment subtasks and their status infomation. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_subtasks {
    my ($self, %args) = @_;
@@ -721,7 +723,7 @@ sub set_description {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 # ID#
 sub get_service {
@@ -733,7 +735,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -745,7 +747,7 @@ sub set_service {
 # Gets the value of 'operation' property.
 #
 # @retval operation - The current value of the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 # ID#
 sub get_operation {
@@ -757,7 +759,7 @@ sub get_operation {
 # Sets the given value for 'operation' property.
 # 
 # @param operation  - New value for the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 sub set_operation {
    my ($self, %args) = @_;

@@ -14,7 +14,7 @@
 
 ## @class Com::Vmware::Appliance::Update::Pending
 # The  ``Com::Vmware::Appliance::Update::Pending``   *interface*  provides  *methods* 
-#     to manipulate pending updates.
+#     to manipulate pending updates. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Update::Pending;
@@ -60,7 +60,7 @@ sub new {
 }
 
 ## @method list ()
-# Checks if new updates are available.
+# Checks if new updates are available. This  *method*  was added in vSphere API 6.7.
 #
 # @param source_type [REQUIRED] type of the source
 # . The value must be Com::Vmware::Appliance::Update::Pending::SourceType.
@@ -100,7 +100,7 @@ sub list {
 
 
 ## @method get ()
-# Gets update information
+# Gets update information. This  *method*  was added in vSphere API 6.7.
 #
 # @param version [REQUIRED] Update version
 # The value must be an identifier for the resource type
@@ -140,7 +140,7 @@ sub get {
 
 
 ## @method precheck ()
-# Runs update precheck
+# Runs update precheck. This  *method*  was added in vSphere API 6.7.
 #
 # @param version [REQUIRED] Update version
 # The value must be an identifier for the resource type
@@ -184,7 +184,7 @@ sub precheck {
 
 ## @method stage ()
 # Starts staging the appliance update. The updates are searched for in the following order:
-# staged, CDROM, URL
+# staged, CDROM, URL. This  *method*  was added in vSphere API 6.7.
 #
 # @param version [REQUIRED] Update version
 # The value must be an identifier for the resource type
@@ -226,7 +226,8 @@ sub stage {
 
 
 ## @method validate ()
-# Validates the user provided data before the update installation.
+# Validates the user provided data before the update installation. This  *method*  was added
+# in vSphere API 6.7.
 #
 # @param version [REQUIRED] Update version
 # The value must be an identifier for the resource type
@@ -275,7 +276,8 @@ sub validate {
 
 
 ## @method install ()
-# Starts operation of installing the appliance update. Will fail is the update is not staged
+# Starts operation of installing the appliance update. Will fail is the update is not
+# staged. This  *method*  was added in vSphere API 6.7.
 #
 # @param version [REQUIRED] Update version
 # The value must be an identifier for the resource type
@@ -323,7 +325,8 @@ sub install {
 
 ## @method stage_and_install ()
 # Starts operation of installing the appliance update. Will stage update if not already
-# staged The updates are searched for in the following order: staged, CDROM, URL
+# staged The updates are searched for in the following order: staged, CDROM, URL. This 
+# *method*  was added in vSphere API 6.7.
 #
 # @param version [REQUIRED] Update version
 # The value must be an identifier for the resource type
@@ -378,19 +381,22 @@ sub stage_and_install {
 ## @class Com::Vmware::Appliance::Update::Pending::SourceType
 #
 # The  ``Com::Vmware::Appliance::Update::Pending::SourceType``   *enumerated type* 
-#     defines the supported types of sources of updates.
+#     defines the supported types of sources of updates. This  *enumeration*  was added in
+#     vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Update::Pending::SourceType::LAST_CHECK #
-#Do not perform a new check, return the previous result
+#Do not perform a new check, return the previous result. This  *constant*  was added in
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Pending::SourceType::LOCAL #
-#Check the local sources, ISO devices, staged area
+#Check the local sources, ISO devices, staged area. This  *constant*  was added in vSphere
+# API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Pending::SourceType::LOCAL_AND_ONLINE #
 #Check the local sources, ISO devices, staged area, then online repository as stated in
-# update policy
+# update policy. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Pending::SourceType;
 
@@ -439,7 +445,7 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Appliance::Update::Pending::Info``   *class*  contains the
-#     extended information about the update
+#     extended information about the update. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Pending::Info;
 
@@ -501,7 +507,7 @@ sub new {
 #
 # @retval contents - The current value of the field.
 # List of the 1. issues addressed since previous/current version 2. new
-#     features/improvements
+#     features/improvements. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_contents {
@@ -514,7 +520,7 @@ sub get_contents {
 # 
 # @param contents  - New value for the field.
 # List of the 1. issues addressed since previous/current version 2. new
-#     features/improvements
+#     features/improvements. This  *field*  was added in vSphere API 6.7.
 #
 sub set_contents {
    my ($self, %args) = @_;
@@ -527,7 +533,7 @@ sub set_contents {
 #
 # @retval services_will_be_stopped - The current value of the field.
 # List of the services that will be stopped and restarted during the update
-#     installation.
+#     installation. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_services_will_be_stopped {
@@ -540,7 +546,7 @@ sub get_services_will_be_stopped {
 # 
 # @param services_will_be_stopped  - New value for the field.
 # List of the services that will be stopped and restarted during the update
-#     installation.
+#     installation. This  *field*  was added in vSphere API 6.7.
 #
 sub set_services_will_be_stopped {
    my ($self, %args) = @_;
@@ -553,7 +559,7 @@ sub set_services_will_be_stopped {
 #
 # @retval eulas - The current value of the field.
 # List of EULAs. This list has multiple entries and can be dynamic based on what we are
-#     actually installing.
+#     actually installing. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_eulas {
@@ -566,7 +572,7 @@ sub get_eulas {
 # 
 # @param eulas  - New value for the field.
 # List of EULAs. This list has multiple entries and can be dynamic based on what we are
-#     actually installing.
+#     actually installing. This  *field*  was added in vSphere API 6.7.
 #
 sub set_eulas {
    my ($self, %args) = @_;
@@ -578,7 +584,7 @@ sub set_eulas {
 # Gets the value of 'staged' property.
 #
 # @retval staged - The current value of the field.
-# Is the update staged
+# Is the update staged. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_staged {
@@ -590,7 +596,7 @@ sub get_staged {
 # Sets the given value for 'staged' property.
 # 
 # @param staged  - New value for the field.
-# Is the update staged
+# Is the update staged. This  *field*  was added in vSphere API 6.7.
 #
 sub set_staged {
    my ($self, %args) = @_;
@@ -603,7 +609,8 @@ sub set_staged {
 #
 # @retval description - The current value of the field.
 # Description of the update. The short information what this update is. E.g.
-#     &quot;Update2 for vCenter Server Appliance 6.5&quot;
+#     &quot;Update2 for vCenter Server Appliance 6.5&quot;. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_description {
@@ -616,7 +623,8 @@ sub get_description {
 # 
 # @param description  - New value for the field.
 # Description of the update. The short information what this update is. E.g.
-#     &quot;Update2 for vCenter Server Appliance 6.5&quot;
+#     &quot;Update2 for vCenter Server Appliance 6.5&quot;. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -628,7 +636,7 @@ sub set_description {
 # Gets the value of 'priority' property.
 #
 # @retval priority - The current value of the field.
-# Update priority
+# Update priority. This  *field*  was added in vSphere API 6.7.
 #
 # Priority#
 sub get_priority {
@@ -640,7 +648,7 @@ sub get_priority {
 # Sets the given value for 'priority' property.
 # 
 # @param priority  - New value for the field.
-# Update priority
+# Update priority. This  *field*  was added in vSphere API 6.7.
 #
 sub set_priority {
    my ($self, %args) = @_;
@@ -652,7 +660,7 @@ sub set_priority {
 # Gets the value of 'severity' property.
 #
 # @retval severity - The current value of the field.
-# Update severity
+# Update severity. This  *field*  was added in vSphere API 6.7.
 #
 # Severity#
 sub get_severity {
@@ -664,7 +672,7 @@ sub get_severity {
 # Sets the given value for 'severity' property.
 # 
 # @param severity  - New value for the field.
-# Update severity
+# Update severity. This  *field*  was added in vSphere API 6.7.
 #
 sub set_severity {
    my ($self, %args) = @_;
@@ -676,7 +684,7 @@ sub set_severity {
 # Gets the value of 'update_type' property.
 #
 # @retval update_type - The current value of the field.
-# Update category
+# Update category. This  *field*  was added in vSphere API 6.7.
 #
 # Category#
 sub get_update_type {
@@ -688,7 +696,7 @@ sub get_update_type {
 # Sets the given value for 'update_type' property.
 # 
 # @param update_type  - New value for the field.
-# Update category
+# Update category. This  *field*  was added in vSphere API 6.7.
 #
 sub set_update_type {
    my ($self, %args) = @_;
@@ -700,7 +708,7 @@ sub set_update_type {
 # Gets the value of 'release_date' property.
 #
 # @retval release_date - The current value of the field.
-# Update release date.
+# Update release date. This  *field*  was added in vSphere API 6.7.
 #
 # DateTime#
 sub get_release_date {
@@ -712,7 +720,7 @@ sub get_release_date {
 # Sets the given value for 'release_date' property.
 # 
 # @param release_date  - New value for the field.
-# Update release date.
+# Update release date. This  *field*  was added in vSphere API 6.7.
 #
 sub set_release_date {
    my ($self, %args) = @_;
@@ -724,7 +732,8 @@ sub set_release_date {
 # Gets the value of 'reboot_required' property.
 #
 # @retval reboot_required - The current value of the field.
-# Flag indicating whether reboot is required after update.
+# Flag indicating whether reboot is required after update. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # boolean#
 sub get_reboot_required {
@@ -736,7 +745,8 @@ sub get_reboot_required {
 # Sets the given value for 'reboot_required' property.
 # 
 # @param reboot_required  - New value for the field.
-# Flag indicating whether reboot is required after update.
+# Flag indicating whether reboot is required after update. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_reboot_required {
    my ($self, %args) = @_;
@@ -748,7 +758,7 @@ sub set_reboot_required {
 # Gets the value of 'size' property.
 #
 # @retval size - The current value of the field.
-# Download Size of update in Megabytes.
+# Download Size of update in Megabytes. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_size {
@@ -760,7 +770,7 @@ sub get_size {
 # Sets the given value for 'size' property.
 # 
 # @param size  - New value for the field.
-# Download Size of update in Megabytes.
+# Download Size of update in Megabytes. This  *field*  was added in vSphere API 6.7.
 #
 sub set_size {
    my ($self, %args) = @_;
@@ -776,7 +786,8 @@ sub set_size {
 #
 #
 # The  ``Com::Vmware::Appliance::Update::Pending::Question``   *class*  describes a item
-#     of information that must be provided by the user in order to install the update.
+#     of information that must be provided by the user in order to install the update. This 
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Pending::Question;
 
@@ -838,7 +849,7 @@ sub new {
 # Gets the value of 'data_item' property.
 #
 # @retval data_item - The current value of the field.
-# ID of the data item
+# ID of the data item. This  *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_data_item {
@@ -850,7 +861,7 @@ sub get_data_item {
 # Sets the given value for 'data_item' property.
 # 
 # @param data_item  - New value for the field.
-# ID of the data item
+# ID of the data item. This  *field*  was added in vSphere API 6.7.
 #
 sub set_data_item {
    my ($self, %args) = @_;
@@ -862,7 +873,7 @@ sub set_data_item {
 # Gets the value of 'text' property.
 #
 # @retval text - The current value of the field.
-# Label for the item to be used in GUI/CLI
+# Label for the item to be used in GUI/CLI. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_text {
@@ -874,7 +885,7 @@ sub get_text {
 # Sets the given value for 'text' property.
 # 
 # @param text  - New value for the field.
-# Label for the item to be used in GUI/CLI
+# Label for the item to be used in GUI/CLI. This  *field*  was added in vSphere API 6.7.
 #
 sub set_text {
    my ($self, %args) = @_;
@@ -886,7 +897,7 @@ sub set_text {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the item
+# Description of the item. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_description {
@@ -898,7 +909,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the item
+# Description of the item. This  *field*  was added in vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -910,7 +921,8 @@ sub set_description {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# How this field shoudl be represented in GUI or CLI
+# How this field shoudl be represented in GUI or CLI. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # InputType#
 sub get_type {
@@ -922,7 +934,8 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# How this field shoudl be represented in GUI or CLI
+# How this field shoudl be represented in GUI or CLI. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -934,7 +947,7 @@ sub set_type {
 # Gets the value of 'allowed_values' property.
 #
 # @retval allowed_values - The current value of the field.
-# List of allowed values
+# List of allowed values. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_allowed_values {
@@ -946,7 +959,7 @@ sub get_allowed_values {
 # Sets the given value for 'allowed_values' property.
 # 
 # @param allowed_values  - New value for the field.
-# List of allowed values
+# List of allowed values. This  *field*  was added in vSphere API 6.7.
 #
 sub set_allowed_values {
    my ($self, %args) = @_;
@@ -958,7 +971,7 @@ sub set_allowed_values {
 # Gets the value of 'regexp' property.
 #
 # @retval regexp - The current value of the field.
-# Regexp to validate the input
+# Regexp to validate the input. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_regexp {
@@ -970,7 +983,7 @@ sub get_regexp {
 # Sets the given value for 'regexp' property.
 # 
 # @param regexp  - New value for the field.
-# Regexp to validate the input
+# Regexp to validate the input. This  *field*  was added in vSphere API 6.7.
 #
 sub set_regexp {
    my ($self, %args) = @_;
@@ -982,7 +995,7 @@ sub set_regexp {
 # Gets the value of 'default_answer' property.
 #
 # @retval default_answer - The current value of the field.
-# Default answer
+# Default answer. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_default_answer {
@@ -994,7 +1007,7 @@ sub get_default_answer {
 # Sets the given value for 'default_answer' property.
 # 
 # @param default_answer  - New value for the field.
-# Default answer
+# Default answer. This  *field*  was added in vSphere API 6.7.
 #
 sub set_default_answer {
    my ($self, %args) = @_;
@@ -1009,18 +1022,19 @@ sub set_default_answer {
 ## @class Com::Vmware::Appliance::Update::Pending::Question::InputType
 #
 # The  ``Com::Vmware::Appliance::Update::Pending::Question::InputType``   *enumerated
-#     type*  defines representation of field fields in GUI or CLI
+#     type*  defines representation of field fields in GUI or CLI. This  *enumeration*  was
+#     added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Update::Pending::Question::InputType::PLAIN_TEXT #
-#plain text answer
+#plain text answer. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Pending::Question::InputType::BOOLEAN #
-#Yes/No,On/Off,Checkbox answer
+#Yes/No,On/Off,Checkbox answer. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Pending::Question::InputType::PASSWORD #
-#Password (masked) answer
+#Password (masked) answer. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Pending::Question::InputType;
 
@@ -1062,7 +1076,8 @@ sub new {
 #
 # The  ``Com::Vmware::Appliance::Update::Pending::PrecheckResult``   *class*  contains
 #     estimates of how long it will take install and rollback an update as well as a list of
-#     possible warnings and problems with installing the update.
+#     possible warnings and problems with installing the update. This  *class*  was added in
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Pending::PrecheckResult;
 
@@ -1113,7 +1128,7 @@ sub new {
 # Gets the value of 'check_time' property.
 #
 # @retval check_time - The current value of the field.
-# Time when this precheck was run
+# Time when this precheck was run. This  *field*  was added in vSphere API 6.7.
 #
 # DateTime#
 sub get_check_time {
@@ -1125,7 +1140,7 @@ sub get_check_time {
 # Sets the given value for 'check_time' property.
 # 
 # @param check_time  - New value for the field.
-# Time when this precheck was run
+# Time when this precheck was run. This  *field*  was added in vSphere API 6.7.
 #
 sub set_check_time {
    my ($self, %args) = @_;
@@ -1137,7 +1152,8 @@ sub set_check_time {
 # Gets the value of 'estimated_time_to_install' property.
 #
 # @retval estimated_time_to_install - The current value of the field.
-# Rough estimate of time to install the update (minutes).
+# Rough estimate of time to install the update (minutes). This  *field*  was added in
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_estimated_time_to_install {
@@ -1149,7 +1165,8 @@ sub get_estimated_time_to_install {
 # Sets the given value for 'estimated_time_to_install' property.
 # 
 # @param estimated_time_to_install  - New value for the field.
-# Rough estimate of time to install the update (minutes).
+# Rough estimate of time to install the update (minutes). This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_estimated_time_to_install {
    my ($self, %args) = @_;
@@ -1161,7 +1178,8 @@ sub set_estimated_time_to_install {
 # Gets the value of 'estimated_time_to_rollback' property.
 #
 # @retval estimated_time_to_rollback - The current value of the field.
-# Rough estimate of time to rollback the update (minutes).
+# Rough estimate of time to rollback the update (minutes). This  *field*  was added in
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_estimated_time_to_rollback {
@@ -1173,7 +1191,8 @@ sub get_estimated_time_to_rollback {
 # Sets the given value for 'estimated_time_to_rollback' property.
 # 
 # @param estimated_time_to_rollback  - New value for the field.
-# Rough estimate of time to rollback the update (minutes).
+# Rough estimate of time to rollback the update (minutes). This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_estimated_time_to_rollback {
    my ($self, %args) = @_;
@@ -1185,7 +1204,7 @@ sub set_estimated_time_to_rollback {
 # Gets the value of 'reboot_required' property.
 #
 # @retval reboot_required - The current value of the field.
-# Is reboot required to install the update.
+# Is reboot required to install the update. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_reboot_required {
@@ -1197,7 +1216,7 @@ sub get_reboot_required {
 # Sets the given value for 'reboot_required' property.
 # 
 # @param reboot_required  - New value for the field.
-# Is reboot required to install the update.
+# Is reboot required to install the update. This  *field*  was added in vSphere API 6.7.
 #
 sub set_reboot_required {
    my ($self, %args) = @_;
@@ -1209,7 +1228,7 @@ sub set_reboot_required {
 # Gets the value of 'issues' property.
 #
 # @retval issues - The current value of the field.
-# Lists of the issues and warnings
+# Lists of the issues and warnings. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_issues {
@@ -1221,7 +1240,7 @@ sub get_issues {
 # Sets the given value for 'issues' property.
 # 
 # @param issues  - New value for the field.
-# Lists of the issues and warnings
+# Lists of the issues and warnings. This  *field*  was added in vSphere API 6.7.
 #
 sub set_issues {
    my ($self, %args) = @_;
@@ -1233,7 +1252,8 @@ sub set_issues {
 # Gets the value of 'questions' property.
 #
 # @retval questions - The current value of the field.
-# List of questions that must be answered to install the update.
+# List of questions that must be answered to install the update. This  *field*  was
+#     added in vSphere API 6.7.
 #
 # List#
 sub get_questions {
@@ -1245,7 +1265,8 @@ sub get_questions {
 # Sets the given value for 'questions' property.
 # 
 # @param questions  - New value for the field.
-# List of questions that must be answered to install the update.
+# List of questions that must be answered to install the update. This  *field*  was
+#     added in vSphere API 6.7.
 #
 sub set_questions {
    my ($self, %args) = @_;

@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Appliance::SubtaskInfo``   *class*  contains information about one
 #     of the subtasks that makes up an appliance task. This  *class*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 
 package Com::Vmware::Appliance::SubtaskInfo;
 
@@ -79,7 +79,7 @@ sub new {
 # Gets the value of 'progress' property.
 #
 # @retval progress - The current value of the field.
-# Progress of the operation. This  *field*  was added in vSphere API 6.7
+# Progress of the operation. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_progress {
@@ -91,7 +91,7 @@ sub get_progress {
 # Sets the given value for 'progress' property.
 # 
 # @param progress  - New value for the field.
-# Progress of the operation. This  *field*  was added in vSphere API 6.7
+# Progress of the operation. This  *field*  was added in vSphere API 6.7.
 #
 sub set_progress {
    my ($self, %args) = @_;
@@ -106,7 +106,7 @@ sub set_progress {
 # Result of the operation. If an operation reports partial results before it completes,
 #     this  *field*  could be  *set*  before the null has the value 
 #     :attr:`Com::Vmware::Cis::Task::Status.SUCCEEDED` . The value could change as the
-#     operation progresses. This  *field*  was added in vSphere API 6.7
+#     operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_result {
@@ -121,7 +121,7 @@ sub get_result {
 # Result of the operation. If an operation reports partial results before it completes,
 #     this  *field*  could be  *set*  before the null has the value 
 #     :attr:`Com::Vmware::Cis::Task::Status.SUCCEEDED` . The value could change as the
-#     operation progresses. This  *field*  was added in vSphere API 6.7
+#     operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 sub set_result {
    my ($self, %args) = @_;
@@ -157,7 +157,7 @@ sub set_description {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 # ID#
 sub get_service {
@@ -169,7 +169,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -181,7 +181,7 @@ sub set_service {
 # Gets the value of 'operation' property.
 #
 # @retval operation - The current value of the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 # ID#
 sub get_operation {
@@ -193,7 +193,7 @@ sub get_operation {
 # Sets the given value for 'operation' property.
 # 
 # @param operation  - New value for the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 sub set_operation {
    my ($self, %args) = @_;

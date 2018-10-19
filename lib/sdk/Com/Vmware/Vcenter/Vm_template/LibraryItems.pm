@@ -17,8 +17,7 @@
 #     templates, as well as  *methods*  to create library items containing virtual machine
 #     templates. The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems``   *interface* 
 #     also provides an operation to retrieve information about the template contained in the
-#     library item. <b>Warning:</b> This  *interface*  is available as technical preview. It
-#     may be changed in a future release.
+#     library item. This  *interface*  was added in vSphere API 6.7 U1.
 #
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems;
@@ -67,8 +66,8 @@ sub new {
 # Creates a library item in content library from a virtual machine. This  *method*  creates
 # a library item in content library whose content is a virtual machine template created from
 # the source virtual machine, using the supplied create specification. The virtual machine
-# template is stored in a newly created library item. <b>Warning:</b> This  *method*  is
-# available as technical preview. It may be changed in a future release.
+# template is stored in a newly created library item. This  *method*  was added in vSphere
+# API 6.7 U1.
 #
 # Note:
 # Privileges required for this operation are System.Read, ContentLibrary.AddLibraryItem.
@@ -185,8 +184,7 @@ sub create {
 # :attr:`Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpec.powered_on`  and/or 
 # :attr:`Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpec.guest_customization` 
 # are specified, the server triggers the power on and/or guest customization operations,
-# which are executed asynchronously. <b>Warning:</b> This  *method*  is available as
-# technical preview. It may be changed in a future release.
+# which are executed asynchronously. This  *method*  was added in vSphere API 6.7 U1.
 #
 # Note:
 # Privileges required for this operation are System.Read, VirtualMachine.Provisioning.DeployTemplate.
@@ -311,8 +309,7 @@ sub deploy {
 
 ## @method get ()
 # Returns information about a virtual machine template contained in the library item
-# specified by  ``template_library_item`` . <b>Warning:</b> This  *method*  is available as
-# technical preview. It may be changed in a future release.
+# specified by  ``template_library_item`` . This  *method*  was added in vSphere API 6.7 U1.
 #
 # Note:
 # Privileges required for this operation are System.Read.
@@ -386,8 +383,7 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpec``   *class* 
 #     defines the information required to create a library item containing a virtual machine
-#     template. <b>Warning:</b> This  *class*  is available as technical preview. It may be
-#     changed in a future release.
+#     template. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpec;
 
@@ -427,7 +423,7 @@ sub new {
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.vm_template.library_items.create_spec');
    $self->set_binding_field('key' => 'source_vm', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
-   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'library', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'vm_home_storage', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm_template', 'type_name' => 'LibraryItems::CreateSpecVmHomeStorage')));
@@ -442,9 +438,8 @@ sub new {
 # Gets the value of 'source_vm' property.
 #
 # @retval source_vm - The current value of the field.
-# Identifier of the source virtual machine to create the library item from.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Identifier of the source virtual machine to create the library item from. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # ID#
 sub get_source_vm {
@@ -456,9 +451,8 @@ sub get_source_vm {
 # Sets the given value for 'source_vm' property.
 # 
 # @param source_vm  - New value for the field.
-# Identifier of the source virtual machine to create the library item from.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Identifier of the source virtual machine to create the library item from. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_source_vm {
    my ($self, %args) = @_;
@@ -470,10 +464,9 @@ sub set_source_vm {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the library item. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Name of the library item. This  *field*  was added in vSphere API 6.7 U1.
 #
-# optional#
+# String#
 sub get_name {
    my ($self, %args) = @_;
    return $self->{'name'}; 	
@@ -483,8 +476,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the library item. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Name of the library item. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -496,8 +488,7 @@ sub set_name {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the library item. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Description of the library item. This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_description {
@@ -509,8 +500,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the library item. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Description of the library item. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -522,9 +512,8 @@ sub set_description {
 # Gets the value of 'library' property.
 #
 # @retval library - The current value of the field.
-# Identifier of the library in which the new library item should be created.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Identifier of the library in which the new library item should be created. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # ID#
 sub get_library {
@@ -536,9 +525,8 @@ sub get_library {
 # Sets the given value for 'library' property.
 # 
 # @param library  - New value for the field.
-# Identifier of the library in which the new library item should be created.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Identifier of the library in which the new library item should be created. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_library {
    my ($self, %args) = @_;
@@ -551,8 +539,7 @@ sub set_library {
 #
 # @retval vm_home_storage - The current value of the field.
 # Storage location for the virtual machine template&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_vm_home_storage {
@@ -565,8 +552,7 @@ sub get_vm_home_storage {
 # 
 # @param vm_home_storage  - New value for the field.
 # Storage location for the virtual machine template&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_vm_home_storage {
    my ($self, %args) = @_;
@@ -578,9 +564,8 @@ sub set_vm_home_storage {
 # Gets the value of 'disk_storage' property.
 #
 # @retval disk_storage - The current value of the field.
-# Storage specification for the virtual machine template&apos;s disks. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Storage specification for the virtual machine template&apos;s disks. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_disk_storage {
@@ -592,9 +577,8 @@ sub get_disk_storage {
 # Sets the given value for 'disk_storage' property.
 # 
 # @param disk_storage  - New value for the field.
-# Storage specification for the virtual machine template&apos;s disks. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Storage specification for the virtual machine template&apos;s disks. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 sub set_disk_storage {
    my ($self, %args) = @_;
@@ -608,8 +592,8 @@ sub set_disk_storage {
 # @retval disk_storage_overrides - The current value of the field.
 # Storage specification for individual disks in the virtual machine template. This is
 #     specified as a mapping between disk identifiers in the source virtual machine and
-#     their respective storage specifications. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+#     their respective storage specifications. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # Optional#
 sub get_disk_storage_overrides {
@@ -623,8 +607,8 @@ sub get_disk_storage_overrides {
 # @param disk_storage_overrides  - New value for the field.
 # Storage specification for individual disks in the virtual machine template. This is
 #     specified as a mapping between disk identifiers in the source virtual machine and
-#     their respective storage specifications. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+#     their respective storage specifications. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_disk_storage_overrides {
    my ($self, %args) = @_;
@@ -636,8 +620,8 @@ sub set_disk_storage_overrides {
 # Gets the value of 'placement' property.
 #
 # @retval placement - The current value of the field.
-# Information used to place the virtual machine template. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Information used to place the virtual machine template. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 # Optional#
 sub get_placement {
@@ -649,8 +633,8 @@ sub get_placement {
 # Sets the given value for 'placement' property.
 # 
 # @param placement  - New value for the field.
-# Information used to place the virtual machine template. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Information used to place the virtual machine template. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -667,8 +651,7 @@ sub set_placement {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CreatePlacementSpec``  
 #     *class*  contains information used to place a virtual machine template onto resources
-#     within the vCenter inventory. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     within the vCenter inventory. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreatePlacementSpec;
 
@@ -715,9 +698,8 @@ sub new {
 # Gets the value of 'folder' property.
 #
 # @retval folder - The current value of the field.
-# Virtual machine folder into which the virtual machine template should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Virtual machine folder into which the virtual machine template should be placed. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_folder {
@@ -729,9 +711,8 @@ sub get_folder {
 # Sets the given value for 'folder' property.
 # 
 # @param folder  - New value for the field.
-# Virtual machine folder into which the virtual machine template should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Virtual machine folder into which the virtual machine template should be placed. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_folder {
    my ($self, %args) = @_;
@@ -743,9 +724,8 @@ sub set_folder {
 # Gets the value of 'resource_pool' property.
 #
 # @retval resource_pool - The current value of the field.
-# Resource pool into which the virtual machine template should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Resource pool into which the virtual machine template should be placed. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_resource_pool {
@@ -757,9 +737,8 @@ sub get_resource_pool {
 # Sets the given value for 'resource_pool' property.
 # 
 # @param resource_pool  - New value for the field.
-# Resource pool into which the virtual machine template should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Resource pool into which the virtual machine template should be placed. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 sub set_resource_pool {
    my ($self, %args) = @_;
@@ -774,8 +753,7 @@ sub set_resource_pool {
 # Host onto which the virtual machine template should be placed. If  ``host``  and 
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``host`` . If
 #     ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_host {
@@ -790,8 +768,7 @@ sub get_host {
 # Host onto which the virtual machine template should be placed. If  ``host``  and 
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``host`` . If
 #     ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_host {
    my ($self, %args) = @_;
@@ -806,8 +783,7 @@ sub set_host {
 # Cluster onto which the virtual machine template should be placed. If  ``cluster``  and
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``cluster`` .
 #     If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_cluster {
@@ -822,8 +798,7 @@ sub get_cluster {
 # Cluster onto which the virtual machine template should be placed. If  ``cluster``  and
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``cluster`` .
 #     If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -841,8 +816,8 @@ sub set_cluster {
 # The 
 #     ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecVmHomeStoragePolicy``  
 #     *class*  defines the storage policy specification for a virtual machine
-#     template&apos;s configuration and log files. <b>Warning:</b> This  *class*  is
-#     available as technical preview. It may be changed in a future release.
+#     template&apos;s configuration and log files. This  *class*  was added in vSphere API
+#     6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecVmHomeStoragePolicy;
 
@@ -893,8 +868,7 @@ sub new {
 #
 # @retval type - The current value of the field.
 # Policy type to be used when creating the virtual machine template&apos;s configuration
-#     and log files. <b>Warning:</b> This  *field*  is available as technical preview. It
-#     may be changed in a future release.
+#     and log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 # Type#
 sub get_type {
@@ -907,8 +881,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # Policy type to be used when creating the virtual machine template&apos;s configuration
-#     and log files. <b>Warning:</b> This  *field*  is available as technical preview. It
-#     may be changed in a future release.
+#     and log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -920,8 +893,8 @@ sub set_type {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Identifier for the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier for the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # optional#
 sub get_policy {
@@ -933,8 +906,8 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Identifier for the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier for the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -948,15 +921,13 @@ sub set_policy {
 
 ## @class Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecVmHomeStoragePolicy::Type
 #
-# Policy type for the virtual machine template&apos;s configuration and log files.
-#     <b>Warning:</b> This  *enumeration*  is available as technical preview. It may be
-#     changed in a future release.
+# Policy type for the virtual machine template&apos;s configuration and log files. This 
+#     *enumeration*  was added in vSphere API 6.7 U1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecVmHomeStoragePolicy::Type::USE_SPECIFIED_POLICY #
-#Use the specified policy. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+#Use the specified policy. This  *constant*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecVmHomeStoragePolicy::Type;
 
@@ -996,8 +967,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecVmHomeStorage``  
 #     *class*  defines the storage specification for a virtual machine template&apos;s
-#     configuration and log files. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     configuration and log files. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecVmHomeStorage;
 
@@ -1041,8 +1011,7 @@ sub new {
 #
 # @retval datastore - The current value of the field.
 # Identifier of the datastore for the virtual machine template&apos;s configuration and
-#     log files. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_datastore {
@@ -1055,8 +1024,7 @@ sub get_datastore {
 # 
 # @param datastore  - New value for the field.
 # Identifier of the datastore for the virtual machine template&apos;s configuration and
-#     log files. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -1069,8 +1037,7 @@ sub set_datastore {
 #
 # @retval storage_policy - The current value of the field.
 # Storage policy for the virtual machine template&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_storage_policy {
@@ -1083,8 +1050,7 @@ sub get_storage_policy {
 # 
 # @param storage_policy  - New value for the field.
 # Storage policy for the virtual machine template&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;
@@ -1101,8 +1067,7 @@ sub set_storage_policy {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecDiskStoragePolicy`` 
 #     *class*  defines the storage policy specification for a virtual machine
-#     template&apos;s disks. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     template&apos;s disks. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecDiskStoragePolicy;
 
@@ -1152,9 +1117,8 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# Policy type to be used when creating a virtual machine template&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Policy type to be used when creating a virtual machine template&apos;s disk. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Type#
 sub get_type {
@@ -1166,9 +1130,8 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# Policy type to be used when creating a virtual machine template&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Policy type to be used when creating a virtual machine template&apos;s disk. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -1180,8 +1143,8 @@ sub set_type {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Identifier for the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier for the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # optional#
 sub get_policy {
@@ -1193,8 +1156,8 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Identifier for the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier for the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -1208,15 +1171,13 @@ sub set_policy {
 
 ## @class Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecDiskStoragePolicy::Type
 #
-# Policy type for a virtual machine template&apos;s disk. <b>Warning:</b> This 
-#     *enumeration*  is available as technical preview. It may be changed in a future
-#     release.
+# Policy type for a virtual machine template&apos;s disk. This  *enumeration*  was added
+#     in vSphere API 6.7 U1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecDiskStoragePolicy::Type::USE_SPECIFIED_POLICY #
-#Use the specified policy. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+#Use the specified policy. This  *constant*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecDiskStoragePolicy::Type;
 
@@ -1256,8 +1217,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecDiskStorage``  
 #     *class*  defines the storage specification for a virtual machine template&apos;s
-#     disks. <b>Warning:</b> This  *class*  is available as technical preview. It may be
-#     changed in a future release.
+#     disks. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CreateSpecDiskStorage;
 
@@ -1301,8 +1261,7 @@ sub new {
 #
 # @retval datastore - The current value of the field.
 # Identifier for the datastore associated with a virtual machine template&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_datastore {
@@ -1315,8 +1274,7 @@ sub get_datastore {
 # 
 # @param datastore  - New value for the field.
 # Identifier for the datastore associated with a virtual machine template&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -1328,8 +1286,8 @@ sub set_datastore {
 # Gets the value of 'storage_policy' property.
 #
 # @retval storage_policy - The current value of the field.
-# Storage policy for a virtual machine template&apos;s disk. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Storage policy for a virtual machine template&apos;s disk. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 # Optional#
 sub get_storage_policy {
@@ -1341,8 +1299,8 @@ sub get_storage_policy {
 # Sets the given value for 'storage_policy' property.
 # 
 # @param storage_policy  - New value for the field.
-# Storage policy for a virtual machine template&apos;s disk. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Storage policy for a virtual machine template&apos;s disk. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;
@@ -1359,8 +1317,7 @@ sub set_storage_policy {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpec``   *class* 
 #     defines the deployment parameters that can be specified for the  ``deploy``   *method*
-#     . <b>Warning:</b> This  *class*  is available as technical preview. It may be changed
-#     in a future release.
+#     . This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpec;
 
@@ -1417,8 +1374,7 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the deployed virtual machine. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Name of the deployed virtual machine. This  *field*  was added in vSphere API 6.7 U1.
 #
 # String#
 sub get_name {
@@ -1430,8 +1386,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the deployed virtual machine. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Name of the deployed virtual machine. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -1443,8 +1398,8 @@ sub set_name {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the deployed virtual machine. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# Description of the deployed virtual machine. This  *field*  was added in vSphere API
+#     6.7 U1.
 #
 # Optional#
 sub get_description {
@@ -1456,8 +1411,8 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the deployed virtual machine. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# Description of the deployed virtual machine. This  *field*  was added in vSphere API
+#     6.7 U1.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -1470,8 +1425,7 @@ sub set_description {
 #
 # @retval vm_home_storage - The current value of the field.
 # Storage location for the deployed virtual machine&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_vm_home_storage {
@@ -1484,8 +1438,7 @@ sub get_vm_home_storage {
 # 
 # @param vm_home_storage  - New value for the field.
 # Storage location for the deployed virtual machine&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_vm_home_storage {
    my ($self, %args) = @_;
@@ -1497,9 +1450,8 @@ sub set_vm_home_storage {
 # Gets the value of 'disk_storage' property.
 #
 # @retval disk_storage - The current value of the field.
-# Storage specification for the deployed virtual machine&apos;s disks. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Storage specification for the deployed virtual machine&apos;s disks. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_disk_storage {
@@ -1511,9 +1463,8 @@ sub get_disk_storage {
 # Sets the given value for 'disk_storage' property.
 # 
 # @param disk_storage  - New value for the field.
-# Storage specification for the deployed virtual machine&apos;s disks. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Storage specification for the deployed virtual machine&apos;s disks. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 sub set_disk_storage {
    my ($self, %args) = @_;
@@ -1527,8 +1478,8 @@ sub set_disk_storage {
 # @retval disk_storage_overrides - The current value of the field.
 # Storage specification for individual disks in the deployed virtual machine. This is
 #     specified as a mapping between disk identifiers in the source virtual machine template
-#     contained in the library item and their storage specifications. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     contained in the library item and their storage specifications. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_disk_storage_overrides {
@@ -1542,8 +1493,8 @@ sub get_disk_storage_overrides {
 # @param disk_storage_overrides  - New value for the field.
 # Storage specification for individual disks in the deployed virtual machine. This is
 #     specified as a mapping between disk identifiers in the source virtual machine template
-#     contained in the library item and their storage specifications. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     contained in the library item and their storage specifications. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_disk_storage_overrides {
    my ($self, %args) = @_;
@@ -1555,8 +1506,8 @@ sub set_disk_storage_overrides {
 # Gets the value of 'placement' property.
 #
 # @retval placement - The current value of the field.
-# Information used to place the deployed virtual machine. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Information used to place the deployed virtual machine. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 # Optional#
 sub get_placement {
@@ -1568,8 +1519,8 @@ sub get_placement {
 # Sets the given value for 'placement' property.
 # 
 # @param placement  - New value for the field.
-# Information used to place the deployed virtual machine. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Information used to place the deployed virtual machine. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -1582,8 +1533,7 @@ sub set_placement {
 #
 # @retval powered_on - The current value of the field.
 # Specifies whether the deployed virtual machine should be powered on after deployment.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_powered_on {
@@ -1596,8 +1546,7 @@ sub get_powered_on {
 # 
 # @param powered_on  - New value for the field.
 # Specifies whether the deployed virtual machine should be powered on after deployment.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_powered_on {
    my ($self, %args) = @_;
@@ -1609,9 +1558,8 @@ sub set_powered_on {
 # Gets the value of 'guest_customization' property.
 #
 # @retval guest_customization - The current value of the field.
-# Guest customization spec to apply to the deployed virtual machine. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Guest customization spec to apply to the deployed virtual machine. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_guest_customization {
@@ -1623,9 +1571,8 @@ sub get_guest_customization {
 # Sets the given value for 'guest_customization' property.
 # 
 # @param guest_customization  - New value for the field.
-# Guest customization spec to apply to the deployed virtual machine. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Guest customization spec to apply to the deployed virtual machine. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_guest_customization {
    my ($self, %args) = @_;
@@ -1638,8 +1585,7 @@ sub set_guest_customization {
 #
 # @retval hardware_customization - The current value of the field.
 # Hardware customization spec which specifies updates to the deployed virtual machine.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_hardware_customization {
@@ -1652,8 +1598,7 @@ sub get_hardware_customization {
 # 
 # @param hardware_customization  - New value for the field.
 # Hardware customization spec which specifies updates to the deployed virtual machine.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_hardware_customization {
    my ($self, %args) = @_;
@@ -1670,8 +1615,7 @@ sub set_hardware_customization {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::HardwareCustomizationSpec``  
 #     *class*  defines the hardware customization options that are applied to the deployed
-#     virtual machine. <b>Warning:</b> This  *class*  is available as technical preview. It
-#     may be changed in a future release.
+#     virtual machine. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::HardwareCustomizationSpec;
 
@@ -1720,8 +1664,8 @@ sub new {
 # Gets the value of 'nics' property.
 #
 # @retval nics - The current value of the field.
-# Map of Ethernet network adapters to update. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# Map of Ethernet network adapters to update. This  *field*  was added in vSphere API
+#     6.7 U1.
 #
 # Optional#
 sub get_nics {
@@ -1733,8 +1677,8 @@ sub get_nics {
 # Sets the given value for 'nics' property.
 # 
 # @param nics  - New value for the field.
-# Map of Ethernet network adapters to update. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# Map of Ethernet network adapters to update. This  *field*  was added in vSphere API
+#     6.7 U1.
 #
 sub set_nics {
    my ($self, %args) = @_;
@@ -1746,8 +1690,8 @@ sub set_nics {
 # Gets the value of 'disks_to_remove' property.
 #
 # @retval disks_to_remove - The current value of the field.
-# Idenfiers of disks to remove from the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Idenfiers of disks to remove from the deployed virtual machine. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_disks_to_remove {
@@ -1759,8 +1703,8 @@ sub get_disks_to_remove {
 # Sets the given value for 'disks_to_remove' property.
 # 
 # @param disks_to_remove  - New value for the field.
-# Idenfiers of disks to remove from the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Idenfiers of disks to remove from the deployed virtual machine. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_disks_to_remove {
    my ($self, %args) = @_;
@@ -1772,9 +1716,8 @@ sub set_disks_to_remove {
 # Gets the value of 'disks_to_update' property.
 #
 # @retval disks_to_update - The current value of the field.
-# Disk update specification for individual disks in the deployed virtual machine.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Disk update specification for individual disks in the deployed virtual machine. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_disks_to_update {
@@ -1786,9 +1729,8 @@ sub get_disks_to_update {
 # Sets the given value for 'disks_to_update' property.
 # 
 # @param disks_to_update  - New value for the field.
-# Disk update specification for individual disks in the deployed virtual machine.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Disk update specification for individual disks in the deployed virtual machine. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_disks_to_update {
    my ($self, %args) = @_;
@@ -1800,8 +1742,8 @@ sub set_disks_to_update {
 # Gets the value of 'cpu_update' property.
 #
 # @retval cpu_update - The current value of the field.
-# CPU update specification for the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# CPU update specification for the deployed virtual machine. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 # Optional#
 sub get_cpu_update {
@@ -1813,8 +1755,8 @@ sub get_cpu_update {
 # Sets the given value for 'cpu_update' property.
 # 
 # @param cpu_update  - New value for the field.
-# CPU update specification for the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# CPU update specification for the deployed virtual machine. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 sub set_cpu_update {
    my ($self, %args) = @_;
@@ -1826,8 +1768,8 @@ sub set_cpu_update {
 # Gets the value of 'memory_update' property.
 #
 # @retval memory_update - The current value of the field.
-# Memory update specification for the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Memory update specification for the deployed virtual machine. This  *field*  was added
+#     in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_memory_update {
@@ -1839,8 +1781,8 @@ sub get_memory_update {
 # Sets the given value for 'memory_update' property.
 # 
 # @param memory_update  - New value for the field.
-# Memory update specification for the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Memory update specification for the deployed virtual machine. This  *field*  was added
+#     in vSphere API 6.7 U1.
 #
 sub set_memory_update {
    my ($self, %args) = @_;
@@ -1857,8 +1799,7 @@ sub set_memory_update {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DiskUpdateSpec``   *class* 
 #     describes updates to the configuration of a virtual disk in the deployed virtual
-#     machine. <b>Warning:</b> This  *class*  is available as technical preview. It may be
-#     changed in a future release.
+#     machine. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DiskUpdateSpec;
 
@@ -1900,8 +1841,8 @@ sub new {
 #
 # @retval capacity - The current value of the field.
 # Updated capacity of the virtual disk backing in bytes. This value has to be larger
-#     than the original capacity of the disk. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     than the original capacity of the disk. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # long#
 sub get_capacity {
@@ -1914,8 +1855,8 @@ sub get_capacity {
 # 
 # @param capacity  - New value for the field.
 # Updated capacity of the virtual disk backing in bytes. This value has to be larger
-#     than the original capacity of the disk. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     than the original capacity of the disk. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_capacity {
    my ($self, %args) = @_;
@@ -1931,9 +1872,8 @@ sub set_capacity {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CpuUpdateSpec``   *class* 
-#     describes updates to the CPU configuration of the deployed virtual machine.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     describes updates to the CPU configuration of the deployed virtual machine. This 
+#     *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CpuUpdateSpec;
 
@@ -1976,8 +1916,8 @@ sub new {
 # Gets the value of 'num_cpus' property.
 #
 # @retval num_cpus - The current value of the field.
-# Number of virtual processors in the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Number of virtual processors in the deployed virtual machine. This  *field*  was added
+#     in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_num_cpus {
@@ -1989,8 +1929,8 @@ sub get_num_cpus {
 # Sets the given value for 'num_cpus' property.
 # 
 # @param num_cpus  - New value for the field.
-# Number of virtual processors in the deployed virtual machine. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Number of virtual processors in the deployed virtual machine. This  *field*  was added
+#     in vSphere API 6.7 U1.
 #
 sub set_num_cpus {
    my ($self, %args) = @_;
@@ -2002,9 +1942,8 @@ sub set_num_cpus {
 # Gets the value of 'num_cores_per_socket' property.
 #
 # @retval num_cores_per_socket - The current value of the field.
-# Number of cores among which to distribute CPUs in the deployed virtual machine.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Number of cores among which to distribute CPUs in the deployed virtual machine. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_num_cores_per_socket {
@@ -2016,9 +1955,8 @@ sub get_num_cores_per_socket {
 # Sets the given value for 'num_cores_per_socket' property.
 # 
 # @param num_cores_per_socket  - New value for the field.
-# Number of cores among which to distribute CPUs in the deployed virtual machine.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Number of cores among which to distribute CPUs in the deployed virtual machine. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_num_cores_per_socket {
    my ($self, %args) = @_;
@@ -2034,9 +1972,8 @@ sub set_num_cores_per_socket {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::MemoryUpdateSpec``   *class* 
-#     describes updates to the memory configuration of the deployed virtual machine.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     describes updates to the memory configuration of the deployed virtual machine. This 
+#     *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::MemoryUpdateSpec;
 
@@ -2077,8 +2014,8 @@ sub new {
 # Gets the value of 'memory' property.
 #
 # @retval memory - The current value of the field.
-# Size of a virtual machine&apos;s memory in MB. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# Size of a virtual machine&apos;s memory in MB. This  *field*  was added in vSphere API
+#     6.7 U1.
 #
 # Optional#
 sub get_memory {
@@ -2090,8 +2027,8 @@ sub get_memory {
 # Sets the given value for 'memory' property.
 # 
 # @param memory  - New value for the field.
-# Size of a virtual machine&apos;s memory in MB. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# Size of a virtual machine&apos;s memory in MB. This  *field*  was added in vSphere API
+#     6.7 U1.
 #
 sub set_memory {
    my ($self, %args) = @_;
@@ -2108,8 +2045,7 @@ sub set_memory {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetUpdateSpec``   *class*
 #     describes the network that the ethernet adapter of the deployed virtual machine should
-#     be connected to. <b>Warning:</b> This  *class*  is available as technical preview. It
-#     may be changed in a future release.
+#     be connected to. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetUpdateSpec;
 
@@ -2150,8 +2086,8 @@ sub new {
 # Gets the value of 'network' property.
 #
 # @retval network - The current value of the field.
-# Identifier of the network backing the virtual Ethernet adapter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Identifier of the network backing the virtual Ethernet adapter. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_network {
@@ -2163,8 +2099,8 @@ sub get_network {
 # Sets the given value for 'network' property.
 # 
 # @param network  - New value for the field.
-# Identifier of the network backing the virtual Ethernet adapter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Identifier of the network backing the virtual Ethernet adapter. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_network {
    my ($self, %args) = @_;
@@ -2181,8 +2117,7 @@ sub set_network {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DeployPlacementSpec``  
 #     *class*  contains information used to place a virtual machine onto resources within
-#     the vCenter inventory. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     the vCenter inventory. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeployPlacementSpec;
 
@@ -2229,9 +2164,8 @@ sub new {
 # Gets the value of 'folder' property.
 #
 # @retval folder - The current value of the field.
-# Virtual machine folder into which the deployed virtual machine should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Virtual machine folder into which the deployed virtual machine should be placed. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_folder {
@@ -2243,9 +2177,8 @@ sub get_folder {
 # Sets the given value for 'folder' property.
 # 
 # @param folder  - New value for the field.
-# Virtual machine folder into which the deployed virtual machine should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Virtual machine folder into which the deployed virtual machine should be placed. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_folder {
    my ($self, %args) = @_;
@@ -2257,9 +2190,8 @@ sub set_folder {
 # Gets the value of 'resource_pool' property.
 #
 # @retval resource_pool - The current value of the field.
-# Resource pool into which the deployed virtual machine should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Resource pool into which the deployed virtual machine should be placed. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_resource_pool {
@@ -2271,9 +2203,8 @@ sub get_resource_pool {
 # Sets the given value for 'resource_pool' property.
 # 
 # @param resource_pool  - New value for the field.
-# Resource pool into which the deployed virtual machine should be placed.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Resource pool into which the deployed virtual machine should be placed. This  *field* 
+#     was added in vSphere API 6.7 U1.
 #
 sub set_resource_pool {
    my ($self, %args) = @_;
@@ -2288,8 +2219,7 @@ sub set_resource_pool {
 # Host onto which the virtual machine should be placed. If  ``host``  and 
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``host`` . If
 #     ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_host {
@@ -2304,8 +2234,7 @@ sub get_host {
 # Host onto which the virtual machine should be placed. If  ``host``  and 
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``host`` . If
 #     ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_host {
    my ($self, %args) = @_;
@@ -2320,8 +2249,7 @@ sub set_host {
 # Cluster onto which the deployed virtual machine should be placed. If  ``cluster``  and
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``cluster`` .
 #     If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_cluster {
@@ -2336,8 +2264,7 @@ sub get_cluster {
 # Cluster onto which the deployed virtual machine should be placed. If  ``cluster``  and
 #     ``resourcePool``  are both specified,  ``resourcePool``  must belong to  ``cluster`` .
 #     If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
-#     ``cluster`` . <b>Warning:</b> This  *field*  is available as technical preview. It may
-#     be changed in a future release.
+#     ``cluster`` . This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -2355,8 +2282,8 @@ sub set_cluster {
 # The 
 #     ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStoragePolicy``  
 #     *class*  defines the storage policy specification for the deployed virtual
-#     machine&apos;s configuration and log files. <b>Warning:</b> This  *class*  is
-#     available as technical preview. It may be changed in a future release.
+#     machine&apos;s configuration and log files. This  *class*  was added in vSphere API
+#     6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStoragePolicy;
 
@@ -2408,8 +2335,7 @@ sub new {
 #
 # @retval type - The current value of the field.
 # Policy type to be used when creating the deployed virtual machine&apos;s configuration
-#     and log files. <b>Warning:</b> This  *field*  is available as technical preview. It
-#     may be changed in a future release.
+#     and log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 # Type#
 sub get_type {
@@ -2422,8 +2348,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # Policy type to be used when creating the deployed virtual machine&apos;s configuration
-#     and log files. <b>Warning:</b> This  *field*  is available as technical preview. It
-#     may be changed in a future release.
+#     and log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -2435,8 +2360,8 @@ sub set_type {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Identifier for the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier for the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # optional#
 sub get_policy {
@@ -2448,8 +2373,8 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Identifier for the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier for the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -2463,20 +2388,17 @@ sub set_policy {
 
 ## @class Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStoragePolicy::Type
 #
-# Policy type for the deployed virtual machine&apos;s configuration and log files.
-#     <b>Warning:</b> This  *enumeration*  is available as technical preview. It may be
-#     changed in a future release.
+# Policy type for the deployed virtual machine&apos;s configuration and log files. This 
+#     *enumeration*  was added in vSphere API 6.7 U1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStoragePolicy::Type::USE_SPECIFIED_POLICY #
-#Use the specified policy. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+#Use the specified policy. This  *constant*  was added in vSphere API 6.7 U1.
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStoragePolicy::Type::USE_SOURCE_POLICY #
 #Use the storage policy that is associated with the source virtual machine template&apos;s
-# configuration and log files. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+# configuration and log files. This  *constant*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStoragePolicy::Type;
 
@@ -2517,8 +2439,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStorage``  
 #     *class*  defines the storage specification for a deployed virtual machine&apos;s
-#     configuration and log files. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     configuration and log files. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecVmHomeStorage;
 
@@ -2562,8 +2483,7 @@ sub new {
 #
 # @retval datastore - The current value of the field.
 # Identifier of the datastore for the deployed virtual machine&apos;s configuration and
-#     log files. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_datastore {
@@ -2576,8 +2496,7 @@ sub get_datastore {
 # 
 # @param datastore  - New value for the field.
 # Identifier of the datastore for the deployed virtual machine&apos;s configuration and
-#     log files. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -2590,8 +2509,7 @@ sub set_datastore {
 #
 # @retval storage_policy - The current value of the field.
 # Storage policy for the deployed virtual machine&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_storage_policy {
@@ -2604,8 +2522,7 @@ sub get_storage_policy {
 # 
 # @param storage_policy  - New value for the field.
 # Storage policy for the deployed virtual machine&apos;s configuration and log files.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;
@@ -2622,8 +2539,7 @@ sub set_storage_policy {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStoragePolicy`` 
 #     *class*  describes the storage policy specification for the deployed virtual
-#     machine&apos;s disks. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     machine&apos;s disks. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStoragePolicy;
 
@@ -2674,9 +2590,8 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# Policy type to be used when creating the deployed virtual machine&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Policy type to be used when creating the deployed virtual machine&apos;s disk. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Type#
 sub get_type {
@@ -2688,9 +2603,8 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# Policy type to be used when creating the deployed virtual machine&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Policy type to be used when creating the deployed virtual machine&apos;s disk. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -2702,8 +2616,8 @@ sub set_type {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Identifier of the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier of the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # optional#
 sub get_policy {
@@ -2715,8 +2629,8 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Identifier of the storage policy to use. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Identifier of the storage policy to use. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -2730,20 +2644,17 @@ sub set_policy {
 
 ## @class Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStoragePolicy::Type
 #
-# Policy type for the deployed virtual machine&apos;s disk. <b>Warning:</b> This 
-#     *enumeration*  is available as technical preview. It may be changed in a future
-#     release.
+# Policy type for the deployed virtual machine&apos;s disk. This  *enumeration*  was
+#     added in vSphere API 6.7 U1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStoragePolicy::Type::USE_SPECIFIED_POLICY #
-#Use the specified policy. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+#Use the specified policy. This  *constant*  was added in vSphere API 6.7 U1.
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStoragePolicy::Type::USE_SOURCE_POLICY #
 #Use the storage policy that is associated with the corresponding disk in the source
-# virtual machine template. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+# virtual machine template. This  *constant*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStoragePolicy::Type;
 
@@ -2783,9 +2694,8 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStorage``  
-#     *class*  contains the storage specification for disks in the virtual machine.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     *class*  contains the storage specification for disks in the virtual machine. This 
+#     *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DeploySpecDiskStorage;
 
@@ -2828,9 +2738,8 @@ sub new {
 # Gets the value of 'datastore' property.
 #
 # @retval datastore - The current value of the field.
-# Identifier for the datastore associated the deployed virtual machine&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Identifier for the datastore associated the deployed virtual machine&apos;s disk. This
+#      *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_datastore {
@@ -2842,9 +2751,8 @@ sub get_datastore {
 # Sets the given value for 'datastore' property.
 # 
 # @param datastore  - New value for the field.
-# Identifier for the datastore associated the deployed virtual machine&apos;s disk.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Identifier for the datastore associated the deployed virtual machine&apos;s disk. This
+#      *field*  was added in vSphere API 6.7 U1.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -2856,8 +2764,8 @@ sub set_datastore {
 # Gets the value of 'storage_policy' property.
 #
 # @retval storage_policy - The current value of the field.
-# Storage policy for the deployed virtual machine&apos;s disk. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Storage policy for the deployed virtual machine&apos;s disk. This  *field*  was added
+#     in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_storage_policy {
@@ -2869,8 +2777,8 @@ sub get_storage_policy {
 # Sets the given value for 'storage_policy' property.
 # 
 # @param storage_policy  - New value for the field.
-# Storage policy for the deployed virtual machine&apos;s disk. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Storage policy for the deployed virtual machine&apos;s disk. This  *field*  was added
+#     in vSphere API 6.7 U1.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;
@@ -2886,9 +2794,8 @@ sub set_storage_policy {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::GuestCustomizationSpec``  
-#     *class*  contains information required to customize the deployed virtual machine.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     *class*  contains information required to customize the deployed virtual machine. This
+#      *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::GuestCustomizationSpec;
 
@@ -2929,8 +2836,8 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the customization specification. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Name of the customization specification. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # Optional#
 sub get_name {
@@ -2942,8 +2849,8 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the customization specification. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# Name of the customization specification. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -2959,9 +2866,8 @@ sub set_name {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::Info``   *class*  contains
-#     information about a virtual machine template item in content library. <b>Warning:</b>
-#     This  *class*  is available as technical preview. It may be changed in a future
-#     release.
+#     information about a virtual machine template item in content library. This  *class* 
+#     was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::Info;
 
@@ -3005,7 +2911,7 @@ sub new {
    $self->set_binding_field('key' => 'vm_home_storage', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm_template', 'type_name' => 'LibraryItems::VmHomeStorageInfo'));
    $self->set_binding_field('key' => 'disks', 'value' => new Com::Vmware::Vapi::Bindings::Type::MapType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StructType('name' => 'map-entry', 'fields' => {'key' => new Com::Vmware::Vapi::Bindings::Type::StringType(), 'value' =>  new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm_template', 'type_name' => 'LibraryItems::DiskInfo')}))));
    $self->set_binding_field('key' => 'nics', 'value' => new Com::Vmware::Vapi::Bindings::Type::MapType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StructType('name' => 'map-entry', 'fields' => {'key' => new Com::Vmware::Vapi::Bindings::Type::StringType(), 'value' =>  new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm_template', 'type_name' => 'LibraryItems::EthernetInfo')}))));
-   $self->set_binding_field('key' => 'vm_template', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'vm_template', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    bless $self, $class;
    return $self;
 }
@@ -3014,9 +2920,8 @@ sub new {
 # Gets the value of 'guest_OS' property.
 #
 # @retval guest_OS - The current value of the field.
-# Configured guest operating system of the virtual machine template. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Configured guest operating system of the virtual machine template. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 # GuestOS#
 sub get_guest_OS {
@@ -3028,9 +2933,8 @@ sub get_guest_OS {
 # Sets the given value for 'guest_OS' property.
 # 
 # @param guest_OS  - New value for the field.
-# Configured guest operating system of the virtual machine template. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Configured guest operating system of the virtual machine template. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_guest_OS {
    my ($self, %args) = @_;
@@ -3042,8 +2946,8 @@ sub set_guest_OS {
 # Gets the value of 'cpu' property.
 #
 # @retval cpu - The current value of the field.
-# CPU configuration of the virtual machine template. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# CPU configuration of the virtual machine template. This  *field*  was added in vSphere
+#     API 6.7 U1.
 #
 # CpuInfo#
 sub get_cpu {
@@ -3055,8 +2959,8 @@ sub get_cpu {
 # Sets the given value for 'cpu' property.
 # 
 # @param cpu  - New value for the field.
-# CPU configuration of the virtual machine template. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+# CPU configuration of the virtual machine template. This  *field*  was added in vSphere
+#     API 6.7 U1.
 #
 sub set_cpu {
    my ($self, %args) = @_;
@@ -3068,8 +2972,8 @@ sub set_cpu {
 # Gets the value of 'memory' property.
 #
 # @retval memory - The current value of the field.
-# Memory configuration of the virtual machine template. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Memory configuration of the virtual machine template. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 # MemoryInfo#
 sub get_memory {
@@ -3081,8 +2985,8 @@ sub get_memory {
 # Sets the given value for 'memory' property.
 # 
 # @param memory  - New value for the field.
-# Memory configuration of the virtual machine template. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Memory configuration of the virtual machine template. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 sub set_memory {
    my ($self, %args) = @_;
@@ -3095,8 +2999,7 @@ sub set_memory {
 #
 # @retval vm_home_storage - The current value of the field.
 # Storage information about the virtual machine template&apos;s configuration and log
-#     files. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     files. This  *field*  was added in vSphere API 6.7 U1.
 #
 # VmHomeStorageInfo#
 sub get_vm_home_storage {
@@ -3109,8 +3012,7 @@ sub get_vm_home_storage {
 # 
 # @param vm_home_storage  - New value for the field.
 # Storage information about the virtual machine template&apos;s configuration and log
-#     files. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     files. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_vm_home_storage {
    my ($self, %args) = @_;
@@ -3122,9 +3024,8 @@ sub set_vm_home_storage {
 # Gets the value of 'disks' property.
 #
 # @retval disks - The current value of the field.
-# Storage information about the virtual machine template&apos;s virtual disks.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Storage information about the virtual machine template&apos;s virtual disks. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Map#
 sub get_disks {
@@ -3136,9 +3037,8 @@ sub get_disks {
 # Sets the given value for 'disks' property.
 # 
 # @param disks  - New value for the field.
-# Storage information about the virtual machine template&apos;s virtual disks.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Storage information about the virtual machine template&apos;s virtual disks. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_disks {
    my ($self, %args) = @_;
@@ -3150,9 +3050,8 @@ sub set_disks {
 # Gets the value of 'nics' property.
 #
 # @retval nics - The current value of the field.
-# Information about the virtual machine template&apos;s virtual ethernet adapters.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Information about the virtual machine template&apos;s virtual ethernet adapters. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 # Map#
 sub get_nics {
@@ -3164,9 +3063,8 @@ sub get_nics {
 # Sets the given value for 'nics' property.
 # 
 # @param nics  - New value for the field.
-# Information about the virtual machine template&apos;s virtual ethernet adapters.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+# Information about the virtual machine template&apos;s virtual ethernet adapters. This 
+#     *field*  was added in vSphere API 6.7 U1.
 #
 sub set_nics {
    my ($self, %args) = @_;
@@ -3179,10 +3077,10 @@ sub set_nics {
 #
 # @retval vm_template - The current value of the field.
 # Identifier of the virtual machine template contained in the library item. This field
-#     is used to identify the virtual machine template in legacy APIs. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     is used to identify the virtual machine template in legacy APIs. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
-# optional#
+# ID#
 sub get_vm_template {
    my ($self, %args) = @_;
    return $self->{'vm_template'}; 	
@@ -3193,8 +3091,8 @@ sub get_vm_template {
 # 
 # @param vm_template  - New value for the field.
 # Identifier of the virtual machine template contained in the library item. This field
-#     is used to identify the virtual machine template in legacy APIs. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     is used to identify the virtual machine template in legacy APIs. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_vm_template {
    my ($self, %args) = @_;
@@ -3210,8 +3108,8 @@ sub set_vm_template {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::CpuInfo``   *class*  contains
-#     CPU related information about the virtual machine template. <b>Warning:</b> This 
-#     *class*  is available as technical preview. It may be changed in a future release.
+#     CPU related information about the virtual machine template. This  *class*  was added
+#     in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::CpuInfo;
 
@@ -3254,8 +3152,7 @@ sub new {
 # Gets the value of 'count' property.
 #
 # @retval count - The current value of the field.
-# Number of CPU cores. <b>Warning:</b> This  *field*  is available as technical preview.
-#     It may be changed in a future release.
+# Number of CPU cores. This  *field*  was added in vSphere API 6.7 U1.
 #
 # long#
 sub get_count {
@@ -3267,8 +3164,7 @@ sub get_count {
 # Sets the given value for 'count' property.
 # 
 # @param count  - New value for the field.
-# Number of CPU cores. <b>Warning:</b> This  *field*  is available as technical preview.
-#     It may be changed in a future release.
+# Number of CPU cores. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_count {
    my ($self, %args) = @_;
@@ -3280,8 +3176,7 @@ sub set_count {
 # Gets the value of 'cores_per_socket' property.
 #
 # @retval cores_per_socket - The current value of the field.
-# Number of CPU cores per socket. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Number of CPU cores per socket. This  *field*  was added in vSphere API 6.7 U1.
 #
 # long#
 sub get_cores_per_socket {
@@ -3293,8 +3188,7 @@ sub get_cores_per_socket {
 # Sets the given value for 'cores_per_socket' property.
 # 
 # @param cores_per_socket  - New value for the field.
-# Number of CPU cores per socket. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Number of CPU cores per socket. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_cores_per_socket {
    my ($self, %args) = @_;
@@ -3310,9 +3204,8 @@ sub set_cores_per_socket {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::MemoryInfo``   *class* 
-#     contains memory related information about the virtual machine template.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     contains memory related information about the virtual machine template. This  *class* 
+#     was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::MemoryInfo;
 
@@ -3353,8 +3246,7 @@ sub new {
 # Gets the value of 'size_MiB' property.
 #
 # @retval size_MiB - The current value of the field.
-# Memory size in mebibytes. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Memory size in mebibytes. This  *field*  was added in vSphere API 6.7 U1.
 #
 # long#
 sub get_size_MiB {
@@ -3366,8 +3258,7 @@ sub get_size_MiB {
 # Sets the given value for 'size_MiB' property.
 # 
 # @param size_MiB  - New value for the field.
-# Memory size in mebibytes. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Memory size in mebibytes. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_size_MiB {
    my ($self, %args) = @_;
@@ -3384,8 +3275,7 @@ sub set_size_MiB {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::VmHomeStorageInfo``   *class* 
 #     contains storage information about the virtual machine template&apos;s configuration
-#     and log files. <b>Warning:</b> This  *class*  is available as technical preview. It
-#     may be changed in a future release.
+#     and log files. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::VmHomeStorageInfo;
 
@@ -3429,8 +3319,7 @@ sub new {
 #
 # @retval datastore - The current value of the field.
 # Identifier of the datastore where the virtual machine template&apos;s configuration
-#     and log files are stored. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     and log files are stored. This  *field*  was added in vSphere API 6.7 U1.
 #
 # ID#
 sub get_datastore {
@@ -3443,8 +3332,7 @@ sub get_datastore {
 # 
 # @param datastore  - New value for the field.
 # Identifier of the datastore where the virtual machine template&apos;s configuration
-#     and log files are stored. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     and log files are stored. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -3457,8 +3345,7 @@ sub set_datastore {
 #
 # @retval storage_policy - The current value of the field.
 # Identifier of the storage policy associated with the virtual machine template&apos;s
-#     configuration and log files. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     configuration and log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_storage_policy {
@@ -3471,8 +3358,7 @@ sub get_storage_policy {
 # 
 # @param storage_policy  - New value for the field.
 # Identifier of the storage policy associated with the virtual machine template&apos;s
-#     configuration and log files. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     configuration and log files. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;
@@ -3488,9 +3374,8 @@ sub set_storage_policy {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DiskInfo``   *class*  contains
-#     information about the virtual machine template&apos;s virtual disk. <b>Warning:</b>
-#     This  *class*  is available as technical preview. It may be changed in a future
-#     release.
+#     information about the virtual machine template&apos;s virtual disk. This  *class*  was
+#     added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DiskInfo;
 
@@ -3533,8 +3418,7 @@ sub new {
 # Gets the value of 'capacity' property.
 #
 # @retval capacity - The current value of the field.
-# Capacity of the virtual disk in bytes. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Capacity of the virtual disk in bytes. This  *field*  was added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_capacity {
@@ -3546,8 +3430,7 @@ sub get_capacity {
 # Sets the given value for 'capacity' property.
 # 
 # @param capacity  - New value for the field.
-# Capacity of the virtual disk in bytes. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Capacity of the virtual disk in bytes. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_capacity {
    my ($self, %args) = @_;
@@ -3559,8 +3442,7 @@ sub set_capacity {
 # Gets the value of 'disk_storage' property.
 #
 # @retval disk_storage - The current value of the field.
-# Disk storage related information. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Disk storage related information. This  *field*  was added in vSphere API 6.7 U1.
 #
 # DiskStorageInfo#
 sub get_disk_storage {
@@ -3572,8 +3454,7 @@ sub get_disk_storage {
 # Sets the given value for 'disk_storage' property.
 # 
 # @param disk_storage  - New value for the field.
-# Disk storage related information. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Disk storage related information. This  *field*  was added in vSphere API 6.7 U1.
 #
 sub set_disk_storage {
    my ($self, %args) = @_;
@@ -3590,8 +3471,7 @@ sub set_disk_storage {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::DiskStorageInfo``   *class* 
 #     contains storage related information about a virtual machine template&apos;s virtual
-#     disk. <b>Warning:</b> This  *class*  is available as technical preview. It may be
-#     changed in a future release.
+#     disk. This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::DiskStorageInfo;
 
@@ -3634,8 +3514,8 @@ sub new {
 # Gets the value of 'datastore' property.
 #
 # @retval datastore - The current value of the field.
-# Identifier of the datastore where the disk is stored. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Identifier of the datastore where the disk is stored. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 # ID#
 sub get_datastore {
@@ -3647,8 +3527,8 @@ sub get_datastore {
 # Sets the given value for 'datastore' property.
 # 
 # @param datastore  - New value for the field.
-# Identifier of the datastore where the disk is stored. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Identifier of the datastore where the disk is stored. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -3660,9 +3540,8 @@ sub set_datastore {
 # Gets the value of 'storage_policy' property.
 #
 # @retval storage_policy - The current value of the field.
-# Identifier of the storage policy associated with the virtual disk. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Identifier of the storage policy associated with the virtual disk. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_storage_policy {
@@ -3674,9 +3553,8 @@ sub get_storage_policy {
 # Sets the given value for 'storage_policy' property.
 # 
 # @param storage_policy  - New value for the field.
-# Identifier of the storage policy associated with the virtual disk. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# Identifier of the storage policy associated with the virtual disk. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;
@@ -3693,8 +3571,7 @@ sub set_storage_policy {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo``   *class* 
 #     contains information about a virtual machine template&apos;s virtual Ethernet adapter.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     This  *class*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo;
 
@@ -3739,8 +3616,8 @@ sub new {
 # Gets the value of 'backing_type' property.
 #
 # @retval backing_type - The current value of the field.
-# Network backing type for the virtual Ethernet adapter. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Network backing type for the virtual Ethernet adapter. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 # NetworkBackingType#
 sub get_backing_type {
@@ -3752,8 +3629,8 @@ sub get_backing_type {
 # Sets the given value for 'backing_type' property.
 # 
 # @param backing_type  - New value for the field.
-# Network backing type for the virtual Ethernet adapter. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+# Network backing type for the virtual Ethernet adapter. This  *field*  was added in
+#     vSphere API 6.7 U1.
 #
 sub set_backing_type {
    my ($self, %args) = @_;
@@ -3765,8 +3642,8 @@ sub set_backing_type {
 # Gets the value of 'mac_type' property.
 #
 # @retval mac_type - The current value of the field.
-# MAC address type of the ethernet adapter. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# MAC address type of the ethernet adapter. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 # MacAddressType#
 sub get_mac_type {
@@ -3778,8 +3655,8 @@ sub get_mac_type {
 # Sets the given value for 'mac_type' property.
 # 
 # @param mac_type  - New value for the field.
-# MAC address type of the ethernet adapter. <b>Warning:</b> This  *field*  is available
-#     as technical preview. It may be changed in a future release.
+# MAC address type of the ethernet adapter. This  *field*  was added in vSphere API 6.7
+#     U1.
 #
 sub set_mac_type {
    my ($self, %args) = @_;
@@ -3791,8 +3668,8 @@ sub set_mac_type {
 # Gets the value of 'network' property.
 #
 # @retval network - The current value of the field.
-# Identifier of the network backing the virtual Ethernet adapter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Identifier of the network backing the virtual Ethernet adapter. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 # Optional#
 sub get_network {
@@ -3804,8 +3681,8 @@ sub get_network {
 # Sets the given value for 'network' property.
 # 
 # @param network  - New value for the field.
-# Identifier of the network backing the virtual Ethernet adapter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+# Identifier of the network backing the virtual Ethernet adapter. This  *field*  was
+#     added in vSphere API 6.7 U1.
 #
 sub set_network {
    my ($self, %args) = @_;
@@ -3822,28 +3699,24 @@ sub set_network {
 # The 
 #     ``Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::NetworkBackingType`` 
 #     *enumerated type*  defines valid network backing types for a virtual Ethernet adapter.
-#     <b>Warning:</b> This  *enumeration*  is available as technical preview. It may be
-#     changed in a future release.
+#     This  *enumeration*  was added in vSphere API 6.7 U1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::NetworkBackingType::STANDARD_PORTGROUP #
-#vSphere standard portgroup network backing. <b>Warning:</b> This  *constant*  is available
-# as technical preview. It may be changed in a future release.
+#vSphere standard portgroup network backing. This  *constant*  was added in vSphere API 6.7
+# U1.
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::NetworkBackingType::HOST_DEVICE #
 #Legacy host device network backing. Imported VMs may have virtual Ethernet adapters with
 # this type of backing, but this type of backing cannot be used to create or to update a
-# virtual Ethernet adapter. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+# virtual Ethernet adapter. This  *constant*  was added in vSphere API 6.7 U1.
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::NetworkBackingType::DISTRIBUTED_PORTGROUP #
-#Distributed virtual switch backing. <b>Warning:</b> This  *constant*  is available as
-# technical preview. It may be changed in a future release.
+#Distributed virtual switch backing. This  *constant*  was added in vSphere API 6.7 U1.
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::NetworkBackingType::OPAQUE_NETWORK #
-#Opaque network backing. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+#Opaque network backing. This  *constant*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::NetworkBackingType;
 
@@ -3885,22 +3758,19 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::MacAddressType``
 #     *enumerated type*  defines the valid MAC address origins for a virtual Ethernet
-#     adapter. <b>Warning:</b> This  *enumeration*  is available as technical preview. It
-#     may be changed in a future release.
+#     adapter. This  *enumeration*  was added in vSphere API 6.7 U1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::MacAddressType::MANUAL #
-#MAC address is assigned statically. <b>Warning:</b> This  *constant*  is available as
-# technical preview. It may be changed in a future release.
+#MAC address is assigned statically. This  *constant*  was added in vSphere API 6.7 U1.
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::MacAddressType::GENERATED #
-#MAC address is generated automatically. <b>Warning:</b> This  *constant*  is available as
-# technical preview. It may be changed in a future release.
+#MAC address is generated automatically. This  *constant*  was added in vSphere API 6.7 U1.
 #
 # Constant Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::MacAddressType::ASSIGNED #
-#MAC address is assigned by vCenter Server. <b>Warning:</b> This  *constant*  is available
-# as technical preview. It may be changed in a future release.
+#MAC address is assigned by vCenter Server. This  *constant*  was added in vSphere API 6.7
+# U1.
 
 package Com::Vmware::Vcenter::Vm_template::LibraryItems::EthernetInfo::MacAddressType;
 

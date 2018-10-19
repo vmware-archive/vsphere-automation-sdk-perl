@@ -12,7 +12,7 @@
 
 ## @class Com::Vmware::Appliance::Timesync
 # ``Com::Vmware::Appliance::Timesync``   *interface*  provides  *methods*  Performs time
-#     synchronization configuration. This  *interface*  was added in vSphere API 6.7
+#     synchronization configuration. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Timesync;
@@ -58,7 +58,7 @@ sub new {
 }
 
 ## @method set ()
-# Set time synchronization mode. This  *method*  was added in vSphere API 6.7
+# Set time synchronization mode. This  *method*  was added in vSphere API 6.7.
 #
 # @param mode [REQUIRED] Time synchronization mode.
 # . The value must be Com::Vmware::Appliance::Timesync::TimeSyncMode.
@@ -80,7 +80,7 @@ sub set {
 
 
 ## @method get ()
-# Get time synchronization mode. This  *method*  was added in vSphere API 6.7
+# Get time synchronization mode. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # Time synchronization mode.
@@ -105,18 +105,18 @@ sub get {
 ## @class Com::Vmware::Appliance::Timesync::TimeSyncMode
 #
 # The  ``Com::Vmware::Appliance::Timesync::TimeSyncMode``   *enumerated type*  defines
-#     time synchronization modes. This  *enumeration*  was added in vSphere API 6.7
+#     time synchronization modes. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Timesync::TimeSyncMode::DISABLED #
-#Time synchronization is disabled. This  *constant*  was added in vSphere API 6.7
+#Time synchronization is disabled. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Timesync::TimeSyncMode::NTP #
-#NTP-based time synchronization. This  *constant*  was added in vSphere API 6.7
+#NTP-based time synchronization. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Timesync::TimeSyncMode::HOST #
-#VMware Tool-based time synchronization. This  *constant*  was added in vSphere API 6.7
+#VMware Tool-based time synchronization. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Timesync::TimeSyncMode;
 

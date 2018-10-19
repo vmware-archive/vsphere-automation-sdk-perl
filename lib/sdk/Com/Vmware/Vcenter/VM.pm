@@ -484,7 +484,7 @@ sub set_datastore {
 #
 # The  ``Com::Vmware::Vcenter::VM::StoragePolicySpec``   *class*  contains information
 #     about the storage policy to be associated with a virtual machine object. This  *class*
-#      was added in vSphere API 6.7
+#      was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::VM::StoragePolicySpec;
 
@@ -526,7 +526,7 @@ sub new {
 #
 # @retval policy - The current value of the field.
 # Identifier of the storage policy which should be associated with the virtual machine.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_policy {
@@ -539,7 +539,7 @@ sub get_policy {
 # 
 # @param policy  - New value for the field.
 # Identifier of the storage policy which should be associated with the virtual machine.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -1013,7 +1013,8 @@ sub set_scsi_adapters {
 # @retval storage_policy - The current value of the field.
 # The  ``Com::Vmware::Vcenter::VM::StoragePolicySpec``   *class*  contains information
 #     about the storage policy that is to be associated with the virtual machine home (which
-#     contains the configuration and log files). This  *field*  was added in vSphere API 6.7
+#     contains the configuration and log files). This  *field*  was added in vSphere API
+#     6.7.
 #
 # Optional#
 sub get_storage_policy {
@@ -1027,7 +1028,8 @@ sub get_storage_policy {
 # @param storage_policy  - New value for the field.
 # The  ``Com::Vmware::Vcenter::VM::StoragePolicySpec``   *class*  contains information
 #     about the storage policy that is to be associated with the virtual machine home (which
-#     contains the configuration and log files). This  *field*  was added in vSphere API 6.7
+#     contains the configuration and log files). This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;

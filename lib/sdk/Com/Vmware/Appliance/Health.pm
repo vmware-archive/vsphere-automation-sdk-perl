@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Health
 # The  ``Com::Vmware::Appliance::Health``   *interface*  provides  *methods*  to
 #     retrieve the appliance health information. This  *interface*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 
 package Com::Vmware::Appliance::Health;
@@ -59,7 +59,7 @@ sub new {
 }
 
 ## @method messages ()
-# Get health messages. This  *method*  was added in vSphere API 6.7
+# Get health messages. This  *method*  was added in vSphere API 6.7.
 #
 # @param item [REQUIRED] ID of the data item
 # The value must be an identifier for the resource type

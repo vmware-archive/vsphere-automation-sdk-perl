@@ -12,7 +12,8 @@
 
 ## @class Com::Vmware::Appliance::Update::Policy
 # The  ``Com::Vmware::Appliance::Update::Policy``   *interface*  provides  *methods*  to
-#     set/get background check for the new updates.
+#     set/get background check for the new updates. This  *interface*  was added in vSphere
+#     API 6.7.
 #
 
 package Com::Vmware::Appliance::Update::Policy;
@@ -58,7 +59,8 @@ sub new {
 }
 
 ## @method get ()
-# Gets the automatic update checking and staging policy.
+# Gets the automatic update checking and staging policy. This  *method*  was added in
+# vSphere API 6.7.
 #
 # @retval 
 # Structure containing the policy for the appliance update.
@@ -81,7 +83,8 @@ sub get {
 
 
 ## @method set ()
-# Sets the automatic update checking and staging policy.
+# Sets the automatic update checking and staging policy. This  *method*  was added in
+# vSphere API 6.7.
 #
 # @param policy [REQUIRED] Info structure containing the policy for the appliance update.
 # . The value must be Com::Vmware::Appliance::Update::Policy::Config.
@@ -117,30 +120,30 @@ sub set {
 ## @class Com::Vmware::Appliance::Update::Policy::DayOfWeek
 #
 # The  ``Com::Vmware::Appliance::Update::Policy::DayOfWeek``   *enumerated type* 
-#     defines the set of days
+#     defines the set of days. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Update::Policy::DayOfWeek::MONDAY #
-#Monday
+#Monday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Policy::DayOfWeek::TUESDAY #
-#Tuesday
+#Tuesday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Policy::DayOfWeek::WEDNESDAY #
-#Wednesday
+#Wednesday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Policy::DayOfWeek::THURSDAY #
-#Thursday
+#Thursday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Policy::DayOfWeek::FRIDAY #
-#Friday
+#Friday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Policy::DayOfWeek::SATURDAY #
-#Saturday
+#Saturday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::Policy::DayOfWeek::SUNDAY #
-#Sunday
+#Sunday. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Policy::DayOfWeek;
 
@@ -193,7 +196,8 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Appliance::Update::Policy::Time``   *class*  defines weekday and
-#     time the automatic check for new updates will be run
+#     time the automatic check for new updates will be run. This  *class*  was added in
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Policy::Time;
 
@@ -238,7 +242,7 @@ sub new {
 # Gets the value of 'day' property.
 #
 # @retval day - The current value of the field.
-# weekday to check for updates.
+# weekday to check for updates. This  *field*  was added in vSphere API 6.7.
 #
 # DayOfWeek#
 sub get_day {
@@ -250,7 +254,7 @@ sub get_day {
 # Sets the given value for 'day' property.
 # 
 # @param day  - New value for the field.
-# weekday to check for updates.
+# weekday to check for updates. This  *field*  was added in vSphere API 6.7.
 #
 sub set_day {
    my ($self, %args) = @_;
@@ -262,7 +266,7 @@ sub set_day {
 # Gets the value of 'hour' property.
 #
 # @retval hour - The current value of the field.
-# Hour: 0-24
+# Hour: 0-24. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_hour {
@@ -274,7 +278,7 @@ sub get_hour {
 # Sets the given value for 'hour' property.
 # 
 # @param hour  - New value for the field.
-# Hour: 0-24
+# Hour: 0-24. This  *field*  was added in vSphere API 6.7.
 #
 sub set_hour {
    my ($self, %args) = @_;
@@ -286,7 +290,7 @@ sub set_hour {
 # Gets the value of 'minute' property.
 #
 # @retval minute - The current value of the field.
-# Minute: 0-59
+# Minute: 0-59. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_minute {
@@ -298,7 +302,7 @@ sub get_minute {
 # Sets the given value for 'minute' property.
 # 
 # @param minute  - New value for the field.
-# Minute: 0-59
+# Minute: 0-59. This  *field*  was added in vSphere API 6.7.
 #
 sub set_minute {
    my ($self, %args) = @_;
@@ -314,7 +318,7 @@ sub set_minute {
 #
 #
 # The  ``Com::Vmware::Appliance::Update::Policy::Info``   *class*  defines automatic
-#     update checking and staging policy.
+#     update checking and staging policy. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Policy::Info;
 
@@ -367,7 +371,8 @@ sub new {
 # Gets the value of 'custom_URL' property.
 #
 # @retval custom_URL - The current value of the field.
-# Current appliance update custom repository URL.
+# Current appliance update custom repository URL. This  *field*  was added in vSphere
+#     API 6.7.
 #
 # Optional#
 sub get_custom_URL {
@@ -379,7 +384,8 @@ sub get_custom_URL {
 # Sets the given value for 'custom_URL' property.
 # 
 # @param custom_URL  - New value for the field.
-# Current appliance update custom repository URL.
+# Current appliance update custom repository URL. This  *field*  was added in vSphere
+#     API 6.7.
 #
 sub set_custom_URL {
    my ($self, %args) = @_;
@@ -391,7 +397,8 @@ sub set_custom_URL {
 # Gets the value of 'default_URL' property.
 #
 # @retval default_URL - The current value of the field.
-# Current appliance update default repository URL.
+# Current appliance update default repository URL. This  *field*  was added in vSphere
+#     API 6.7.
 #
 # String#
 sub get_default_URL {
@@ -403,7 +410,8 @@ sub get_default_URL {
 # Sets the given value for 'default_URL' property.
 # 
 # @param default_URL  - New value for the field.
-# Current appliance update default repository URL.
+# Current appliance update default repository URL. This  *field*  was added in vSphere
+#     API 6.7.
 #
 sub set_default_URL {
    my ($self, %args) = @_;
@@ -415,7 +423,7 @@ sub set_default_URL {
 # Gets the value of 'username' property.
 #
 # @retval username - The current value of the field.
-# Username for the update repository
+# Username for the update repository. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_username {
@@ -427,7 +435,7 @@ sub get_username {
 # Sets the given value for 'username' property.
 # 
 # @param username  - New value for the field.
-# Username for the update repository
+# Username for the update repository. This  *field*  was added in vSphere API 6.7.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -439,7 +447,8 @@ sub set_username {
 # Gets the value of 'check_schedule' property.
 #
 # @retval check_schedule - The current value of the field.
-# Schedule when the automatic check will be run.
+# Schedule when the automatic check will be run. This  *field*  was added in vSphere API
+#     6.7.
 #
 # List#
 sub get_check_schedule {
@@ -451,7 +460,8 @@ sub get_check_schedule {
 # Sets the given value for 'check_schedule' property.
 # 
 # @param check_schedule  - New value for the field.
-# Schedule when the automatic check will be run.
+# Schedule when the automatic check will be run. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_check_schedule {
    my ($self, %args) = @_;
@@ -463,7 +473,8 @@ sub set_check_schedule {
 # Gets the value of 'auto_stage' property.
 #
 # @retval auto_stage - The current value of the field.
-# Automatically stage the latest update if available.
+# Automatically stage the latest update if available. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # boolean#
 sub get_auto_stage {
@@ -475,7 +486,8 @@ sub get_auto_stage {
 # Sets the given value for 'auto_stage' property.
 # 
 # @param auto_stage  - New value for the field.
-# Automatically stage the latest update if available.
+# Automatically stage the latest update if available. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_auto_stage {
    my ($self, %args) = @_;
@@ -488,7 +500,7 @@ sub set_auto_stage {
 #
 # @retval auto_update - The current value of the field.
 # Is the appliance updated automatically. If  *set*  the appliance may ignore the check
-#     schedule or auto-stage settings.
+#     schedule or auto-stage settings. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_auto_update {
@@ -501,7 +513,7 @@ sub get_auto_update {
 # 
 # @param auto_update  - New value for the field.
 # Is the appliance updated automatically. If  *set*  the appliance may ignore the check
-#     schedule or auto-stage settings.
+#     schedule or auto-stage settings. This  *field*  was added in vSphere API 6.7.
 #
 sub set_auto_update {
    my ($self, %args) = @_;
@@ -513,7 +525,8 @@ sub set_auto_update {
 # Gets the value of 'manual_control' property.
 #
 # @retval manual_control - The current value of the field.
-# Whether API client should allow the user to start update manually
+# Whether API client should allow the user to start update manually. This  *field*  was
+#     added in vSphere API 6.7.
 #
 # boolean#
 sub get_manual_control {
@@ -525,7 +538,8 @@ sub get_manual_control {
 # Sets the given value for 'manual_control' property.
 # 
 # @param manual_control  - New value for the field.
-# Whether API client should allow the user to start update manually
+# Whether API client should allow the user to start update manually. This  *field*  was
+#     added in vSphere API 6.7.
 #
 sub set_manual_control {
    my ($self, %args) = @_;
@@ -541,7 +555,7 @@ sub set_manual_control {
 #
 #
 # The  ``Com::Vmware::Appliance::Update::Policy::Config``   *class*  defines automatic
-#     update checking and staging policy.
+#     update checking and staging policy. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Policy::Config;
 
@@ -590,7 +604,7 @@ sub new {
 # Gets the value of 'custom_URL' property.
 #
 # @retval custom_URL - The current value of the field.
-# Current appliance update repository URL.
+# Current appliance update repository URL. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_custom_URL {
@@ -602,7 +616,7 @@ sub get_custom_URL {
 # Sets the given value for 'custom_URL' property.
 # 
 # @param custom_URL  - New value for the field.
-# Current appliance update repository URL.
+# Current appliance update repository URL. This  *field*  was added in vSphere API 6.7.
 #
 sub set_custom_URL {
    my ($self, %args) = @_;
@@ -614,7 +628,7 @@ sub set_custom_URL {
 # Gets the value of 'username' property.
 #
 # @retval username - The current value of the field.
-# Username for the update repository
+# Username for the update repository. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_username {
@@ -626,7 +640,7 @@ sub get_username {
 # Sets the given value for 'username' property.
 # 
 # @param username  - New value for the field.
-# Username for the update repository
+# Username for the update repository. This  *field*  was added in vSphere API 6.7.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -638,7 +652,7 @@ sub set_username {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password for the update repository
+# Password for the update repository. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_password {
@@ -650,7 +664,7 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password for the update repository
+# Password for the update repository. This  *field*  was added in vSphere API 6.7.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -662,7 +676,8 @@ sub set_password {
 # Gets the value of 'check_schedule' property.
 #
 # @retval check_schedule - The current value of the field.
-# Schedule when the automatic check will be run.
+# Schedule when the automatic check will be run. This  *field*  was added in vSphere API
+#     6.7.
 #
 # List#
 sub get_check_schedule {
@@ -674,7 +689,8 @@ sub get_check_schedule {
 # Sets the given value for 'check_schedule' property.
 # 
 # @param check_schedule  - New value for the field.
-# Schedule when the automatic check will be run.
+# Schedule when the automatic check will be run. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_check_schedule {
    my ($self, %args) = @_;
@@ -686,7 +702,8 @@ sub set_check_schedule {
 # Gets the value of 'auto_stage' property.
 #
 # @retval auto_stage - The current value of the field.
-# Automatically stage the latest update if available.
+# Automatically stage the latest update if available. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # boolean#
 sub get_auto_stage {
@@ -698,7 +715,8 @@ sub get_auto_stage {
 # Sets the given value for 'auto_stage' property.
 # 
 # @param auto_stage  - New value for the field.
-# Automatically stage the latest update if available.
+# Automatically stage the latest update if available. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_auto_stage {
    my ($self, %args) = @_;

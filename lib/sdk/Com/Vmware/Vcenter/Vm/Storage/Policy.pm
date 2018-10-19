@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Storage::Policy
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy``   *interface*  provides  *methods* 
 #     to configure the storage policies associated with the virtual machine home and/or its
-#     virtual disks. This  *interface*  was added in vSphere API 6.7
+#     virtual disks. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method update ()
 # Updates the storage policy configuration of a virtual machine and/or its associated
-# virtual hard disks. This  *method*  was added in vSphere API 6.7
+# virtual hard disks. This  *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -107,7 +107,7 @@ sub update {
 
 ## @method get ()
 # Returns Information about Storage Policy associated with a virtual machine&apos;s home
-# directory and/or its virtual hard disks. This  *method*  was added in vSphere API 6.7
+# directory and/or its virtual hard disks. This  *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Virtual machine identifier
 # The value must be an identifier for the resource type
@@ -168,7 +168,7 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::VmHomePolicySpec``   *class* 
 #     provides a specification for the storage policy to be associated with the virtual
-#     machine home&apos;s directory. This  *class*  was added in vSphere API 6.7
+#     machine home&apos;s directory. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::VmHomePolicySpec;
 
@@ -220,7 +220,7 @@ sub new {
 #
 # @retval type - The current value of the field.
 # Policy type to be used while performing update operation on the virtual machine
-#     home&apos;s directory. This  *field*  was added in vSphere API 6.7
+#     home&apos;s directory. This  *field*  was added in vSphere API 6.7.
 #
 # PolicyType#
 sub get_type {
@@ -233,7 +233,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # Policy type to be used while performing update operation on the virtual machine
-#     home&apos;s directory. This  *field*  was added in vSphere API 6.7
+#     home&apos;s directory. This  *field*  was added in vSphere API 6.7.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -245,7 +245,7 @@ sub set_type {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Storage Policy identification. This  *field*  was added in vSphere API 6.7
+# Storage Policy identification. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_policy {
@@ -257,7 +257,7 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Storage Policy identification. This  *field*  was added in vSphere API 6.7
+# Storage Policy identification. This  *field*  was added in vSphere API 6.7.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -274,18 +274,18 @@ sub set_policy {
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::VmHomePolicySpec::PolicyType``  
 #     *enumerated type*  defines the choices for how to specify the policy to be associated
 #     with the virtual machine home&apos;s directory. This  *enumeration*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::VmHomePolicySpec::PolicyType::USE_SPECIFIED_POLICY #
 #Use the specified policy (see 
 # :attr:`Com::Vmware::Vcenter::Vm::Storage::Policy::VmHomePolicySpec.policy` ). This 
-# *constant*  was added in vSphere API 6.7
+# *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::VmHomePolicySpec::PolicyType::USE_DEFAULT_POLICY #
 #Use the default storage policy of the datastore. This  *constant*  was added in vSphere
-# API 6.7
+# API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::VmHomePolicySpec::PolicyType;
 
@@ -326,7 +326,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::DiskPolicySpec``   *class*  provides
 #     a specification for the storage policy to be associated with the virtual disks. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::DiskPolicySpec;
 
@@ -378,7 +378,7 @@ sub new {
 #
 # @retval type - The current value of the field.
 # Policy type to be used while performing update operation on the virtual disks. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # PolicyType#
 sub get_type {
@@ -391,7 +391,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # Policy type to be used while performing update operation on the virtual disks. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -403,7 +403,7 @@ sub set_type {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Storage Policy identification. This  *field*  was added in vSphere API 6.7
+# Storage Policy identification. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_policy {
@@ -415,7 +415,7 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Storage Policy identification. This  *field*  was added in vSphere API 6.7
+# Storage Policy identification. This  *field*  was added in vSphere API 6.7.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -431,18 +431,18 @@ sub set_policy {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::DiskPolicySpec``   *enumerated type*
 #     defines the choices for how to specify the policy to be associated with a virtual
-#     disk. This  *enumeration*  was added in vSphere API 6.7
+#     disk. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::DiskPolicySpec::PolicyType::USE_SPECIFIED_POLICY #
 #Use the specified policy (see 
 # :attr:`Com::Vmware::Vcenter::Vm::Storage::Policy::DiskPolicySpec.policy` ). This 
-# *constant*  was added in vSphere API 6.7
+# *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::DiskPolicySpec::PolicyType::USE_DEFAULT_POLICY #
 #Use the default storage policy of the datastore. This  *constant*  was added in vSphere
-# API 6.7
+# API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::DiskPolicySpec::PolicyType;
 
@@ -483,7 +483,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::UpdateSpec``   *class*  describes
 #     the updates to be made to the storage policies associated with the virtual machine
-#     home and/or its virtual disks. This  *class*  was added in vSphere API 6.7
+#     home and/or its virtual disks. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::UpdateSpec;
 
@@ -527,7 +527,7 @@ sub new {
 #
 # @retval vm_home - The current value of the field.
 # Storage policy to be used when reconfiguring the virtual machine home. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Optional#
 sub get_vm_home {
@@ -540,7 +540,7 @@ sub get_vm_home {
 # 
 # @param vm_home  - New value for the field.
 # Storage policy to be used when reconfiguring the virtual machine home. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_vm_home {
    my ($self, %args) = @_;
@@ -553,7 +553,7 @@ sub set_vm_home {
 #
 # @retval disks - The current value of the field.
 # Storage policy or policies to be used when reconfiguring virtual machine diks. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_disks {
@@ -566,7 +566,7 @@ sub get_disks {
 # 
 # @param disks  - New value for the field.
 # Storage policy or policies to be used when reconfiguring virtual machine diks. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_disks {
    my ($self, %args) = @_;
@@ -583,7 +583,7 @@ sub set_disks {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::Info``   *class*  contains
 #     information about the storage policies associated with virtual machine&apos;s home
-#     directory and virtual hard disks. This  *class*  was added in vSphere API 6.7
+#     directory and virtual hard disks. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::Info;
 
@@ -627,7 +627,7 @@ sub new {
 #
 # @retval vm_home - The current value of the field.
 # Storage Policy associated with virtual machine home. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_vm_home {
@@ -640,7 +640,7 @@ sub get_vm_home {
 # 
 # @param vm_home  - New value for the field.
 # Storage Policy associated with virtual machine home. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_vm_home {
    my ($self, %args) = @_;
@@ -656,7 +656,7 @@ sub set_vm_home {
 #     policy identifiers. They will be identifiers for the resource
 #     type:com.vmware.vcenter.StoragePolicy If the  *map*  is empty, the virtual machine
 #     does not have any disks or its disks are not associated with a storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Map#
 sub get_disks {
@@ -672,7 +672,7 @@ sub get_disks {
 #     policy identifiers. They will be identifiers for the resource
 #     type:com.vmware.vcenter.StoragePolicy If the  *map*  is empty, the virtual machine
 #     does not have any disks or its disks are not associated with a storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_disks {
    my ($self, %args) = @_;

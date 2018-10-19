@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::StandaloneSpec``   *class*  contains
 #     information used to configure a standalone embedded vCenter Server appliance. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::StandaloneSpec;
 
@@ -46,7 +46,7 @@ sub new {
 # Gets the value of 'sso_admin_password' property.
 #
 # @retval sso_admin_password - The current value of the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 6.7
+# The SSO administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_sso_admin_password {
@@ -58,7 +58,7 @@ sub get_sso_admin_password {
 # Sets the given value for 'sso_admin_password' property.
 # 
 # @param sso_admin_password  - New value for the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 6.7
+# The SSO administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_password {
    my ($self, %args) = @_;
@@ -71,7 +71,7 @@ sub set_sso_admin_password {
 #
 # @retval sso_domain_name - The current value of the field.
 # The SSO domain name to be used to configure this appliance. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 # Optional#
 sub get_sso_domain_name {
@@ -84,7 +84,7 @@ sub get_sso_domain_name {
 # 
 # @param sso_domain_name  - New value for the field.
 # The SSO domain name to be used to configure this appliance. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 sub set_sso_domain_name {
    my ($self, %args) = @_;

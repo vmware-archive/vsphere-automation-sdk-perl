@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Appliance::Update::CommonInfo``   *class*  defines common update
-#     information
+#     information. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::CommonInfo;
 
@@ -56,7 +56,8 @@ sub new {
 #
 # @retval description - The current value of the field.
 # Description of the update. The short information what this update is. E.g.
-#     &quot;Update2 for vCenter Server Appliance 6.5&quot;
+#     &quot;Update2 for vCenter Server Appliance 6.5&quot;. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_description {
@@ -69,7 +70,8 @@ sub get_description {
 # 
 # @param description  - New value for the field.
 # Description of the update. The short information what this update is. E.g.
-#     &quot;Update2 for vCenter Server Appliance 6.5&quot;
+#     &quot;Update2 for vCenter Server Appliance 6.5&quot;. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -81,7 +83,7 @@ sub set_description {
 # Gets the value of 'priority' property.
 #
 # @retval priority - The current value of the field.
-# Update priority
+# Update priority. This  *field*  was added in vSphere API 6.7.
 #
 # Priority#
 sub get_priority {
@@ -93,7 +95,7 @@ sub get_priority {
 # Sets the given value for 'priority' property.
 # 
 # @param priority  - New value for the field.
-# Update priority
+# Update priority. This  *field*  was added in vSphere API 6.7.
 #
 sub set_priority {
    my ($self, %args) = @_;
@@ -105,7 +107,7 @@ sub set_priority {
 # Gets the value of 'severity' property.
 #
 # @retval severity - The current value of the field.
-# Update severity
+# Update severity. This  *field*  was added in vSphere API 6.7.
 #
 # Severity#
 sub get_severity {
@@ -117,7 +119,7 @@ sub get_severity {
 # Sets the given value for 'severity' property.
 # 
 # @param severity  - New value for the field.
-# Update severity
+# Update severity. This  *field*  was added in vSphere API 6.7.
 #
 sub set_severity {
    my ($self, %args) = @_;
@@ -129,7 +131,7 @@ sub set_severity {
 # Gets the value of 'update_type' property.
 #
 # @retval update_type - The current value of the field.
-# Update category
+# Update category. This  *field*  was added in vSphere API 6.7.
 #
 # Category#
 sub get_update_type {
@@ -141,7 +143,7 @@ sub get_update_type {
 # Sets the given value for 'update_type' property.
 # 
 # @param update_type  - New value for the field.
-# Update category
+# Update category. This  *field*  was added in vSphere API 6.7.
 #
 sub set_update_type {
    my ($self, %args) = @_;
@@ -153,7 +155,7 @@ sub set_update_type {
 # Gets the value of 'release_date' property.
 #
 # @retval release_date - The current value of the field.
-# Update release date.
+# Update release date. This  *field*  was added in vSphere API 6.7.
 #
 # DateTime#
 sub get_release_date {
@@ -165,7 +167,7 @@ sub get_release_date {
 # Sets the given value for 'release_date' property.
 # 
 # @param release_date  - New value for the field.
-# Update release date.
+# Update release date. This  *field*  was added in vSphere API 6.7.
 #
 sub set_release_date {
    my ($self, %args) = @_;
@@ -177,7 +179,8 @@ sub set_release_date {
 # Gets the value of 'reboot_required' property.
 #
 # @retval reboot_required - The current value of the field.
-# Flag indicating whether reboot is required after update.
+# Flag indicating whether reboot is required after update. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # boolean#
 sub get_reboot_required {
@@ -189,7 +192,8 @@ sub get_reboot_required {
 # Sets the given value for 'reboot_required' property.
 # 
 # @param reboot_required  - New value for the field.
-# Flag indicating whether reboot is required after update.
+# Flag indicating whether reboot is required after update. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_reboot_required {
    my ($self, %args) = @_;
@@ -201,7 +205,7 @@ sub set_reboot_required {
 # Gets the value of 'size' property.
 #
 # @retval size - The current value of the field.
-# Download Size of update in Megabytes.
+# Download Size of update in Megabytes. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_size {
@@ -213,7 +217,7 @@ sub get_size {
 # Sets the given value for 'size' property.
 # 
 # @param size  - New value for the field.
-# Download Size of update in Megabytes.
+# Download Size of update in Megabytes. This  *field*  was added in vSphere API 6.7.
 #
 sub set_size {
    my ($self, %args) = @_;
@@ -228,18 +232,19 @@ sub set_size {
 ## @class Com::Vmware::Appliance::Update::CommonInfo::Priority
 #
 # The  ``Com::Vmware::Appliance::Update::CommonInfo::Priority``   *enumerated type* 
-#     defines the update installation priority recommendations.
+#     defines the update installation priority recommendations. This  *enumeration*  was
+#     added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Priority::HIGH #
-#Install ASAP
+#Install ASAP. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Priority::MEDIUM #
-#Install at the earliest convenience
+#Install at the earliest convenience. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Priority::LOW #
-#Install at your discretion
+#Install at your discretion. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::CommonInfo::Priority;
 
@@ -279,7 +284,8 @@ sub new {
 ## @class Com::Vmware::Appliance::Update::CommonInfo::Severity
 #
 # The  ``Com::Vmware::Appliance::Update::CommonInfo::Severity``   *enumerated type* 
-#     defines the severity of the issues fixed in the update.
+#     defines the severity of the issues fixed in the update. This  *enumeration*  was added
+#     in vSphere API 6.7.
 #
 #
 #
@@ -289,7 +295,7 @@ sub new {
 # the complete compromise of confidentiality, integrity, and availability of user data
 # and/or processing resources without user interaction. Exploitation could be leveraged to
 # propagate an Internet worm or execute arbitrary code between Virtual Machines and/or the
-# Host Operating System.
+# Host Operating System. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Severity::IMPORTANT #
 #Vulnerabilities that are not rated critical but whose exploitation results in the complete
@@ -297,18 +303,18 @@ sub new {
 # through user assistance or by authenticated attackers. This rating also applies to those
 # vulnerabilities which could lead to the complete compromise of availability when
 # exploitation is by a remote unauthenticated attacker from the Internet or through a breach
-# of virtual machine isolation.
+# of virtual machine isolation. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Severity::MODERATE #
 #Vulnerabilities where the ability to exploit is mitigated to a significant degree by
 # configuration or difficulty of exploitation, but in certain deployment scenarios could
 # still lead to the compromise of confidentiality, integrity, or availability of user data
-# and/or processing resources.
+# and/or processing resources. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Severity::LOW #
 #All other issues that have a security impact. Vulnerabilities where exploitation is
 # believed to be extremely difficult, or where successful exploitation would have minimal
-# impact
+# impact. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::CommonInfo::Severity;
 
@@ -349,21 +355,24 @@ sub new {
 ## @class Com::Vmware::Appliance::Update::CommonInfo::Category
 #
 # The  ``Com::Vmware::Appliance::Update::CommonInfo::Category``   *enumerated type* 
-#     defines update type
+#     defines update type. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Category::SECURITY #
-#Fixes vulnerabilities, doesn&apos;t change functionality
+#Fixes vulnerabilities, doesn&apos;t change functionality. This  *constant*  was added in
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Category::FIX #
-#Fixes bugs/vulnerabilities, doesn&apos;t change functionality
+#Fixes bugs/vulnerabilities, doesn&apos;t change functionality. This  *constant*  was added
+# in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Category::UPDATE #
-#Changes product functionality
+#Changes product functionality. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::CommonInfo::Category::UPGRADE #
-#Introduces new features, significantly changes product functionality
+#Introduces new features, significantly changes product functionality. This  *constant* 
+# was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::CommonInfo::Category;
 

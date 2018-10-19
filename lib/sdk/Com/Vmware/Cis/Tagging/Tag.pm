@@ -518,7 +518,7 @@ sub set_category_id {
 # Gets the value of 'tag_id' property.
 #
 # @retval tag_id - The current value of the field.
-# This  *field*  was added in vSphere API 6.7
+# This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_tag_id {
@@ -530,7 +530,7 @@ sub get_tag_id {
 # Sets the given value for 'tag_id' property.
 # 
 # @param tag_id  - New value for the field.
-# This  *field*  was added in vSphere API 6.7
+# This  *field*  was added in vSphere API 6.7.
 #
 sub set_tag_id {
    my ($self, %args) = @_;

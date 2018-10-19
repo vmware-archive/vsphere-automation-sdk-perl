@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::System_config::DeploymentType
 # The  ``Com::Vmware::Vcenter::System_config::DeploymentType``   *interface*  provides 
 #     *methods*  to get/set the type of the appliance. This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::System_config::DeploymentType;
@@ -60,7 +60,7 @@ sub new {
 }
 
 ## @method get ()
-# Get the type of the vCenter appliance. This  *method*  was added in vSphere API 6.7
+# Get the type of the vCenter appliance. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # The type of the vCenter appliance.
@@ -81,7 +81,7 @@ sub get {
 
 ## @method reconfigure ()
 # Reconfigure the type of the vCenter appliance. This  *method*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # @param spec [REQUIRED] ReconfigureSpec to set the appliance type.
 # . The value must be Com::Vmware::Vcenter::System_config::DeploymentType::ReconfigureSpec.
@@ -134,7 +134,8 @@ sub reconfigure {
 #
 #
 # The  ``Com::Vmware::Vcenter::System_config::DeploymentType::Info``   *class*  contains
-#     the fields used to get the appliance type. This  *class*  was added in vSphere API 6.7
+#     the fields used to get the appliance type. This  *class*  was added in vSphere API
+#     6.7.
 
 package Com::Vmware::Vcenter::System_config::DeploymentType::Info;
 
@@ -175,7 +176,7 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# The type of the appliance. This  *field*  was added in vSphere API 6.7
+# The type of the appliance. This  *field*  was added in vSphere API 6.7.
 #
 # ApplianceType#
 sub get_type {
@@ -187,7 +188,7 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# The type of the appliance. This  *field*  was added in vSphere API 6.7
+# The type of the appliance. This  *field*  was added in vSphere API 6.7.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -204,7 +205,7 @@ sub set_type {
 #
 # The  ``Com::Vmware::Vcenter::System_config::DeploymentType::ReconfigureSpec``  
 #     *class*  contains the fields used to get and set the appliance type. This  *class* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::System_config::DeploymentType::ReconfigureSpec;
 
@@ -247,7 +248,7 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# The type of the appliance. This  *field*  was added in vSphere API 6.7
+# The type of the appliance. This  *field*  was added in vSphere API 6.7.
 #
 # ApplianceType#
 sub get_type {
@@ -259,7 +260,7 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# The type of the appliance. This  *field*  was added in vSphere API 6.7
+# The type of the appliance. This  *field*  was added in vSphere API 6.7.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -272,7 +273,7 @@ sub set_type {
 #
 # @retval remote_psc - The current value of the field.
 # External PSC to register with when reconfiguring a VCSA_EMBEDDED appliance to a
-#     VCSA_EXTERNAL appliance. This  *field*  was added in vSphere API 6.7
+#     VCSA_EXTERNAL appliance. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_remote_psc {
@@ -285,7 +286,7 @@ sub get_remote_psc {
 # 
 # @param remote_psc  - New value for the field.
 # External PSC to register with when reconfiguring a VCSA_EMBEDDED appliance to a
-#     VCSA_EXTERNAL appliance. This  *field*  was added in vSphere API 6.7
+#     VCSA_EXTERNAL appliance. This  *field*  was added in vSphere API 6.7.
 #
 sub set_remote_psc {
    my ($self, %args) = @_;

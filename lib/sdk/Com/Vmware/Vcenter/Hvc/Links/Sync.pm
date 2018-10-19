@@ -63,19 +63,19 @@ sub new {
 # providers. If an existing sync is in progress this cancels the sync. <b>Warning:</b> This 
 # *method*  is available as technical preview. It may be changed in a future release.
 #
-# @param link [REQUIRED] Unique identifier of the link
+# @param link [REQUIRED] Unique identifier of the link.
 # The value must be an identifier for the resource type
 #     getQualifiedName(com.vmware.vcenter.hvc.Links).
 # . The value must be str.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# If full sync fails.
+# if the system reports an error while responding to the request.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
-# If the link Identifier associated with  ``link``  does not exist.
+# if the link Identifier associated with  ``link``  does not exist.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# If the user is not authorized to perform this operation.
+# if the user is not authorized to perform this operation.
 #
 
 sub reset {

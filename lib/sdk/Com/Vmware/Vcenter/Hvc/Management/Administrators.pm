@@ -90,7 +90,7 @@ sub add {
 # Remove the group from the local sso group. <b>Warning:</b> This  *method*  is available as
 # technical preview. It may be changed in a future release.
 #
-# @param group_name [REQUIRED] Name of the group to be remove. Ex - xyz@abc.com where xyz is the group name and
+# @param group_name [REQUIRED] Name of the group to be removed. Ex - xyz@abc.com where xyz is the group name and
 #     abc.com is the domain name
 # . The value must be String.
 #
@@ -109,6 +109,33 @@ sub remove {
                          method_args => \%args);
    
    return $self->invoke (method_name => 'remove',
+                         method_args => \%args);
+}
+
+
+## @method set ()
+# Sets the groups in the local sso group. <b>Warning:</b> This  *method*  is available as
+# technical preview. It may be changed in a future release.
+#
+# @param group_names [REQUIRED] Names the groups to be in the CloudAdminGroup Ex - xyz@abc.com where xyz is the group
+#     name and abc.com is the domain name
+# . The value must be Set of String.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# If the user is not authorized.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# if the system reports an error while responding to the request.
+#
+
+sub set {
+   my ($self, %args) = @_;
+   my $group_names = $args {group_names};
+
+   $self->validate_args (method_name => 'set',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
 

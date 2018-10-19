@@ -115,13 +115,13 @@ sub list {
 # The return type will be Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Info
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# If get fails.
+# if the system reports an error while responding to the request.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
-# If the sync provider associated with  ``provider``  does not exist.
+# if the sync provider associated with  ``provider``  does not exist.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# If the user is not authorized to perform this operation.
+# if the user is not authorized to perform this operation.
 #
 
 sub get {
@@ -153,17 +153,17 @@ sub get {
 # . The value must be str.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
-# If sync fails.
+# if the system reports an error while responding to the request.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
-# If the link associated with  ``link``  does not exist If the provider associated with 
+# if the link associated with  ``link``  does not exist if the provider associated with 
 #     ``provider``  is not registered for sync
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# If the user is not authorized to perform this operation.
+# if the user is not authorized to perform this operation.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceBusy 
-# If a sync is already running.
+# if a sync is already running.
 #
 
 sub start {

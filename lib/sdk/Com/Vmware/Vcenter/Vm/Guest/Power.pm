@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Guest::Power
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Power``   *interface*  provides  *methods* 
 #     for managing the guest operating system power state of a virtual machine. This 
-#     *interface*  was added in vSphere API 6.7
+#     *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Vm::Guest::Power;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method get ()
 # Returns information about the guest operating system power state. This  *method*  was
-# added in vSphere API 6.7
+# added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
@@ -93,7 +93,7 @@ sub get {
 ## @method shutdown ()
 # Issues a request to the guest operating system asking it to perform a clean shutdown of
 # all services. This request returns immediately and does not wait for the guest operating
-# system to complete the operation. This  *method*  was added in vSphere API 6.7
+# system to complete the operation. This  *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
@@ -138,7 +138,7 @@ sub shutdown {
 ## @method reboot ()
 # Issues a request to the guest operating system asking it to perform a reboot. This request
 # returns immediately and does not wait for the guest operating system to complete the
-# operation. This  *method*  was added in vSphere API 6.7
+# operation. This  *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
@@ -179,7 +179,7 @@ sub reboot {
 
 ## @method standby ()
 # Issues a request to the guest operating system asking it to perform a suspend operation.
-# This  *method*  was added in vSphere API 6.7
+# This  *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
@@ -229,27 +229,27 @@ sub standby {
 
 ## @class Com::Vmware::Vcenter::Vm::Guest::Power::State
 #
-# Possible guest power states. This  *enumeration*  was added in vSphere API 6.7
+# Possible guest power states. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Power::State::RUNNING #
-#The guest OS is running. This  *constant*  was added in vSphere API 6.7
+#The guest OS is running. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Power::State::SHUTTING_DOWN #
-#The guest OS is shutting down. This  *constant*  was added in vSphere API 6.7
+#The guest OS is shutting down. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Power::State::RESETTING #
-#The guest OS is resetting. This  *constant*  was added in vSphere API 6.7
+#The guest OS is resetting. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Power::State::STANDBY #
-#The guest OS is in standby. This  *constant*  was added in vSphere API 6.7
+#The guest OS is in standby. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Power::State::NOT_RUNNING #
-#The guest OS is not running. This  *constant*  was added in vSphere API 6.7
+#The guest OS is not running. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Power::State::UNAVAILABLE #
-#The guest OS power state is unknown. This  *constant*  was added in vSphere API 6.7
+#The guest OS power state is unknown. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Guest::Power::State;
 
@@ -301,7 +301,7 @@ sub new {
 #
 #
 # Information about the guest operating system power state. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Guest::Power::Info;
 
@@ -345,7 +345,7 @@ sub new {
 #
 # @retval state - The current value of the field.
 # The power state of the guest operating system. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # State#
 sub get_state {
@@ -358,7 +358,7 @@ sub get_state {
 # 
 # @param state  - New value for the field.
 # The power state of the guest operating system. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -371,7 +371,7 @@ sub set_state {
 #
 # @retval operations_ready - The current value of the field.
 # Flag indicating if the virtual machine is ready to process soft power operations. This
-#      *field*  was added in vSphere API 6.7
+#      *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_operations_ready {
@@ -384,7 +384,7 @@ sub get_operations_ready {
 # 
 # @param operations_ready  - New value for the field.
 # Flag indicating if the virtual machine is ready to process soft power operations. This
-#      *field*  was added in vSphere API 6.7
+#      *field*  was added in vSphere API 6.7.
 #
 sub set_operations_ready {
    my ($self, %args) = @_;

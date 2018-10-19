@@ -12,7 +12,7 @@
 
 ## @class Com::Vmware::Appliance::Update
 # The  ``Com::Vmware::Appliance::Update``   *interface*  provides  *methods*  to get the
-#     status of the appliance update. This  *interface*  was added in vSphere API 6.7
+#     status of the appliance update. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Update;
@@ -59,7 +59,7 @@ sub new {
 
 ## @method get ()
 # Gets the current status of the appliance update. This  *method*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # @retval 
 # Info structure containing the status information about the appliance.
@@ -83,7 +83,7 @@ sub get {
 
 ## @method cancel ()
 # Request the cancellation the update operation that is currently in progress. This 
-# *method*  was added in vSphere API 6.7
+# *method*  was added in vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
@@ -114,31 +114,31 @@ sub cancel {
 #
 # The  ``Com::Vmware::Appliance::Update::State``   *enumerated type*  defines the
 #     various states the appliance update can be in. This  *enumeration*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Update::State::UP_TO_DATE #
-#The appliance is up to date. This  *constant*  was added in vSphere API 6.7
+#The appliance is up to date. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::State::UPDATES_PENDING #
-#A new update is available. This  *constant*  was added in vSphere API 6.7
+#A new update is available. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::State::STAGE_IN_PROGRESS #
 #The appliance update is in progress of downloading an update. This  *constant*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::State::INSTALL_IN_PROGRESS #
 #The appliance update is in progress of installing an update. This  *constant*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::State::INSTALL_FAILED #
 #The appliance update failed and cannot recover. This  *constant*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # Constant Com::Vmware::Appliance::Update::State::ROLLBACK_IN_PROGRESS #
 #The appliance update failed and recovery is in progress. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::State;
 
@@ -190,7 +190,7 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Appliance::Update::Info``   *class*  describes the state of the
-#     appliance update. This  *class*  was added in vSphere API 6.7
+#     appliance update. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Info;
 
@@ -249,7 +249,7 @@ sub new {
 # Gets the value of 'state' property.
 #
 # @retval state - The current value of the field.
-# State of the appliance update. This  *field*  was added in vSphere API 6.7
+# State of the appliance update. This  *field*  was added in vSphere API 6.7.
 #
 # State#
 sub get_state {
@@ -261,7 +261,7 @@ sub get_state {
 # Sets the given value for 'state' property.
 # 
 # @param state  - New value for the field.
-# State of the appliance update. This  *field*  was added in vSphere API 6.7
+# State of the appliance update. This  *field*  was added in vSphere API 6.7.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -273,7 +273,7 @@ sub set_state {
 # Gets the value of 'task' property.
 #
 # @retval task - The current value of the field.
-# The running or completed update task. This  *field*  was added in vSphere API 6.7
+# The running or completed update task. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_task {
@@ -285,7 +285,7 @@ sub get_task {
 # Sets the given value for 'task' property.
 # 
 # @param task  - New value for the field.
-# The running or completed update task. This  *field*  was added in vSphere API 6.7
+# The running or completed update task. This  *field*  was added in vSphere API 6.7.
 #
 sub set_task {
    my ($self, %args) = @_;
@@ -300,7 +300,7 @@ sub set_task {
 # Version of base appliance if state is UP_TO_DATE Version of update being staged or
 #     installed if state is INSTALL_IN_PROGRESS or STAGE_IN_PROGRESS Version of update
 #     staged if state is UPDATES_PENDING Version of update failed if state is INSTALL_FAILED
-#     or ROLLBACK_IN_PROGRESS. This  *field*  was added in vSphere API 6.7
+#     or ROLLBACK_IN_PROGRESS. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_version {
@@ -315,7 +315,7 @@ sub get_version {
 # Version of base appliance if state is UP_TO_DATE Version of update being staged or
 #     installed if state is INSTALL_IN_PROGRESS or STAGE_IN_PROGRESS Version of update
 #     staged if state is UPDATES_PENDING Version of update failed if state is INSTALL_FAILED
-#     or ROLLBACK_IN_PROGRESS. This  *field*  was added in vSphere API 6.7
+#     or ROLLBACK_IN_PROGRESS. This  *field*  was added in vSphere API 6.7.
 #
 sub set_version {
    my ($self, %args) = @_;
@@ -328,7 +328,7 @@ sub set_version {
 #
 # @retval latest_query_time - The current value of the field.
 # Timestamp of latest query to update repository. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_latest_query_time {
@@ -341,7 +341,7 @@ sub get_latest_query_time {
 # 
 # @param latest_query_time  - New value for the field.
 # Timestamp of latest query to update repository. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_latest_query_time {
    my ($self, %args) = @_;

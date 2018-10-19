@@ -238,6 +238,27 @@ sub new
    my $delete_output_validator_list = [];
 
    #
+   # properties for update operation
+   #
+   my $update_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'update_session_id' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                   'update_spec' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Content::Library::Item', 'type_name' => 'UpdateSessionModel'),
+      }
+   );
+   my $update_error_dict = {
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
+      'com.vmware.vapi.std.errors.not_allowed_in_current_state' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotAllowedInCurrentState'),
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+
+      };
+
+   my $update_input_validator_list = [
+   ];
+   my $update_output_validator_list = [];
+
+   #
    # All the methods (operations) info in a hash
    #
    my $operations = {
@@ -296,6 +317,13 @@ sub new
                 'errors'=> $delete_error_dict,
                 'input_validator_list'=> $delete_input_validator_list,
                 'output_validator_list'=> $delete_output_validator_list,
+            },
+      'update' => {
+                'input_type'=> $update_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'errors'=> $update_error_dict,
+                'input_validator_list'=> $update_input_validator_list,
+                'output_validator_list'=> $update_output_validator_list,
             },
    };
 

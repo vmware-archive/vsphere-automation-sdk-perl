@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::LocationSpec``   *class*  is used to pass the
 #     container ESXi or vCenter server of the VM to patch the size of this appliance. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::LocationSpec;
 
@@ -55,7 +55,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # The IP address or DNS resolvable name of the container. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # String#
 sub get_hostname {
@@ -68,7 +68,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # The IP address or DNS resolvable name of the container. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -80,7 +80,7 @@ sub set_hostname {
 # Gets the value of 'https_port' property.
 #
 # @retval https_port - The current value of the field.
-# The HTTPS port of the container. This  *field*  was added in vSphere API 6.7
+# The HTTPS port of the container. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_https_port {
@@ -92,7 +92,7 @@ sub get_https_port {
 # Sets the given value for 'https_port' property.
 # 
 # @param https_port  - New value for the field.
-# The HTTPS port of the container. This  *field*  was added in vSphere API 6.7
+# The HTTPS port of the container. This  *field*  was added in vSphere API 6.7.
 #
 sub set_https_port {
    my ($self, %args) = @_;
@@ -105,7 +105,7 @@ sub set_https_port {
 #
 # @retval ssl_thumbprint - The current value of the field.
 # SHA1 thumbprint of the server SSL certificate will be used for verification. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ssl_thumbprint {
@@ -118,7 +118,7 @@ sub get_ssl_thumbprint {
 # 
 # @param ssl_thumbprint  - New value for the field.
 # SHA1 thumbprint of the server SSL certificate will be used for verification. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;
@@ -134,7 +134,7 @@ sub set_ssl_thumbprint {
 #     ``sslThumbprint``  is  *null* , the CA certificate will be used for verification. If 
 #     ``sslVerify``  is true and  ``sslThumbprint``  is set then the thumbprint will be used
 #     for verification. No verification will be performed if  ``sslVerify``  value is set to
-#     false. This  *field*  was added in vSphere API 6.7
+#     false. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ssl_verify {
@@ -150,7 +150,7 @@ sub get_ssl_verify {
 #     ``sslThumbprint``  is  *null* , the CA certificate will be used for verification. If 
 #     ``sslVerify``  is true and  ``sslThumbprint``  is set then the thumbprint will be used
 #     for verification. No verification will be performed if  ``sslVerify``  value is set to
-#     false. This  *field*  was added in vSphere API 6.7
+#     false. This  *field*  was added in vSphere API 6.7.
 #
 sub set_ssl_verify {
    my ($self, %args) = @_;
@@ -162,7 +162,7 @@ sub set_ssl_verify {
 # Gets the value of 'username' property.
 #
 # @retval username - The current value of the field.
-# The administrator account on the host. This  *field*  was added in vSphere API 6.7
+# The administrator account on the host. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_username {
@@ -174,7 +174,7 @@ sub get_username {
 # Sets the given value for 'username' property.
 # 
 # @param username  - New value for the field.
-# The administrator account on the host. This  *field*  was added in vSphere API 6.7
+# The administrator account on the host. This  *field*  was added in vSphere API 6.7.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -186,7 +186,7 @@ sub set_username {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# The administrator account password. This  *field*  was added in vSphere API 6.7
+# The administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 # Secret#
 sub get_password {
@@ -198,7 +198,7 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# The administrator account password. This  *field*  was added in vSphere API 6.7
+# The administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 sub set_password {
    my ($self, %args) = @_;

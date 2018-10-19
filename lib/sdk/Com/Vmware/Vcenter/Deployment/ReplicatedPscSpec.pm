@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::ReplicatedPscSpec``   *class*  contains
 #     information used to check if the configuring PSC can be replicated to the remote PSC.
-#     This  *class*  was added in vSphere API 6.7
+#     This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::ReplicatedPscSpec;
 
@@ -55,7 +55,7 @@ sub new {
 #
 # @retval sso_site_name - The current value of the field.
 # The SSO sitename that will be used in PSC replication. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_sso_site_name {
@@ -68,7 +68,7 @@ sub get_sso_site_name {
 # 
 # @param sso_site_name  - New value for the field.
 # The SSO sitename that will be used in PSC replication. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_sso_site_name {
    my ($self, %args) = @_;
@@ -81,7 +81,7 @@ sub set_sso_site_name {
 #
 # @retval partner_hostname - The current value of the field.
 # The IP address or DNS resolvable name of the partner PSC appliance. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # String#
 sub get_partner_hostname {
@@ -94,7 +94,7 @@ sub get_partner_hostname {
 # 
 # @param partner_hostname  - New value for the field.
 # The IP address or DNS resolvable name of the partner PSC appliance. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_partner_hostname {
    my ($self, %args) = @_;
@@ -107,7 +107,7 @@ sub set_partner_hostname {
 #
 # @retval https_port - The current value of the field.
 # The HTTPS port of the external PSC appliance. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_https_port {
@@ -120,7 +120,7 @@ sub get_https_port {
 # 
 # @param https_port  - New value for the field.
 # The HTTPS port of the external PSC appliance. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_https_port {
    my ($self, %args) = @_;
@@ -132,7 +132,7 @@ sub set_https_port {
 # Gets the value of 'sso_admin_password' property.
 #
 # @retval sso_admin_password - The current value of the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 6.7
+# The SSO administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_sso_admin_password {
@@ -144,7 +144,7 @@ sub get_sso_admin_password {
 # Sets the given value for 'sso_admin_password' property.
 # 
 # @param sso_admin_password  - New value for the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 6.7
+# The SSO administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_password {
    my ($self, %args) = @_;
@@ -157,7 +157,7 @@ sub set_sso_admin_password {
 #
 # @retval ssl_thumbprint - The current value of the field.
 # SHA1 thumbprint of the server SSL certificate will be used for verification. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ssl_thumbprint {
@@ -170,7 +170,7 @@ sub get_ssl_thumbprint {
 # 
 # @param ssl_thumbprint  - New value for the field.
 # SHA1 thumbprint of the server SSL certificate will be used for verification. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;
@@ -183,7 +183,7 @@ sub set_ssl_thumbprint {
 #
 # @retval ssl_verify - The current value of the field.
 # SSL verification should be enabled or disabled. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_ssl_verify {
@@ -196,7 +196,7 @@ sub get_ssl_verify {
 # 
 # @param ssl_verify  - New value for the field.
 # SSL verification should be enabled or disabled. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_ssl_verify {
    my ($self, %args) = @_;

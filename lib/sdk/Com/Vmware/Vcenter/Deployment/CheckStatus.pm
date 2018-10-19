@@ -1,16 +1,16 @@
 ## @class Com::Vmware::Vcenter::Deployment::CheckStatus
 #
 # The  ``Com::Vmware::Vcenter::Deployment::CheckStatus``   *enumerated type*  defines
-#     the status of the checks. This  *enumeration*  was added in vSphere API 6.7
+#     the status of the checks. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::CheckStatus::SUCCESS #
-#All checks have completed successfully. This  *constant*  was added in vSphere API 6.7
+#All checks have completed successfully. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::CheckStatus::FAILED #
 #A fatal error was encountered when running the sanity checks. This  *constant*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::CheckStatus;
 

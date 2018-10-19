@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Deployment::Install::Psc::Standalone
 # The  ``Com::Vmware::Vcenter::Deployment::Install::Psc::Standalone``   *interface* 
 #     provides  *methods*  to check if the values provided for the standalone PSC satisfies
-#     the requirements. This  *interface*  was added in vSphere API 6.7
+#     the requirements. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::Install::Psc::Standalone;
@@ -61,7 +61,7 @@ sub new {
 
 ## @method check ()
 # Checks that the information to configure a non-replicated PSC satisfies the requirements.
-# This  *method*  was added in vSphere API 6.7
+# This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] Information to configure a non-replicated PSC.
 # . The value must be Com::Vmware::Vcenter::Deployment::StandalonePscSpec.

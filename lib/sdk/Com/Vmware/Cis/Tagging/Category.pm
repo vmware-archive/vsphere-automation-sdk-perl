@@ -509,7 +509,7 @@ sub set_associable_types {
 # Gets the value of 'category_id' property.
 #
 # @retval category_id - The current value of the field.
-# This  *field*  was added in vSphere API 6.7
+# This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_category_id {
@@ -521,7 +521,7 @@ sub get_category_id {
 # Sets the given value for 'category_id' property.
 # 
 # @param category_id  - New value for the field.
-# This  *field*  was added in vSphere API 6.7
+# This  *field*  was added in vSphere API 6.7.
 #
 sub set_category_id {
    my ($self, %args) = @_;

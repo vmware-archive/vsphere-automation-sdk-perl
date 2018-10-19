@@ -76,7 +76,7 @@ sub new {
 # If the link already exists.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
-# If the spec is not valid.
+# If the values of any of the  *fields*  of the  ``spec``   *parameter*  are not valid.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unsupported 
 # If the PSC or the VC version is not supported.

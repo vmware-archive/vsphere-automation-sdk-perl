@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Deployment::Install::Psc::Replicated
 # The  ``Com::Vmware::Vcenter::Deployment::Install::Psc::Replicated``   *interface* 
 #     provides  *methods*  to check if the configuring vCenter Server can be replicated to
-#     the remote PSC. This  *interface*  was added in vSphere API 6.7
+#     the remote PSC. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::Install::Psc::Replicated;
@@ -61,7 +61,7 @@ sub new {
 
 ## @method check ()
 # Checks whether the provided remote PSC is reachable and can be replicated. This  *method* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] Information to configure a replicated PSC.
 # . The value must be Com::Vmware::Vcenter::Deployment::ReplicatedPscSpec.

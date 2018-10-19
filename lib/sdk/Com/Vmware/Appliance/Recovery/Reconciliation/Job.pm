@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Appliance::Recovery::Reconciliation::Job
 # The  ``Com::Vmware::Appliance::Recovery::Reconciliation::Job``   *interface*  provides
 #     *methods*  to create and get the status of reconciliation job. This  *interface*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Recovery::Reconciliation::Job;
@@ -60,7 +60,7 @@ sub new {
 }
 
 ## @method create ()
-# Initiate reconciliation. This  *method*  was added in vSphere API 6.7
+# Initiate reconciliation. This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] CreateSpec Structure
 # . The value must be Com::Vmware::Appliance::Recovery::Reconciliation::Job::CreateSpec.
@@ -93,7 +93,7 @@ sub create {
 
 
 ## @method get ()
-# Get reconciliation job progress/result. This  *method*  was added in vSphere API 6.7
+# Get reconciliation job progress/result. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # Info Structure
@@ -122,21 +122,21 @@ sub get {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Reconciliation::Job::Status``   *enumerated
 #     type*  defines the status values that can be reported for an operation. This 
-#     *enumeration*  was added in vSphere API 6.7
+#     *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Recovery::Reconciliation::Job::Status::NONE #
-#The operation is not running. This  *constant*  was added in vSphere API 6.7
+#The operation is not running. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Reconciliation::Job::Status::RUNNING #
-#The operation is in progress. This  *constant*  was added in vSphere API 6.7
+#The operation is in progress. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Reconciliation::Job::Status::SUCCEEDED #
-#The operation completed successfully. This  *constant*  was added in vSphere API 6.7
+#The operation completed successfully. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Reconciliation::Job::Status::FAILED #
-#The operation failed. This  *constant*  was added in vSphere API 6.7
+#The operation failed. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Reconciliation::Job::Status;
 
@@ -187,7 +187,7 @@ sub new {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Reconciliation::Job::CreateSpec``   *class* 
 #     has the fields to request the start of reconciliation job. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Reconciliation::Job::CreateSpec;
 
@@ -232,7 +232,7 @@ sub new {
 # Gets the value of 'sso_admin_user_name' property.
 #
 # @retval sso_admin_user_name - The current value of the field.
-# Administrators username for SSO. This  *field*  was added in vSphere API 6.7
+# Administrators username for SSO. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_sso_admin_user_name {
@@ -244,7 +244,7 @@ sub get_sso_admin_user_name {
 # Sets the given value for 'sso_admin_user_name' property.
 # 
 # @param sso_admin_user_name  - New value for the field.
-# Administrators username for SSO. This  *field*  was added in vSphere API 6.7
+# Administrators username for SSO. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_user_name {
    my ($self, %args) = @_;
@@ -256,7 +256,7 @@ sub set_sso_admin_user_name {
 # Gets the value of 'sso_admin_user_password' property.
 #
 # @retval sso_admin_user_password - The current value of the field.
-# Password for SSO admin user. This  *field*  was added in vSphere API 6.7
+# Password for SSO admin user. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_sso_admin_user_password {
@@ -268,7 +268,7 @@ sub get_sso_admin_user_password {
 # Sets the given value for 'sso_admin_user_password' property.
 # 
 # @param sso_admin_user_password  - New value for the field.
-# Password for SSO admin user. This  *field*  was added in vSphere API 6.7
+# Password for SSO admin user. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_user_password {
    my ($self, %args) = @_;
@@ -281,7 +281,7 @@ sub set_sso_admin_user_password {
 #
 # @retval ignore_warnings - The current value of the field.
 # Flag indicating whether warnings should be ignored during reconciliation. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ignore_warnings {
@@ -294,7 +294,7 @@ sub get_ignore_warnings {
 # 
 # @param ignore_warnings  - New value for the field.
 # Flag indicating whether warnings should be ignored during reconciliation. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_ignore_warnings {
    my ($self, %args) = @_;
@@ -312,7 +312,7 @@ sub set_ignore_warnings {
 # The  ``Com::Vmware::Appliance::Recovery::Reconciliation::Job::Info``   *class* 
 #     represents the reconciliation job information. It contains information related to
 #     current Status, any associated messages and progress as percentage. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Reconciliation::Job::Info;
 
@@ -386,7 +386,7 @@ sub new {
 #
 # @retval description - The current value of the field.
 # Description of the operation associated with the task. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_description {
@@ -399,7 +399,7 @@ sub get_description {
 # 
 # @param description  - New value for the field.
 # Description of the operation associated with the task. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -412,7 +412,7 @@ sub set_description {
 #
 # @retval service - The current value of the field.
 # Name of the service containing the operation. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # ID#
 sub get_service {
@@ -425,7 +425,7 @@ sub get_service {
 # 
 # @param service  - New value for the field.
 # Name of the service containing the operation. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -438,7 +438,7 @@ sub set_service {
 #
 # @retval operation - The current value of the field.
 # Name of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # String#
 sub get_operation {
@@ -451,7 +451,7 @@ sub get_operation {
 # 
 # @param operation  - New value for the field.
 # Name of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_operation {
    my ($self, %args) = @_;
@@ -463,7 +463,7 @@ sub set_operation {
 # Gets the value of 'parent' property.
 #
 # @retval parent - The current value of the field.
-# Parent of the current task. This  *field*  was added in vSphere API 6.7
+# Parent of the current task. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_parent {
@@ -475,7 +475,7 @@ sub get_parent {
 # Sets the given value for 'parent' property.
 # 
 # @param parent  - New value for the field.
-# Parent of the current task. This  *field*  was added in vSphere API 6.7
+# Parent of the current task. This  *field*  was added in vSphere API 6.7.
 #
 sub set_parent {
    my ($self, %args) = @_;
@@ -488,7 +488,7 @@ sub set_parent {
 #
 # @retval target - The current value of the field.
 # Identifier of the target resource the operation modifies. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_target {
@@ -501,7 +501,7 @@ sub get_target {
 # 
 # @param target  - New value for the field.
 # Identifier of the target resource the operation modifies. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_target {
    my ($self, %args) = @_;
@@ -514,7 +514,7 @@ sub set_target {
 #
 # @retval status - The current value of the field.
 # Status of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Status#
 sub get_status {
@@ -527,7 +527,7 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # Status of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -540,7 +540,7 @@ sub set_status {
 #
 # @retval cancelable - The current value of the field.
 # Flag to indicate whether or not the operation can be cancelled. The value may change
-#     as the operation progresses. This  *field*  was added in vSphere API 6.7
+#     as the operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_cancelable {
@@ -553,7 +553,7 @@ sub get_cancelable {
 # 
 # @param cancelable  - New value for the field.
 # Flag to indicate whether or not the operation can be cancelled. The value may change
-#     as the operation progresses. This  *field*  was added in vSphere API 6.7
+#     as the operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 sub set_cancelable {
    my ($self, %args) = @_;
@@ -566,7 +566,7 @@ sub set_cancelable {
 #
 # @retval error - The current value of the field.
 # Description of the error if the operation status is &quot;FAILED&quot;. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Optional#
 sub get_error {
@@ -579,7 +579,7 @@ sub get_error {
 # 
 # @param error  - New value for the field.
 # Description of the error if the operation status is &quot;FAILED&quot;. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_error {
    my ($self, %args) = @_;
@@ -591,7 +591,7 @@ sub set_error {
 # Gets the value of 'start_time' property.
 #
 # @retval start_time - The current value of the field.
-# Time when the operation is started. This  *field*  was added in vSphere API 6.7
+# Time when the operation is started. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_start_time {
@@ -603,7 +603,7 @@ sub get_start_time {
 # Sets the given value for 'start_time' property.
 # 
 # @param start_time  - New value for the field.
-# Time when the operation is started. This  *field*  was added in vSphere API 6.7
+# Time when the operation is started. This  *field*  was added in vSphere API 6.7.
 #
 sub set_start_time {
    my ($self, %args) = @_;
@@ -615,7 +615,7 @@ sub set_start_time {
 # Gets the value of 'end_time' property.
 #
 # @retval end_time - The current value of the field.
-# Time when the operation is completed. This  *field*  was added in vSphere API 6.7
+# Time when the operation is completed. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_end_time {
@@ -627,7 +627,7 @@ sub get_end_time {
 # Sets the given value for 'end_time' property.
 # 
 # @param end_time  - New value for the field.
-# Time when the operation is completed. This  *field*  was added in vSphere API 6.7
+# Time when the operation is completed. This  *field*  was added in vSphere API 6.7.
 #
 sub set_end_time {
    my ($self, %args) = @_;
@@ -639,7 +639,7 @@ sub set_end_time {
 # Gets the value of 'messages' property.
 #
 # @retval messages - The current value of the field.
-# A list of localized messages. This  *field*  was added in vSphere API 6.7
+# A list of localized messages. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_messages {
@@ -651,7 +651,7 @@ sub get_messages {
 # Sets the given value for 'messages' property.
 # 
 # @param messages  - New value for the field.
-# A list of localized messages. This  *field*  was added in vSphere API 6.7
+# A list of localized messages. This  *field*  was added in vSphere API 6.7.
 #
 sub set_messages {
    my ($self, %args) = @_;
@@ -663,7 +663,7 @@ sub set_messages {
 # Gets the value of 'progress' property.
 #
 # @retval progress - The current value of the field.
-# The progress of the job as a percentage. This  *field*  was added in vSphere API 6.7
+# The progress of the job as a percentage. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_progress {
@@ -675,7 +675,7 @@ sub get_progress {
 # Sets the given value for 'progress' property.
 # 
 # @param progress  - New value for the field.
-# The progress of the job as a percentage. This  *field*  was added in vSphere API 6.7
+# The progress of the job as a percentage. This  *field*  was added in vSphere API 6.7.
 #
 sub set_progress {
    my ($self, %args) = @_;

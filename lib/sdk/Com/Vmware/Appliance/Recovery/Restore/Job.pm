@@ -693,7 +693,7 @@ sub set_location_password {
 # Gets the value of 'sso_admin_user_name' property.
 #
 # @retval sso_admin_user_name - The current value of the field.
-# Administrators Username for SSO. This  *field*  was added in vSphere API 6.7
+# Administrators Username for SSO. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_sso_admin_user_name {
@@ -705,7 +705,7 @@ sub get_sso_admin_user_name {
 # Sets the given value for 'sso_admin_user_name' property.
 # 
 # @param sso_admin_user_name  - New value for the field.
-# Administrators Username for SSO. This  *field*  was added in vSphere API 6.7
+# Administrators Username for SSO. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_user_name {
    my ($self, %args) = @_;
@@ -717,7 +717,7 @@ sub set_sso_admin_user_name {
 # Gets the value of 'sso_admin_user_password' property.
 #
 # @retval sso_admin_user_password - The current value of the field.
-# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_sso_admin_user_password {
@@ -729,7 +729,7 @@ sub get_sso_admin_user_password {
 # Sets the given value for 'sso_admin_user_password' property.
 # 
 # @param sso_admin_user_password  - New value for the field.
-# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_user_password {
    my ($self, %args) = @_;
@@ -742,7 +742,7 @@ sub set_sso_admin_user_password {
 #
 # @retval ignore_warnings - The current value of the field.
 # The flag to ignore warnings during restore. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_ignore_warnings {
@@ -755,7 +755,7 @@ sub get_ignore_warnings {
 # 
 # @param ignore_warnings  - New value for the field.
 # The flag to ignore warnings during restore. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_ignore_warnings {
    my ($self, %args) = @_;

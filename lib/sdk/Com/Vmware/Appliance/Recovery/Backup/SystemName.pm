@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Recovery::Backup::SystemName
 # The  ``Com::Vmware::Appliance::Recovery::Backup::SystemName``   *interface*  provides 
 #     *methods*  to enumerate system names of appliance backups. This  *interface*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Recovery::Backup::SystemName;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method list ()
 # Returns a list of system names for which backup archives exist under  ``loc_spec`` . This 
-# *method*  was added in vSphere API 6.7
+# *method*  was added in vSphere API 6.7.
 #
 # @param loc_spec [REQUIRED] LocationSpec Structure
 # . The value must be Com::Vmware::Appliance::Recovery::Backup::LocationSpec.

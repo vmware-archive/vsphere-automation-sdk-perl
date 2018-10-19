@@ -13,7 +13,7 @@
 
 ## @class Com::Vmware::Appliance::Update::Staged
 # The  ``Com::Vmware::Appliance::Update::Staged``   *interface*  provides  *methods*  to
-#     get the status of the staged update.
+#     get the status of the staged update. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Update::Staged;
@@ -59,7 +59,8 @@ sub new {
 }
 
 ## @method get ()
-# Gets the current status of the staged update
+# Gets the current status of the staged update. This  *method*  was added in vSphere API
+# 6.7.
 #
 # @retval 
 # Info structure with information about staged update
@@ -85,7 +86,7 @@ sub get {
 
 
 ## @method delete ()
-# Deletes the staged update
+# Deletes the staged update. This  *method*  was added in vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
@@ -123,7 +124,7 @@ sub delete {
 #
 #
 # The  ``Com::Vmware::Appliance::Update::Staged::Info``   *class*  contains information
-#     about the staged update
+#     about the staged update. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::Staged::Info;
 
@@ -180,7 +181,7 @@ sub new {
 # Gets the value of 'staging_complete' property.
 #
 # @retval staging_complete - The current value of the field.
-# Is staging complete
+# Is staging complete. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_staging_complete {
@@ -192,7 +193,7 @@ sub get_staging_complete {
 # Sets the given value for 'staging_complete' property.
 # 
 # @param staging_complete  - New value for the field.
-# Is staging complete
+# Is staging complete. This  *field*  was added in vSphere API 6.7.
 #
 sub set_staging_complete {
    my ($self, %args) = @_;
@@ -204,7 +205,8 @@ sub set_staging_complete {
 # Gets the value of 'version' property.
 #
 # @retval version - The current value of the field.
-# Version in form of X.Y.Z.P. e.g. 6.5.1.5400
+# Version in form of X.Y.Z.P. e.g. 6.5.1.5400. This  *field*  was added in vSphere API
+#     6.7.
 #
 # ID#
 sub get_version {
@@ -216,7 +218,8 @@ sub get_version {
 # Sets the given value for 'version' property.
 # 
 # @param version  - New value for the field.
-# Version in form of X.Y.Z.P. e.g. 6.5.1.5400
+# Version in form of X.Y.Z.P. e.g. 6.5.1.5400. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_version {
    my ($self, %args) = @_;
@@ -229,7 +232,8 @@ sub set_version {
 #
 # @retval description - The current value of the field.
 # Description of the update. The short information what this update is. E.g.
-#     &quot;Update2 for vCenter Server Appliance 6.5&quot;
+#     &quot;Update2 for vCenter Server Appliance 6.5&quot;. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_description {
@@ -242,7 +246,8 @@ sub get_description {
 # 
 # @param description  - New value for the field.
 # Description of the update. The short information what this update is. E.g.
-#     &quot;Update2 for vCenter Server Appliance 6.5&quot;
+#     &quot;Update2 for vCenter Server Appliance 6.5&quot;. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -254,7 +259,7 @@ sub set_description {
 # Gets the value of 'priority' property.
 #
 # @retval priority - The current value of the field.
-# Update priority
+# Update priority. This  *field*  was added in vSphere API 6.7.
 #
 # Priority#
 sub get_priority {
@@ -266,7 +271,7 @@ sub get_priority {
 # Sets the given value for 'priority' property.
 # 
 # @param priority  - New value for the field.
-# Update priority
+# Update priority. This  *field*  was added in vSphere API 6.7.
 #
 sub set_priority {
    my ($self, %args) = @_;
@@ -278,7 +283,7 @@ sub set_priority {
 # Gets the value of 'severity' property.
 #
 # @retval severity - The current value of the field.
-# Update severity
+# Update severity. This  *field*  was added in vSphere API 6.7.
 #
 # Severity#
 sub get_severity {
@@ -290,7 +295,7 @@ sub get_severity {
 # Sets the given value for 'severity' property.
 # 
 # @param severity  - New value for the field.
-# Update severity
+# Update severity. This  *field*  was added in vSphere API 6.7.
 #
 sub set_severity {
    my ($self, %args) = @_;
@@ -302,7 +307,7 @@ sub set_severity {
 # Gets the value of 'update_type' property.
 #
 # @retval update_type - The current value of the field.
-# Update category
+# Update category. This  *field*  was added in vSphere API 6.7.
 #
 # Category#
 sub get_update_type {
@@ -314,7 +319,7 @@ sub get_update_type {
 # Sets the given value for 'update_type' property.
 # 
 # @param update_type  - New value for the field.
-# Update category
+# Update category. This  *field*  was added in vSphere API 6.7.
 #
 sub set_update_type {
    my ($self, %args) = @_;
@@ -326,7 +331,7 @@ sub set_update_type {
 # Gets the value of 'release_date' property.
 #
 # @retval release_date - The current value of the field.
-# Update release date.
+# Update release date. This  *field*  was added in vSphere API 6.7.
 #
 # DateTime#
 sub get_release_date {
@@ -338,7 +343,7 @@ sub get_release_date {
 # Sets the given value for 'release_date' property.
 # 
 # @param release_date  - New value for the field.
-# Update release date.
+# Update release date. This  *field*  was added in vSphere API 6.7.
 #
 sub set_release_date {
    my ($self, %args) = @_;
@@ -350,7 +355,8 @@ sub set_release_date {
 # Gets the value of 'reboot_required' property.
 #
 # @retval reboot_required - The current value of the field.
-# Flag indicating whether reboot is required after update.
+# Flag indicating whether reboot is required after update. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # boolean#
 sub get_reboot_required {
@@ -362,7 +368,8 @@ sub get_reboot_required {
 # Sets the given value for 'reboot_required' property.
 # 
 # @param reboot_required  - New value for the field.
-# Flag indicating whether reboot is required after update.
+# Flag indicating whether reboot is required after update. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_reboot_required {
    my ($self, %args) = @_;
@@ -374,7 +381,7 @@ sub set_reboot_required {
 # Gets the value of 'size' property.
 #
 # @retval size - The current value of the field.
-# Download Size of update in Megabytes.
+# Download Size of update in Megabytes. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_size {
@@ -386,7 +393,7 @@ sub get_size {
 # Sets the given value for 'size' property.
 # 
 # @param size  - New value for the field.
-# Download Size of update in Megabytes.
+# Download Size of update in Megabytes. This  *field*  was added in vSphere API 6.7.
 #
 sub set_size {
    my ($self, %args) = @_;

@@ -15,7 +15,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Guest::Identity
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Identity``   *interface*  provides  *methods* 
 #     for retrieving guest operating system identification information. This  *interface* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Vm::Guest::Identity;
@@ -61,7 +61,7 @@ sub new {
 }
 
 ## @method get ()
-# Return information about the guest. This  *method*  was added in vSphere API 6.7
+# Return information about the guest. This  *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
@@ -117,7 +117,7 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Identity::Info``   *class*  contains
 #     information describing the guest operating system identification. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Guest::Identity::Info;
 
@@ -167,7 +167,7 @@ sub new {
 #
 # @retval name - The current value of the field.
 # Guest operating system identifier (short name). This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # GuestOS#
 sub get_name {
@@ -180,7 +180,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # Guest operating system identifier (short name). This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub set_name {
 # Gets the value of 'family' property.
 #
 # @retval family - The current value of the field.
-# Guest operating system family. This  *field*  was added in vSphere API 6.7
+# Guest operating system family. This  *field*  was added in vSphere API 6.7.
 #
 # GuestOSFamily#
 sub get_family {
@@ -204,7 +204,7 @@ sub get_family {
 # Sets the given value for 'family' property.
 # 
 # @param family  - New value for the field.
-# Guest operating system family. This  *field*  was added in vSphere API 6.7
+# Guest operating system family. This  *field*  was added in vSphere API 6.7.
 #
 sub set_family {
    my ($self, %args) = @_;
@@ -216,7 +216,7 @@ sub set_family {
 # Gets the value of 'full_name' property.
 #
 # @retval full_name - The current value of the field.
-# Guest operating system full name. This  *field*  was added in vSphere API 6.7
+# Guest operating system full name. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_full_name {
@@ -228,7 +228,7 @@ sub get_full_name {
 # Sets the given value for 'full_name' property.
 # 
 # @param full_name  - New value for the field.
-# Guest operating system full name. This  *field*  was added in vSphere API 6.7
+# Guest operating system full name. This  *field*  was added in vSphere API 6.7.
 #
 sub set_full_name {
    my ($self, %args) = @_;
@@ -240,7 +240,7 @@ sub set_full_name {
 # Gets the value of 'host_name' property.
 #
 # @retval host_name - The current value of the field.
-# Hostname of the guest operating system. This  *field*  was added in vSphere API 6.7
+# Hostname of the guest operating system. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_host_name {
@@ -252,7 +252,7 @@ sub get_host_name {
 # Sets the given value for 'host_name' property.
 # 
 # @param host_name  - New value for the field.
-# Hostname of the guest operating system. This  *field*  was added in vSphere API 6.7
+# Hostname of the guest operating system. This  *field*  was added in vSphere API 6.7.
 #
 sub set_host_name {
    my ($self, %args) = @_;
@@ -265,7 +265,7 @@ sub set_host_name {
 #
 # @retval ip_address - The current value of the field.
 # IP address assigned by the guest operating system. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_ip_address {
@@ -278,7 +278,7 @@ sub get_ip_address {
 # 
 # @param ip_address  - New value for the field.
 # IP address assigned by the guest operating system. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_ip_address {
    my ($self, %args) = @_;

@@ -15,7 +15,7 @@
 ## @class Com::Vmware::Appliance::Recovery::Backup::Job::Details
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Job::Details``   *interface* 
 #     provides  *methods*  to get the details about backup jobs. This  *interface*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::Details;
@@ -62,7 +62,7 @@ sub new {
 
 ## @method list ()
 # Returns detailed information about the current and historical backup jobs. This  *method* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # @param filter [OPTIONAL] Specification of matching backup jobs for which information should be returned.
 # If  *null* , the behavior is equivalent to  class
@@ -104,15 +104,15 @@ sub list {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Job::Details::Type``   *enumerated
 #     type*  defines the type of backup job. This  *enumeration*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::Details::Type::SCHEDULED #
-#Job type is Scheduled. This  *constant*  was added in vSphere API 6.7
+#Job type is Scheduled. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::Details::Type::MANUAL #
-#Job type is Manual. This  *constant*  was added in vSphere API 6.7
+#Job type is Manual. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::Details::Type;
 
@@ -160,7 +160,7 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Job::Details::Info``   *class* 
-#     contains information about a backup job. This  *class*  was added in vSphere API 6.7
+#     contains information about a backup job. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::Details::Info;
 
@@ -246,7 +246,7 @@ sub new {
 # Gets the value of 'location' property.
 #
 # @retval location - The current value of the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 # URI#
 sub get_location {
@@ -258,7 +258,7 @@ sub get_location {
 # Sets the given value for 'location' property.
 # 
 # @param location  - New value for the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location {
    my ($self, %args) = @_;
@@ -271,7 +271,7 @@ sub set_location {
 #
 # @retval duration - The current value of the field.
 # Time in seconds since the backup job was started or the time it took to complete the
-#     backup job. This  *field*  was added in vSphere API 6.7
+#     backup job. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_duration {
@@ -284,7 +284,7 @@ sub get_duration {
 # 
 # @param duration  - New value for the field.
 # Time in seconds since the backup job was started or the time it took to complete the
-#     backup job. This  *field*  was added in vSphere API 6.7
+#     backup job. This  *field*  was added in vSphere API 6.7.
 #
 sub set_duration {
    my ($self, %args) = @_;
@@ -297,7 +297,7 @@ sub set_duration {
 #
 # @retval size - The current value of the field.
 # Size of the backup data transferred to remote location. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # optional#
 sub get_size {
@@ -310,7 +310,7 @@ sub get_size {
 # 
 # @param size  - New value for the field.
 # Size of the backup data transferred to remote location. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_size {
    my ($self, %args) = @_;
@@ -322,7 +322,7 @@ sub set_size {
 # Gets the value of 'progress' property.
 #
 # @retval progress - The current value of the field.
-# Progress of the job. This  *field*  was added in vSphere API 6.7
+# Progress of the job. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_progress {
@@ -334,7 +334,7 @@ sub get_progress {
 # Sets the given value for 'progress' property.
 # 
 # @param progress  - New value for the field.
-# Progress of the job. This  *field*  was added in vSphere API 6.7
+# Progress of the job. This  *field*  was added in vSphere API 6.7.
 #
 sub set_progress {
    my ($self, %args) = @_;
@@ -347,7 +347,7 @@ sub set_progress {
 #
 # @retval location_user - The current value of the field.
 # The username for the remote backup location. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # String#
 sub get_location_user {
@@ -360,7 +360,7 @@ sub get_location_user {
 # 
 # @param location_user  - New value for the field.
 # The username for the remote backup location. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_location_user {
    my ($self, %args) = @_;
@@ -373,7 +373,7 @@ sub set_location_user {
 #
 # @retval type - The current value of the field.
 # Type of the backup job. Indicates whether the backup was started manually or as a
-#     scheduled backup. This  *field*  was added in vSphere API 6.7
+#     scheduled backup. This  *field*  was added in vSphere API 6.7.
 #
 # Type#
 sub get_type {
@@ -386,7 +386,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # Type of the backup job. Indicates whether the backup was started manually or as a
-#     scheduled backup. This  *field*  was added in vSphere API 6.7
+#     scheduled backup. This  *field*  was added in vSphere API 6.7.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -399,7 +399,7 @@ sub set_type {
 #
 # @retval messages - The current value of the field.
 # List of any info/warning/error messages returned by the backup job. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # List#
 sub get_messages {
@@ -412,7 +412,7 @@ sub get_messages {
 # 
 # @param messages  - New value for the field.
 # List of any info/warning/error messages returned by the backup job. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_messages {
    my ($self, %args) = @_;
@@ -448,7 +448,7 @@ sub set_description {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 # ID#
 sub get_service {
@@ -460,7 +460,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -472,7 +472,7 @@ sub set_service {
 # Gets the value of 'operation' property.
 #
 # @retval operation - The current value of the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 # ID#
 sub get_operation {
@@ -484,7 +484,7 @@ sub get_operation {
 # Sets the given value for 'operation' property.
 # 
 # @param operation  - New value for the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 sub set_operation {
    my ($self, %args) = @_;
@@ -698,7 +698,7 @@ sub set_user {
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Job::Details::FilterSpec``   *class* 
 #     contains  *fields*  used to filter the results when listing backup jobs details (see 
 #     :func:`Com::Vmware::Appliance::Recovery::Backup::Job::Details.list` ). This  *class* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::Details::FilterSpec;
 
@@ -740,7 +740,7 @@ sub new {
 #
 # @retval jobs - The current value of the field.
 # Identifiers of backup jobs that can match the filter. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_jobs {
@@ -753,7 +753,7 @@ sub get_jobs {
 # 
 # @param jobs  - New value for the field.
 # Identifiers of backup jobs that can match the filter. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_jobs {
    my ($self, %args) = @_;

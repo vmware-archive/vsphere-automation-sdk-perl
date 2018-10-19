@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Storage::Policies::Compliance::VM
 # The  ``Com::Vmware::Vcenter::Storage::Policies::Compliance::VM``   *class*  provides 
 #     *methods*  related to query virtual machines of given compliance statuses. This 
-#     *interface*  was added in vSphere API 6.7
+#     *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance::VM;
@@ -64,7 +64,7 @@ sub new {
 # no virtual machines matching the  class
 # Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::FilterSpec  an empty List is
 # returned. Virtual machines without storage policy association are not returned. This 
-# *method*  was added in vSphere API 6.7
+# *method*  was added in vSphere API 6.7.
 #
 # @param filter [REQUIRED] compliance status of matching virtual machines for which information should be
 #     returned.
@@ -124,31 +124,31 @@ sub list {
 ## @class Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Status
 #
 # The {@Status}  *enumerated type*  defines he valid compliance status values for a
-#     virtual machine or virtual disk. This  *enumeration*  was added in vSphere API 6.7
+#     virtual machine or virtual disk. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Status::COMPLIANT #
 #The virtual machine or virtual disk is in compliance. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Status::NON_COMPLIANT #
 #The virtual machine or virtual disk is in not in compliance. This  *constant*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Status::UNKNOWN_COMPLIANCE #
 #Compliance status of the virtual machine or virtual disk is not known. This  *constant* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Status::NOT_APPLICABLE #
 #Compliance computation is not applicable for this virtual machine or disk because it does
 # not have any storage requirement that apply to the object-based datastore on which the
-# entity is placed. This  *constant*  was added in vSphere API 6.7
+# entity is placed. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Status::OUT_OF_DATE #
 #Compliance status becomes out of date when the profile associated with the virtual machine
 # or disk is edited and not applied. The compliance status will remain out of date until the
-# latest policy is applied. This  *constant*  was added in vSphere API 6.7
+# latest policy is applied. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Status;
 
@@ -199,7 +199,7 @@ sub new {
 #
 #
 # Provides the compliance details of a virtual machine and its associated entities which
-#     match the given compliance statuses. This  *class*  was added in vSphere API 6.7
+#     match the given compliance statuses. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::Info;
 
@@ -243,7 +243,7 @@ sub new {
 #
 # @retval vm_home - The current value of the field.
 # Compliance status of the virtual machine home. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_vm_home {
@@ -256,7 +256,7 @@ sub get_vm_home {
 # 
 # @param vm_home  - New value for the field.
 # Compliance status of the virtual machine home. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_vm_home {
    my ($self, %args) = @_;
@@ -270,7 +270,7 @@ sub set_vm_home {
 # @retval disks - The current value of the field.
 # A Map of virtual disks and their compliance status If empty, the virtual machine does
 #     not have any disks or its disks are not associated with a storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Map#
 sub get_disks {
@@ -284,7 +284,7 @@ sub get_disks {
 # @param disks  - New value for the field.
 # A Map of virtual disks and their compliance status If empty, the virtual machine does
 #     not have any disks or its disks are not associated with a storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_disks {
    my ($self, %args) = @_;
@@ -302,7 +302,7 @@ sub set_disks {
 # The  ``Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::FilterSpec``   *class*
 #     contains  *Status*  used to filter the results when listing virtual machines (see 
 #     :func:`Com::Vmware::Vcenter::Storage::Policies::Compliance::VM.list` ). This  *class* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance::VM::FilterSpec;
 
@@ -346,7 +346,7 @@ sub new {
 #
 # @retval status - The current value of the field.
 # Compliance Status that a virtual machine must have to match the filter. Atleast one
-#     status must be specified. This  *field*  was added in vSphere API 6.7
+#     status must be specified. This  *field*  was added in vSphere API 6.7.
 #
 # Set#
 sub get_status {
@@ -359,7 +359,7 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # Compliance Status that a virtual machine must have to match the filter. Atleast one
-#     status must be specified. This  *field*  was added in vSphere API 6.7
+#     status must be specified. This  *field*  was added in vSphere API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -372,7 +372,7 @@ sub set_status {
 #
 # @retval vms - The current value of the field.
 # Identifiers of virtual machines that can match the filter. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_vms {
@@ -385,7 +385,7 @@ sub get_vms {
 # 
 # @param vms  - New value for the field.
 # Identifiers of virtual machines that can match the filter. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_vms {
    my ($self, %args) = @_;

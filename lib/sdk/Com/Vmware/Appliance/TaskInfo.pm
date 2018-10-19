@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Appliance::TaskInfo``   *class*  contains information about an
 #     appliance task and the subtasks of which it consists. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::TaskInfo;
 
@@ -81,7 +81,7 @@ sub new {
 # Gets the value of 'progress' property.
 #
 # @retval progress - The current value of the field.
-# Progress of the task. This  *field*  was added in vSphere API 6.7
+# Progress of the task. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_progress {
@@ -93,7 +93,7 @@ sub get_progress {
 # Sets the given value for 'progress' property.
 # 
 # @param progress  - New value for the field.
-# Progress of the task. This  *field*  was added in vSphere API 6.7
+# Progress of the task. This  *field*  was added in vSphere API 6.7.
 #
 sub set_progress {
    my ($self, %args) = @_;
@@ -106,7 +106,7 @@ sub set_progress {
 #
 # @retval subtask_order - The current value of the field.
 # List of tasks that make up this appliance task in the order they are being run. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_subtask_order {
@@ -119,7 +119,7 @@ sub get_subtask_order {
 # 
 # @param subtask_order  - New value for the field.
 # List of tasks that make up this appliance task in the order they are being run. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_subtask_order {
    my ($self, %args) = @_;
@@ -132,7 +132,7 @@ sub set_subtask_order {
 #
 # @retval subtasks - The current value of the field.
 # Information about the subtasks that this appliance task consists of. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Map#
 sub get_subtasks {
@@ -145,7 +145,7 @@ sub get_subtasks {
 # 
 # @param subtasks  - New value for the field.
 # Information about the subtasks that this appliance task consists of. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_subtasks {
    my ($self, %args) = @_;
@@ -181,7 +181,7 @@ sub set_description {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 # ID#
 sub get_service {
@@ -193,7 +193,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -205,7 +205,7 @@ sub set_service {
 # Gets the value of 'operation' property.
 #
 # @retval operation - The current value of the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 # ID#
 sub get_operation {
@@ -217,7 +217,7 @@ sub get_operation {
 # Sets the given value for 'operation' property.
 # 
 # @param operation  - New value for the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 sub set_operation {
    my ($self, %args) = @_;

@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Shutdown
 # ``Com::Vmware::Appliance::Shutdown``   *interface*  provides  *methods*  Performs
 #     reboot/shutdown operations on appliance. This  *interface*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 
 package Com::Vmware::Appliance::Shutdown;
@@ -59,7 +59,7 @@ sub new {
 }
 
 ## @method cancel ()
-# Cancel pending shutdown action. This  *method*  was added in vSphere API 6.7
+# Cancel pending shutdown action. This  *method*  was added in vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
@@ -72,7 +72,7 @@ sub cancel {
 
 
 ## @method poweroff ()
-# Power off the appliance. This  *method*  was added in vSphere API 6.7
+# Power off the appliance. This  *method*  was added in vSphere API 6.7.
 #
 # @param delay [REQUIRED] Minutes after which poweroff should start. If 0 is specified, poweroff will start
 #     immediately.
@@ -99,7 +99,7 @@ sub poweroff {
 
 
 ## @method reboot ()
-# Reboot the appliance. This  *method*  was added in vSphere API 6.7
+# Reboot the appliance. This  *method*  was added in vSphere API 6.7.
 #
 # @param delay [REQUIRED] Minutes after which reboot should start. If 0 is specified, reboot will start
 #     immediately.
@@ -127,7 +127,7 @@ sub reboot {
 
 ## @method get ()
 # Get details about the pending shutdown action. This  *method*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # @retval 
 # Configuration of pending shutdown action.
@@ -164,7 +164,7 @@ sub get {
 #
 # ``Com::Vmware::Appliance::Shutdown::ShutdownConfig``   *class*  Structure that defines
 #     shutdown configuration returned by the Shutdown.get operation. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Shutdown::ShutdownConfig;
 
@@ -209,7 +209,7 @@ sub new {
 # Gets the value of 'shutdown_time' property.
 #
 # @retval shutdown_time - The current value of the field.
-# Shutdown time. This  *field*  was added in vSphere API 6.7
+# Shutdown time. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_shutdown_time {
@@ -221,7 +221,7 @@ sub get_shutdown_time {
 # Sets the given value for 'shutdown_time' property.
 # 
 # @param shutdown_time  - New value for the field.
-# Shutdown time. This  *field*  was added in vSphere API 6.7
+# Shutdown time. This  *field*  was added in vSphere API 6.7.
 #
 sub set_shutdown_time {
    my ($self, %args) = @_;
@@ -235,7 +235,7 @@ sub set_shutdown_time {
 # @retval action - The current value of the field.
 # The pending shutdown operation. The string values for pending operations can be
 #     &apos;poweroff&apos;, &apos;reboot&apos; or &apos;&apos;. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # String#
 sub get_action {
@@ -249,7 +249,7 @@ sub get_action {
 # @param action  - New value for the field.
 # The pending shutdown operation. The string values for pending operations can be
 #     &apos;poweroff&apos;, &apos;reboot&apos; or &apos;&apos;. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_action {
    my ($self, %args) = @_;
@@ -261,7 +261,7 @@ sub set_action {
 # Gets the value of 'reason' property.
 #
 # @retval reason - The current value of the field.
-# The reason behind the shutdown action. This  *field*  was added in vSphere API 6.7
+# The reason behind the shutdown action. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_reason {
@@ -273,7 +273,7 @@ sub get_reason {
 # Sets the given value for 'reason' property.
 # 
 # @param reason  - New value for the field.
-# The reason behind the shutdown action. This  *field*  was added in vSphere API 6.7
+# The reason behind the shutdown action. This  *field*  was added in vSphere API 6.7.
 #
 sub set_reason {
    my ($self, %args) = @_;

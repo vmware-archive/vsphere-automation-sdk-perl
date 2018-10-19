@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Networking::NoProxy
 # The  ``Com::Vmware::Appliance::Networking::NoProxy``   *interface*  provides 
 #     *methods*  to configure a connection that does not need a proxy. This  *interface* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Networking::NoProxy;
@@ -63,7 +63,7 @@ sub new {
 # environment variables. In order for this operation to take effect, a logout from appliance
 # or a service restart is required. If IPv4 is enabled, &quot;127.0.0.1&quot; and
 # &quot;localhost&quot; will always bypass the proxy (even if they are not explicitly
-# configured). This  *method*  was added in vSphere API 6.7
+# configured). This  *method*  was added in vSphere API 6.7.
 #
 # @param servers [REQUIRED] List of strings representing servers to bypass proxy. A server can be a FQDN, IP
 #     address, FQDN:port or IP:port combinations.
@@ -87,7 +87,7 @@ sub set {
 
 ## @method get ()
 # Returns servers for which no proxy configuration will be applied. This  *method*  was
-# added in vSphere API 6.7
+# added in vSphere API 6.7.
 #
 # @retval 
 # List of servers for which no proxy configuration will be applied.

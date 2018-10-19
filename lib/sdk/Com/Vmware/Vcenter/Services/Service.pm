@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Services::Service
 # The  ``Com::Vmware::Vcenter::Services::Service``   *interface*  provides  *methods* 
 #     to manage a single/set of vCenter Server services. This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Services::Service;
@@ -60,7 +60,7 @@ sub new {
 }
 
 ## @method start ()
-# Starts a service. This  *method*  was added in vSphere API 6.7
+# Starts a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service to start
 # The value must be an identifier for the resource type
@@ -98,7 +98,7 @@ sub start {
 
 
 ## @method stop ()
-# Stops a service. This  *method*  was added in vSphere API 6.7
+# Stops a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service to stop
 # The value must be an identifier for the resource type
@@ -129,7 +129,7 @@ sub stop {
 
 
 ## @method restart ()
-# Restarts a service. This  *method*  was added in vSphere API 6.7
+# Restarts a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service to restart
 # The value must be an identifier for the resource type
@@ -166,7 +166,7 @@ sub restart {
 
 
 ## @method get ()
-# Returns the state of a service. This  *method*  was added in vSphere API 6.7
+# Returns the state of a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service whose state is being queried.
 # The value must be an identifier for the resource type
@@ -197,7 +197,7 @@ sub get {
 
 
 ## @method update ()
-# Updates the properties of a service. This  *method*  was added in vSphere API 6.7
+# Updates the properties of a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service whose properties are being updated.
 # The value must be an identifier for the resource type
@@ -238,7 +238,7 @@ sub update {
 
 
 ## @method list_details ()
-# Lists details of vCenter services. This  *method*  was added in vSphere API 6.7
+# Lists details of vCenter services. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # Map of service identifiers to service Info structures.
@@ -267,21 +267,21 @@ sub list_details {
 #
 # The  ``Com::Vmware::Vcenter::Services::Service::StartupType``   *enumerated type* 
 #     defines valid Startup Type for vCenter Server services. This  *enumeration*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Services::Service::StartupType::MANUAL #
 #Service Startup type is Manual, thus issuing an explicit start on the service will start
-# it. This  *constant*  was added in vSphere API 6.7
+# it. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Services::Service::StartupType::AUTOMATIC #
 #Service Startup type is Automatic, thus during starting all services or issuing explicit
-# start on the service will start it. This  *constant*  was added in vSphere API 6.7
+# start on the service will start it. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Services::Service::StartupType::DISABLED #
 #Service Startup type is Disabled, thus it will not start unless the startup type changes
-# to manual or automatic. This  *constant*  was added in vSphere API 6.7
+# to manual or automatic. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Services::Service::StartupType;
 
@@ -319,24 +319,24 @@ sub new {
 ## @class Com::Vmware::Vcenter::Services::Service::State
 #
 # The  ``Com::Vmware::Vcenter::Services::Service::State``   *enumerated type*  defines
-#     valid Run State for services. This  *enumeration*  was added in vSphere API 6.7
+#     valid Run State for services. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Services::Service::State::STARTING #
 #Service Run State is Starting, it is still not functional. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Services::Service::State::STOPPING #
 #Service Run State is Stopping, it is not functional. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Services::Service::State::STARTED #
 #Service Run State is Started, it is fully functional. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Services::Service::State::STOPPED #
-#Service Run State is Stopped. This  *constant*  was added in vSphere API 6.7
+#Service Run State is Stopped. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Services::Service::State;
 
@@ -376,20 +376,20 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Services::Service::Health``   *enumerated type*  defines
 #     the possible values for health of a service. This  *enumeration*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Services::Service::Health::DEGRADED #
 #Service is in degraded state, it is not functional. This  *constant*  was added in vSphere
-# API 6.7
+# API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Services::Service::Health::HEALTHY #
 #Service is in a healthy state and is fully functional. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Services::Service::Health::HEALTHY_WITH_WARNINGS #
-#Service is healthy with warnings. This  *constant*  was added in vSphere API 6.7
+#Service is healthy with warnings. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Services::Service::Health;
 
@@ -438,7 +438,7 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Vcenter::Services::Service::Info``   *class*  contains information
-#     about a service. This  *class*  was added in vSphere API 6.7
+#     about a service. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Services::Service::Info;
 
@@ -500,7 +500,7 @@ sub new {
 #
 # @retval name_key - The current value of the field.
 # Service name key. Can be used to lookup resource bundle. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # String#
 sub get_name_key {
@@ -513,7 +513,7 @@ sub get_name_key {
 # 
 # @param name_key  - New value for the field.
 # Service name key. Can be used to lookup resource bundle. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_name_key {
    my ($self, %args) = @_;
@@ -526,7 +526,7 @@ sub set_name_key {
 #
 # @retval description_key - The current value of the field.
 # Service description key. Can be used to lookup resource bundle. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # String#
 sub get_description_key {
@@ -539,7 +539,7 @@ sub get_description_key {
 # 
 # @param description_key  - New value for the field.
 # Service description key. Can be used to lookup resource bundle. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_description_key {
    my ($self, %args) = @_;
@@ -551,7 +551,7 @@ sub set_description_key {
 # Gets the value of 'startup_type' property.
 #
 # @retval startup_type - The current value of the field.
-# Startup Type. This  *field*  was added in vSphere API 6.7
+# Startup Type. This  *field*  was added in vSphere API 6.7.
 #
 # StartupType#
 sub get_startup_type {
@@ -563,7 +563,7 @@ sub get_startup_type {
 # Sets the given value for 'startup_type' property.
 # 
 # @param startup_type  - New value for the field.
-# Startup Type. This  *field*  was added in vSphere API 6.7
+# Startup Type. This  *field*  was added in vSphere API 6.7.
 #
 sub set_startup_type {
    my ($self, %args) = @_;
@@ -575,7 +575,7 @@ sub set_startup_type {
 # Gets the value of 'state' property.
 #
 # @retval state - The current value of the field.
-# Running State. This  *field*  was added in vSphere API 6.7
+# Running State. This  *field*  was added in vSphere API 6.7.
 #
 # State#
 sub get_state {
@@ -587,7 +587,7 @@ sub get_state {
 # Sets the given value for 'state' property.
 # 
 # @param state  - New value for the field.
-# Running State. This  *field*  was added in vSphere API 6.7
+# Running State. This  *field*  was added in vSphere API 6.7.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -599,7 +599,7 @@ sub set_state {
 # Gets the value of 'health' property.
 #
 # @retval health - The current value of the field.
-# Health of service. This  *field*  was added in vSphere API 6.7
+# Health of service. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_health {
@@ -611,7 +611,7 @@ sub get_health {
 # Sets the given value for 'health' property.
 # 
 # @param health  - New value for the field.
-# Health of service. This  *field*  was added in vSphere API 6.7
+# Health of service. This  *field*  was added in vSphere API 6.7.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -624,7 +624,7 @@ sub set_health {
 #
 # @retval health_messages - The current value of the field.
 # Localizable messages associated with the health of the service. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # optional#
 sub get_health_messages {
@@ -637,7 +637,7 @@ sub get_health_messages {
 # 
 # @param health_messages  - New value for the field.
 # Localizable messages associated with the health of the service. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_health_messages {
    my ($self, %args) = @_;
@@ -654,7 +654,7 @@ sub set_health_messages {
 #
 # The  ``Com::Vmware::Vcenter::Services::Service::UpdateSpec``   *class*  describes the
 #     changes to be made to the configuration of the service. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Services::Service::UpdateSpec;
 
@@ -695,7 +695,7 @@ sub new {
 # Gets the value of 'startup_type' property.
 #
 # @retval startup_type - The current value of the field.
-# Startup Type. This  *field*  was added in vSphere API 6.7
+# Startup Type. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_startup_type {
@@ -707,7 +707,7 @@ sub get_startup_type {
 # Sets the given value for 'startup_type' property.
 # 
 # @param startup_type  - New value for the field.
-# Startup Type. This  *field*  was added in vSphere API 6.7
+# Startup Type. This  *field*  was added in vSphere API 6.7.
 #
 sub set_startup_type {
    my ($self, %args) = @_;

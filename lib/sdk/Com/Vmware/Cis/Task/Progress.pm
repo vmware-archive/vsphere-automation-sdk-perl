@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Cis::Task::Progress``   *class*  contains information describe the
-#     progress of an operation. This  *class*  was added in vSphere API 6.7
+#     progress of an operation. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Cis::Task::Progress;
 
@@ -48,7 +48,7 @@ sub new {
 #
 # @retval total - The current value of the field.
 # Total amount of the work for the operation. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # long#
 sub get_total {
@@ -61,7 +61,7 @@ sub get_total {
 # 
 # @param total  - New value for the field.
 # Total amount of the work for the operation. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_total {
    my ($self, %args) = @_;
@@ -74,7 +74,7 @@ sub set_total {
 #
 # @retval completed - The current value of the field.
 # The amount of work completed for the operation. The value can only be incremented.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_completed {
@@ -87,7 +87,7 @@ sub get_completed {
 # 
 # @param completed  - New value for the field.
 # The amount of work completed for the operation. The value can only be incremented.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 sub set_completed {
    my ($self, %args) = @_;
@@ -99,7 +99,7 @@ sub set_completed {
 # Gets the value of 'message' property.
 #
 # @retval message - The current value of the field.
-# Message about the work progress. This  *field*  was added in vSphere API 6.7
+# Message about the work progress. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_message {
@@ -111,7 +111,7 @@ sub get_message {
 # Sets the given value for 'message' property.
 # 
 # @param message  - New value for the field.
-# Message about the work progress. This  *field*  was added in vSphere API 6.7
+# Message about the work progress. This  *field*  was added in vSphere API 6.7.
 #
 sub set_message {
    my ($self, %args) = @_;

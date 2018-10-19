@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Storage::Policies::VM
 # The  ``Com::Vmware::Vcenter::Storage::Policies::VM``   *interface*  provides 
 #     *methods*  managing the storage policy association for a virtual machine and its
-#     virtual disks. This  *interface*  was added in vSphere API 6.7
+#     virtual disks. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Storage::Policies::VM;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method list ()
 # Returns information about the virtual machines and/or their virtual disks that are
-# associated with the given storage policy. This  *method*  was added in vSphere API 6.7
+# associated with the given storage policy. This  *method*  was added in vSphere API 6.7.
 #
 # @param policy [REQUIRED] storage policy identifier.
 # The value must be an identifier for the resource type
@@ -128,7 +128,7 @@ sub list {
 #
 # The  ``Com::Vmware::Vcenter::Storage::Policies::VM::Info``   *class*  contains
 #     information about a virtual machine and its virtual disks that are associated with the
-#     given storage policy. This  *class*  was added in vSphere API 6.7
+#     given storage policy. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::VM::Info;
 
@@ -172,7 +172,7 @@ sub new {
 #
 # @retval vm_home - The current value of the field.
 # Flag to indicate whether or not the virtual machine home is associated with the given
-#     storage policy. This  *field*  was added in vSphere API 6.7
+#     storage policy. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_vm_home {
@@ -185,7 +185,7 @@ sub get_vm_home {
 # 
 # @param vm_home  - New value for the field.
 # Flag to indicate whether or not the virtual machine home is associated with the given
-#     storage policy. This  *field*  was added in vSphere API 6.7
+#     storage policy. This  *field*  was added in vSphere API 6.7.
 #
 sub set_vm_home {
    my ($self, %args) = @_;
@@ -198,7 +198,7 @@ sub set_vm_home {
 #
 # @retval disks - The current value of the field.
 # List of the virtual disks that are associated with the given storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_disks {
@@ -211,7 +211,7 @@ sub get_disks {
 # 
 # @param disks  - New value for the field.
 # List of the virtual disks that are associated with the given storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_disks {
    my ($self, %args) = @_;

@@ -107,6 +107,25 @@ sub new
    my $remove_output_validator_list = [];
 
    #
+   # properties for set operation
+   #
+   my $set_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'group_names' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())),
+      }
+   );
+   my $set_error_dict = {
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+      'com.vmware.vapi.std.errors.error' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Error'),
+
+      };
+
+   my $set_input_validator_list = [
+   ];
+   my $set_output_validator_list = [];
+
+   #
    # properties for get operation
    #
    my $get_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
@@ -139,6 +158,13 @@ sub new
                 'errors'=> $remove_error_dict,
                 'input_validator_list'=> $remove_input_validator_list,
                 'output_validator_list'=> $remove_output_validator_list,
+            },
+      'set' => {
+                'input_type'=> $set_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'errors'=> $set_error_dict,
+                'input_validator_list'=> $set_input_validator_list,
+                'output_validator_list'=> $set_output_validator_list,
             },
       'get' => {
                 'input_type'=> $get_input_type,

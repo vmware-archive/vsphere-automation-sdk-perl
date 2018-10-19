@@ -457,6 +457,68 @@ sub delete {
 }
 
 
+## @method update ()
+# Updates the properties of an update session. <p>
+# 
+# This is an incremental update to the update session. Any  *field*  in the  class
+# Com::Vmware::Content::Library::Item::UpdateSessionModel   *class*  that is  *null*  will
+# not be modified. </p>
+# 
+# <p>
+# 
+# This  *method*  will only update the property 
+# :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel.warning_behavior`  of the
+# update session. This will not, for example, update the 
+# :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel.library_item_id`  or 
+# :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel.state`  of an update
+# session. </p>
+# 
+# <p>
+# 
+# This  *method*  requires the session to be in the 
+# :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel::State.ACTIVE`  state.</p>
+# 
+# . This  *method*  was added in vSphere API 6.7 U1.
+#
+# Note:
+# Privileges required for this operation are System.Anonymous.
+#
+# @param update_session_id [REQUIRED]  Identifer of the update session that should be updated.
+# The value must be an identifier for the resource type
+#     getQualifiedName(com.vmware.content.library.item.UpdateSession).
+# . The value must be str.
+#
+# @param update_spec [REQUIRED]  Specification for the new property values to be set on the update session.
+# . The value must be Com::Vmware::Content::Library::Item::UpdateSessionModel.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+#  if the update session does not exist.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the update session is not in the 
+#     :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel::State.ACTIVE`  state.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+#  if the update session specification is not valid.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
+# </ul>
+#
+
+sub update {
+   my ($self, %args) = @_;
+   my $update_session_id = $args {update_session_id};
+   my $update_spec = $args {update_spec};
+
+   $self->validate_args (method_name => 'update',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'update',
+                         method_args => \%args);
+}
+
+
 1;
 
 #########################################################################################

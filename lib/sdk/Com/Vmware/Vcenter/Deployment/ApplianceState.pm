@@ -2,31 +2,31 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::ApplianceState``   *enumerated type*  defines
 #     the various states the vCenter Appliance can be in. This  *enumeration*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceState::NOT_INITIALIZED #
 #The appliance is in the process of being initialized and not ready for configuration. This
-#  *constant*  was added in vSphere API 6.7
+#  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceState::INITIALIZED #
 #The appliance is initialized and ready to be configured. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceState::CONFIG_IN_PROGRESS #
 #The appliance is in the process of being configured. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceState::QUESTION_RAISED #
 #The deployment script has raised a question and is waiting for an answer to continue with
-# the appliance configuration. This  *constant*  was added in vSphere API 6.7
+# the appliance configuration. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceState::FAILED #
-#The appliance configuration has failed. This  *constant*  was added in vSphere API 6.7
+#The appliance configuration has failed. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceState::CONFIGURED #
-#The appliance has been configured. This  *constant*  was added in vSphere API 6.7
+#The appliance has been configured. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::ApplianceState;
 

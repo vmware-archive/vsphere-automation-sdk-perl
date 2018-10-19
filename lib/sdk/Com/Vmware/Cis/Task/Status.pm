@@ -2,24 +2,24 @@
 #
 # The  ``Com::Vmware::Cis::Task::Status``   *enumerated type*  defines the status values
 #     that can be reported for an operation. This  *enumeration*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 #
 #
 # Constant Com::Vmware::Cis::Task::Status::PENDING #
-#The operation is in pending state. This  *constant*  was added in vSphere API 6.7
+#The operation is in pending state. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Cis::Task::Status::RUNNING #
-#The operation is in progress. This  *constant*  was added in vSphere API 6.7
+#The operation is in progress. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Cis::Task::Status::BLOCKED #
-#The operation is blocked. This  *constant*  was added in vSphere API 6.7
+#The operation is blocked. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Cis::Task::Status::SUCCEEDED #
-#The operation completed successfully. This  *constant*  was added in vSphere API 6.7
+#The operation completed successfully. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Cis::Task::Status::FAILED #
-#The operation failed. This  *constant*  was added in vSphere API 6.7
+#The operation failed. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Cis::Task::Status;
 

@@ -2,16 +2,16 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::VerificationMode``   *enumerated type* 
 #     defines the verification modes for SSL certificates or SSH connections. This 
-#     *enumeration*  was added in vSphere API 6.7
+#     *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::VerificationMode::NONE #
-#No verification will be performed. This  *constant*  was added in vSphere API 6.7
+#No verification will be performed. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::VerificationMode::THUMBPRINT #
 #Passed thumbprint will be used for verification. This  *constant*  was added in vSphere
-# API 6.7
+# API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::VerificationMode;
 

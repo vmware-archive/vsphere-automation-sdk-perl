@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::LocationSpec``   *class*  has fields
 #     to represent a location on the backup server. This  *class*  was added in vSphere API
-#     6.7
+#     6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::LocationSpec;
 
@@ -48,7 +48,7 @@ sub new {
 # Gets the value of 'location' property.
 #
 # @retval location - The current value of the field.
-# Backup location URL. This  *field*  was added in vSphere API 6.7
+# Backup location URL. This  *field*  was added in vSphere API 6.7.
 #
 # URI#
 sub get_location {
@@ -60,7 +60,7 @@ sub get_location {
 # Sets the given value for 'location' property.
 # 
 # @param location  - New value for the field.
-# Backup location URL. This  *field*  was added in vSphere API 6.7
+# Backup location URL. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location {
    my ($self, %args) = @_;
@@ -72,7 +72,7 @@ sub set_location {
 # Gets the value of 'location_user' property.
 #
 # @retval location_user - The current value of the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location_user {
@@ -84,7 +84,7 @@ sub get_location_user {
 # Sets the given value for 'location_user' property.
 # 
 # @param location_user  - New value for the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location_user {
    my ($self, %args) = @_;
@@ -96,7 +96,7 @@ sub set_location_user {
 # Gets the value of 'location_password' property.
 #
 # @retval location_password - The current value of the field.
-# Password for the given location. This  *field*  was added in vSphere API 6.7
+# Password for the given location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location_password {
@@ -108,7 +108,7 @@ sub get_location_password {
 # Sets the given value for 'location_password' property.
 # 
 # @param location_password  - New value for the field.
-# Password for the given location. This  *field*  was added in vSphere API 6.7
+# Password for the given location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location_password {
    my ($self, %args) = @_;

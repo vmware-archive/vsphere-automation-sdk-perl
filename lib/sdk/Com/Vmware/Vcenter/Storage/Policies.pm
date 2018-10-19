@@ -12,11 +12,11 @@
 
 ## @class Com::Vmware::Vcenter::Storage::Policies
 # The  ``Com::Vmware::Vcenter::Storage::Policies``   *interface*  provides  *methods* 
-#     for managing the storage policies. This  *interface*  was added in vSphere API 6.7
+#     for managing the storage policies. This  *interface*  was added in vSphere API 6.7.
 #
 #
 # Constant String::RESOURCE_TYPE #
-#Resource type for vAPI metadata policy. This  *constant*  was added in vSphere API 6.7
+#Resource type for vAPI metadata policy. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies;
 
@@ -63,7 +63,7 @@ sub new {
 ## @method list ()
 # Returns information about at most 1024 visible (subject to permission checks) storage
 # solicies availabe in vCenter. These storage policies can be used for provisioning virtual
-# machines or disks. This  *method*  was added in vSphere API 6.7
+# machines or disks. This  *method*  was added in vSphere API 6.7.
 #
 # @param filter [OPTIONAL] Specification of matching storage policies for which information should be returned.
 # If  *null* , the behavior is equivalent to a  class
@@ -106,7 +106,7 @@ sub list {
 
 ## @method check_compatibility ()
 # Returns datastore compatibility summary about a specific storage policy. This  *method* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # @param policy [REQUIRED] The storage policy identifier
 # The value must be an identifier for the resource type
@@ -176,7 +176,7 @@ sub check_compatibility {
 # The  ``Com::Vmware::Vcenter::Storage::Policies::FilterSpec``   *class*  contains 
 #     *fields*  used to filter the results when listing the storage policies (see 
 #     :func:`Com::Vmware::Vcenter::Storage::Policies.list` ). This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::FilterSpec;
 
@@ -218,7 +218,7 @@ sub new {
 #
 # @retval policies - The current value of the field.
 # Identifiers of storage policies that can match the filter. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_policies {
@@ -231,7 +231,7 @@ sub get_policies {
 # 
 # @param policies  - New value for the field.
 # Identifiers of storage policies that can match the filter. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_policies {
    my ($self, %args) = @_;
@@ -247,7 +247,7 @@ sub set_policies {
 #
 #
 # The  ``Com::Vmware::Vcenter::Storage::Policies::Summary``   *class*  contains commonly
-#     used information about a storage policy. This  *class*  was added in vSphere API 6.7
+#     used information about a storage policy. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::Summary;
 
@@ -292,7 +292,7 @@ sub new {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Identifier of the storage policy. This  *field*  was added in vSphere API 6.7
+# Identifier of the storage policy. This  *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_policy {
@@ -304,7 +304,7 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Identifier of the storage policy. This  *field*  was added in vSphere API 6.7
+# Identifier of the storage policy. This  *field*  was added in vSphere API 6.7.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -316,7 +316,7 @@ sub set_policy {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the storage policy. This  *field*  was added in vSphere API 6.7
+# Name of the storage policy. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_name {
@@ -328,7 +328,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the storage policy. This  *field*  was added in vSphere API 6.7
+# Name of the storage policy. This  *field*  was added in vSphere API 6.7.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -340,7 +340,7 @@ sub set_name {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the storage policy. This  *field*  was added in vSphere API 6.7
+# Description of the storage policy. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_description {
@@ -352,7 +352,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the storage policy. This  *field*  was added in vSphere API 6.7
+# Description of the storage policy. This  *field*  was added in vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -369,7 +369,7 @@ sub set_description {
 #
 # The  ``Com::Vmware::Vcenter::Storage::Policies::CompatibleDatastoreInfo``   *class* 
 #     contains compatible datastore&apos;s information. This  *class*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::CompatibleDatastoreInfo;
 
@@ -410,7 +410,7 @@ sub new {
 # Gets the value of 'datastore' property.
 #
 # @retval datastore - The current value of the field.
-# Identifier of the datastore. This  *field*  was added in vSphere API 6.7
+# Identifier of the datastore. This  *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_datastore {
@@ -422,7 +422,7 @@ sub get_datastore {
 # Sets the given value for 'datastore' property.
 # 
 # @param datastore  - New value for the field.
-# Identifier of the datastore. This  *field*  was added in vSphere API 6.7
+# Identifier of the datastore. This  *field*  was added in vSphere API 6.7.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -439,7 +439,7 @@ sub set_datastore {
 #
 # The  ``Com::Vmware::Vcenter::Storage::Policies::CompatibilityInfo``   *class* 
 #     contains info about a list of datastores compatible with a specific storage policy.
-#     This  *class*  was added in vSphere API 6.7
+#     This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::CompatibilityInfo;
 
@@ -481,7 +481,7 @@ sub new {
 #
 # @retval compatible_datastores - The current value of the field.
 # Info about a list of datastores compatible with a specific storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_compatible_datastores {
@@ -494,7 +494,7 @@ sub get_compatible_datastores {
 # 
 # @param compatible_datastores  - New value for the field.
 # Info about a list of datastores compatible with a specific storage policy. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_compatible_datastores {
    my ($self, %args) = @_;

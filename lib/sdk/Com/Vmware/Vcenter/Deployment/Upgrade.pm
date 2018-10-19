@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Deployment::Upgrade
 # The  ``Com::Vmware::Vcenter::Deployment::Upgrade``   *interface*  provides  *methods* 
 #     to configure the upgrade of this appliance from an existing vCenter appliance. This 
-#     *interface*  was added in vSphere API 6.7
+#     *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::Upgrade;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method get ()
 # Get the UpgradeSpec parameters used to configure the ongoing appliance upgrade. This 
-# *method*  was added in vSphere API 6.7
+# *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # UpgradeSpec parameters being used to configure appliance upgrade.
@@ -81,7 +81,7 @@ sub get {
 
 ## @method check ()
 # Run sanity checks using the UpgradeSpec parameters passed. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @param spec [REQUIRED] UpgradeSpec parameters to run sanity check on.
 # . The value must be Com::Vmware::Vcenter::Deployment::Upgrade::UpgradeSpec.
@@ -117,7 +117,7 @@ sub check {
 
 
 ## @method start ()
-# Start the appliance installation. This  *method*  was added in vSphere API 6.7
+# Start the appliance installation. This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] UpgradeSpec parameters to configure the appliance upgrade.
 # . The value must be Com::Vmware::Vcenter::Deployment::Upgrade::UpgradeSpec.
@@ -150,7 +150,7 @@ sub start {
 
 ## @method cancel ()
 # Cancel the appliance upgrade that is in progress. This  *method*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
@@ -187,7 +187,7 @@ sub cancel {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Upgrade::VcsaEmbeddedSpec``   *class* 
 #     contains information used to upgrade a Embedded vCenter Server appliance. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Upgrade::VcsaEmbeddedSpec;
 
@@ -229,7 +229,7 @@ sub new {
 #
 # @retval ceip_enabled - The current value of the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     embedded vCenter Server upgrade. This  *field*  was added in vSphere API 6.7
+#     embedded vCenter Server upgrade. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_ceip_enabled {
@@ -242,7 +242,7 @@ sub get_ceip_enabled {
 # 
 # @param ceip_enabled  - New value for the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     embedded vCenter Server upgrade. This  *field*  was added in vSphere API 6.7
+#     embedded vCenter Server upgrade. This  *field*  was added in vSphere API 6.7.
 #
 sub set_ceip_enabled {
    my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub set_ceip_enabled {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Upgrade::PscSpec``   *class*  contains
 #     information used to upgrade a Platform Service Controller appliance. This  *class* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Upgrade::PscSpec;
 
@@ -301,7 +301,7 @@ sub new {
 #
 # @retval ceip_enabled - The current value of the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     Platform Services Controller upgrade. This  *field*  was added in vSphere API 6.7
+#     Platform Services Controller upgrade. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_ceip_enabled {
@@ -314,7 +314,7 @@ sub get_ceip_enabled {
 # 
 # @param ceip_enabled  - New value for the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     Platform Services Controller upgrade. This  *field*  was added in vSphere API 6.7
+#     Platform Services Controller upgrade. This  *field*  was added in vSphere API 6.7.
 #
 sub set_ceip_enabled {
    my ($self, %args) = @_;
@@ -331,7 +331,7 @@ sub set_ceip_enabled {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Upgrade::SourceApplianceSpec``   *class* 
 #     contains information used to connect to the appliance used as the source for an
-#     upgrade. This  *class*  was added in vSphere API 6.7
+#     upgrade. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Upgrade::SourceApplianceSpec;
 
@@ -389,7 +389,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # The IP address or DNS resolvable name of the source appliance. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # String#
 sub get_hostname {
@@ -402,7 +402,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # The IP address or DNS resolvable name of the source appliance. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -414,7 +414,7 @@ sub set_hostname {
 # Gets the value of 'https_port' property.
 #
 # @retval https_port - The current value of the field.
-# The HTTPS port of the source appliance. This  *field*  was added in vSphere API 6.7
+# The HTTPS port of the source appliance. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_https_port {
@@ -426,7 +426,7 @@ sub get_https_port {
 # Sets the given value for 'https_port' property.
 # 
 # @param https_port  - New value for the field.
-# The HTTPS port of the source appliance. This  *field*  was added in vSphere API 6.7
+# The HTTPS port of the source appliance. This  *field*  was added in vSphere API 6.7.
 #
 sub set_https_port {
    my ($self, %args) = @_;
@@ -439,7 +439,7 @@ sub set_https_port {
 #
 # @retval ssl_thumbprint - The current value of the field.
 # SHA1 thumbprint of the server SSL certificate will be used for verification. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ssl_thumbprint {
@@ -452,7 +452,7 @@ sub get_ssl_thumbprint {
 # 
 # @param ssl_thumbprint  - New value for the field.
 # SHA1 thumbprint of the server SSL certificate will be used for verification. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;
@@ -467,7 +467,7 @@ sub set_ssl_thumbprint {
 # SSL verification should be enabled or disabled for the source appliance validations.
 #     By default it is enabled and will use SSL certificate for verification. If thumbprint
 #     is provided, will use thumbprint for the verification. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_ssl_verify {
@@ -482,7 +482,7 @@ sub get_ssl_verify {
 # SSL verification should be enabled or disabled for the source appliance validations.
 #     By default it is enabled and will use SSL certificate for verification. If thumbprint
 #     is provided, will use thumbprint for the verification. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_ssl_verify {
    my ($self, %args) = @_;
@@ -495,7 +495,7 @@ sub set_ssl_verify {
 #
 # @retval sso_admin_username - The current value of the field.
 # The SSO administrator account on the source appliance. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # String#
 sub get_sso_admin_username {
@@ -508,7 +508,7 @@ sub get_sso_admin_username {
 # 
 # @param sso_admin_username  - New value for the field.
 # The SSO administrator account on the source appliance. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_sso_admin_username {
    my ($self, %args) = @_;
@@ -520,7 +520,7 @@ sub set_sso_admin_username {
 # Gets the value of 'sso_admin_password' property.
 #
 # @retval sso_admin_password - The current value of the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 6.7
+# The SSO administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 # Secret#
 sub get_sso_admin_password {
@@ -532,7 +532,7 @@ sub get_sso_admin_password {
 # Sets the given value for 'sso_admin_password' property.
 # 
 # @param sso_admin_password  - New value for the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 6.7
+# The SSO administrator account password. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_password {
    my ($self, %args) = @_;
@@ -545,7 +545,7 @@ sub set_sso_admin_password {
 #
 # @retval root_password - The current value of the field.
 # The password of the root user on the source appliance. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Secret#
 sub get_root_password {
@@ -558,7 +558,7 @@ sub get_root_password {
 # 
 # @param root_password  - New value for the field.
 # The password of the root user on the source appliance. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_root_password {
    my ($self, %args) = @_;
@@ -572,7 +572,7 @@ sub set_root_password {
 # @retval ssh_verify - The current value of the field.
 # Appliance SSH verification should be enabled or disabled. By default it is disabled
 #     and will not use any verification. If thumbprint is provided, thumbprint verification
-#     will be performed. This  *field*  was added in vSphere API 6.7
+#     will be performed. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ssh_verify {
@@ -586,7 +586,7 @@ sub get_ssh_verify {
 # @param ssh_verify  - New value for the field.
 # Appliance SSH verification should be enabled or disabled. By default it is disabled
 #     and will not use any verification. If thumbprint is provided, thumbprint verification
-#     will be performed. This  *field*  was added in vSphere API 6.7
+#     will be performed. This  *field*  was added in vSphere API 6.7.
 #
 sub set_ssh_verify {
    my ($self, %args) = @_;
@@ -599,7 +599,7 @@ sub set_ssh_verify {
 #
 # @retval ssh_thumbprint - The current value of the field.
 # MD5 thumbprint of the server SSH key will be used for verification. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # Optional#
 sub get_ssh_thumbprint {
@@ -612,7 +612,7 @@ sub get_ssh_thumbprint {
 # 
 # @param ssh_thumbprint  - New value for the field.
 # MD5 thumbprint of the server SSH key will be used for verification. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_ssh_thumbprint {
    my ($self, %args) = @_;
@@ -629,7 +629,7 @@ sub set_ssh_thumbprint {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Upgrade::UpgradeSpec``   *class*  contains
 #     information used to configure the appliance upgrade. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Upgrade::UpgradeSpec;
 
@@ -680,7 +680,7 @@ sub new {
 # Gets the value of 'source_appliance' property.
 #
 # @retval source_appliance - The current value of the field.
-# Source appliance spec. This  *field*  was added in vSphere API 6.7
+# Source appliance spec. This  *field*  was added in vSphere API 6.7.
 #
 # SourceApplianceSpec#
 sub get_source_appliance {
@@ -692,7 +692,7 @@ sub get_source_appliance {
 # Sets the given value for 'source_appliance' property.
 # 
 # @param source_appliance  - New value for the field.
-# Source appliance spec. This  *field*  was added in vSphere API 6.7
+# Source appliance spec. This  *field*  was added in vSphere API 6.7.
 #
 sub set_source_appliance {
    my ($self, %args) = @_;
@@ -704,7 +704,7 @@ sub set_source_appliance {
 # Gets the value of 'source_location' property.
 #
 # @retval source_location - The current value of the field.
-# Source location spec. This  *field*  was added in vSphere API 6.7
+# Source location spec. This  *field*  was added in vSphere API 6.7.
 #
 # LocationSpec#
 sub get_source_location {
@@ -716,7 +716,7 @@ sub get_source_location {
 # Sets the given value for 'source_location' property.
 # 
 # @param source_location  - New value for the field.
-# Source location spec. This  *field*  was added in vSphere API 6.7
+# Source location spec. This  *field*  was added in vSphere API 6.7.
 #
 sub set_source_location {
    my ($self, %args) = @_;
@@ -735,7 +735,7 @@ sub set_source_location {
 #  <li>Tasks</li>
 # </ul> By default only core data will be migrated. Use this spec to define which part
 #     of vCenter history data will be migrated and when. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_history {
@@ -754,7 +754,7 @@ sub get_history {
 #  <li>Tasks</li>
 # </ul> By default only core data will be migrated. Use this spec to define which part
 #     of vCenter history data will be migrated and when. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_history {
    my ($self, %args) = @_;
@@ -767,7 +767,7 @@ sub set_history {
 #
 # @retval vcsa_embedded - The current value of the field.
 # Information that are specific to this embedded vCenter Server. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # Optional#
 sub get_vcsa_embedded {
@@ -780,7 +780,7 @@ sub get_vcsa_embedded {
 # 
 # @param vcsa_embedded  - New value for the field.
 # Information that are specific to this embedded vCenter Server. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_vcsa_embedded {
    my ($self, %args) = @_;
@@ -793,7 +793,7 @@ sub set_vcsa_embedded {
 #
 # @retval psc - The current value of the field.
 # Information that are specific to this Platform Services Controller. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # Optional#
 sub get_psc {
@@ -806,7 +806,7 @@ sub get_psc {
 # 
 # @param psc  - New value for the field.
 # Information that are specific to this Platform Services Controller. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_psc {
    my ($self, %args) = @_;
@@ -819,7 +819,7 @@ sub set_psc {
 #
 # @retval auto_answer - The current value of the field.
 # Use the default option for any questions that may come up during appliance
-#     configuration. This  *field*  was added in vSphere API 6.7
+#     configuration. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_auto_answer {
@@ -832,7 +832,7 @@ sub get_auto_answer {
 # 
 # @param auto_answer  - New value for the field.
 # Use the default option for any questions that may come up during appliance
-#     configuration. This  *field*  was added in vSphere API 6.7
+#     configuration. This  *field*  was added in vSphere API 6.7.
 #
 sub set_auto_answer {
    my ($self, %args) = @_;

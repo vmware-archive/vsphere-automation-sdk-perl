@@ -12,7 +12,7 @@
 
 ## @class Com::Vmware::Appliance::Networking
 # The  ``Com::Vmware::Appliance::Networking``   *interface*  provides  *methods*  Get
-#     Network configurations. This  *interface*  was added in vSphere API 6.7
+#     Network configurations. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Networking;
@@ -59,7 +59,7 @@ sub new {
 
 ## @method get ()
 # Get Networking information for all configured interfaces. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @retval 
 # The Map of network configuration info for all interfaces.
@@ -76,7 +76,7 @@ sub get {
 
 
 ## @method update ()
-# Enable or Disable ipv6 on all interfaces. This  *method*  was added in vSphere API 6.7
+# Enable or Disable ipv6 on all interfaces. This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] update spec with optional boolean value
 # . The value must be Com::Vmware::Appliance::Networking::UpdateSpec.
@@ -99,7 +99,7 @@ sub update {
 
 ## @method reset ()
 # Reset and restarts network configuration on all interfaces, also this will renew the DHCP
-# lease for DHCP IP address. This  *method*  was added in vSphere API 6.7
+# lease for DHCP IP address. This  *method*  was added in vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
@@ -132,7 +132,7 @@ sub reset {
 #
 # The  ``Com::Vmware::Appliance::Networking::DNSInfo``   *class*  contains information
 #     about the DNS configuration of a virtual appliance. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::DNSInfo;
 
@@ -177,7 +177,7 @@ sub new {
 # Gets the value of 'mode' property.
 #
 # @retval mode - The current value of the field.
-# DNS mode. This  *field*  was added in vSphere API 6.7
+# DNS mode. This  *field*  was added in vSphere API 6.7.
 #
 # DnsMode#
 sub get_mode {
@@ -189,7 +189,7 @@ sub get_mode {
 # Sets the given value for 'mode' property.
 # 
 # @param mode  - New value for the field.
-# DNS mode. This  *field*  was added in vSphere API 6.7
+# DNS mode. This  *field*  was added in vSphere API 6.7.
 #
 sub set_mode {
    my ($self, %args) = @_;
@@ -201,7 +201,7 @@ sub set_mode {
 # Gets the value of 'hostname' property.
 #
 # @retval hostname - The current value of the field.
-# Hostname. This  *field*  was added in vSphere API 6.7
+# Hostname. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_hostname {
@@ -213,7 +213,7 @@ sub get_hostname {
 # Sets the given value for 'hostname' property.
 # 
 # @param hostname  - New value for the field.
-# Hostname. This  *field*  was added in vSphere API 6.7
+# Hostname. This  *field*  was added in vSphere API 6.7.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -225,7 +225,7 @@ sub set_hostname {
 # Gets the value of 'servers' property.
 #
 # @retval servers - The current value of the field.
-# Servers. This  *field*  was added in vSphere API 6.7
+# Servers. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_servers {
@@ -237,7 +237,7 @@ sub get_servers {
 # Sets the given value for 'servers' property.
 # 
 # @param servers  - New value for the field.
-# Servers. This  *field*  was added in vSphere API 6.7
+# Servers. This  *field*  was added in vSphere API 6.7.
 #
 sub set_servers {
    my ($self, %args) = @_;
@@ -252,17 +252,18 @@ sub set_servers {
 ## @class Com::Vmware::Appliance::Networking::DNSInfo::DNSMode
 #
 # The  ``Com::Vmware::Appliance::Networking::DNSInfo::DNSMode``   *enumerated type* 
-#     describes the source of DNS servers. This  *enumeration*  was added in vSphere API 6.7
+#     describes the source of DNS servers. This  *enumeration*  was added in vSphere API
+#     6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Networking::DNSInfo::DNSMode::DHCP #
 #The DNS servers addresses are obtained from a DHCP server. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Networking::DNSInfo::DNSMode::STATIC #
 #The DNS servers addresses are specified explicitly. This  *constant*  was added in vSphere
-# API 6.7
+# API 6.7.
 
 package Com::Vmware::Appliance::Networking::DNSInfo::DNSMode;
 
@@ -303,7 +304,7 @@ sub new {
 #
 # The  ``Com::Vmware::Appliance::Networking::Info``   *class*  contains information
 #     about the network configuration of a virtual appliance. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Info;
 
@@ -346,7 +347,7 @@ sub new {
 # Gets the value of 'dns' property.
 #
 # @retval dns - The current value of the field.
-# DNS configuration. This  *field*  was added in vSphere API 6.7
+# DNS configuration. This  *field*  was added in vSphere API 6.7.
 #
 # DnsInfo#
 sub get_dns {
@@ -358,7 +359,7 @@ sub get_dns {
 # Sets the given value for 'dns' property.
 # 
 # @param dns  - New value for the field.
-# DNS configuration. This  *field*  was added in vSphere API 6.7
+# DNS configuration. This  *field*  was added in vSphere API 6.7.
 #
 sub set_dns {
    my ($self, %args) = @_;
@@ -371,7 +372,7 @@ sub set_dns {
 #
 # @retval interfaces - The current value of the field.
 # Interface configuration as a key-value map where key is a network interface name, for
-#     example, &quot;nic0&quot;. This  *field*  was added in vSphere API 6.7
+#     example, &quot;nic0&quot;. This  *field*  was added in vSphere API 6.7.
 #
 # Map#
 sub get_interfaces {
@@ -384,7 +385,7 @@ sub get_interfaces {
 # 
 # @param interfaces  - New value for the field.
 # Interface configuration as a key-value map where key is a network interface name, for
-#     example, &quot;nic0&quot;. This  *field*  was added in vSphere API 6.7
+#     example, &quot;nic0&quot;. This  *field*  was added in vSphere API 6.7.
 #
 sub set_interfaces {
    my ($self, %args) = @_;
@@ -400,7 +401,7 @@ sub set_interfaces {
 #
 #
 # The  ``Com::Vmware::Appliance::Networking::UpdateSpec``   *class*  describes whether
-#     to enable or disable ipv6 on interfaces. This  *class*  was added in vSphere API 6.7
+#     to enable or disable ipv6 on interfaces. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::UpdateSpec;
 
@@ -441,7 +442,7 @@ sub new {
 # Gets the value of 'ipv6_enabled' property.
 #
 # @retval ipv6_enabled - The current value of the field.
-# IPv6 Enabled or not. This  *field*  was added in vSphere API 6.7
+# IPv6 Enabled or not. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ipv6_enabled {
@@ -453,7 +454,7 @@ sub get_ipv6_enabled {
 # Sets the given value for 'ipv6_enabled' property.
 # 
 # @param ipv6_enabled  - New value for the field.
-# IPv6 Enabled or not. This  *field*  was added in vSphere API 6.7
+# IPv6 Enabled or not. This  *field*  was added in vSphere API 6.7.
 #
 sub set_ipv6_enabled {
    my ($self, %args) = @_;

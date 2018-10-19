@@ -333,7 +333,7 @@ sub set_location_password {
 # Gets the value of 'sso_admin_user_name' property.
 #
 # @retval sso_admin_user_name - The current value of the field.
-# Administrators username for SSO. This  *field*  was added in vSphere API 6.7
+# Administrators username for SSO. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_sso_admin_user_name {
@@ -345,7 +345,7 @@ sub get_sso_admin_user_name {
 # Sets the given value for 'sso_admin_user_name' property.
 # 
 # @param sso_admin_user_name  - New value for the field.
-# Administrators username for SSO. This  *field*  was added in vSphere API 6.7
+# Administrators username for SSO. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_user_name {
    my ($self, %args) = @_;
@@ -357,7 +357,7 @@ sub set_sso_admin_user_name {
 # Gets the value of 'sso_admin_user_password' property.
 #
 # @retval sso_admin_user_password - The current value of the field.
-# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_sso_admin_user_password {
@@ -369,7 +369,7 @@ sub get_sso_admin_user_password {
 # Sets the given value for 'sso_admin_user_password' property.
 # 
 # @param sso_admin_user_password  - New value for the field.
-# The password for SSO admin user. This  *field*  was added in vSphere API 6.7
+# The password for SSO admin user. This  *field*  was added in vSphere API 6.7.
 #
 sub set_sso_admin_user_password {
    my ($self, %args) = @_;
@@ -658,7 +658,7 @@ sub set_boxname {
 #
 # @retval sso_login_required - The current value of the field.
 # Is SSO login required for the vCenter server. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # optional#
 sub get_sso_login_required {
@@ -671,7 +671,7 @@ sub get_sso_login_required {
 # 
 # @param sso_login_required  - New value for the field.
 # Is SSO login required for the vCenter server. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_sso_login_required {
    my ($self, %args) = @_;

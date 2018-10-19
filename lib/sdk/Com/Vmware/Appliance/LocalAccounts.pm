@@ -12,7 +12,7 @@
 
 ## @class Com::Vmware::Appliance::LocalAccounts
 # The  ``Com::Vmware::Appliance::LocalAccounts``   *interface*  provides  *methods*  to
-#     manage local user account. This  *interface*  was added in vSphere API 6.7
+#     manage local user account. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::LocalAccounts;
@@ -58,7 +58,7 @@ sub new {
 }
 
 ## @method get ()
-# Get the local user account information. This  *method*  was added in vSphere API 6.7
+# Get the local user account information. This  *method*  was added in vSphere API 6.7.
 #
 # @param username [REQUIRED] User login name
 # . The value must be String.
@@ -87,7 +87,7 @@ sub get {
 
 
 ## @method list ()
-# Get a list of the local user accounts. This  *method*  was added in vSphere API 6.7
+# Get a list of the local user accounts. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # List of identifiers
@@ -106,7 +106,7 @@ sub list {
 
 
 ## @method create ()
-# Create a new local user account. This  *method*  was added in vSphere API 6.7
+# Create a new local user account. This  *method*  was added in vSphere API 6.7.
 #
 # @param username [REQUIRED] User login name
 # The value must be an identifier for the resource type
@@ -141,7 +141,7 @@ sub create {
 
 
 ## @method set ()
-# Set local user account properties. This  *method*  was added in vSphere API 6.7
+# Set local user account properties. This  *method*  was added in vSphere API 6.7.
 #
 # @param username [REQUIRED] User login name
 # The value must be an identifier for the resource type
@@ -173,7 +173,7 @@ sub set {
 
 ## @method update ()
 # Update selected fields in local user account properties. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @param username [REQUIRED] User login name
 # The value must be an identifier for the resource type
@@ -204,7 +204,7 @@ sub update {
 
 
 ## @method delete ()
-# Delete a local user account. This  *method*  was added in vSphere API 6.7
+# Delete a local user account. This  *method*  was added in vSphere API 6.7.
 #
 # @param username [REQUIRED] User login name
 # The value must be an identifier for the resource type
@@ -250,7 +250,7 @@ sub delete {
 #
 #
 # The  ``Com::Vmware::Appliance::LocalAccounts::Info``   *class*  defines the local
-#     account properties. This  *class*  was added in vSphere API 6.7
+#     account properties. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::LocalAccounts::Info;
 
@@ -311,7 +311,7 @@ sub new {
 # Gets the value of 'fullname' property.
 #
 # @retval fullname - The current value of the field.
-# Full name of the user. This  *field*  was added in vSphere API 6.7
+# Full name of the user. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_fullname {
@@ -323,7 +323,7 @@ sub get_fullname {
 # Sets the given value for 'fullname' property.
 # 
 # @param fullname  - New value for the field.
-# Full name of the user. This  *field*  was added in vSphere API 6.7
+# Full name of the user. This  *field*  was added in vSphere API 6.7.
 #
 sub set_fullname {
    my ($self, %args) = @_;
@@ -335,7 +335,7 @@ sub set_fullname {
 # Gets the value of 'email' property.
 #
 # @retval email - The current value of the field.
-# Email address of the local account. This  *field*  was added in vSphere API 6.7
+# Email address of the local account. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_email {
@@ -347,7 +347,7 @@ sub get_email {
 # Sets the given value for 'email' property.
 # 
 # @param email  - New value for the field.
-# Email address of the local account. This  *field*  was added in vSphere API 6.7
+# Email address of the local account. This  *field*  was added in vSphere API 6.7.
 #
 sub set_email {
    my ($self, %args) = @_;
@@ -359,7 +359,7 @@ sub set_email {
 # Gets the value of 'roles' property.
 #
 # @retval roles - The current value of the field.
-# User roles. This  *field*  was added in vSphere API 6.7
+# User roles. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_roles {
@@ -371,7 +371,7 @@ sub get_roles {
 # Sets the given value for 'roles' property.
 # 
 # @param roles  - New value for the field.
-# User roles. This  *field*  was added in vSphere API 6.7
+# User roles. This  *field*  was added in vSphere API 6.7.
 #
 sub set_roles {
    my ($self, %args) = @_;
@@ -383,7 +383,8 @@ sub set_roles {
 # Gets the value of 'enabled' property.
 #
 # @retval enabled - The current value of the field.
-# Flag indicating if the account is enabled. This  *field*  was added in vSphere API 6.7
+# Flag indicating if the account is enabled. This  *field*  was added in vSphere API
+#     6.7.
 #
 # boolean#
 sub get_enabled {
@@ -395,7 +396,8 @@ sub get_enabled {
 # Sets the given value for 'enabled' property.
 # 
 # @param enabled  - New value for the field.
-# Flag indicating if the account is enabled. This  *field*  was added in vSphere API 6.7
+# Flag indicating if the account is enabled. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_enabled {
    my ($self, %args) = @_;
@@ -407,7 +409,7 @@ sub set_enabled {
 # Gets the value of 'has_password' property.
 #
 # @retval has_password - The current value of the field.
-# Is the user password set. This  *field*  was added in vSphere API 6.7
+# Is the user password set. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_has_password {
@@ -419,7 +421,7 @@ sub get_has_password {
 # Sets the given value for 'has_password' property.
 # 
 # @param has_password  - New value for the field.
-# Is the user password set. This  *field*  was added in vSphere API 6.7
+# Is the user password set. This  *field*  was added in vSphere API 6.7.
 #
 sub set_has_password {
    my ($self, %args) = @_;
@@ -431,7 +433,7 @@ sub set_has_password {
 # Gets the value of 'last_password_change' property.
 #
 # @retval last_password_change - The current value of the field.
-# Date and time password was changed. This  *field*  was added in vSphere API 6.7
+# Date and time password was changed. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_last_password_change {
@@ -443,7 +445,7 @@ sub get_last_password_change {
 # Sets the given value for 'last_password_change' property.
 # 
 # @param last_password_change  - New value for the field.
-# Date and time password was changed. This  *field*  was added in vSphere API 6.7
+# Date and time password was changed. This  *field*  was added in vSphere API 6.7.
 #
 sub set_last_password_change {
    my ($self, %args) = @_;
@@ -456,7 +458,7 @@ sub set_last_password_change {
 #
 # @retval password_expires_at - The current value of the field.
 # Date when the account&apos;s password will expire. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_password_expires_at {
@@ -469,7 +471,7 @@ sub get_password_expires_at {
 # 
 # @param password_expires_at  - New value for the field.
 # Date when the account&apos;s password will expire. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_password_expires_at {
    my ($self, %args) = @_;
@@ -482,7 +484,7 @@ sub set_password_expires_at {
 #
 # @retval inactive_at - The current value of the field.
 # Date and time account will be locked after password expiration. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # Optional#
 sub get_inactive_at {
@@ -495,7 +497,7 @@ sub get_inactive_at {
 # 
 # @param inactive_at  - New value for the field.
 # Date and time account will be locked after password expiration. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_inactive_at {
    my ($self, %args) = @_;
@@ -508,7 +510,7 @@ sub set_inactive_at {
 #
 # @retval min_days_between_password_change - The current value of the field.
 # Minimum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_min_days_between_password_change {
@@ -521,7 +523,7 @@ sub get_min_days_between_password_change {
 # 
 # @param min_days_between_password_change  - New value for the field.
 # Minimum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_min_days_between_password_change {
    my ($self, %args) = @_;
@@ -534,7 +536,7 @@ sub set_min_days_between_password_change {
 #
 # @retval max_days_between_password_change - The current value of the field.
 # Maximum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_max_days_between_password_change {
@@ -547,7 +549,7 @@ sub get_max_days_between_password_change {
 # 
 # @param max_days_between_password_change  - New value for the field.
 # Maximum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_max_days_between_password_change {
    my ($self, %args) = @_;
@@ -560,7 +562,7 @@ sub set_max_days_between_password_change {
 #
 # @retval warn_days_before_password_expiration - The current value of the field.
 # Number of days of warning before password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_warn_days_before_password_expiration {
@@ -573,7 +575,7 @@ sub get_warn_days_before_password_expiration {
 # 
 # @param warn_days_before_password_expiration  - New value for the field.
 # Number of days of warning before password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_warn_days_before_password_expiration {
    my ($self, %args) = @_;
@@ -589,7 +591,7 @@ sub set_warn_days_before_password_expiration {
 #
 #
 # The  ``Com::Vmware::Appliance::LocalAccounts::Config``   *class*  defines the
-#     information required for the account. This  *class*  was added in vSphere API 6.7
+#     information required for the account. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::LocalAccounts::Config;
 
@@ -654,7 +656,7 @@ sub new {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password. This  *field*  was added in vSphere API 6.7
+# Password. This  *field*  was added in vSphere API 6.7.
 #
 # Secret#
 sub get_password {
@@ -666,7 +668,7 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password. This  *field*  was added in vSphere API 6.7
+# Password. This  *field*  was added in vSphere API 6.7.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -680,7 +682,7 @@ sub set_password {
 # @retval old_password - The current value of the field.
 # Old password of the user (required in case of the password change, not required if
 #     superAdmin user changes the password of the other user). This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_old_password {
@@ -694,7 +696,7 @@ sub get_old_password {
 # @param old_password  - New value for the field.
 # Old password of the user (required in case of the password change, not required if
 #     superAdmin user changes the password of the other user). This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_old_password {
    my ($self, %args) = @_;
@@ -706,7 +708,7 @@ sub set_old_password {
 # Gets the value of 'full_name' property.
 #
 # @retval full_name - The current value of the field.
-# Full name of the user. This  *field*  was added in vSphere API 6.7
+# Full name of the user. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_full_name {
@@ -718,7 +720,7 @@ sub get_full_name {
 # Sets the given value for 'full_name' property.
 # 
 # @param full_name  - New value for the field.
-# Full name of the user. This  *field*  was added in vSphere API 6.7
+# Full name of the user. This  *field*  was added in vSphere API 6.7.
 #
 sub set_full_name {
    my ($self, %args) = @_;
@@ -730,7 +732,7 @@ sub set_full_name {
 # Gets the value of 'email' property.
 #
 # @retval email - The current value of the field.
-# Email address of the local account. This  *field*  was added in vSphere API 6.7
+# Email address of the local account. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_email {
@@ -742,7 +744,7 @@ sub get_email {
 # Sets the given value for 'email' property.
 # 
 # @param email  - New value for the field.
-# Email address of the local account. This  *field*  was added in vSphere API 6.7
+# Email address of the local account. This  *field*  was added in vSphere API 6.7.
 #
 sub set_email {
    my ($self, %args) = @_;
@@ -754,7 +756,7 @@ sub set_email {
 # Gets the value of 'roles' property.
 #
 # @retval roles - The current value of the field.
-# User roles. This  *field*  was added in vSphere API 6.7
+# User roles. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_roles {
@@ -766,7 +768,7 @@ sub get_roles {
 # Sets the given value for 'roles' property.
 # 
 # @param roles  - New value for the field.
-# User roles. This  *field*  was added in vSphere API 6.7
+# User roles. This  *field*  was added in vSphere API 6.7.
 #
 sub set_roles {
    my ($self, %args) = @_;
@@ -778,7 +780,8 @@ sub set_roles {
 # Gets the value of 'enabled' property.
 #
 # @retval enabled - The current value of the field.
-# Flag indicating if the account is enabled. This  *field*  was added in vSphere API 6.7
+# Flag indicating if the account is enabled. This  *field*  was added in vSphere API
+#     6.7.
 #
 # Optional#
 sub get_enabled {
@@ -790,7 +793,8 @@ sub get_enabled {
 # Sets the given value for 'enabled' property.
 # 
 # @param enabled  - New value for the field.
-# Flag indicating if the account is enabled. This  *field*  was added in vSphere API 6.7
+# Flag indicating if the account is enabled. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_enabled {
    my ($self, %args) = @_;
@@ -803,7 +807,7 @@ sub set_enabled {
 #
 # @retval password_expires - The current value of the field.
 # Flag indicating if the account password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_password_expires {
@@ -816,7 +820,7 @@ sub get_password_expires {
 # 
 # @param password_expires  - New value for the field.
 # Flag indicating if the account password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_password_expires {
    my ($self, %args) = @_;
@@ -829,7 +833,7 @@ sub set_password_expires {
 #
 # @retval password_expires_at - The current value of the field.
 # Date when the account&apos;s password will expire. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_password_expires_at {
@@ -842,7 +846,7 @@ sub get_password_expires_at {
 # 
 # @param password_expires_at  - New value for the field.
 # Date when the account&apos;s password will expire. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_password_expires_at {
    my ($self, %args) = @_;
@@ -855,7 +859,7 @@ sub set_password_expires_at {
 #
 # @retval inactive_after_password_expiration - The current value of the field.
 # Flag indicating if the account will be locked after password expiration. This  *field*
-#      was added in vSphere API 6.7
+#      was added in vSphere API 6.7.
 #
 # Optional#
 sub get_inactive_after_password_expiration {
@@ -868,7 +872,7 @@ sub get_inactive_after_password_expiration {
 # 
 # @param inactive_after_password_expiration  - New value for the field.
 # Flag indicating if the account will be locked after password expiration. This  *field*
-#      was added in vSphere API 6.7
+#      was added in vSphere API 6.7.
 #
 sub set_inactive_after_password_expiration {
    my ($self, %args) = @_;
@@ -881,7 +885,7 @@ sub set_inactive_after_password_expiration {
 #
 # @retval days_after_password_expiration - The current value of the field.
 # Number of days after password expiration before the account will be locked. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_days_after_password_expiration {
@@ -894,7 +898,7 @@ sub get_days_after_password_expiration {
 # 
 # @param days_after_password_expiration  - New value for the field.
 # Number of days after password expiration before the account will be locked. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_days_after_password_expiration {
    my ($self, %args) = @_;
@@ -907,7 +911,7 @@ sub set_days_after_password_expiration {
 #
 # @retval min_days_between_password_change - The current value of the field.
 # Minimum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_min_days_between_password_change {
@@ -920,7 +924,7 @@ sub get_min_days_between_password_change {
 # 
 # @param min_days_between_password_change  - New value for the field.
 # Minimum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_min_days_between_password_change {
    my ($self, %args) = @_;
@@ -933,7 +937,7 @@ sub set_min_days_between_password_change {
 #
 # @retval max_days_between_password_change - The current value of the field.
 # Maximum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_max_days_between_password_change {
@@ -946,7 +950,7 @@ sub get_max_days_between_password_change {
 # 
 # @param max_days_between_password_change  - New value for the field.
 # Maximum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_max_days_between_password_change {
    my ($self, %args) = @_;
@@ -959,7 +963,7 @@ sub set_max_days_between_password_change {
 #
 # @retval warn_days_before_password_expiration - The current value of the field.
 # Number of days of warning before password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_warn_days_before_password_expiration {
@@ -972,7 +976,7 @@ sub get_warn_days_before_password_expiration {
 # 
 # @param warn_days_before_password_expiration  - New value for the field.
 # Number of days of warning before password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_warn_days_before_password_expiration {
    my ($self, %args) = @_;
@@ -988,7 +992,7 @@ sub set_warn_days_before_password_expiration {
 #
 #
 # The  ``Com::Vmware::Appliance::LocalAccounts::UpdateConfig``   *class*  defines the
-#     fields that might be updated. This  *class*  was added in vSphere API 6.7
+#     fields that might be updated. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::LocalAccounts::UpdateConfig;
 
@@ -1053,7 +1057,7 @@ sub new {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password. This  *field*  was added in vSphere API 6.7
+# Password. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_password {
@@ -1065,7 +1069,7 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password. This  *field*  was added in vSphere API 6.7
+# Password. This  *field*  was added in vSphere API 6.7.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -1079,7 +1083,7 @@ sub set_password {
 # @retval old_password - The current value of the field.
 # Old password of the user (required in case of the password change, not required if
 #     superAdmin user changes the password of the other user). This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_old_password {
@@ -1093,7 +1097,7 @@ sub get_old_password {
 # @param old_password  - New value for the field.
 # Old password of the user (required in case of the password change, not required if
 #     superAdmin user changes the password of the other user). This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_old_password {
    my ($self, %args) = @_;
@@ -1105,7 +1109,7 @@ sub set_old_password {
 # Gets the value of 'full_name' property.
 #
 # @retval full_name - The current value of the field.
-# Full name of the user. This  *field*  was added in vSphere API 6.7
+# Full name of the user. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_full_name {
@@ -1117,7 +1121,7 @@ sub get_full_name {
 # Sets the given value for 'full_name' property.
 # 
 # @param full_name  - New value for the field.
-# Full name of the user. This  *field*  was added in vSphere API 6.7
+# Full name of the user. This  *field*  was added in vSphere API 6.7.
 #
 sub set_full_name {
    my ($self, %args) = @_;
@@ -1129,7 +1133,7 @@ sub set_full_name {
 # Gets the value of 'email' property.
 #
 # @retval email - The current value of the field.
-# Email address of the local account. This  *field*  was added in vSphere API 6.7
+# Email address of the local account. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_email {
@@ -1141,7 +1145,7 @@ sub get_email {
 # Sets the given value for 'email' property.
 # 
 # @param email  - New value for the field.
-# Email address of the local account. This  *field*  was added in vSphere API 6.7
+# Email address of the local account. This  *field*  was added in vSphere API 6.7.
 #
 sub set_email {
    my ($self, %args) = @_;
@@ -1153,7 +1157,7 @@ sub set_email {
 # Gets the value of 'roles' property.
 #
 # @retval roles - The current value of the field.
-# User roles. This  *field*  was added in vSphere API 6.7
+# User roles. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_roles {
@@ -1165,7 +1169,7 @@ sub get_roles {
 # Sets the given value for 'roles' property.
 # 
 # @param roles  - New value for the field.
-# User roles. This  *field*  was added in vSphere API 6.7
+# User roles. This  *field*  was added in vSphere API 6.7.
 #
 sub set_roles {
    my ($self, %args) = @_;
@@ -1177,7 +1181,8 @@ sub set_roles {
 # Gets the value of 'enabled' property.
 #
 # @retval enabled - The current value of the field.
-# Flag indicating if the account is enabled. This  *field*  was added in vSphere API 6.7
+# Flag indicating if the account is enabled. This  *field*  was added in vSphere API
+#     6.7.
 #
 # Optional#
 sub get_enabled {
@@ -1189,7 +1194,8 @@ sub get_enabled {
 # Sets the given value for 'enabled' property.
 # 
 # @param enabled  - New value for the field.
-# Flag indicating if the account is enabled. This  *field*  was added in vSphere API 6.7
+# Flag indicating if the account is enabled. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_enabled {
    my ($self, %args) = @_;
@@ -1202,7 +1208,7 @@ sub set_enabled {
 #
 # @retval password_expires - The current value of the field.
 # Flag indicating if the account password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_password_expires {
@@ -1215,7 +1221,7 @@ sub get_password_expires {
 # 
 # @param password_expires  - New value for the field.
 # Flag indicating if the account password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_password_expires {
    my ($self, %args) = @_;
@@ -1228,7 +1234,7 @@ sub set_password_expires {
 #
 # @retval password_expires_at - The current value of the field.
 # Date when the account&apos;s password will expire. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_password_expires_at {
@@ -1241,7 +1247,7 @@ sub get_password_expires_at {
 # 
 # @param password_expires_at  - New value for the field.
 # Date when the account&apos;s password will expire. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_password_expires_at {
    my ($self, %args) = @_;
@@ -1254,7 +1260,7 @@ sub set_password_expires_at {
 #
 # @retval inactive_after_password_expiration - The current value of the field.
 # Flag indicating if the account will be locked after password expiration. This  *field*
-#      was added in vSphere API 6.7
+#      was added in vSphere API 6.7.
 #
 # Optional#
 sub get_inactive_after_password_expiration {
@@ -1267,7 +1273,7 @@ sub get_inactive_after_password_expiration {
 # 
 # @param inactive_after_password_expiration  - New value for the field.
 # Flag indicating if the account will be locked after password expiration. This  *field*
-#      was added in vSphere API 6.7
+#      was added in vSphere API 6.7.
 #
 sub set_inactive_after_password_expiration {
    my ($self, %args) = @_;
@@ -1280,7 +1286,7 @@ sub set_inactive_after_password_expiration {
 #
 # @retval days_after_password_expiration - The current value of the field.
 # Number of days after password expiration before the account will be locked. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_days_after_password_expiration {
@@ -1293,7 +1299,7 @@ sub get_days_after_password_expiration {
 # 
 # @param days_after_password_expiration  - New value for the field.
 # Number of days after password expiration before the account will be locked. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_days_after_password_expiration {
    my ($self, %args) = @_;
@@ -1306,7 +1312,7 @@ sub set_days_after_password_expiration {
 #
 # @retval min_days_between_password_change - The current value of the field.
 # Minimum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_min_days_between_password_change {
@@ -1319,7 +1325,7 @@ sub get_min_days_between_password_change {
 # 
 # @param min_days_between_password_change  - New value for the field.
 # Minimum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_min_days_between_password_change {
    my ($self, %args) = @_;
@@ -1332,7 +1338,7 @@ sub set_min_days_between_password_change {
 #
 # @retval max_days_between_password_change - The current value of the field.
 # Maximum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_max_days_between_password_change {
@@ -1345,7 +1351,7 @@ sub get_max_days_between_password_change {
 # 
 # @param max_days_between_password_change  - New value for the field.
 # Maximum number of days between password change. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_max_days_between_password_change {
    my ($self, %args) = @_;
@@ -1358,7 +1364,7 @@ sub set_max_days_between_password_change {
 #
 # @retval warn_days_before_password_expiration - The current value of the field.
 # Number of days of warning before password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Optional#
 sub get_warn_days_before_password_expiration {
@@ -1371,7 +1377,7 @@ sub get_warn_days_before_password_expiration {
 # 
 # @param warn_days_before_password_expiration  - New value for the field.
 # Number of days of warning before password expires. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_warn_days_before_password_expiration {
    my ($self, %args) = @_;

@@ -12,7 +12,7 @@
 
 ## @class Com::Vmware::Appliance::Services
 # The  ``Service``   *interface*  provides  *methods*  to manage a single/set of
-#     appliance services. This  *interface*  was added in vSphere API 6.7
+#     appliance services. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Services;
@@ -58,7 +58,7 @@ sub new {
 }
 
 ## @method start ()
-# Starts a service. This  *method*  was added in vSphere API 6.7
+# Starts a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service to start
 # The value must be an identifier for the resource type
@@ -95,7 +95,7 @@ sub start {
 
 
 ## @method stop ()
-# Stops a service. This  *method*  was added in vSphere API 6.7
+# Stops a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service to stop
 # The value must be an identifier for the resource type
@@ -126,7 +126,7 @@ sub stop {
 
 
 ## @method restart ()
-# Restarts a service. This  *method*  was added in vSphere API 6.7
+# Restarts a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service to restart
 # The value must be an identifier for the resource type
@@ -162,7 +162,7 @@ sub restart {
 
 
 ## @method get ()
-# Returns the state of a service. This  *method*  was added in vSphere API 6.7
+# Returns the state of a service. This  *method*  was added in vSphere API 6.7.
 #
 # @param service [REQUIRED] identifier of the service whose state is being queried.
 # The value must be an identifier for the resource type
@@ -193,7 +193,7 @@ sub get {
 
 
 ## @method list ()
-# Lists details of vCenter services. This  *method*  was added in vSphere API 6.7
+# Lists details of vCenter services. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # Map of service identifiers to service Info structures.
@@ -220,24 +220,24 @@ sub list {
 ## @class Com::Vmware::Appliance::Services::State
 #
 # The  ``Com::Vmware::Appliance::Services::State``   *enumerated type*  defines valid
-#     Run State for services. This  *enumeration*  was added in vSphere API 6.7
+#     Run State for services. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Services::State::STARTING #
 #Service Run State is Starting, it is still not functional. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Services::State::STOPPING #
 #Service Run State is Stopping, it is not functional. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Services::State::STARTED #
 #Service Run State is Started, it is fully functional. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Services::State::STOPPED #
-#Service Run State is Stopped. This  *constant*  was added in vSphere API 6.7
+#Service Run State is Stopped. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Services::State;
 
@@ -287,7 +287,7 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Appliance::Services::Info``   *class*  contains information about
-#     a service. This  *class*  was added in vSphere API 6.7
+#     a service. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Services::Info;
 
@@ -330,7 +330,7 @@ sub new {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Service description. This  *field*  was added in vSphere API 6.7
+# Service description. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_description {
@@ -342,7 +342,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Service description. This  *field*  was added in vSphere API 6.7
+# Service description. This  *field*  was added in vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -354,7 +354,7 @@ sub set_description {
 # Gets the value of 'state' property.
 #
 # @retval state - The current value of the field.
-# Running State. This  *field*  was added in vSphere API 6.7
+# Running State. This  *field*  was added in vSphere API 6.7.
 #
 # State#
 sub get_state {
@@ -366,7 +366,7 @@ sub get_state {
 # Sets the given value for 'state' property.
 # 
 # @param state  - New value for the field.
-# Running State. This  *field*  was added in vSphere API 6.7
+# Running State. This  *field*  was added in vSphere API 6.7.
 #
 sub set_state {
    my ($self, %args) = @_;

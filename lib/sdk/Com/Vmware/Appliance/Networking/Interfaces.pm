@@ -293,7 +293,7 @@ sub set_mac {
 # Gets the value of 'ipv4' property.
 #
 # @retval ipv4 - The current value of the field.
-# IPv4 Address information. This  *field*  was added in vSphere API 6.7
+# IPv4 Address information. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ipv4 {
@@ -305,7 +305,7 @@ sub get_ipv4 {
 # Sets the given value for 'ipv4' property.
 # 
 # @param ipv4  - New value for the field.
-# IPv4 Address information. This  *field*  was added in vSphere API 6.7
+# IPv4 Address information. This  *field*  was added in vSphere API 6.7.
 #
 sub set_ipv4 {
    my ($self, %args) = @_;
@@ -317,7 +317,7 @@ sub set_ipv4 {
 # Gets the value of 'ipv6' property.
 #
 # @retval ipv6 - The current value of the field.
-# IPv6 Address information. This  *field*  was added in vSphere API 6.7
+# IPv6 Address information. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_ipv6 {
@@ -329,7 +329,7 @@ sub get_ipv6 {
 # Sets the given value for 'ipv6' property.
 # 
 # @param ipv6  - New value for the field.
-# IPv6 Address information. This  *field*  was added in vSphere API 6.7
+# IPv6 Address information. This  *field*  was added in vSphere API 6.7.
 #
 sub set_ipv6 {
    my ($self, %args) = @_;

@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Deployment::Question
 # The  ``Com::Vmware::Vcenter::Deployment::Question``   *interface*  provides  *methods*
 #     to get the question raised during deployment and to answer them. This  *interface* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::Question;
@@ -61,7 +61,7 @@ sub new {
 
 ## @method get ()
 # Get the question that was raised during the configuration. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @retval 
 # Info structure containing the question.
@@ -85,7 +85,7 @@ sub get {
 
 
 ## @method answer ()
-# Supply answer to the raised question. This  *method*  was added in vSphere API 6.7
+# Supply answer to the raised question. This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] AnswerSpec with the answer to the raised question.
 # . The value must be Com::Vmware::Vcenter::Deployment::Question::AnswerSpec.
@@ -125,19 +125,19 @@ sub answer {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Question::QuestionType``   *enumerated type* 
 #     defines the type of the question raised. This  *enumeration*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::Question::QuestionType::YES_NO #
-#Question with answer values Yes/No. This  *constant*  was added in vSphere API 6.7
+#Question with answer values Yes/No. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::Question::QuestionType::OK_CANCEL #
-#Question with answer values Ok/Cancel. This  *constant*  was added in vSphere API 6.7
+#Question with answer values Ok/Cancel. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::Question::QuestionType::ABORT_RETRY_IGNORE #
 #Question with answer values Abort/Retry/Ignore. This  *constant*  was added in vSphere API
-# 6.7
+# 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Question::QuestionType;
 
@@ -187,7 +187,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Question::Question``   *class*  contains 
 #     *fields*  to describe a deployment question. This  *class*  was added in vSphere API
-#     6.7
+#     6.7.
 
 package Com::Vmware::Vcenter::Deployment::Question::Question;
 
@@ -236,7 +236,7 @@ sub new {
 # Gets the value of 'id' property.
 #
 # @retval id - The current value of the field.
-# Id of the question raised. This  *field*  was added in vSphere API 6.7
+# Id of the question raised. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_id {
@@ -248,7 +248,7 @@ sub get_id {
 # Sets the given value for 'id' property.
 # 
 # @param id  - New value for the field.
-# Id of the question raised. This  *field*  was added in vSphere API 6.7
+# Id of the question raised. This  *field*  was added in vSphere API 6.7.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -260,7 +260,7 @@ sub set_id {
 # Gets the value of 'question' property.
 #
 # @retval question - The current value of the field.
-# Message describing the question. This  *field*  was added in vSphere API 6.7
+# Message describing the question. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_question {
@@ -272,7 +272,7 @@ sub get_question {
 # Sets the given value for 'question' property.
 # 
 # @param question  - New value for the field.
-# Message describing the question. This  *field*  was added in vSphere API 6.7
+# Message describing the question. This  *field*  was added in vSphere API 6.7.
 #
 sub set_question {
    my ($self, %args) = @_;
@@ -284,7 +284,7 @@ sub set_question {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# Type of the question raised. This  *field*  was added in vSphere API 6.7
+# Type of the question raised. This  *field*  was added in vSphere API 6.7.
 #
 # QuestionType#
 sub get_type {
@@ -296,7 +296,7 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# Type of the question raised. This  *field*  was added in vSphere API 6.7
+# Type of the question raised. This  *field*  was added in vSphere API 6.7.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -308,7 +308,7 @@ sub set_type {
 # Gets the value of 'default_answer' property.
 #
 # @retval default_answer - The current value of the field.
-# Default answer value. This  *field*  was added in vSphere API 6.7
+# Default answer value. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_default_answer {
@@ -320,7 +320,7 @@ sub get_default_answer {
 # Sets the given value for 'default_answer' property.
 # 
 # @param default_answer  - New value for the field.
-# Default answer value. This  *field*  was added in vSphere API 6.7
+# Default answer value. This  *field*  was added in vSphere API 6.7.
 #
 sub set_default_answer {
    my ($self, %args) = @_;
@@ -332,7 +332,7 @@ sub set_default_answer {
 # Gets the value of 'possible_answers' property.
 #
 # @retval possible_answers - The current value of the field.
-# Possible answers values. This  *field*  was added in vSphere API 6.7
+# Possible answers values. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_possible_answers {
@@ -344,7 +344,7 @@ sub get_possible_answers {
 # Sets the given value for 'possible_answers' property.
 # 
 # @param possible_answers  - New value for the field.
-# Possible answers values. This  *field*  was added in vSphere API 6.7
+# Possible answers values. This  *field*  was added in vSphere API 6.7.
 #
 sub set_possible_answers {
    my ($self, %args) = @_;
@@ -361,7 +361,7 @@ sub set_possible_answers {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Question::Info``   *class*  contains 
 #     *fields*  to describe questions raised during the deployment process. This  *class* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Question::Info;
 
@@ -403,7 +403,7 @@ sub new {
 #
 # @retval questions - The current value of the field.
 # One or more questions raised during the deployment. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # List#
 sub get_questions {
@@ -416,7 +416,7 @@ sub get_questions {
 # 
 # @param questions  - New value for the field.
 # One or more questions raised during the deployment. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_questions {
    my ($self, %args) = @_;
@@ -433,7 +433,7 @@ sub set_questions {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Question::AnswerSpec``   *class*  contains 
 #     *fields*  to describe the answer to a raised question. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Question::AnswerSpec;
 
@@ -476,7 +476,7 @@ sub new {
 # Gets the value of 'question_id' property.
 #
 # @retval question_id - The current value of the field.
-# Id of the question being answered. This  *field*  was added in vSphere API 6.7
+# Id of the question being answered. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_question_id {
@@ -488,7 +488,7 @@ sub get_question_id {
 # Sets the given value for 'question_id' property.
 # 
 # @param question_id  - New value for the field.
-# Id of the question being answered. This  *field*  was added in vSphere API 6.7
+# Id of the question being answered. This  *field*  was added in vSphere API 6.7.
 #
 sub set_question_id {
    my ($self, %args) = @_;
@@ -500,7 +500,7 @@ sub set_question_id {
 # Gets the value of 'answer_val' property.
 #
 # @retval answer_val - The current value of the field.
-# The answer value. This  *field*  was added in vSphere API 6.7
+# The answer value. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_answer_val {
@@ -512,7 +512,7 @@ sub get_answer_val {
 # Sets the given value for 'answer_val' property.
 # 
 # @param answer_val  - New value for the field.
-# The answer value. This  *field*  was added in vSphere API 6.7
+# The answer value. This  *field*  was added in vSphere API 6.7.
 #
 sub set_answer_val {
    my ($self, %args) = @_;

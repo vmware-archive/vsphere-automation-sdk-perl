@@ -157,12 +157,20 @@ sub list {
 #
 # Constant Com::Vmware::Content::Library::Item::File::ChecksumAlgorithm::M_D5 #
 #Checksum algorithm: MD5
+#
+# Constant Com::Vmware::Content::Library::Item::File::ChecksumAlgorithm::SH_A256 #
+#Checksum algorithm: SHA-256. This  *constant*  was added in vSphere API 6.7 U1.
+#
+# Constant Com::Vmware::Content::Library::Item::File::ChecksumAlgorithm::SH_A512 #
+#Checksum algorithm: SHA-512. This  *constant*  was added in vSphere API 6.7 U1.
 
 package Com::Vmware::Content::Library::Item::File::ChecksumAlgorithm;
 
 use constant {
     SHA1 =>  'SHA1',
     MD5 =>  'MD5',
+    SHA256 =>  'SHA256',
+    SHA512 =>  'SHA512',
 };
 
 #
@@ -247,7 +255,7 @@ sub new {
 # Gets the value of 'algorithm' property.
 #
 # @retval algorithm - The current value of the field.
-# The checksum algorithm (SHA1, MD5) used to calculate the checksum.
+# The checksum algorithm (SHA1, MD5, SHA256, SHA512) used to calculate the checksum.
 #
 # Optional#
 sub get_algorithm {
@@ -259,7 +267,7 @@ sub get_algorithm {
 # Sets the given value for 'algorithm' property.
 # 
 # @param algorithm  - New value for the field.
-# The checksum algorithm (SHA1, MD5) used to calculate the checksum.
+# The checksum algorithm (SHA1, MD5, SHA256, SHA512) used to calculate the checksum.
 #
 sub set_algorithm {
    my ($self, %args) = @_;

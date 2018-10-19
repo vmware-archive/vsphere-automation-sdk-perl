@@ -2,17 +2,17 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::HistoryMigrationOption``   *enumerated type* 
 #     defines the vCenter history migration option choices. This  *enumeration*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::HistoryMigrationOption::EVENTS_TASKS #
 #Only event data and task data will be migrated along with the core data. This  *constant* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::HistoryMigrationOption::ALL #
 #All history data will be migrated along with the core data. This  *constant*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::HistoryMigrationOption;
 

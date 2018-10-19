@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Appliance::Logging::Forwarding
 # The  ``Com::Vmware::Appliance::Logging::Forwarding``   *interface*  provides 
 #     *methods*  to manage forwarding of log messages to remote logging servers. This 
-#     *interface*  was added in vSphere API 6.7
+#     *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Logging::Forwarding;
@@ -64,7 +64,7 @@ sub new {
 # machine and optionally sending a test diagnostic log message from the appliance to all
 # configured logging servers to allow manual end-to-end validation. The message that is sent
 # is: &quot;This is a diagnostic log test message from vCenter Server.&quot;. This  *method*
-#  was added in vSphere API 6.7
+#  was added in vSphere API 6.7.
 #
 # @param send_test_message [OPTIONAL] Flag specifying whether a default test message should be sent to the configured
 #     logging servers.
@@ -91,7 +91,7 @@ sub test {
 
 ## @method set ()
 # Sets the configuration for forwarding log messages to remote log servers. This  *method* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # @param cfg_list [REQUIRED] The cfgList is a list of Config structure that contains the log message forwarding
 #     rules in terms of the host, port, protocol of the log message.
@@ -122,7 +122,7 @@ sub set {
 
 ## @method get ()
 # Returns the configuration for forwarding log messages to remote logging servers. This 
-# *method*  was added in vSphere API 6.7
+# *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # Information about the configuration for forwarding log messages to remote logging
@@ -146,21 +146,21 @@ sub get {
 #
 # The  ``Com::Vmware::Appliance::Logging::Forwarding::Protocol``   *enumerated type* 
 #     defines transport protocols for outbound log messages. This  *enumeration*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Logging::Forwarding::Protocol::TLS #
 #Log messages will be forwarded to the remote host by using the TLS protocol. This 
-# *constant*  was added in vSphere API 6.7
+# *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Logging::Forwarding::Protocol::UDP #
 #Log messages will be forwarded to the remote host using the UDP protocol. This  *constant*
-#  was added in vSphere API 6.7
+#  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Logging::Forwarding::Protocol::TCP #
 #Log messages will be forwarded to the remote host using the TCP protocol. This  *constant*
-#  was added in vSphere API 6.7
+#  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Logging::Forwarding::Protocol;
 
@@ -210,7 +210,7 @@ sub new {
 #
 # The  ``Com::Vmware::Appliance::Logging::Forwarding::Config``   *class*  defines the
 #     configuration for log message forwarding to remote logging servers. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Logging::Forwarding::Config;
 
@@ -256,7 +256,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # FQDN or IP address of the logging server to which messages are forwarded. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_hostname {
@@ -269,7 +269,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # FQDN or IP address of the logging server to which messages are forwarded. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -282,7 +282,7 @@ sub set_hostname {
 #
 # @retval port - The current value of the field.
 # The port on which the remote logging server is listening for forwarded log messages.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_port {
@@ -295,7 +295,7 @@ sub get_port {
 # 
 # @param port  - New value for the field.
 # The port on which the remote logging server is listening for forwarded log messages.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 sub set_port {
    my ($self, %args) = @_;
@@ -308,7 +308,7 @@ sub set_port {
 #
 # @retval protocol - The current value of the field.
 # Transport protocol used to forward log messages. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Protocol#
 sub get_protocol {
@@ -321,7 +321,7 @@ sub get_protocol {
 # 
 # @param protocol  - New value for the field.
 # Transport protocol used to forward log messages. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_protocol {
    my ($self, %args) = @_;
@@ -391,7 +391,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # FQDN or IP address of the configured remote logging servers. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 # String#
 sub get_hostname {
@@ -404,7 +404,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # FQDN or IP address of the configured remote logging servers. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -417,7 +417,7 @@ sub set_hostname {
 #
 # @retval state - The current value of the field.
 # State of the configured remote logging server. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # State#
 sub get_state {
@@ -430,7 +430,7 @@ sub get_state {
 # 
 # @param state  - New value for the field.
 # State of the configured remote logging server. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -443,7 +443,7 @@ sub set_state {
 #
 # @retval message - The current value of the field.
 # Message associated with the state of the configured remote logging server. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_message {
@@ -456,7 +456,7 @@ sub get_message {
 # 
 # @param message  - New value for the field.
 # Message associated with the state of the configured remote logging server. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_message {
    my ($self, %args) = @_;
@@ -472,19 +472,20 @@ sub set_message {
 #
 # The  ``Com::Vmware::Appliance::Logging::Forwarding::ConnectionStatus::State``  
 #     *enumerated type*  defines the state values that a remote logging server can be in.
-#     This  *enumeration*  was added in vSphere API 6.7
+#     This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Logging::Forwarding::ConnectionStatus::State::UP #
-#The remote logging server is reachable. This  *constant*  was added in vSphere API 6.7
+#The remote logging server is reachable. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Logging::Forwarding::ConnectionStatus::State::DOWN #
-#The remote logging server is not reachable. This  *constant*  was added in vSphere API 6.7
+#The remote logging server is not reachable. This  *constant*  was added in vSphere API
+# 6.7.
 #
 # Constant Com::Vmware::Appliance::Logging::Forwarding::ConnectionStatus::State::UNKNOWN #
 #The status of remote logging server is unknown. This  *constant*  was added in vSphere API
-# 6.7
+# 6.7.
 
 package Com::Vmware::Appliance::Logging::Forwarding::ConnectionStatus::State;
 

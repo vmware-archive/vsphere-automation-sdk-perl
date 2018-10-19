@@ -90,7 +90,7 @@ sub resize {
 
 ## @method resize_ex ()
 # Resize all partitions to 100 percent of disk size. This  *method*  was added in vSphere
-# API 6.7
+# API 6.7.
 #
 # @retval 
 # List of the partitions with the size before and after resizing
@@ -221,7 +221,7 @@ sub set_partition {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of partition. This  *field*  was added in vSphere API 6.7
+# Description of partition. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_description {
@@ -233,7 +233,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of partition. This  *field*  was added in vSphere API 6.7
+# Description of partition. This  *field*  was added in vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -250,7 +250,7 @@ sub set_description {
 #
 # The  ``Com::Vmware::Appliance::System::Storage::StorageChange``   *class*  describes
 #     the changes in capasity of a storage partition. This  *class*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 
 package Com::Vmware::Appliance::System::Storage::StorageChange;
 
@@ -293,7 +293,7 @@ sub new {
 # Gets the value of 'old_size' property.
 #
 # @retval old_size - The current value of the field.
-# Original size of the partition in MB. This  *field*  was added in vSphere API 6.7
+# Original size of the partition in MB. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_old_size {
@@ -305,7 +305,7 @@ sub get_old_size {
 # Sets the given value for 'old_size' property.
 # 
 # @param old_size  - New value for the field.
-# Original size of the partition in MB. This  *field*  was added in vSphere API 6.7
+# Original size of the partition in MB. This  *field*  was added in vSphere API 6.7.
 #
 sub set_old_size {
    my ($self, %args) = @_;
@@ -317,7 +317,7 @@ sub set_old_size {
 # Gets the value of 'new_size' property.
 #
 # @retval new_size - The current value of the field.
-# Nedw size of the partition in MB. This  *field*  was added in vSphere API 6.7
+# Nedw size of the partition in MB. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_new_size {
@@ -329,7 +329,7 @@ sub get_new_size {
 # Sets the given value for 'new_size' property.
 # 
 # @param new_size  - New value for the field.
-# Nedw size of the partition in MB. This  *field*  was added in vSphere API 6.7
+# Nedw size of the partition in MB. This  *field*  was added in vSphere API 6.7.
 #
 sub set_new_size {
    my ($self, %args) = @_;

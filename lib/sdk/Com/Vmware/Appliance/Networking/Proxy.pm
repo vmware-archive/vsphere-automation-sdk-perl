@@ -13,7 +13,7 @@
 
 ## @class Com::Vmware::Appliance::Networking::Proxy
 # The  ``Com::Vmware::Appliance::Networking::Proxy``   *interface*  provides  *methods* 
-#     Proxy configuration. This  *interface*  was added in vSphere API 6.7
+#     Proxy configuration. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Networking::Proxy;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method test ()
 # Tests a proxy configuration by testing the connection to the proxy server and test host.
-# This  *method*  was added in vSphere API 6.7
+# This  *method*  was added in vSphere API 6.7.
 #
 # @param host [REQUIRED] A hostname, IPv4 or Ipv6 address.
 # . The value must be String.
@@ -96,7 +96,7 @@ sub test {
 ## @method set ()
 # Configures which proxy server to use for the specified protocol. This operation sets
 # environment variables for using proxy. In order for this configuration to take effect a
-# logout / service restart is required. This  *method*  was added in vSphere API 6.7
+# logout / service restart is required. This  *method*  was added in vSphere API 6.7.
 #
 # @param protocol [REQUIRED] The protocol for which proxy should be set.
 # . The value must be String.
@@ -123,7 +123,7 @@ sub set {
 
 ## @method delete ()
 # Deletes a proxy configuration for a specific protocol. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @param protocol [REQUIRED] ID whose proxy is to be deleted.
 # . The value must be String.
@@ -146,7 +146,7 @@ sub delete {
 
 ## @method list ()
 # Gets proxy configuration for all configured protocols. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @retval 
 # Proxy configuration for all configured protocols.
@@ -165,7 +165,7 @@ sub list {
 
 ## @method get ()
 # Gets the proxy configuration for a specific protocol. This  *method*  was added in vSphere
-# API 6.7
+# API 6.7.
 #
 # @param protocol [REQUIRED] The protocol whose proxy configuration is requested.
 # . The value must be String.
@@ -200,18 +200,18 @@ sub get {
 #
 # ``Com::Vmware::Appliance::Networking::Proxy::Protocol``   *enumerated type*  defines
 #     the protocols for which proxying is supported. This  *enumeration*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Networking::Proxy::Protocol::HTTP #
-#Proxy configuration for http. This  *constant*  was added in vSphere API 6.7
+#Proxy configuration for http. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Networking::Proxy::Protocol::HTTPS #
-#Proxy configuration for https. This  *constant*  was added in vSphere API 6.7
+#Proxy configuration for https. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Networking::Proxy::Protocol::FTP #
-#Proxy configuration for ftp. This  *constant*  was added in vSphere API 6.7
+#Proxy configuration for ftp. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Proxy::Protocol;
 
@@ -250,15 +250,15 @@ sub new {
 #
 # ``Com::Vmware::Appliance::Networking::Proxy::ServerStatus``   *enumerated type* 
 #     defines the status of the server associated with the test run. This  *enumeration* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Networking::Proxy::ServerStatus::SERVER_REACHABLE #
-#Server is reachable. This  *constant*  was added in vSphere API 6.7
+#Server is reachable. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Networking::Proxy::ServerStatus::SERVER_UNREACHABLE #
-#Server is unreachable. This  *constant*  was added in vSphere API 6.7
+#Server is unreachable. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Proxy::ServerStatus;
 
@@ -306,7 +306,7 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Appliance::Networking::Proxy::Config``   *class*  defines proxy
-#     configuration. This  *class*  was added in vSphere API 6.7
+#     configuration. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Proxy::Config;
 
@@ -356,7 +356,7 @@ sub new {
 #
 # @retval server - The current value of the field.
 # Hostname or IP address of the proxy server. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # String#
 sub get_server {
@@ -369,7 +369,7 @@ sub get_server {
 # 
 # @param server  - New value for the field.
 # Hostname or IP address of the proxy server. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_server {
    my ($self, %args) = @_;
@@ -384,7 +384,7 @@ sub set_server {
 # Port to connect to the proxy server. In a &apos;get&apos; call, indicates the port
 #     connected to the proxy server. In a &apos;set&apos; call, specifies the port to
 #     connect to the proxy server. A value of -1 indicates the default port. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # long#
 sub get_port {
@@ -399,7 +399,7 @@ sub get_port {
 # Port to connect to the proxy server. In a &apos;get&apos; call, indicates the port
 #     connected to the proxy server. In a &apos;set&apos; call, specifies the port to
 #     connect to the proxy server. A value of -1 indicates the default port. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_port {
    my ($self, %args) = @_;
@@ -411,7 +411,7 @@ sub set_port {
 # Gets the value of 'username' property.
 #
 # @retval username - The current value of the field.
-# Username for proxy server. This  *field*  was added in vSphere API 6.7
+# Username for proxy server. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_username {
@@ -423,7 +423,7 @@ sub get_username {
 # Sets the given value for 'username' property.
 # 
 # @param username  - New value for the field.
-# Username for proxy server. This  *field*  was added in vSphere API 6.7
+# Username for proxy server. This  *field*  was added in vSphere API 6.7.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -435,7 +435,7 @@ sub set_username {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password for proxy server. This  *field*  was added in vSphere API 6.7
+# Password for proxy server. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_password {
@@ -447,7 +447,7 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password for proxy server. This  *field*  was added in vSphere API 6.7
+# Password for proxy server. This  *field*  was added in vSphere API 6.7.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -462,7 +462,7 @@ sub set_password {
 # In the result of the  ``#get``  and  ``#list``   *methods*  this  *field*  indicates
 #     whether proxying is enabled for a particular protocol. In the input to the  ``test`` 
 #     and  ``set``   *methods*  this  *field*  specifies whether proxying should be enabled
-#     for a particular protocol. This  *field*  was added in vSphere API 6.7
+#     for a particular protocol. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_enabled {
@@ -477,7 +477,7 @@ sub get_enabled {
 # In the result of the  ``#get``  and  ``#list``   *methods*  this  *field*  indicates
 #     whether proxying is enabled for a particular protocol. In the input to the  ``test`` 
 #     and  ``set``   *methods*  this  *field*  specifies whether proxying should be enabled
-#     for a particular protocol. This  *field*  was added in vSphere API 6.7
+#     for a particular protocol. This  *field*  was added in vSphere API 6.7.
 #
 sub set_enabled {
    my ($self, %args) = @_;
@@ -494,7 +494,7 @@ sub set_enabled {
 #
 # The  ``Com::Vmware::Appliance::Networking::Proxy::TestResult``   *class*  contains
 #     information about the test operation done on a proxy server. This  *class*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Proxy::TestResult;
 
@@ -538,7 +538,7 @@ sub new {
 #
 # @retval status - The current value of the field.
 # Status of the proxy server indicating whether the proxy server is reachable. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # ServerStatus#
 sub get_status {
@@ -551,7 +551,7 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # Status of the proxy server indicating whether the proxy server is reachable. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -563,7 +563,7 @@ sub set_status {
 # Gets the value of 'message' property.
 #
 # @retval message - The current value of the field.
-# Message associated with status. This  *field*  was added in vSphere API 6.7
+# Message associated with status. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_message {
@@ -575,7 +575,7 @@ sub get_message {
 # Sets the given value for 'message' property.
 # 
 # @param message  - New value for the field.
-# Message associated with status. This  *field*  was added in vSphere API 6.7
+# Message associated with status. This  *field*  was added in vSphere API 6.7.
 #
 sub set_message {
    my ($self, %args) = @_;

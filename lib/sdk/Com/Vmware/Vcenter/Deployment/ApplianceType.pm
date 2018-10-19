@@ -1,20 +1,20 @@
 ## @class Com::Vmware::Vcenter::Deployment::ApplianceType
 #
 # The  ``Com::Vmware::Vcenter::Deployment::ApplianceType``   *enumerated type*  defines
-#     the vCenter appliance types. This  *enumeration*  was added in vSphere API 6.7
+#     the vCenter appliance types. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceType::VCSA_EMBEDDED #
 #vCenter Server Appliance with an embedded Platform Services Controller. This  *constant* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceType::VCSA_EXTERNAL #
 #vCenter Server Appliance with an external Platform Services Controller. This  *constant* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceType::PSC_EXTERNAL #
-#An external Platform Services Controller. This  *constant*  was added in vSphere API 6.7
+#An external Platform Services Controller. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::ApplianceType;
 

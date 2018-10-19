@@ -2,7 +2,8 @@
 #
 #
 # The  ``Com::Vmware::Appliance::Update::ServiceInfo``   *class*  describes a service to
-#     be stopped and started during the update installation.
+#     be stopped and started during the update installation. This  *class*  was added in
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Update::ServiceInfo;
 
@@ -45,7 +46,7 @@ sub new {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Service ID
+# Service ID. This  *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_service {
@@ -57,7 +58,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Service ID
+# Service ID. This  *field*  was added in vSphere API 6.7.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -69,7 +70,7 @@ sub set_service {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Service description
+# Service description. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_description {
@@ -81,7 +82,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Service description
+# Service description. This  *field*  was added in vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;

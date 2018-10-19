@@ -2,25 +2,25 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Operation``   *enumerated type*  defines the
 #     supported vCenter appliance deployment operations. This  *enumeration*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::Operation::INSTALL #
-#The appliance installation is in progress. This  *constant*  was added in vSphere API 6.7
+#The appliance installation is in progress. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::Operation::UPGRADE #
-#The appliance upgrade is in progress. This  *constant*  was added in vSphere API 6.7
+#The appliance upgrade is in progress. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::Operation::MIGRATE #
-#The appliance migration is in progress. This  *constant*  was added in vSphere API 6.7
+#The appliance migration is in progress. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::Operation::RESTORE #
-#The appliance restoration is in progress. This  *constant*  was added in vSphere API 6.7
+#The appliance restoration is in progress. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Deployment::Operation::ROLLBACK #
 #The appliance is being rolled back to an unconfigured state. This  *constant*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Operation;
 

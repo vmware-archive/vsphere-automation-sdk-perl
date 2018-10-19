@@ -167,6 +167,10 @@ sub validate {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the content of the library item associated with the update session has been deleted
 #     from the storage backings (see null) associated with it.
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if metadata files such as manifest and certificate file are added after the OVF
+#     descriptor file. This is applicable to update sessions with library item type OVF
+#     only. This error was added in vSphere 6.8.0.
 #
 
 sub add {
@@ -527,7 +531,8 @@ sub set_size {
 #
 # @retval checksum_info - The current value of the field.
 # The checksum of the file. If specified, the server will verify the checksum once the
-#     file is received. If there is a mismatch, the upload will fail.
+#     file is received. If there is a mismatch, the upload will fail. For ova files, this
+#     value should not be set.
 #
 # Optional#
 sub get_checksum_info {
@@ -540,7 +545,8 @@ sub get_checksum_info {
 # 
 # @param checksum_info  - New value for the field.
 # The checksum of the file. If specified, the server will verify the checksum once the
-#     file is received. If there is a mismatch, the upload will fail.
+#     file is received. If there is a mismatch, the upload will fail. For ova files, this
+#     value should not be set.
 #
 sub set_checksum_info {
    my ($self, %args) = @_;
@@ -602,6 +608,7 @@ sub new {
    $self->{bytes_transferred} = $args{'bytes_transferred'};
    $self->{status} = $args{'status'};
    $self->{error_message} = $args{'error_message'};
+   $self->{keep_in_storage} = $args{'keep_in_storage'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Content::Library::Item::Updatesession::File::Info');
    $self->set_binding_name('name' => 'com.vmware.content.library.item.updatesession.file.info');
@@ -614,6 +621,7 @@ sub new {
    $self->set_binding_field('key' => 'bytes_transferred', 'value' => new Com::Vmware::Vapi::Bindings::Type::LongType());
    $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Content::Library::Item', 'type_name' => 'TransferStatus'));
    $self->set_binding_field('key' => 'error_message', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage')));
+   $self->set_binding_field('key' => 'keep_in_storage', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
    bless $self, $class;
    return $self;
 }
@@ -839,6 +847,42 @@ sub get_error_message {
 sub set_error_message {
    my ($self, %args) = @_;
    $self->{'error_message'} = $args{'error_message'}; 
+   return;	
+}
+
+## @method get_keep_in_storage ()
+# Gets the value of 'keep_in_storage' property.
+#
+# @retval keep_in_storage - The current value of the field.
+# Whether or not the file will be kept in storage upon update session completion. The
+#     flag is true for most files, and false for metadata files such as manifest and
+#     certificate file of update session with library item type OVF. Any file with 
+#     :attr:`Com::Vmware::Content::Library::Item::Updatesession::File::Info.keep_in_storage`
+#     set to false will not show up in the list of files returned from 
+#     :func:`Com::Vmware::Content::Library::Item::File.list`  upon update session
+#     completion. This  *field*  was added in vSphere API 6.7 U1.
+#
+# Optional#
+sub get_keep_in_storage {
+   my ($self, %args) = @_;
+   return $self->{'keep_in_storage'}; 	
+}
+
+## @method set_keep_in_storage ()
+# Sets the given value for 'keep_in_storage' property.
+# 
+# @param keep_in_storage  - New value for the field.
+# Whether or not the file will be kept in storage upon update session completion. The
+#     flag is true for most files, and false for metadata files such as manifest and
+#     certificate file of update session with library item type OVF. Any file with 
+#     :attr:`Com::Vmware::Content::Library::Item::Updatesession::File::Info.keep_in_storage`
+#     set to false will not show up in the list of files returned from 
+#     :func:`Com::Vmware::Content::Library::Item::File.list`  upon update session
+#     completion. This  *field*  was added in vSphere API 6.7 U1.
+#
+sub set_keep_in_storage {
+   my ($self, %args) = @_;
+   $self->{'keep_in_storage'} = $args{'keep_in_storage'}; 
    return;	
 }
 

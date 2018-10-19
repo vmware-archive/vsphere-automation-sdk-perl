@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Networking::Interfaces::Ipv4
 # The  ``Com::Vmware::Appliance::Networking::Interfaces::Ipv4``   *interface*  provides 
 #     *methods*  to perform IPv4 network configuration for interfaces. This  *interface* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Networking::Interfaces::Ipv4;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method set ()
 # Set IPv4 network configuration for specific network interface. This  *method*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 #
 # @param interface_name [REQUIRED] Network interface to update, for example, &quot;nic0&quot;.
 # The value must be an identifier for the resource type
@@ -98,7 +98,7 @@ sub set {
 
 ## @method get ()
 # Get IPv4 network configuration for specific NIC. This  *method*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # @param interface_name [REQUIRED] The Network interface to query, for example, &quot;nic0&quot;.
 # The value must be an identifier for the resource type
@@ -138,19 +138,19 @@ sub get {
 #
 # The  ``Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Mode``   *enumerated
 #     type*  defines different IPv4 address assignment modes. This  *enumeration*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Mode::DHCP #
 #The IPv4 address is automatically assigned by a DHCP server. This  *constant*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Mode::STATIC #
-#The IPv4 address is static. This  *constant*  was added in vSphere API 6.7
+#The IPv4 address is static. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Mode::UNCONFIGURED #
-#The IPv4 protocol is not configured. This  *constant*  was added in vSphere API 6.7
+#The IPv4 protocol is not configured. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Mode;
 
@@ -200,7 +200,7 @@ sub new {
 #
 # The  ``Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Config``   *class* 
 #     provides defines the IPv4 configuration of a network interface. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Config;
 
@@ -256,7 +256,7 @@ sub new {
 # Gets the value of 'mode' property.
 #
 # @retval mode - The current value of the field.
-# The Address assignment mode. This  *field*  was added in vSphere API 6.7
+# The Address assignment mode. This  *field*  was added in vSphere API 6.7.
 #
 # Mode#
 sub get_mode {
@@ -268,7 +268,7 @@ sub get_mode {
 # Sets the given value for 'mode' property.
 # 
 # @param mode  - New value for the field.
-# The Address assignment mode. This  *field*  was added in vSphere API 6.7
+# The Address assignment mode. This  *field*  was added in vSphere API 6.7.
 #
 sub set_mode {
    my ($self, %args) = @_;
@@ -281,7 +281,7 @@ sub set_mode {
 #
 # @retval address - The current value of the field.
 # The IPv4 address, for example, &quot;10.20.80.191&quot;. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # optional#
 sub get_address {
@@ -294,7 +294,7 @@ sub get_address {
 # 
 # @param address  - New value for the field.
 # The IPv4 address, for example, &quot;10.20.80.191&quot;. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -307,7 +307,7 @@ sub set_address {
 #
 # @retval prefix - The current value of the field.
 # The IPv4 CIDR prefix, for example, 24. See http://www.oav.net/mirrors/cidr.html for
-#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7
+#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_prefix {
@@ -320,7 +320,7 @@ sub get_prefix {
 # 
 # @param prefix  - New value for the field.
 # The IPv4 CIDR prefix, for example, 24. See http://www.oav.net/mirrors/cidr.html for
-#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7
+#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7.
 #
 sub set_prefix {
    my ($self, %args) = @_;
@@ -337,7 +337,7 @@ sub set_prefix {
 #     the existing default gateway configured on the appliance. However, if the gateway
 #     address is link-local, then it is added for that interface. This does not support
 #     configuration of multiple global default gateways through different interfaces. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_default_gateway {
@@ -354,7 +354,7 @@ sub get_default_gateway {
 #     the existing default gateway configured on the appliance. However, if the gateway
 #     address is link-local, then it is added for that interface. This does not support
 #     configuration of multiple global default gateways through different interfaces. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_default_gateway {
    my ($self, %args) = @_;
@@ -371,7 +371,7 @@ sub set_default_gateway {
 #
 # The  ``Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Info``   *class*  defines
 #     current IPv4 configuration state of a network interface. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Networking::Interfaces::Ipv4::Info;
 
@@ -430,7 +430,7 @@ sub new {
 #
 # @retval configurable - The current value of the field.
 # The specified network interface is configurable or not. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # boolean#
 sub get_configurable {
@@ -443,7 +443,7 @@ sub get_configurable {
 # 
 # @param configurable  - New value for the field.
 # The specified network interface is configurable or not. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_configurable {
    my ($self, %args) = @_;
@@ -455,7 +455,7 @@ sub set_configurable {
 # Gets the value of 'mode' property.
 #
 # @retval mode - The current value of the field.
-# The Address assignment mode. This  *field*  was added in vSphere API 6.7
+# The Address assignment mode. This  *field*  was added in vSphere API 6.7.
 #
 # Mode#
 sub get_mode {
@@ -467,7 +467,7 @@ sub get_mode {
 # Sets the given value for 'mode' property.
 # 
 # @param mode  - New value for the field.
-# The Address assignment mode. This  *field*  was added in vSphere API 6.7
+# The Address assignment mode. This  *field*  was added in vSphere API 6.7.
 #
 sub set_mode {
    my ($self, %args) = @_;
@@ -480,7 +480,7 @@ sub set_mode {
 #
 # @retval address - The current value of the field.
 # The IPv4 address, for example, &quot;10.20.80.191&quot;. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # optional#
 sub get_address {
@@ -493,7 +493,7 @@ sub get_address {
 # 
 # @param address  - New value for the field.
 # The IPv4 address, for example, &quot;10.20.80.191&quot;. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -506,7 +506,7 @@ sub set_address {
 #
 # @retval prefix - The current value of the field.
 # The IPv4 CIDR prefix, for example, 24. See http://www.oav.net/mirrors/cidr.html for
-#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7
+#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_prefix {
@@ -519,7 +519,7 @@ sub get_prefix {
 # 
 # @param prefix  - New value for the field.
 # The IPv4 CIDR prefix, for example, 24. See http://www.oav.net/mirrors/cidr.html for
-#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7
+#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 6.7.
 #
 sub set_prefix {
    my ($self, %args) = @_;
@@ -536,7 +536,7 @@ sub set_prefix {
 #     the existing default gateway configured on the appliance. However, if the gateway
 #     address is link-local, then it is added for that interface. This does not support
 #     configuration of multiple global default gateways through different interfaces. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_default_gateway {
@@ -553,7 +553,7 @@ sub get_default_gateway {
 #     the existing default gateway configured on the appliance. However, if the gateway
 #     address is link-local, then it is added for that interface. This does not support
 #     configuration of multiple global default gateways through different interfaces. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_default_gateway {
    my ($self, %args) = @_;

@@ -12,7 +12,8 @@
 
 ## @class Com::Vmware::Vcenter::Storage::Policies::Compliance
 # The  *Compliance*   *interface*  provides  *methods*  related to all the associated
-#     entities of given compliance statuses. This  *interface*  was added in vSphere API 6.7
+#     entities of given compliance statuses. This  *interface*  was added in vSphere API
+#     6.7.
 #
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance;
@@ -60,7 +61,7 @@ sub new {
 ## @method list ()
 # Returns compliance information about entities matching the filter  class
 # Com::Vmware::Vcenter::Storage::Policies::Compliance::FilterSpec . Entities without storage
-# policy association are not returned. This  *method*  was added in vSphere API 6.7
+# policy association are not returned. This  *method*  was added in vSphere API 6.7.
 #
 # @param filter [REQUIRED] compliance status of matching entities for which information should be returned.
 # . The value must be Com::Vmware::Vcenter::Storage::Policies::Compliance::FilterSpec.
@@ -109,29 +110,29 @@ sub list {
 ## @class Com::Vmware::Vcenter::Storage::Policies::Compliance::Status
 #
 # This enumeration defines the set of status values for a compliance operation. This 
-#     *enumeration*  was added in vSphere API 6.7
+#     *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::Status::COMPLIANT #
-#Entity is in compliance. This  *constant*  was added in vSphere API 6.7
+#Entity is in compliance. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::Status::NON_COMPLIANT #
-#Entity is out of compliance. This  *constant*  was added in vSphere API 6.7
+#Entity is out of compliance. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::Status::UNKNOWN #
 #Compliance status of the entity is not known. This  *constant*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::Status::NOT_APPLICABLE #
 #Compliance computation is not applicable for this entity because it does not have any
 # storage requirement that apply to the object-based datastore on which the entity is
-# placed. This  *constant*  was added in vSphere API 6.7
+# placed. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Storage::Policies::Compliance::Status::OUT_OF_DATE #
 #Compliance status becomes out of date when the profile associated with the entity is
 # edited and not applied. The compliance status will remain out of date until the latest
-# policy is applied to the entity. This  *constant*  was added in vSphere API 6.7
+# policy is applied to the entity. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance::Status;
 
@@ -182,7 +183,7 @@ sub new {
 #
 #
 # Provides the details of a virtual machine and its associated entities which match the
-#     given compliance statuses. This  *class*  was added in vSphere API 6.7
+#     given compliance statuses. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance::Summary;
 
@@ -227,7 +228,7 @@ sub new {
 # Gets the value of 'vm' property.
 #
 # @retval vm - The current value of the field.
-# Identifier of virtual machine. This  *field*  was added in vSphere API 6.7
+# Identifier of virtual machine. This  *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_vm {
@@ -239,7 +240,7 @@ sub get_vm {
 # Sets the given value for 'vm' property.
 # 
 # @param vm  - New value for the field.
-# Identifier of virtual machine. This  *field*  was added in vSphere API 6.7
+# Identifier of virtual machine. This  *field*  was added in vSphere API 6.7.
 #
 sub set_vm {
    my ($self, %args) = @_;
@@ -252,7 +253,7 @@ sub set_vm {
 #
 # @retval vm_home - The current value of the field.
 # Compliance status of the virtual machine home. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_vm_home {
@@ -265,7 +266,7 @@ sub get_vm_home {
 # 
 # @param vm_home  - New value for the field.
 # Compliance status of the virtual machine home. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_vm_home {
    my ($self, %args) = @_;
@@ -277,7 +278,7 @@ sub set_vm_home {
 # Gets the value of 'disks' property.
 #
 # @retval disks - The current value of the field.
-# List of the virtual hard disk. This  *field*  was added in vSphere API 6.7
+# List of the virtual hard disk. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_disks {
@@ -289,7 +290,7 @@ sub get_disks {
 # Sets the given value for 'disks' property.
 # 
 # @param disks  - New value for the field.
-# List of the virtual hard disk. This  *field*  was added in vSphere API 6.7
+# List of the virtual hard disk. This  *field*  was added in vSphere API 6.7.
 #
 sub set_disks {
    my ($self, %args) = @_;
@@ -307,7 +308,7 @@ sub set_disks {
 # The  ``Com::Vmware::Vcenter::Storage::Policies::Compliance::FilterSpec``   *class* 
 #     contains  *complianceStatus*  used to filter the results when listing entities (see 
 #     :func:`Com::Vmware::Vcenter::Storage::Policies::Compliance.list` ). This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Storage::Policies::Compliance::FilterSpec;
 
@@ -349,7 +350,7 @@ sub new {
 #
 # @retval status - The current value of the field.
 # Compliance Status that a virtual machine must have to match the filter. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Set#
 sub get_status {
@@ -362,7 +363,7 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # Compliance Status that a virtual machine must have to match the filter. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;

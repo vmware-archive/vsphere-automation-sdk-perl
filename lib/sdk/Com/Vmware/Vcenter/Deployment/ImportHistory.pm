@@ -16,7 +16,7 @@
 # The  ``Com::Vmware::Vcenter::Deployment::ImportHistory``   *interface*  provides 
 #     *methods*  for managing the import of vCenter historical data, e.g. Tasks, Events and
 #     Statistics, when is is imported separately from the upgrade or migration process. This
-#      *interface*  was added in vSphere API 6.7
+#      *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::ImportHistory;
@@ -63,7 +63,7 @@ sub new {
 
 ## @method get ()
 # Get the current status of the vCenter historical data import. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @retval 
 # Info structure containing the status information about the historical data import
@@ -88,7 +88,7 @@ sub get {
 
 ## @method start ()
 # Creates and starts task for importing vCenter historical data. This  *method*  was added
-# in vSphere API 6.7
+# in vSphere API 6.7.
 #
 # @param spec [OPTIONAL] An optional  ``Com::Vmware::Vcenter::Deployment::ImportHistory::CreateSpec``  info
 #     that can be passed for creating a new historical data import task and starts it.
@@ -136,7 +136,7 @@ sub start {
 
 ## @method pause ()
 # Pauses the task for importing vCenter historical data. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
@@ -163,7 +163,7 @@ sub pause {
 
 ## @method resume ()
 # Resumes the task for importing vCenter historical data. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
@@ -190,7 +190,7 @@ sub resume {
 
 ## @method cancel ()
 # Cancels the task for importing vCenter historical data. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
@@ -241,7 +241,7 @@ sub cancel {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::ImportHistory::Info``   *class*  contains 
 #     *fields*  to describe the state of vCenter history import task. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::ImportHistory::Info;
 
@@ -317,7 +317,7 @@ sub new {
 # Gets the value of 'progress' property.
 #
 # @retval progress - The current value of the field.
-# The progress info of this task. This  *field*  was added in vSphere API 6.7
+# The progress info of this task. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_progress {
@@ -329,7 +329,7 @@ sub get_progress {
 # Sets the given value for 'progress' property.
 # 
 # @param progress  - New value for the field.
-# The progress info of this task. This  *field*  was added in vSphere API 6.7
+# The progress info of this task. This  *field*  was added in vSphere API 6.7.
 #
 sub set_progress {
    my ($self, %args) = @_;
@@ -343,7 +343,7 @@ sub set_progress {
 # @retval result - The current value of the field.
 # Result of the operation. If an operation reports partial results before it completes,
 #     this  *field*  could be  *set*  before the null has the value null. The value could
-#     change as the operation progresses. This  *field*  was added in vSphere API 6.7
+#     change as the operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_result {
@@ -357,7 +357,7 @@ sub get_result {
 # @param result  - New value for the field.
 # Result of the operation. If an operation reports partial results before it completes,
 #     this  *field*  could be  *set*  before the null has the value null. The value could
-#     change as the operation progresses. This  *field*  was added in vSphere API 6.7
+#     change as the operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 sub set_result {
    my ($self, %args) = @_;
@@ -393,7 +393,7 @@ sub set_description {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 # ID#
 sub get_service {
@@ -405,7 +405,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Name of the service containing the operation.
+# Identifier of the service containing the operation.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -417,7 +417,7 @@ sub set_service {
 # Gets the value of 'operation' property.
 #
 # @retval operation - The current value of the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 # ID#
 sub get_operation {
@@ -429,7 +429,7 @@ sub get_operation {
 # Sets the given value for 'operation' property.
 # 
 # @param operation  - New value for the field.
-# Name of the operation associated with the task.
+# Identifier of the operation associated with the task.
 #
 sub set_operation {
    my ($self, %args) = @_;
@@ -642,7 +642,7 @@ sub set_user {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::ImportHistory::CreateSpec``   *class* 
 #     contains information to create and start vCenter historical data lazy-import. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::ImportHistory::CreateSpec;
 
@@ -685,7 +685,7 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the vCenter history import task. This  *field*  was added in vSphere API 6.7
+# Name of the vCenter history import task. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_name {
@@ -697,7 +697,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the vCenter history import task. This  *field*  was added in vSphere API 6.7
+# Name of the vCenter history import task. This  *field*  was added in vSphere API 6.7.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -710,7 +710,7 @@ sub set_name {
 #
 # @retval description - The current value of the field.
 # Description of the vCenter history import task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # String#
 sub get_description {
@@ -723,7 +723,7 @@ sub get_description {
 # 
 # @param description  - New value for the field.
 # Description of the vCenter history import task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;

@@ -767,7 +767,7 @@ sub set_capacity {
 # @retval storage_policy - The current value of the field.
 # The  ``Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec``   *class* 
 #     contains information about the storage policy that is to be associated the with VMDK
-#     file. This  *field*  was added in vSphere API 6.7
+#     file. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_storage_policy {
@@ -781,7 +781,7 @@ sub get_storage_policy {
 # @param storage_policy  - New value for the field.
 # The  ``Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec``   *class* 
 #     contains information about the storage policy that is to be associated the with VMDK
-#     file. This  *field*  was added in vSphere API 6.7
+#     file. This  *field*  was added in vSphere API 6.7.
 #
 sub set_storage_policy {
    my ($self, %args) = @_;
@@ -1032,7 +1032,7 @@ sub set_capacity {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec``   *class* 
 #     contains information about the storage policy be associated with a VMDK file. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Hardware::Disk::StoragePolicySpec;
 
@@ -1074,7 +1074,7 @@ sub new {
 #
 # @retval policy - The current value of the field.
 # Identifier of the storage policy which should be associated with the VMDK file. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_policy {
@@ -1087,7 +1087,7 @@ sub get_policy {
 # 
 # @param policy  - New value for the field.
 # Identifier of the storage policy which should be associated with the VMDK file. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_policy {
    my ($self, %args) = @_;

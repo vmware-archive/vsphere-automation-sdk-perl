@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Deployment::Install::RemotePsc
 # The  ``Com::Vmware::Vcenter::Deployment::Install::RemotePsc``   *interface*  provides 
 #     *methods*  to check if the deployed vCenter Server can register with the remote PSC.
-#     This  *interface*  was added in vSphere API 6.7
+#     This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::Install::RemotePsc;
@@ -61,7 +61,7 @@ sub new {
 
 ## @method check ()
 # Checks whether the remote PSC is reachable and the deployed vCenter Server can be
-# registered with the remote PSC. This  *method*  was added in vSphere API 6.7
+# registered with the remote PSC. This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] Information to connect to the remote PSC.
 # . The value must be Com::Vmware::Vcenter::Deployment::RemotePscSpec.

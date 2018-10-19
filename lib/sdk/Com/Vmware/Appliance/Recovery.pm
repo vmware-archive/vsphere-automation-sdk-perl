@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Recovery
 # The  ``Com::Vmware::Appliance::Recovery``   *interface*  provides  *methods*  to
 #     invoke an appliance recovery (backup and restore). This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Recovery;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method get ()
 # Gets the properties of the appliance Recovery subsystem. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @retval 
 # Structure containing the properties of the Recovery subsystem.
@@ -96,7 +96,7 @@ sub get {
 #
 #
 # The  ``Com::Vmware::Appliance::Recovery::Info``   *class*  contains the information
-#     about the appliance recovery environment. This  *class*  was added in vSphere API 6.7
+#     about the appliance recovery environment. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Info;
 
@@ -137,7 +137,7 @@ sub new {
 # Gets the value of 'supported' property.
 #
 # @retval supported - The current value of the field.
-# Is recovery supported in this appliance. This  *field*  was added in vSphere API 6.7
+# Is recovery supported in this appliance. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_supported {
@@ -149,7 +149,7 @@ sub get_supported {
 # Sets the given value for 'supported' property.
 # 
 # @param supported  - New value for the field.
-# Is recovery supported in this appliance. This  *field*  was added in vSphere API 6.7
+# Is recovery supported in this appliance. This  *field*  was added in vSphere API 6.7.
 #
 sub set_supported {
    my ($self, %args) = @_;

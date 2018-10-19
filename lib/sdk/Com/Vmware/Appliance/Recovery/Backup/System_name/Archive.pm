@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Appliance::Recovery::Backup::System_name::Archive
 # The  ``Com::Vmware::Appliance::Recovery::Backup::System_name::Archive``   *interface* 
 #     provides  *methods*  to get the backup information. This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Recovery::Backup::System_name::Archive;
@@ -61,7 +61,7 @@ sub new {
 
 ## @method get ()
 # Returns the information for backup corresponding to given backup location and system name.
-# This  *method*  was added in vSphere API 6.7
+# This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] LocationSpec Structure.
 # . The value must be Com::Vmware::Appliance::Recovery::Backup::LocationSpec.
@@ -106,7 +106,7 @@ sub get {
 # Returns information about backup archives corresponding to given backup location and
 # system name, which match the  class
 # Com::Vmware::Appliance::Recovery::Backup::System_name::Archive::FilterSpec . This 
-# *method*  was added in vSphere API 6.7
+# *method*  was added in vSphere API 6.7.
 #
 # @param loc_spec [REQUIRED] LocationSpec Structure.
 # . The value must be Com::Vmware::Appliance::Recovery::Backup::LocationSpec.
@@ -168,7 +168,7 @@ sub list {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::System_name::Archive::Info``  
 #     *class*  represents backup archive information. This  *class*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::System_name::Archive::Info;
 
@@ -219,7 +219,7 @@ sub new {
 # Gets the value of 'timestamp' property.
 #
 # @retval timestamp - The current value of the field.
-# Time when this backup was completed. This  *field*  was added in vSphere API 6.7
+# Time when this backup was completed. This  *field*  was added in vSphere API 6.7.
 #
 # DateTime#
 sub get_timestamp {
@@ -231,7 +231,7 @@ sub get_timestamp {
 # Sets the given value for 'timestamp' property.
 # 
 # @param timestamp  - New value for the field.
-# Time when this backup was completed. This  *field*  was added in vSphere API 6.7
+# Time when this backup was completed. This  *field*  was added in vSphere API 6.7.
 #
 sub set_timestamp {
    my ($self, %args) = @_;
@@ -243,7 +243,7 @@ sub set_timestamp {
 # Gets the value of 'location' property.
 #
 # @retval location - The current value of the field.
-# Backup location URL. This  *field*  was added in vSphere API 6.7
+# Backup location URL. This  *field*  was added in vSphere API 6.7.
 #
 # URI#
 sub get_location {
@@ -255,7 +255,7 @@ sub get_location {
 # Sets the given value for 'location' property.
 # 
 # @param location  - New value for the field.
-# Backup location URL. This  *field*  was added in vSphere API 6.7
+# Backup location URL. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location {
    my ($self, %args) = @_;
@@ -267,7 +267,7 @@ sub set_location {
 # Gets the value of 'parts' property.
 #
 # @retval parts - The current value of the field.
-# List of parts included in the backup. This  *field*  was added in vSphere API 6.7
+# List of parts included in the backup. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_parts {
@@ -279,7 +279,7 @@ sub get_parts {
 # Sets the given value for 'parts' property.
 # 
 # @param parts  - New value for the field.
-# List of parts included in the backup. This  *field*  was added in vSphere API 6.7
+# List of parts included in the backup. This  *field*  was added in vSphere API 6.7.
 #
 sub set_parts {
    my ($self, %args) = @_;
@@ -292,7 +292,7 @@ sub set_parts {
 #
 # @retval version - The current value of the field.
 # The version of the appliance represented by the backup. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # String#
 sub get_version {
@@ -305,7 +305,7 @@ sub get_version {
 # 
 # @param version  - New value for the field.
 # The version of the appliance represented by the backup. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_version {
    my ($self, %args) = @_;
@@ -318,7 +318,7 @@ sub set_version {
 #
 # @retval system_name - The current value of the field.
 # The system name identifier of the appliance represented by the backup. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # ID#
 sub get_system_name {
@@ -331,7 +331,7 @@ sub get_system_name {
 # 
 # @param system_name  - New value for the field.
 # The system name identifier of the appliance represented by the backup. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_system_name {
    my ($self, %args) = @_;
@@ -344,7 +344,7 @@ sub set_system_name {
 #
 # @retval comment - The current value of the field.
 # Custom comment added by the user for this backup. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # String#
 sub get_comment {
@@ -357,7 +357,7 @@ sub get_comment {
 # 
 # @param comment  - New value for the field.
 # Custom comment added by the user for this backup. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_comment {
    my ($self, %args) = @_;
@@ -374,7 +374,7 @@ sub set_comment {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::System_name::Archive::Summary``  
 #     *class*  contains commonly used information about a backup archive. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::System_name::Archive::Summary;
 
@@ -421,7 +421,7 @@ sub new {
 # Gets the value of 'archive' property.
 #
 # @retval archive - The current value of the field.
-# Backup archive identifier. This  *field*  was added in vSphere API 6.7
+# Backup archive identifier. This  *field*  was added in vSphere API 6.7.
 #
 # ID#
 sub get_archive {
@@ -433,7 +433,7 @@ sub get_archive {
 # Sets the given value for 'archive' property.
 # 
 # @param archive  - New value for the field.
-# Backup archive identifier. This  *field*  was added in vSphere API 6.7
+# Backup archive identifier. This  *field*  was added in vSphere API 6.7.
 #
 sub set_archive {
    my ($self, %args) = @_;
@@ -445,7 +445,7 @@ sub set_archive {
 # Gets the value of 'timestamp' property.
 #
 # @retval timestamp - The current value of the field.
-# Time when this backup was started. This  *field*  was added in vSphere API 6.7
+# Time when this backup was started. This  *field*  was added in vSphere API 6.7.
 #
 # DateTime#
 sub get_timestamp {
@@ -457,7 +457,7 @@ sub get_timestamp {
 # Sets the given value for 'timestamp' property.
 # 
 # @param timestamp  - New value for the field.
-# Time when this backup was started. This  *field*  was added in vSphere API 6.7
+# Time when this backup was started. This  *field*  was added in vSphere API 6.7.
 #
 sub set_timestamp {
    my ($self, %args) = @_;
@@ -470,7 +470,7 @@ sub set_timestamp {
 #
 # @retval version - The current value of the field.
 # The version of the appliance represented by the backup archive. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # String#
 sub get_version {
@@ -483,7 +483,7 @@ sub get_version {
 # 
 # @param version  - New value for the field.
 # The version of the appliance represented by the backup archive. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_version {
    my ($self, %args) = @_;
@@ -496,7 +496,7 @@ sub set_version {
 #
 # @retval comment - The current value of the field.
 # Custom comment added by the user for this backup. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # String#
 sub get_comment {
@@ -509,7 +509,7 @@ sub get_comment {
 # 
 # @param comment  - New value for the field.
 # Custom comment added by the user for this backup. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_comment {
    my ($self, %args) = @_;
@@ -528,7 +528,7 @@ sub set_comment {
 #     *class*  contains  *fields*  used to filter the results when listing backup archives
 #     (see  :func:`Com::Vmware::Appliance::Recovery::Backup::System_name::Archive.list` ).
 #     If multiple  *fields*  are specified, only backup archives matching all of the 
-#     *fields*  match the filter. This  *class*  was added in vSphere API 6.7
+#     *fields*  match the filter. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::System_name::Archive::FilterSpec;
 
@@ -576,7 +576,7 @@ sub new {
 #
 # @retval start_timestamp - The current value of the field.
 # Backup must have been taken on or after this time to match the filter. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Optional#
 sub get_start_timestamp {
@@ -589,7 +589,7 @@ sub get_start_timestamp {
 # 
 # @param start_timestamp  - New value for the field.
 # Backup must have been taken on or after this time to match the filter. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_start_timestamp {
    my ($self, %args) = @_;
@@ -602,7 +602,7 @@ sub set_start_timestamp {
 #
 # @retval end_timestamp - The current value of the field.
 # Backup must have been taken on or before this time to match the filter. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Optional#
 sub get_end_timestamp {
@@ -615,7 +615,7 @@ sub get_end_timestamp {
 # 
 # @param end_timestamp  - New value for the field.
 # Backup must have been taken on or before this time to match the filter. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_end_timestamp {
    my ($self, %args) = @_;
@@ -628,7 +628,7 @@ sub set_end_timestamp {
 #
 # @retval comment_substring - The current value of the field.
 # Backup comment must contain this  *string*  to match the filter. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 # Optional#
 sub get_comment_substring {
@@ -641,7 +641,7 @@ sub get_comment_substring {
 # 
 # @param comment_substring  - New value for the field.
 # Backup comment must contain this  *string*  to match the filter. This  *field*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 #
 sub set_comment_substring {
    my ($self, %args) = @_;
@@ -654,7 +654,7 @@ sub set_comment_substring {
 #
 # @retval max_results - The current value of the field.
 # Limit result to a max count of most recent backups. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_max_results {
@@ -667,7 +667,7 @@ sub get_max_results {
 # 
 # @param max_results  - New value for the field.
 # Limit result to a max count of most recent backups. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_max_results {
    my ($self, %args) = @_;

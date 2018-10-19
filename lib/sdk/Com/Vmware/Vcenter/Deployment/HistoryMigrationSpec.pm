@@ -6,7 +6,7 @@
 #  <li>Statistics</li>
 #  <li>Events</li>
 #  <li>Tasks</li>
-#  </ul>. This  *class*  was added in vSphere API 6.7
+#  </ul>. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::HistoryMigrationSpec;
 
@@ -50,7 +50,7 @@ sub new {
 #
 # @retval data_set - The current value of the field.
 # Defines what part of vCenter historical data will be migrated along with core data.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 # HistoryMigrationOption#
 sub get_data_set {
@@ -63,7 +63,7 @@ sub get_data_set {
 # 
 # @param data_set  - New value for the field.
 # Defines what part of vCenter historical data will be migrated along with core data.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 sub set_data_set {
    my ($self, %args) = @_;
@@ -78,7 +78,7 @@ sub set_data_set {
 # Defines how vCenter history will be migrated. If set to true, vCenter history will be
 #     migrated separately after successful upgrade or migration, otherwise it will be
 #     migrated along with core data during the upgrade or migration process. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Optional#
 sub get_defer_import {
@@ -93,7 +93,7 @@ sub get_defer_import {
 # Defines how vCenter history will be migrated. If set to true, vCenter history will be
 #     migrated separately after successful upgrade or migration, otherwise it will be
 #     migrated along with core data during the upgrade or migration process. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_defer_import {
    my ($self, %args) = @_;

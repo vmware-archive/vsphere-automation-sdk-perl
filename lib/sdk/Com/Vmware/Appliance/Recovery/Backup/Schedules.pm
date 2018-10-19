@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Recovery::Backup::Schedules
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Schedules``   *interface*  provides 
 #     *methods*  to be performed to manage backup schedules. This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Recovery::Backup::Schedules;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method list ()
 # Returns a list of existing schedules with details. This  *method*  was added in vSphere
-# API 6.7
+# API 6.7.
 #
 # @retval 
 # Map of schedule id to Info Structure
@@ -80,7 +80,7 @@ sub list {
 
 
 ## @method run ()
-# Initiate backup with the specified schedule. This  *method*  was added in vSphere API 6.7
+# Initiate backup with the specified schedule. This  *method*  was added in vSphere API 6.7.
 #
 # @param schedule [REQUIRED] Identifier of the schedule
 # The value must be an identifier for the resource type
@@ -120,7 +120,7 @@ sub run {
 
 ## @method get ()
 # Returns an existing schedule information based on id. This  *method*  was added in vSphere
-# API 6.7
+# API 6.7.
 #
 # @param schedule [REQUIRED] Identifier of the schedule
 # The value must be an identifier for the resource type
@@ -151,7 +151,7 @@ sub get {
 
 
 ## @method create ()
-# Creates a schedule. This  *method*  was added in vSphere API 6.7
+# Creates a schedule. This  *method*  was added in vSphere API 6.7.
 #
 # @param schedule [REQUIRED] Identifier of the schedule
 # The value must be an identifier for the resource type
@@ -185,7 +185,7 @@ sub create {
 
 
 ## @method update ()
-# Updates a schedule. This  *method*  was added in vSphere API 6.7
+# Updates a schedule. This  *method*  was added in vSphere API 6.7.
 #
 # @param schedule [REQUIRED] Identifier of the schedule
 # The value must be an identifier for the resource type
@@ -219,7 +219,7 @@ sub update {
 
 
 ## @method delete ()
-# Deletes an existing schedule. This  *method*  was added in vSphere API 6.7
+# Deletes an existing schedule. This  *method*  was added in vSphere API 6.7.
 #
 # @param schedule [REQUIRED] Identifier of the schedule
 # The value must be an identifier for the resource type
@@ -258,30 +258,30 @@ sub delete {
 #     as a list of individual days. You specify the days when you set the recurrence for a
 #     schedule. See 
 #     :attr:`Com::Vmware::Appliance::Recovery::Backup::Schedules::RecurrenceInfo.days` .
-#     This  *enumeration*  was added in vSphere API 6.7
+#     This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek::MONDAY #
-#Monday. This  *constant*  was added in vSphere API 6.7
+#Monday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek::TUESDAY #
-#Tuesday. This  *constant*  was added in vSphere API 6.7
+#Tuesday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek::WEDNESDAY #
-#Wednesday. This  *constant*  was added in vSphere API 6.7
+#Wednesday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek::THURSDAY #
-#Thursday. This  *constant*  was added in vSphere API 6.7
+#Thursday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek::FRIDAY #
-#Friday. This  *constant*  was added in vSphere API 6.7
+#Friday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek::SATURDAY #
-#Saturday. This  *constant*  was added in vSphere API 6.7
+#Saturday. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek::SUNDAY #
-#Sunday. This  *constant*  was added in vSphere API 6.7
+#Sunday. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Schedules::DayOfWeek;
 
@@ -335,7 +335,7 @@ sub new {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Schedules::RetentionInfo``   *class* 
 #     contains retention information associated with a schedule. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Schedules::RetentionInfo;
 
@@ -377,7 +377,7 @@ sub new {
 #
 # @retval max_count - The current value of the field.
 # Number of backups which should be retained. If retention is not set, all the backups
-#     will be retained forever. This  *field*  was added in vSphere API 6.7
+#     will be retained forever. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_max_count {
@@ -390,7 +390,7 @@ sub get_max_count {
 # 
 # @param max_count  - New value for the field.
 # Number of backups which should be retained. If retention is not set, all the backups
-#     will be retained forever. This  *field*  was added in vSphere API 6.7
+#     will be retained forever. This  *field*  was added in vSphere API 6.7.
 #
 sub set_max_count {
    my ($self, %args) = @_;
@@ -407,7 +407,7 @@ sub set_max_count {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Schedules::RecurrenceInfo``   *class*
 #     contains the recurrence information associated with a schedule. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Schedules::RecurrenceInfo;
 
@@ -452,7 +452,7 @@ sub new {
 # Gets the value of 'minute' property.
 #
 # @retval minute - The current value of the field.
-# Minute when backup should run. This  *field*  was added in vSphere API 6.7
+# Minute when backup should run. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_minute {
@@ -464,7 +464,7 @@ sub get_minute {
 # Sets the given value for 'minute' property.
 # 
 # @param minute  - New value for the field.
-# Minute when backup should run. This  *field*  was added in vSphere API 6.7
+# Minute when backup should run. This  *field*  was added in vSphere API 6.7.
 #
 sub set_minute {
    my ($self, %args) = @_;
@@ -477,7 +477,7 @@ sub set_minute {
 #
 # @retval hour - The current value of the field.
 # Hour when backup should run. The hour should be specified in 24-hour clock format.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_hour {
@@ -490,7 +490,7 @@ sub get_hour {
 # 
 # @param hour  - New value for the field.
 # Hour when backup should run. The hour should be specified in 24-hour clock format.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 sub set_hour {
    my ($self, %args) = @_;
@@ -503,7 +503,7 @@ sub set_hour {
 #
 # @retval days - The current value of the field.
 # Day of week when the backup should be run. Days can be specified as list of days. This
-#      *field*  was added in vSphere API 6.7
+#      *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_days {
@@ -516,7 +516,7 @@ sub get_days {
 # 
 # @param days  - New value for the field.
 # Day of week when the backup should be run. Days can be specified as list of days. This
-#      *field*  was added in vSphere API 6.7
+#      *field*  was added in vSphere API 6.7.
 #
 sub set_days {
    my ($self, %args) = @_;
@@ -534,7 +534,7 @@ sub set_days {
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Schedules::CreateSpec``   *class* 
 #     contains fields to be specified for creating a new schedule. The structure includes
 #     parts, location information, encryption password and enable flag. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Schedules::CreateSpec;
 
@@ -591,7 +591,7 @@ sub new {
 # @retval parts - The current value of the field.
 # List of optional parts to be backed up. Use the 
 #     :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`   *method*  to get
-#     information about the supported parts. This  *field*  was added in vSphere API 6.7
+#     information about the supported parts. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_parts {
@@ -605,7 +605,7 @@ sub get_parts {
 # @param parts  - New value for the field.
 # List of optional parts to be backed up. Use the 
 #     :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`   *method*  to get
-#     information about the supported parts. This  *field*  was added in vSphere API 6.7
+#     information about the supported parts. This  *field*  was added in vSphere API 6.7.
 #
 sub set_parts {
    my ($self, %args) = @_;
@@ -621,7 +621,7 @@ sub set_parts {
 #     requirements: At least 8 characters, cannot be more than 20 characters in length. At
 #     least 1 uppercase letter. At least 1 lowercase letter. At least 1 numeric digit. At
 #     least 1 special character (i.e. any character not in [0-9,a-z,A-Z]). Only visible
-#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7
+#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_backup_password {
@@ -637,7 +637,7 @@ sub get_backup_password {
 #     requirements: At least 8 characters, cannot be more than 20 characters in length. At
 #     least 1 uppercase letter. At least 1 lowercase letter. At least 1 numeric digit. At
 #     least 1 special character (i.e. any character not in [0-9,a-z,A-Z]). Only visible
-#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7
+#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7.
 #
 sub set_backup_password {
    my ($self, %args) = @_;
@@ -649,7 +649,7 @@ sub set_backup_password {
 # Gets the value of 'location' property.
 #
 # @retval location - The current value of the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 # URI#
 sub get_location {
@@ -661,7 +661,7 @@ sub get_location {
 # Sets the given value for 'location' property.
 # 
 # @param location  - New value for the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location {
    my ($self, %args) = @_;
@@ -673,7 +673,7 @@ sub set_location {
 # Gets the value of 'location_user' property.
 #
 # @retval location_user - The current value of the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location_user {
@@ -685,7 +685,7 @@ sub get_location_user {
 # Sets the given value for 'location_user' property.
 # 
 # @param location_user  - New value for the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location_user {
    my ($self, %args) = @_;
@@ -697,7 +697,7 @@ sub set_location_user {
 # Gets the value of 'location_password' property.
 #
 # @retval location_password - The current value of the field.
-# Password for the given location. This  *field*  was added in vSphere API 6.7
+# Password for the given location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location_password {
@@ -709,7 +709,7 @@ sub get_location_password {
 # Sets the given value for 'location_password' property.
 # 
 # @param location_password  - New value for the field.
-# Password for the given location. This  *field*  was added in vSphere API 6.7
+# Password for the given location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location_password {
    my ($self, %args) = @_;
@@ -721,7 +721,7 @@ sub set_location_password {
 # Gets the value of 'enable' property.
 #
 # @retval enable - The current value of the field.
-# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7
+# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_enable {
@@ -733,7 +733,7 @@ sub get_enable {
 # Sets the given value for 'enable' property.
 # 
 # @param enable  - New value for the field.
-# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7
+# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_enable {
    my ($self, %args) = @_;
@@ -745,7 +745,7 @@ sub set_enable {
 # Gets the value of 'recurrence_info' property.
 #
 # @retval recurrence_info - The current value of the field.
-# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7
+# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_recurrence_info {
@@ -757,7 +757,7 @@ sub get_recurrence_info {
 # Sets the given value for 'recurrence_info' property.
 # 
 # @param recurrence_info  - New value for the field.
-# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7
+# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_recurrence_info {
    my ($self, %args) = @_;
@@ -769,7 +769,7 @@ sub set_recurrence_info {
 # Gets the value of 'retention_info' property.
 #
 # @retval retention_info - The current value of the field.
-# Retention information for the schedule. This  *field*  was added in vSphere API 6.7
+# Retention information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_retention_info {
@@ -781,7 +781,7 @@ sub get_retention_info {
 # Sets the given value for 'retention_info' property.
 # 
 # @param retention_info  - New value for the field.
-# Retention information for the schedule. This  *field*  was added in vSphere API 6.7
+# Retention information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_retention_info {
    my ($self, %args) = @_;
@@ -799,7 +799,7 @@ sub set_retention_info {
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Schedules::Info``   *class*  contains
 #     information about an existing schedule. The structure includes Schedule ID, parts,
 #     location information, encryption password, enable flag, recurrence and retention
-#     information. This  *class*  was added in vSphere API 6.7
+#     information. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Schedules::Info;
 
@@ -853,7 +853,7 @@ sub new {
 # List of optional parts that will be included in backups based on this schedule
 #     details. Use the  :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`  
 #     *method*  to get information about the supported parts. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # List#
 sub get_parts {
@@ -868,7 +868,7 @@ sub get_parts {
 # List of optional parts that will be included in backups based on this schedule
 #     details. Use the  :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`  
 #     *method*  to get information about the supported parts. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_parts {
    my ($self, %args) = @_;
@@ -880,7 +880,7 @@ sub set_parts {
 # Gets the value of 'location' property.
 #
 # @retval location - The current value of the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 # URI#
 sub get_location {
@@ -892,7 +892,7 @@ sub get_location {
 # Sets the given value for 'location' property.
 # 
 # @param location  - New value for the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location {
    my ($self, %args) = @_;
@@ -904,7 +904,7 @@ sub set_location {
 # Gets the value of 'location_user' property.
 #
 # @retval location_user - The current value of the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location_user {
@@ -916,7 +916,7 @@ sub get_location_user {
 # Sets the given value for 'location_user' property.
 # 
 # @param location_user  - New value for the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location_user {
    my ($self, %args) = @_;
@@ -929,7 +929,7 @@ sub set_location_user {
 #
 # @retval enable - The current value of the field.
 # Enable or disable a schedule, by default when created a schedule will be enabled. This
-#      *field*  was added in vSphere API 6.7
+#      *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_enable {
@@ -942,7 +942,7 @@ sub get_enable {
 # 
 # @param enable  - New value for the field.
 # Enable or disable a schedule, by default when created a schedule will be enabled. This
-#      *field*  was added in vSphere API 6.7
+#      *field*  was added in vSphere API 6.7.
 #
 sub set_enable {
    my ($self, %args) = @_;
@@ -954,7 +954,7 @@ sub set_enable {
 # Gets the value of 'recurrence_info' property.
 #
 # @retval recurrence_info - The current value of the field.
-# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7
+# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_recurrence_info {
@@ -966,7 +966,7 @@ sub get_recurrence_info {
 # Sets the given value for 'recurrence_info' property.
 # 
 # @param recurrence_info  - New value for the field.
-# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7
+# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_recurrence_info {
    my ($self, %args) = @_;
@@ -978,7 +978,7 @@ sub set_recurrence_info {
 # Gets the value of 'retention_info' property.
 #
 # @retval retention_info - The current value of the field.
-# Retention information for the schedule. This  *field*  was added in vSphere API 6.7
+# Retention information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_retention_info {
@@ -990,7 +990,7 @@ sub get_retention_info {
 # Sets the given value for 'retention_info' property.
 # 
 # @param retention_info  - New value for the field.
-# Retention information for the schedule. This  *field*  was added in vSphere API 6.7
+# Retention information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_retention_info {
    my ($self, %args) = @_;
@@ -1007,7 +1007,7 @@ sub set_retention_info {
 #
 # The  ``Com::Vmware::Appliance::Recovery::Backup::Schedules::UpdateSpec``   *class* 
 #     contains the fields of the existing schedule which can be updated. This  *class*  was
-#     added in vSphere API 6.7
+#     added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Recovery::Backup::Schedules::UpdateSpec;
 
@@ -1064,7 +1064,7 @@ sub new {
 # @retval parts - The current value of the field.
 # List of optional parts. Use the 
 #     :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`   *method*  to get
-#     information about the supported parts. This  *field*  was added in vSphere API 6.7
+#     information about the supported parts. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_parts {
@@ -1078,7 +1078,7 @@ sub get_parts {
 # @param parts  - New value for the field.
 # List of optional parts. Use the 
 #     :func:`Com::Vmware::Appliance::Recovery::Backup::Parts.list`   *method*  to get
-#     information about the supported parts. This  *field*  was added in vSphere API 6.7
+#     information about the supported parts. This  *field*  was added in vSphere API 6.7.
 #
 sub set_parts {
    my ($self, %args) = @_;
@@ -1094,7 +1094,7 @@ sub set_parts {
 #     requirements: At least 8 characters, cannot be more than 20 characters in length. At
 #     least 1 uppercase letter. At least 1 lowercase letter. At least 1 numeric digit. At
 #     least 1 special character (i.e. any character not in [0-9,a-z,A-Z]). Only visible
-#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7
+#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_backup_password {
@@ -1110,7 +1110,7 @@ sub get_backup_password {
 #     requirements: At least 8 characters, cannot be more than 20 characters in length. At
 #     least 1 uppercase letter. At least 1 lowercase letter. At least 1 numeric digit. At
 #     least 1 special character (i.e. any character not in [0-9,a-z,A-Z]). Only visible
-#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7
+#     ASCII characters (for example, no space). This  *field*  was added in vSphere API 6.7.
 #
 sub set_backup_password {
    my ($self, %args) = @_;
@@ -1122,7 +1122,7 @@ sub set_backup_password {
 # Gets the value of 'location' property.
 #
 # @retval location - The current value of the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location {
@@ -1134,7 +1134,7 @@ sub get_location {
 # Sets the given value for 'location' property.
 # 
 # @param location  - New value for the field.
-# URL of the backup location. This  *field*  was added in vSphere API 6.7
+# URL of the backup location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location {
    my ($self, %args) = @_;
@@ -1146,7 +1146,7 @@ sub set_location {
 # Gets the value of 'location_user' property.
 #
 # @retval location_user - The current value of the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location_user {
@@ -1158,7 +1158,7 @@ sub get_location_user {
 # Sets the given value for 'location_user' property.
 # 
 # @param location_user  - New value for the field.
-# Username for the given location. This  *field*  was added in vSphere API 6.7
+# Username for the given location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location_user {
    my ($self, %args) = @_;
@@ -1170,7 +1170,7 @@ sub set_location_user {
 # Gets the value of 'location_password' property.
 #
 # @retval location_password - The current value of the field.
-# Password for the given location. This  *field*  was added in vSphere API 6.7
+# Password for the given location. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_location_password {
@@ -1182,7 +1182,7 @@ sub get_location_password {
 # Sets the given value for 'location_password' property.
 # 
 # @param location_password  - New value for the field.
-# Password for the given location. This  *field*  was added in vSphere API 6.7
+# Password for the given location. This  *field*  was added in vSphere API 6.7.
 #
 sub set_location_password {
    my ($self, %args) = @_;
@@ -1194,7 +1194,7 @@ sub set_location_password {
 # Gets the value of 'enable' property.
 #
 # @retval enable - The current value of the field.
-# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7
+# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_enable {
@@ -1206,7 +1206,7 @@ sub get_enable {
 # Sets the given value for 'enable' property.
 # 
 # @param enable  - New value for the field.
-# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7
+# Enable or disable a schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_enable {
    my ($self, %args) = @_;
@@ -1218,7 +1218,7 @@ sub set_enable {
 # Gets the value of 'recurrence_info' property.
 #
 # @retval recurrence_info - The current value of the field.
-# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7
+# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_recurrence_info {
@@ -1230,7 +1230,7 @@ sub get_recurrence_info {
 # Sets the given value for 'recurrence_info' property.
 # 
 # @param recurrence_info  - New value for the field.
-# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7
+# Recurrence information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_recurrence_info {
    my ($self, %args) = @_;
@@ -1242,7 +1242,7 @@ sub set_recurrence_info {
 # Gets the value of 'retention_info' property.
 #
 # @retval retention_info - The current value of the field.
-# Retention information for the schedule. This  *field*  was added in vSphere API 6.7
+# Retention information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_retention_info {
@@ -1254,7 +1254,7 @@ sub get_retention_info {
 # Sets the given value for 'retention_info' property.
 # 
 # @param retention_info  - New value for the field.
-# Retention information for the schedule. This  *field*  was added in vSphere API 6.7
+# Retention information for the schedule. This  *field*  was added in vSphere API 6.7.
 #
 sub set_retention_info {
    my ($self, %args) = @_;

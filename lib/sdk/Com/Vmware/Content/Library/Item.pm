@@ -111,7 +111,7 @@ sub new {
 #  if one of the following is true for the new library item: <ul>
 #  <li>name is empty</li>
 #  <li>name exceeds 80 characters</li>
-#  <li>description exceeds 1024 characters</li>
+#  <li>description exceeds 2000 characters</li>
 #  </ul>
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if the  ``client_token``  does not conform to the UUID format.
@@ -192,7 +192,7 @@ sub copy {
 #  if one of the following is true for the new library item: <ul>
 #  <li>name is empty</li>
 #  <li>name exceeds 80 characters</li>
-#  <li>description exceeds 1024 characters</li>
+#  <li>description exceeds 2000 characters</li>
 #  </ul>
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 #  if the  ``client_token``  does not conform to the UUID format.
@@ -423,7 +423,7 @@ sub find {
 #  if one of the following is true for the  ``update_spec`` : <ul>
 #  <li>name is empty</li>
 #  <li>name exceeds 80 characters</li>
-#  <li>description exceeds 1024 characters</li>
+#  <li>description exceeds 2000 characters</li>
 #  <li>version is not equal to the current version of the library item</li>
 #  </ul>
 #

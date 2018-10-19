@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::System_config::PscRegistration
 # The  ``Com::Vmware::Vcenter::System_config::PscRegistration``   *interface*  provides 
 #     *methods*  to get and set the PSC_EXTERNAL appliance a VCSA_EXTERNAL appliance is
-#     registered with. This  *interface*  was added in vSphere API 6.7
+#     registered with. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::System_config::PscRegistration;
@@ -61,7 +61,7 @@ sub new {
 
 ## @method get ()
 # Get information of the PSC that this appliance is registered with. This  *method*  was
-# added in vSphere API 6.7
+# added in vSphere API 6.7.
 #
 # @retval 
 # Info structure containing information about the external PSC node this appliance is
@@ -83,7 +83,7 @@ sub get {
 
 ## @method repoint ()
 # Repoint this vCenter Server appliance to a different external PSC. This  *method*  was
-# added in vSphere API 6.7
+# added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] RemotePscSpec structure containing information about the external PSC node to repoint
 #     this vCenter Server appliance to.
@@ -140,7 +140,7 @@ sub repoint {
 #
 # The  ``Com::Vmware::Vcenter::System_config::PscRegistration::Info``   *class*  has
 #     fields to specify information about the PSC node. This  *class*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 
 package Com::Vmware::Vcenter::System_config::PscRegistration::Info;
 
@@ -186,7 +186,7 @@ sub new {
 #
 # @retval address - The current value of the field.
 # The IP address or DNS resolvable name of the PSC this appliance is registered with.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_address {
@@ -199,7 +199,7 @@ sub get_address {
 # 
 # @param address  - New value for the field.
 # The IP address or DNS resolvable name of the PSC this appliance is registered with.
-#     This  *field*  was added in vSphere API 6.7
+#     This  *field*  was added in vSphere API 6.7.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -211,7 +211,7 @@ sub set_address {
 # Gets the value of 'https_port' property.
 #
 # @retval https_port - The current value of the field.
-# The HTTPs port used by the external PSC. This  *field*  was added in vSphere API 6.7
+# The HTTPs port used by the external PSC. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_https_port {
@@ -223,7 +223,7 @@ sub get_https_port {
 # Sets the given value for 'https_port' property.
 # 
 # @param https_port  - New value for the field.
-# The HTTPs port used by the external PSC. This  *field*  was added in vSphere API 6.7
+# The HTTPs port used by the external PSC. This  *field*  was added in vSphere API 6.7.
 #
 sub set_https_port {
    my ($self, %args) = @_;
@@ -236,7 +236,7 @@ sub set_https_port {
 #
 # @retval sso_domain - The current value of the field.
 # The Single Sign-On domain name of the external PSC. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # String#
 sub get_sso_domain {
@@ -249,7 +249,7 @@ sub get_sso_domain {
 # 
 # @param sso_domain  - New value for the field.
 # The Single Sign-On domain name of the external PSC. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_sso_domain {
    my ($self, %args) = @_;

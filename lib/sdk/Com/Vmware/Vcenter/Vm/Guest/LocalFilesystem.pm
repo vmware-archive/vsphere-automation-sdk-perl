@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Guest::LocalFilesystem
 # The  ``Com::Vmware::Vcenter::Vm::Guest::LocalFilesystem``   *interface*  provides 
 #     *methods*  for retrieving information about the guest operating system local file
-#     systems. This  *interface*  was added in vSphere API 6.7
+#     systems. This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Vm::Guest::LocalFilesystem;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method get ()
 # Returns details of the local file systems in the guest operating system. This  *method* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
@@ -115,7 +115,7 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::LocalFilesystem::Info``   *class*  contains
 #     information about a local file system configured in the guest operating system. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Guest::LocalFilesystem::Info;
 
@@ -159,7 +159,7 @@ sub new {
 #
 # @retval capacity - The current value of the field.
 # Total capacity of the file system, in bytes. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # long#
 sub get_capacity {
@@ -172,7 +172,7 @@ sub get_capacity {
 # 
 # @param capacity  - New value for the field.
 # Total capacity of the file system, in bytes. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_capacity {
    my ($self, %args) = @_;
@@ -184,7 +184,7 @@ sub set_capacity {
 # Gets the value of 'free_space' property.
 #
 # @retval free_space - The current value of the field.
-# Free space on the file system, in bytes. This  *field*  was added in vSphere API 6.7
+# Free space on the file system, in bytes. This  *field*  was added in vSphere API 6.7.
 #
 # long#
 sub get_free_space {
@@ -196,7 +196,7 @@ sub get_free_space {
 # Sets the given value for 'free_space' property.
 # 
 # @param free_space  - New value for the field.
-# Free space on the file system, in bytes. This  *field*  was added in vSphere API 6.7
+# Free space on the file system, in bytes. This  *field*  was added in vSphere API 6.7.
 #
 sub set_free_space {
    my ($self, %args) = @_;

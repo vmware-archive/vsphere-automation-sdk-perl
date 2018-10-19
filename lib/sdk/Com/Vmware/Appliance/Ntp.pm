@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Ntp
 # ``Com::Vmware::Appliance::Ntp``   *interface*  provides  *methods*  Gets NTP
 #     configuration status and tests connection to ntp servers. This  *interface*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::Ntp;
@@ -59,7 +59,8 @@ sub new {
 }
 
 ## @method test ()
-# Test the connection to a list of ntp servers. This  *method*  was added in vSphere API 6.7
+# Test the connection to a list of ntp servers. This  *method*  was added in vSphere API
+# 6.7.
 #
 # @param servers [REQUIRED] List of host names or IP addresses of NTP servers.
 # . The value must be Array of String.
@@ -89,7 +90,7 @@ sub test {
 # NTP servers in the configuration. If NTP based time synchronization is used internally,
 # the NTP daemon will be restarted to reload given NTP configuration. In case NTP based time
 # synchronization is not used, this method only replaces servers in the NTP configuration.
-# This  *method*  was added in vSphere API 6.7
+# This  *method*  was added in vSphere API 6.7.
 #
 # @param servers [REQUIRED] List of host names or ip addresses of ntp servers.
 # . The value must be Array of String.
@@ -115,7 +116,7 @@ sub set {
 # retrieve the current time synchronization method (NTP- or VMware Tools-based). The
 # &apos;ntp&apos; command always returns the NTP server information, even when the time
 # synchronization mode is not set to NTP. If the time synchronization mode is not NTP-based,
-# the NTP server status is displayed as down. This  *method*  was added in vSphere API 6.7
+# the NTP server status is displayed as down. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # List of NTP servers.
@@ -140,15 +141,15 @@ sub get {
 ## @class Com::Vmware::Appliance::Ntp::ServerStatus
 #
 # ``Com::Vmware::Appliance::Ntp::ServerStatus``   *enumerated type*  Status of server
-#     during test. This  *enumeration*  was added in vSphere API 6.7
+#     during test. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Ntp::ServerStatus::SERVER_REACHABLE #
-#Server is reachable. This  *constant*  was added in vSphere API 6.7
+#Server is reachable. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Appliance::Ntp::ServerStatus::SERVER_UNREACHABLE #
-#Server is unreachable. This  *constant*  was added in vSphere API 6.7
+#Server is unreachable. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Ntp::ServerStatus;
 
@@ -196,7 +197,7 @@ sub new {
 #
 #
 # ``Com::Vmware::Appliance::Ntp::LocalizableMessage``   *class*  Structure representing
-#     message. This  *class*  was added in vSphere API 6.7
+#     message. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Ntp::LocalizableMessage;
 
@@ -241,7 +242,7 @@ sub new {
 # Gets the value of 'id' property.
 #
 # @retval id - The current value of the field.
-# id in message bundle. This  *field*  was added in vSphere API 6.7
+# id in message bundle. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_id {
@@ -253,7 +254,7 @@ sub get_id {
 # Sets the given value for 'id' property.
 # 
 # @param id  - New value for the field.
-# id in message bundle. This  *field*  was added in vSphere API 6.7
+# id in message bundle. This  *field*  was added in vSphere API 6.7.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -265,7 +266,7 @@ sub set_id {
 # Gets the value of 'default_message' property.
 #
 # @retval default_message - The current value of the field.
-# text in english. This  *field*  was added in vSphere API 6.7
+# text in english. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_default_message {
@@ -277,7 +278,7 @@ sub get_default_message {
 # Sets the given value for 'default_message' property.
 # 
 # @param default_message  - New value for the field.
-# text in english. This  *field*  was added in vSphere API 6.7
+# text in english. This  *field*  was added in vSphere API 6.7.
 #
 sub set_default_message {
    my ($self, %args) = @_;
@@ -289,7 +290,7 @@ sub set_default_message {
 # Gets the value of 'args' property.
 #
 # @retval args - The current value of the field.
-# nested data. This  *field*  was added in vSphere API 6.7
+# nested data. This  *field*  was added in vSphere API 6.7.
 #
 # List#
 sub get_args {
@@ -301,7 +302,7 @@ sub get_args {
 # Sets the given value for 'args' property.
 # 
 # @param args  - New value for the field.
-# nested data. This  *field*  was added in vSphere API 6.7
+# nested data. This  *field*  was added in vSphere API 6.7.
 #
 sub set_args {
    my ($self, %args) = @_;
@@ -317,7 +318,7 @@ sub set_args {
 #
 #
 # ``Com::Vmware::Appliance::Ntp::TestRunStatus``   *class*  Status of the test. This 
-#     *class*  was added in vSphere API 6.7
+#     *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Ntp::TestRunStatus;
 
@@ -362,7 +363,7 @@ sub new {
 # Gets the value of 'server' property.
 #
 # @retval server - The current value of the field.
-# Server name associated with the test run. This  *field*  was added in vSphere API 6.7
+# Server name associated with the test run. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_server {
@@ -374,7 +375,7 @@ sub get_server {
 # Sets the given value for 'server' property.
 # 
 # @param server  - New value for the field.
-# Server name associated with the test run. This  *field*  was added in vSphere API 6.7
+# Server name associated with the test run. This  *field*  was added in vSphere API 6.7.
 #
 sub set_server {
    my ($self, %args) = @_;
@@ -386,7 +387,7 @@ sub set_server {
 # Gets the value of 'status' property.
 #
 # @retval status - The current value of the field.
-# Server status. This  *field*  was added in vSphere API 6.7
+# Server status. This  *field*  was added in vSphere API 6.7.
 #
 # ServerStatus#
 sub get_status {
@@ -398,7 +399,7 @@ sub get_status {
 # Sets the given value for 'status' property.
 # 
 # @param status  - New value for the field.
-# Server status. This  *field*  was added in vSphere API 6.7
+# Server status. This  *field*  was added in vSphere API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -410,7 +411,7 @@ sub set_status {
 # Gets the value of 'message' property.
 #
 # @retval message - The current value of the field.
-# Message associated with status. This  *field*  was added in vSphere API 6.7
+# Message associated with status. This  *field*  was added in vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_message {
@@ -422,7 +423,7 @@ sub get_message {
 # Sets the given value for 'message' property.
 # 
 # @param message  - New value for the field.
-# Message associated with status. This  *field*  was added in vSphere API 6.7
+# Message associated with status. This  *field*  was added in vSphere API 6.7.
 #
 sub set_message {
    my ($self, %args) = @_;

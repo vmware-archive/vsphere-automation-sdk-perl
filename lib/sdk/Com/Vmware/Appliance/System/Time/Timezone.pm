@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::System::Time::Timezone
 # The  ``Com::Vmware::Appliance::System::Time::Timezone``   *interface*  provides 
 #     *methods*  to get and set the appliance timezone. This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Appliance::System::Time::Timezone;
@@ -59,7 +59,7 @@ sub new {
 }
 
 ## @method set ()
-# Set time zone. This  *method*  was added in vSphere API 6.7
+# Set time zone. This  *method*  was added in vSphere API 6.7.
 #
 # @param name [REQUIRED] Time zone name.
 # . The value must be String.
@@ -84,7 +84,7 @@ sub set {
 
 
 ## @method get ()
-# Get time zone. This  *method*  was added in vSphere API 6.7
+# Get time zone. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # Time zone name.

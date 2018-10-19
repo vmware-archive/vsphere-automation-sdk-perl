@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Cis::Task::CommonInfo``   *class*  contains information common to
-#     all tasks. This  *class*  was added in vSphere API 6.7
+#     all tasks. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Cis::Task::CommonInfo;
 
@@ -75,7 +75,7 @@ sub new {
 #
 # @retval description - The current value of the field.
 # Description of the operation associated with the task. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # LocalizableMessage#
 sub get_description {
@@ -88,7 +88,7 @@ sub get_description {
 # 
 # @param description  - New value for the field.
 # Description of the operation associated with the task. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -100,8 +100,8 @@ sub set_description {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# Name of the service containing the operation. This  *field*  was added in vSphere API
-#     6.7
+# Identifier of the service containing the operation. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # ID#
 sub get_service {
@@ -113,8 +113,8 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# Name of the service containing the operation. This  *field*  was added in vSphere API
-#     6.7
+# Identifier of the service containing the operation. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -126,8 +126,8 @@ sub set_service {
 # Gets the value of 'operation' property.
 #
 # @retval operation - The current value of the field.
-# Name of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+# Identifier of the operation associated with the task. This  *field*  was added in
+#     vSphere API 6.7.
 #
 # ID#
 sub get_operation {
@@ -139,8 +139,8 @@ sub get_operation {
 # Sets the given value for 'operation' property.
 # 
 # @param operation  - New value for the field.
-# Name of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+# Identifier of the operation associated with the task. This  *field*  was added in
+#     vSphere API 6.7.
 #
 sub set_operation {
    my ($self, %args) = @_;
@@ -152,7 +152,7 @@ sub set_operation {
 # Gets the value of 'parent' property.
 #
 # @retval parent - The current value of the field.
-# Parent of the current task. This  *field*  was added in vSphere API 6.7
+# Parent of the current task. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_parent {
@@ -164,7 +164,7 @@ sub get_parent {
 # Sets the given value for 'parent' property.
 # 
 # @param parent  - New value for the field.
-# Parent of the current task. This  *field*  was added in vSphere API 6.7
+# Parent of the current task. This  *field*  was added in vSphere API 6.7.
 #
 sub set_parent {
    my ($self, %args) = @_;
@@ -177,7 +177,7 @@ sub set_parent {
 #
 # @retval target - The current value of the field.
 # Identifier of the target created by the operation or an existing one the operation
-#     performed on. This  *field*  was added in vSphere API 6.7
+#     performed on. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_target {
@@ -190,7 +190,7 @@ sub get_target {
 # 
 # @param target  - New value for the field.
 # Identifier of the target created by the operation or an existing one the operation
-#     performed on. This  *field*  was added in vSphere API 6.7
+#     performed on. This  *field*  was added in vSphere API 6.7.
 #
 sub set_target {
    my ($self, %args) = @_;
@@ -203,7 +203,7 @@ sub set_target {
 #
 # @retval status - The current value of the field.
 # Status of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # Status#
 sub get_status {
@@ -216,7 +216,7 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # Status of the operation associated with the task. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -229,7 +229,7 @@ sub set_status {
 #
 # @retval cancelable - The current value of the field.
 # Flag to indicate whether or not the operation can be cancelled. The value may change
-#     as the operation progresses. This  *field*  was added in vSphere API 6.7
+#     as the operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_cancelable {
@@ -242,7 +242,7 @@ sub get_cancelable {
 # 
 # @param cancelable  - New value for the field.
 # Flag to indicate whether or not the operation can be cancelled. The value may change
-#     as the operation progresses. This  *field*  was added in vSphere API 6.7
+#     as the operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 sub set_cancelable {
    my ($self, %args) = @_;
@@ -255,7 +255,7 @@ sub set_cancelable {
 #
 # @retval error - The current value of the field.
 # Description of the error if the operation status is &quot;FAILED&quot;. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Optional#
 sub get_error {
@@ -268,7 +268,7 @@ sub get_error {
 # 
 # @param error  - New value for the field.
 # Description of the error if the operation status is &quot;FAILED&quot;. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_error {
    my ($self, %args) = @_;
@@ -280,7 +280,7 @@ sub set_error {
 # Gets the value of 'start_time' property.
 #
 # @retval start_time - The current value of the field.
-# Time when the operation is started. This  *field*  was added in vSphere API 6.7
+# Time when the operation is started. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_start_time {
@@ -292,7 +292,7 @@ sub get_start_time {
 # Sets the given value for 'start_time' property.
 # 
 # @param start_time  - New value for the field.
-# Time when the operation is started. This  *field*  was added in vSphere API 6.7
+# Time when the operation is started. This  *field*  was added in vSphere API 6.7.
 #
 sub set_start_time {
    my ($self, %args) = @_;
@@ -304,7 +304,7 @@ sub set_start_time {
 # Gets the value of 'end_time' property.
 #
 # @retval end_time - The current value of the field.
-# Time when the operation is completed. This  *field*  was added in vSphere API 6.7
+# Time when the operation is completed. This  *field*  was added in vSphere API 6.7.
 #
 # optional#
 sub get_end_time {
@@ -316,7 +316,7 @@ sub get_end_time {
 # Sets the given value for 'end_time' property.
 # 
 # @param end_time  - New value for the field.
-# Time when the operation is completed. This  *field*  was added in vSphere API 6.7
+# Time when the operation is completed. This  *field*  was added in vSphere API 6.7.
 #
 sub set_end_time {
    my ($self, %args) = @_;
@@ -329,7 +329,7 @@ sub set_end_time {
 #
 # @retval user - The current value of the field.
 # Name of the user who performed the operation. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_user {
@@ -342,7 +342,7 @@ sub get_user {
 # 
 # @param user  - New value for the field.
 # Name of the user who performed the operation. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_user {
    my ($self, %args) = @_;

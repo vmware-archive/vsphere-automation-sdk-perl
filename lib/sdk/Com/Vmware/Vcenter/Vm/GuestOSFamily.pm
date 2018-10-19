@@ -2,27 +2,27 @@
 #
 # The  ``Com::Vmware::Vcenter::Vm::GuestOSFamily``   *enumerated type*  defines the
 #     valid guest operating system family types reported by a virtual machine. This 
-#     *enumeration*  was added in vSphere API 6.7
+#     *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOSFamily::WINDOWS #
-#Windows operating system. This  *constant*  was added in vSphere API 6.7
+#Windows operating system. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOSFamily::LINUX #
-#Linux operating system. This  *constant*  was added in vSphere API 6.7
+#Linux operating system. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOSFamily::NETWARE #
-#Novell Netware. This  *constant*  was added in vSphere API 6.7
+#Novell Netware. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOSFamily::SOLARIS #
-#Solaris operating system. This  *constant*  was added in vSphere API 6.7
+#Solaris operating system. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOSFamily::DARWIN #
-#Mac OS operating system. This  *constant*  was added in vSphere API 6.7
+#Mac OS operating system. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOSFamily::OTHER #
-#Other operating systems. This  *constant*  was added in vSphere API 6.7
+#Other operating systems. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::GuestOSFamily;
 

@@ -15,7 +15,7 @@
 #     *methods*  related to storage policies associated with datastore object. The 
 #     :func:`Com::Vmware::Vcenter::Datastore::DefaultPolicy.get`   *method*  provides
 #     information about the default storage policy associated with the specific datastore.
-#     This  *interface*  was added in vSphere API 6.7
+#     This  *interface*  was added in vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Datastore::DefaultPolicy;
@@ -62,7 +62,7 @@ sub new {
 
 ## @method get ()
 # Returns the identifier of the current default storage policy associated with the specified
-# datastore. This  *method*  was added in vSphere API 6.7
+# datastore. This  *method*  was added in vSphere API 6.7.
 #
 # @param datastore [REQUIRED] Identifier of the datastore for which the default policy is requested.
 # The value must be an identifier for the resource type getQualifiedName(Datastore).

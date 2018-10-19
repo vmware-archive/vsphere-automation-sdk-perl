@@ -15,7 +15,7 @@
 # The  *Compliance*   *interface*  provides  *methods*  that return the compliance
 #     status of virtual machine entities(virtual machine home directory and virtual disks)
 #     that specify storage policy requirements. This  *interface*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance;
@@ -62,7 +62,7 @@ sub new {
 
 ## @method get ()
 # Returns the cached storage policy compliance information of a virtual machine. This 
-# *method*  was added in vSphere API 6.7
+# *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -105,7 +105,7 @@ sub get {
 ## @method check ()
 # Returns the storage policy Compliance  class
 # Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Info  of a virtual machine after
-# explicitly re-computing compliance check. This  *method*  was added in vSphere API 6.7
+# explicitly re-computing compliance check. This  *method*  was added in vSphere API 6.7.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -167,29 +167,29 @@ sub check {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Status``   *enumerated
 #     type*  defines the storage compliance status of a virtual machine and its applicable
-#     entities. This  *enumeration*  was added in vSphere API 6.7
+#     entities. This  *enumeration*  was added in vSphere API 6.7.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Status::COMPLIANT #
-#Entity is in compliance. This  *constant*  was added in vSphere API 6.7
+#Entity is in compliance. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Status::NON_COMPLIANT #
-#Entity is out of compliance. This  *constant*  was added in vSphere API 6.7
+#Entity is out of compliance. This  *constant*  was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Status::UNKNOWN_COMPLIANCE #
 #Compliance status of the entity is not known. This  *constant*  was added in vSphere API
-# 6.7
+# 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Status::NOT_APPLICABLE #
 #Compliance computation is not applicable for this entity because it does not have any
 # storage requirements that apply to the datastore on which it is placed. This  *constant* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Status::OUT_OF_DATE #
 #The Compliance status becomes out-of-date when the profile associated with the entity is
 # edited but not applied. The compliance status remains out-of-date until the edited policy
-# is applied to the entity. This  *constant*  was added in vSphere API 6.7
+# is applied to the entity. This  *constant*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Status;
 
@@ -241,7 +241,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::VmComplianceInfo``  
 #     *class*  contains information about storage policy compliance associated with a
-#     virtual machine. This  *class*  was added in vSphere API 6.7
+#     virtual machine. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::VmComplianceInfo;
 
@@ -288,7 +288,7 @@ sub new {
 # Gets the value of 'status' property.
 #
 # @retval status - The current value of the field.
-# Status of the compliance operation. This  *field*  was added in vSphere API 6.7
+# Status of the compliance operation. This  *field*  was added in vSphere API 6.7.
 #
 # Status#
 sub get_status {
@@ -300,7 +300,7 @@ sub get_status {
 # Sets the given value for 'status' property.
 # 
 # @param status  - New value for the field.
-# Status of the compliance operation. This  *field*  was added in vSphere API 6.7
+# Status of the compliance operation. This  *field*  was added in vSphere API 6.7.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -313,7 +313,7 @@ sub set_status {
 #
 # @retval check_time - The current value of the field.
 # Date and time of the most recent compliance check. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # DateTime#
 sub get_check_time {
@@ -326,7 +326,7 @@ sub get_check_time {
 # 
 # @param check_time  - New value for the field.
 # Date and time of the most recent compliance check. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_check_time {
    my ($self, %args) = @_;
@@ -339,7 +339,7 @@ sub set_check_time {
 #
 # @retval policy - The current value of the field.
 # Identifier of the storage policy associated with the virtual machine. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # Optional#
 sub get_policy {
@@ -352,7 +352,7 @@ sub get_policy {
 # 
 # @param policy  - New value for the field.
 # Identifier of the storage policy associated with the virtual machine. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -367,7 +367,7 @@ sub set_policy {
 # The exception that caused the compliance check to fail. There can be more than one
 #     cause, since a policy can contain capabilities from multiple providers. If empty, it
 #     implies no failures while retrieving compliance. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 # List#
 sub get_failure_cause {
@@ -382,7 +382,7 @@ sub get_failure_cause {
 # The exception that caused the compliance check to fail. There can be more than one
 #     cause, since a policy can contain capabilities from multiple providers. If empty, it
 #     implies no failures while retrieving compliance. This  *field*  was added in vSphere
-#     API 6.7
+#     API 6.7.
 #
 sub set_failure_cause {
    my ($self, %args) = @_;
@@ -400,7 +400,7 @@ sub set_failure_cause {
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Info``   *class* 
 #     contains information about the storage policy compliance of a virtual machine,
 #     including information about it&apos;s home directory and/or it&apos;s virtual disks.
-#     This  *class*  was added in vSphere API 6.7
+#     This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::Info;
 
@@ -446,7 +446,7 @@ sub new {
 #
 # @retval overall_compliance - The current value of the field.
 # The overall compliance status of the virtual machine and all it&apos;s entities. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # Status#
 sub get_overall_compliance {
@@ -459,7 +459,7 @@ sub get_overall_compliance {
 # 
 # @param overall_compliance  - New value for the field.
 # The overall compliance status of the virtual machine and all it&apos;s entities. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_overall_compliance {
    my ($self, %args) = @_;
@@ -473,7 +473,7 @@ sub set_overall_compliance {
 # @retval vm_home - The current value of the field.
 # The storage policy compliance information  class
 #     Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::VmComplianceInfo  for the
-#     virtual machine&apos;s home directory. This  *field*  was added in vSphere API 6.7
+#     virtual machine&apos;s home directory. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_vm_home {
@@ -487,7 +487,7 @@ sub get_vm_home {
 # @param vm_home  - New value for the field.
 # The storage policy compliance information  class
 #     Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::VmComplianceInfo  for the
-#     virtual machine&apos;s home directory. This  *field*  was added in vSphere API 6.7
+#     virtual machine&apos;s home directory. This  *field*  was added in vSphere API 6.7.
 #
 sub set_vm_home {
    my ($self, %args) = @_;
@@ -502,7 +502,7 @@ sub set_vm_home {
 # The compliance information  class
 #     Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::VmComplianceInfo  for the
 #     virtual machine&apos;s virtual disks that are currently associated with a storage
-#     policy. This  *field*  was added in vSphere API 6.7
+#     policy. This  *field*  was added in vSphere API 6.7.
 #
 # Map#
 sub get_disks {
@@ -517,7 +517,7 @@ sub get_disks {
 # The compliance information  class
 #     Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::VmComplianceInfo  for the
 #     virtual machine&apos;s virtual disks that are currently associated with a storage
-#     policy. This  *field*  was added in vSphere API 6.7
+#     policy. This  *field*  was added in vSphere API 6.7.
 #
 sub set_disks {
    my ($self, %args) = @_;
@@ -534,7 +534,7 @@ sub set_disks {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::CheckSpec``   *class* 
 #     contains  *fields*  used to specify the entities on which the storage policy
-#     compliance check is to be invoked. This  *class*  was added in vSphere API 6.7
+#     compliance check is to be invoked. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance::CheckSpec;
 
@@ -578,7 +578,7 @@ sub new {
 #
 # @retval vm_home - The current value of the field.
 # Invoke compliance check on the virtual machine home directory if set to true. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 # boolean#
 sub get_vm_home {
@@ -591,7 +591,7 @@ sub get_vm_home {
 # 
 # @param vm_home  - New value for the field.
 # Invoke compliance check on the virtual machine home directory if set to true. This 
-#     *field*  was added in vSphere API 6.7
+#     *field*  was added in vSphere API 6.7.
 #
 sub set_vm_home {
    my ($self, %args) = @_;
@@ -604,7 +604,7 @@ sub set_vm_home {
 #
 # @retval disks - The current value of the field.
 # Identifiers of the virtual machine&apos;s virtual disks for which compliance should be
-#     checked. This  *field*  was added in vSphere API 6.7
+#     checked. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_disks {
@@ -617,7 +617,7 @@ sub get_disks {
 # 
 # @param disks  - New value for the field.
 # Identifiers of the virtual machine&apos;s virtual disks for which compliance should be
-#     checked. This  *field*  was added in vSphere API 6.7
+#     checked. This  *field*  was added in vSphere API 6.7.
 #
 sub set_disks {
    my ($self, %args) = @_;

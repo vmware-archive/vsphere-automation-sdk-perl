@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Local_accounts::Policy
 # The  ``Com::Vmware::Appliance::Local_accounts::Policy``   *interface*  provides 
 #     *methods*  to manage local user accounts. This  *interface*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 
 package Com::Vmware::Appliance::Local_accounts::Policy;
@@ -59,7 +59,7 @@ sub new {
 }
 
 ## @method get ()
-# Get the global password policy. This  *method*  was added in vSphere API 6.7
+# Get the global password policy. This  *method*  was added in vSphere API 6.7.
 #
 # @retval 
 # Global password policy
@@ -76,7 +76,7 @@ sub get {
 
 
 ## @method set ()
-# Set the global password policy. This  *method*  was added in vSphere API 6.7
+# Set the global password policy. This  *method*  was added in vSphere API 6.7.
 #
 # @param policy [REQUIRED] Global password policy
 # . The value must be Com::Vmware::Appliance::Local_accounts::Policy::Info.
@@ -120,7 +120,7 @@ sub set {
 #
 #
 # The  ``Com::Vmware::Appliance::Local_accounts::Policy::Info``   *class*  defines the
-#     global password policy. This  *class*  was added in vSphere API 6.7
+#     global password policy. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Appliance::Local_accounts::Policy::Info;
 
@@ -166,7 +166,7 @@ sub new {
 #
 # @retval max_days - The current value of the field.
 # Maximum number of days a password may be used. If the password is older than this, a
-#     password change will be forced. This  *field*  was added in vSphere API 6.7
+#     password change will be forced. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_max_days {
@@ -179,7 +179,7 @@ sub get_max_days {
 # 
 # @param max_days  - New value for the field.
 # Maximum number of days a password may be used. If the password is older than this, a
-#     password change will be forced. This  *field*  was added in vSphere API 6.7
+#     password change will be forced. This  *field*  was added in vSphere API 6.7.
 #
 sub set_max_days {
    my ($self, %args) = @_;
@@ -193,7 +193,7 @@ sub set_max_days {
 # @retval min_days - The current value of the field.
 # Minimum number of days allowed between password changes. Any password changes
 #     attempted sooner than this will be rejected. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_min_days {
@@ -207,7 +207,7 @@ sub get_min_days {
 # @param min_days  - New value for the field.
 # Minimum number of days allowed between password changes. Any password changes
 #     attempted sooner than this will be rejected. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_min_days {
    my ($self, %args) = @_;
@@ -220,7 +220,7 @@ sub set_min_days {
 #
 # @retval warn_days - The current value of the field.
 # Number of days warning given before a password expires. A zero means warning is given
-#     only upon the day of expiration. This  *field*  was added in vSphere API 6.7
+#     only upon the day of expiration. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_warn_days {
@@ -233,7 +233,7 @@ sub get_warn_days {
 # 
 # @param warn_days  - New value for the field.
 # Number of days warning given before a password expires. A zero means warning is given
-#     only upon the day of expiration. This  *field*  was added in vSphere API 6.7
+#     only upon the day of expiration. This  *field*  was added in vSphere API 6.7.
 #
 sub set_warn_days {
    my ($self, %args) = @_;

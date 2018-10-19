@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Deployment::Install
 # The  ``Com::Vmware::Vcenter::Deployment::Install``   *interface*  provides  *methods* 
 #     to configure the installation of the appliance. This  *interface*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 
 package Com::Vmware::Vcenter::Deployment::Install;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method get ()
 # Get the parameters used to configure the ongoing appliance installation. This  *method* 
-# was added in vSphere API 6.7
+# was added in vSphere API 6.7.
 #
 # @retval 
 # InstallSpec parameters being used to configure appliance install.
@@ -81,7 +81,7 @@ sub get {
 
 ## @method check ()
 # Run sanity checks using the InstallSpec parameters passed. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @param spec [REQUIRED] InstallSpec parameters to run sanity check with.
 # . The value must be Com::Vmware::Vcenter::Deployment::Install::InstallSpec.
@@ -118,7 +118,7 @@ sub check {
 
 
 ## @method start ()
-# Start the appliance installation. This  *method*  was added in vSphere API 6.7
+# Start the appliance installation. This  *method*  was added in vSphere API 6.7.
 #
 # @param spec [REQUIRED] InstallSpec parameters to configure the appliance install.
 # . The value must be Com::Vmware::Vcenter::Deployment::Install::InstallSpec.
@@ -152,7 +152,7 @@ sub start {
 
 ## @method cancel ()
 # Cancel the appliance installation that is in progress. This  *method*  was added in
-# vSphere API 6.7
+# vSphere API 6.7.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
@@ -189,7 +189,7 @@ sub cancel {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Install::VcsaEmbeddedSpec``   *class* 
 #     contains information used to configure an embedded standalone or replicated vCenter
-#     Server. This  *class*  was added in vSphere API 6.7
+#     Server. This  *class*  was added in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Install::VcsaEmbeddedSpec;
 
@@ -236,7 +236,7 @@ sub new {
 # @retval standalone - The current value of the field.
 # Spec used to configure a standalone embedded vCenter Server. This field describes how
 #     the standalone vCenter Server appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 # Optional#
 sub get_standalone {
@@ -250,7 +250,7 @@ sub get_standalone {
 # @param standalone  - New value for the field.
 # Spec used to configure a standalone embedded vCenter Server. This field describes how
 #     the standalone vCenter Server appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 sub set_standalone {
    my ($self, %args) = @_;
@@ -264,7 +264,7 @@ sub set_standalone {
 # @retval replicated - The current value of the field.
 # Spec used to configure a replicated embedded vCenter Server. This field describes how
 #     the replicated vCenter Server appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 # Optional#
 sub get_replicated {
@@ -278,7 +278,7 @@ sub get_replicated {
 # @param replicated  - New value for the field.
 # Spec used to configure a replicated embedded vCenter Server. This field describes how
 #     the replicated vCenter Server appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 sub set_replicated {
    my ($self, %args) = @_;
@@ -291,7 +291,7 @@ sub set_replicated {
 #
 # @retval ceip_enabled - The current value of the field.
 # Whether CEIP should be enabled or disabled. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # boolean#
 sub get_ceip_enabled {
@@ -304,7 +304,7 @@ sub get_ceip_enabled {
 # 
 # @param ceip_enabled  - New value for the field.
 # Whether CEIP should be enabled or disabled. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_ceip_enabled {
    my ($self, %args) = @_;
@@ -321,7 +321,7 @@ sub set_ceip_enabled {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Install::PscSpec``   *class*  contains
 #     information used to configure a standalone or replicated PSC. This  *class*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Install::PscSpec;
 
@@ -368,7 +368,7 @@ sub new {
 # @retval standalone - The current value of the field.
 # Spec used to configure a standalone Platform Services Controller. This field describes
 #     how the standalone PSC should be configured. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_standalone {
@@ -382,7 +382,7 @@ sub get_standalone {
 # @param standalone  - New value for the field.
 # Spec used to configure a standalone Platform Services Controller. This field describes
 #     how the standalone PSC should be configured. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_standalone {
    my ($self, %args) = @_;
@@ -396,7 +396,7 @@ sub set_standalone {
 # @retval replicated - The current value of the field.
 # Spec used to configure a replicated Platform Services Controller. This field describes
 #     how the replicated PSC should be configured. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 # Optional#
 sub get_replicated {
@@ -410,7 +410,7 @@ sub get_replicated {
 # @param replicated  - New value for the field.
 # Spec used to configure a replicated Platform Services Controller. This field describes
 #     how the replicated PSC should be configured. This  *field*  was added in vSphere API
-#     6.7
+#     6.7.
 #
 sub set_replicated {
    my ($self, %args) = @_;
@@ -423,7 +423,7 @@ sub set_replicated {
 #
 # @retval ceip_enabled - The current value of the field.
 # Customer experience improvement program should be enabled or disabled. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 # boolean#
 sub get_ceip_enabled {
@@ -436,7 +436,7 @@ sub get_ceip_enabled {
 # 
 # @param ceip_enabled  - New value for the field.
 # Customer experience improvement program should be enabled or disabled. This  *field* 
-#     was added in vSphere API 6.7
+#     was added in vSphere API 6.7.
 #
 sub set_ceip_enabled {
    my ($self, %args) = @_;
@@ -453,7 +453,7 @@ sub set_ceip_enabled {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Install::InstallSpec``   *class*  contains
 #     information used to configure the appliance installation. This  *class*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 
 package Com::Vmware::Vcenter::Deployment::Install::InstallSpec;
 
@@ -502,7 +502,7 @@ sub new {
 # @retval vcsa_embedded - The current value of the field.
 # Spec used to configure an embedded vCenter Server. This field describes how the
 #     embedded vCenter Server appliance should be configured. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 # Optional#
 sub get_vcsa_embedded {
@@ -516,7 +516,7 @@ sub get_vcsa_embedded {
 # @param vcsa_embedded  - New value for the field.
 # Spec used to configure an embedded vCenter Server. This field describes how the
 #     embedded vCenter Server appliance should be configured. This  *field*  was added in
-#     vSphere API 6.7
+#     vSphere API 6.7.
 #
 sub set_vcsa_embedded {
    my ($self, %args) = @_;
@@ -530,7 +530,7 @@ sub set_vcsa_embedded {
 # @retval psc - The current value of the field.
 # Spec used to configure a Platform Services Controller. This field describes how the
 #     Platform Services Controller appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 # Optional#
 sub get_psc {
@@ -544,7 +544,7 @@ sub get_psc {
 # @param psc  - New value for the field.
 # Spec used to configure a Platform Services Controller. This field describes how the
 #     Platform Services Controller appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7
+#     in vSphere API 6.7.
 #
 sub set_psc {
    my ($self, %args) = @_;
@@ -558,7 +558,7 @@ sub set_psc {
 # @retval vcsa_external - The current value of the field.
 # Spec used to configure a vCenter Server registered with an external PSC. This fields
 #     represent the remote external PSC that the configuring vCenter Server will be
-#     registering with. This  *field*  was added in vSphere API 6.7
+#     registering with. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_vcsa_external {
@@ -572,7 +572,7 @@ sub get_vcsa_external {
 # @param vcsa_external  - New value for the field.
 # Spec used to configure a vCenter Server registered with an external PSC. This fields
 #     represent the remote external PSC that the configuring vCenter Server will be
-#     registering with. This  *field*  was added in vSphere API 6.7
+#     registering with. This  *field*  was added in vSphere API 6.7.
 #
 sub set_vcsa_external {
    my ($self, %args) = @_;
@@ -585,7 +585,7 @@ sub set_vcsa_external {
 #
 # @retval auto_answer - The current value of the field.
 # Use the default option for any questions that may come up during appliance
-#     configuration. This  *field*  was added in vSphere API 6.7
+#     configuration. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_auto_answer {
@@ -598,7 +598,7 @@ sub get_auto_answer {
 # 
 # @param auto_answer  - New value for the field.
 # Use the default option for any questions that may come up during appliance
-#     configuration. This  *field*  was added in vSphere API 6.7
+#     configuration. This  *field*  was added in vSphere API 6.7.
 #
 sub set_auto_answer {
    my ($self, %args) = @_;
