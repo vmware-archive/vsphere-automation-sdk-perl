@@ -1,6 +1,6 @@
 # VMware vSphere Automation SDK for Perl
 ## Table of Contents
-* [Abstract](#abstract)
+- [Abstract](#abstract)
 - [Supported vCenter Releases](#supported-vcenter-releases)
 - [Quick Start Guide](#quick-start-guide)
   - [Supported Platforms](#supported-platforms)
