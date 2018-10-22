@@ -1,6 +1,7 @@
 # VMware vSphere Automation SDK for Perl
 ## Table of Contents
 * [Abstract](#abstract)
+- [Supported vCenter Releases](#supported-vcenter-releases)
 - [Quick Start Guide](#quick-start-guide)
   - [Supported Platforms](#supported-platforms)
   - [Supported Perl Versions](#supported-perl-versions)
@@ -16,10 +17,11 @@
 ## Abstract
 This document for the vSphere Automation SDK for perl describes -
    1. How to run the samples in this repository
-   2. The procedure for contributing new samples.
+   2. The procedure for contributing new samples
 
-## Supported vCenter Releases:
-vCenter 6.0, 6.5 and 6.7.
+## Supported OnPrem vCenter Releases:
+vCenter 6.0, 6.5, 6.7 and 6.7U1
+
 Please refer to the notes in each sample for detailed compatibility information.
 
 ## Introduction
@@ -83,7 +85,7 @@ $sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev libssl-dev perl-doc li
 cpan install Crypt::OpenSSL::RSA UUID::Random Exception::Class Crypt::X509 List::MoreUtils
 ```
 
-**Note:** The PERL SDK 6.5 has to be uninstalled, as the new Automation SDK for Perl 6.7 requires 6.7 PERL SDK as a pre-requisite.
+**Note:** The PERL SDK 6.5 has to be uninstalled, as the new Automation SDK for Perl 6.7U1 requires 6.7 PERL SDK as a pre-requisite.
 
 For more info, please refer to https://www.vmware.com/support/developer/viperltoolkit/
 
@@ -148,7 +150,9 @@ Use a command like the following to get list of VMs present in vCenter.
     $ perl list_vms.pl --server https://vCenter_server_ip --username 'user name' --password 'password'
 
 ## API Documentation
-The API documentation can be found [here] (doc/client.zip)
+The API documentation can be downloaded from below link: 
+
+[vSphere APIs](doc/vsphere-perldoc.zip).
 
 ## Repository Administrator Resources
 ### Board Members
@@ -167,5 +171,5 @@ Items added to the repository, including items from the Board members, require 2
 * [vSphere Automation SDK Overview](http://pubs.vmware.com/vsphere-65/index.jsp#com.vmware.vapi.progguide.doc/GUID-AF73991C-FC1C-47DF-8362-184B6544CFDE.html)
 * [VMware Code](https://code.vmware.com/home)
 * [VMware Developer Community](https://communities.vmware.com/community/vmtn/developer)
-* VMware vSphere [REST API Reference documentation](https://code.vmware.com/web/dp/doc/preview?id=4645).
+* VMware vSphere [REST API Reference documentation](https://code.vmware.com/apis/366/vsphere-automation)
 * [VMware Perl forum](https://code.vmware.com/forums/7562/vsphere-automation-sdk-for-perl)
