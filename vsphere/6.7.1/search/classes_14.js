@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['validationerror',['ValidationError',['../de/d5c/class_com_1_1_vmware_1_1_content_1_1_library_1_1_item_1_1_updatesession_1_1_file_1_1_validation_error.html',1,'Com::Vmware::Content::Library::Item::Updatesession::File']]],
+  ['validationresult',['ValidationResult',['../db/dfe/class_com_1_1_vmware_1_1_content_1_1_library_1_1_item_1_1_updatesession_1_1_file_1_1_validation_result.html',1,'Com::Vmware::Content::Library::Item::Updatesession::File']]],
+  ['vapiinterface',['VapiInterface',['../dd/d85/class_com_1_1_vmware_1_1_vapi_1_1_bindings_1_1_vapi_interface.html',1,'Com::Vmware::Vapi::Bindings']]],
+  ['vcenterextensionparams',['VcenterExtensionParams',['../d9/da1/class_com_1_1_vmware_1_1_vcenter_1_1_ovf_1_1_vcenter_extension_params.html',1,'Com::Vmware::Vcenter::Ovf']]],
+  ['vcsaembeddedspec',['VcsaEmbeddedSpec',['../db/d00/class_com_1_1_vmware_1_1_vcenter_1_1_deployment_1_1_upgrade_1_1_vcsa_embedded_spec.html',1,'Com::Vmware::Vcenter::Deployment::Upgrade']]],
+  ['vcsaembeddedspec',['VcsaEmbeddedSpec',['../dc/d09/class_com_1_1_vmware_1_1_vcenter_1_1_deployment_1_1_install_1_1_vcsa_embedded_spec.html',1,'Com::Vmware::Vcenter::Deployment::Install']]],
+  ['verificationmode',['VerificationMode',['../d4/dfb/class_com_1_1_vmware_1_1_vcenter_1_1_deployment_1_1_verification_mode.html',1,'Com::Vmware::Vcenter::Deployment']]],
+  ['version',['Version',['../d0/d50/class_com_1_1_vmware_1_1_appliance_1_1_system_1_1_version.html',1,'Com::Vmware::Appliance::System']]],
+  ['version',['Version',['../d0/da1/class_com_1_1_vmware_1_1_vcenter_1_1_vm_1_1_hardware_1_1_version.html',1,'Com::Vmware::Vcenter::Vm::Hardware']]],
+  ['versionstruct',['VersionStruct',['../de/de5/class_com_1_1_vmware_1_1_appliance_1_1_system_1_1_version_1_1_version_struct.html',1,'Com::Vmware::Appliance::System::Version']]],
+  ['vm',['VM',['../d6/d06/class_com_1_1_vmware_1_1_vcenter_1_1_storage_1_1_policies_1_1_v_m.html',1,'Com::Vmware::Vcenter::Storage::Policies']]],
+  ['vm',['VM',['../d7/d67/class_com_1_1_vmware_1_1_vcenter_1_1_v_m.html',1,'Com::Vmware::Vcenter']]],
+  ['vm',['VM',['../d9/db1/class_com_1_1_vmware_1_1_vcenter_1_1_storage_1_1_policies_1_1_compliance_1_1_v_m.html',1,'Com::Vmware::Vcenter::Storage::Policies::Compliance']]],
+  ['vmcomplianceinfo',['VmComplianceInfo',['../d1/dfa/class_com_1_1_vmware_1_1_vcenter_1_1_vm_1_1_storage_1_1_policy_1_1_compliance_1_1_vm_compliance_info.html',1,'Com::Vmware::Vcenter::Vm::Storage::Policy::Compliance']]],
+  ['vmdkcreatespec',['VmdkCreateSpec',['../d0/dfb/class_com_1_1_vmware_1_1_vcenter_1_1_vm_1_1_hardware_1_1_disk_1_1_vmdk_create_spec.html',1,'Com::Vmware::Vcenter::Vm::Hardware::Disk']]],
+  ['vmhomepolicyspec',['VmHomePolicySpec',['../db/d4e/class_com_1_1_vmware_1_1_vcenter_1_1_vm_1_1_storage_1_1_policy_1_1_vm_home_policy_spec.html',1,'Com::Vmware::Vcenter::Vm::Storage::Policy']]],
+  ['vmhomestorageinfo',['VmHomeStorageInfo',['../d6/d4a/class_com_1_1_vmware_1_1_vcenter_1_1_vm__template_1_1_library_items_1_1_vm_home_storage_info.html',1,'Com::Vmware::Vcenter::Vm_template::LibraryItems']]],
+  ['vminfo',['VmInfo',['../d6/d01/class_com_1_1_vmware_1_1_vcenter_1_1_vcha_1_1_cluster_1_1_vm_info.html',1,'Com::Vmware::Vcenter::Vcha::Cluster']]]
+];
