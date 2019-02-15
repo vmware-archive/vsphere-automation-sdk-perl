@@ -121,7 +121,7 @@ Apart from the above, each individual sample may require additional setup. Pleas
 3. Download the vSphere SDK for Perl 6.7 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://my.vmware.com/group/vmware/details?downloadGroup=VS-PERL-SDK67&productId=742) and follow below mentioned steps to install in case of linux platform.
 ```cmd
 Untar the vSphere SDK for Perl 6.7 binary that you downloaded.
-$tar ‚Äìzxvf VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz
+$tar ñzxvf VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz
 A vmware-vsphere-vcli-distrib directory is created.
 Log in as superuser and run the installer.
 $cd vmware-vsphere-cli-distrib
@@ -150,9 +150,11 @@ Use a command like the following to get list of VMs present in vCenter.
     $ perl list_vms.pl --server https://vCenter_server_ip --username 'user name' --password 'password'
 
 ## API Documentation
-The API documentation can be downloaded from below link: 
 
-[vSphere APIs](doc/vsphere-perldoc.zip).
+### vSphere API Documentation
+
+* [vSphere 6.7.1 (latest)](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.1/)
+* Previous releases:    [6.7.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.0)    [6.5.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.5.0) 
 
 ## Repository Administrator Resources
 ### Board Members
@@ -164,7 +166,7 @@ Members:
 * Steve Trefethen (VMware)
 
 ### Approval of Additions
-Items added to the repository, including items from the Board members, require 2 votes from the board members before being added to the repository. The approving members will have ideally downloaded and tested the item. When two ‚ÄúApproved for Merge‚Äù comments are added from board members, the pull can then be committed to the repository.
+Items added to the repository, including items from the Board members, require 2 votes from the board members before being added to the repository. The approving members will have ideally downloaded and tested the item. When two ìApproved for Mergeî comments are added from board members, the pull can then be committed to the repository.
 
 ## VMware Resources
 
