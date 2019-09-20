@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Vcha::DiskSpec``   *class*  contains information to
 #     describe the storage configuration of a vCenter virtual machine. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::DiskSpec;
 
@@ -45,7 +45,7 @@ sub new {
 #
 # @retval datastore - The current value of the field.
 # The identifier of the datastore to put all the virtual disks on. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_datastore {
@@ -58,7 +58,7 @@ sub get_datastore {
 # 
 # @param datastore  - New value for the field.
 # The identifier of the datastore to put all the virtual disks on. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_datastore {
    my ($self, %args) = @_;

@@ -316,138 +316,6 @@ sub set_ceip_enabled {
 1;
 
 
-## @class Com::Vmware::Vcenter::Deployment::Install::PscSpec
-#
-#
-# The  ``Com::Vmware::Vcenter::Deployment::Install::PscSpec``   *class*  contains
-#     information used to configure a standalone or replicated PSC. This  *class*  was added
-#     in vSphere API 6.7.
-
-package Com::Vmware::Vcenter::Deployment::Install::PscSpec;
-
-#
-# Base class
-#
-use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
-
-#
-# vApi modules
-#
-use Com::Vmware::Vapi::Data::UnionValidator;
-
-## @method new ()
-# Constructor to initialize the Com::Vmware::Vcenter::Deployment::Install::PscSpec structure
-#
-# @retval
-# Blessed object
-#
-sub new {
-   my ($class, %args) = @_;
-   $class = ref($class) || $class;
-   my $validatorList = [];
-
-      
-
-   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
-   $self->{standalone} = $args{'standalone'};
-   $self->{replicated} = $args{'replicated'};
-   $self->{ceip_enabled} = $args{'ceip_enabled'};
-
-   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Deployment::Install::PscSpec');
-   $self->set_binding_name('name' => 'com.vmware.vcenter.deployment.install.psc_spec');
-   $self->set_binding_field('key' => 'standalone', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Deployment', 'type_name' => 'StandalonePscSpec')));
-   $self->set_binding_field('key' => 'replicated', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Deployment', 'type_name' => 'ReplicatedPscSpec')));
-   $self->set_binding_field('key' => 'ceip_enabled', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
-   bless $self, $class;
-   return $self;
-}
-
-## @method get_standalone ()
-# Gets the value of 'standalone' property.
-#
-# @retval standalone - The current value of the field.
-# Spec used to configure a standalone Platform Services Controller. This field describes
-#     how the standalone PSC should be configured. This  *field*  was added in vSphere API
-#     6.7.
-#
-# Optional#
-sub get_standalone {
-   my ($self, %args) = @_;
-   return $self->{'standalone'}; 	
-}
-
-## @method set_standalone ()
-# Sets the given value for 'standalone' property.
-# 
-# @param standalone  - New value for the field.
-# Spec used to configure a standalone Platform Services Controller. This field describes
-#     how the standalone PSC should be configured. This  *field*  was added in vSphere API
-#     6.7.
-#
-sub set_standalone {
-   my ($self, %args) = @_;
-   $self->{'standalone'} = $args{'standalone'}; 
-   return;	
-}
-
-## @method get_replicated ()
-# Gets the value of 'replicated' property.
-#
-# @retval replicated - The current value of the field.
-# Spec used to configure a replicated Platform Services Controller. This field describes
-#     how the replicated PSC should be configured. This  *field*  was added in vSphere API
-#     6.7.
-#
-# Optional#
-sub get_replicated {
-   my ($self, %args) = @_;
-   return $self->{'replicated'}; 	
-}
-
-## @method set_replicated ()
-# Sets the given value for 'replicated' property.
-# 
-# @param replicated  - New value for the field.
-# Spec used to configure a replicated Platform Services Controller. This field describes
-#     how the replicated PSC should be configured. This  *field*  was added in vSphere API
-#     6.7.
-#
-sub set_replicated {
-   my ($self, %args) = @_;
-   $self->{'replicated'} = $args{'replicated'}; 
-   return;	
-}
-
-## @method get_ceip_enabled ()
-# Gets the value of 'ceip_enabled' property.
-#
-# @retval ceip_enabled - The current value of the field.
-# Customer experience improvement program should be enabled or disabled. This  *field* 
-#     was added in vSphere API 6.7.
-#
-# boolean#
-sub get_ceip_enabled {
-   my ($self, %args) = @_;
-   return $self->{'ceip_enabled'}; 	
-}
-
-## @method set_ceip_enabled ()
-# Sets the given value for 'ceip_enabled' property.
-# 
-# @param ceip_enabled  - New value for the field.
-# Customer experience improvement program should be enabled or disabled. This  *field* 
-#     was added in vSphere API 6.7.
-#
-sub set_ceip_enabled {
-   my ($self, %args) = @_;
-   $self->{'ceip_enabled'} = $args{'ceip_enabled'}; 
-   return;	
-}
-
-
-1;
-
-
 ## @class Com::Vmware::Vcenter::Deployment::Install::InstallSpec
 #
 #
@@ -482,15 +350,11 @@ sub new {
 
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
    $self->{vcsa_embedded} = $args{'vcsa_embedded'};
-   $self->{psc} = $args{'psc'};
-   $self->{vcsa_external} = $args{'vcsa_external'};
    $self->{auto_answer} = $args{'auto_answer'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Deployment::Install::InstallSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.deployment.install.install_spec');
-   $self->set_binding_field('key' => 'vcsa_embedded', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Deployment', 'type_name' => 'Install::VcsaEmbeddedSpec')));
-   $self->set_binding_field('key' => 'psc', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Deployment', 'type_name' => 'Install::PscSpec')));
-   $self->set_binding_field('key' => 'vcsa_external', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Deployment', 'type_name' => 'RemotePscSpec')));
+   $self->set_binding_field('key' => 'vcsa_embedded', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Deployment', 'type_name' => 'Install::VcsaEmbeddedSpec'));
    $self->set_binding_field('key' => 'auto_answer', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
    bless $self, $class;
    return $self;
@@ -504,7 +368,7 @@ sub new {
 #     embedded vCenter Server appliance should be configured. This  *field*  was added in
 #     vSphere API 6.7.
 #
-# Optional#
+# VcsaEmbeddedSpec#
 sub get_vcsa_embedded {
    my ($self, %args) = @_;
    return $self->{'vcsa_embedded'}; 	
@@ -521,62 +385,6 @@ sub get_vcsa_embedded {
 sub set_vcsa_embedded {
    my ($self, %args) = @_;
    $self->{'vcsa_embedded'} = $args{'vcsa_embedded'}; 
-   return;	
-}
-
-## @method get_psc ()
-# Gets the value of 'psc' property.
-#
-# @retval psc - The current value of the field.
-# Spec used to configure a Platform Services Controller. This field describes how the
-#     Platform Services Controller appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7.
-#
-# Optional#
-sub get_psc {
-   my ($self, %args) = @_;
-   return $self->{'psc'}; 	
-}
-
-## @method set_psc ()
-# Sets the given value for 'psc' property.
-# 
-# @param psc  - New value for the field.
-# Spec used to configure a Platform Services Controller. This field describes how the
-#     Platform Services Controller appliance should be configured. This  *field*  was added
-#     in vSphere API 6.7.
-#
-sub set_psc {
-   my ($self, %args) = @_;
-   $self->{'psc'} = $args{'psc'}; 
-   return;	
-}
-
-## @method get_vcsa_external ()
-# Gets the value of 'vcsa_external' property.
-#
-# @retval vcsa_external - The current value of the field.
-# Spec used to configure a vCenter Server registered with an external PSC. This fields
-#     represent the remote external PSC that the configuring vCenter Server will be
-#     registering with. This  *field*  was added in vSphere API 6.7.
-#
-# Optional#
-sub get_vcsa_external {
-   my ($self, %args) = @_;
-   return $self->{'vcsa_external'}; 	
-}
-
-## @method set_vcsa_external ()
-# Sets the given value for 'vcsa_external' property.
-# 
-# @param vcsa_external  - New value for the field.
-# Spec used to configure a vCenter Server registered with an external PSC. This fields
-#     represent the remote external PSC that the configuring vCenter Server will be
-#     registering with. This  *field*  was added in vSphere API 6.7.
-#
-sub set_vcsa_external {
-   my ($self, %args) = @_;
-   $self->{'vcsa_external'} = $args{'vcsa_external'}; 
    return;	
 }
 

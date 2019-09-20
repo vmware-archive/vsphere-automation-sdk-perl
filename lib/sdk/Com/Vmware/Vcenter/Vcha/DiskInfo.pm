@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Vcha::DiskInfo``   *class*  contains information to
 #     describe the storage configuration of a vCenter virtual machine. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::DiskInfo;
 
@@ -47,7 +47,7 @@ sub new {
 #
 # @retval datastore - The current value of the field.
 # The identifier of the datastore to put all the virtual disks on. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # ID#
 sub get_datastore {
@@ -60,7 +60,7 @@ sub get_datastore {
 # 
 # @param datastore  - New value for the field.
 # The identifier of the datastore to put all the virtual disks on. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -72,7 +72,7 @@ sub set_datastore {
 # Gets the value of 'datastore_name' property.
 #
 # @retval datastore_name - The current value of the field.
-# The name of the datastore. This  *field*  was added in vSphere API 6.7 U1.
+# The name of the datastore. This  *field*  was added in vSphere API 6.7.1.
 #
 # String#
 sub get_datastore_name {
@@ -84,7 +84,7 @@ sub get_datastore_name {
 # Sets the given value for 'datastore_name' property.
 # 
 # @param datastore_name  - New value for the field.
-# The name of the datastore. This  *field*  was added in vSphere API 6.7 U1.
+# The name of the datastore. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_datastore_name {
    my ($self, %args) = @_;

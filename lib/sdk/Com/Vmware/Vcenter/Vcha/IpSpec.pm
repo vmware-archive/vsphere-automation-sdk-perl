@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::IpSpec``   *class*  contains IP information used to
-#     configure a network interface. This  *class*  was added in vSphere API 6.7 U1.
+#     configure a network interface. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::IpSpec;
 
@@ -60,7 +60,7 @@ sub new {
 #
 # @retval ip_family - The current value of the field.
 # Family of the IP address to configure the interface. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # IpFamily#
 sub get_ip_family {
@@ -73,7 +73,7 @@ sub get_ip_family {
 # 
 # @param ip_family  - New value for the field.
 # Family of the IP address to configure the interface. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_ip_family {
    my ($self, %args) = @_;
@@ -86,7 +86,7 @@ sub set_ip_family {
 #
 # @retval ipv4 - The current value of the field.
 # If the family of the ip is IPV4, then this will point to IPv4 address specification.
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 # optional#
 sub get_ipv4 {
@@ -99,7 +99,7 @@ sub get_ipv4 {
 # 
 # @param ipv4  - New value for the field.
 # If the family of the ip is IPV4, then this will point to IPv4 address specification.
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ipv4 {
    my ($self, %args) = @_;
@@ -112,7 +112,7 @@ sub set_ipv4 {
 #
 # @retval ipv6 - The current value of the field.
 # If the family of the ip is IPV6, then this will point to IPv6 address specification.
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 # optional#
 sub get_ipv6 {
@@ -125,7 +125,7 @@ sub get_ipv6 {
 # 
 # @param ipv6  - New value for the field.
 # If the family of the ip is IPV6, then this will point to IPv6 address specification.
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ipv6 {
    my ($self, %args) = @_;
@@ -138,7 +138,7 @@ sub set_ipv6 {
 #
 # @retval default_gateway - The current value of the field.
 # The IP address of the Gateway for this interface. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # Optional#
 sub get_default_gateway {
@@ -151,7 +151,7 @@ sub get_default_gateway {
 # 
 # @param default_gateway  - New value for the field.
 # The IP address of the Gateway for this interface. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_default_gateway {
    my ($self, %args) = @_;
@@ -164,7 +164,7 @@ sub set_default_gateway {
 #
 # @retval dns_servers - The current value of the field.
 # The list of IP addresses of the DNS servers for this interface. This list is a comma
-#     separated list. This  *field*  was added in vSphere API 6.7 U1.
+#     separated list. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_dns_servers {
@@ -177,7 +177,7 @@ sub get_dns_servers {
 # 
 # @param dns_servers  - New value for the field.
 # The list of IP addresses of the DNS servers for this interface. This list is a comma
-#     separated list. This  *field*  was added in vSphere API 6.7 U1.
+#     separated list. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_dns_servers {
    my ($self, %args) = @_;

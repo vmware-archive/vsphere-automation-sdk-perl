@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Content::Library::Item::Updatesession::CertificateInfo``   *class*
 #     contains information about the public key certificate used to sign the content. This 
-#     *class*  was added in vSphere API 6.7 U1.
+#     *class*  was added in vSphere API 6.8.
 
 package Com::Vmware::Content::Library::Item::Updatesession::CertificateInfo;
 
@@ -51,7 +51,7 @@ sub new {
 #
 # @retval issuer - The current value of the field.
 # Certificate issuer. For example: /C=US/ST=California/L=Palo Alto/O=VMware, Inc. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 # String#
 sub get_issuer {
@@ -64,7 +64,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # Certificate issuer. For example: /C=US/ST=California/L=Palo Alto/O=VMware, Inc. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -78,7 +78,7 @@ sub set_issuer {
 # @retval subject - The current value of the field.
 # Certificate subject. For example: C=US/ST=Massachusetts/L=Hopkinton/O=EMC
 #     Corporation/OU=EMC Avamar/CN=EMC Corporation. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.8.
 #
 # String#
 sub get_subject {
@@ -92,7 +92,7 @@ sub get_subject {
 # @param subject  - New value for the field.
 # Certificate subject. For example: C=US/ST=Massachusetts/L=Hopkinton/O=EMC
 #     Corporation/OU=EMC Avamar/CN=EMC Corporation. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.8.
 #
 sub set_subject {
    my ($self, %args) = @_;
@@ -104,8 +104,7 @@ sub set_subject {
 # Gets the value of 'self_signed' property.
 #
 # @retval self_signed - The current value of the field.
-# Whether the certificate is self-signed. This  *field*  was added in vSphere API 6.7
-#     U1.
+# Whether the certificate is self-signed. This  *field*  was added in vSphere API 6.8.
 #
 # boolean#
 sub get_self_signed {
@@ -117,8 +116,7 @@ sub get_self_signed {
 # Sets the given value for 'self_signed' property.
 # 
 # @param self_signed  - New value for the field.
-# Whether the certificate is self-signed. This  *field*  was added in vSphere API 6.7
-#     U1.
+# Whether the certificate is self-signed. This  *field*  was added in vSphere API 6.8.
 #
 sub set_self_signed {
    my ($self, %args) = @_;
@@ -131,7 +129,7 @@ sub set_self_signed {
 #
 # @retval x509 - The current value of the field.
 # The X509 representation of the certificate. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.8.
 #
 # String#
 sub get_x509 {
@@ -144,7 +142,7 @@ sub get_x509 {
 # 
 # @param x509  - New value for the field.
 # The X509 representation of the certificate. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.8.
 #
 sub set_x509 {
    my ($self, %args) = @_;

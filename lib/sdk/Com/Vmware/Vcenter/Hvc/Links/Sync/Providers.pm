@@ -811,6 +811,107 @@ sub set_provider {
 1;
 
 
+## @class Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Credentials
+#
+#
+# The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Credentials``   *interface* 
+#     specifies user credentials to make a successful connection to remote endpoint.
+#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
+#     a future release.
+
+package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Credentials;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Credentials structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{user_name} = $args{'user_name'};
+   $self->{password} = $args{'password'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Credentials');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.hvc.links.sync.providers.credentials');
+   $self->set_binding_field('key' => 'user_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'password', 'value' => new Com::Vmware::Vapi::Bindings::Type::SecretType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_user_name ()
+# Gets the value of 'user_name' property.
+#
+# @retval user_name - The current value of the field.
+# Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
+#
+# String#
+sub get_user_name {
+   my ($self, %args) = @_;
+   return $self->{'user_name'}; 	
+}
+
+## @method set_user_name ()
+# Sets the given value for 'user_name' property.
+# 
+# @param user_name  - New value for the field.
+# Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
+#     technical preview. It may be changed in a future release.
+#
+sub set_user_name {
+   my ($self, %args) = @_;
+   $self->{'user_name'} = $args{'user_name'}; 
+   return;	
+}
+
+## @method get_password ()
+# Gets the value of 'password' property.
+#
+# @retval password - The current value of the field.
+# Password for the user. <b>Warning:</b> This  *field*  is available as technical
+#     preview. It may be changed in a future release.
+#
+# Secret#
+sub get_password {
+   my ($self, %args) = @_;
+   return $self->{'password'}; 	
+}
+
+## @method set_password ()
+# Sets the given value for 'password' property.
+# 
+# @param password  - New value for the field.
+# Password for the user. <b>Warning:</b> This  *field*  is available as technical
+#     preview. It may be changed in a future release.
+#
+sub set_password {
+   my ($self, %args) = @_;
+   $self->{'password'} = $args{'password'}; 
+   return;	
+}
+
+
+1;
+
+
 
 #########################################################################################
 # Ends structures for the Com::Vmware::Vcenter::Hvc::Links::Sync::Providers service

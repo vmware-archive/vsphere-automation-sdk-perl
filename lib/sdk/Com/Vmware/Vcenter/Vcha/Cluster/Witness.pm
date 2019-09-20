@@ -16,7 +16,7 @@
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Witness``   *interface*  provides 
 #     *methods*  to validate a witness&apos;s placement configuration and redeploy the
 #     witness node in a vCenter High Availability (VCHA) cluster. This  *interface*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Witness;
@@ -63,7 +63,7 @@ sub new {
 
 ## @method check ()
 # Validates the specified witness node&apos;s placement configuration. This  *method*  was
-# added in vSphere API 6.7 U1.
+# added in vSphere API 6.7.1.
 #
 # @param spec [REQUIRED] Contains the witness node&apos;s placement specification.
 # . The value must be Com::Vmware::Vcenter::Vcha::Cluster::Witness::CheckSpec.
@@ -117,7 +117,7 @@ sub check {
 ## @method redeploy ()
 # Creates the witness node in a degraded cluster with node location information and
 # pre-existing VCHA cluster configuration from the active node. This  *method*  was added in
-# vSphere API 6.7 U1.
+# vSphere API 6.7.1.
 #
 # @param spec [REQUIRED] Contains the witness node&apos;s redeploy specification.
 # . The value must be Com::Vmware::Vcenter::Vcha::Cluster::Witness::RedeploySpec.
@@ -172,7 +172,7 @@ sub redeploy {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Witness::CheckSpec``   *class*  contains
-#     placement information for validation. This  *class*  was added in vSphere API 6.7 U1.
+#     placement information for validation. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Witness::CheckSpec;
 
@@ -216,7 +216,7 @@ sub new {
 #
 # @retval vc_spec - The current value of the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_vc_spec {
@@ -229,7 +229,7 @@ sub get_vc_spec {
 # 
 # @param vc_spec  - New value for the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 sub set_vc_spec {
    my ($self, %args) = @_;
@@ -242,7 +242,7 @@ sub set_vc_spec {
 #
 # @retval placement - The current value of the field.
 # Contains the node&apos;s placement information for validation. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # PlacementSpec#
 sub get_placement {
@@ -255,7 +255,7 @@ sub get_placement {
 # 
 # @param placement  - New value for the field.
 # Contains the node&apos;s placement information for validation. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -272,7 +272,7 @@ sub set_placement {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Witness::CheckResult``   *class*  contains
 #     the warnings and errors that will occur during the clone operation. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Witness::CheckResult;
 
@@ -316,7 +316,7 @@ sub new {
 #
 # @retval warnings - The current value of the field.
 # A list of problems which may require attention, but which are not fatal. This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.7.1.
 #
 # List#
 sub get_warnings {
@@ -329,7 +329,7 @@ sub get_warnings {
 # 
 # @param warnings  - New value for the field.
 # A list of problems which may require attention, but which are not fatal. This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.7.1.
 #
 sub set_warnings {
    my ($self, %args) = @_;
@@ -342,7 +342,7 @@ sub set_warnings {
 #
 # @retval errors - The current value of the field.
 # A list of problems which are fatal to the operation and the operation will fail. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # List#
 sub get_errors {
@@ -355,7 +355,7 @@ sub get_errors {
 # 
 # @param errors  - New value for the field.
 # A list of problems which are fatal to the operation and the operation will fail. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_errors {
    my ($self, %args) = @_;
@@ -371,7 +371,7 @@ sub set_errors {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Witness::RedeploySpec``   *class* 
-#     contains the redeploy specification. This  *class*  was added in vSphere API 6.7 U1.
+#     contains the redeploy specification. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Witness::RedeploySpec;
 
@@ -417,7 +417,7 @@ sub new {
 #
 # @retval vc_spec - The current value of the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_vc_spec {
@@ -430,7 +430,7 @@ sub get_vc_spec {
 # 
 # @param vc_spec  - New value for the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 sub set_vc_spec {
    my ($self, %args) = @_;
@@ -443,7 +443,7 @@ sub set_vc_spec {
 #
 # @retval placement - The current value of the field.
 # Contains the node&apos;s placement information. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # PlacementSpec#
 sub get_placement {
@@ -456,7 +456,7 @@ sub get_placement {
 # 
 # @param placement  - New value for the field.
 # Contains the node&apos;s placement information. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -470,7 +470,7 @@ sub set_placement {
 # @retval ha_ip - The current value of the field.
 # Contains the VCHA HA network configuration of the node. All cluster communication
 #     (state replication, heartbeat, cluster messages) happens over this network. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_ip {
@@ -484,7 +484,7 @@ sub get_ha_ip {
 # @param ha_ip  - New value for the field.
 # Contains the VCHA HA network configuration of the node. All cluster communication
 #     (state replication, heartbeat, cluster messages) happens over this network. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_ip {
    my ($self, %args) = @_;

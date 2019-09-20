@@ -247,6 +247,15 @@ sub new {
 #
 # Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::SCP #
 #Destination is SSH server.
+#
+# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::SFTP #
+#Destination is SFTP server.
+#
+# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::NFS #
+#Destination is NFS server. This  *constant*  was added in vSphere API 6.7.2.
+#
+# Constant Com::Vmware::Appliance::Recovery::Backup::Job::LocationType::SMB #
+#Destination is SMB server. This  *constant*  was added in vSphere API 6.7.2.
 
 package Com::Vmware::Appliance::Recovery::Backup::Job::LocationType;
 
@@ -256,6 +265,9 @@ use constant {
     FTPS =>  'FTPS',
     HTTPS =>  'HTTPS',
     SCP =>  'SCP',
+    SFTP =>  'SFTP',
+    NFS =>  'NFS',
+    SMB =>  'SMB',
 };
 
 #

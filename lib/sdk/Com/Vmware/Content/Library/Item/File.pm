@@ -159,10 +159,10 @@ sub list {
 #Checksum algorithm: MD5
 #
 # Constant Com::Vmware::Content::Library::Item::File::ChecksumAlgorithm::SH_A256 #
-#Checksum algorithm: SHA-256. This  *constant*  was added in vSphere API 6.7 U1.
+#Checksum algorithm: SHA-256. This  *constant*  was added in vSphere API 6.8.
 #
 # Constant Com::Vmware::Content::Library::Item::File::ChecksumAlgorithm::SH_A512 #
-#Checksum algorithm: SHA-512. This  *constant*  was added in vSphere API 6.7 U1.
+#Checksum algorithm: SHA-512. This  *constant*  was added in vSphere API 6.8.
 
 package Com::Vmware::Content::Library::Item::File::ChecksumAlgorithm;
 

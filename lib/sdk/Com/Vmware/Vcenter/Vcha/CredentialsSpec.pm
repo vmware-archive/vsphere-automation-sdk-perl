@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Vcha::CredentialsSpec``   *class*  contains information
 #     to connect to the vCenter server managing the VCHA nodes. This  *class*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::CredentialsSpec;
 
@@ -45,7 +45,7 @@ sub new {
 #
 # @retval active_location - The current value of the field.
 # Connection information for the management vCenter Server of the Active Node in a VCHA
-#     Cluster. This  *field*  was added in vSphere API 6.7 U1.
+#     Cluster. This  *field*  was added in vSphere API 6.7.1.
 #
 # ConnectionSpec#
 sub get_active_location {
@@ -58,7 +58,7 @@ sub get_active_location {
 # 
 # @param active_location  - New value for the field.
 # Connection information for the management vCenter Server of the Active Node in a VCHA
-#     Cluster. This  *field*  was added in vSphere API 6.7 U1.
+#     Cluster. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_active_location {
    my ($self, %args) = @_;

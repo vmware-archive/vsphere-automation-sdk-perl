@@ -105,6 +105,10 @@ sub new {
 #     :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel::State.ACTIVE`  state,
 #     or if some of the files that will be uploaded by the client aren&apos;t received
 #     correctly.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
+# </ul>
 #
 
 sub validate {
@@ -171,6 +175,10 @@ sub validate {
 # if metadata files such as manifest and certificate file are added after the OVF
 #     descriptor file. This is applicable to update sessions with library item type OVF
 #     only. This error was added in vSphere 6.8.0.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
+# </ul>
 #
 
 sub add {
@@ -206,6 +214,10 @@ sub add {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 # if the file doesn&apos;t exist in the library item associated with the update session.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
+# </ul>
 #
 
 sub remove {
@@ -243,8 +255,7 @@ sub remove {
 #  if the update session doesn&apos;t exist.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
-# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
-#       ``libraryItemId``  requires  ``System.Read`` . </li>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
 
@@ -286,8 +297,7 @@ sub list {
 # if the file doesn&apos;t exist in the library item associated with the update session.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
-# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
-#       ``libraryItemId``  requires  ``System.Read`` . </li>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
 
@@ -860,7 +870,7 @@ sub set_error_message {
 #     :attr:`Com::Vmware::Content::Library::Item::Updatesession::File::Info.keep_in_storage`
 #     set to false will not show up in the list of files returned from 
 #     :func:`Com::Vmware::Content::Library::Item::File.list`  upon update session
-#     completion. This  *field*  was added in vSphere API 6.7 U1.
+#     completion. This  *field*  was added in vSphere API 6.8.
 #
 # Optional#
 sub get_keep_in_storage {
@@ -878,7 +888,7 @@ sub get_keep_in_storage {
 #     :attr:`Com::Vmware::Content::Library::Item::Updatesession::File::Info.keep_in_storage`
 #     set to false will not show up in the list of files returned from 
 #     :func:`Com::Vmware::Content::Library::Item::File.list`  upon update session
-#     completion. This  *field*  was added in vSphere API 6.7 U1.
+#     completion. This  *field*  was added in vSphere API 6.8.
 #
 sub set_keep_in_storage {
    my ($self, %args) = @_;

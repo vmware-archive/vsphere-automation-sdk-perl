@@ -8,6 +8,8 @@
 #
 #
 
+#use Com::Vmware::Appliance::Networking::Dns;
+#use Com::Vmware::Appliance::Networking::Interfaces;
 #use Com::Vmware::Vapi::Std::Errors;
 
 package Com::Vmware::Appliance::NetworkingStub;
@@ -118,6 +120,27 @@ sub new
    my $reset_output_validator_list = [];
 
    #
+   # properties for change operation
+   #
+   my $change_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'spec' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance', 'type_name' => 'Networking::ChangeSpec'),
+      }
+   );
+   my $change_error_dict = {
+      'com.vmware.vapi.std.errors.unsupported' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unsupported'),
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.not_allowed_in_current_state' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotAllowedInCurrentState'),
+
+      };
+
+   my $change_input_validator_list = [
+   ];
+   my $change_output_validator_list = [];
+
+   #
    # All the methods (operations) info in a hash
    #
    my $operations = {
@@ -141,6 +164,13 @@ sub new
                 'errors'=> $reset_error_dict,
                 'input_validator_list'=> $reset_input_validator_list,
                 'output_validator_list'=> $reset_output_validator_list,
+            },
+      'change' => {
+                'input_type'=> $change_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'errors'=> $change_error_dict,
+                'input_validator_list'=> $change_input_validator_list,
+                'output_validator_list'=> $change_output_validator_list,
             },
    };
 

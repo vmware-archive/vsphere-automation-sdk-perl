@@ -80,6 +80,8 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
 # if VMware Tools is not running.
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if VMware Tools has not provided any data.
 #
 
 sub get {

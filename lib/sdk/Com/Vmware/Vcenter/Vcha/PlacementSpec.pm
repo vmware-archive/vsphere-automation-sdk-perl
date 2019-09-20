@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Vcha::PlacementSpec``   *class*  contains information to
 #     describe the inventory placement of a single node of a VCHA cluster. This  *class* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::PlacementSpec;
 
@@ -61,7 +61,7 @@ sub new {
 #
 # @retval name - The current value of the field.
 # The name of the VCHA node to be used for the virtual machine name. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # String#
 sub get_name {
@@ -74,7 +74,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # The name of the VCHA node to be used for the virtual machine name. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -87,7 +87,7 @@ sub set_name {
 #
 # @retval folder - The current value of the field.
 # The identifier of the folder to deploy the VCHA node to. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # ID#
 sub get_folder {
@@ -100,7 +100,7 @@ sub get_folder {
 # 
 # @param folder  - New value for the field.
 # The identifier of the folder to deploy the VCHA node to. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_folder {
    my ($self, %args) = @_;
@@ -113,7 +113,7 @@ sub set_folder {
 #
 # @retval host - The current value of the field.
 # The identifier of the host to deploy the VCHA node to. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_host {
@@ -126,7 +126,7 @@ sub get_host {
 # 
 # @param host  - New value for the field.
 # The identifier of the host to deploy the VCHA node to. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_host {
    my ($self, %args) = @_;
@@ -139,7 +139,7 @@ sub set_host {
 #
 # @retval resource_pool - The current value of the field.
 # The identifier of the resource pool to deploy the VCHA node to. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_resource_pool {
@@ -152,7 +152,7 @@ sub get_resource_pool {
 # 
 # @param resource_pool  - New value for the field.
 # The identifier of the resource pool to deploy the VCHA node to. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_resource_pool {
    my ($self, %args) = @_;
@@ -170,7 +170,7 @@ sub set_resource_pool {
 #     field must be set.
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network`   *field*  is 
 #     *null* , then the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network_type`  
-#     *field*  is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     *field*  is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_network_type {
@@ -188,7 +188,7 @@ sub get_ha_network_type {
 #     field must be set.
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network`   *field*  is 
 #     *null* , then the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network_type`  
-#     *field*  is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     *field*  is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_network_type {
    my ($self, %args) = @_;
@@ -205,7 +205,7 @@ sub set_ha_network_type {
 #     set, then the {#link #haNetworkType}  *field*  must be set.
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network`   *field*  is 
 #     *null* , then the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network_type`  
-#     *field*  is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     *field*  is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_network {
@@ -222,7 +222,7 @@ sub get_ha_network {
 #     set, then the {#link #haNetworkType}  *field*  must be set.
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network`   *field*  is 
 #     *null* , then the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.ha_network_type`  
-#     *field*  is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     *field*  is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_network {
    my ($self, %args) = @_;
@@ -240,7 +240,7 @@ sub set_ha_network {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network`   *field*
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network_type`   *field* 
-#     is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_management_network_type {
@@ -258,7 +258,7 @@ sub get_management_network_type {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network`   *field*
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network_type`   *field* 
-#     is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_management_network_type {
    my ($self, %args) = @_;
@@ -278,7 +278,7 @@ sub set_management_network_type {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network`   *field*
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network_type`   *field* 
-#     is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_management_network {
@@ -298,7 +298,7 @@ sub get_management_network {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network`   *field*
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::PlacementSpec.management_network_type`   *field* 
-#     is ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     is ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_management_network {
    my ($self, %args) = @_;
@@ -311,7 +311,7 @@ sub set_management_network {
 #
 # @retval storage - The current value of the field.
 # The storage specification to deploy the VCHA node to. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_storage {
@@ -324,7 +324,7 @@ sub get_storage {
 # 
 # @param storage  - New value for the field.
 # The storage specification to deploy the VCHA node to. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_storage {
    my ($self, %args) = @_;

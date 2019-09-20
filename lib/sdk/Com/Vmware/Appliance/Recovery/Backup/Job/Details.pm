@@ -206,6 +206,7 @@ sub new {
    $self->{location_user} = $args{'location_user'};
    $self->{type} = $args{'type'};
    $self->{messages} = $args{'messages'};
+   $self->{build} = $args{'build'};
    $self->{description} = $args{'description'};
    $self->{service} = $args{'service'};
    $self->{operation} = $args{'operation'};
@@ -227,6 +228,7 @@ sub new {
    $self->set_binding_field('key' => 'location_user', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'type', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Recovery::Backup::Job', 'type_name' => 'Details::Type'));
    $self->set_binding_field('key' => 'messages', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage')));
+   $self->set_binding_field('key' => 'build', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Recovery::Backup::Job', 'type_name' => 'Details::BuildInfo')));
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage'));
    $self->set_binding_field('key' => 'service', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'operation', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
@@ -417,6 +419,32 @@ sub get_messages {
 sub set_messages {
    my ($self, %args) = @_;
    $self->{'messages'} = $args{'messages'}; 
+   return;	
+}
+
+## @method get_build ()
+# Gets the value of 'build' property.
+#
+# @retval build - The current value of the field.
+# Information about the build of the appliance. This  *field*  was added in vSphere API
+#     6.7.2.
+#
+# optional#
+sub get_build {
+   my ($self, %args) = @_;
+   return $self->{'build'}; 	
+}
+
+## @method set_build ()
+# Sets the given value for 'build' property.
+# 
+# @param build  - New value for the field.
+# Information about the build of the appliance. This  *field*  was added in vSphere API
+#     6.7.2.
+#
+sub set_build {
+   my ($self, %args) = @_;
+   $self->{'build'} = $args{'build'}; 
    return;	
 }
 
@@ -758,6 +786,132 @@ sub get_jobs {
 sub set_jobs {
    my ($self, %args) = @_;
    $self->{'jobs'} = $args{'jobs'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Appliance::Recovery::Backup::Job::Details::BuildInfo
+#
+#
+# The  ``Com::Vmware::Appliance::Recovery::Backup::Job::Details::BuildInfo``   *class* 
+#     contains information about the build of the appliance. This  *class*  was added in
+#     vSphere API 6.7.2.
+
+package Com::Vmware::Appliance::Recovery::Backup::Job::Details::BuildInfo;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Appliance::Recovery::Backup::Job::Details::BuildInfo structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{version_name} = $args{'version_name'};
+   $self->{version} = $args{'version'};
+   $self->{build_number} = $args{'build_number'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Recovery::Backup::Job::Details::BuildInfo');
+   $self->set_binding_name('name' => 'com.vmware.appliance.recovery.backup.job.details.build_info');
+   $self->set_binding_field('key' => 'version_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'version', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'build_number', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_version_name ()
+# Gets the value of 'version_name' property.
+#
+# @retval version_name - The current value of the field.
+# Appliance product type, for example 6.8.2 GA. This  *field*  was added in vSphere API
+#     6.7.2.
+#
+# String#
+sub get_version_name {
+   my ($self, %args) = @_;
+   return $self->{'version_name'}; 	
+}
+
+## @method set_version_name ()
+# Sets the given value for 'version_name' property.
+# 
+# @param version_name  - New value for the field.
+# Appliance product type, for example 6.8.2 GA. This  *field*  was added in vSphere API
+#     6.7.2.
+#
+sub set_version_name {
+   my ($self, %args) = @_;
+   $self->{'version_name'} = $args{'version_name'}; 
+   return;	
+}
+
+## @method get_version ()
+# Gets the value of 'version' property.
+#
+# @retval version - The current value of the field.
+# Appliance version, for example 6.8.2.10000. This  *field*  was added in vSphere API
+#     6.7.2.
+#
+# String#
+sub get_version {
+   my ($self, %args) = @_;
+   return $self->{'version'}; 	
+}
+
+## @method set_version ()
+# Sets the given value for 'version' property.
+# 
+# @param version  - New value for the field.
+# Appliance version, for example 6.8.2.10000. This  *field*  was added in vSphere API
+#     6.7.2.
+#
+sub set_version {
+   my ($self, %args) = @_;
+   $self->{'version'} = $args{'version'}; 
+   return;	
+}
+
+## @method get_build_number ()
+# Gets the value of 'build_number' property.
+#
+# @retval build_number - The current value of the field.
+# Build Number of the appliance. This  *field*  was added in vSphere API 6.7.2.
+#
+# String#
+sub get_build_number {
+   my ($self, %args) = @_;
+   return $self->{'build_number'}; 	
+}
+
+## @method set_build_number ()
+# Sets the given value for 'build_number' property.
+# 
+# @param build_number  - New value for the field.
+# Build Number of the appliance. This  *field*  was added in vSphere API 6.7.2.
+#
+sub set_build_number {
+   my ($self, %args) = @_;
+   $self->{'build_number'} = $args{'build_number'}; 
    return;	
 }
 

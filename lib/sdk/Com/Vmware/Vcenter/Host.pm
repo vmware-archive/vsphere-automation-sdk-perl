@@ -169,7 +169,7 @@ sub delete {
 
 
 ## @method list ()
-# Returns information about at most 1000 visible (subject to permission checks) hosts in
+# Returns information about at most 2500 visible (subject to permission checks) hosts in
 # vCenter matching the  class Com::Vmware::Vcenter::Host::FilterSpec .
 #
 # @param filter [OPTIONAL] Specification of matching hosts for which information should be returned.
@@ -188,7 +188,7 @@ sub delete {
 #     contains a value that is not supported by the server.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::UnableToAllocateResource 
-# if more than 1000 hosts match the  class Com::Vmware::Vcenter::Host::FilterSpec .
+# if more than 2500 hosts match the  class Com::Vmware::Vcenter::Host::FilterSpec .
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
 # if the system is unable to communicate with a service to complete the request.

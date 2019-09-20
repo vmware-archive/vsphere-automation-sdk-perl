@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Content::Library::Item::Updatesession::PreviewInfo``   *class* 
 #     contains information about the files being uploaded in the update session. This 
-#     *class*  was added in vSphere API 6.7 U1.
+#     *class*  was added in vSphere API 6.8.
 
 package Com::Vmware::Content::Library::Item::Updatesession::PreviewInfo;
 
@@ -59,7 +59,7 @@ sub new {
 #
 # @retval state - The current value of the field.
 # Indicates the state of the preview of the update session. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.8.
 #
 # State#
 sub get_state {
@@ -72,7 +72,7 @@ sub get_state {
 # 
 # @param state  - New value for the field.
 # Indicates the state of the preview of the update session. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.8.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -85,7 +85,7 @@ sub set_state {
 #
 # @retval certificate_info - The current value of the field.
 # The certificate information of the signed update session content. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.8.
 #
 # Optional#
 sub get_certificate_info {
@@ -98,7 +98,7 @@ sub get_certificate_info {
 # 
 # @param certificate_info  - New value for the field.
 # The certificate information of the signed update session content. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.8.
 #
 sub set_certificate_info {
    my ($self, %args) = @_;
@@ -112,7 +112,7 @@ sub set_certificate_info {
 # @retval warnings - The current value of the field.
 # The list of warnings raised for this update session. Any warning which is not ignored
 #     by the client will, by default, fail the update session during session complete
-#     operation. This  *field*  was added in vSphere API 6.7 U1.
+#     operation. This  *field*  was added in vSphere API 6.8.
 #
 # optional#
 sub get_warnings {
@@ -126,7 +126,7 @@ sub get_warnings {
 # @param warnings  - New value for the field.
 # The list of warnings raised for this update session. Any warning which is not ignored
 #     by the client will, by default, fail the update session during session complete
-#     operation. This  *field*  was added in vSphere API 6.7 U1.
+#     operation. This  *field*  was added in vSphere API 6.8.
 #
 sub set_warnings {
    my ($self, %args) = @_;
@@ -142,7 +142,7 @@ sub set_warnings {
 #
 # The  ``Com::Vmware::Content::Library::Item::Updatesession::PreviewInfo::State``  
 #     *enumerated type*  defines the state of the update session&apos;s preview. This 
-#     *enumeration*  was added in vSphere API 6.7 U1.
+#     *enumeration*  was added in vSphere API 6.8.
 #
 #
 #
@@ -150,24 +150,24 @@ sub set_warnings {
 #There are no files in the update session OR a preview is not possible for the files
 # currently in the update session. However, preview may be possible after metadata files
 # such as OVF descriptor are added to the session. In this case the state will transition to
-#  ``PREPARING`` . This  *constant*  was added in vSphere API 6.7 U1.
+#  ``PREPARING`` . This  *constant*  was added in vSphere API 6.8.
 #
 # Constant Com::Vmware::Content::Library::Item::Updatesession::PreviewInfo::State::NOT_APPLICABLE #
 #Preview is not possible for this update session. This state is reached when there are no
 # metadata files in the update session and user invokes a session complete operation. This 
-# *constant*  was added in vSphere API 6.7 U1.
+# *constant*  was added in vSphere API 6.8.
 #
 # Constant Com::Vmware::Content::Library::Item::Updatesession::PreviewInfo::State::PREPARING #
 #A preview is being prepared for the files currently in the update session. This state is
 # reached when the applicable metadata files are added to the update session but their
 # content is not fully uploaded yet. For OVF item type, this state indicates that the OVF
 # descriptor file is currently being uploaded. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.8.
 #
 # Constant Com::Vmware::Content::Library::Item::Updatesession::PreviewInfo::State::AVAILABLE #
 #Preview is available for this update session. It is possible to review certificate details
 # and warnings, if any. This state is reached when the applicable metadata files in the
-# session have been fully uploaded. This  *constant*  was added in vSphere API 6.7 U1.
+# session have been fully uploaded. This  *constant*  was added in vSphere API 6.8.
 
 package Com::Vmware::Content::Library::Item::Updatesession::PreviewInfo::State;
 

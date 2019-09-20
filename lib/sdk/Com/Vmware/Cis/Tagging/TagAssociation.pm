@@ -85,6 +85,9 @@ sub new {
 # if you do not have the privilege to attach the tag or do not have the privilege to
 #     read the object.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
+#
 
 sub attach {
    my ($self, %args) = @_;
@@ -122,6 +125,9 @@ sub attach {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to read the object.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
 #
 
 sub attach_multiple_tags_to_object {
@@ -164,6 +170,9 @@ sub attach_multiple_tags_to_object {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the attach tag privilege on the tag.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
+#
 
 sub attach_tag_to_multiple_objects {
    my ($self, %args) = @_;
@@ -197,6 +206,9 @@ sub attach_tag_to_multiple_objects {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if you do not have the privilege to detach the tag or do not have the privilege to
 #     read the given object.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
 #
 
 sub detach {
@@ -235,6 +247,9 @@ sub detach {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to read the object.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
 #
 
 sub detach_multiple_tags_from_object {
@@ -277,6 +292,9 @@ sub detach_multiple_tags_from_object {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the attach tag privilege on the tag.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
+#
 
 sub detach_tag_from_multiple_objects {
    my ($self, %args) = @_;
@@ -311,6 +329,9 @@ sub detach_tag_from_multiple_objects {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to read the tag.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
+#
 
 sub list_attached_objects {
    my ($self, %args) = @_;
@@ -341,6 +362,9 @@ sub list_attached_objects {
 # The  *list*  of the tag identifiers to all object identifiers that each tag is
 #     attached to.
 # The return type will be Array of Com::Vmware::Cis::Tagging::TagAssociation::TagToObjects
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
 #
 
 sub list_attached_objects_on_tags {
@@ -373,6 +397,9 @@ sub list_attached_objects_on_tags {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to read the object.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
+#
 
 sub list_attached_tags {
    my ($self, %args) = @_;
@@ -401,6 +428,9 @@ sub list_attached_tags {
 # The  *list*  of the object identifiers to all tag identifiers that are attached to
 #     that object.
 # The return type will be Array of Com::Vmware::Cis::Tagging::TagAssociation::ObjectToTags
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
 #
 
 sub list_attached_tags_on_objects {
@@ -434,6 +464,9 @@ sub list_attached_tags_on_objects {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to read the object.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
 #
 
 sub list_attachable_tags {

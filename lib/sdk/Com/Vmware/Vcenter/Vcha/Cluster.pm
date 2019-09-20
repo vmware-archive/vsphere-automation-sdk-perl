@@ -15,7 +15,7 @@
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster``   *interface*  provides  *methods*  to
 #     deploy and undeploy a vCenter High Availability (VCHA) cluster, failover from the
 #     active VCHA node to the passive VCHA node, and retrieve the status of the VCHA
-#     cluster. This  *interface*  was added in vSphere API 6.7 U1.
+#     cluster. This  *interface*  was added in vSphere API 6.7.1.
 #
 
 package Com::Vmware::Vcenter::Vcha::Cluster;
@@ -62,7 +62,7 @@ sub new {
 
 ## @method deploy ()
 # Prepares, clones, and configures a VCHA cluster. This  *method*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 #
 # @param spec [REQUIRED] Contains the deploy specification for all three nodes of a VCHA cluster.
 # . The value must be Com::Vmware::Vcenter::Vcha::Cluster::DeploySpec.
@@ -116,7 +116,7 @@ sub deploy {
 # <ol>
 #  <li> Cluster&apos;s mode is enabled and all cluster members are present.</li>
 #  <li> Cluster&apos;s mode is maintenance and all cluster members are present.</li>
-#  </ol>. This  *method*  was added in vSphere API 6.7 U1.
+#  </ol>. This  *method*  was added in vSphere API 6.7.1.
 #
 # @param planned [REQUIRED] If false, a failover is initiated immediately and may result in data loss.
 # If true, a failover is initated after the Active node flushes its state to Passive and
@@ -144,10 +144,12 @@ sub failover {
 
 
 ## @method get ()
-# Retrieves the status of a VCHA cluster. This  *method*  was added in vSphere API 6.7 U1.
+# Retrieves the status of a VCHA cluster. This  *method*  was added in vSphere API 6.7.1.
 #
 # @param vc_spec [OPTIONAL] Contains active node&apos;s management vCenter server credentials.
-# If  *null* , then the active vCenter server is assumed to be managed by itself.
+# If  *null* , then the active vCenter Server instance is assumed to be either
+#     self-managed or else in enhanced linked mode and managed by a linked vCenter Server
+#     instance.
 # . The value must be Com::Vmware::Vcenter::Vcha::CredentialsSpec or None.
 #
 # @param partial [OPTIONAL] If true, then return only the information that does not require connecting to the
@@ -204,7 +206,7 @@ sub get {
 # If the VCHA cluster is in a transition state and not configured, then the VCHA cluster
 # specific information is removed.</p>
 # 
-# . This  *method*  was added in vSphere API 6.7 U1.
+# . This  *method*  was added in vSphere API 6.7.1.
 #
 # @param spec [REQUIRED] Contains the undeploy specification for a VCHA cluster.
 # . The value must be Com::Vmware::Vcenter::Vcha::Cluster::UndeploySpec.
@@ -254,18 +256,18 @@ sub undeploy {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Type``   *enumerated type*  defines the
 #     possible deployment types for a VCHA Cluster. This  *enumeration*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::Type::AUTO #
 #Passive and witness nodes are cloned automatically. This  *constant*  was added in vSphere
-# API 6.7 U1.
+# API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::Type::MANUAL #
 #Passive and witness nodes are not cloned automatically. After deployment, the customer
 # should clone the passive and witness virtual machines. This  *constant*  was added in
-# vSphere API 6.7 U1.
+# vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Type;
 
@@ -303,23 +305,23 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::ClusterMode``   *enumerated type*  defines
 #     the possible modes for a VCHA Cluster. This  *enumeration*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ClusterMode::ENABLED #
 #VCHA Cluster is enabled. State replication between the Active and Passive node is enabled
-# and automatic failover is allowed. This  *constant*  was added in vSphere API 6.7 U1.
+# and automatic failover is allowed. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ClusterMode::DISABLED #
 #VCHA Cluster is disabled. State replication between the Active and Passive node is
 # disabled and automatic failover is not allowed. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ClusterMode::MAINTENANCE #
 #VCHA Cluster is in maintenance mode. State replication between the Active and Passive node
 # is enabled but automatic failover is not allowed. This  *constant*  was added in vSphere
-# API 6.7 U1.
+# API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::ClusterMode;
 
@@ -358,25 +360,25 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::ClusterState``   *enumerated type* 
 #     defines the possible for a VCHA Cluster. This  *enumeration*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ClusterState::HEALTHY #
 #All three nodes in a VCHA Cluster are healthy and connected. State replication between
 # Active and Passive node is working and both nodes are in sync. This  *constant*  was added
-# in vSphere API 6.7 U1.
+# in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ClusterState::DEGRADED #
 #A VCHA Cluster is said to be in a degraded state for either or all of the following
 # reasons: <ul>
 #  <li> There is a node loss. </li>
 # <li> State replication between the Active and Passive node fails.</li>
-#  </ul>. This  *constant*  was added in vSphere API 6.7 U1.
+#  </ul>. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ClusterState::ISOLATED #
 #All three nodes are isolated from each other. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::ClusterState;
 
@@ -415,17 +417,17 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::NodeState``   *enumerated type*  defines
 #     possible state a node can be in a VCHA Cluster. This  *enumeration*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::NodeState::UP #
-#Node is up and has joined the VCHA Cluster. This  *constant*  was added in vSphere API 6.7
-# U1.
+#Node is up and has joined the VCHA Cluster. This  *constant*  was added in vSphere API
+# 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::NodeState::DOWN #
-#Node is down and has left the VCHA Cluster. This  *constant*  was added in vSphere API 6.7
-# U1.
+#Node is down and has left the VCHA Cluster. This  *constant*  was added in vSphere API
+# 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::NodeState;
 
@@ -463,22 +465,22 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::NodeRole``   *enumerated type*  defines
 #     the role node can be in a VCHA Cluster. This  *enumeration*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::NodeRole::ACTIVE #
 #Node is having a role of Active. In this role, node runs a vCenter Server that serves
-# client requests. This  *constant*  was added in vSphere API 6.7 U1.
+# client requests. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::NodeRole::PASSIVE #
 #Node is having a role of Passive. In this role node, runs as a standby for the Active
 # vCenter Server and receives state updates. This node takes over the role of Active vCenter
-# Server upon failover. This  *constant*  was added in vSphere API 6.7 U1.
+# Server upon failover. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::NodeRole::WITNESS #
 #Node is having a role of Witness. In this role, node acts as a quorum node for avoiding
-# the classic split-brain problem. This  *constant*  was added in vSphere API 6.7 U1.
+# the classic split-brain problem. This  *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::NodeRole;
 
@@ -516,23 +518,23 @@ sub new {
 ## @class Com::Vmware::Vcenter::Vcha::Cluster::ConfigState
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::ConfigState``   *enumerated type*  defines
-#     the VCHA configuration state. This  *enumeration*  was added in vSphere API 6.7 U1.
+#     the VCHA configuration state. This  *enumeration*  was added in vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ConfigState::CONFIGURED #
-#VCHA cluster is configured. This  *constant*  was added in vSphere API 6.7 U1.
+#VCHA cluster is configured. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ConfigState::NOTCONFIGURED #
-#VCHA cluster is not configured. This  *constant*  was added in vSphere API 6.7 U1.
+#VCHA cluster is not configured. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ConfigState::INVALID #
-#VCHA cluster is in an invalid/dirty state. This  *constant*  was added in vSphere API 6.7
-# U1.
+#VCHA cluster is in an invalid/dirty state. This  *constant*  was added in vSphere API
+# 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::ConfigState::PREPARED #
 #vCenter server appliance has been prepared for VCHA cluster configuration. This 
-# *constant*  was added in vSphere API 6.7 U1.
+# *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::ConfigState;
 
@@ -571,15 +573,15 @@ sub new {
 ## @class Com::Vmware::Vcenter::Vcha::Cluster::IpFamily
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::IpFamily``   *enumerated type*  defines
-#     the IP address family. This  *enumeration*  was added in vSphere API 6.7 U1.
+#     the IP address family. This  *enumeration*  was added in vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::IpFamily::IP_V4 #
-#IPV4 address family. This  *constant*  was added in vSphere API 6.7 U1.
+#IPV4 address family. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::IpFamily::IP_V6 #
-#IPV6 address family. This  *constant*  was added in vSphere API 6.7 U1.
+#IPV6 address family. This  *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::IpFamily;
 
@@ -628,7 +630,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec``   *class*  contains the
 #     deploy specification for the Active Node of the VCHA cluster. This  *class*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec;
 
@@ -681,7 +683,7 @@ sub new {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network`   *field* 
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network_type`   *field*  is
-#     ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_network_type {
@@ -701,7 +703,7 @@ sub get_ha_network_type {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network`   *field* 
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network_type`   *field*  is
-#     ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_network_type {
    my ($self, %args) = @_;
@@ -721,7 +723,7 @@ sub set_ha_network_type {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network`   *field* 
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network_type`   *field*  is
-#     ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_network {
@@ -741,7 +743,7 @@ sub get_ha_network {
 # If the  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network`   *field* 
 #     is  *null* , then the 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Cluster::ActiveSpec.ha_network_type`   *field*  is
-#     ignored. This  *field*  was added in vSphere API 6.7 U1.
+#     ignored. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_network {
    my ($self, %args) = @_;
@@ -753,7 +755,7 @@ sub set_ha_network {
 # Gets the value of 'ha_ip' property.
 #
 # @retval ha_ip - The current value of the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 # IpSpec#
 sub get_ha_ip {
@@ -765,7 +767,7 @@ sub get_ha_ip {
 # Sets the given value for 'ha_ip' property.
 # 
 # @param ha_ip  - New value for the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_ip {
    my ($self, %args) = @_;
@@ -782,7 +784,7 @@ sub set_ha_ip {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::PassiveSpec``   *class*  contains the
 #     deploy specification for the Passive Node of the VCHA cluster. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::PassiveSpec;
 
@@ -828,7 +830,7 @@ sub new {
 #
 # @retval placement - The current value of the field.
 # Contains the placement configuration of the node. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # Optional#
 sub get_placement {
@@ -841,7 +843,7 @@ sub get_placement {
 # 
 # @param placement  - New value for the field.
 # Contains the placement configuration of the node. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -853,7 +855,7 @@ sub set_placement {
 # Gets the value of 'ha_ip' property.
 #
 # @retval ha_ip - The current value of the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 # IpSpec#
 sub get_ha_ip {
@@ -865,7 +867,7 @@ sub get_ha_ip {
 # Sets the given value for 'ha_ip' property.
 # 
 # @param ha_ip  - New value for the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_ip {
    my ($self, %args) = @_;
@@ -878,7 +880,7 @@ sub set_ha_ip {
 #
 # @retval failover_ip - The current value of the field.
 # IP specification for the management network. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 # Optional#
 sub get_failover_ip {
@@ -891,7 +893,7 @@ sub get_failover_ip {
 # 
 # @param failover_ip  - New value for the field.
 # IP specification for the management network. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 sub set_failover_ip {
    my ($self, %args) = @_;
@@ -908,7 +910,7 @@ sub set_failover_ip {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::WitnessSpec``   *class*  contains the
 #     deploy specification for the Witness Node of the VCHA cluster. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::WitnessSpec;
 
@@ -952,7 +954,7 @@ sub new {
 #
 # @retval placement - The current value of the field.
 # Contains the placement configuration of the node. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # Optional#
 sub get_placement {
@@ -965,7 +967,7 @@ sub get_placement {
 # 
 # @param placement  - New value for the field.
 # Contains the placement configuration of the node. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -977,7 +979,7 @@ sub set_placement {
 # Gets the value of 'ha_ip' property.
 #
 # @retval ha_ip - The current value of the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 # IpSpec#
 sub get_ha_ip {
@@ -989,7 +991,7 @@ sub get_ha_ip {
 # Sets the given value for 'ha_ip' property.
 # 
 # @param ha_ip  - New value for the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_ip {
    my ($self, %args) = @_;
@@ -1006,7 +1008,7 @@ sub set_ha_ip {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::DeploySpec``   *class*  contains the
 #     deploy specification for the three nodes of a VCHA cluster. This  *class*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::DeploySpec;
 
@@ -1056,7 +1058,7 @@ sub new {
 #
 # @retval vc_spec - The current value of the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_vc_spec {
@@ -1069,7 +1071,7 @@ sub get_vc_spec {
 # 
 # @param vc_spec  - New value for the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 sub set_vc_spec {
    my ($self, %args) = @_;
@@ -1081,7 +1083,7 @@ sub set_vc_spec {
 # Gets the value of 'deployment' property.
 #
 # @retval deployment - The current value of the field.
-# Contains the deployment type. This  *field*  was added in vSphere API 6.7 U1.
+# Contains the deployment type. This  *field*  was added in vSphere API 6.7.1.
 #
 # Type#
 sub get_deployment {
@@ -1093,7 +1095,7 @@ sub get_deployment {
 # Sets the given value for 'deployment' property.
 # 
 # @param deployment  - New value for the field.
-# Contains the deployment type. This  *field*  was added in vSphere API 6.7 U1.
+# Contains the deployment type. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_deployment {
    my ($self, %args) = @_;
@@ -1106,7 +1108,7 @@ sub set_deployment {
 #
 # @retval active - The current value of the field.
 # Contains the active node&apos;s network configuration. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # ActiveSpec#
 sub get_active {
@@ -1119,7 +1121,7 @@ sub get_active {
 # 
 # @param active  - New value for the field.
 # Contains the active node&apos;s network configuration. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_active {
    my ($self, %args) = @_;
@@ -1132,7 +1134,7 @@ sub set_active {
 #
 # @retval passive - The current value of the field.
 # Contains the passive node&apos;s placement configuration. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # PassiveSpec#
 sub get_passive {
@@ -1145,7 +1147,7 @@ sub get_passive {
 # 
 # @param passive  - New value for the field.
 # Contains the passive node&apos;s placement configuration. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_passive {
    my ($self, %args) = @_;
@@ -1158,7 +1160,7 @@ sub set_passive {
 #
 # @retval witness - The current value of the field.
 # Contains the witness node&apos;s placement configuration. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # WitnessSpec#
 sub get_witness {
@@ -1171,7 +1173,7 @@ sub get_witness {
 # 
 # @param witness  - New value for the field.
 # Contains the witness node&apos;s placement configuration. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_witness {
    my ($self, %args) = @_;
@@ -1188,7 +1190,7 @@ sub set_witness {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo``   *class*  describes a
 #     node&apos;s runtime information in a VCHA Cluster. This  *class*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo;
 
@@ -1236,7 +1238,7 @@ sub new {
 # Last known state of the node.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo.state` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_state {
@@ -1251,7 +1253,7 @@ sub get_state {
 # Last known state of the node.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo.state` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -1266,7 +1268,7 @@ sub set_state {
 # Last known role of the node.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo.role` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_role {
@@ -1281,7 +1283,7 @@ sub get_role {
 # Last known role of the node.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo.role` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_role {
    my ($self, %args) = @_;
@@ -1297,7 +1299,7 @@ sub set_role {
 # The active node&apos;s management vCenter server credentials are required to populate
 #     most  *fields*  of 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo.placement` . This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_placement {
@@ -1313,7 +1315,7 @@ sub get_placement {
 # The active node&apos;s management vCenter server credentials are required to populate
 #     most  *fields*  of 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeRuntimeInfo.placement` . This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.7.1.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -1330,7 +1332,7 @@ sub set_placement {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Ipv4Info``   *class*  contains  *fields* 
 #     to describe IPV4 information of the configured network interface. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Ipv4Info;
 
@@ -1376,7 +1378,7 @@ sub new {
 #
 # @retval address - The current value of the field.
 # IP address of the configured network interface. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # String#
 sub get_address {
@@ -1389,7 +1391,7 @@ sub get_address {
 # 
 # @param address  - New value for the field.
 # IP address of the configured network interface. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -1401,7 +1403,7 @@ sub set_address {
 # Gets the value of 'subnet_mask' property.
 #
 # @retval subnet_mask - The current value of the field.
-# The subnet mask of the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The subnet mask of the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 # String#
 sub get_subnet_mask {
@@ -1413,7 +1415,7 @@ sub get_subnet_mask {
 # Sets the given value for 'subnet_mask' property.
 # 
 # @param subnet_mask  - New value for the field.
-# The subnet mask of the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The subnet mask of the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_subnet_mask {
    my ($self, %args) = @_;
@@ -1425,7 +1427,7 @@ sub set_subnet_mask {
 # Gets the value of 'prefix' property.
 #
 # @retval prefix - The current value of the field.
-# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_prefix {
@@ -1437,7 +1439,7 @@ sub get_prefix {
 # Sets the given value for 'prefix' property.
 # 
 # @param prefix  - New value for the field.
-# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_prefix {
    my ($self, %args) = @_;
@@ -1454,7 +1456,7 @@ sub set_prefix {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Ipv6Info``   *class*  contains  *fields* 
 #     to describe IPV6 information of the configured network interface. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Ipv6Info;
 
@@ -1498,7 +1500,7 @@ sub new {
 #
 # @retval address - The current value of the field.
 # IP address of the configured network interface. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # String#
 sub get_address {
@@ -1511,7 +1513,7 @@ sub get_address {
 # 
 # @param address  - New value for the field.
 # IP address of the configured network interface. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -1523,7 +1525,7 @@ sub set_address {
 # Gets the value of 'prefix' property.
 #
 # @retval prefix - The current value of the field.
-# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 # long#
 sub get_prefix {
@@ -1535,7 +1537,7 @@ sub get_prefix {
 # Sets the given value for 'prefix' property.
 # 
 # @param prefix  - New value for the field.
-# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The CIDR prefix of the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_prefix {
    my ($self, %args) = @_;
@@ -1551,7 +1553,7 @@ sub set_prefix {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::IpInfo``   *class*  contains  *fields* 
-#     related to an ip. This  *class*  was added in vSphere API 6.7 U1.
+#     related to an ip. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::IpInfo;
 
@@ -1606,7 +1608,7 @@ sub new {
 # Gets the value of 'ip_family' property.
 #
 # @retval ip_family - The current value of the field.
-# Family of the ip. This  *field*  was added in vSphere API 6.7 U1.
+# Family of the ip. This  *field*  was added in vSphere API 6.7.1.
 #
 # IpFamily#
 sub get_ip_family {
@@ -1618,7 +1620,7 @@ sub get_ip_family {
 # Sets the given value for 'ip_family' property.
 # 
 # @param ip_family  - New value for the field.
-# Family of the ip. This  *field*  was added in vSphere API 6.7 U1.
+# Family of the ip. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ip_family {
    my ($self, %args) = @_;
@@ -1631,7 +1633,7 @@ sub set_ip_family {
 #
 # @retval ipv4 - The current value of the field.
 # If the type of the ip family is IPV4, then this will point to IPv4 address
-#     specification. This  *field*  was added in vSphere API 6.7 U1.
+#     specification. This  *field*  was added in vSphere API 6.7.1.
 #
 # optional#
 sub get_ipv4 {
@@ -1644,7 +1646,7 @@ sub get_ipv4 {
 # 
 # @param ipv4  - New value for the field.
 # If the type of the ip family is IPV4, then this will point to IPv4 address
-#     specification. This  *field*  was added in vSphere API 6.7 U1.
+#     specification. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ipv4 {
    my ($self, %args) = @_;
@@ -1657,7 +1659,7 @@ sub set_ipv4 {
 #
 # @retval ipv6 - The current value of the field.
 # If the type of the ip family is IPV6, then this will point to IPv6 address
-#     specification. This  *field*  was added in vSphere API 6.7 U1.
+#     specification. This  *field*  was added in vSphere API 6.7.1.
 #
 # optional#
 sub get_ipv6 {
@@ -1670,7 +1672,7 @@ sub get_ipv6 {
 # 
 # @param ipv6  - New value for the field.
 # If the type of the ip family is IPV6, then this will point to IPv6 address
-#     specification. This  *field*  was added in vSphere API 6.7 U1.
+#     specification. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ipv6 {
    my ($self, %args) = @_;
@@ -1682,7 +1684,7 @@ sub set_ipv6 {
 # Gets the value of 'gateway_ip' property.
 #
 # @retval gateway_ip - The current value of the field.
-# Gateway IP address. This  *field*  was added in vSphere API 6.7 U1.
+# Gateway IP address. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_gateway_ip {
@@ -1694,7 +1696,7 @@ sub get_gateway_ip {
 # Sets the given value for 'gateway_ip' property.
 # 
 # @param gateway_ip  - New value for the field.
-# Gateway IP address. This  *field*  was added in vSphere API 6.7 U1.
+# Gateway IP address. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_gateway_ip {
    my ($self, %args) = @_;
@@ -1711,7 +1713,7 @@ sub set_gateway_ip {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo``   *class*  defines the
 #     configuration information for the active and passive nodes in the cluster. This 
-#     *class*  was added in vSphere API 6.7 U1.
+#     *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo;
 
@@ -1760,7 +1762,7 @@ sub new {
 #     requests. Each failover node can have a different failover IP address.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo.failover_ip` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_failover_ip {
@@ -1776,7 +1778,7 @@ sub get_failover_ip {
 #     requests. Each failover node can have a different failover IP address.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo.failover_ip` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_failover_ip {
    my ($self, %args) = @_;
@@ -1792,7 +1794,7 @@ sub set_failover_ip {
 #     replication, heartbeat, cluster messages) happens over this network.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate this  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo.ha_ip` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # IpInfo#
 sub get_ha_ip {
@@ -1808,7 +1810,7 @@ sub get_ha_ip {
 #     replication, heartbeat, cluster messages) happens over this network.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate this  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo.ha_ip` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_ip {
    my ($self, %args) = @_;
@@ -1823,7 +1825,7 @@ sub set_ha_ip {
 # Runtime information for the node in the VCHA Cluster.
 # The active node&apos;s management vCenter server credentials are required to populate
 #     some  *fields*  of  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo.runtime` .
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_runtime {
@@ -1838,7 +1840,7 @@ sub get_runtime {
 # Runtime information for the node in the VCHA Cluster.
 # The active node&apos;s management vCenter server credentials are required to populate
 #     some  *fields*  of  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::NodeInfo.runtime` .
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_runtime {
    my ($self, %args) = @_;
@@ -1855,7 +1857,7 @@ sub set_runtime {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::WitnessInfo``   *class*  defines the
 #     configuration and runtime information for the witness node in the cluster. This 
-#     *class*  was added in vSphere API 6.7 U1.
+#     *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::WitnessInfo;
 
@@ -1902,7 +1904,7 @@ sub new {
 #     replication, heartbeat, cluster messages) happens over this network.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::WitnessInfo.ha_ip` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # IpInfo#
 sub get_ha_ip {
@@ -1918,7 +1920,7 @@ sub get_ha_ip {
 #     replication, heartbeat, cluster messages) happens over this network.
 # The active node&apos;s management vCenter server credentials are not required to
 #     populate  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::WitnessInfo.ha_ip` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha_ip {
    my ($self, %args) = @_;
@@ -1933,7 +1935,7 @@ sub set_ha_ip {
 # Runtime information for the node in the VCHA Cluster.
 # The active node&apos;s management vCenter server credentials are required to populate
 #     some  *fields*  of  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::WitnessInfo.runtime` .
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_runtime {
@@ -1948,7 +1950,7 @@ sub get_runtime {
 # Runtime information for the node in the VCHA Cluster.
 # The active node&apos;s management vCenter server credentials are required to populate
 #     some  *fields*  of  :attr:`Com::Vmware::Vcenter::Vcha::Cluster::WitnessInfo.runtime` .
-#     This  *field*  was added in vSphere API 6.7 U1.
+#     This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_runtime {
    my ($self, %args) = @_;
@@ -1965,7 +1967,7 @@ sub set_runtime {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::ErrorCondition``   *class*  contains an
 #     error condition and a recommendation to handle the error condition. This  *class*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::ErrorCondition;
 
@@ -2008,7 +2010,7 @@ sub new {
 # Gets the value of 'error' property.
 #
 # @retval error - The current value of the field.
-# Contains an error condition. This  *field*  was added in vSphere API 6.7 U1.
+# Contains an error condition. This  *field*  was added in vSphere API 6.7.1.
 #
 # LocalizableMessage#
 sub get_error {
@@ -2020,7 +2022,7 @@ sub get_error {
 # Sets the given value for 'error' property.
 # 
 # @param error  - New value for the field.
-# Contains an error condition. This  *field*  was added in vSphere API 6.7 U1.
+# Contains an error condition. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_error {
    my ($self, %args) = @_;
@@ -2033,7 +2035,7 @@ sub set_error {
 #
 # @retval recommendation - The current value of the field.
 # Contains a recommendation on handling the error condition. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_recommendation {
@@ -2046,7 +2048,7 @@ sub get_recommendation {
 # 
 # @param recommendation  - New value for the field.
 # Contains a recommendation on handling the error condition. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_recommendation {
    my ($self, %args) = @_;
@@ -2063,7 +2065,7 @@ sub set_recommendation {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Info``   *class*  contains the
 #     configuration and health information of the three nodes in a VCHA Cluster. This 
-#     *class*  was added in vSphere API 6.7 U1.
+#     *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Info;
 
@@ -2124,7 +2126,7 @@ sub new {
 # @retval config_state - The current value of the field.
 # Configuration state of the VCHA cluster.
 # The active node&apos;s management vCenter server credentials are not required to
-#     populate this  *field* . This  *field*  was added in vSphere API 6.7 U1.
+#     populate this  *field* . This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_config_state {
@@ -2138,7 +2140,7 @@ sub get_config_state {
 # @param config_state  - New value for the field.
 # Configuration state of the VCHA cluster.
 # The active node&apos;s management vCenter server credentials are not required to
-#     populate this  *field* . This  *field*  was added in vSphere API 6.7 U1.
+#     populate this  *field* . This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_config_state {
    my ($self, %args) = @_;
@@ -2151,7 +2153,7 @@ sub set_config_state {
 #
 # @retval node1 - The current value of the field.
 # Node configuration information for the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_node1 {
@@ -2164,7 +2166,7 @@ sub get_node1 {
 # 
 # @param node1  - New value for the field.
 # Node configuration information for the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_node1 {
    my ($self, %args) = @_;
@@ -2177,7 +2179,7 @@ sub set_node1 {
 #
 # @retval node2 - The current value of the field.
 # Node configuration information for the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_node2 {
@@ -2190,7 +2192,7 @@ sub get_node2 {
 # 
 # @param node2  - New value for the field.
 # Node configuration information for the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_node2 {
    my ($self, %args) = @_;
@@ -2203,7 +2205,7 @@ sub set_node2 {
 #
 # @retval witness - The current value of the field.
 # Node configuration information for the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_witness {
@@ -2216,7 +2218,7 @@ sub get_witness {
 # 
 # @param witness  - New value for the field.
 # Node configuration information for the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_witness {
    my ($self, %args) = @_;
@@ -2228,7 +2230,7 @@ sub set_witness {
 # Gets the value of 'mode' property.
 #
 # @retval mode - The current value of the field.
-# Operational mode of the VCHA Cluster. This  *field*  was added in vSphere API 6.7 U1.
+# Operational mode of the VCHA Cluster. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_mode {
@@ -2240,7 +2242,7 @@ sub get_mode {
 # Sets the given value for 'mode' property.
 # 
 # @param mode  - New value for the field.
-# Operational mode of the VCHA Cluster. This  *field*  was added in vSphere API 6.7 U1.
+# Operational mode of the VCHA Cluster. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_mode {
    my ($self, %args) = @_;
@@ -2252,7 +2254,7 @@ sub set_mode {
 # Gets the value of 'health_state' property.
 #
 # @retval health_state - The current value of the field.
-# Last known state of the VCHA Cluster. This  *field*  was added in vSphere API 6.7 U1.
+# Last known state of the VCHA Cluster. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_health_state {
@@ -2264,7 +2266,7 @@ sub get_health_state {
 # Sets the given value for 'health_state' property.
 # 
 # @param health_state  - New value for the field.
-# Last known state of the VCHA Cluster. This  *field*  was added in vSphere API 6.7 U1.
+# Last known state of the VCHA Cluster. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_health_state {
    my ($self, %args) = @_;
@@ -2277,7 +2279,7 @@ sub set_health_state {
 #
 # @retval health_exception - The current value of the field.
 # Health warning messages if the health information is unavailable. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_health_exception {
@@ -2290,7 +2292,7 @@ sub get_health_exception {
 # 
 # @param health_exception  - New value for the field.
 # Health warning messages if the health information is unavailable. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_health_exception {
    my ($self, %args) = @_;
@@ -2303,7 +2305,7 @@ sub set_health_exception {
 #
 # @retval health_warnings - The current value of the field.
 # A collection of messages describing the reason for a non-healthy Cluster. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_health_warnings {
@@ -2316,7 +2318,7 @@ sub get_health_warnings {
 # 
 # @param health_warnings  - New value for the field.
 # A collection of messages describing the reason for a non-healthy Cluster. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_health_warnings {
    my ($self, %args) = @_;
@@ -2328,8 +2330,8 @@ sub set_health_warnings {
 # Gets the value of 'manual_failover_allowed' property.
 #
 # @retval manual_failover_allowed - The current value of the field.
-# Specifies if manual failover is allowed. This  *field*  was added in vSphere API 6.7
-#     U1.
+# Specifies if manual failover is allowed. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 # Optional#
 sub get_manual_failover_allowed {
@@ -2341,8 +2343,8 @@ sub get_manual_failover_allowed {
 # Sets the given value for 'manual_failover_allowed' property.
 # 
 # @param manual_failover_allowed  - New value for the field.
-# Specifies if manual failover is allowed. This  *field*  was added in vSphere API 6.7
-#     U1.
+# Specifies if manual failover is allowed. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 sub set_manual_failover_allowed {
    my ($self, %args) = @_;
@@ -2355,7 +2357,7 @@ sub set_manual_failover_allowed {
 #
 # @retval auto_failover_allowed - The current value of the field.
 # Specifies if automatic failover is allowed. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 # Optional#
 sub get_auto_failover_allowed {
@@ -2368,7 +2370,7 @@ sub get_auto_failover_allowed {
 # 
 # @param auto_failover_allowed  - New value for the field.
 # Specifies if automatic failover is allowed. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 sub set_auto_failover_allowed {
    my ($self, %args) = @_;
@@ -2385,7 +2387,7 @@ sub set_auto_failover_allowed {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::NodeVmInfo``   *class*  contains
 #     information to describe the Virtual Machine of a node of a VCHA cluster. This  *class*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::NodeVmInfo;
 
@@ -2429,7 +2431,7 @@ sub new {
 #
 # @retval vm - The current value of the field.
 # The identifier of the virtual machine of the VCHA node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # ID#
 sub get_vm {
@@ -2442,7 +2444,7 @@ sub get_vm {
 # 
 # @param vm  - New value for the field.
 # The identifier of the virtual machine of the VCHA node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_vm {
    my ($self, %args) = @_;
@@ -2454,7 +2456,7 @@ sub set_vm {
 # Gets the value of 'bios_uuid' property.
 #
 # @retval bios_uuid - The current value of the field.
-# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7 U1.
+# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7.1.
 #
 # String#
 sub get_bios_uuid {
@@ -2466,7 +2468,7 @@ sub get_bios_uuid {
 # Sets the given value for 'bios_uuid' property.
 # 
 # @param bios_uuid  - New value for the field.
-# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7 U1.
+# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_bios_uuid {
    my ($self, %args) = @_;
@@ -2483,7 +2485,7 @@ sub set_bios_uuid {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::VmInfo``   *class*  contains information
 #     to describe the Virtual Machines of passive and witness nodes of a VCHA cluster. This 
-#     *class*  was added in vSphere API 6.7 U1.
+#     *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::VmInfo;
 
@@ -2527,7 +2529,7 @@ sub new {
 #
 # @retval passive - The current value of the field.
 # The virtual machine information of the passive node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # NodeVmInfo#
 sub get_passive {
@@ -2540,7 +2542,7 @@ sub get_passive {
 # 
 # @param passive  - New value for the field.
 # The virtual machine information of the passive node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_passive {
    my ($self, %args) = @_;
@@ -2553,7 +2555,7 @@ sub set_passive {
 #
 # @retval witness - The current value of the field.
 # The virtual machine information of the witness node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # NodeVmInfo#
 sub get_witness {
@@ -2566,7 +2568,7 @@ sub get_witness {
 # 
 # @param witness  - New value for the field.
 # The virtual machine information of the witness node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_witness {
    my ($self, %args) = @_;
@@ -2582,8 +2584,8 @@ sub set_witness {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::UndeploySpec``   *class*  contains the
-#     undeploy specification for a VCHA cluster. This  *class*  was added in vSphere API 6.7
-#     U1.
+#     undeploy specification for a VCHA cluster. This  *class*  was added in vSphere API
+#     6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::UndeploySpec;
 
@@ -2629,7 +2631,7 @@ sub new {
 #
 # @retval vc_spec - The current value of the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_vc_spec {
@@ -2642,7 +2644,7 @@ sub get_vc_spec {
 # 
 # @param vc_spec  - New value for the field.
 # Contains the active node&apos;s management vCenter server credentials. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 sub set_vc_spec {
    my ($self, %args) = @_;
@@ -2671,7 +2673,7 @@ sub set_vc_spec {
 #     is  *null* , then the passive and witness virtual machines will not be deleted. The
 #     customer should delete them in order to cleanup completely. VCHA cluster specific
 #     information is removed.</li>
-#  </ul> </ul>. This  *field*  was added in vSphere API 6.7 U1.
+#  </ul> </ul>. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_force_delete {
@@ -2700,7 +2702,7 @@ sub get_force_delete {
 #     is  *null* , then the passive and witness virtual machines will not be deleted. The
 #     customer should delete them in order to cleanup completely. VCHA cluster specific
 #     information is removed.</li>
-#  </ul> </ul>. This  *field*  was added in vSphere API 6.7 U1.
+#  </ul> </ul>. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_force_delete {
    my ($self, %args) = @_;
@@ -2727,7 +2729,7 @@ sub set_force_delete {
 #     *field*  is  *null*  or false, then this information is validated prior to deleting
 #     the passive and witness virtual machines. VCHA cluster specific information is
 #     removed.</li>
-#  </ul>. This  *field*  was added in vSphere API 6.7 U1.
+#  </ul>. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_vms {
@@ -2754,7 +2756,7 @@ sub get_vms {
 #     *field*  is  *null*  or false, then this information is validated prior to deleting
 #     the passive and witness virtual machines. VCHA cluster specific information is
 #     removed.</li>
-#  </ul>. This  *field*  was added in vSphere API 6.7 U1.
+#  </ul>. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_vms {
    my ($self, %args) = @_;

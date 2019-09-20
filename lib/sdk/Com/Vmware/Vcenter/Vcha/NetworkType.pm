@@ -1,15 +1,15 @@
 ## @class Com::Vmware::Vcenter::Vcha::NetworkType
 #
 # The  ``Com::Vmware::Vcenter::Vcha::NetworkType``   *enumerated type*  defines the type
-#     of a vCenter Server network. This  *enumeration*  was added in vSphere API 6.7 U1.
+#     of a vCenter Server network. This  *enumeration*  was added in vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::NetworkType::STANDARD_PORTGROUP #
-#vSphere standard portgroup network. This  *constant*  was added in vSphere API 6.7 U1.
+#vSphere standard portgroup network. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::NetworkType::DISTRIBUTED_PORTGROUP #
-#Distributed virtual switch. This  *constant*  was added in vSphere API 6.7 U1.
+#Distributed virtual switch. This  *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::NetworkType;
 

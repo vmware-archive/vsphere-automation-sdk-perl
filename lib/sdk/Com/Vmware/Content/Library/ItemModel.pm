@@ -142,7 +142,7 @@ sub set_library_id {
 # Gets the value of 'content_version' property.
 #
 # @retval content_version - The current value of the field.
-# The version of the file content list of this library item.
+# The latest version of the file content list of this library item.
 #
 # optional#
 sub get_content_version {
@@ -154,7 +154,7 @@ sub get_content_version {
 # Sets the given value for 'content_version' property.
 # 
 # @param content_version  - New value for the field.
-# The version of the file content list of this library item.
+# The latest version of the file content list of this library item.
 #
 sub set_content_version {
    my ($self, %args) = @_;

@@ -13,12 +13,12 @@
 ## @class Com::Vmware::Vcenter::Guest::CustomizationSpecs
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs``   *interface*  provides 
 #     *methods*  to manage guest customization specifications in the vCenter Server. This 
-#     *interface*  was added in vSphere API 6.7 U1.
+#     *interface*  was added in vSphere API 6.7.1.
 #
 #
 # Constant String::RESOURCE_TYPE #
 #The resource type for a vCenter guest customization specification. This  *constant*  was
-# added in vSphere API 6.7 U1.
+# added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs;
 
@@ -66,7 +66,7 @@ sub new {
 # Returns information about at most 1000 visible (subject to permission checks) guest
 # customization specifications in vCenter matching the  class
 # Com::Vmware::Vcenter::Guest::CustomizationSpecs::FilterSpec . This  *method*  was added in
-# vSphere API 6.7 U1.
+# vSphere API 6.7.1.
 #
 # @param filter [OPTIONAL] Specification of matching guest customization specifications for which information
 #     should be returned.
@@ -120,17 +120,17 @@ sub list {
 #
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::OsType``   *enumerated type* 
 #     defines the types of guest operating systems for which guest customization is
-#     supported. This  *enumeration*  was added in vSphere API 6.7 U1.
+#     supported. This  *enumeration*  was added in vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Guest::CustomizationSpecs::OsType::WINDOWS #
 #A customization specification for a Windows guest operating system. This  *constant*  was
-# added in vSphere API 6.7 U1.
+# added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Guest::CustomizationSpecs::OsType::LINUX #
 #A customization specification for a Linux guest operating system. This  *constant*  was
-# added in vSphere API 6.7 U1.
+# added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::OsType;
 
@@ -181,8 +181,7 @@ sub new {
 #     contains  *fields*  used to filter the results when listing guest customization
 #     specifications (see  :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.list` ).
 #     If multiple  *fields*  are specified, only guest customization specifications matching
-#     all of the  *fields*  match the filter. This  *class*  was added in vSphere API 6.7
-#     U1.
+#     all of the  *fields*  match the filter. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::FilterSpec;
 
@@ -227,7 +226,7 @@ sub new {
 # @retval names - The current value of the field.
 # Names that guest customization specifications must have to match the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Guest::CustomizationSpecs::Summary.name` ). This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_names {
@@ -241,7 +240,7 @@ sub get_names {
 # @param names  - New value for the field.
 # Names that guest customization specifications must have to match the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Guest::CustomizationSpecs::Summary.name` ). This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.7.1.
 #
 sub set_names {
    my ($self, %args) = @_;
@@ -256,7 +255,7 @@ sub set_names {
 # Guest operating system type that guest customization specifications must have to match
 #     the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Guest::CustomizationSpecs::Summary.os_type` ). This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_OS_type {
@@ -271,7 +270,7 @@ sub get_OS_type {
 # Guest operating system type that guest customization specifications must have to match
 #     the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Guest::CustomizationSpecs::Summary.os_type` ). This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_OS_type {
    my ($self, %args) = @_;
@@ -288,7 +287,7 @@ sub set_OS_type {
 #
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Summary``   *class*  contains
 #     commonly used information about a guest customization specification. This  *class* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Summary;
 
@@ -336,7 +335,7 @@ sub new {
 #
 # @retval name - The current value of the field.
 # Name of the guest customization specification. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 # ID#
 sub get_name {
@@ -349,7 +348,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # Name of the guest customization specification. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -362,7 +361,7 @@ sub set_name {
 #
 # @retval description - The current value of the field.
 # Description of the guest customization specification. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # String#
 sub get_description {
@@ -375,7 +374,7 @@ sub get_description {
 # 
 # @param description  - New value for the field.
 # Description of the guest customization specification. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -388,7 +387,7 @@ sub set_description {
 #
 # @retval OS_type - The current value of the field.
 # Guest operating system type for which that this guest customization specification
-#     applies. This  *field*  was added in vSphere API 6.7 U1.
+#     applies. This  *field*  was added in vSphere API 6.7.1.
 #
 # OsType#
 sub get_OS_type {
@@ -401,7 +400,7 @@ sub get_OS_type {
 # 
 # @param OS_type  - New value for the field.
 # Guest operating system type for which that this guest customization specification
-#     applies. This  *field*  was added in vSphere API 6.7 U1.
+#     applies. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_OS_type {
    my ($self, %args) = @_;
@@ -414,7 +413,7 @@ sub set_OS_type {
 #
 # @retval last_modified - The current value of the field.
 # Date and tme when this guest customization specification was last modified. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # DateTime#
 sub get_last_modified {
@@ -427,7 +426,7 @@ sub get_last_modified {
 # 
 # @param last_modified  - New value for the field.
 # Date and tme when this guest customization specification was last modified. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_last_modified {
    my ($self, %args) = @_;

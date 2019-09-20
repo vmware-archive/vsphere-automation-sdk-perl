@@ -96,7 +96,7 @@ sub get {
 
 
 ## @method list ()
-# Returns information about at most 1000 visible (subject to permission checks) datastores
+# Returns information about at most 2500 visible (subject to permission checks) datastores
 # in vCenter matching the  class Com::Vmware::Vcenter::Datastore::FilterSpec .
 #
 # @param filter [OPTIONAL] Specification of matching datastores for which information should be returned.
@@ -118,7 +118,7 @@ sub get {
 #     a value that is not supported by the server.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::UnableToAllocateResource 
-# if more than 1000 datastores match the  class
+# if more than 2500 datastores match the  class
 #     Com::Vmware::Vcenter::Datastore::FilterSpec .
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 

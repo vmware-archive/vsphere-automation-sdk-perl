@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Vcha::CertificateInfo``   *Class*  contains information
 #     about the SSL certificate for a management vCenter server. This  *class*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::CertificateInfo;
 
@@ -45,7 +45,7 @@ sub new {
 #
 # @retval ssl_thumbprint - The current value of the field.
 # The SHA-256 thumbprint of the SSL certificate for a management vCenter server. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # String#
 sub get_ssl_thumbprint {
@@ -58,7 +58,7 @@ sub get_ssl_thumbprint {
 # 
 # @param ssl_thumbprint  - New value for the field.
 # The SHA-256 thumbprint of the SSL certificate for a management vCenter server. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;

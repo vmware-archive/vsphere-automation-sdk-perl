@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Vcha::Cluster::Active
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Active``   *interface*  provides 
 #     *methods*  to get information related to the active vCenter High Availability (VCHA)
-#     node. This  *interface*  was added in vSphere API 6.7 U1.
+#     node. This  *interface*  was added in vSphere API 6.7.1.
 #
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Active;
@@ -61,10 +61,12 @@ sub new {
 
 ## @method get ()
 # Retrieves information about the active node of a VCHA cluster. This  *method*  was added
-# in vSphere API 6.7 U1.
+# in vSphere API 6.7.1.
 #
 # @param vc_spec [OPTIONAL] Contains active node&apos;s management vCenter server credentials.
-# If  *null* , then the active vCenter server is assumed to be managed by itself.
+# If  *null* , then the active vCenter Server instance is assumed to be either
+#     self-managed or else in enhanced linked mode and managed by a linked vCenter Server
+#     instance.
 # . The value must be Com::Vmware::Vcenter::Vcha::CredentialsSpec or None.
 #
 # @param partial [OPTIONAL] If true, then return only the information that does not require connecting to the
@@ -142,7 +144,7 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Active::Info``   *class*  contains the
 #     network and placement information of the active node of a VCHA Cluster. This  *class* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Active::Info;
 
@@ -188,7 +190,7 @@ sub new {
 #
 # @retval management - The current value of the field.
 # IP specification for the Management network. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 # IpSpec#
 sub get_management {
@@ -201,7 +203,7 @@ sub get_management {
 # 
 # @param management  - New value for the field.
 # IP specification for the Management network. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 sub set_management {
    my ($self, %args) = @_;
@@ -213,7 +215,7 @@ sub set_management {
 # Gets the value of 'ha' property.
 #
 # @retval ha - The current value of the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha {
@@ -225,7 +227,7 @@ sub get_ha {
 # Sets the given value for 'ha' property.
 # 
 # @param ha  - New value for the field.
-# IP specification for the HA network. This  *field*  was added in vSphere API 6.7 U1.
+# IP specification for the HA network. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_ha {
    my ($self, %args) = @_;
@@ -238,7 +240,7 @@ sub set_ha {
 #
 # @retval placement - The current value of the field.
 # Contains the placement information of the active node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_placement {
@@ -251,7 +253,7 @@ sub get_placement {
 # 
 # @param placement  - New value for the field.
 # Contains the placement information of the active node. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_placement {
    my ($self, %args) = @_;

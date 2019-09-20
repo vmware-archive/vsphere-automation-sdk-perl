@@ -6,3 +6,5 @@ Name                                | Description
 ------------------------------------| -------------
 runtime	                            | vAPI runtime responsible for serialization/de-serialization of objects and wire protocol
 sdk                                 | client stubs for vSphere Automation APIs
+VMware                              | VMware Perl library
+

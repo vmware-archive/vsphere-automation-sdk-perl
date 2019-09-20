@@ -67,7 +67,7 @@ sub new {
 # operation so the content of the published library may not immediately appear.</p>
 #
 # Note:
-# Privileges required for this operation are ContentLibrary.CreateSubscribedLibrary.
+# Privileges required for this operation are ContentLibrary.CreateSubscribedLibrary, Datastore.AllocateSpace.
 #
 # @param client_token [OPTIONAL] Unique token generated on the client for each creation request. The token should be a
 #     universally unique identifier (UUID), for example: 
@@ -99,6 +99,9 @@ sub new {
 # if you do not have all of the privileges described as follows: <ul>
 # <li>  *Method*  execution requires  ``ContentLibrary.CreateSubscribedLibrary`` .
 #     </li>
+# <li> The resource  ``Datastore``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Content::Library::StorageBacking.datastore_id`  requires 
+#     ``Datastore.AllocateSpace`` . </li>
 # </ul>
 #
 

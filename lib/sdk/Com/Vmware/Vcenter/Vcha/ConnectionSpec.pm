@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Vcha::ConnectionSpec``   *class*  contains information
 #     required to connect to a vCenter server. The connection to the vCenter server always
-#     uses the HTTPS protocol. This  *class*  was added in vSphere API 6.7 U1.
+#     uses the HTTPS protocol. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::ConnectionSpec;
 
@@ -52,7 +52,7 @@ sub new {
 # Gets the value of 'hostname' property.
 #
 # @retval hostname - The current value of the field.
-# IP Address or DNS of the vCenter. This  *field*  was added in vSphere API 6.7 U1.
+# IP Address or DNS of the vCenter. This  *field*  was added in vSphere API 6.7.1.
 #
 # String#
 sub get_hostname {
@@ -64,7 +64,7 @@ sub get_hostname {
 # Sets the given value for 'hostname' property.
 # 
 # @param hostname  - New value for the field.
-# IP Address or DNS of the vCenter. This  *field*  was added in vSphere API 6.7 U1.
+# IP Address or DNS of the vCenter. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -76,7 +76,7 @@ sub set_hostname {
 # Gets the value of 'port' property.
 #
 # @retval port - The current value of the field.
-# Port number. This  *field*  was added in vSphere API 6.7 U1.
+# Port number. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_port {
@@ -88,7 +88,7 @@ sub get_port {
 # Sets the given value for 'port' property.
 # 
 # @param port  - New value for the field.
-# Port number. This  *field*  was added in vSphere API 6.7 U1.
+# Port number. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_port {
    my ($self, %args) = @_;
@@ -100,8 +100,8 @@ sub set_port {
 # Gets the value of 'ssl_thumbprint' property.
 #
 # @retval ssl_thumbprint - The current value of the field.
-# SHA1 hash of the server SSL certificate. This  *field*  was added in vSphere API 6.7
-#     U1.
+# SHA1 hash of the server SSL certificate. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 # Optional#
 sub get_ssl_thumbprint {
@@ -113,8 +113,8 @@ sub get_ssl_thumbprint {
 # Sets the given value for 'ssl_thumbprint' property.
 # 
 # @param ssl_thumbprint  - New value for the field.
-# SHA1 hash of the server SSL certificate. This  *field*  was added in vSphere API 6.7
-#     U1.
+# SHA1 hash of the server SSL certificate. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;
@@ -126,7 +126,7 @@ sub set_ssl_thumbprint {
 # Gets the value of 'username' property.
 #
 # @retval username - The current value of the field.
-# Username to access the server. This  *field*  was added in vSphere API 6.7 U1.
+# Username to access the server. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_username {
@@ -138,7 +138,7 @@ sub get_username {
 # Sets the given value for 'username' property.
 # 
 # @param username  - New value for the field.
-# Username to access the server. This  *field*  was added in vSphere API 6.7 U1.
+# Username to access the server. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -150,7 +150,7 @@ sub set_username {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password for the specified user. This  *field*  was added in vSphere API 6.7 U1.
+# Password for the specified user. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_password {
@@ -162,7 +162,7 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password for the specified user. This  *field*  was added in vSphere API 6.7 U1.
+# Password for the specified user. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_password {
    my ($self, %args) = @_;

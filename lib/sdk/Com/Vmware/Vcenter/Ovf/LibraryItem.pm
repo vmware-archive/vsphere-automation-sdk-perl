@@ -331,7 +331,7 @@ sub filter {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
-# <li> The  *field*  
+# <li> The resource  ``null``  or  ``null``  referenced by the  *field*  
 #     :attr:`Com::Vmware::Vcenter::Ovf::LibraryItem::DeployableIdentity.id`  requires 
 #     ``VApp.Export`` . </li>
 # <li> The resource  ``com.vmware.content.Library``  referenced by the  *field*  

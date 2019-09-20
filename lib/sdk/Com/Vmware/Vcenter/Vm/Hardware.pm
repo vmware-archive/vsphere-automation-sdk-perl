@@ -224,42 +224,48 @@ sub upgrade {
 ## @class Com::Vmware::Vcenter::Vm::Hardware::Version
 #
 # The  ``Com::Vmware::Vcenter::Vm::Hardware::Version``   *enumerated type*  defines the
-#     valid virtual hardware versions for a virtual machine.
+#     valid virtual hardware versions for a virtual machine. See
+#     https://kb.vmware.com/s/article/1003746 (Virtual machine hardware versions (1003746)).
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_03 #
-#Hardware version 3.
+#Hardware version 3, first supported in ESXi 2.5.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_04 #
-#Hardware version 4.
+#Hardware version 4, first supported in ESXi 3.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_06 #
-#Hardware version 6.
+#Hardware version 6, first supported in WS 6.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_07 #
-#Hardware version 7.
+#Hardware version 7, first supported in ESXi 4.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_08 #
-#Hardware version 8.
+#Hardware version 8, first supported in ESXi 5.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_09 #
-#Hardware version 9.
+#Hardware version 9, first supported in ESXi 5.1.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_10 #
-#Hardware version 10.
+#Hardware version 10, first supported in ESXi 5.5.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_11 #
-#Hardware version 11.
+#Hardware version 11, first supported in ESXi 6.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_12 #
-#Hardware version 12.
+#Hardware version 12, first supported in Workstation 12.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_13 #
-#Hardware version 13.
+#Hardware version 13, first supported in ESXi 6.5.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_14 #
-#Hardware version 14. This  *constant*  was added in vSphere API 6.7.
+#Hardware version 14, first supported in ESXi 6.7. This  *constant*  was added in vSphere
+# API 6.7.
+#
+# Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_15 #
+#Hardware version 15, first supported in ESXi 6.7.0 Update 2. This  *constant*  was added
+# in vSphere API 6.7.2.
 
 package Com::Vmware::Vcenter::Vm::Hardware::Version;
 
@@ -275,6 +281,7 @@ use constant {
     VMX_12 =>  'VMX_12',
     VMX_13 =>  'VMX_13',
     VMX_14 =>  'VMX_14',
+    VMX_15 =>  'VMX_15',
 };
 
 #

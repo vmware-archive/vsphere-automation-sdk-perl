@@ -37,6 +37,7 @@ sub new {
    $self->{ssl_thumbprint} = $args{'ssl_thumbprint'};
    $self->{subscription_url} = $args{'subscription_url'};
    $self->{user_name} = $args{'user_name'};
+   $self->{source_info} = $args{'source_info'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Content::Library::SubscriptionInfo');
    $self->set_binding_name('name' => 'com.vmware.content.library.subscription_info');
@@ -47,6 +48,7 @@ sub new {
    $self->set_binding_field('key' => 'ssl_thumbprint', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'subscription_url', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::URIType()));
    $self->set_binding_field('key' => 'user_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'source_info', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Content::Library', 'type_name' => 'SourceInfo')));
    bless $self, $class;
    return $self;
 }
@@ -366,6 +368,34 @@ sub get_user_name {
 sub set_user_name {
    my ($self, %args) = @_;
    $self->{'user_name'} = $args{'user_name'}; 
+   return;	
+}
+
+## @method get_source_info ()
+# Gets the value of 'source_info' property.
+#
+# @retval source_info - The current value of the field.
+# Information about the source published library. This  *field*  will be set for a
+#     subscribed library which is associated with a subscription of the published library.
+#     This  *field*  was added in vSphere API 6.7.2.
+#
+# optional#
+sub get_source_info {
+   my ($self, %args) = @_;
+   return $self->{'source_info'}; 	
+}
+
+## @method set_source_info ()
+# Sets the given value for 'source_info' property.
+# 
+# @param source_info  - New value for the field.
+# Information about the source published library. This  *field*  will be set for a
+#     subscribed library which is associated with a subscription of the published library.
+#     This  *field*  was added in vSphere API 6.7.2.
+#
+sub set_source_info {
+   my ($self, %args) = @_;
+   $self->{'source_info'} = $args{'source_info'}; 
    return;	
 }
 

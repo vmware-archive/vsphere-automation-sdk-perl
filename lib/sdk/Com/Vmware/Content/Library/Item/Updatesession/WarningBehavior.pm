@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Content::Library::Item::Updatesession::WarningBehavior``   *class*
 #     defines the session behavior if the warning is raised during the update session. This 
-#     *class*  was added in vSphere API 6.7 U1.
+#     *class*  was added in vSphere API 6.8.
 
 package Com::Vmware::Content::Library::Item::Updatesession::WarningBehavior;
 
@@ -47,7 +47,7 @@ sub new {
 #
 # @retval type - The current value of the field.
 # The warning type which may be raised during the update session. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.8.
 #
 # WarningType#
 sub get_type {
@@ -60,7 +60,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # The warning type which may be raised during the update session. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.8.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -73,7 +73,7 @@ sub set_type {
 #
 # @retval ignored - The current value of the field.
 # Indicates if this warning will be ignored during session complete operation. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 # boolean#
 sub get_ignored {
@@ -86,7 +86,7 @@ sub get_ignored {
 # 
 # @param ignored  - New value for the field.
 # Indicates if this warning will be ignored during session complete operation. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 sub set_ignored {
    my ($self, %args) = @_;

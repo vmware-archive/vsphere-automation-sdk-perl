@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Ipv6Spec``   *class*  contains IPV6 information
-#     used to configure a network interface. This  *class*  was added in vSphere API 6.7 U1.
+#     used to configure a network interface. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Ipv6Spec;
 
@@ -46,7 +46,7 @@ sub new {
 #
 # @retval address - The current value of the field.
 # IPv6 address to be used to configure the interface. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # String#
 sub get_address {
@@ -59,7 +59,7 @@ sub get_address {
 # 
 # @param address  - New value for the field.
 # IPv6 address to be used to configure the interface. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -71,7 +71,7 @@ sub set_address {
 # Gets the value of 'prefix' property.
 #
 # @retval prefix - The current value of the field.
-# The CIDR prefix for the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The CIDR prefix for the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 # long#
 sub get_prefix {
@@ -83,7 +83,7 @@ sub get_prefix {
 # Sets the given value for 'prefix' property.
 # 
 # @param prefix  - New value for the field.
-# The CIDR prefix for the interface. This  *field*  was added in vSphere API 6.7 U1.
+# The CIDR prefix for the interface. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_prefix {
    my ($self, %args) = @_;

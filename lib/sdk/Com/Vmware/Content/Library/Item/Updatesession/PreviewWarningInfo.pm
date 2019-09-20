@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Content::Library::Item::Updatesession::PreviewWarningInfo``  
 #     *class*  provides information about the warnings which are raised during the update
-#     session preview. This  *class*  was added in vSphere API 6.7 U1.
+#     session preview. This  *class*  was added in vSphere API 6.8.
 
 package Com::Vmware::Content::Library::Item::Updatesession::PreviewWarningInfo;
 
@@ -49,7 +49,7 @@ sub new {
 #
 # @retval type - The current value of the field.
 # The warning type raised during preview of the update session. This  *field*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.8.
 #
 # WarningType#
 sub get_type {
@@ -62,7 +62,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # The warning type raised during preview of the update session. This  *field*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.8.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -75,7 +75,7 @@ sub set_type {
 #
 # @retval message - The current value of the field.
 # The message specifying more details about the warning. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.8.
 #
 # LocalizableMessage#
 sub get_message {
@@ -88,7 +88,7 @@ sub get_message {
 # 
 # @param message  - New value for the field.
 # The message specifying more details about the warning. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.8.
 #
 sub set_message {
    my ($self, %args) = @_;
@@ -101,7 +101,7 @@ sub set_message {
 #
 # @retval ignored - The current value of the field.
 # Indicates if this warning will be ignored during session complete operation. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 # boolean#
 sub get_ignored {
@@ -114,7 +114,7 @@ sub get_ignored {
 # 
 # @param ignored  - New value for the field.
 # Indicates if this warning will be ignored during session complete operation. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 sub set_ignored {
    my ($self, %args) = @_;

@@ -182,6 +182,9 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to delete the tag.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  if the user can not be authenticated.
+#
 
 sub delete {
    my ($self, %args) = @_;

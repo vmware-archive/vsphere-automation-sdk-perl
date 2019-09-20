@@ -35,7 +35,7 @@ sub new {
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Compute::Policies::Status');
    $self->set_binding_name('name' => 'com.vmware.vcenter.compute.policies.status');
-   $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Compute::Policies', 'type_name' => 'Status::Compliance'));
+   $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Compute::Policies', 'type_name' => 'ObjectCompliance'));
    bless $self, $class;
    return $self;
 }
@@ -47,7 +47,7 @@ sub new {
 # The compliance status of the policy on a specified object. <b>Warning:</b> This 
 #     *field*  is available as technical preview. It may be changed in a future release.
 #
-# Compliance#
+# ObjectCompliance#
 sub get_status {
    my ($self, %args) = @_;
    return $self->{'status'}; 	
@@ -66,62 +66,6 @@ sub set_status {
    return;	
 }
 
-
-1;
-
-
-## @class Com::Vmware::Vcenter::Compute::Policies::Status::Compliance
-#
-# The  ``Com::Vmware::Vcenter::Compute::Policies::Status::Compliance``   *enumerated
-#     type*  defines the compliance states a policy can be in on a particular object.
-#     <b>Warning:</b> This  *enumeration*  is available as technical preview. It may be
-#     changed in a future release.
-#
-#
-#
-# Constant Com::Vmware::Vcenter::Compute::Policies::Status::Compliance::NOT_APPLICABLE #
-#The object is in a state for which the policy does not apply. <b>Warning:</b> This 
-# *constant*  is available as technical preview. It may be changed in a future release.
-#
-# Constant Com::Vmware::Vcenter::Compute::Policies::Status::Compliance::COMPLIANT #
-#The policy is in compliance on the object. <b>Warning:</b> This  *constant*  is available
-# as technical preview. It may be changed in a future release.
-#
-# Constant Com::Vmware::Vcenter::Compute::Policies::Status::Compliance::NOT_COMPLIANT #
-#The policy is not in compliance on the object. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
-
-package Com::Vmware::Vcenter::Compute::Policies::Status::Compliance;
-
-use constant {
-    NOT_APPLICABLE =>  'NOT_APPLICABLE',
-    COMPLIANT =>  'COMPLIANT',
-    NOT_COMPLIANT =>  'NOT_COMPLIANT',
-};
-
-#
-# Base class
-#
-use base qw(Com::Vmware::Vapi::Bindings::VapiEnum);
-
-## @method new ()
-# Constructor to initialize the Com::Vmware::Vcenter::Compute::Policies::Status::Compliance enumeration.
-#
-# @retval
-# Blessed object
-#
-sub new {
-   my ($class, %args) = @_;
-   $class = ref($class) || $class;
-   my $self = $class->SUPER::new();
-   my $bindingType = new Com::Vmware::Vapi::Bindings::Type::EnumType(
-                           'name' => 'com.vmware.vcenter.compute.policies.status.compliance',
-                           'binding_class' => 'Com::Vmware::Vcenter::Compute::Policies::Status::Compliance');
-   $class->SUPER::set_binding_type('binding_type' => $bindingType);
-
-   bless $self, $class;
-   return $self;
-}
 
 1;
 

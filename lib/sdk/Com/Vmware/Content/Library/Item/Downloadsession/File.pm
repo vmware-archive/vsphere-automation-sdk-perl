@@ -93,8 +93,7 @@ sub new {
 #  if the download session associated with  ``download_session_id``  doesn&apos;t exist.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
-# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
-#       ``libraryItemId``  requires  ``System.Read`` . </li>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
 
@@ -151,6 +150,10 @@ sub list {
 #     privilege and the caller requested a 
 #     :attr:`Com::Vmware::Content::Library::Item::Downloadsession::File::EndpointType.DIRECT`
 #      endpoint type.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
+# </ul>
 #
 
 sub prepare {
@@ -193,8 +196,7 @@ sub prepare {
 #  if there is no file with the specified  ``file_name`` .
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
-# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
-#       ``libraryItemId``  requires  ``System.Read`` . </li>
+#  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
 

@@ -2,25 +2,25 @@
 #
 # The  ``Com::Vmware::Content::Library::Item::Updatesession::WarningType``   *enumerated
 #     type*  defines the warnings which can be raised during the update session. This 
-#     *enumeration*  was added in vSphere API 6.7 U1.
+#     *enumeration*  was added in vSphere API 6.8.
 #
 #
 #
 # Constant Com::Vmware::Content::Library::Item::Updatesession::WarningType::SELF_SIGNED_CERTIFICATE #
 #The certificate used for signing the content is self-signed. This  *constant*  was added
-# in vSphere API 6.7 U1.
+# in vSphere API 6.8.
 #
 # Constant Com::Vmware::Content::Library::Item::Updatesession::WarningType::EXPIRED_CERTIFICATE #
 #The certificate used for signing the content is expired. This  *constant*  was added in
-# vSphere API 6.7 U1.
+# vSphere API 6.8.
 #
 # Constant Com::Vmware::Content::Library::Item::Updatesession::WarningType::NOT_YET_VALID_CERTIFICATE #
 #The certificate used for signing the content is not yet valid. This  *constant*  was added
-# in vSphere API 6.7 U1.
+# in vSphere API 6.8.
 #
 # Constant Com::Vmware::Content::Library::Item::Updatesession::WarningType::UNTRUSTED_CERTIFICATE #
 #The certificate used for signing the content is not trusted. This  *constant*  was added
-# in vSphere API 6.7 U1.
+# in vSphere API 6.8.
 
 package Com::Vmware::Content::Library::Item::Updatesession::WarningType;
 

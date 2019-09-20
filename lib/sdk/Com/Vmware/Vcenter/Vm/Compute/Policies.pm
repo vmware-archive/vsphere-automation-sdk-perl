@@ -64,9 +64,6 @@ sub new {
 # <b>Warning:</b> This  *method*  is available as technical preview. It may be changed in a
 # future release.
 #
-# Note:
-# Privileges required for this operation are System.Read.
-#
 # @param vm [REQUIRED] Identifier of the virtual machine to query the status for.
 # The value must be an identifier for the resource type
 #     getQualifiedName(VirtualMachine).
@@ -74,7 +71,7 @@ sub new {
 #
 # @param policy [REQUIRED] Identifier of the policy to query the status for.
 # The value must be an identifier for the resource type
-#     getQualifiedName(com.vmware.vcenter.compute.Policy).
+#     getQualifiedName(com.vmware.vcenter.compute.Resources.COMPUTE_POLICY).
 # . The value must be str.
 #
 # @retval 
@@ -88,10 +85,6 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
-# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
-# if you do not have all of the privileges described as follows: <ul>
-#  <li>  *Method*  execution requires  ``System.Read`` . </li>
-# </ul>
 #
 
 sub get {
@@ -161,7 +154,7 @@ sub new {
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Vm::Compute::Policies::Info');
    $self->set_binding_name('name' => 'com.vmware.vcenter.vm.compute.policies.info');
-   $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Compute::Policies', 'type_name' => 'Status::Compliance'));
+   $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Compute::Policies', 'type_name' => 'ObjectCompliance'));
    bless $self, $class;
    return $self;
 }
@@ -170,10 +163,10 @@ sub new {
 # Gets the value of 'status' property.
 #
 # @retval status - The current value of the field.
-# The compliance status of the policy on a specified object. <b>Warning:</b> This 
+# The compliance status of the policy on a specified object.<b>Warning:</b> This 
 #     *field*  is available as technical preview. It may be changed in a future release.
 #
-# Compliance#
+# ObjectCompliance#
 sub get_status {
    my ($self, %args) = @_;
    return $self->{'status'}; 	
@@ -183,7 +176,7 @@ sub get_status {
 # Sets the given value for 'status' property.
 # 
 # @param status  - New value for the field.
-# The compliance status of the policy on a specified object. <b>Warning:</b> This 
+# The compliance status of the policy on a specified object.<b>Warning:</b> This 
 #     *field*  is available as technical preview. It may be changed in a future release.
 #
 sub set_status {

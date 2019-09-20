@@ -66,7 +66,7 @@ sub new {
 # Creates a new local library.
 #
 # Note:
-# Privileges required for this operation are ContentLibrary.CreateLocalLibrary.
+# Privileges required for this operation are ContentLibrary.CreateLocalLibrary, Datastore.AllocateSpace.
 #
 # @param client_token [OPTIONAL] A unique token generated on the client for each creation request. The token should be
 #     a universally unique identifier (UUID), for example: 
@@ -94,6 +94,9 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 #  <li>  *Method*  execution requires  ``ContentLibrary.CreateLocalLibrary`` . </li>
+# <li> The resource  ``Datastore``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Content::Library::StorageBacking.datastore_id`  requires 
+#     ``Datastore.AllocateSpace`` . </li>
 # </ul>
 #
 
@@ -130,6 +133,11 @@ sub create {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library specified by  ``library_id``  does not exist.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the library contains a library item that cannot be deleted in its current state.
+#     For example, the library item contains a virtual machine template and a virtual
+#     machine is checked out of the library item.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 # <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
@@ -275,6 +283,62 @@ sub update {
 }
 
 
+## @method publish ()
+# Publishes the library to specified subscriptions. If no subscriptions are specified, then
+# publishes the library to all its subscriptions. This  *method*  was added in vSphere API
+# 6.7.2.
+#
+# Note:
+# Privileges required for this operation are ContentLibrary.PublishLibrary.
+#
+# @param library_id [REQUIRED] Identifier of the published library.
+# The value must be an identifier for the resource type
+#     getQualifiedName(com.vmware.content.Library).
+# . The value must be str.
+#
+# @param subscriptions [OPTIONAL] The list of subscriptions to publish this library to.
+# . The value must be Array of Com::Vmware::Content::LocalLibrary::DestinationSpec or None.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+#  If the system reports an error while responding to the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+#  If the library specified by  ``library_id``  does not exist.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+#  If one or more  ``subscriptions``  is not valid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
+#  If the library specified by  ``library_id``  is a subscribed library.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+#  If the library specified by  ``library_id``  is not a published library.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  If the user that requested the  *method*  cannot be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# If the user that requested the  *method*  is not authorized to perform the  *method* .
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.Library``  referenced by the  *parameter*  
+#     ``library_id``  requires  ``ContentLibrary.PublishLibrary`` . </li>
+# </ul>
+#
+
+sub publish {
+   my ($self, %args) = @_;
+   my $library_id = $args {library_id};
+   my $subscriptions = $args {subscriptions};
+
+   $self->validate_args (method_name => 'publish',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'publish',
+                         method_args => \%args);
+}
+
+
 1;
 
 #########################################################################################
@@ -290,6 +354,78 @@ sub update {
 #########################################################################################
 # Begins structures for the Com::Vmware::Content::LocalLibrary service
 #########################################################################################
+
+## @class Com::Vmware::Content::LocalLibrary::DestinationSpec
+#
+#
+# The  ``Com::Vmware::Content::LocalLibrary::DestinationSpec``   *class*  contains
+#     information required to publish the library to a specific subscription. This  *class* 
+#     was added in vSphere API 6.7.2.
+
+package Com::Vmware::Content::LocalLibrary::DestinationSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Content::LocalLibrary::DestinationSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{subscription} = $args{'subscription'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Content::LocalLibrary::DestinationSpec');
+   $self->set_binding_name('name' => 'com.vmware.content.local_library.destination_spec');
+   $self->set_binding_field('key' => 'subscription', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_subscription ()
+# Gets the value of 'subscription' property.
+#
+# @retval subscription - The current value of the field.
+# Identifier of the subscription associated with the subscribed library. This  *field* 
+#     was added in vSphere API 6.7.2.
+#
+# ID#
+sub get_subscription {
+   my ($self, %args) = @_;
+   return $self->{'subscription'}; 	
+}
+
+## @method set_subscription ()
+# Sets the given value for 'subscription' property.
+# 
+# @param subscription  - New value for the field.
+# Identifier of the subscription associated with the subscribed library. This  *field* 
+#     was added in vSphere API 6.7.2.
+#
+sub set_subscription {
+   my ($self, %args) = @_;
+   $self->{'subscription'} = $args{'subscription'}; 
+   return;	
+}
+
+
+1;
+
 
 
 #########################################################################################

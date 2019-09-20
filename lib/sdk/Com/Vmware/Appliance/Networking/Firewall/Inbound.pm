@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Appliance::Networking::Firewall::Inbound
 # The  ``Com::Vmware::Appliance::Networking::Firewall::Inbound``   *interface*  provides
 #     *methods*  to manage inbound firewall rules. This  *interface*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 
 package Com::Vmware::Appliance::Networking::Firewall::Inbound;
@@ -62,19 +62,20 @@ sub new {
 # Set the ordered list of firewall rules to allow or deny traffic from one or more incoming
 # IP addresses. This overwrites the existing firewall rules and creates a new rule list.
 # Within the list of traffic rules, rules are processed in order of appearance, from top to
-# bottom. For example, the list of rules can be as follows: <ol>
-# <li> &quot;address&quot;: &quot;10.112.0.1&quot;, &quot;prefix&quot;: 0,
-# &quot;interface_name&quot;: &quot;*&quot;,&quot;policy&quot;: &quot;REJECT&quot;
-# &quot;address&quot;: &quot;10.112.0.1&quot;, &quot;prefix&quot;: 0,
-# &quot;interface_name&quot;: &quot;nic0&quot;,&quot;policy&quot;: &quot;ACCEPT&quot;
-#  </li>
-# </ol> In the above example, the first rule drops all packets originating from 10.112.0.1
-# and
+# bottom. For example, the list of rules can be as follows: 
+#           +------------+--------+----------------+--------+
+# | Address    | Prefix | Interface Name | Policy |
+# +============+========+================+========+
+# | 10.112.0.1 | 0      | *              | REJECT |
+# +------------+--------+----------------+--------+
+# | 10.112.0.1 | 0      | nic0           | ACCEPT |
+# +------------+--------+----------------+--------+
+#  In the above example, the first rule drops all packets originating from 10.112.0.1 and
 # the second rule accepts all packets originating from 10.112.0.1 only on nic0. In effect,
 # the second rule is always ignored which is not desired, hence the order has to be swapped.
 # When a connection matches a firewall rule, further processing for the connection stops,
 # and the appliance ignores any additional firewall rules you have set. This  *method*  was
-# added in vSphere API 6.7 U1.
+# added in vSphere API 6.7.1.
 #
 # @param rules [REQUIRED] List of address-based firewall rules.
 # . The value must be Array of Com::Vmware::Appliance::Networking::Firewall::Inbound::Rule.
@@ -99,7 +100,7 @@ sub set {
 # Get the ordered list of firewall rules. Within the list of traffic rules, rules are
 # processed in order of appearance, from top to bottom. When a connection matches a firewall
 # rule, further processing for the connection stops, and the appliance ignores any
-# additional firewall rules you have set. This  *method*  was added in vSphere API 6.7 U1.
+# additional firewall rules you have set. This  *method*  was added in vSphere API 6.7.1.
 #
 # @retval 
 # List of address-based firewall rules.
@@ -125,24 +126,23 @@ sub get {
 ## @class Com::Vmware::Appliance::Networking::Firewall::Inbound::Policy
 #
 # ``Com::Vmware::Appliance::Networking::Firewall::Inbound::Policy``   *enumerated type* 
-#     Defines firewall rule policies. This  *enumeration*  was added in vSphere API 6.7 U1.
+#     Defines firewall rule policies. This  *enumeration*  was added in vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Appliance::Networking::Firewall::Inbound::Policy::IGNORE #
-#Drop packet with correpsonding address. This  *constant*  was added in vSphere API 6.7 U1.
+#Drop packet with correpsonding address. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Appliance::Networking::Firewall::Inbound::Policy::ACCEPT #
-#Allow packet with corresponding address. This  *constant*  was added in vSphere API 6.7
-# U1.
+#Allow packet with corresponding address. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Appliance::Networking::Firewall::Inbound::Policy::REJECT #
 #Drop packet with corresponding address sending destination is not reachable. This 
-# *constant*  was added in vSphere API 6.7 U1.
+# *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Appliance::Networking::Firewall::Inbound::Policy::RETURN #
 #Apply default or port-specific rules to packet with corresponding address. This 
-# *constant*  was added in vSphere API 6.7 U1.
+# *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Appliance::Networking::Firewall::Inbound::Policy;
 
@@ -193,7 +193,7 @@ sub new {
 #
 # ``Com::Vmware::Appliance::Networking::Firewall::Inbound::Rule``   *class*  Structure
 #     that defines a single address-based firewall rule. This  *class*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 
 package Com::Vmware::Appliance::Networking::Firewall::Inbound::Rule;
 
@@ -240,7 +240,7 @@ sub new {
 # Gets the value of 'address' property.
 #
 # @retval address - The current value of the field.
-# IPv4 or IPv6 address. This  *field*  was added in vSphere API 6.7 U1.
+# IPv4 or IPv6 address. This  *field*  was added in vSphere API 6.7.1.
 #
 # String#
 sub get_address {
@@ -252,7 +252,7 @@ sub get_address {
 # Sets the given value for 'address' property.
 # 
 # @param address  - New value for the field.
-# IPv4 or IPv6 address. This  *field*  was added in vSphere API 6.7 U1.
+# IPv4 or IPv6 address. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -265,7 +265,7 @@ sub set_address {
 #
 # @retval prefix - The current value of the field.
 # CIDR prefix used to mask address. For example, an IPv4 prefix of 24 ignores the
-#     low-order 8 bits of address. This  *field*  was added in vSphere API 6.7 U1.
+#     low-order 8 bits of address. This  *field*  was added in vSphere API 6.7.1.
 #
 # long#
 sub get_prefix {
@@ -278,7 +278,7 @@ sub get_prefix {
 # 
 # @param prefix  - New value for the field.
 # CIDR prefix used to mask address. For example, an IPv4 prefix of 24 ignores the
-#     low-order 8 bits of address. This  *field*  was added in vSphere API 6.7 U1.
+#     low-order 8 bits of address. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_prefix {
    my ($self, %args) = @_;
@@ -290,7 +290,7 @@ sub set_prefix {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# The allow or deny policy of this rule. This  *field*  was added in vSphere API 6.7 U1.
+# The allow or deny policy of this rule. This  *field*  was added in vSphere API 6.7.1.
 #
 # Policy#
 sub get_policy {
@@ -302,7 +302,7 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# The allow or deny policy of this rule. This  *field*  was added in vSphere API 6.7 U1.
+# The allow or deny policy of this rule. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -315,7 +315,7 @@ sub set_policy {
 #
 # @retval interface_name - The current value of the field.
 # The interface to which this rule applies. An empty string indicates that the rule
-#     applies to all interfaces. This  *field*  was added in vSphere API 6.7 U1.
+#     applies to all interfaces. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_interface_name {
@@ -328,7 +328,7 @@ sub get_interface_name {
 # 
 # @param interface_name  - New value for the field.
 # The interface to which this rule applies. An empty string indicates that the rule
-#     applies to all interfaces. This  *field*  was added in vSphere API 6.7 U1.
+#     applies to all interfaces. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_interface_name {
    my ($self, %args) = @_;

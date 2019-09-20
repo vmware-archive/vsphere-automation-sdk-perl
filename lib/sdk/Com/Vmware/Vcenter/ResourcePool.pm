@@ -67,25 +67,33 @@ sub new {
 ## @method get ()
 # Retrieves information about the resource pool indicated by  ``resource_pool`` .
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param resource_pool [REQUIRED] Identifier of the resource pool for which information should be retrieved.
 # The value must be an identifier for the resource type getQualifiedName(ResourcePool).
 # . The value must be str.
 #
 # @retval 
-# information about the resource pool.
+# Information about the resource pool.
 # The return type will be Com::Vmware::Vcenter::ResourcePool::Info
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
-# if the resource pool indicated by  ``resource_pool``  does not exist.
+# If the resource pool indicated by  ``resource_pool``  does not exist.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
-# if the system is unable to communicate with a service to complete the request.
+# If the system is unable to communicate with a service to complete the request.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
-# if the user can not be authenticated.
+# If the user can not be authenticated.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# if the user doesn&apos;t have the required privileges.
+# If the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``ResourcePool``  referenced by the  *parameter*  
+#     ``resource_pool``  requires  ``System.Read`` . </li>
+# </ul>
 #
 
 sub get {
@@ -116,17 +124,17 @@ sub get {
 # The return type will be Array of Com::Vmware::Vcenter::ResourcePool::Summary
 #
 # @throw Com::Vmware::Vapi::Std::Errors::UnableToAllocateResource 
-# if more than 1000 resource pools match the  class
+# If more than 1000 resource pools match the  class
 #     Com::Vmware::Vcenter::ResourcePool::FilterSpec .
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
-# if the system is unable to communicate with a service to complete the request.
+# If the system is unable to communicate with a service to complete the request.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
-# if the user can not be authenticated.
+# If the user can not be authenticated.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# if the user doesn&apos;t have the required privileges.
+# If the user doesn&apos;t have the required privileges.
 #
 
 sub list {

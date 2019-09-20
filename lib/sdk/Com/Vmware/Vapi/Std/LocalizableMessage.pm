@@ -1,9 +1,9 @@
 ## @class Com::Vmware::Vapi::Std::LocalizableMessage
 #
 #
-# The  ``Com::Vmware::Vapi::Std::LocalizableMessage``   *class*  represents a
-#     localizable string or message template.  *Interfaces*  include one or more localizable
-#     message templates in the  *errors*  they report so that clients can display diagnostic
+# The  ``Com::Vmware::Vapi::Std::LocalizableMessage``   *class*  represents localizable
+#     string and message template.  *Interfaces*  include one or more localizable message
+#     templates in the  *errors*  they report so that clients can display diagnostic
 #     messages in the native language of the user.  *Interfaces*  can include localizable
 #     strings in the data returned from  *methods*  to allow clients to display localized
 #     status information in the native language of the user.
@@ -115,7 +115,8 @@ sub set_default_message {
 # Gets the value of 'args' property.
 #
 # @retval args - The current value of the field.
-# Arguments to be substituted into a message template.
+# Positional arguments to be substituted into the message template. This list will be
+#     empty if the message uses named arguments or has no arguments.
 #
 # List#
 sub get_args {
@@ -127,7 +128,8 @@ sub get_args {
 # Sets the given value for 'args' property.
 # 
 # @param args  - New value for the field.
-# Arguments to be substituted into a message template.
+# Positional arguments to be substituted into the message template. This list will be
+#     empty if the message uses named arguments or has no arguments.
 #
 sub set_args {
    my ($self, %args) = @_;

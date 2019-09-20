@@ -25,7 +25,7 @@
 # 
 # </p>
 # 
-# . This  *class*  was added in vSphere API 6.7 U1.
+# . This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vapi::Std::Errors::UnverifiedPeer;
 

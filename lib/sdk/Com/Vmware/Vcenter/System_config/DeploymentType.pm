@@ -87,7 +87,7 @@ sub get {
 # . The value must be Com::Vmware::Vcenter::System_config::DeploymentType::ReconfigureSpec.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unsupported 
-# if the appliance is in CONFIGURED state and if not changing the type form
+# if the appliance is in CONFIGURED state and if not changing the type from
 #     VCSA_EMBEDDED to VCSA_EXTERNAL.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 

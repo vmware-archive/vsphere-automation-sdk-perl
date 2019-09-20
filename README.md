@@ -20,7 +20,7 @@ This document for the vSphere Automation SDK for perl describes -
    2. The procedure for contributing new samples
 
 ## Supported OnPrem vCenter Releases:
-vCenter 6.0, 6.5, 6.7 and 6.7U1
+vCenter 6.0, 6.5, 6.7, 6.7U1, 6.7U2 and 6.7U3
 
 Please refer to the notes in each sample for detailed compatibility information.
 
@@ -46,21 +46,13 @@ ppm install XML::LibXML UUID UUID::Random Crypt::OpenSSL::RSA Exception::Class C
 * Need to install few required CPAN modules using below commands:
 
 ```cmd
-yum install e2fsprogs-devel libuuid-devel openssl-devel perl-devel
-yum install glibc.i686 zlib.i686
-yum install perl-XML-LibXML libncurses.so.5 perl-Crypt-SSLeay
-cpan install Crypt::OpenSSL::RSA UUID::Random Exception::Class Crypt::X509 Data::Compare List::MoreUtils
+yum install perl-XML-LibXML perl-Crypt-OpenSSL-RSA uuid
+cpan install Text::Template UUID::Random Exception::Class Crypt::X509 Data::Compare Date::Format List::MoreUtils
 ```
 
 **Prerequisites in case of SLES platform-**
 
-* Need to install few required CPAN modules using below commands:
-
-```cmd
-yast -i openssl-devel libuuid-devel libuuid-devel-32bit e2fsprogs-devel
-```
-
-* Need to download modules (Data::Compare, Exception::Class, UUID::Random, Crypt::X509,	Crypt::OpenSSL::RSA and List::MoreUtils) from CPAN site (http://search.cpan.org/) and follow below mentioned steps:
+* Need to download modules (Data::Compare, Exception::Class, UUID, UUID::Random, Crypt::X509, Crypt::OpenSSL::RSA, XML::LibXML, Text::Template, LWP::Protocol::https and List::MoreUtils) from CPAN site (http://search.cpan.org/) and follow below mentioned steps:
 
 ```cmd
 $tar -zxvf downloaded_module.tar.gz
@@ -75,17 +67,12 @@ $make install
 * Need to install few required CPAN modules using below commands:
 
 ```cmd
-For Ubuntu-15.10 64 bits-
-$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev perl libssl-dev perldoc libxml-libxml-perl libcrypt-ssleay-perl libdata-compare-perl libsoap-lite-perl
-
-For Ubuntu-16.04 64 bits-
-$sudo apt-get install lib32z1 lib32ncurses5 uuid uuid-dev libssl-dev perl-doc libxml-libxml-perl libcrypt-ssleay-perl libsoap-lite-perl libdata-compare-perl libmodule-build-perl
+For Ubuntu-16.04 and Ubuntu-15.10 64 bits-
+$sudo apt-get install libcrypt-openssl-rsa-perl libcrypt-x509-perl libuuid-perl libexception-class-perl libtext-template-perl libxml-libxml-perl libdata-compare-perl liblist-moreutils-perl
 ```
 ```cmd
-cpan install Crypt::OpenSSL::RSA UUID::Random Exception::Class Crypt::X509 List::MoreUtils
+cpan install UUID::Random LWP::Protocol::https
 ```
-
-**Note:** The PERL SDK 6.5 has to be uninstalled, as the new Automation SDK for Perl 6.7U1 requires 6.7 PERL SDK as a pre-requisite.
 
 For more info, please refer to https://www.vmware.com/support/developer/viperltoolkit/
 
@@ -118,25 +105,13 @@ Apart from the above, each individual sample may require additional setup. Pleas
 1. Please pick up one of the supported linux/windows platform from the
 [Supported Platforms](#supported-platforms) list.
 2. Install all required perl modules (prerequisites) as per your choosen platform.
-3. Download the vSphere SDK for Perl 6.7 (VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz) from (https://my.vmware.com/group/vmware/details?downloadGroup=VS-PERL-SDK67&productId=742) and follow below mentioned steps to install in case of linux platform.
-```cmd
-Untar the vSphere SDK for Perl 6.7 binary that you downloaded.
-$tar ñzxvf VMware-vSphere-Perl-SDK-6.X.X-XXXXX.XXXX.x86_64.tar.gz
-A vmware-vsphere-vcli-distrib directory is created.
-Log in as superuser and run the installer.
-$cd vmware-vsphere-cli-distrib
-$./vmware-install.pl
-To accept the license terms, enter yes and press Enter.
-To install Perl modules from CPAN, enter yes and press Enter.
-Specify an installation directory, or press Enter to accept the default, which is /usr/bin.
-```
-4. Download and extract the vSphere Automation SDK for Perl zip file to the location of your choosing
-5. Set PERL5LIB env variable or perl include path using these commands:
+3. Download and extract the vSphere Automation SDK for Perl zip file to the location of your choosing
+4. Set PERL5LIB env variable or perl include path using these commands:
 ```cmd
    * On windows platform:
-     set PERL5LIB=%PERL5LIB%;SDK-root-directory-path\lib\runtime;SDK-root-directory-path\lib\sdk;SDK-root-directory-path\samples
+     set PERL5LIB=%PERL5LIB%;SDK-root-directory-path\lib;SDK-root-directory-path\lib\runtime;SDK-root-directory-path\lib\sdk;SDK-root-directory-path\samples
    * On other plateforms:
-     export PERL5LIB=$PERL5LIB:SDK-root-directory-path/lib/sdk:SDK-root-directory-path/lib/runtime:SDK-root-directory-path/samples
+     export PERL5LIB=$PERL5LIB:SDK-root-directory-path/lib:SDK-root-directory-path/lib/sdk:SDK-root-directory-path/lib/runtime:SDK-root-directory-path/samples
 ```
 
 ### How to run the samples?
@@ -166,7 +141,7 @@ Members:
 * Steve Trefethen (VMware)
 
 ### Approval of Additions
-Items added to the repository, including items from the Board members, require 2 votes from the board members before being added to the repository. The approving members will have ideally downloaded and tested the item. When two ìApproved for Mergeî comments are added from board members, the pull can then be committed to the repository.
+Items added to the repository, including items from the Board members, require 2 votes from the board members before being added to the repository. The approving members will have ideally downloaded and tested the item. When two ‚ÄúApproved for Merge‚Äù comments are added from board members, the pull can then be committed to the repository.
 
 ## VMware Resources
 

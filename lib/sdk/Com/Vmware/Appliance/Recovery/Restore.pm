@@ -110,6 +110,15 @@ sub validate {
 #
 # Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::SCP #
 #Destination is SSH server
+#
+# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::SFTP #
+#Destination is SFTP server
+#
+# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::NFS #
+#Destination is NFS server. This  *constant*  was added in vSphere API 6.7.2.
+#
+# Constant Com::Vmware::Appliance::Recovery::Restore::LocationType::SMB #
+#Destination is SMB server. This  *constant*  was added in vSphere API 6.7.2.
 
 package Com::Vmware::Appliance::Recovery::Restore::LocationType;
 
@@ -119,6 +128,9 @@ use constant {
     FTPS =>  'FTPS',
     HTTPS =>  'HTTPS',
     SCP =>  'SCP',
+    SFTP =>  'SFTP',
+    NFS =>  'NFS',
+    SMB =>  'SMB',
 };
 
 #

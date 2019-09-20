@@ -108,20 +108,21 @@ sub validate {
 
    my $disciminant =
      $dataValue->get_field( 'field' => $self->{'discriminant_name'} );
+   if ( $disciminant->get_value() ) {
+      my $caseMap = $self->{'case_map'}->{ $disciminant->get_value() };
 
-   my $caseMap = $self->{'case_map'}->{ $disciminant->get_value() };
-
-   foreach my $key ( @{$caseMap} ) {
-      my $field = $dataValue->get_field( 'field' => $key );
-      if ( !defined $field ) {
-         my $structName = $dataValue->get_name();
-         my $message_factory =
-           Com::Vmware::Vapi::l10n::Runtime::get_runtime_message_factory();
-         my $msg = $message_factory->get_message(
-            id   => 'Com.Vmware.Vapi.Data.UnionValidator.InvalidParameter',
-            args => [$key]
-         );
-         throw InvalidParameter( $msg->str() );
+      foreach my $key ( @{$caseMap} ) {
+         my $field = $dataValue->get_field( 'field' => $key );
+         if ( !defined $field ) {
+            my $structName = $dataValue->get_name();
+            my $message_factory =
+              Com::Vmware::Vapi::l10n::Runtime::get_runtime_message_factory();
+            my $msg = $message_factory->get_message(
+               id   => 'Com.Vmware.Vapi.Data.UnionValidator.InvalidParameter',
+               args => [$key]
+            );
+            throw InvalidParameter( $msg->str() );
+         }
       }
    }
    return;

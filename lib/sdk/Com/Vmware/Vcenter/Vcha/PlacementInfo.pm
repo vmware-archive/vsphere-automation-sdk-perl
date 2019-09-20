@@ -4,7 +4,7 @@
 # The  ``Com::Vmware::Vcenter::Vcha::PlacementInfo``   *class*  contains information to
 #     describe the inventory placement of a single node of a VCHA cluster.
 # The active node&apos;s management vCenter server credentials are required to populate
-#     all  *fields*  except biosUuid. This  *class*  was added in vSphere API 6.7 U1.
+#     all  *fields*  except biosUuid. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::PlacementInfo;
 
@@ -75,8 +75,8 @@ sub new {
 # Gets the value of 'management_vcenter_name' property.
 #
 # @retval management_vcenter_name - The current value of the field.
-# The name of the Management vCenter server of the VCHA node. This  *field*  was added
-#     in vSphere API 6.7 U1.
+# The hostname of the vCenter server that is managing the VCHA node. This  *field*  was
+#     added in vSphere API 6.7.1.
 #
 # String#
 sub get_management_vcenter_name {
@@ -88,8 +88,8 @@ sub get_management_vcenter_name {
 # Sets the given value for 'management_vcenter_name' property.
 # 
 # @param management_vcenter_name  - New value for the field.
-# The name of the Management vCenter server of the VCHA node. This  *field*  was added
-#     in vSphere API 6.7 U1.
+# The hostname of the vCenter server that is managing the VCHA node. This  *field*  was
+#     added in vSphere API 6.7.1.
 #
 sub set_management_vcenter_name {
    my ($self, %args) = @_;
@@ -101,8 +101,8 @@ sub set_management_vcenter_name {
 # Gets the value of 'vm_name' property.
 #
 # @retval vm_name - The current value of the field.
-# The virtual machine name of the VCHA node. This  *field*  was added in vSphere API 6.7
-#     U1.
+# The virtual machine name of the VCHA node. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 # String#
 sub get_vm_name {
@@ -114,8 +114,8 @@ sub get_vm_name {
 # Sets the given value for 'vm_name' property.
 # 
 # @param vm_name  - New value for the field.
-# The virtual machine name of the VCHA node. This  *field*  was added in vSphere API 6.7
-#     U1.
+# The virtual machine name of the VCHA node. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 sub set_vm_name {
    my ($self, %args) = @_;
@@ -128,7 +128,7 @@ sub set_vm_name {
 #
 # @retval datacenter - The current value of the field.
 # The identifier of the datacenter of the VCHA node. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # ID#
 sub get_datacenter {
@@ -141,7 +141,7 @@ sub get_datacenter {
 # 
 # @param datacenter  - New value for the field.
 # The identifier of the datacenter of the VCHA node. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_datacenter {
    my ($self, %args) = @_;
@@ -154,7 +154,7 @@ sub set_datacenter {
 #
 # @retval datacenter_name - The current value of the field.
 # The name of the datacenter of the VCHA node. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 # String#
 sub get_datacenter_name {
@@ -167,7 +167,7 @@ sub get_datacenter_name {
 # 
 # @param datacenter_name  - New value for the field.
 # The name of the datacenter of the VCHA node. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 sub set_datacenter_name {
    my ($self, %args) = @_;
@@ -180,7 +180,7 @@ sub set_datacenter_name {
 #
 # @retval host - The current value of the field.
 # The identifier of the host of the VCHA node. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 # ID#
 sub get_host {
@@ -193,7 +193,7 @@ sub get_host {
 # 
 # @param host  - New value for the field.
 # The identifier of the host of the VCHA node. This  *field*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 sub set_host {
    my ($self, %args) = @_;
@@ -205,7 +205,7 @@ sub set_host {
 # Gets the value of 'host_name' property.
 #
 # @retval host_name - The current value of the field.
-# The name of the host of the VCHA node. This  *field*  was added in vSphere API 6.7 U1.
+# The name of the host of the VCHA node. This  *field*  was added in vSphere API 6.7.1.
 #
 # String#
 sub get_host_name {
@@ -217,7 +217,7 @@ sub get_host_name {
 # Sets the given value for 'host_name' property.
 # 
 # @param host_name  - New value for the field.
-# The name of the host of the VCHA node. This  *field*  was added in vSphere API 6.7 U1.
+# The name of the host of the VCHA node. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_host_name {
    my ($self, %args) = @_;
@@ -230,7 +230,7 @@ sub set_host_name {
 #
 # @retval cluster - The current value of the field.
 # The identifier of the cluster of which  ``host``  is member. This  *field*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.7.1.
 #
 # Optional#
 sub get_cluster {
@@ -243,7 +243,7 @@ sub get_cluster {
 # 
 # @param cluster  - New value for the field.
 # The identifier of the cluster of which  ``host``  is member. This  *field*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.7.1.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -256,7 +256,7 @@ sub set_cluster {
 #
 # @retval cluster_name - The current value of the field.
 # The name of the cluster of which  ``host``  is member. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_cluster_name {
@@ -269,7 +269,7 @@ sub get_cluster_name {
 # 
 # @param cluster_name  - New value for the field.
 # The name of the cluster of which  ``host``  is member. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_cluster_name {
    my ($self, %args) = @_;
@@ -282,7 +282,7 @@ sub set_cluster_name {
 #
 # @retval ha_network - The current value of the field.
 # The identifier of the Network object used for the HA network. This  *field*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_network {
@@ -295,7 +295,7 @@ sub get_ha_network {
 # 
 # @param ha_network  - New value for the field.
 # The identifier of the Network object used for the HA network. This  *field*  was added
-#     in vSphere API 6.7 U1.
+#     in vSphere API 6.7.1.
 #
 sub set_ha_network {
    my ($self, %args) = @_;
@@ -308,7 +308,7 @@ sub set_ha_network {
 #
 # @retval ha_network_name - The current value of the field.
 # The name of the Network object used for the HA network. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_network_name {
@@ -321,7 +321,7 @@ sub get_ha_network_name {
 # 
 # @param ha_network_name  - New value for the field.
 # The name of the Network object used for the HA network. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_ha_network_name {
    my ($self, %args) = @_;
@@ -334,7 +334,7 @@ sub set_ha_network_name {
 #
 # @retval ha_network_type - The current value of the field.
 # The type of the Network object used for the HA network. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_ha_network_type {
@@ -347,7 +347,7 @@ sub get_ha_network_type {
 # 
 # @param ha_network_type  - New value for the field.
 # The type of the Network object used for the HA network. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_ha_network_type {
    my ($self, %args) = @_;
@@ -360,7 +360,7 @@ sub set_ha_network_type {
 #
 # @retval management_network - The current value of the field.
 # The identifier of the Network object used for the Management network. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 # ID#
 sub get_management_network {
@@ -373,7 +373,7 @@ sub get_management_network {
 # 
 # @param management_network  - New value for the field.
 # The identifier of the Network object used for the Management network. This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 sub set_management_network {
    my ($self, %args) = @_;
@@ -386,7 +386,7 @@ sub set_management_network {
 #
 # @retval management_network_name - The current value of the field.
 # The name of the Network object used for the Management network. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # String#
 sub get_management_network_name {
@@ -399,7 +399,7 @@ sub get_management_network_name {
 # 
 # @param management_network_name  - New value for the field.
 # The name of the Network object used for the Management network. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_management_network_name {
    my ($self, %args) = @_;
@@ -412,7 +412,7 @@ sub set_management_network_name {
 #
 # @retval management_network_type - The current value of the field.
 # The type of the Network object used for the Management network. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # NetworkType#
 sub get_management_network_type {
@@ -425,7 +425,7 @@ sub get_management_network_type {
 # 
 # @param management_network_type  - New value for the field.
 # The type of the Network object used for the Management network. This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_management_network_type {
    my ($self, %args) = @_;
@@ -437,8 +437,8 @@ sub set_management_network_type {
 # Gets the value of 'storage' property.
 #
 # @retval storage - The current value of the field.
-# The storage information of the VCHA node. This  *field*  was added in vSphere API 6.7
-#     U1.
+# The storage information of the VCHA node. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 # DiskInfo#
 sub get_storage {
@@ -450,8 +450,8 @@ sub get_storage {
 # Sets the given value for 'storage' property.
 # 
 # @param storage  - New value for the field.
-# The storage information of the VCHA node. This  *field*  was added in vSphere API 6.7
-#     U1.
+# The storage information of the VCHA node. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 sub set_storage {
    my ($self, %args) = @_;
@@ -463,7 +463,7 @@ sub set_storage {
 # Gets the value of 'bios_uuid' property.
 #
 # @retval bios_uuid - The current value of the field.
-# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7 U1.
+# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_bios_uuid {
@@ -475,7 +475,7 @@ sub get_bios_uuid {
 # Sets the given value for 'bios_uuid' property.
 # 
 # @param bios_uuid  - New value for the field.
-# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7 U1.
+# BIOS UUID for the node. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_bios_uuid {
    my ($self, %args) = @_;

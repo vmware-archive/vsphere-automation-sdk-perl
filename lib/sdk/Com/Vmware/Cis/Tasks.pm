@@ -15,11 +15,11 @@
 ## @class Com::Vmware::Cis::Tasks
 # The  ``Com::Vmware::Cis::Tasks``   *interface*  provides  *methods*  for managing the
 #     task related to a long running operation. This  *interface*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 #
 # Constant String::RESOURCE_TYPE #
-#Resource type for task. This  *constant*  was added in vSphere API 6.7 U1.
+#Resource type for task. This  *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Cis::Tasks;
 
@@ -64,7 +64,7 @@ sub new {
 }
 
 ## @method get ()
-# Returns information about a task. This  *method*  was added in vSphere API 6.7 U1.
+# Returns information about a task. This  *method*  was added in vSphere API 6.7.1.
 #
 # @param task [REQUIRED] Task identifier.
 # The value must be an identifier for the resource type
@@ -117,7 +117,7 @@ sub get {
 ## @method list ()
 # Returns information about at most 1000 visible (subject to permission checks) tasks
 # matching the  class Com::Vmware::Cis::Tasks::FilterSpec . All tasks must be in the same
-# provider. This  *method*  was added in vSphere API 6.7 U1.
+# provider. This  *method*  was added in vSphere API 6.7.1.
 #
 # @param filter_spec [OPTIONAL] Specification of matching tasks.
 # This is currently required. In the future, if it is  *null* , the behavior is
@@ -171,7 +171,7 @@ sub list {
 ## @method cancel ()
 # Cancel a running operation associated with the task. This is the best effort attempt.
 # Operation may not be cancelled anymore once it reaches certain stage. This  *method*  was
-# added in vSphere API 6.7 U1.
+# added in vSphere API 6.7.1.
 #
 # @param task [REQUIRED] Task identifier.
 # The value must be an identifier for the resource type
@@ -236,7 +236,7 @@ sub cancel {
 #
 # The  ``Com::Vmware::Cis::Tasks::GetSpec``   *class*  describes what data should be
 #     included when retrieving information about a task. This  *class*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 
 package Com::Vmware::Cis::Tasks::GetSpec;
 
@@ -281,7 +281,7 @@ sub new {
 # @retval return_all - The current value of the field.
 # If true, all data, including operation-specific data, will be returned, otherwise only
 #     the data described in  class Com::Vmware::Cis::Task::Info  will be returned. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_return_all {
@@ -295,7 +295,7 @@ sub get_return_all {
 # @param return_all  - New value for the field.
 # If true, all data, including operation-specific data, will be returned, otherwise only
 #     the data described in  class Com::Vmware::Cis::Task::Info  will be returned. This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.7.1.
 #
 sub set_return_all {
    my ($self, %args) = @_;
@@ -308,7 +308,7 @@ sub set_return_all {
 #
 # @retval exclude_result - The current value of the field.
 # If true, the result will not be included in the task information, otherwise it will be
-#     included. This  *field*  was added in vSphere API 6.7 U1.
+#     included. This  *field*  was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_exclude_result {
@@ -321,7 +321,7 @@ sub get_exclude_result {
 # 
 # @param exclude_result  - New value for the field.
 # If true, the result will not be included in the task information, otherwise it will be
-#     included. This  *field*  was added in vSphere API 6.7 U1.
+#     included. This  *field*  was added in vSphere API 6.7.1.
 #
 sub set_exclude_result {
    my ($self, %args) = @_;
@@ -339,7 +339,13 @@ sub set_exclude_result {
 # The  ``Com::Vmware::Cis::Tasks::FilterSpec``   *class*  contains  *fields*  used to
 #     filter the results when listing tasks (see  :func:`Com::Vmware::Cis::Tasks.list` ). If
 #     multiple  *fields*  are specified, only tasks matching all of the  *fields*  match the
-#     filter. This  *class*  was added in vSphere API 6.7 U1.
+#     filter. <p>
+# 
+# Currently at least one of  :attr:`Com::Vmware::Cis::Tasks::FilterSpec.tasks`  or 
+#     :attr:`Com::Vmware::Cis::Tasks::FilterSpec.services`  must be specified and not
+#     empty.</p>
+# 
+# . This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Cis::Tasks::FilterSpec;
 
@@ -389,7 +395,7 @@ sub new {
 #
 # @retval tasks - The current value of the field.
 # Identifiers of tasks that can match the filter. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 # Optional#
 sub get_tasks {
@@ -402,7 +408,7 @@ sub get_tasks {
 # 
 # @param tasks  - New value for the field.
 # Identifiers of tasks that can match the filter. This  *field*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 #
 sub set_tasks {
    my ($self, %args) = @_;
@@ -416,7 +422,7 @@ sub set_tasks {
 # @retval services - The current value of the field.
 # Identifiers of services. Tasks created by operations in these services match the
 #     filter (see  :attr:`Com::Vmware::Cis::Task::CommonInfo.service` ). This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_services {
@@ -430,7 +436,7 @@ sub get_services {
 # @param services  - New value for the field.
 # Identifiers of services. Tasks created by operations in these services match the
 #     filter (see  :attr:`Com::Vmware::Cis::Task::CommonInfo.service` ). This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_services {
    my ($self, %args) = @_;
@@ -444,7 +450,7 @@ sub set_services {
 # @retval status - The current value of the field.
 # Status that a task must have to match the filter (see 
 #     :attr:`Com::Vmware::Cis::Task::CommonInfo.status` ). This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Optional#
 sub get_status {
@@ -458,7 +464,7 @@ sub get_status {
 # @param status  - New value for the field.
 # Status that a task must have to match the filter (see 
 #     :attr:`Com::Vmware::Cis::Task::CommonInfo.status` ). This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -472,7 +478,7 @@ sub set_status {
 # @retval targets - The current value of the field.
 # Identifiers of the targets the operation for the associated task created or was
 #     performed on (see  :attr:`Com::Vmware::Cis::Task::CommonInfo.target` ). This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_targets {
@@ -486,7 +492,7 @@ sub get_targets {
 # @param targets  - New value for the field.
 # Identifiers of the targets the operation for the associated task created or was
 #     performed on (see  :attr:`Com::Vmware::Cis::Task::CommonInfo.target` ). This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 sub set_targets {
    my ($self, %args) = @_;
@@ -500,7 +506,7 @@ sub set_targets {
 # @retval users - The current value of the field.
 # Users who must have initiated the operation for the associated task to match the
 #     filter (see  :attr:`Com::Vmware::Cis::Task::CommonInfo.user` ). This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # Optional#
 sub get_users {
@@ -514,7 +520,7 @@ sub get_users {
 # @param users  - New value for the field.
 # Users who must have initiated the operation for the associated task to match the
 #     filter (see  :attr:`Com::Vmware::Cis::Task::CommonInfo.user` ). This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_users {
    my ($self, %args) = @_;

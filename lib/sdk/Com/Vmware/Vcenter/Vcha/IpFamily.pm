@@ -1,15 +1,15 @@
 ## @class Com::Vmware::Vcenter::Vcha::IpFamily
 #
 # The  ``Com::Vmware::Vcenter::Vcha::IpFamily``   *enumerated type*  defines the Ip
-#     address family. This  *enumeration*  was added in vSphere API 6.7 U1.
+#     address family. This  *enumeration*  was added in vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::IpFamily::IP_V4 #
-#IPV4 address family. This  *constant*  was added in vSphere API 6.7 U1.
+#IPV4 address family. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::IpFamily::IP_V6 #
-#IPv6 address family. This  *constant*  was added in vSphere API 6.7 U1.
+#IPv6 address family. This  *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::IpFamily;
 

@@ -14,38 +14,37 @@
 # The  ``Com::Vmware::Vcenter::Vcha::Operations``   *interface*  provides  *methods*  to
 #     figure out the currently active operations and currently disabled operations in a
 #     vCenter High Availability (VCHA) cluster. This  *interface*  was added in vSphere API
-#     6.7 U1.
+#     6.7.1.
 #
 #
 # Constant String::CLUSTER_DEPLOY_OP #
-#Identifier of the cluster deploy operation. This  *constant*  was added in vSphere API 6.7
-# U1.
+#Identifier of the cluster deploy operation. This  *constant*  was added in vSphere API
+# 6.7.1.
 #
 # Constant String::CLUSTER_FAILOVER_OP #
 #Identifier of the cluster failover operation. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 #
 # Constant String::CLUSTER_GET_OP #
-#Identifier of the cluster get operation. This  *constant*  was added in vSphere API 6.7
-# U1.
+#Identifier of the cluster get operation. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant String::PASSIVE_REDEPLOY_OP #
 #Identifier of the passive redeploy operation. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 #
 # Constant String::WITNESS_REDEPLOY_OP #
 #Identifier of the witness redeploy operation. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 #
 # Constant String::MODE_GET_OP #
-#Identifier of the get mode operation. This  *constant*  was added in vSphere API 6.7 U1.
+#Identifier of the get mode operation. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant String::MODE_SET_OP #
-#Identifier of the set mode operation. This  *constant*  was added in vSphere API 6.7 U1.
+#Identifier of the set mode operation. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant String::CLUSTER_UNDEPLOY_OP #
 #Identifier of the cluster undeploy operation. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Operations;
 
@@ -91,7 +90,7 @@ sub new {
 
 ## @method get ()
 # Retrieves the current active and disabled operations of a VCHA cluster. This  *method* 
-# was added in vSphere API 6.7 U1.
+# was added in vSphere API 6.7.1.
 #
 # @retval 
 # Info structure containing the current running and disabled operations of a VCHA
@@ -134,7 +133,7 @@ sub get {
 # The  ``Com::Vmware::Vcenter::Vcha::Operations::Info``   *class*  contains information
 #     about which the VCHA operations cannot be invoked in the current state of the system
 #     and the list of currently active VCHA operations. This  *class*  was added in vSphere
-#     API 6.7 U1.
+#     API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Operations::Info;
 
@@ -185,7 +184,7 @@ sub new {
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.MODE_SET_OP` , 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.CLUSTER_UNDEPLOY_OP`  and 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.CLUSTER_GET_OP` . This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 # Set#
 sub get_disabled {
@@ -205,7 +204,7 @@ sub get_disabled {
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.MODE_SET_OP` , 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.CLUSTER_UNDEPLOY_OP`  and 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.CLUSTER_GET_OP` . This  *field*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 sub set_disabled {
    my ($self, %args) = @_;
@@ -224,7 +223,7 @@ sub set_disabled {
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.WITNESS_REDEPLOY_OP` , 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.MODE_SET_OP` , and 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.CLUSTER_UNDEPLOY_OP` . This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 # Set#
 sub get_active {
@@ -243,7 +242,7 @@ sub get_active {
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.WITNESS_REDEPLOY_OP` , 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.MODE_SET_OP` , and 
 #     :attr:`Com::Vmware::Vcenter::Vcha::Operations.CLUSTER_UNDEPLOY_OP` . This  *field* 
-#     was added in vSphere API 6.7 U1.
+#     was added in vSphere API 6.7.1.
 #
 sub set_active {
    my ($self, %args) = @_;

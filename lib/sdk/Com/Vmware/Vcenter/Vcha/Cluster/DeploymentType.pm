@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType
 # The  *DeploymentType*   *interface*  provides  *methods*  to get the deployment type
 #     of a vCenter High Availability Cluster (VCHA Cluster). This  *interface*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 
 package Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType;
@@ -60,7 +60,7 @@ sub new {
 
 ## @method get ()
 # Retrieves the deployment type of a VCHA cluster. This  *method*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 #
 # @retval 
 # Info structure containing the deployment type information of the the VCHA cluster.
@@ -90,19 +90,18 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType::Type``   *enumerated type*
 #     defines the possible deployment types for a VCHA Cluster. This  *enumeration*  was
-#     added in vSphere API 6.7 U1.
+#     added in vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType::Type::NONE #
-#VCHA Cluster is not configured. This  *constant*  was added in vSphere API 6.7 U1.
+#VCHA Cluster is not configured. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType::Type::AUTO #
-#VCHA Cluster was deployed automatically. This  *constant*  was added in vSphere API 6.7
-# U1.
+#VCHA Cluster was deployed automatically. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType::Type::MANUAL #
-#VCHA Cluster was deployed manually. This  *constant*  was added in vSphere API 6.7 U1.
+#VCHA Cluster was deployed manually. This  *constant*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType::Type;
 
@@ -151,8 +150,8 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType::Info``   *class*  contains
-#     the deployment type of the VCHA Cluster. This  *class*  was added in vSphere API 6.7
-#     U1.
+#     the deployment type of the VCHA Cluster. This  *class*  was added in vSphere API
+#     6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::DeploymentType::Info;
 
@@ -194,7 +193,7 @@ sub new {
 #
 # @retval deployment_type - The current value of the field.
 # Identifies the deployment type of the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 # Type#
 sub get_deployment_type {
@@ -207,7 +206,7 @@ sub get_deployment_type {
 # 
 # @param deployment_type  - New value for the field.
 # Identifies the deployment type of the VCHA cluster. This  *field*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 sub set_deployment_type {
    my ($self, %args) = @_;

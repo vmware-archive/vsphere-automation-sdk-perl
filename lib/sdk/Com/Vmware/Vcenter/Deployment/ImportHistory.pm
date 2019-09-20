@@ -146,7 +146,7 @@ sub start {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if vCenter historical data import task cannot be paused at this time. Pause can be
-#     accepted only in null state
+#     accepted only in  :attr:`Com::Vmware::Cis::Task::Status.RUNNING`  state.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::AlreadyInDesiredState 
 # if vCenter historical data import task is already paused
@@ -173,7 +173,7 @@ sub pause {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if vCenter historical data import task cannot be resumed at this state. Resume can be
-#     accepted only in null state
+#     accepted only in  :attr:`Com::Vmware::Cis::Task::Status.BLOCKED`  state
 #
 # @throw Com::Vmware::Vapi::Std::Errors::AlreadyInDesiredState 
 # if vCenter historical data import task is already resumed.
@@ -342,8 +342,9 @@ sub set_progress {
 #
 # @retval result - The current value of the field.
 # Result of the operation. If an operation reports partial results before it completes,
-#     this  *field*  could be  *set*  before the null has the value null. The value could
-#     change as the operation progresses. This  *field*  was added in vSphere API 6.7.
+#     this  *field*  could be  *set*  before the null has the value 
+#     :attr:`Com::Vmware::Cis::Task::Status.SUCCEEDED` . The value could change as the
+#     operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 # Optional#
 sub get_result {
@@ -356,8 +357,9 @@ sub get_result {
 # 
 # @param result  - New value for the field.
 # Result of the operation. If an operation reports partial results before it completes,
-#     this  *field*  could be  *set*  before the null has the value null. The value could
-#     change as the operation progresses. This  *field*  was added in vSphere API 6.7.
+#     this  *field*  could be  *set*  before the null has the value 
+#     :attr:`Com::Vmware::Cis::Task::Status.SUCCEEDED` . The value could change as the
+#     operation progresses. This  *field*  was added in vSphere API 6.7.
 #
 sub set_result {
    my ($self, %args) = @_;

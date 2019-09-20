@@ -483,7 +483,7 @@
 #VMware ESX 6.5
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::AMAZONLINUX2_64 #
-#Amazon Linux 2 (64 bit). This  *constant*  was added in vSphere API 6.7 U1.
+#Amazon Linux 2 (64 bit). This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::OTHER #
 #Other Operating System

@@ -205,7 +205,7 @@ sub set_client_progress {
 #
 # @retval state - The current value of the field.
 # The current state (ACTIVE, DONE, ERROR, CANCELED) of the update session. This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.8.
 #
 # optional#
 sub get_state {
@@ -218,7 +218,7 @@ sub get_state {
 # 
 # @param state  - New value for the field.
 # The current state (ACTIVE, DONE, ERROR, CANCELED) of the update session. This  *field*
-#      was added in vSphere API 6.7 U1.
+#      was added in vSphere API 6.8.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -259,7 +259,7 @@ sub set_expiration_time {
 # A preview of the files currently being uploaded in the session. This property will be
 #     set only when the session is in the 
 #     :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel::State.ACTIVE` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 # optional#
 sub get_preview_info {
@@ -274,7 +274,7 @@ sub get_preview_info {
 # A preview of the files currently being uploaded in the session. This property will be
 #     set only when the session is in the 
 #     :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel::State.ACTIVE` . This 
-#     *field*  was added in vSphere API 6.7 U1.
+#     *field*  was added in vSphere API 6.8.
 #
 sub set_preview_info {
    my ($self, %args) = @_;
@@ -288,7 +288,7 @@ sub set_preview_info {
 # @retval warning_behavior - The current value of the field.
 # Indicates the update session behavior if warnings are raised in the session preview.
 #     Any warning which is raised by session preview but not ignored by the client will, by
-#     default, fail the update session. This  *field*  was added in vSphere API 6.7 U1.
+#     default, fail the update session. This  *field*  was added in vSphere API 6.8.
 #
 # optional#
 sub get_warning_behavior {
@@ -302,7 +302,7 @@ sub get_warning_behavior {
 # @param warning_behavior  - New value for the field.
 # Indicates the update session behavior if warnings are raised in the session preview.
 #     Any warning which is raised by session preview but not ignored by the client will, by
-#     default, fail the update session. This  *field*  was added in vSphere API 6.7 U1.
+#     default, fail the update session. This  *field*  was added in vSphere API 6.8.
 #
 sub set_warning_behavior {
    my ($self, %args) = @_;

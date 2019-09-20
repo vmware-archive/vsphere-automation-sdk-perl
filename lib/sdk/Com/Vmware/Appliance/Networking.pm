@@ -8,6 +8,8 @@
 #
 #
 
+#use Com::Vmware::Appliance::Networking::Dns;
+#use Com::Vmware::Appliance::Networking::Interfaces;
 #use Com::Vmware::Vapi::Std::Errors;
 
 ## @class Com::Vmware::Appliance::Networking
@@ -108,6 +110,41 @@ sub update {
 sub reset {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'reset', method_args =>  {});
+}
+
+
+## @method change ()
+# Changes the Hostname/IP of the management network of vCenter appliance. The Hostname/IP
+# change invokes the PNID change process which involves LDAP entry modification, updating
+# registry entries, configuration files modification and network configuration changes.
+# vCenter server is expected to be down for few minutes during these changes. This  *method*
+#  was added in vSphere API 6.7.3.
+#
+# @param spec [REQUIRED] Information required to change the hostname.
+# . The value must be Com::Vmware::Appliance::Networking::ChangeSpec.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unsupported 
+# if it&apos;s not embedded node
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if passed arguments are invalid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user is not authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if another change task is in progress
+#
+
+sub change {
+   my ($self, %args) = @_;
+   my $spec = $args {spec};
+
+   $self->validate_args (method_name => 'change',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'change',
+                         method_args => \%args);
 }
 
 
@@ -459,6 +496,216 @@ sub get_ipv6_enabled {
 sub set_ipv6_enabled {
    my ($self, %args) = @_;
    $self->{'ipv6_enabled'} = $args{'ipv6_enabled'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Appliance::Networking::ChangeSpec
+#
+#
+
+
+package Com::Vmware::Appliance::Networking::ChangeSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Appliance::Networking::ChangeSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{hostname} = $args{'hostname'};
+   $self->{SSO_user} = $args{'SSO_user'};
+   $self->{SSO_password} = $args{'SSO_password'};
+   $self->{dns} = $args{'dns'};
+   $self->{ipv4} = $args{'ipv4'};
+   $self->{ipv6} = $args{'ipv6'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Networking::ChangeSpec');
+   $self->set_binding_name('name' => 'com.vmware.appliance.networking.change_spec');
+   $self->set_binding_field('key' => 'hostname', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'SSO_user', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'SSO_password', 'value' => new Com::Vmware::Vapi::Bindings::Type::SecretType());
+   $self->set_binding_field('key' => 'dns', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Networking::Dns', 'type_name' => 'Servers::DNSServerConfig')));
+   $self->set_binding_field('key' => 'ipv4', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Networking::Interfaces', 'type_name' => 'Ipv4::Config')));
+   $self->set_binding_field('key' => 'ipv6', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Networking::Interfaces', 'type_name' => 'Ipv6::Config')));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_hostname ()
+# Gets the value of 'hostname' property.
+#
+# @retval hostname - The current value of the field.
+# New hostname to assign to the management network of vCenter appliance. This  *field* 
+#     was added in vSphere API 6.7.3.
+#
+# String#
+sub get_hostname {
+   my ($self, %args) = @_;
+   return $self->{'hostname'}; 	
+}
+
+## @method set_hostname ()
+# Sets the given value for 'hostname' property.
+# 
+# @param hostname  - New value for the field.
+# New hostname to assign to the management network of vCenter appliance. This  *field* 
+#     was added in vSphere API 6.7.3.
+#
+sub set_hostname {
+   my ($self, %args) = @_;
+   $self->{'hostname'} = $args{'hostname'}; 
+   return;	
+}
+
+## @method get_SSO_user ()
+# Gets the value of 'SSO_user' property.
+#
+# @retval SSO_user - The current value of the field.
+# vCenter Server SSO administrator username. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+# String#
+sub get_SSO_user {
+   my ($self, %args) = @_;
+   return $self->{'SSO_user'}; 	
+}
+
+## @method set_SSO_user ()
+# Sets the given value for 'SSO_user' property.
+# 
+# @param SSO_user  - New value for the field.
+# vCenter Server SSO administrator username. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+sub set_SSO_user {
+   my ($self, %args) = @_;
+   $self->{'SSO_user'} = $args{'SSO_user'}; 
+   return;	
+}
+
+## @method get_SSO_password ()
+# Gets the value of 'SSO_password' property.
+#
+# @retval SSO_password - The current value of the field.
+# vCenter Server SSO administrator Password. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+# Secret#
+sub get_SSO_password {
+   my ($self, %args) = @_;
+   return $self->{'SSO_password'}; 	
+}
+
+## @method set_SSO_password ()
+# Sets the given value for 'SSO_password' property.
+# 
+# @param SSO_password  - New value for the field.
+# vCenter Server SSO administrator Password. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+sub set_SSO_password {
+   my ($self, %args) = @_;
+   $self->{'SSO_password'} = $args{'SSO_password'}; 
+   return;	
+}
+
+## @method get_dns ()
+# Gets the value of 'dns' property.
+#
+# @retval dns - The current value of the field.
+# DNS Configuration to set for the machine. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+# Optional#
+sub get_dns {
+   my ($self, %args) = @_;
+   return $self->{'dns'}; 	
+}
+
+## @method set_dns ()
+# Sets the given value for 'dns' property.
+# 
+# @param dns  - New value for the field.
+# DNS Configuration to set for the machine. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+sub set_dns {
+   my ($self, %args) = @_;
+   $self->{'dns'} = $args{'dns'}; 
+   return;	
+}
+
+## @method get_ipv4 ()
+# Gets the value of 'ipv4' property.
+#
+# @retval ipv4 - The current value of the field.
+# IPv4 Configuration to set for the machine. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+# Optional#
+sub get_ipv4 {
+   my ($self, %args) = @_;
+   return $self->{'ipv4'}; 	
+}
+
+## @method set_ipv4 ()
+# Sets the given value for 'ipv4' property.
+# 
+# @param ipv4  - New value for the field.
+# IPv4 Configuration to set for the machine. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+sub set_ipv4 {
+   my ($self, %args) = @_;
+   $self->{'ipv4'} = $args{'ipv4'}; 
+   return;	
+}
+
+## @method get_ipv6 ()
+# Gets the value of 'ipv6' property.
+#
+# @retval ipv6 - The current value of the field.
+# IPv6 Configuration to set for the machine. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+# Optional#
+sub get_ipv6 {
+   my ($self, %args) = @_;
+   return $self->{'ipv6'}; 	
+}
+
+## @method set_ipv6 ()
+# Sets the given value for 'ipv6' property.
+# 
+# @param ipv6  - New value for the field.
+# IPv6 Configuration to set for the machine. This  *field*  was added in vSphere API
+#     6.7.3.
+#
+sub set_ipv6 {
+   my ($self, %args) = @_;
+   $self->{'ipv6'} = $args{'ipv6'}; 
    return;	
 }
 

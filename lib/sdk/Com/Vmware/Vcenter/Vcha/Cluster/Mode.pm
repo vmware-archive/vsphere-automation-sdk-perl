@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vcha::Cluster::Mode
 # The  *Mode*   *interface*  provides  *methods*  to manage the operating mode of a
 #     vCenter High Availability Cluster (VCHA Cluster). This  *interface*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Mode;
@@ -59,8 +59,8 @@ sub new {
 }
 
 ## @method get ()
-# Retrieves the current mode of a VCHA cluster. This  *method*  was added in vSphere API 6.7
-# U1.
+# Retrieves the current mode of a VCHA cluster. This  *method*  was added in vSphere API
+# 6.7.1.
 #
 # @retval 
 # Info structure containing the mode of the the VCHA cluster.
@@ -96,7 +96,7 @@ sub get {
 # 
 #  VCHA Cluster configuration remains intact in any of the cluster modes.</p>
 # 
-# . This  *method*  was added in vSphere API 6.7 U1.
+# . This  *method*  was added in vSphere API 6.7.1.
 #
 # @param mode [REQUIRED] Clustermode to change the VCHA cluster mode to.
 # . The value must be Com::Vmware::Vcenter::Vcha::Cluster::Mode::ClusterMode.
@@ -131,23 +131,23 @@ sub set {
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Mode::ClusterMode``   *enumerated type* 
 #     defines the possible modes for a VCHA Cluster. This  *enumeration*  was added in
-#     vSphere API 6.7 U1.
+#     vSphere API 6.7.1.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::Mode::ClusterMode::ENABLED #
 #VCHA Cluster is enabled. State replication between the Active and Passive node is enabled
-# and automatic failover is allowed. This  *constant*  was added in vSphere API 6.7 U1.
+# and automatic failover is allowed. This  *constant*  was added in vSphere API 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::Mode::ClusterMode::DISABLED #
 #VCHA Cluster is disabled. State replication between the Active and Passive node is
 # disabled and automatic failover is not allowed. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 #
 # Constant Com::Vmware::Vcenter::Vcha::Cluster::Mode::ClusterMode::MAINTENANCE #
 #VCHA Cluster is in maintenance mode. State replication between the and Passive node is
 # enabled but automatic failover is not allowed. This  *constant*  was added in vSphere API
-# 6.7 U1.
+# 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Mode::ClusterMode;
 
@@ -196,7 +196,7 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vcha::Cluster::Mode::Info``   *class*  contains the mode
-#     of the VCHA Cluster. This  *class*  was added in vSphere API 6.7 U1.
+#     of the VCHA Cluster. This  *class*  was added in vSphere API 6.7.1.
 
 package Com::Vmware::Vcenter::Vcha::Cluster::Mode::Info;
 
@@ -237,8 +237,8 @@ sub new {
 # Gets the value of 'mode' property.
 #
 # @retval mode - The current value of the field.
-# Identifies the mode of the VCHA cluster. This  *field*  was added in vSphere API 6.7
-#     U1.
+# Identifies the mode of the VCHA cluster. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 # ClusterMode#
 sub get_mode {
@@ -250,8 +250,8 @@ sub get_mode {
 # Sets the given value for 'mode' property.
 # 
 # @param mode  - New value for the field.
-# Identifies the mode of the VCHA cluster. This  *field*  was added in vSphere API 6.7
-#     U1.
+# Identifies the mode of the VCHA cluster. This  *field*  was added in vSphere API
+#     6.7.1.
 #
 sub set_mode {
    my ($self, %args) = @_;

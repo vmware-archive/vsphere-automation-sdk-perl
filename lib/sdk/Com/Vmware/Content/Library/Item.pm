@@ -199,13 +199,16 @@ sub copy {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
 # if the  :attr:`Com::Vmware::Content::Library::ItemModel.library_id`  property of 
-#     ``destinationCreateSpec``  refers to a subscribed library.
+#     ``create_spec``  refers to a subscribed library.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the content of the library specified by the library ID (see 
 #     :attr:`Com::Vmware::Content::Library::ItemModel.library_id` ) property of 
 #     ``create_spec``  has been deleted from the storage backings (see null) associated with
 #     it.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::AlreadyExists 
+#  if there is already a library item with same name in the library.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 # <li> The resource  ``com.vmware.content.Library``  referenced by the  *field*  
@@ -255,6 +258,10 @@ sub create {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 #  if the library item with the specified  ``library_item_id``  does not exist.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# if the library item contains a virtual machine template and a virtual machine is
+#     checked out of the library item.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 # <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
@@ -432,6 +439,9 @@ sub find {
 #     :attr:`Com::Vmware::Content::Library::PublishInfo.persist_json_enabled` ) and the
 #     content of the library item specified by  ``library_item_id``  has been deleted from
 #     the storage backings (see null) associated with it.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::AlreadyExists 
+#  if there is already a library item with same name in the library.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 # <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
@@ -448,6 +458,69 @@ sub update {
                          method_args => \%args);
    
    return $self->invoke (method_name => 'update',
+                         method_args => \%args);
+}
+
+
+## @method publish ()
+# Publishes the library item to specified subscriptions of the library. If no subscriptions
+# are specified, then publishes the library item to all subscriptions of the library. This 
+# *method*  was added in vSphere API 6.7.2.
+#
+# Note:
+# Privileges required for this operation are ContentLibrary.PublishLibraryItem.
+#
+# @param library_item_id [REQUIRED] Library item identifier.
+# The value must be an identifier for the resource type
+#     getQualifiedName(com.vmware.content.library.Item).
+# . The value must be str.
+#
+# @param force_sync_content [REQUIRED] Whether to synchronize file content as well as metadata. This  *parameter*  applies
+#     only if the subscription is on-demand.
+# . The value must be Boolean.
+#
+# @param subscriptions [OPTIONAL] The list of subscriptions to publish this library item to.
+# . The value must be Array of Com::Vmware::Content::Library::Item::DestinationSpec or None.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+#  If the system reports an error while responding to the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+#  If the library item specified by  ``library_item_id``  does not exist.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+#  If one or more arguments in  ``subscriptions``  is not valid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidElementType 
+# If the library item specified by  ``library_item_id``  is a member of a subscribed
+#     library.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
+# If the library item specified by  ``library_item_id``  does not belong to a published
+#     library.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+#  If the user that requested the  *method*  cannot be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# If the user that requested the  *method*  is not authorized to perform the  *method* .
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``com.vmware.content.library.Item``  referenced by the  *parameter*
+#       ``library_item_id``  requires  ``ContentLibrary.PublishLibraryItem`` . </li>
+# </ul>
+#
+
+sub publish {
+   my ($self, %args) = @_;
+   my $library_item_id = $args {library_item_id};
+   my $force_sync_content = $args {force_sync_content};
+   my $subscriptions = $args {subscriptions};
+
+   $self->validate_args (method_name => 'publish',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'publish',
                          method_args => \%args);
 }
 
@@ -645,6 +718,78 @@ sub get_cached {
 sub set_cached {
    my ($self, %args) = @_;
    $self->{'cached'} = $args{'cached'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Content::Library::Item::DestinationSpec
+#
+#
+# The  ``Com::Vmware::Content::Library::Item::DestinationSpec``   *class*  contains
+#     information required to publish the library item to a specific subscription. This 
+#     *class*  was added in vSphere API 6.7.2.
+
+package Com::Vmware::Content::Library::Item::DestinationSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Content::Library::Item::DestinationSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{subscription} = $args{'subscription'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Content::Library::Item::DestinationSpec');
+   $self->set_binding_name('name' => 'com.vmware.content.library.item.destination_spec');
+   $self->set_binding_field('key' => 'subscription', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_subscription ()
+# Gets the value of 'subscription' property.
+#
+# @retval subscription - The current value of the field.
+# Identifier of the subscription associated with the subscribed library. This  *field* 
+#     was added in vSphere API 6.7.2.
+#
+# ID#
+sub get_subscription {
+   my ($self, %args) = @_;
+   return $self->{'subscription'}; 	
+}
+
+## @method set_subscription ()
+# Sets the given value for 'subscription' property.
+# 
+# @param subscription  - New value for the field.
+# Identifier of the subscription associated with the subscribed library. This  *field* 
+#     was added in vSphere API 6.7.2.
+#
+sub set_subscription {
+   my ($self, %args) = @_;
+   $self->{'subscription'} = $args{'subscription'}; 
    return;	
 }
 

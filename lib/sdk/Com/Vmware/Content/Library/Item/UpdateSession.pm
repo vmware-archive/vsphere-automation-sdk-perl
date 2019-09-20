@@ -478,7 +478,7 @@ sub delete {
 # This  *method*  requires the session to be in the 
 # :attr:`Com::Vmware::Content::Library::Item::UpdateSessionModel::State.ACTIVE`  state.</p>
 # 
-# . This  *method*  was added in vSphere API 6.7 U1.
+# . This  *method*  was added in vSphere API 6.8.
 #
 # Note:
 # Privileges required for this operation are System.Anonymous.
