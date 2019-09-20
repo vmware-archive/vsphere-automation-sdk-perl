@@ -128,8 +128,8 @@ Use a command like the following to get list of VMs present in vCenter.
 
 ### vSphere API Documentation
 
-* [vSphere 6.7.1 (latest)](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.1/)
-* Previous releases:    [6.7.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.0)    [6.5.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.5.0) 
+* [vSphere 6.7.3 (latest)](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.3/)
+* Previous releases:    [6.7.1](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.1) [6.7.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.0)    [6.5.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.5.0)
 
 ## Repository Administrator Resources
 ### Board Members
