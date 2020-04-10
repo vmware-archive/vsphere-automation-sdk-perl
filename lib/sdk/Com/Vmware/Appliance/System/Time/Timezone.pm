@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::System::Time::TimezoneStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.system.time.timezone';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -70,7 +76,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub set {
    my ($self, %args) = @_;
    my $name = $args {name};
@@ -82,7 +87,6 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method get ()
 # Get time zone. This  *method*  was added in vSphere API 6.7.
 #
@@ -93,12 +97,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if timezone cannot be read.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

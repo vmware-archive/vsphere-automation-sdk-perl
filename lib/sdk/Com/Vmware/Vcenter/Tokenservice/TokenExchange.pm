@@ -14,43 +14,34 @@
 # The  ``Com::Vmware::Vcenter::Tokenservice::TokenExchange``   *interface*  provides
 #     possibility to exchange between different tokens types. Implementation of &quot;OAuth
 #     2.0 Token Exchange&quot; standard
-#     (https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-12). <b>Warning:</b> This
-#     *interface*  is available as technical preview. It may be changed in a future release.
+#     (https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-12).
 #
 #
 # Constant String::TOKEN_EXCHANGE_GRANT #
-#*Constant*  indicates that token exchange grant type. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
+# *Constant*  indicates that token exchange grant type.
 #
 # Constant String::ACCESS_TOKEN_TYPE #
-#*Constant*  indicates OAuth 2.0 access token type. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
+# *Constant*  indicates OAuth 2.0 access token type.
 #
 # Constant String::REFRESH_TOKEN_TYPE #
-#*Constant*  indicates OAuth 2.0 refresh token type. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
+# *Constant*  indicates OAuth 2.0 refresh token type.
 #
 # Constant String::ID_TOKEN_TYPE #
-#*Constant*  indicates OIDC ID token type. <b>Warning:</b> This  *constant*  is available
-# as technical preview. It may be changed in a future release.
+# *Constant*  indicates OIDC ID token type.
 #
 # Constant String::SAML1_TOKEN_TYPE #
-#*Constant*  indicates base64-encoded SAML 1.1 token type. <b>Warning:</b> This  *constant*
-#  is available as technical preview. It may be changed in a future release.
+# *Constant*  indicates base64-encoded SAML 1.1 token type.
 #
 # Constant String::SAML2_TOKEN_TYPE #
-#*Constant*  indicates base64-encoded SAML 2.0 token type. <b>Warning:</b> This  *constant*
-#  is available as technical preview. It may be changed in a future release.
+# *Constant*  indicates base64-encoded SAML 2.0 token type.
 #
 # Constant String::BEARER_TOKEN_METHOD_TYPE #
-#*Constant*  indicates that the security token is a bearer token. <b>Warning:</b> This 
-# *constant*  is available as technical preview. It may be changed in a future release.
+# *Constant*  indicates that the security token is a bearer token.
 #
 # Constant String::N_A_TOKEN_METHOD_TYPE #
 #*Constant*  indicates 
 # :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::Info.token_type`  identifier is
-# not applicable in that context. <b>Warning:</b> This  *constant*  is available as
-# technical preview. It may be changed in a future release.
+# not applicable in that context.
 
 package Com::Vmware::Vcenter::Tokenservice::TokenExchange;
 
@@ -71,6 +62,12 @@ use Com::Vmware::Vcenter::Tokenservice::TokenExchangeStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.tokenservice.token_exchange';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -96,8 +93,6 @@ sub new {
 
 ## @method exchange ()
 # Exchanges incoming token based on the spec and current client authorization data.
-# <b>Warning:</b> This  *method*  is available as technical preview. It may be changed in a
-# future release.
 #
 # @param spec [REQUIRED] ``Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec``   *class* 
 #     contains arguments that define exchange process.
@@ -125,7 +120,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if authorization is not given to a caller.
 #
-
 sub exchange {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -136,7 +130,6 @@ sub exchange {
    return $self->invoke (method_name => 'exchange',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -158,8 +151,7 @@ sub exchange {
 #
 #
 # The  ``Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec``   *class* 
-#     contains arguments required for token exchange. <b>Warning:</b> This  *class*  is
-#     available as technical preview. It may be changed in a future release.
+#     contains arguments required for token exchange.
 
 package Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec;
 
@@ -218,8 +210,7 @@ sub new {
 # @retval grant_type - The current value of the field.
 # The value of 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange.TOKEN_EXCHANGE_GRANT` 
-#     indicates that a token exchange is being performed. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     indicates that a token exchange is being performed.
 #
 # String#
 sub get_grant_type {
@@ -233,8 +224,7 @@ sub get_grant_type {
 # @param grant_type  - New value for the field.
 # The value of 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange.TOKEN_EXCHANGE_GRANT` 
-#     indicates that a token exchange is being performed. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     indicates that a token exchange is being performed.
 #
 sub set_grant_type {
    my ($self, %args) = @_;
@@ -247,8 +237,7 @@ sub set_grant_type {
 #
 # @retval resource - The current value of the field.
 # Indicates the location of the target service or resource where the client intends to
-#     use the requested security token. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     use the requested security token.
 #
 # Optional#
 sub get_resource {
@@ -261,8 +250,7 @@ sub get_resource {
 # 
 # @param resource  - New value for the field.
 # Indicates the location of the target service or resource where the client intends to
-#     use the requested security token. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     use the requested security token.
 #
 sub set_resource {
    my ($self, %args) = @_;
@@ -278,8 +266,6 @@ sub set_resource {
 #     security token. This serves a purpose similar to the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.resource` 
 #     parameter, but with the client providing a logical name rather than a location.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
 #
 # Optional#
 sub get_audience {
@@ -295,8 +281,6 @@ sub get_audience {
 #     security token. This serves a purpose similar to the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.resource` 
 #     parameter, but with the client providing a logical name rather than a location.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
 #
 sub set_audience {
    my ($self, %args) = @_;
@@ -310,8 +294,7 @@ sub set_audience {
 # @retval scope - The current value of the field.
 # A list of space-delimited, case-sensitive strings, that allow the client to specify
 #     the desired scope of the requested security token in the context of the service or
-#     resource where the token will be used. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     resource where the token will be used.
 #
 # Optional#
 sub get_scope {
@@ -325,8 +308,7 @@ sub get_scope {
 # @param scope  - New value for the field.
 # A list of space-delimited, case-sensitive strings, that allow the client to specify
 #     the desired scope of the requested security token in the context of the service or
-#     resource where the token will be used. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     resource where the token will be used.
 #
 sub set_scope {
    my ($self, %args) = @_;
@@ -343,8 +325,7 @@ sub set_scope {
 #     dictated by knowledge of the requirements of the service or resource indicated by the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.resource`  or 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.audience` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 # Optional#
 sub get_requested_token_type {
@@ -361,8 +342,7 @@ sub get_requested_token_type {
 #     dictated by knowledge of the requirements of the service or resource indicated by the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.resource`  or 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.audience` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 sub set_requested_token_type {
    my ($self, %args) = @_;
@@ -376,8 +356,7 @@ sub set_requested_token_type {
 # @retval subject_token - The current value of the field.
 # A security token that represents the identity of the party on behalf of whom exchange
 #     is being made. Typically, the subject of this token will be the subject of the
-#     security token issued. Token is base64-encoded. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     security token issued. Token is base64-encoded.
 #
 # String#
 sub get_subject_token {
@@ -391,8 +370,7 @@ sub get_subject_token {
 # @param subject_token  - New value for the field.
 # A security token that represents the identity of the party on behalf of whom exchange
 #     is being made. Typically, the subject of this token will be the subject of the
-#     security token issued. Token is base64-encoded. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     security token issued. Token is base64-encoded.
 #
 sub set_subject_token {
    my ($self, %args) = @_;
@@ -406,8 +384,7 @@ sub set_subject_token {
 # @retval subject_token_type - The current value of the field.
 # An identifier, that indicates the type of the security token in the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.subject_token` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 # String#
 sub get_subject_token_type {
@@ -421,8 +398,7 @@ sub get_subject_token_type {
 # @param subject_token_type  - New value for the field.
 # An identifier, that indicates the type of the security token in the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.subject_token` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 sub set_subject_token_type {
    my ($self, %args) = @_;
@@ -436,8 +412,7 @@ sub set_subject_token_type {
 # @retval actor_token - The current value of the field.
 # A security token that represents the identity of the acting party. Typically, this
 #     will be the party that is authorized to use the requested security token and act on
-#     behalf of the subject. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     behalf of the subject.
 #
 # Optional#
 sub get_actor_token {
@@ -451,8 +426,7 @@ sub get_actor_token {
 # @param actor_token  - New value for the field.
 # A security token that represents the identity of the acting party. Typically, this
 #     will be the party that is authorized to use the requested security token and act on
-#     behalf of the subject. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     behalf of the subject.
 #
 sub set_actor_token {
    my ($self, %args) = @_;
@@ -466,8 +440,7 @@ sub set_actor_token {
 # @retval actor_token_type - The current value of the field.
 # An identifier, that indicates the type of the security token in the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.actor_token` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 # Optional#
 sub get_actor_token_type {
@@ -481,8 +454,7 @@ sub get_actor_token_type {
 # @param actor_token_type  - New value for the field.
 # An identifier, that indicates the type of the security token in the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.actor_token` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 sub set_actor_token_type {
    my ($self, %args) = @_;
@@ -498,8 +470,7 @@ sub set_actor_token_type {
 #
 #
 # The  ``Com::Vmware::Vcenter::Tokenservice::TokenExchange::Info``   *class*  contains
-#     data that represents successful token exchange response. <b>Warning:</b> This  *class*
-#      is available as technical preview. It may be changed in a future release.
+#     data that represents successful token exchange response.
 
 package Com::Vmware::Vcenter::Tokenservice::TokenExchange::Info;
 
@@ -551,8 +522,7 @@ sub new {
 #
 # @retval access_token - The current value of the field.
 # The security token issued by the server in response to the token exchange request.
-#     Token is base64-encoded. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     Token is base64-encoded.
 #
 # String#
 sub get_access_token {
@@ -565,8 +535,7 @@ sub get_access_token {
 # 
 # @param access_token  - New value for the field.
 # The security token issued by the server in response to the token exchange request.
-#     Token is base64-encoded. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+#     Token is base64-encoded.
 #
 sub set_access_token {
    my ($self, %args) = @_;
@@ -580,8 +549,7 @@ sub set_access_token {
 # @retval issued_token_type - The current value of the field.
 # An identifier, that indicates the type of the security token in the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::Info.access_token` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 # String#
 sub get_issued_token_type {
@@ -595,8 +563,7 @@ sub get_issued_token_type {
 # @param issued_token_type  - New value for the field.
 # An identifier, that indicates the type of the security token in the 
 #     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::Info.access_token` 
-#     parameter. <b>Warning:</b> This  *field*  is available as technical preview. It may be
-#     changed in a future release.
+#     parameter.
 #
 sub set_issued_token_type {
    my ($self, %args) = @_;
@@ -609,8 +576,6 @@ sub set_issued_token_type {
 #
 # @retval token_type - The current value of the field.
 # A case-insensitive value specifying the method of using the access token issued.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
 #
 # String#
 sub get_token_type {
@@ -623,8 +588,6 @@ sub get_token_type {
 # 
 # @param token_type  - New value for the field.
 # A case-insensitive value specifying the method of using the access token issued.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
 #
 sub set_token_type {
    my ($self, %args) = @_;
@@ -636,9 +599,7 @@ sub set_token_type {
 # Gets the value of 'expires_in' property.
 #
 # @retval expires_in - The current value of the field.
-# The validity lifetime, in seconds, of the token issued by the server. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# The validity lifetime, in seconds, of the token issued by the server.
 #
 # Optional#
 sub get_expires_in {
@@ -650,9 +611,7 @@ sub get_expires_in {
 # Sets the given value for 'expires_in' property.
 # 
 # @param expires_in  - New value for the field.
-# The validity lifetime, in seconds, of the token issued by the server. <b>Warning:</b>
-#     This  *field*  is available as technical preview. It may be changed in a future
-#     release.
+# The validity lifetime, in seconds, of the token issued by the server.
 #
 sub set_expires_in {
    my ($self, %args) = @_;
@@ -664,8 +623,7 @@ sub set_expires_in {
 # Gets the value of 'scope' property.
 #
 # @retval scope - The current value of the field.
-# Scope of the issued security token. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Scope of the issued security token.
 #
 # Optional#
 sub get_scope {
@@ -677,8 +635,7 @@ sub get_scope {
 # Sets the given value for 'scope' property.
 # 
 # @param scope  - New value for the field.
-# Scope of the issued security token. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+# Scope of the issued security token.
 #
 sub set_scope {
    my ($self, %args) = @_;
@@ -692,8 +649,6 @@ sub set_scope {
 # @retval refresh_token - The current value of the field.
 # A refresh token can be issued in cases where the client of the token exchange needs
 #     the ability to access a resource even when the original credential is no longer valid.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
 #
 # Optional#
 sub get_refresh_token {
@@ -707,8 +662,6 @@ sub get_refresh_token {
 # @param refresh_token  - New value for the field.
 # A refresh token can be issued in cases where the client of the token exchange needs
 #     the ability to access a resource even when the original credential is no longer valid.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
 #
 sub set_refresh_token {
    my ($self, %args) = @_;

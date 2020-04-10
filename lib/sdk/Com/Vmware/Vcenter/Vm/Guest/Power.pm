@@ -36,6 +36,12 @@ use Com::Vmware::Vcenter::Vm::Guest::PowerStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.guest.power';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -62,6 +68,9 @@ sub new {
 # Returns information about the guest operating system power state. This  *method*  was
 # added in vSphere API 6.7.
 #
+# Note:
+# Privileges required for this operation are System.Read.
+#
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
 #     getQualifiedName(VirtualMachine).
@@ -77,7 +86,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if the virtual machine is not found.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -88,7 +96,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method shutdown ()
 # Issues a request to the guest operating system asking it to perform a clean shutdown of
@@ -122,7 +129,6 @@ sub get {
 # if the virtual machine does not support being powered on (e.g. marked as a template,
 #     serving as a fault-tolerance secondary virtual machine).
 #
-
 sub shutdown {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -133,7 +139,6 @@ sub shutdown {
    return $self->invoke (method_name => 'shutdown',
                          method_args => \%args);
 }
-
 
 ## @method reboot ()
 # Issues a request to the guest operating system asking it to perform a reboot. This request
@@ -164,7 +169,6 @@ sub shutdown {
 # if the virtual machine does not support being powered on (e.g. marked as a template,
 #     serving as a fault-tolerance secondary virtual machine).
 #
-
 sub reboot {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -175,7 +179,6 @@ sub reboot {
    return $self->invoke (method_name => 'reboot',
                          method_args => \%args);
 }
-
 
 ## @method standby ()
 # Issues a request to the guest operating system asking it to perform a suspend operation.
@@ -208,7 +211,6 @@ sub reboot {
 # if the virtual machine does not support being powered on (e.g. marked as a template,
 #     serving as a fault-tolerance secondary virtual machine).
 #
-
 sub standby {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -219,7 +221,6 @@ sub standby {
    return $self->invoke (method_name => 'standby',
                          method_args => \%args);
 }
-
 
 1;
 

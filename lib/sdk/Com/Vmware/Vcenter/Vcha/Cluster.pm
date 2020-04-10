@@ -38,6 +38,19 @@ use Com::Vmware::Vcenter::Vcha::ClusterStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vcha.cluster';
+
+#
+# Identifiers of the task operations
+#
+our $_VAPI_OPERATION_IDS = ();
+$_VAPI_OPERATION_IDS->{'deploy_task'} = 'deploy$task';
+$_VAPI_OPERATION_IDS->{'failover_task'} = 'failover$task';
+$_VAPI_OPERATION_IDS->{'undeploy_task'} = 'undeploy$task';
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -60,7 +73,7 @@ sub new {
    return $self;
 }
 
-## @method deploy ()
+## @method deploy_task ()
 # Prepares, clones, and configures a VCHA cluster. This  *method*  was added in vSphere API
 # 6.7.1.
 #
@@ -84,20 +97,19 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
-sub deploy {
+sub deploy_task {
    my ($self, %args) = @_;
    my $spec = $args {spec};
 
-   $self->validate_args (method_name => 'deploy',
+   $self->validate_args (method_name => 'deploy$task',
                          method_args => \%args);
-   
-   return $self->invoke (method_name => 'deploy',
+
+   return $self->invoke (method_name => 'deploy$task',
                          method_args => \%args);
 }
 
 
-## @method failover ()
+## @method failover_task ()
 # Initiates failover from the active vCenter node to the passive node. <p>
 # 
 # For forced failover, Active node immediately initiates a failover. This may result into a
@@ -130,15 +142,14 @@ sub deploy {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
-sub failover {
+sub failover_task {
    my ($self, %args) = @_;
    my $planned = $args {planned};
 
-   $self->validate_args (method_name => 'failover',
+   $self->validate_args (method_name => 'failover$task',
                          method_args => \%args);
-   
-   return $self->invoke (method_name => 'failover',
+
+   return $self->invoke (method_name => 'failover$task',
                          method_args => \%args);
 }
 
@@ -183,7 +194,6 @@ sub failover {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vc_spec = $args {vc_spec};
@@ -196,8 +206,7 @@ sub get {
                          method_args => \%args);
 }
 
-
-## @method undeploy ()
+## @method undeploy_task ()
 # Destroys the VCHA cluster and removes all VCHA specific information from the VCVA
 # appliance. Optionally, the passive and witness node virtual machines will be deleted only
 # if VCHA was deployed using automatic deployment. The active node in the cluster continues
@@ -233,15 +242,14 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
-sub undeploy {
+sub undeploy_task {
    my ($self, %args) = @_;
    my $spec = $args {spec};
 
-   $self->validate_args (method_name => 'undeploy',
+   $self->validate_args (method_name => 'undeploy$task',
                          method_args => \%args);
-   
-   return $self->invoke (method_name => 'undeploy',
+
+   return $self->invoke (method_name => 'undeploy$task',
                          method_args => \%args);
 }
 

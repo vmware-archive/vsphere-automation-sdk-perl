@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Health::SystemStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.health.system';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -67,12 +73,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub lastcheck {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'lastcheck', method_args =>  {});
 }
-
 
 ## @method get ()
 # Get overall health of system.
@@ -84,12 +88,10 @@ sub lastcheck {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

@@ -47,6 +47,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::Resource::ModelStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.resource.model';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -92,7 +98,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if the resource type associated with  ``resource_id``  does not exist.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $resource_id = $args {resource_id};
@@ -103,7 +108,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Networking::Dns::ServersStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.dns.servers';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -70,7 +76,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub test {
    my ($self, %args) = @_;
    my $servers = $args {servers};
@@ -82,7 +87,6 @@ sub test {
                          method_args => \%args);
 }
 
-
 ## @method add ()
 # Add a DNS server. This method fails if mode argument is &quot;dhcp&quot;
 #
@@ -92,7 +96,6 @@ sub test {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub add {
    my ($self, %args) = @_;
    my $server = $args {server};
@@ -104,7 +107,6 @@ sub add {
                          method_args => \%args);
 }
 
-
 ## @method set ()
 # Set the DNS server configuration. If you set the mode argument to &quot;DHCP&quot;, a DHCP
 # refresh is forced.
@@ -115,7 +117,6 @@ sub add {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $config = $args {config};
@@ -127,7 +128,6 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method get ()
 # Get DNS server configuration.
 #
@@ -138,12 +138,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

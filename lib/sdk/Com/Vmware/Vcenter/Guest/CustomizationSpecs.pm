@@ -40,6 +40,12 @@ use Com::Vmware::Vcenter::Guest::CustomizationSpecsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.guest.customization_specs';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -97,7 +103,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -109,6 +114,239 @@ sub list {
                          method_args => \%args);
 }
 
+## @method create ()
+# Creates a customization specification. This  *method*  was added in vSphere API 7.0.0.
+#
+# @param spec [REQUIRED] The information i.e. name, description and the settings i.e hostname, ip address etc
+#     for the new customization specification that needs to be created.
+# . The value must be Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec.
+#
+# @retval 
+# The name of the customization specification that is created.
+# The value will be an identifier for the resource type
+#     getQualifiedName(com.vmware.vcenter.guest.CustomizationSpec).
+# The return type will be str
+#
+# @throw Com::Vmware::Vapi::Std::Errors::AlreadyExists 
+# if a customization specification is already present with the same name.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if the specified specification is not a valid one.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+#
+sub create {
+   my ($self, %args) = @_;
+   my $spec = $args {spec};
+
+   $self->validate_args (method_name => 'create',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'create',
+                         method_args => \%args);
+}
+
+## @method get ()
+# Returns the guest customization specification from vCenter with the specified identifier.
+# This  *method*  was added in vSphere API 7.0.0.
+#
+# @param name [REQUIRED] The name of the customization specification.
+# The value must be an identifier for the resource type
+#     getQualifiedName(com.vmware.vcenter.guest.CustomizationSpec).
+# . The value must be str.
+#
+# @retval 
+# A customization spec with the specified identifier.
+# The return type will be Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if a customization specification is not found.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+#
+sub get {
+   my ($self, %args) = @_;
+   my $name = $args {name};
+
+   $self->validate_args (method_name => 'get',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'get',
+                         method_args => \%args);
+}
+
+## @method set ()
+# Sets an existing specification, possibly after retrieving (by using 
+# :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.get` ) and editing it. This 
+# *method*  was added in vSphere API 7.0.0.
+#
+# @param name [REQUIRED] The name of the customization specification that needs to be set.
+# The value must be an identifier for the resource type
+#     getQualifiedName(com.vmware.vcenter.guest.CustomizationSpec).
+# . The value must be str.
+#
+# @param spec [REQUIRED] The new specification that will overwrite the existing specification.
+# . The value must be Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# If, based on the item&apos;s fingerprint value, the set process detects that the
+#     specification has changed since its retrieval, then the  *method*  throws
+#     InvalidArgument exception to warn the client that he might overwrite another
+#     client&apos;s change.
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# If the settings in  ``spec``  are not valid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if a customization specification is not found.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+#
+sub set {
+   my ($self, %args) = @_;
+   my $name = $args {name};
+   my $spec = $args {spec};
+
+   $self->validate_args (method_name => 'set',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'set',
+                         method_args => \%args);
+}
+
+## @method delete ()
+# Deletes a customization specification with the specified identifier. This  *method*  was
+# added in vSphere API 7.0.0.
+#
+# @param name [REQUIRED] The name of the customization specification that needs to be deleted.
+# The value must be an identifier for the resource type
+#     getQualifiedName(com.vmware.vcenter.guest.CustomizationSpec).
+# . The value must be str.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if a customization specification is not found.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+#
+sub delete {
+   my ($self, %args) = @_;
+   my $name = $args {name};
+
+   $self->validate_args (method_name => 'delete',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'delete',
+                         method_args => \%args);
+}
+
+## @method export ()
+# Returns the content of the customization specification in the specified format. Note that
+# any passwords in the customization specification will be set to blank values during the
+# export  *method* . This  *method*  was added in vSphere API 7.0.0.
+#
+# @param name [REQUIRED] The name of the customization specification that has to be returned.
+# The value must be an identifier for the resource type
+#     getQualifiedName(com.vmware.vcenter.guest.CustomizationSpec).
+# . The value must be str.
+#
+# @param format [REQUIRED] The format in which the customization specification has to be returned.
+# . The value must be Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format.
+#
+# @retval 
+# The string representation of the customization specification in the specified format.
+# The return type will be String
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# If value of  ``format``  is not valid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if the customization specification is not found.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+#
+sub export {
+   my ($self, %args) = @_;
+   my $name = $args {name};
+   my $format = $args {format};
+
+   $self->validate_args (method_name => 'export',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'export',
+                         method_args => \%args);
+}
+
+## @method import_specification ()
+# Converts a well formatted string to a  class
+# Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec . The resulting object can be
+# passed to  :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.create`   *method* .
+# This  *method*  was added in vSphere API 7.0.0.
+#
+# @param customization_spec [REQUIRED] content to be converted to the spec.
+# . The value must be String.
+#
+# @retval 
+# A proper specification of type  class
+#     Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec 
+# The return type will be Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if the specified content cannot be properly converted into a proper valid  class
+#     Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec  object.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+#
+sub import_specification {
+   my ($self, %args) = @_;
+   my $customization_spec = $args {customization_spec};
+
+   $self->validate_args (method_name => 'import_specification',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'import_specification',
+                         method_args => \%args);
+}
 
 1;
 
@@ -164,6 +402,52 @@ sub new {
 }
 
 1;
+## @class Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format
+#
+# The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format``   *enumerated type* 
+#     specifies the formats the customization specification can be exported to. This 
+#     *enumeration*  was added in vSphere API 7.0.0.
+#
+#
+#
+# Constant Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format::JSON #
+#JSON format. This  *constant*  was added in vSphere API 7.0.0.
+#
+# Constant Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format::XML #
+#XML format. This  *constant*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format;
+
+use constant {
+    JSON =>  'JSON',
+    XML =>  'XML',
+};
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiEnum);
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format enumeration.
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $self = $class->SUPER::new();
+   my $bindingType = new Com::Vmware::Vapi::Bindings::Type::EnumType(
+                           'name' => 'com.vmware.vcenter.guest.customization_specs.format',
+                           'binding_class' => 'Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format');
+   $class->SUPER::set_binding_type('binding_type' => $bindingType);
+
+   bless $self, $class;
+   return $self;
+}
+
+1;
 
 
 #########################################################################################
@@ -173,6 +457,485 @@ sub new {
 #########################################################################################
 # Begins structures for the Com::Vmware::Vcenter::Guest::CustomizationSpecs service
 #########################################################################################
+
+## @class Com::Vmware::Vcenter::Guest::CustomizationSpecs::Metadata
+#
+#
+# The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Metadata``   *class*  contains
+#     metadata i.e. name and description related to a customization specification. This 
+#     *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Metadata;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Guest::CustomizationSpecs::Metadata structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{description} = $args{'description'};
+   $self->{name} = $args{'name'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Guest::CustomizationSpecs::Metadata');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.guest.customization_specs.metadata');
+   $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_description ()
+# Gets the value of 'description' property.
+#
+# @retval description - The current value of the field.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_description {
+   my ($self, %args) = @_;
+   return $self->{'description'}; 	
+}
+
+## @method set_description ()
+# Sets the given value for 'description' property.
+# 
+# @param description  - New value for the field.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_description {
+   my ($self, %args) = @_;
+   $self->{'description'} = $args{'description'}; 
+   return;	
+}
+
+## @method get_name ()
+# Gets the value of 'name' property.
+#
+# @retval name - The current value of the field.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_name {
+   my ($self, %args) = @_;
+   return $self->{'name'}; 	
+}
+
+## @method set_name ()
+# Sets the given value for 'name' property.
+# 
+# @param name  - New value for the field.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_name {
+   my ($self, %args) = @_;
+   $self->{'name'} = $args{'name'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec
+#
+#
+# The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec``   *class* 
+#     contains specification information and specification object that can be passed to the 
+#     :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.create`   *method* . This 
+#     *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{spec} = $args{'spec'};
+   $self->{description} = $args{'description'};
+   $self->{name} = $args{'name'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.guest.customization_specs.create_spec');
+   $self->set_binding_field('key' => 'spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpec'));
+   $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_spec ()
+# Gets the value of 'spec' property.
+#
+# @retval spec - The current value of the field.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.
+#
+# CustomizationSpec#
+sub get_spec {
+   my ($self, %args) = @_;
+   return $self->{'spec'}; 	
+}
+
+## @method set_spec ()
+# Sets the given value for 'spec' property.
+# 
+# @param spec  - New value for the field.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_spec {
+   my ($self, %args) = @_;
+   $self->{'spec'} = $args{'spec'}; 
+   return;	
+}
+
+## @method get_description ()
+# Gets the value of 'description' property.
+#
+# @retval description - The current value of the field.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_description {
+   my ($self, %args) = @_;
+   return $self->{'description'}; 	
+}
+
+## @method set_description ()
+# Sets the given value for 'description' property.
+# 
+# @param description  - New value for the field.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_description {
+   my ($self, %args) = @_;
+   $self->{'description'} = $args{'description'}; 
+   return;	
+}
+
+## @method get_name ()
+# Gets the value of 'name' property.
+#
+# @retval name - The current value of the field.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_name {
+   my ($self, %args) = @_;
+   return $self->{'name'}; 	
+}
+
+## @method set_name ()
+# Sets the given value for 'name' property.
+# 
+# @param name  - New value for the field.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_name {
+   my ($self, %args) = @_;
+   $self->{'name'} = $args{'name'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec
+#
+#
+# The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec``   *class*  contains the
+#     specification information and specification object. This is passed to the 
+#     :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.set`   *method* . This  *class*
+#      was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{fingerprint} = $args{'fingerprint'};
+   $self->{spec} = $args{'spec'};
+   $self->{description} = $args{'description'};
+   $self->{name} = $args{'name'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.guest.customization_specs.spec');
+   $self->set_binding_field('key' => 'fingerprint', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpec'));
+   $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_fingerprint ()
+# Gets the value of 'fingerprint' property.
+#
+# @retval fingerprint - The current value of the field.
+# The fingerprint is a unique identifier for a given version of the configuration. Each
+#     change to the configuration will update this value. A client cannot change this value.
+#     If specified when updating a specification, the changes will only be applied if the
+#     current fingerprint matches the specified fingerprint. This field can be used to guard
+#     against updates that has happened between the specification content was read and until
+#     it is applied. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_fingerprint {
+   my ($self, %args) = @_;
+   return $self->{'fingerprint'}; 	
+}
+
+## @method set_fingerprint ()
+# Sets the given value for 'fingerprint' property.
+# 
+# @param fingerprint  - New value for the field.
+# The fingerprint is a unique identifier for a given version of the configuration. Each
+#     change to the configuration will update this value. A client cannot change this value.
+#     If specified when updating a specification, the changes will only be applied if the
+#     current fingerprint matches the specified fingerprint. This field can be used to guard
+#     against updates that has happened between the specification content was read and until
+#     it is applied. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_fingerprint {
+   my ($self, %args) = @_;
+   $self->{'fingerprint'} = $args{'fingerprint'}; 
+   return;	
+}
+
+## @method get_spec ()
+# Gets the value of 'spec' property.
+#
+# @retval spec - The current value of the field.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.
+#
+# CustomizationSpec#
+sub get_spec {
+   my ($self, %args) = @_;
+   return $self->{'spec'}; 	
+}
+
+## @method set_spec ()
+# Sets the given value for 'spec' property.
+# 
+# @param spec  - New value for the field.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_spec {
+   my ($self, %args) = @_;
+   $self->{'spec'} = $args{'spec'}; 
+   return;	
+}
+
+## @method get_description ()
+# Gets the value of 'description' property.
+#
+# @retval description - The current value of the field.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_description {
+   my ($self, %args) = @_;
+   return $self->{'description'}; 	
+}
+
+## @method set_description ()
+# Sets the given value for 'description' property.
+# 
+# @param description  - New value for the field.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_description {
+   my ($self, %args) = @_;
+   $self->{'description'} = $args{'description'}; 
+   return;	
+}
+
+## @method get_name ()
+# Gets the value of 'name' property.
+#
+# @retval name - The current value of the field.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_name {
+   my ($self, %args) = @_;
+   return $self->{'name'}; 	
+}
+
+## @method set_name ()
+# Sets the given value for 'name' property.
+# 
+# @param name  - New value for the field.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_name {
+   my ($self, %args) = @_;
+   $self->{'name'} = $args{'name'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info
+#
+#
+# The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info``   *class*  describes a
+#     guest customization specification and the timestamp when it was last modified. This is
+#     returned by the  :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.get`  
+#     *method* . This  *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{last_modified} = $args{'last_modified'};
+   $self->{spec} = $args{'spec'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.guest.customization_specs.info');
+   $self->set_binding_field('key' => 'last_modified', 'value' => new Com::Vmware::Vapi::Bindings::Type::DateTimeType());
+   $self->set_binding_field('key' => 'spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpecs::Spec'));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_last_modified ()
+# Gets the value of 'last_modified' property.
+#
+# @retval last_modified - The current value of the field.
+# Time when the specification was last modified. This  *field*  was added in vSphere API
+#     7.0.0.
+#
+# DateTime#
+sub get_last_modified {
+   my ($self, %args) = @_;
+   return $self->{'last_modified'}; 	
+}
+
+## @method set_last_modified ()
+# Sets the given value for 'last_modified' property.
+# 
+# @param last_modified  - New value for the field.
+# Time when the specification was last modified. This  *field*  was added in vSphere API
+#     7.0.0.
+#
+sub set_last_modified {
+   my ($self, %args) = @_;
+   $self->{'last_modified'} = $args{'last_modified'}; 
+   return;	
+}
+
+## @method get_spec ()
+# Gets the value of 'spec' property.
+#
+# @retval spec - The current value of the field.
+# The Spec object including specification and metadata information. This  *field*  was
+#     added in vSphere API 7.0.0.
+#
+# Spec#
+sub get_spec {
+   my ($self, %args) = @_;
+   return $self->{'spec'}; 	
+}
+
+## @method set_spec ()
+# Sets the given value for 'spec' property.
+# 
+# @param spec  - New value for the field.
+# The Spec object including specification and metadata information. This  *field*  was
+#     added in vSphere API 7.0.0.
+#
+sub set_spec {
+   my ($self, %args) = @_;
+   $self->{'spec'} = $args{'spec'}; 
+   return;	
+}
+
+
+1;
+
 
 ## @class Com::Vmware::Vcenter::Guest::CustomizationSpecs::FilterSpec
 #

@@ -165,9 +165,9 @@ sub new
                 'input_validator_list'=> $reset_input_validator_list,
                 'output_validator_list'=> $reset_output_validator_list,
             },
-      'change' => {
+      'change$task' => {
                 'input_type'=> $change_input_type,
-                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
                 'errors'=> $change_error_dict,
                 'input_validator_list'=> $change_input_validator_list,
                 'output_validator_list'=> $change_output_validator_list,

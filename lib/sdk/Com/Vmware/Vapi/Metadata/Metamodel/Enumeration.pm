@@ -42,6 +42,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::EnumerationStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.enumeration';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -74,12 +80,10 @@ sub new {
 #     getQualifiedName(com.vmware.vapi.enumeration).
 # The return type will be Array of str
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Retrieves information about the enumeration element corresponding to  ``enumeration_id`` .
@@ -102,7 +106,6 @@ sub list {
 # if the enumeration element associated with  ``enumeration_id``  is not contained in
 #     any of the package elements, service elements and structure elements.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $enumeration_id = $args {enumeration_id};
@@ -113,7 +116,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

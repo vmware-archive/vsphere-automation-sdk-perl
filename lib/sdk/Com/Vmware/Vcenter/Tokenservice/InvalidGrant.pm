@@ -4,8 +4,7 @@
 # The  ``Com::Vmware::Vcenter::Tokenservice::InvalidGrant``   *error*  indicates that
 #     provided authorization grant (e.g., authorization code, resource owner credentials) or
 #     refresh token is invalid, expired, revoked, does not match the redirection URI used in
-#     the authorization request, or was issued to another client. <b>Warning:</b> This 
-#     *class*  is available as technical preview. It may be changed in a future release.
+#     the authorization request, or was issued to another client.
 
 package Com::Vmware::Vcenter::Tokenservice::InvalidGrant;
 

@@ -90,6 +90,137 @@ sub new
    my $list_output_validator_list = [];
 
    #
+   # properties for create operation
+   #
+   my $create_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'spec' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpecs::CreateSpec'),
+      }
+   );
+   my $create_error_dict = {
+      'com.vmware.vapi.std.errors.already_exists' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'AlreadyExists'),
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $create_input_validator_list = [
+   ];
+   my $create_output_validator_list = [];
+
+   #
+   # properties for get operation
+   #
+   my $get_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'name' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+      }
+   );
+   my $get_error_dict = {
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $get_input_validator_list = [
+   ];
+   my $get_output_validator_list = [];
+
+   #
+   # properties for set operation
+   #
+   my $set_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'name' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                   'spec' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpecs::Spec'),
+      }
+   );
+   my $set_error_dict = {
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $set_input_validator_list = [
+   ];
+   my $set_output_validator_list = [];
+
+   #
+   # properties for delete operation
+   #
+   my $delete_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'name' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+      }
+   );
+   my $delete_error_dict = {
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $delete_input_validator_list = [
+   ];
+   my $delete_output_validator_list = [];
+
+   #
+   # properties for export operation
+   #
+   my $export_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'name' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                   'format' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpecs::Format'),
+      }
+   );
+   my $export_error_dict = {
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $export_input_validator_list = [
+   ];
+   my $export_output_validator_list = [];
+
+   #
+   # properties for import_specification operation
+   #
+   my $import_specification_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'customization_spec' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+      }
+   );
+   my $import_specification_error_dict = {
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $import_specification_input_validator_list = [
+   ];
+   my $import_specification_output_validator_list = [];
+
+   #
    # All the methods (operations) info in a hash
    #
    my $operations = {
@@ -99,6 +230,48 @@ sub new
                 'errors'=> $list_error_dict,
                 'input_validator_list'=> $list_input_validator_list,
                 'output_validator_list'=> $list_output_validator_list,
+            },
+      'create' => {
+                'input_type'=> $create_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                'errors'=> $create_error_dict,
+                'input_validator_list'=> $create_input_validator_list,
+                'output_validator_list'=> $create_output_validator_list,
+            },
+      'get' => {
+                'input_type'=> $get_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpecs::Info'),
+                'errors'=> $get_error_dict,
+                'input_validator_list'=> $get_input_validator_list,
+                'output_validator_list'=> $get_output_validator_list,
+            },
+      'set' => {
+                'input_type'=> $set_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'errors'=> $set_error_dict,
+                'input_validator_list'=> $set_input_validator_list,
+                'output_validator_list'=> $set_output_validator_list,
+            },
+      'delete' => {
+                'input_type'=> $delete_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'errors'=> $delete_error_dict,
+                'input_validator_list'=> $delete_input_validator_list,
+                'output_validator_list'=> $delete_output_validator_list,
+            },
+      'export' => {
+                'input_type'=> $export_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                'errors'=> $export_error_dict,
+                'input_validator_list'=> $export_input_validator_list,
+                'output_validator_list'=> $export_output_validator_list,
+            },
+      'import_specification' => {
+                'input_type'=> $import_specification_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Guest', 'type_name' => 'CustomizationSpecs::CreateSpec'),
+                'errors'=> $import_specification_error_dict,
+                'input_validator_list'=> $import_specification_input_validator_list,
+                'output_validator_list'=> $import_specification_output_validator_list,
             },
    };
 

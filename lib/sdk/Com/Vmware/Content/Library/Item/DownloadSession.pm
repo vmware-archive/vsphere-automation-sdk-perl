@@ -48,6 +48,12 @@ use Com::Vmware::Content::Library::Item::DownloadSessionStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.item.download_session';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -106,7 +112,6 @@ sub new {
 #     requires  ``ContentLibrary.DownloadSession`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -118,7 +123,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Gets the download session with the specified identifier, including the most up-to-date
@@ -144,7 +148,6 @@ sub create {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -155,7 +158,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Lists the identifiers of the download sessions created by the calling user. Optionally may
@@ -185,7 +187,6 @@ sub get {
 #     </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -196,7 +197,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method keep_alive ()
 # Keeps a download session alive. This operation is allowed only if the session is in the 
@@ -235,7 +235,6 @@ sub list {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub keep_alive {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -247,7 +246,6 @@ sub keep_alive {
    return $self->invoke (method_name => 'keep_alive',
                          method_args => \%args);
 }
-
 
 ## @method cancel ()
 # Cancels the download session. This  *method*  will abort any ongoing transfers and
@@ -273,7 +271,6 @@ sub keep_alive {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub cancel {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -284,7 +281,6 @@ sub cancel {
    return $self->invoke (method_name => 'cancel',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes a download session. This removes the session and all information associated with
@@ -315,7 +311,6 @@ sub cancel {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -326,7 +321,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method fail ()
 # Terminates the download session with a client specified error message. <p>
@@ -359,7 +353,6 @@ sub delete {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub fail {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -371,7 +364,6 @@ sub fail {
    return $self->invoke (method_name => 'fail',
                          method_args => \%args);
 }
-
 
 1;
 

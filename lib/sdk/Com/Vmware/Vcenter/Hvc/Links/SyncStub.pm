@@ -15,7 +15,7 @@ package Com::Vmware::Vcenter::Hvc::Links::SyncStub;
 ## @class Com::Vmware::Vcenter::Hvc::Links::Sync
 #
 #The {@name Sync} {@term service} provides {@term operations} to create a sync session,
-#get information on Sync
+#get information on Sync. Usage beyond VMware Cloud on AWS is not supported.
 #
 
 #

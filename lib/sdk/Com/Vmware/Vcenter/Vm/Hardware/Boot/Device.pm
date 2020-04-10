@@ -55,6 +55,12 @@ use Com::Vmware::Vcenter::Vm::Hardware::Boot::DeviceStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.hardware.boot.device';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -108,7 +114,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -119,7 +124,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method set ()
 # Sets the virtual devices that will be used to boot the virtual machine. The virtual
@@ -166,7 +170,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub set {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -178,7 +181,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 1;
 

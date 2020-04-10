@@ -44,6 +44,12 @@ use Com::Vmware::Content::Library::Item::StorageStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.item.storage';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -95,7 +101,6 @@ sub new {
 #       ``library_item_id``  requires  ``ContentLibrary.ReadStorage`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -107,7 +112,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Lists all storage items for a given library item.
@@ -132,7 +136,6 @@ sub get {
 #       ``library_item_id``  requires  ``ContentLibrary.ReadStorage`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -143,7 +146,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 1;
 

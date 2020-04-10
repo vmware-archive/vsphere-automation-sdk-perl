@@ -48,6 +48,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::ComponentStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.component';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -81,12 +87,10 @@ sub new {
 #     getQualifiedName(com.vmware.vapi.component).
 # The return type will be Array of str
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Retrieves metamodel information about the component element corresponding to 
@@ -110,7 +114,6 @@ sub list {
 # if the component element associated with  ``component_id``  is not registered with the
 #     infrastructure.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $component_id = $args {component_id};
@@ -121,7 +124,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method fingerprint ()
 # Retrieves the fingerprint computed from the metamodel metadata of the component element
@@ -145,7 +147,6 @@ sub get {
 # if the component element associated with  ``component_id``  is not registered with the
 #     infrastructure.
 #
-
 sub fingerprint {
    my ($self, %args) = @_;
    my $component_id = $args {component_id};
@@ -156,7 +157,6 @@ sub fingerprint {
    return $self->invoke (method_name => 'fingerprint',
                          method_args => \%args);
 }
-
 
 1;
 

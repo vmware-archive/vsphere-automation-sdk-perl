@@ -35,6 +35,12 @@ use Com::Vmware::Vcenter::Inventory::NetworkStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.inventory.network';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -87,7 +93,6 @@ sub new {
 #     requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub find {
    my ($self, %args) = @_;
    my $networks = $args {networks};
@@ -98,7 +103,6 @@ sub find {
    return $self->invoke (method_name => 'find',
                          method_args => \%args);
 }
-
 
 1;
 

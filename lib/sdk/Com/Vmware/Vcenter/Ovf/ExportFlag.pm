@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Ovf::ExportFlagStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.ovf.export_flag';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -86,12 +92,10 @@ sub new {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 1;
 

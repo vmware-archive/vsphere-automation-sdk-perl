@@ -2,8 +2,13 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Compute::Policies::CreateSpec``   *class*  contains
-#     common information used to create a new policy. <b>Warning:</b> This  *class*  is
-#     available as technical preview. It may be changed in a future release.
+#     common information used to create a new policy in VMware Cloud on AWS. Usage beyond
+#     VMware Cloud on AWS is not supported. <b>Warning:</b> This  *class*  is available as
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 
 package Com::Vmware::Vcenter::Compute::Policies::CreateSpec;
 
@@ -31,15 +36,51 @@ sub new {
       
 
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{capability} = $args{'capability'};
    $self->{name} = $args{'name'};
    $self->{description} = $args{'description'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Compute::Policies::CreateSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.compute.policies.create_spec');
+   $self->set_binding_field('key' => 'capability', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    bless $self, $class;
    return $self;
+}
+
+## @method get_capability ()
+# Gets the value of 'capability' property.
+#
+# @retval capability - The current value of the field.
+# Identifier of the capability this policy is based on. <b>Warning:</b> This  *field* 
+#     is available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
+#
+# ID#
+sub get_capability {
+   my ($self, %args) = @_;
+   return $self->{'capability'}; 	
+}
+
+## @method set_capability ()
+# Sets the given value for 'capability' property.
+# 
+# @param capability  - New value for the field.
+# Identifier of the capability this policy is based on. <b>Warning:</b> This  *field* 
+#     is available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
+#
+sub set_capability {
+   my ($self, %args) = @_;
+   $self->{'capability'} = $args{'capability'}; 
+   return;	
 }
 
 ## @method get_name ()
@@ -47,8 +88,11 @@ sub new {
 #
 # @retval name - The current value of the field.
 # Name of the policy. The name needs to be unique within this vCenter server.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # String#
 sub get_name {
@@ -61,8 +105,11 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # Name of the policy. The name needs to be unique within this vCenter server.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -74,8 +121,11 @@ sub set_name {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the policy. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Description of the policy. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # String#
 sub get_description {
@@ -87,8 +137,11 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the policy. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Description of the policy. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_description {
    my ($self, %args) = @_;

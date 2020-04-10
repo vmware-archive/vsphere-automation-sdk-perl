@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Datastore::DefaultPolicyStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.datastore.default_policy';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -91,7 +97,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user does not have the required priveleges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $datastore = $args {datastore};
@@ -102,7 +107,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

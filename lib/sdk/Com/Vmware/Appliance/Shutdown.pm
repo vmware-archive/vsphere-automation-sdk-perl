@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::ShutdownStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.shutdown';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -64,12 +70,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub cancel {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'cancel', method_args =>  {});
 }
-
 
 ## @method poweroff ()
 # Power off the appliance. This  *method*  was added in vSphere API 6.7.
@@ -84,7 +88,6 @@ sub cancel {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub poweroff {
    my ($self, %args) = @_;
    my $delay = $args {delay};
@@ -96,7 +99,6 @@ sub poweroff {
    return $self->invoke (method_name => 'poweroff',
                          method_args => \%args);
 }
-
 
 ## @method reboot ()
 # Reboot the appliance. This  *method*  was added in vSphere API 6.7.
@@ -111,7 +113,6 @@ sub poweroff {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub reboot {
    my ($self, %args) = @_;
    my $delay = $args {delay};
@@ -124,7 +125,6 @@ sub reboot {
                          method_args => \%args);
 }
 
-
 ## @method get ()
 # Get details about the pending shutdown action. This  *method*  was added in vSphere API
 # 6.7.
@@ -136,12 +136,10 @@ sub reboot {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

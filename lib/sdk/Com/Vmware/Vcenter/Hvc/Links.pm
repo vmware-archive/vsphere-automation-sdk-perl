@@ -13,8 +13,12 @@
 ## @class Com::Vmware::Vcenter::Hvc::Links
 # The  ``Com::Vmware::Vcenter::Hvc::Links``   *interface*  provides  *methods*  to
 #     create, delete, get information, and list hybrid links between the local and foreign
-#     Platform Service Controller (PSC). <b>Warning:</b> This  *interface*  is available as
-#     technical preview. It may be changed in a future release.
+#     Platform Service Controller (PSC). Usage beyond VMware Cloud on AWS is not supported.
+#     <b>Warning:</b> This  *interface*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 
 package Com::Vmware::Vcenter::Hvc::Links;
@@ -36,6 +40,12 @@ use Com::Vmware::Vcenter::Hvc::LinksStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.hvc.links';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -60,8 +70,12 @@ sub new {
 }
 
 ## @method create ()
-# Creates a new hybrid link between the local and foreign PSC. <b>Warning:</b> This 
-# *method*  is available as technical preview. It may be changed in a future release.
+# Creates a new hybrid link between the local and foreign PSC. Usage beyond VMware Cloud on
+# AWS is not supported. <b>Warning:</b> This  *method*  is available as Technology Preview.
+# These are early access APIs provided to test, automate and provide feedback on the
+# feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 #
 # @param spec [REQUIRED] Specification for the new link to be created.
 # . The value must be Com::Vmware::Vcenter::Hvc::Links::CreateSpec.
@@ -96,7 +110,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -108,10 +121,13 @@ sub create {
                          method_args => \%args);
 }
 
-
 ## @method delete ()
-# Deletes an existing hybrid link. <b>Warning:</b> This  *method*  is available as technical
-# preview. It may be changed in a future release.
+# Deletes an existing hybrid link. Usage beyond VMware Cloud on AWS is not supported.
+# <b>Warning:</b> This  *method*  is available as Technology Preview. These are early access
+# APIs provided to test, automate and provide feedback on the feature. Since this can change
+# based on feedback, VMware does not guarantee backwards compatibility and recommends
+# against using them in production environments. Some Technology Preview APIs might only be
+# applicable to specific environments.
 #
 # @param link [REQUIRED] Identifier of the hybrid link.
 # The value must be an identifier for the resource type
@@ -127,7 +143,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $link = $args {link};
@@ -139,10 +154,13 @@ sub delete {
                          method_args => \%args);
 }
 
-
 ## @method list ()
-# Enumerates the list of registered hybrid links. <b>Warning:</b> This  *method*  is
-# available as technical preview. It may be changed in a future release.
+# Enumerates the list of registered hybrid links. Usage beyond VMware Cloud on AWS is not
+# supported. <b>Warning:</b> This  *method*  is available as Technology Preview. These are
+# early access APIs provided to test, automate and provide feedback on the feature. Since
+# this can change based on feedback, VMware does not guarantee backwards compatibility and
+# recommends against using them in production environments. Some Technology Preview APIs
+# might only be applicable to specific environments.
 #
 # @retval 
 # The  *list*  of hybrid link information.
@@ -151,12 +169,10 @@ sub delete {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 1;
 
@@ -178,8 +194,11 @@ sub list {
 #
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Summary``   *class*  contains information
-#     about the hybrid link. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     about the hybrid link. <b>Warning:</b> This  *class*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Summary;
 
@@ -223,7 +242,11 @@ sub new {
 #
 # @retval link - The current value of the field.
 # Unique identifier for the link. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # ID#
 sub get_link {
@@ -236,7 +259,11 @@ sub get_link {
 # 
 # @param link  - New value for the field.
 # Unique identifier for the link. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_link {
    my ($self, %args) = @_;
@@ -249,8 +276,11 @@ sub set_link {
 #
 # @retval display_name - The current value of the field.
 # The display name is set to the domain name which was set during create.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # String#
 sub get_display_name {
@@ -263,8 +293,11 @@ sub get_display_name {
 # 
 # @param display_name  - New value for the field.
 # The display name is set to the domain name which was set during create.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_display_name {
    my ($self, %args) = @_;
@@ -281,7 +314,11 @@ sub set_display_name {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::CreateSpec``   *class*  is the specification
 #     used for the hybrid link creation. <b>Warning:</b> This  *class*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::CreateSpec;
 
@@ -335,7 +372,11 @@ sub new {
 #
 # @retval psc_hostname - The current value of the field.
 # The PSC hostname for the domain to be linked. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 # String#
 sub get_psc_hostname {
@@ -348,7 +389,11 @@ sub get_psc_hostname {
 # 
 # @param psc_hostname  - New value for the field.
 # The PSC hostname for the domain to be linked. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 sub set_psc_hostname {
    my ($self, %args) = @_;
@@ -361,7 +406,11 @@ sub set_psc_hostname {
 #
 # @retval port - The current value of the field.
 # The HTTPS port of the PSC to be linked. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # Optional#
 sub get_port {
@@ -374,7 +423,11 @@ sub get_port {
 # 
 # @param port  - New value for the field.
 # The HTTPS port of the PSC to be linked. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_port {
    my ($self, %args) = @_;
@@ -387,7 +440,11 @@ sub set_port {
 #
 # @retval domain_name - The current value of the field.
 # The domain to which the PSC belongs. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # String#
 sub get_domain_name {
@@ -400,7 +457,11 @@ sub get_domain_name {
 # 
 # @param domain_name  - New value for the field.
 # The domain to which the PSC belongs. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_domain_name {
    my ($self, %args) = @_;
@@ -413,7 +474,11 @@ sub set_domain_name {
 #
 # @retval username - The current value of the field.
 # The administrator username of the PSC. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # String#
 sub get_username {
@@ -426,7 +491,11 @@ sub get_username {
 # 
 # @param username  - New value for the field.
 # The administrator username of the PSC. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -439,7 +508,11 @@ sub set_username {
 #
 # @retval password - The current value of the field.
 # The administrator password of the PSC. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # Secret#
 sub get_password {
@@ -452,7 +525,11 @@ sub get_password {
 # 
 # @param password  - New value for the field.
 # The administrator password of the PSC. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -465,7 +542,11 @@ sub set_password {
 #
 # @retval ssl_thumbprint - The current value of the field.
 # The ssl thumbprint of the server. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # Optional#
 sub get_ssl_thumbprint {
@@ -478,7 +559,11 @@ sub get_ssl_thumbprint {
 # 
 # @param ssl_thumbprint  - New value for the field.
 # The ssl thumbprint of the server. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;
@@ -491,7 +576,11 @@ sub set_ssl_thumbprint {
 #
 # @retval admin_groups - The current value of the field.
 # List of groups to be added to enable administrator access to. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 # Optional#
 sub get_admin_groups {
@@ -504,7 +593,11 @@ sub get_admin_groups {
 # 
 # @param admin_groups  - New value for the field.
 # List of groups to be added to enable administrator access to. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 sub set_admin_groups {
    my ($self, %args) = @_;
@@ -521,8 +614,11 @@ sub set_admin_groups {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::CertificateInfo``   *class*  contains
 #     information about the SSL certificate for a destination PSC endpoint. <b>Warning:</b>
-#     This  *class*  is available as technical preview. It may be changed in a future
-#     release.
+#     This  *class*  is available as Technology Preview. These are early access APIs
+#     provided to test, automate and provide feedback on the feature. Since this can change
+#     based on feedback, VMware does not guarantee backwards compatibility and recommends
+#     against using them in production environments. Some Technology Preview APIs might only
+#     be applicable to specific environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::CertificateInfo;
 
@@ -564,8 +660,11 @@ sub new {
 #
 # @retval ssl_thumbprint - The current value of the field.
 # The SHA-256 thumbprint of the SSL certificate for the destination PSC endpoint.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # String#
 sub get_ssl_thumbprint {
@@ -578,8 +677,11 @@ sub get_ssl_thumbprint {
 # 
 # @param ssl_thumbprint  - New value for the field.
 # The SHA-256 thumbprint of the SSL certificate for the destination PSC endpoint.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;
@@ -596,7 +698,11 @@ sub set_ssl_thumbprint {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Credentials``   *interface*  specifies user
 #     credentials to make a successful connection to remote endpoint. <b>Warning:</b> This 
-#     *class*  is available as technical preview. It may be changed in a future release.
+#     *class*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Credentials;
 
@@ -640,7 +746,11 @@ sub new {
 #
 # @retval user_name - The current value of the field.
 # Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # String#
 sub get_user_name {
@@ -653,7 +763,11 @@ sub get_user_name {
 # 
 # @param user_name  - New value for the field.
 # Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_user_name {
    my ($self, %args) = @_;
@@ -665,8 +779,11 @@ sub set_user_name {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password for the user. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Password for the user. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # Secret#
 sub get_password {
@@ -678,8 +795,11 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password for the user. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Password for the user. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_password {
    my ($self, %args) = @_;

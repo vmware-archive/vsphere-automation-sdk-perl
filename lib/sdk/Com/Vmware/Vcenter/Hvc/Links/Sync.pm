@@ -12,8 +12,12 @@
 
 ## @class Com::Vmware::Vcenter::Hvc::Links::Sync
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync``   *interface*  provides  *methods*  to
-#     create a sync session, get information on Sync. <b>Warning:</b> This  *interface*  is
-#     available as technical preview. It may be changed in a future release.
+#     create a sync session, get information on Sync. Usage beyond VMware Cloud on AWS is
+#     not supported. <b>Warning:</b> This  *interface*  is available as Technology Preview.
+#     These are early access APIs provided to test, automate and provide feedback on the
+#     feature. Since this can change based on feedback, VMware does not guarantee backwards
+#     compatibility and recommends against using them in production environments. Some
+#     Technology Preview APIs might only be applicable to specific environments.
 #
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync;
@@ -35,6 +39,12 @@ use Com::Vmware::Vcenter::Hvc::Links::SyncStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.hvc.links.sync';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -60,8 +70,12 @@ sub new {
 
 ## @method reset ()
 # Resets the sync state between the linked domains by initiating a fresh sync for all
-# providers. If an existing sync is in progress this cancels the sync. <b>Warning:</b> This 
-# *method*  is available as technical preview. It may be changed in a future release.
+# providers. If an existing sync is in progress this cancels the sync. Usage beyond VMware
+# Cloud on AWS is not supported. <b>Warning:</b> This  *method*  is available as Technology
+# Preview. These are early access APIs provided to test, automate and provide feedback on
+# the feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 #
 # @param link [REQUIRED] Unique identifier of the link.
 # The value must be an identifier for the resource type
@@ -77,7 +91,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user is not authorized to perform this operation.
 #
-
 sub reset {
    my ($self, %args) = @_;
    my $link = $args {link};
@@ -88,7 +101,6 @@ sub reset {
    return $self->invoke (method_name => 'reset',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -111,8 +123,11 @@ sub reset {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Credentials``   *interface*  specifies
 #     user credentials to make a successful connection to remote endpoint. <b>Warning:</b>
-#     This  *class*  is available as technical preview. It may be changed in a future
-#     release.
+#     This  *class*  is available as Technology Preview. These are early access APIs
+#     provided to test, automate and provide feedback on the feature. Since this can change
+#     based on feedback, VMware does not guarantee backwards compatibility and recommends
+#     against using them in production environments. Some Technology Preview APIs might only
+#     be applicable to specific environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Credentials;
 
@@ -156,7 +171,11 @@ sub new {
 #
 # @retval user_name - The current value of the field.
 # Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # String#
 sub get_user_name {
@@ -169,7 +188,11 @@ sub get_user_name {
 # 
 # @param user_name  - New value for the field.
 # Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_user_name {
    my ($self, %args) = @_;
@@ -181,8 +204,11 @@ sub set_user_name {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password for the user. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Password for the user. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # Secret#
 sub get_password {
@@ -194,8 +220,11 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password for the user. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Password for the user. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_password {
    my ($self, %args) = @_;

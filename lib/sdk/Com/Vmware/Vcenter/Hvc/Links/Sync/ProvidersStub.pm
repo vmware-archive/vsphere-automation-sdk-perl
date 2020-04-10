@@ -16,7 +16,7 @@ package Com::Vmware::Vcenter::Hvc::Links::Sync::ProvidersStub;
 ## @class Com::Vmware::Vcenter::Hvc::Links::Sync::Providers
 #
 #The {@name Providers} {@term service} provides {@term operations} to create a sync session,
-#get information on Sync
+#get information on Sync. Usage beyond VMware Cloud on AWS is not supported.
 #
 
 #

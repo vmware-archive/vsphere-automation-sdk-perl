@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::DatacenterStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.datacenter';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -94,7 +100,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -105,7 +110,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Delete an empty datacenter from the vCenter Server
@@ -138,7 +142,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $datacenter = $args {datacenter};
@@ -150,7 +153,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns information about at most 1000 visible (subject to permission checks) datacenters
@@ -180,7 +182,6 @@ sub delete {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -191,7 +192,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieves information about the datacenter corresponding to  ``datacenter`` .
@@ -220,7 +220,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $datacenter = $args {datacenter};
@@ -231,7 +230,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

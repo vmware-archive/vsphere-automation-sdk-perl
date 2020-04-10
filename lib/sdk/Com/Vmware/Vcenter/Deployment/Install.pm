@@ -36,6 +36,12 @@ use Com::Vmware::Vcenter::Deployment::InstallStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.deployment.install';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -72,12 +78,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if appliance is not in INSTALL_PROGRESS state.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method check ()
 # Run sanity checks using the InstallSpec parameters passed. This  *method*  was added in
@@ -104,7 +108,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the appliance is not in INITIALIZED state.
 #
-
 sub check {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -115,7 +118,6 @@ sub check {
    return $self->invoke (method_name => 'check',
                          method_args => \%args);
 }
-
 
 ## @method start ()
 # Start the appliance installation. This  *method*  was added in vSphere API 6.7.
@@ -137,7 +139,6 @@ sub check {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the appliance is not in INITIALIZED state.
 #
-
 sub start {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -148,7 +149,6 @@ sub start {
    return $self->invoke (method_name => 'start',
                          method_args => \%args);
 }
-
 
 ## @method cancel ()
 # Cancel the appliance installation that is in progress. This  *method*  was added in
@@ -161,12 +161,10 @@ sub start {
 # if the appliance is not in CONFIG_IN_PROGRESS state and if the operation is not
 #     INSTALL.
 #
-
 sub cancel {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'cancel', method_args =>  {});
 }
-
 
 1;
 

@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::HealthStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.health';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -76,7 +82,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub messages {
    my ($self, %args) = @_;
    my $item = $args {item};
@@ -87,7 +92,6 @@ sub messages {
    return $self->invoke (method_name => 'messages',
                          method_args => \%args);
 }
-
 
 1;
 

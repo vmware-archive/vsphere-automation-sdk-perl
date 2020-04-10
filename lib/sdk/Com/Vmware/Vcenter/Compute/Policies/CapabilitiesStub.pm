@@ -8,7 +8,6 @@
 #
 #
 
-#use Com::Vmware::Vapi::Std;
 #use Com::Vmware::Vapi::Std::Errors;
 
 package Com::Vmware::Vcenter::Compute::Policies::CapabilitiesStub;
@@ -16,7 +15,8 @@ package Com::Vmware::Vcenter::Compute::Policies::CapabilitiesStub;
 ## @class Com::Vmware::Vcenter::Compute::Policies::Capabilities
 #
 #The {@name Capabilities} {@term service} provides {@term operations} to
-#manage compute policy capabilities.
+#manage compute policy capabilities in VMware Cloud on AWS. Usage beyond
+#VMware Cloud on AWS is not supported.
 #The description of the capability provides information about the intent of a
 #policy based on this capability. A capability provides a type to create a
 #policy (see {@link com.vmware.vcenter.compute.Policies#create}). A

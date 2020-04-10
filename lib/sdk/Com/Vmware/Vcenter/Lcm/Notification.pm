@@ -1,7 +1,9 @@
 ## @class Com::Vmware::Vcenter::Lcm::Notification
 #
 #
-# Notification messages of a single task.
+# The  ``Com::Vmware::Vcenter::Lcm::Notification``   *class*  describes a notification
+#     that can be reported by the appliance task, which can be of type info, warning or
+#     errors.
 
 package Com::Vmware::Vcenter::Lcm::Notification;
 
@@ -48,7 +50,7 @@ sub new {
 # Gets the value of 'id' property.
 #
 # @retval id - The current value of the field.
-# The identifier of the message.
+# The notification id.
 #
 # String#
 sub get_id {
@@ -60,7 +62,7 @@ sub get_id {
 # Sets the given value for 'id' property.
 # 
 # @param id  - New value for the field.
-# The identifier of the message.
+# The notification id.
 #
 sub set_id {
    my ($self, %args) = @_;

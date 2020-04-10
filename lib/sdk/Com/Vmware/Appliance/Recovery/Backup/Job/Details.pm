@@ -38,6 +38,12 @@ use Com::Vmware::Appliance::Recovery::Backup::Job::DetailsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.recovery.backup.job.details';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -81,7 +87,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -92,7 +97,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 1;
 

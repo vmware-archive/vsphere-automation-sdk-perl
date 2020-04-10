@@ -37,12 +37,16 @@ sub new {
    $self->{id} = $args{'id'};
    $self->{default_message} = $args{'default_message'};
    $self->{args} = $args{'args'};
+   $self->{params} = $args{'params'};
+   $self->{localized} = $args{'localized'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vapi::Std::LocalizableMessage');
    $self->set_binding_name('name' => 'com.vmware.vapi.std.localizable_message');
    $self->set_binding_field('key' => 'id', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'default_message', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'args', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'params', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::MapType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StructType('name' => 'map-entry', 'fields' => {'key' => new Com::Vmware::Vapi::Bindings::Type::StringType(), 'value' =>  new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizationParam')})))));
+   $self->set_binding_field('key' => 'localized', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    bless $self, $class;
    return $self;
 }
@@ -134,6 +138,58 @@ sub get_args {
 sub set_args {
    my ($self, %args) = @_;
    $self->{'args'} = $args{'args'}; 
+   return;	
+}
+
+## @method get_params ()
+# Gets the value of 'params' property.
+#
+# @retval params - The current value of the field.
+# Named arguments to be substituted into the message template. This  *field*  was added
+#     in vSphere API 7.0.0.
+#
+# Optional#
+sub get_params {
+   my ($self, %args) = @_;
+   return $self->{'params'}; 	
+}
+
+## @method set_params ()
+# Sets the given value for 'params' property.
+# 
+# @param params  - New value for the field.
+# Named arguments to be substituted into the message template. This  *field*  was added
+#     in vSphere API 7.0.0.
+#
+sub set_params {
+   my ($self, %args) = @_;
+   $self->{'params'} = $args{'params'}; 
+   return;	
+}
+
+## @method get_localized ()
+# Gets the value of 'localized' property.
+#
+# @retval localized - The current value of the field.
+# Localized string value as per request requirements. This  *field*  was added in
+#     vSphere API 7.0.0.
+#
+# Optional#
+sub get_localized {
+   my ($self, %args) = @_;
+   return $self->{'localized'}; 	
+}
+
+## @method set_localized ()
+# Sets the given value for 'localized' property.
+# 
+# @param localized  - New value for the field.
+# Localized string value as per request requirements. This  *field*  was added in
+#     vSphere API 7.0.0.
+#
+sub set_localized {
+   my ($self, %args) = @_;
+   $self->{'localized'} = $args{'localized'}; 
    return;	
 }
 

@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Recovery::BackupStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.recovery.backup';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -73,7 +79,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub validate {
    my ($self, %args) = @_;
    my $piece = $args {piece};
@@ -84,7 +89,6 @@ sub validate {
    return $self->invoke (method_name => 'validate',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -36,6 +36,12 @@ use Com::Vmware::Vcenter::Certificate_management::Vcenter::TlsCsrStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.certificate_management.vcenter.tls_csr';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -80,7 +86,6 @@ sub new {
 #     ``CertificateManagement.Administer`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -91,7 +96,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 1;
 

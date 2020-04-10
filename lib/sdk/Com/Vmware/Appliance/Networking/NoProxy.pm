@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Networking::NoProxyStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.no_proxy';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -72,7 +78,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub set {
    my ($self, %args) = @_;
    my $servers = $args {servers};
@@ -83,7 +88,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns servers for which no proxy configuration will be applied. This  *method*  was
@@ -96,12 +100,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

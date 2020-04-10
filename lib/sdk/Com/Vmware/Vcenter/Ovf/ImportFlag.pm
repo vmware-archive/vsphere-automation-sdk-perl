@@ -39,6 +39,12 @@ use Com::Vmware::Vcenter::Ovf::ImportFlagStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.ovf.import_flag';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -94,7 +100,6 @@ sub new {
 #      ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $rp = $args {rp};
@@ -105,7 +110,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 1;
 

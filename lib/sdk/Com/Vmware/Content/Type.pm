@@ -57,6 +57,12 @@ use Com::Vmware::Content::TypeStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.type';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -95,12 +101,10 @@ sub new {
 #  <li>  *Method*  execution requires  ``ContentLibrary.TypeIntrospection`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 1;
 

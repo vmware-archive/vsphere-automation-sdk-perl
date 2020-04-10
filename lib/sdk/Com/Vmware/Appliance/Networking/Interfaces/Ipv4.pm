@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Networking::Interfaces::Ipv4Stub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.interfaces.ipv4';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -82,7 +88,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub set {
    my ($self, %args) = @_;
    my $interface_name = $args {interface_name};
@@ -94,7 +99,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Get IPv4 network configuration for specific NIC. This  *method*  was added in vSphere API
@@ -115,7 +119,6 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $interface_name = $args {interface_name};
@@ -126,7 +129,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

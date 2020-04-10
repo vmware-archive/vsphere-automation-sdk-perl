@@ -15,7 +15,8 @@ package Com::Vmware::Vcenter::Compute::PoliciesStub;
 ## @class Com::Vmware::Vcenter::Compute::Policies
 #
 #The {@name Policies} {@term service} provides {@term operations} to manage
-#compute policies.
+#compute policies in VMware Cloud on AWS. Usage beyond VMware Cloud on AWS is
+#not supported.
 #A compute policy defines the intended behavior for a collection of vSphere
 #objects identified by a tag. A compute policy is an instance of a capability.
 #It is created by providing a value for the creation type specified by the

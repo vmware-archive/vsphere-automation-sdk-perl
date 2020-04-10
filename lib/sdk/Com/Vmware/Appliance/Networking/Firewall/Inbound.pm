@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Networking::Firewall::InboundStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.firewall.inbound';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -83,7 +89,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $rules = $args {rules};
@@ -94,7 +99,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Get the ordered list of firewall rules. Within the list of traffic rules, rules are
@@ -110,12 +114,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

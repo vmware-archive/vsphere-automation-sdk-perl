@@ -39,6 +39,17 @@ use Com::Vmware::Vcenter::Vcha::Cluster::PassiveStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vcha.cluster.passive';
+
+#
+# Identifiers of the task operations
+#
+our $_VAPI_OPERATION_IDS = ();
+$_VAPI_OPERATION_IDS->{'redeploy_task'} = 'redeploy$task';
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -101,7 +112,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
 sub check {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -113,8 +123,7 @@ sub check {
                          method_args => \%args);
 }
 
-
-## @method redeploy ()
+## @method redeploy_task ()
 # Creates the passive node in a degraded cluster with node location information and
 # pre-existing VCHA cluster configuration from the active node. This  *method*  was added in
 # vSphere API 6.7.1.
@@ -139,15 +148,14 @@ sub check {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
-sub redeploy {
+sub redeploy_task {
    my ($self, %args) = @_;
    my $spec = $args {spec};
 
-   $self->validate_args (method_name => 'redeploy',
+   $self->validate_args (method_name => 'redeploy$task',
                          method_args => \%args);
-   
-   return $self->invoke (method_name => 'redeploy',
+
+   return $self->invoke (method_name => 'redeploy$task',
                          method_args => \%args);
 }
 

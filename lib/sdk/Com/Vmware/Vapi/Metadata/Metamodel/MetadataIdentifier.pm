@@ -82,6 +82,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::MetadataIdentifierStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.metadata_identifier';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #

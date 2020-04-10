@@ -16,7 +16,8 @@ package Com::Vmware::Vcenter::Hvc::LinksStub;
 #
 #The {@name Links} {@term service} provides {@term operations} to create,
 #delete, get information, and list hybrid links between the local and foreign
-#Platform Service Controller (PSC).
+#Platform Service Controller (PSC). Usage beyond VMware Cloud on AWS is not
+#supported.
 #
 
 #

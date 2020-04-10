@@ -33,6 +33,7 @@ sub new {
 
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
    $self->{management_vcenter_name} = $args{'management_vcenter_name'};
+   $self->{management_vcenter_server_guid} = $args{'management_vcenter_server_guid'};
    $self->{vm_name} = $args{'vm_name'};
    $self->{datacenter} = $args{'datacenter'};
    $self->{datacenter_name} = $args{'datacenter_name'};
@@ -52,6 +53,7 @@ sub new {
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Vcha::PlacementInfo');
    $self->set_binding_name('name' => 'com.vmware.vcenter.vcha.placement_info');
    $self->set_binding_field('key' => 'management_vcenter_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'management_vcenter_server_guid', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'vm_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'datacenter', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'datacenter_name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
@@ -94,6 +96,32 @@ sub get_management_vcenter_name {
 sub set_management_vcenter_name {
    my ($self, %args) = @_;
    $self->{'management_vcenter_name'} = $args{'management_vcenter_name'}; 
+   return;	
+}
+
+## @method get_management_vcenter_server_guid ()
+# Gets the value of 'management_vcenter_server_guid' property.
+#
+# @retval management_vcenter_server_guid - The current value of the field.
+# The unique identifier of the vCenter server that is managing the VCHA node. This 
+#     *field*  was added in vSphere API 7.0.0.1.
+#
+# optional#
+sub get_management_vcenter_server_guid {
+   my ($self, %args) = @_;
+   return $self->{'management_vcenter_server_guid'}; 	
+}
+
+## @method set_management_vcenter_server_guid ()
+# Sets the given value for 'management_vcenter_server_guid' property.
+# 
+# @param management_vcenter_server_guid  - New value for the field.
+# The unique identifier of the vCenter server that is managing the VCHA node. This 
+#     *field*  was added in vSphere API 7.0.0.1.
+#
+sub set_management_vcenter_server_guid {
+   my ($self, %args) = @_;
+   $self->{'management_vcenter_server_guid'} = $args{'management_vcenter_server_guid'}; 
    return;	
 }
 

@@ -36,6 +36,12 @@ use Com::Vmware::Vcenter::Vm::Storage::PolicyStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.storage.policy';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -91,7 +97,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
 # if the virtual machine or disk&apos;s configuration state cannot be accessed.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -103,7 +108,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns Information about Storage Policy associated with a virtual machine&apos;s home
@@ -134,7 +138,6 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user does not have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -145,7 +148,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

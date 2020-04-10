@@ -39,6 +39,12 @@ use Com::Vmware::Vcenter::DeploymentStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.deployment';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -75,12 +81,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if appliance state cannot be determined.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method rollback ()
 # Rollback a failed appliance so it can be configured once again. This  *method*  was added
@@ -92,12 +96,10 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
 #
-
 sub rollback {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'rollback', method_args =>  {});
 }
-
 
 1;
 

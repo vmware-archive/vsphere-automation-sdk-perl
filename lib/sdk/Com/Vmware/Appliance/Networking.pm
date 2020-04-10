@@ -37,6 +37,17 @@ use Com::Vmware::Appliance::NetworkingStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking';
+
+#
+# Identifiers of the task operations
+#
+our $_VAPI_OPERATION_IDS = ();
+$_VAPI_OPERATION_IDS->{'change_task'} = 'change$task';
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -70,12 +81,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method update ()
 # Enable or Disable ipv6 on all interfaces. This  *method*  was added in vSphere API 6.7.
@@ -86,7 +95,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -98,7 +106,6 @@ sub update {
                          method_args => \%args);
 }
 
-
 ## @method reset ()
 # Reset and restarts network configuration on all interfaces, also this will renew the DHCP
 # lease for DHCP IP address. This  *method*  was added in vSphere API 6.7.
@@ -106,14 +113,12 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub reset {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'reset', method_args =>  {});
 }
 
-
-## @method change ()
+## @method change_task ()
 # Changes the Hostname/IP of the management network of vCenter appliance. The Hostname/IP
 # change invokes the PNID change process which involves LDAP entry modification, updating
 # registry entries, configuration files modification and network configuration changes.
@@ -135,15 +140,14 @@ sub reset {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if another change task is in progress
 #
-
-sub change {
+sub change_task {
    my ($self, %args) = @_;
    my $spec = $args {spec};
 
-   $self->validate_args (method_name => 'change',
+   $self->validate_args (method_name => 'change$task',
                          method_args => \%args);
-   
-   return $self->invoke (method_name => 'change',
+
+   return $self->invoke (method_name => 'change$task',
                          method_args => \%args);
 }
 

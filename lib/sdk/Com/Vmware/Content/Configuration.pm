@@ -38,6 +38,12 @@ use Com::Vmware::Content::ConfigurationStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.configuration';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -81,7 +87,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``ContentLibrary.UpdateConfiguration`` . </li>
 # </ul>
 #
-
 sub update {
    my ($self, %args) = @_;
    my $model = $args {model};
@@ -92,7 +97,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieves the current configuration values.
@@ -109,12 +113,10 @@ sub update {
 #  <li>  *Method*  execution requires  ``ContentLibrary.GetConfiguration`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

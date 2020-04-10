@@ -16,7 +16,8 @@ package Com::Vmware::Vcenter::Hvc::Management::AdministratorsStub;
 #
 #The {@name Administrators} provides {@term operations} to update,
 #delete, and list groups in the local sso group.
-#This is limited to the Hybrid Linked Mode service.
+#This is limited to the Hybrid Linked Mode service. Usage beyond VMware Cloud
+#on AWS is not supported.
 #
 
 #

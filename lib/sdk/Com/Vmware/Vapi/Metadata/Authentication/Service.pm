@@ -43,6 +43,12 @@ use Com::Vmware::Vapi::Metadata::Authentication::ServiceStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.authentication.service';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -74,12 +80,10 @@ sub new {
 #     getQualifiedName(com.vmware.vapi.service).
 # The return type will be Array of str
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Retrieves authentication information about the service element corresponding to 
@@ -99,7 +103,6 @@ sub list {
 # if the service element associated with  ``service_id``  does not have any
 #     authentication information.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $service_id = $args {service_id};
@@ -110,7 +113,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

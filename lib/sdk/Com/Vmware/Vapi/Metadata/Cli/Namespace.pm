@@ -35,6 +35,12 @@ use Com::Vmware::Vapi::Metadata::Cli::NamespaceStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.cli.namespace';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -64,12 +70,10 @@ sub new {
 # Identifiers of all the namespaces.
 # The return type will be Array of Com::Vmware::Vapi::Metadata::Cli::Namespace::Identity
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Retreives information about a namespace including information about children of that
@@ -85,7 +89,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if a namespace corresponding to  ``identity``  doesn&apos;t exist.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $identity = $args {identity};
@@ -96,7 +99,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method fingerprint ()
 # Returns the aggregate fingerprint of all the namespace metadata from all the metadata
@@ -109,12 +111,10 @@ sub get {
 # Fingerprint of all the namespace metadata present on the server.
 # The return type will be String
 #
-
 sub fingerprint {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'fingerprint', method_args =>  {});
 }
-
 
 1;
 

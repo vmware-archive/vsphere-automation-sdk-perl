@@ -41,6 +41,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::ResourceStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.resource';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -73,12 +79,10 @@ sub new {
 #     getQualifiedName(com.vmware.vapi.resource).
 # The return type will be Set of str
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 1;
 

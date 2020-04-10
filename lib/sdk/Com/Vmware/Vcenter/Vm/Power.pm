@@ -35,6 +35,12 @@ use Com::Vmware::Vcenter::Vm::PowerStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.power';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -59,6 +65,9 @@ sub new {
 
 ## @method get ()
 # Returns the power state information of a virtual machine.
+#
+# Note:
+# Privileges required for this operation are System.Read.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -86,8 +95,12 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``System.Read`` . </li>
+# </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -99,9 +112,11 @@ sub get {
                          method_args => \%args);
 }
 
-
 ## @method start ()
 # Powers on a powered-off or suspended virtual machine.
+#
+# Note:
+# Privileges required for this operation are VirtualMachine.Interact.PowerOn.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -147,8 +162,12 @@ sub get {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``VirtualMachine.Interact.PowerOn`` . </li>
+# </ul>
 #
-
 sub start {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -160,9 +179,11 @@ sub start {
                          method_args => \%args);
 }
 
-
 ## @method stop ()
 # Powers off a powered-on or suspended virtual machine.
+#
+# Note:
+# Privileges required for this operation are VirtualMachine.Interact.PowerOff.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -189,8 +210,12 @@ sub start {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``VirtualMachine.Interact.PowerOff`` . </li>
+# </ul>
 #
-
 sub stop {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -202,9 +227,11 @@ sub stop {
                          method_args => \%args);
 }
 
-
 ## @method suspend ()
 # Suspends a powered-on virtual machine.
+#
+# Note:
+# Privileges required for this operation are VirtualMachine.Interact.Suspend.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -234,8 +261,12 @@ sub stop {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``VirtualMachine.Interact.Suspend`` . </li>
+# </ul>
 #
-
 sub suspend {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -247,9 +278,11 @@ sub suspend {
                          method_args => \%args);
 }
 
-
 ## @method reset ()
 # Resets a powered-on virtual machine.
+#
+# Note:
+# Privileges required for this operation are VirtualMachine.Interact.Reset.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -276,8 +309,12 @@ sub suspend {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``VirtualMachine.Interact.Reset`` . </li>
+# </ul>
 #
-
 sub reset {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -288,7 +325,6 @@ sub reset {
    return $self->invoke (method_name => 'reset',
                          method_args => \%args);
 }
-
 
 1;
 

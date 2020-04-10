@@ -35,6 +35,12 @@ use Com::Vmware::Content::Library::SubscribedItemStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.subscribed_item';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -100,7 +106,6 @@ sub new {
 #       ``library_item_id``  requires  ``ContentLibrary.EvictLibraryItem`` . </li>
 # </ul>
 #
-
 sub evict {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -111,7 +116,6 @@ sub evict {
    return $self->invoke (method_name => 'evict',
                          method_args => \%args);
 }
-
 
 ## @method sync ()
 # Forces the synchronization of an individual library item in a subscribed library. <p>
@@ -174,7 +178,6 @@ sub evict {
 #       ``library_item_id``  requires  ``ContentLibrary.SyncLibraryItem`` . </li>
 # </ul>
 #
-
 sub sync {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -186,7 +189,6 @@ sub sync {
    return $self->invoke (method_name => 'sync',
                          method_args => \%args);
 }
-
 
 1;
 

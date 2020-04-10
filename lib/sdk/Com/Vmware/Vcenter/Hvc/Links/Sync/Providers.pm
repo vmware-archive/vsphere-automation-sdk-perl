@@ -13,13 +13,22 @@
 
 ## @class Com::Vmware::Vcenter::Hvc::Links::Sync::Providers
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers``   *interface*  provides 
-#     *methods*  to create a sync session, get information on Sync. <b>Warning:</b> This 
-#     *interface*  is available as technical preview. It may be changed in a future release.
+#     *methods*  to create a sync session, get information on Sync. Usage beyond VMware
+#     Cloud on AWS is not supported. <b>Warning:</b> This  *interface*  is available as
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 #
 # Constant String::RESOURCE_TYPE #
 #Resource type for Sync Providers. <b>Warning:</b> This  *constant*  is available as
-# technical preview. It may be changed in a future release.
+# Technology Preview. These are early access APIs provided to test, automate and provide
+# feedback on the feature. Since this can change based on feedback, VMware does not
+# guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers;
 
@@ -40,6 +49,12 @@ use Com::Vmware::Vcenter::Hvc::Links::Sync::ProvidersStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.hvc.links.sync.providers';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -64,8 +79,12 @@ sub new {
 }
 
 ## @method list ()
-# Enumerates the sync providers. <b>Warning:</b> This  *method*  is available as technical
-# preview. It may be changed in a future release.
+# Enumerates the sync providers. Usage beyond VMware Cloud on AWS is not supported.
+# <b>Warning:</b> This  *method*  is available as Technology Preview. These are early access
+# APIs provided to test, automate and provide feedback on the feature. Since this can change
+# based on feedback, VMware does not guarantee backwards compatibility and recommends
+# against using them in production environments. Some Technology Preview APIs might only be
+# applicable to specific environments.
 #
 # @param link [REQUIRED] Unique identifier of the link
 # The value must be an identifier for the resource type
@@ -83,7 +102,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # If the user is not authorized to perform this operation.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $link = $args {link};
@@ -95,10 +113,13 @@ sub list {
                          method_args => \%args);
 }
 
-
 ## @method get ()
-# Gets Sync information for a sync provider. <b>Warning:</b> This  *method*  is available as
-# technical preview. It may be changed in a future release.
+# Gets Sync information for a sync provider. Usage beyond VMware Cloud on AWS is not
+# supported. <b>Warning:</b> This  *method*  is available as Technology Preview. These are
+# early access APIs provided to test, automate and provide feedback on the feature. Since
+# this can change based on feedback, VMware does not guarantee backwards compatibility and
+# recommends against using them in production environments. Some Technology Preview APIs
+# might only be applicable to specific environments.
 #
 # @param link [REQUIRED] Unique identifier of the link
 # The value must be an identifier for the resource type
@@ -123,7 +144,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user is not authorized to perform this operation.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $link = $args {link};
@@ -136,11 +156,14 @@ sub get {
                          method_args => \%args);
 }
 
-
 ## @method start ()
 # Initiates synchronization between the local and remote replicas for the sync provider.
-# <b>Warning:</b> This  *method*  is available as technical preview. It may be changed in a
-# future release.
+# Usage beyond VMware Cloud on AWS is not supported. <b>Warning:</b> This  *method*  is
+# available as Technology Preview. These are early access APIs provided to test, automate
+# and provide feedback on the feature. Since this can change based on feedback, VMware does
+# not guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 #
 # @param link [REQUIRED] Unique identifier of the link
 # The value must be an identifier for the resource type
@@ -165,7 +188,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceBusy 
 # if a sync is already running.
 #
-
 sub start {
    my ($self, %args) = @_;
    my $link = $args {link};
@@ -178,7 +200,6 @@ sub start {
                          method_args => \%args);
 }
 
-
 1;
 
 #########################################################################################
@@ -189,21 +210,35 @@ sub start {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Status``   *enumerated type*
 #     defines valid sync status. <b>Warning:</b> This  *enumeration*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Status::SUCCEEDED #
-#If Sync was successful. <b>Warning:</b> This  *constant*  is available as technical
-# preview. It may be changed in a future release.
+#If Sync was successful. <b>Warning:</b> This  *constant*  is available as Technology
+# Preview. These are early access APIs provided to test, automate and provide feedback on
+# the feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Status::FAILED #
-#If Sync failed. <b>Warning:</b> This  *constant*  is available as technical preview. It
-# may be changed in a future release.
+#If Sync failed. <b>Warning:</b> This  *constant*  is available as Technology Preview.
+# These are early access APIs provided to test, automate and provide feedback on the
+# feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Status::NO_SYNC_FOUND #
 #If Sync has not been triggered. <b>Warning:</b> This  *constant*  is available as
-# technical preview. It may be changed in a future release.
+# Technology Preview. These are early access APIs provided to test, automate and provide
+# feedback on the feature. Since this can change based on feedback, VMware does not
+# guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Status;
 
@@ -253,7 +288,11 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Info``   *class*  contains
 #     information about sync for a provider. <b>Warning:</b> This  *class*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Info;
 
@@ -313,7 +352,11 @@ sub new {
 # @retval last_sync_time - The current value of the field.
 # Last sync time for the provider. This indicates the last time that either a background
 #     sync or a force sync was started for the provider. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 # Optional#
 sub get_last_sync_time {
@@ -327,7 +370,11 @@ sub get_last_sync_time {
 # @param last_sync_time  - New value for the field.
 # Last sync time for the provider. This indicates the last time that either a background
 #     sync or a force sync was started for the provider. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 sub set_last_sync_time {
    my ($self, %args) = @_;
@@ -340,7 +387,11 @@ sub set_last_sync_time {
 #
 # @retval status - The current value of the field.
 # Last Sync status for the provider. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # Status#
 sub get_status {
@@ -353,7 +404,11 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # Last Sync status for the provider. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_status {
    my ($self, %args) = @_;
@@ -366,8 +421,11 @@ sub set_status {
 #
 # @retval polling_interval_in_seconds - The current value of the field.
 # Sync Polling interval between local and remote replicas for the provider.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # long#
 sub get_polling_interval_in_seconds {
@@ -380,8 +438,11 @@ sub get_polling_interval_in_seconds {
 # 
 # @param polling_interval_in_seconds  - New value for the field.
 # Sync Polling interval between local and remote replicas for the provider.
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_polling_interval_in_seconds {
    my ($self, %args) = @_;
@@ -394,7 +455,11 @@ sub set_polling_interval_in_seconds {
 #
 # @retval current_session_info - The current value of the field.
 # Returns information on the forced sync for the provider. <b>Warning:</b> This  *field*
-#      is available as technical preview. It may be changed in a future release.
+#     is available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 # Optional#
 sub get_current_session_info {
@@ -407,7 +472,11 @@ sub get_current_session_info {
 # 
 # @param current_session_info  - New value for the field.
 # Returns information on the forced sync for the provider. <b>Warning:</b> This  *field*
-#      is available as technical preview. It may be changed in a future release.
+#     is available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 sub set_current_session_info {
    my ($self, %args) = @_;
@@ -420,7 +489,11 @@ sub set_current_session_info {
 #
 # @retval status_message - The current value of the field.
 # Localizable messages associated with sync status. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 # optional#
 sub get_status_message {
@@ -433,7 +506,11 @@ sub get_status_message {
 # 
 # @param status_message  - New value for the field.
 # Localizable messages associated with sync status. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 sub set_status_message {
    my ($self, %args) = @_;
@@ -450,7 +527,11 @@ sub set_status_message {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo``   *class* 
 #     contains sync session information. <b>Warning:</b> This  *class*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo;
 
@@ -513,8 +594,11 @@ sub new {
 # Gets the value of 'stage' property.
 #
 # @retval stage - The current value of the field.
-# Sync stage for the session. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Sync stage for the session. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # Stage#
 sub get_stage {
@@ -526,8 +610,11 @@ sub get_stage {
 # Sets the given value for 'stage' property.
 # 
 # @param stage  - New value for the field.
-# Sync stage for the session. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Sync stage for the session. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_stage {
    my ($self, %args) = @_;
@@ -540,7 +627,11 @@ sub set_stage {
 #
 # @retval completed_work - The current value of the field.
 # Completed work for the session. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # long#
 sub get_completed_work {
@@ -553,7 +644,11 @@ sub get_completed_work {
 # 
 # @param completed_work  - New value for the field.
 # Completed work for the session. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_completed_work {
    my ($self, %args) = @_;
@@ -565,8 +660,11 @@ sub set_completed_work {
 # Gets the value of 'total_work' property.
 #
 # @retval total_work - The current value of the field.
-# Total work for the session. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Total work for the session. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # long#
 sub get_total_work {
@@ -578,8 +676,11 @@ sub get_total_work {
 # Sets the given value for 'total_work' property.
 # 
 # @param total_work  - New value for the field.
-# Total work for the session. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Total work for the session. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_total_work {
    my ($self, %args) = @_;
@@ -592,7 +693,11 @@ sub set_total_work {
 #
 # @retval completion_time - The current value of the field.
 # Time at which forced sync session was completed. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 # optional#
 sub get_completion_time {
@@ -605,7 +710,11 @@ sub get_completion_time {
 # 
 # @param completion_time  - New value for the field.
 # Time at which forced sync session was completed. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 sub set_completion_time {
    my ($self, %args) = @_;
@@ -618,7 +727,11 @@ sub set_completion_time {
 #
 # @retval start_time - The current value of the field.
 # Time at which force sync was initiated. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # DateTime#
 sub get_start_time {
@@ -631,7 +744,11 @@ sub get_start_time {
 # 
 # @param start_time  - New value for the field.
 # Time at which force sync was initiated. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_start_time {
    my ($self, %args) = @_;
@@ -644,7 +761,11 @@ sub set_start_time {
 #
 # @retval exception - The current value of the field.
 # Exception message if there is a sync failure on forced sync. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 # optional#
 sub get_exception {
@@ -657,7 +778,11 @@ sub get_exception {
 # 
 # @param exception  - New value for the field.
 # Exception message if there is a sync failure on forced sync. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 sub set_exception {
    my ($self, %args) = @_;
@@ -673,33 +798,59 @@ sub set_exception {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage``  
 #     *class*  defines the different stages of Sync. <b>Warning:</b> This  *enumeration*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage::CHANGE_DETECTION #
 #Changes are being detected on the source replica. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
+# available as Technology Preview. These are early access APIs provided to test, automate
+# and provide feedback on the feature. Since this can change based on feedback, VMware does
+# not guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage::CHANGE_ENUMERATION #
 #Changes from the source replica are being enumerated. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
+# available as Technology Preview. These are early access APIs provided to test, automate
+# and provide feedback on the feature. Since this can change based on feedback, VMware does
+# not guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage::CHANGE_APPLICATION #
 #Changes are being applied to the destination replica. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
+# available as Technology Preview. These are early access APIs provided to test, automate
+# and provide feedback on the feature. Since this can change based on feedback, VMware does
+# not guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage::COMPLETED #
-#Sync has completed. <b>Warning:</b> This  *constant*  is available as technical preview.
-# It may be changed in a future release.
+#Sync has completed. <b>Warning:</b> This  *constant*  is available as Technology Preview.
+# These are early access APIs provided to test, automate and provide feedback on the
+# feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage::FAILED #
-#Sync failed. <b>Warning:</b> This  *constant*  is available as technical preview. It may
-# be changed in a future release.
+#Sync failed. <b>Warning:</b> This  *constant*  is available as Technology Preview. These
+# are early access APIs provided to test, automate and provide feedback on the feature.
+# Since this can change based on feedback, VMware does not guarantee backwards compatibility
+# and recommends against using them in production environments. Some Technology Preview APIs
+# might only be applicable to specific environments.
 #
 # Constant Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage::WAITING #
 #Session is waiting for progress to be set. <b>Warning:</b> This  *constant*  is available
-# as technical preview. It may be changed in a future release.
+# as Technology Preview. These are early access APIs provided to test, automate and provide
+# feedback on the feature. Since this can change based on feedback, VMware does not
+# guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::SessionInfo::Stage;
 
@@ -744,7 +895,11 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Summary``   *class* 
 #     contains information about a provider. <b>Warning:</b> This  *class*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Summary;
 
@@ -785,8 +940,11 @@ sub new {
 # Gets the value of 'provider' property.
 #
 # @retval provider - The current value of the field.
-# Sync provider id. <b>Warning:</b> This  *field*  is available as technical preview. It
-#     may be changed in a future release.
+# Sync provider id. <b>Warning:</b> This  *field*  is available as Technology Preview.
+#     These are early access APIs provided to test, automate and provide feedback on the
+#     feature. Since this can change based on feedback, VMware does not guarantee backwards
+#     compatibility and recommends against using them in production environments. Some
+#     Technology Preview APIs might only be applicable to specific environments.
 #
 # ID#
 sub get_provider {
@@ -798,8 +956,11 @@ sub get_provider {
 # Sets the given value for 'provider' property.
 # 
 # @param provider  - New value for the field.
-# Sync provider id. <b>Warning:</b> This  *field*  is available as technical preview. It
-#     may be changed in a future release.
+# Sync provider id. <b>Warning:</b> This  *field*  is available as Technology Preview.
+#     These are early access APIs provided to test, automate and provide feedback on the
+#     feature. Since this can change based on feedback, VMware does not guarantee backwards
+#     compatibility and recommends against using them in production environments. Some
+#     Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_provider {
    my ($self, %args) = @_;
@@ -816,8 +977,11 @@ sub set_provider {
 #
 # The  ``Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Credentials``   *interface* 
 #     specifies user credentials to make a successful connection to remote endpoint.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *class*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 
 package Com::Vmware::Vcenter::Hvc::Links::Sync::Providers::Credentials;
 
@@ -861,7 +1025,11 @@ sub new {
 #
 # @retval user_name - The current value of the field.
 # Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 # String#
 sub get_user_name {
@@ -874,7 +1042,11 @@ sub get_user_name {
 # 
 # @param user_name  - New value for the field.
 # Name of the user to authenticate. <b>Warning:</b> This  *field*  is available as
-#     technical preview. It may be changed in a future release.
+#     Technology Preview. These are early access APIs provided to test, automate and provide
+#     feedback on the feature. Since this can change based on feedback, VMware does not
+#     guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 #
 sub set_user_name {
    my ($self, %args) = @_;
@@ -886,8 +1058,11 @@ sub set_user_name {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# Password for the user. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Password for the user. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # Secret#
 sub get_password {
@@ -899,8 +1074,11 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# Password for the user. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Password for the user. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_password {
    my ($self, %args) = @_;

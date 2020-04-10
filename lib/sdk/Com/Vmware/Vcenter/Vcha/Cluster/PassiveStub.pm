@@ -126,9 +126,9 @@ sub new
                 'input_validator_list'=> $check_input_validator_list,
                 'output_validator_list'=> $check_output_validator_list,
             },
-      'redeploy' => {
+      'redeploy$task' => {
                 'input_type'=> $redeploy_input_type,
-                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
                 'errors'=> $redeploy_error_dict,
                 'input_validator_list'=> $redeploy_input_validator_list,
                 'output_validator_list'=> $redeploy_output_validator_list,

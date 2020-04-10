@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Local_accounts::PolicyStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.local_accounts.policy';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -68,12 +74,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method set ()
 # Set the global password policy. This  *method*  was added in vSphere API 6.7.
@@ -87,7 +91,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $policy = $args {policy};
@@ -98,7 +101,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::NtpStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.ntp';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -72,7 +78,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub test {
    my ($self, %args) = @_;
    my $servers = $args {servers};
@@ -83,7 +88,6 @@ sub test {
    return $self->invoke (method_name => 'test',
                          method_args => \%args);
 }
-
 
 ## @method set ()
 # Set NTP servers. This method updates old NTP servers from configuration and sets the input
@@ -98,7 +102,6 @@ sub test {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $servers = $args {servers};
@@ -109,7 +112,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Get the NTP configuration status. If you run the &apos;timesync.get&apos; command, you can
@@ -125,12 +127,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Networking::InterfacesStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.interfaces';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -69,12 +75,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Get information about a particular network interface.
@@ -94,7 +98,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    my $interface_name = $args {interface_name};
@@ -105,7 +108,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Vm::Hardware::FloppyStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.hardware.floppy';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -91,7 +97,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -102,7 +107,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about a virtual floppy drive.
@@ -139,7 +143,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -151,7 +154,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method create ()
 # Adds a virtual floppy drive to the virtual machine.
@@ -200,7 +202,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -212,7 +213,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the configuration of a virtual floppy drive.
@@ -256,7 +256,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -269,7 +268,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Removes a virtual floppy drive from the virtual machine.
@@ -308,7 +306,6 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -320,7 +317,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method connect ()
 # Connects a virtual floppy drive of a powered-on virtual machine to its backing. Connecting
@@ -369,7 +365,6 @@ sub delete {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub connect {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -381,7 +376,6 @@ sub connect {
    return $self->invoke (method_name => 'connect',
                          method_args => \%args);
 }
-
 
 ## @method disconnect ()
 # Disconnects a virtual floppy drive of a powered-on virtual machine from its backing. The
@@ -431,7 +425,6 @@ sub connect {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub disconnect {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -443,7 +436,6 @@ sub disconnect {
    return $self->invoke (method_name => 'disconnect',
                          method_args => \%args);
 }
-
 
 1;
 

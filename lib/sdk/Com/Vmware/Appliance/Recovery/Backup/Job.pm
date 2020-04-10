@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Recovery::Backup::JobStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.recovery.backup.job';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -75,7 +81,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub cancel {
    my ($self, %args) = @_;
    my $id = $args {id};
@@ -86,7 +91,6 @@ sub cancel {
    return $self->invoke (method_name => 'cancel',
                          method_args => \%args);
 }
-
 
 ## @method create ()
 # Initiate backup.
@@ -104,7 +108,6 @@ sub cancel {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $piece = $args {piece};
@@ -115,7 +118,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Get list of backup jobs
@@ -129,12 +131,10 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # See backup job progress/result.
@@ -154,7 +154,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $id = $args {id};
@@ -165,7 +164,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

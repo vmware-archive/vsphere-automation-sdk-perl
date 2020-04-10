@@ -42,6 +42,18 @@ use Com::Vmware::Vcenter::VMStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.VM';
+
+#
+# Identifiers of the task operations
+#
+our $_VAPI_OPERATION_IDS = ();
+$_VAPI_OPERATION_IDS->{'clone_task'} = 'clone$task';
+$_VAPI_OPERATION_IDS->{'relocate_task'} = 'relocate$task';
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -95,8 +107,8 @@ sub new {
 # if a specified resource (eg. host) is not accessible.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ResourceInUse 
-# if any of the specified storage addresses (eg. IDE, SATA, SCSI) result in a storage
-#     address conflict.
+# if any of the specified storage addresses (eg. IDE, SATA, SCSI, NVMe) result in a
+#     storage address conflict.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
 # if the system is unable to communicate with a service to complete the request.
@@ -129,7 +141,6 @@ sub new {
 #     ``Network.Assign`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -141,6 +152,279 @@ sub create {
                          method_args => \%args);
 }
 
+## @method clone_task ()
+# Creates a virtual machine from an existing virtual machine. <p>
+# 
+# </p>
+# 
+# . This  *method*  was added in vSphere API 7.0.0.
+#
+# Note:
+# Privileges required for this operation are Datastore.AllocateSpace, VirtualMachine.Inventory.CreateFromExisting, Resource.AssignVMToPool, VirtualMachine.Provisioning.Clone.
+#
+# @param spec [REQUIRED] Virtual machine clone specification.
+# . The value must be Com::Vmware::Vcenter::VM::CloneSpec.
+#
+# @retval 
+# ID of newly-created virtual machine.
+# The value will be an identifier for the resource type
+#     getQualifiedName(VirtualMachine).
+# The return type will be string
+#
+# @throw Com::Vmware::Vapi::Std::Errors::AlreadyExists 
+# if a virtual machine with the specified name already exists.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# if the system reports an error while responding to the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if any of the specified parameters are invalid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if any of the resources specified in  *spec*  could not be found
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
+# if a specified resource (eg. host) is not accessible.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::UnableToAllocateResource 
+# if any of the resources needed to clone the virtual machine could not be allocated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``Datastore``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::DiskCloneSpec.datastore`  requires 
+#     ``Datastore.AllocateSpace`` . </li>
+# <li> The resource  ``Datastore``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::ClonePlacementSpec.datastore`  requires 
+#     ``Datastore.AllocateSpace`` . </li>
+# <li> The resource  ``Folder``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::ClonePlacementSpec.folder`  requires 
+#     ``VirtualMachine.Inventory.CreateFromExisting`` . </li>
+# <li> The resource  ``ResourcePool``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::ClonePlacementSpec.resource_pool`  requires 
+#     ``Resource.AssignVMToPool`` . </li>
+# <li> The resource  ``VirtualMachine``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::CloneSpec.source`  requires 
+#     ``VirtualMachine.Provisioning.Clone`` . </li>
+# </ul>
+#
+sub clone_task {
+   my ($self, %args) = @_;
+   my $spec = $args {spec};
+
+   $self->validate_args (method_name => 'clone$task',
+                         method_args => \%args);
+
+   return $self->invoke (method_name => 'clone$task',
+                         method_args => \%args);
+}
+
+## @method clone ()
+# Creates a virtual machine from an existing virtual machine. <p>
+# 
+# </p>
+# 
+# . This  *method*  was added in vSphere API 7.0.0.
+#
+# Note:
+# Privileges required for this operation are Datastore.AllocateSpace, VirtualMachine.Inventory.CreateFromExisting, Resource.AssignVMToPool, VirtualMachine.Provisioning.Clone.
+#
+# @param spec [REQUIRED] Virtual machine clone specification.
+# . The value must be Com::Vmware::Vcenter::VM::CloneSpec.
+#
+# @retval 
+# ID of newly-created virtual machine.
+# The value will be an identifier for the resource type
+#     getQualifiedName(VirtualMachine).
+# The return type will be str
+#
+# @throw Com::Vmware::Vapi::Std::Errors::AlreadyExists 
+# if a virtual machine with the specified name already exists.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# if the system reports an error while responding to the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if any of the specified parameters are invalid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if any of the resources specified in  *spec*  could not be found
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
+# if a specified resource (eg. host) is not accessible.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::UnableToAllocateResource 
+# if any of the resources needed to clone the virtual machine could not be allocated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``Datastore``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::DiskCloneSpec.datastore`  requires 
+#     ``Datastore.AllocateSpace`` . </li>
+# <li> The resource  ``Datastore``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::ClonePlacementSpec.datastore`  requires 
+#     ``Datastore.AllocateSpace`` . </li>
+# <li> The resource  ``Folder``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::ClonePlacementSpec.folder`  requires 
+#     ``VirtualMachine.Inventory.CreateFromExisting`` . </li>
+# <li> The resource  ``ResourcePool``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::ClonePlacementSpec.resource_pool`  requires 
+#     ``Resource.AssignVMToPool`` . </li>
+# <li> The resource  ``VirtualMachine``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::CloneSpec.source`  requires 
+#     ``VirtualMachine.Provisioning.Clone`` . </li>
+# </ul>
+#
+sub clone {
+   my ($self, %args) = @_;
+   my $spec = $args {spec};
+
+   $self->validate_args (method_name => 'clone',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'clone',
+                         method_args => \%args);
+}
+
+## @method relocate_task ()
+# Relocates a virtual machine based on the specification. The parts of the virtual machine
+# that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the
+# virtual machine and disks. <p>
+# 
+# </p>
+# 
+# . This  *method*  was added in vSphere API 7.0.0.
+#
+# Note:
+# Privileges required for this operation are Resource.AssignVMToPool, Resource.ColdMigrate.
+#
+# @param vm [REQUIRED] Existing Virtual machine to relocate.
+# The value must be an identifier for the resource type
+#     getQualifiedName(VirtualMachine).
+# . The value must be str.
+#
+# @param spec [REQUIRED] Relocate specification.
+# . The value must be Com::Vmware::Vcenter::VM::RelocateSpec.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# if the system reports an error while responding to the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if any of the specified parameters are invalid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if any of the resources specified in  *spec*  or the given &quot;vm&quot; could not be
+#     found
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
+# if a specified resource (eg. host) is not accessible.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``Resource.ColdMigrate`` . </li>
+# <li> The resource  ``ResourcePool``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::RelocatePlacementSpec.resource_pool`  requires 
+#     ``Resource.AssignVMToPool`` . </li>
+# </ul>
+#
+sub relocate_task {
+   my ($self, %args) = @_;
+   my $vm = $args {vm};
+   my $spec = $args {spec};
+
+   $self->validate_args (method_name => 'relocate$task',
+                         method_args => \%args);
+
+   return $self->invoke (method_name => 'relocate$task',
+                         method_args => \%args);
+}
+
+## @method relocate ()
+# Relocates a virtual machine based on the specification. The parts of the virtual machine
+# that can move are: FOLDER, RESOURCE_POOL, HOST, CLUSTER and DATASTORE of home of the
+# virtual machine and disks. <p>
+# 
+# </p>
+# 
+# . This  *method*  was added in vSphere API 7.0.0.
+#
+# Note:
+# Privileges required for this operation are Resource.AssignVMToPool, Resource.ColdMigrate.
+#
+# @param vm [REQUIRED] Existing Virtual machine to relocate.
+# The value must be an identifier for the resource type
+#     getQualifiedName(VirtualMachine).
+# . The value must be str.
+#
+# @param spec [REQUIRED] Relocate specification.
+# . The value must be Com::Vmware::Vcenter::VM::RelocateSpec.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Error 
+# if the system reports an error while responding to the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
+# if any of the specified parameters are invalid.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::NotFound 
+# if any of the resources specified in  *spec*  or the given &quot;vm&quot; could not be
+#     found
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ResourceInaccessible 
+# if a specified resource (eg. host) is not accessible.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
+# if the system is unable to communicate with a service to complete the request.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
+# if the user can not be authenticated.
+#
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
+# if the user doesn&apos;t have the required privileges.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li> The resource  ``VirtualMachine``  referenced by the  *parameter*   ``vm`` 
+#     requires  ``Resource.ColdMigrate`` . </li>
+# <li> The resource  ``ResourcePool``  referenced by the  *field*  
+#     :attr:`Com::Vmware::Vcenter::VM::RelocatePlacementSpec.resource_pool`  requires 
+#     ``Resource.AssignVMToPool`` . </li>
+# </ul>
+#
+sub relocate {
+   my ($self, %args) = @_;
+   my $vm = $args {vm};
+   my $spec = $args {spec};
+
+   $self->validate_args (method_name => 'relocate',
+                         method_args => \%args);
+   
+   return $self->invoke (method_name => 'relocate',
+                         method_args => \%args);
+}
 
 ## @method instant_clone ()
 # Create an instant clone of an existing virtual machine. This  *method*  was added in
@@ -204,7 +488,6 @@ sub create {
 #     ``Network.Assign`` . </li>
 # </ul>
 #
-
 sub instant_clone {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -215,7 +498,6 @@ sub instant_clone {
    return $self->invoke (method_name => 'instant_clone',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about a virtual machine.
@@ -255,7 +537,6 @@ sub instant_clone {
 #     requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -266,7 +547,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes a virtual machine.
@@ -308,7 +588,6 @@ sub get {
 #     requires  ``VirtualMachine.Inventory.Delete`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -319,7 +598,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns information about at most 4000 visible (subject to permission checks) virtual
@@ -353,7 +631,6 @@ sub delete {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -364,7 +641,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method register ()
 # Creates a virtual machine from existing virtual machine files on storage. This  *method* 
@@ -423,7 +699,6 @@ sub list {
 #     ``Resource.AssignVMToPool`` . </li>
 # </ul>
 #
-
 sub register {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -434,7 +709,6 @@ sub register {
    return $self->invoke (method_name => 'register',
                          method_args => \%args);
 }
-
 
 ## @method unregister ()
 # Removes the virtual machine corresponding to  ``vm``  from the vCenter inventory without
@@ -474,7 +748,6 @@ sub register {
 #     requires  ``VirtualMachine.Inventory.Unregister`` . </li>
 # </ul>
 #
-
 sub unregister {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -485,7 +758,6 @@ sub unregister {
    return $self->invoke (method_name => 'unregister',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -2076,6 +2348,984 @@ sub get_scsi_adapters {
 sub set_scsi_adapters {
    my ($self, %args) = @_;
    $self->{'scsi_adapters'} = $args{'scsi_adapters'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::GuestCustomizationSpec
+#
+#
+# The  ``Com::Vmware::Vcenter::VM::GuestCustomizationSpec``   *class*  contains
+#     information required to customize a virtual machine when deploying it. This  *class* 
+#     was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::VM::GuestCustomizationSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::GuestCustomizationSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{name} = $args{'name'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::GuestCustomizationSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.guest_customization_spec');
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_name ()
+# Gets the value of 'name' property.
+#
+# @retval name - The current value of the field.
+# Name of the customization specification. This  *field*  was added in vSphere API
+#     7.0.0.
+#
+# Optional#
+sub get_name {
+   my ($self, %args) = @_;
+   return $self->{'name'}; 	
+}
+
+## @method set_name ()
+# Sets the given value for 'name' property.
+# 
+# @param name  - New value for the field.
+# Name of the customization specification. This  *field*  was added in vSphere API
+#     7.0.0.
+#
+sub set_name {
+   my ($self, %args) = @_;
+   $self->{'name'} = $args{'name'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::DiskCloneSpec
+#
+#
+# Document-based disk clone spec. This  *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::VM::DiskCloneSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::DiskCloneSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{datastore} = $args{'datastore'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::DiskCloneSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.disk_clone_spec');
+   $self->set_binding_field('key' => 'datastore', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_datastore ()
+# Gets the value of 'datastore' property.
+#
+# @retval datastore - The current value of the field.
+# Destination datastore to clone disk. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_datastore {
+   my ($self, %args) = @_;
+   return $self->{'datastore'}; 	
+}
+
+## @method set_datastore ()
+# Sets the given value for 'datastore' property.
+# 
+# @param datastore  - New value for the field.
+# Destination datastore to clone disk. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_datastore {
+   my ($self, %args) = @_;
+   $self->{'datastore'} = $args{'datastore'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::ClonePlacementSpec
+#
+#
+# The  ``Com::Vmware::Vcenter::VM::ClonePlacementSpec``   *class*  contains information
+#     used to place a clone of a virtual machine onto resources within the vCenter
+#     inventory. This  *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::VM::ClonePlacementSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::ClonePlacementSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{folder} = $args{'folder'};
+   $self->{resource_pool} = $args{'resource_pool'};
+   $self->{host} = $args{'host'};
+   $self->{cluster} = $args{'cluster'};
+   $self->{datastore} = $args{'datastore'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::ClonePlacementSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.clone_placement_spec');
+   $self->set_binding_field('key' => 'folder', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'resource_pool', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'host', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'cluster', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'datastore', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_folder ()
+# Gets the value of 'folder' property.
+#
+# @retval folder - The current value of the field.
+# Virtual machine folder into which the cloned virtual machine should be placed. This 
+#     *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_folder {
+   my ($self, %args) = @_;
+   return $self->{'folder'}; 	
+}
+
+## @method set_folder ()
+# Sets the given value for 'folder' property.
+# 
+# @param folder  - New value for the field.
+# Virtual machine folder into which the cloned virtual machine should be placed. This 
+#     *field*  was added in vSphere API 7.0.0.
+#
+sub set_folder {
+   my ($self, %args) = @_;
+   $self->{'folder'} = $args{'folder'}; 
+   return;	
+}
+
+## @method get_resource_pool ()
+# Gets the value of 'resource_pool' property.
+#
+# @retval resource_pool - The current value of the field.
+# Resource pool into which the cloned virtual machine should be placed. This  *field* 
+#     was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_resource_pool {
+   my ($self, %args) = @_;
+   return $self->{'resource_pool'}; 	
+}
+
+## @method set_resource_pool ()
+# Sets the given value for 'resource_pool' property.
+# 
+# @param resource_pool  - New value for the field.
+# Resource pool into which the cloned virtual machine should be placed. This  *field* 
+#     was added in vSphere API 7.0.0.
+#
+sub set_resource_pool {
+   my ($self, %args) = @_;
+   $self->{'resource_pool'} = $args{'resource_pool'}; 
+   return;	
+}
+
+## @method get_host ()
+# Gets the value of 'host' property.
+#
+# @retval host - The current value of the field.
+# Host onto which the cloned virtual machine should be placed. <p>
+# 
+# If  ``host``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``host`` . </p>
+# 
+# <p>
+# 
+# If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_host {
+   my ($self, %args) = @_;
+   return $self->{'host'}; 	
+}
+
+## @method set_host ()
+# Sets the given value for 'host' property.
+# 
+# @param host  - New value for the field.
+# Host onto which the cloned virtual machine should be placed. <p>
+# 
+# If  ``host``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``host`` . </p>
+# 
+# <p>
+# 
+# If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_host {
+   my ($self, %args) = @_;
+   $self->{'host'} = $args{'host'}; 
+   return;	
+}
+
+## @method get_cluster ()
+# Gets the value of 'cluster' property.
+#
+# @retval cluster - The current value of the field.
+# Cluster into which the cloned virtual machine should be placed. <p>
+# 
+# If  ``cluster``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``cluster`` . </p>
+# 
+# <p>
+# 
+# If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_cluster {
+   my ($self, %args) = @_;
+   return $self->{'cluster'}; 	
+}
+
+## @method set_cluster ()
+# Sets the given value for 'cluster' property.
+# 
+# @param cluster  - New value for the field.
+# Cluster into which the cloned virtual machine should be placed. <p>
+# 
+# If  ``cluster``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``cluster`` . </p>
+# 
+# <p>
+# 
+# If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_cluster {
+   my ($self, %args) = @_;
+   $self->{'cluster'} = $args{'cluster'}; 
+   return;	
+}
+
+## @method get_datastore ()
+# Gets the value of 'datastore' property.
+#
+# @retval datastore - The current value of the field.
+# Datastore on which the cloned virtual machine&apos;s configuration state should be
+#     stored. This datastore will also be used for any virtual disks that are created as
+#     part of the virtual machine clone operation unless individually overridden. This 
+#     *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_datastore {
+   my ($self, %args) = @_;
+   return $self->{'datastore'}; 	
+}
+
+## @method set_datastore ()
+# Sets the given value for 'datastore' property.
+# 
+# @param datastore  - New value for the field.
+# Datastore on which the cloned virtual machine&apos;s configuration state should be
+#     stored. This datastore will also be used for any virtual disks that are created as
+#     part of the virtual machine clone operation unless individually overridden. This 
+#     *field*  was added in vSphere API 7.0.0.
+#
+sub set_datastore {
+   my ($self, %args) = @_;
+   $self->{'datastore'} = $args{'datastore'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::CloneSpec
+#
+#
+# Document-based clone spec. This  *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::VM::CloneSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::CloneSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{source} = $args{'source'};
+   $self->{name} = $args{'name'};
+   $self->{placement} = $args{'placement'};
+   $self->{disks_to_remove} = $args{'disks_to_remove'};
+   $self->{disks_to_update} = $args{'disks_to_update'};
+   $self->{power_on} = $args{'power_on'};
+   $self->{guest_customization_spec} = $args{'guest_customization_spec'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::CloneSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.clone_spec');
+   $self->set_binding_field('key' => 'source', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'placement', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::ClonePlacementSpec')));
+   $self->set_binding_field('key' => 'disks_to_remove', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()))));
+   $self->set_binding_field('key' => 'disks_to_update', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::MapType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StructType('name' => 'map-entry', 'fields' => {'key' => new Com::Vmware::Vapi::Bindings::Type::StringType(), 'value' =>  new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::DiskCloneSpec')})))));
+   $self->set_binding_field('key' => 'power_on', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
+   $self->set_binding_field('key' => 'guest_customization_spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::GuestCustomizationSpec')));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_source ()
+# Gets the value of 'source' property.
+#
+# @retval source - The current value of the field.
+# Virtual machine to clone from. This  *field*  was added in vSphere API 7.0.0.
+#
+# ID#
+sub get_source {
+   my ($self, %args) = @_;
+   return $self->{'source'}; 	
+}
+
+## @method set_source ()
+# Sets the given value for 'source' property.
+# 
+# @param source  - New value for the field.
+# Virtual machine to clone from. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_source {
+   my ($self, %args) = @_;
+   $self->{'source'} = $args{'source'}; 
+   return;	
+}
+
+## @method get_name ()
+# Gets the value of 'name' property.
+#
+# @retval name - The current value of the field.
+# Virtual machine name. This  *field*  was added in vSphere API 7.0.0.
+#
+# String#
+sub get_name {
+   my ($self, %args) = @_;
+   return $self->{'name'}; 	
+}
+
+## @method set_name ()
+# Sets the given value for 'name' property.
+# 
+# @param name  - New value for the field.
+# Virtual machine name. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_name {
+   my ($self, %args) = @_;
+   $self->{'name'} = $args{'name'}; 
+   return;	
+}
+
+## @method get_placement ()
+# Gets the value of 'placement' property.
+#
+# @retval placement - The current value of the field.
+# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_placement {
+   my ($self, %args) = @_;
+   return $self->{'placement'}; 	
+}
+
+## @method set_placement ()
+# Sets the given value for 'placement' property.
+# 
+# @param placement  - New value for the field.
+# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_placement {
+   my ($self, %args) = @_;
+   $self->{'placement'} = $args{'placement'}; 
+   return;	
+}
+
+## @method get_disks_to_remove ()
+# Gets the value of 'disks_to_remove' property.
+#
+# @retval disks_to_remove - The current value of the field.
+# Set of Disks to Remove. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_disks_to_remove {
+   my ($self, %args) = @_;
+   return $self->{'disks_to_remove'}; 	
+}
+
+## @method set_disks_to_remove ()
+# Sets the given value for 'disks_to_remove' property.
+# 
+# @param disks_to_remove  - New value for the field.
+# Set of Disks to Remove. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_disks_to_remove {
+   my ($self, %args) = @_;
+   $self->{'disks_to_remove'} = $args{'disks_to_remove'}; 
+   return;	
+}
+
+## @method get_disks_to_update ()
+# Gets the value of 'disks_to_update' property.
+#
+# @retval disks_to_update - The current value of the field.
+# Map of Disks to Update. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_disks_to_update {
+   my ($self, %args) = @_;
+   return $self->{'disks_to_update'}; 	
+}
+
+## @method set_disks_to_update ()
+# Sets the given value for 'disks_to_update' property.
+# 
+# @param disks_to_update  - New value for the field.
+# Map of Disks to Update. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_disks_to_update {
+   my ($self, %args) = @_;
+   $self->{'disks_to_update'} = $args{'disks_to_update'}; 
+   return;	
+}
+
+## @method get_power_on ()
+# Gets the value of 'power_on' property.
+#
+# @retval power_on - The current value of the field.
+# Attempt to perform a  :attr:`Com::Vmware::Vcenter::VM::CloneSpec.power_on`  after
+#     clone. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_power_on {
+   my ($self, %args) = @_;
+   return $self->{'power_on'}; 	
+}
+
+## @method set_power_on ()
+# Sets the given value for 'power_on' property.
+# 
+# @param power_on  - New value for the field.
+# Attempt to perform a  :attr:`Com::Vmware::Vcenter::VM::CloneSpec.power_on`  after
+#     clone. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_power_on {
+   my ($self, %args) = @_;
+   $self->{'power_on'} = $args{'power_on'}; 
+   return;	
+}
+
+## @method get_guest_customization_spec ()
+# Gets the value of 'guest_customization_spec' property.
+#
+# @retval guest_customization_spec - The current value of the field.
+# Guest customization spec to apply to the virtual machine after the virtual machine is
+#     deployed. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_guest_customization_spec {
+   my ($self, %args) = @_;
+   return $self->{'guest_customization_spec'}; 	
+}
+
+## @method set_guest_customization_spec ()
+# Sets the given value for 'guest_customization_spec' property.
+# 
+# @param guest_customization_spec  - New value for the field.
+# Guest customization spec to apply to the virtual machine after the virtual machine is
+#     deployed. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_guest_customization_spec {
+   my ($self, %args) = @_;
+   $self->{'guest_customization_spec'} = $args{'guest_customization_spec'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::DiskRelocateSpec
+#
+#
+# Document-based disk relocate spec. This  *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::VM::DiskRelocateSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::DiskRelocateSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{datastore} = $args{'datastore'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::DiskRelocateSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.disk_relocate_spec');
+   $self->set_binding_field('key' => 'datastore', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_datastore ()
+# Gets the value of 'datastore' property.
+#
+# @retval datastore - The current value of the field.
+# Destination datastore to relocate disk. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_datastore {
+   my ($self, %args) = @_;
+   return $self->{'datastore'}; 	
+}
+
+## @method set_datastore ()
+# Sets the given value for 'datastore' property.
+# 
+# @param datastore  - New value for the field.
+# Destination datastore to relocate disk. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_datastore {
+   my ($self, %args) = @_;
+   $self->{'datastore'} = $args{'datastore'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::RelocatePlacementSpec
+#
+#
+# The  ``Com::Vmware::Vcenter::VM::RelocatePlacementSpec``   *class*  contains
+#     information used to change the placement of an existing virtual machine within the
+#     vCenter inventory. This  *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::VM::RelocatePlacementSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::RelocatePlacementSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{folder} = $args{'folder'};
+   $self->{resource_pool} = $args{'resource_pool'};
+   $self->{host} = $args{'host'};
+   $self->{cluster} = $args{'cluster'};
+   $self->{datastore} = $args{'datastore'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::RelocatePlacementSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.relocate_placement_spec');
+   $self->set_binding_field('key' => 'folder', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'resource_pool', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'host', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'cluster', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'datastore', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_folder ()
+# Gets the value of 'folder' property.
+#
+# @retval folder - The current value of the field.
+# Virtual machine folder into which the virtual machine should be placed. This  *field* 
+#     was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_folder {
+   my ($self, %args) = @_;
+   return $self->{'folder'}; 	
+}
+
+## @method set_folder ()
+# Sets the given value for 'folder' property.
+# 
+# @param folder  - New value for the field.
+# Virtual machine folder into which the virtual machine should be placed. This  *field* 
+#     was added in vSphere API 7.0.0.
+#
+sub set_folder {
+   my ($self, %args) = @_;
+   $self->{'folder'} = $args{'folder'}; 
+   return;	
+}
+
+## @method get_resource_pool ()
+# Gets the value of 'resource_pool' property.
+#
+# @retval resource_pool - The current value of the field.
+# Resource pool into which the virtual machine should be placed. This  *field*  was
+#     added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_resource_pool {
+   my ($self, %args) = @_;
+   return $self->{'resource_pool'}; 	
+}
+
+## @method set_resource_pool ()
+# Sets the given value for 'resource_pool' property.
+# 
+# @param resource_pool  - New value for the field.
+# Resource pool into which the virtual machine should be placed. This  *field*  was
+#     added in vSphere API 7.0.0.
+#
+sub set_resource_pool {
+   my ($self, %args) = @_;
+   $self->{'resource_pool'} = $args{'resource_pool'}; 
+   return;	
+}
+
+## @method get_host ()
+# Gets the value of 'host' property.
+#
+# @retval host - The current value of the field.
+# Host onto which the virtual machine should be placed. <p>
+# 
+# If  ``host``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``host`` . </p>
+# 
+# <p>
+# 
+# If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_host {
+   my ($self, %args) = @_;
+   return $self->{'host'}; 	
+}
+
+## @method set_host ()
+# Sets the given value for 'host' property.
+# 
+# @param host  - New value for the field.
+# Host onto which the virtual machine should be placed. <p>
+# 
+# If  ``host``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``host`` . </p>
+# 
+# <p>
+# 
+# If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_host {
+   my ($self, %args) = @_;
+   $self->{'host'} = $args{'host'}; 
+   return;	
+}
+
+## @method get_cluster ()
+# Gets the value of 'cluster' property.
+#
+# @retval cluster - The current value of the field.
+# Cluster into which the virtual machine should be placed. <p>
+# 
+# If  ``cluster``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``cluster`` . </p>
+# 
+# <p>
+# 
+# If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_cluster {
+   my ($self, %args) = @_;
+   return $self->{'cluster'}; 	
+}
+
+## @method set_cluster ()
+# Sets the given value for 'cluster' property.
+# 
+# @param cluster  - New value for the field.
+# Cluster into which the virtual machine should be placed. <p>
+# 
+# If  ``cluster``  and  ``resourcePool``  are both specified,  ``resourcePool``  must
+#     belong to  ``cluster`` . </p>
+# 
+# <p>
+# 
+# If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
+#     ``cluster`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_cluster {
+   my ($self, %args) = @_;
+   $self->{'cluster'} = $args{'cluster'}; 
+   return;	
+}
+
+## @method get_datastore ()
+# Gets the value of 'datastore' property.
+#
+# @retval datastore - The current value of the field.
+# Datastore on which the virtual machine&apos;s configuration state should be stored.
+#     This datastore will also be used for any virtual disks that are associated with the
+#     virtual machine, unless individually overridden. This  *field*  was added in vSphere
+#     API 7.0.0.
+#
+# Optional#
+sub get_datastore {
+   my ($self, %args) = @_;
+   return $self->{'datastore'}; 	
+}
+
+## @method set_datastore ()
+# Sets the given value for 'datastore' property.
+# 
+# @param datastore  - New value for the field.
+# Datastore on which the virtual machine&apos;s configuration state should be stored.
+#     This datastore will also be used for any virtual disks that are associated with the
+#     virtual machine, unless individually overridden. This  *field*  was added in vSphere
+#     API 7.0.0.
+#
+sub set_datastore {
+   my ($self, %args) = @_;
+   $self->{'datastore'} = $args{'datastore'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::VM::RelocateSpec
+#
+#
+# Document-based relocate spec. This  *class*  was added in vSphere API 7.0.0.
+
+package Com::Vmware::Vcenter::VM::RelocateSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::VM::RelocateSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{placement} = $args{'placement'};
+   $self->{disks} = $args{'disks'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::VM::RelocateSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.VM.relocate_spec');
+   $self->set_binding_field('key' => 'placement', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::RelocatePlacementSpec')));
+   $self->set_binding_field('key' => 'disks', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::MapType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StructType('name' => 'map-entry', 'fields' => {'key' => new Com::Vmware::Vapi::Bindings::Type::StringType(), 'value' =>  new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::DiskRelocateSpec')})))));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_placement ()
+# Gets the value of 'placement' property.
+#
+# @retval placement - The current value of the field.
+# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_placement {
+   my ($self, %args) = @_;
+   return $self->{'placement'}; 	
+}
+
+## @method set_placement ()
+# Sets the given value for 'placement' property.
+# 
+# @param placement  - New value for the field.
+# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_placement {
+   my ($self, %args) = @_;
+   $self->{'placement'} = $args{'placement'}; 
+   return;	
+}
+
+## @method get_disks ()
+# Gets the value of 'disks' property.
+#
+# @retval disks - The current value of the field.
+# Individual disk relocation map. This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_disks {
+   my ($self, %args) = @_;
+   return $self->{'disks'}; 	
+}
+
+## @method set_disks ()
+# Sets the given value for 'disks' property.
+# 
+# @param disks  - New value for the field.
+# Individual disk relocation map. This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_disks {
+   my ($self, %args) = @_;
+   $self->{'disks'} = $args{'disks'}; 
    return;	
 }
 

@@ -8,6 +8,7 @@
 #
 #
 
+#use Com::Vmware::Vcenter::Certificate_management;
 #use Com::Vmware::Vapi::Std::Errors;
 
 package Com::Vmware::Vcenter::Identity::ProvidersStub;

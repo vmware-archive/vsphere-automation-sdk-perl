@@ -37,6 +37,12 @@ use Com::Vmware::Vcenter::Deployment::Install::Psc::StandaloneStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.deployment.install.psc.standalone';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -79,7 +85,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the appliance is not in INITIALIZED state.
 #
-
 sub check {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -90,7 +95,6 @@ sub check {
    return $self->invoke (method_name => 'check',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Access::ShellStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.access.shell';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -66,7 +72,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $config = $args {config};
@@ -78,7 +83,6 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method get ()
 # Get enabled state of BASH, that is, access to BASH from within the controlled CLI.
 #
@@ -89,12 +93,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

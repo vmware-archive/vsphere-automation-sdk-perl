@@ -37,6 +37,12 @@ use Com::Vmware::Vcenter::Deployment::QuestionStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.deployment.question';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -77,12 +83,10 @@ sub new {
 # if questions could not be retrieved although the appliance is in QUESTION_RAISED
 #     state.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method answer ()
 # Supply answer to the raised question. This  *method*  was added in vSphere API 6.7.
@@ -102,7 +106,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::InternalServerError 
 # if answer file could not be created.
 #
-
 sub answer {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -113,7 +116,6 @@ sub answer {
    return $self->invoke (method_name => 'answer',
                          method_args => \%args);
 }
-
 
 1;
 

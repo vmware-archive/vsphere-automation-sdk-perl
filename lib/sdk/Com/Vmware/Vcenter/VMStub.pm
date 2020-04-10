@@ -100,6 +100,57 @@ sub new
    my $create_output_validator_list = [];
 
    #
+   # properties for clone operation
+   #
+   my $clone_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'spec' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::CloneSpec'),
+      }
+   );
+   my $clone_error_dict = {
+      'com.vmware.vapi.std.errors.already_exists' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'AlreadyExists'),
+      'com.vmware.vapi.std.errors.error' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Error'),
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
+      'com.vmware.vapi.std.errors.resource_inaccessible' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ResourceInaccessible'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unable_to_allocate_resource' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'UnableToAllocateResource'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $clone_input_validator_list = [
+   ];
+   my $clone_output_validator_list = [];
+
+   #
+   # properties for relocate operation
+   #
+   my $relocate_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
+      'name' => 'operation-input',
+      'fields' => {
+                   'vm' => new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                   'spec' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter', 'type_name' => 'VM::RelocateSpec'),
+      }
+   );
+   my $relocate_error_dict = {
+      'com.vmware.vapi.std.errors.error' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Error'),
+      'com.vmware.vapi.std.errors.invalid_argument' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'InvalidArgument'),
+      'com.vmware.vapi.std.errors.not_found' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'NotFound'),
+      'com.vmware.vapi.std.errors.resource_inaccessible' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ResourceInaccessible'),
+      'com.vmware.vapi.std.errors.service_unavailable' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'ServiceUnavailable'),
+      'com.vmware.vapi.std.errors.unauthenticated' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthenticated'),
+      'com.vmware.vapi.std.errors.unauthorized' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std::Errors', 'type_name' => 'Unauthorized'),
+
+      };
+
+   my $relocate_input_validator_list = [
+   ];
+   my $relocate_output_validator_list = [];
+
+   #
    # properties for instant_clone operation
    #
    my $instant_clone_input_type = new Com::Vmware::Vapi::Bindings::Type::StructType(
@@ -254,6 +305,34 @@ sub new
                 'errors'=> $create_error_dict,
                 'input_validator_list'=> $create_input_validator_list,
                 'output_validator_list'=> $create_output_validator_list,
+            },
+      'clone$task' => {
+                'input_type'=> $clone_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                'errors'=> $clone_error_dict,
+                'input_validator_list'=> $clone_input_validator_list,
+                'output_validator_list'=> $clone_output_validator_list,
+            },
+      'clone' => {
+                'input_type'=> $clone_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                'errors'=> $clone_error_dict,
+                'input_validator_list'=> $clone_input_validator_list,
+                'output_validator_list'=> $clone_output_validator_list,
+            },
+      'relocate$task' => {
+                'input_type'=> $relocate_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
+                'errors'=> $relocate_error_dict,
+                'input_validator_list'=> $relocate_input_validator_list,
+                'output_validator_list'=> $relocate_output_validator_list,
+            },
+      'relocate' => {
+                'input_type'=> $relocate_input_type,
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'errors'=> $relocate_error_dict,
+                'input_validator_list'=> $relocate_input_validator_list,
+                'output_validator_list'=> $relocate_output_validator_list,
             },
       'instant_clone' => {
                 'input_type'=> $instant_clone_input_type,

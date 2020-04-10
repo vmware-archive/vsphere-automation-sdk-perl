@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Networking::Dns::DomainsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.dns.domains';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -66,7 +72,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub add {
    my ($self, %args) = @_;
    my $domain = $args {domain};
@@ -78,7 +83,6 @@ sub add {
                          method_args => \%args);
 }
 
-
 ## @method set ()
 # Set DNS search domains.
 #
@@ -88,7 +92,6 @@ sub add {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $domains = $args {domains};
@@ -100,7 +103,6 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method list ()
 # Get list of DNS search domains.
 #
@@ -111,12 +113,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 1;
 
