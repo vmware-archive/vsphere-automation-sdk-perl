@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Topology::ReplicationStatusStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.topology.replication_status';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -99,7 +105,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -110,7 +115,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -16,7 +16,8 @@ package Com::Vmware::Vcenter::Vm::Compute::PoliciesStub;
 ## @class Com::Vmware::Vcenter::Vm::Compute::Policies
 #
 #The {@name Policies} {@term service} provides {@term operations} to query
-#the status of policies on virtual machines.
+#the status of policies on virtual machines in VMware Cloud on AWS.
+#Usage beyond VMware Cloud on AWS is not supported.
 #
 
 #

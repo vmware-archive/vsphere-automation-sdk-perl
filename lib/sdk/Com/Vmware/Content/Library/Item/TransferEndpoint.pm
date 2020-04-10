@@ -45,8 +45,8 @@ sub new {
 # Gets the value of 'uri' property.
 #
 # @retval uri - The current value of the field.
-# Transfer endpoint URI. The supported URI schemes are:  ``http`` ,  ``https`` , 
-#     ``file`` , and  ``ds`` . <p>
+# Transfer endpoint URI. The supported URI schemes are:  ``http`` ,  ``https`` , and 
+#     ``ds`` . <p>
 # 
 # An endpoint URI with the  ``ds``  scheme specifies the location of the file on the
 #     datastore. The format of the datastore URI is: </p>
@@ -55,17 +55,8 @@ sub new {
 #  <li>ds:///vmfs/volumes/uuid/path</li>
 #  </ul> <p>
 # 
-#  Some examples of valid file URI formats are: </p>
-# 
-# <ul>
-#  <li>file:///path</li>
-#  <li>file:///C:/path</li>
-#  <li>file://unc-server/path</li>
-#  </ul> <p>
-# 
-# When the transfer endpoint is a file or datastore location, the server can import the
-#     file directly from the storage backing without the overhead of streaming over
-#     HTTP.</p>
+# When the transfer endpoint is a datastore location, the server can import the file
+#     directly from the storage backing without the overhead of streaming over HTTP.</p>
 #
 # URI#
 sub get_uri {
@@ -77,8 +68,8 @@ sub get_uri {
 # Sets the given value for 'uri' property.
 # 
 # @param uri  - New value for the field.
-# Transfer endpoint URI. The supported URI schemes are:  ``http`` ,  ``https`` , 
-#     ``file`` , and  ``ds`` . <p>
+# Transfer endpoint URI. The supported URI schemes are:  ``http`` ,  ``https`` , and 
+#     ``ds`` . <p>
 # 
 # An endpoint URI with the  ``ds``  scheme specifies the location of the file on the
 #     datastore. The format of the datastore URI is: </p>
@@ -87,17 +78,8 @@ sub get_uri {
 #  <li>ds:///vmfs/volumes/uuid/path</li>
 #  </ul> <p>
 # 
-#  Some examples of valid file URI formats are: </p>
-# 
-# <ul>
-#  <li>file:///path</li>
-#  <li>file:///C:/path</li>
-#  <li>file://unc-server/path</li>
-#  </ul> <p>
-# 
-# When the transfer endpoint is a file or datastore location, the server can import the
-#     file directly from the storage backing without the overhead of streaming over
-#     HTTP.</p>
+# When the transfer endpoint is a datastore location, the server can import the file
+#     directly from the storage backing without the overhead of streaming over HTTP.</p>
 #
 sub set_uri {
    my ($self, %args) = @_;

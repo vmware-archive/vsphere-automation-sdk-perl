@@ -2,8 +2,12 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Compute::Policies::Status``   *class*  describes the
-#     current status of a compute policy. <b>Warning:</b> This  *class*  is available as
-#     technical preview. It may be changed in a future release.
+#     current status of a compute policy in VMware Cloud on AWS. Usage beyond VMware Cloud
+#     on AWS is not supported. <b>Warning:</b> This  *class*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 
 package Com::Vmware::Vcenter::Compute::Policies::Status;
 
@@ -45,7 +49,11 @@ sub new {
 #
 # @retval status - The current value of the field.
 # The compliance status of the policy on a specified object. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 # ObjectCompliance#
 sub get_status {
@@ -58,7 +66,11 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # The compliance status of the policy on a specified object. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 sub set_status {
    my ($self, %args) = @_;

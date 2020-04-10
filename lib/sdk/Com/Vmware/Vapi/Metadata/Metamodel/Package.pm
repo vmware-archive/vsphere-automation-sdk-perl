@@ -43,6 +43,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::PackageStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.package';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -76,12 +82,10 @@ sub new {
 #     getQualifiedName(com.vmware.vapi.package).
 # The return type will be Array of str
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Retrieves information about the package element corresponding to  ``package_id`` .
@@ -99,7 +103,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if the package element associated with  ``package_id``  does not exist.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $package_id = $args {package_id};
@@ -110,7 +113,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -35,6 +35,12 @@ use Com::Vmware::Vcenter::Vm::HardwareStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.hardware';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -87,7 +93,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -98,7 +103,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the virtual hardware settings of a virtual machine.
@@ -141,7 +145,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -153,7 +156,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method upgrade ()
 # Upgrades the virtual machine to a newer virtual hardware version.
@@ -201,7 +203,6 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub upgrade {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -213,7 +214,6 @@ sub upgrade {
    return $self->invoke (method_name => 'upgrade',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -266,6 +266,14 @@ sub upgrade {
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_15 #
 #Hardware version 15, first supported in ESXi 6.7.0 Update 2. This  *constant*  was added
 # in vSphere API 6.7.2.
+#
+# Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_16 #
+#Hardware version 16, first supported in Workstation 15.0. This  *constant*  was added in
+# vSphere API 7.0.0.
+#
+# Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_17 #
+#Hardware version 17, first supported in ESX 7.0. This  *constant*  was added in vSphere
+# API 7.0.0.
 
 package Com::Vmware::Vcenter::Vm::Hardware::Version;
 
@@ -282,6 +290,8 @@ use constant {
     VMX_13 =>  'VMX_13',
     VMX_14 =>  'VMX_14',
     VMX_15 =>  'VMX_15',
+    VMX_16 =>  'VMX_16',
+    VMX_17 =>  'VMX_17',
 };
 
 #

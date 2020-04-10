@@ -116,6 +116,12 @@ use Com::Vmware::Cis::SessionStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.cis.session';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -168,12 +174,10 @@ sub new {
 #     will not be disclosed in the  *error* . Please refer to component health information,
 #     administrative logs and product specific documentation for possible causes.
 #
-
 sub create {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'create', method_args =>  {});
 }
-
 
 ## @method delete ()
 # Terminates the validity of a session token. This is the equivalent of log out. <p>
@@ -194,12 +198,10 @@ sub create {
 #     will not be disclosed in the  *error* . Please refer to component health information,
 #     administrative logs and product specific documentation for possible causes.
 #
-
 sub delete {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'delete', method_args =>  {});
 }
-
 
 ## @method get ()
 # Returns information about the current session. This  *method*  expects a valid session
@@ -230,12 +232,10 @@ sub delete {
 #     be disclosed in the error. Please refer to component health information,
 #     administrative logs and product specific documentation for possible causes.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

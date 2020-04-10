@@ -20,7 +20,7 @@ This document for the vSphere Automation SDK for perl describes -
    2. The procedure for contributing new samples
 
 ## Supported OnPrem vCenter Releases:
-vCenter 6.0, 6.5, 6.7, 6.7U1, 6.7U2 and 6.7U3
+vCenter 6.0, 6.5, 6.7, 6.7U1 and 7.0
 
 Please refer to the notes in each sample for detailed compatibility information.
 
@@ -128,8 +128,8 @@ Use a command like the following to get list of VMs present in vCenter.
 
 ### vSphere API Documentation
 
-* [vSphere 6.7.3 (latest)](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.3/)
-* Previous releases:    [6.7.1](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.1) [6.7.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.0)    [6.5.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.5.0)
+* [vSphere 7.0 (latest)](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/7.0.0.1/index.html)
+* Previous releases:    [6.7.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.0)    [6.5.0](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.5.0)    [6.7.1](https://vmware.github.io/vsphere-automation-sdk-perl/vsphere/6.7.1/)
 
 ## Repository Administrator Resources
 ### Board Members
@@ -137,8 +137,7 @@ Use a command like the following to get list of VMs present in vCenter.
 Board members are volunteers from the SDK community and VMware staff members, board members are not held responsible for any issues which may occur from running of samples from this repository.
 
 Members:
-* Kapil Yadav (VMware)
-* Steve Trefethen (VMware)
+* Anusha Hegde (VMware)
 
 ### Approval of Additions
 Items added to the repository, including items from the Board members, require 2 votes from the board members before being added to the repository. The approving members will have ideally downloaded and tested the item. When two “Approved for Merge” comments are added from board members, the pull can then be committed to the repository.

@@ -78,6 +78,12 @@ use Com::Vmware::Vcenter::Ovf::LibraryItemStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.ovf.library_item';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -188,7 +194,6 @@ sub new {
 #     ``VApp.Import`` . </li>
 # </ul>
 #
-
 sub deploy {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -202,7 +207,6 @@ sub deploy {
    return $self->invoke (method_name => 'deploy',
                          method_args => \%args);
 }
-
 
 ## @method filter ()
 # Queries an OVF package stored in content library to retrieve information to use when
@@ -260,7 +264,6 @@ sub deploy {
 #     ``System.Read`` . </li>
 # </ul>
 #
-
 sub filter {
    my ($self, %args) = @_;
    my $ovf_library_item_id = $args {ovf_library_item_id};
@@ -273,7 +276,6 @@ sub filter {
                          method_args => \%args);
 }
 
-
 ## @method create ()
 # Creates a library item in content library from a virtual machine or virtual appliance. <p>
 # 
@@ -281,7 +283,8 @@ sub filter {
 # derived from a source virtual machine or virtual appliance, using the supplied create
 # specification. The OVF package may be stored as in a newly created library item or in an
 # in an existing library item. For an existing library item whose content is updated by this
-#  *method* , the original content is overwritten. </p>
+# *method* , the original content is overwritten. Meta data such as name and description is
+# not updated for the exisitng library item. </p>
 #
 # Note:
 # Privileges required for this operation are System.Read, VApp.Export, ContentLibrary.AddLibraryItem.
@@ -342,7 +345,6 @@ sub filter {
 #      ``System.Read`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -356,7 +358,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 1;
 

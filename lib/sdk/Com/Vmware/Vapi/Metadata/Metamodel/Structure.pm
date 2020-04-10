@@ -39,6 +39,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::StructureStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.structure';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -71,12 +77,10 @@ sub new {
 #     getQualifiedName(com.vmware.vapi.structure).
 # The return type will be Array of str
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Retrieves information about the structure element corresponding to  ``structure_id`` . <p>
@@ -99,7 +103,6 @@ sub list {
 # if the structure element associated with  ``structure_id``  is not contained in any of
 #     the package elements or service elements.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $structure_id = $args {structure_id};
@@ -110,7 +113,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

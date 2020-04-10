@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::System::StorageStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.system.storage';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -68,12 +74,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method resize ()
 # Resize all partitions to 100 percent of disk size.
@@ -81,12 +85,10 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub resize {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'resize', method_args =>  {});
 }
-
 
 ## @method resize_ex ()
 # Resize all partitions to 100 percent of disk size. This  *method*  was added in vSphere
@@ -100,12 +102,10 @@ sub resize {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub resize_ex {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'resize_ex', method_args =>  {});
 }
-
 
 1;
 

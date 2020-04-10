@@ -44,6 +44,12 @@ use Com::Vmware::Content::LibraryStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -90,7 +96,6 @@ sub new {
 #     ``library_id``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -101,7 +106,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns the identifiers of all libraries of any type in the Content Library.
@@ -119,12 +123,10 @@ sub get {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method find ()
 # Returns a list of all the visible (as determined by authorization policy) libraries
@@ -150,7 +152,6 @@ sub list {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub find {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -161,7 +162,6 @@ sub find {
    return $self->invoke (method_name => 'find',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the properties of a library. <p>
@@ -203,7 +203,6 @@ sub find {
 #     ``library_id``  requires  ``ContentLibrary.UpdateLibrary`` . </li>
 # </ul>
 #
-
 sub update {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -215,7 +214,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 1;
 

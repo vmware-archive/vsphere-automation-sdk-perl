@@ -56,6 +56,12 @@ use Com::Vmware::Content::Library::Item::UpdateSessionStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.item.update_session';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -125,7 +131,6 @@ sub new {
 #     requires  ``ContentLibrary.UpdateSession`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -137,7 +142,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Gets the update session with the specified identifier, including the most up-to-date
@@ -163,7 +167,6 @@ sub create {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -174,7 +177,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Lists the identifiers of the update session created by the calling user. Optionally may
@@ -204,7 +206,6 @@ sub get {
 #     </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -215,7 +216,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method complete ()
 # Completes the update session. This indicates that the client has finished making all the
@@ -261,7 +261,6 @@ sub list {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub complete {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -272,7 +271,6 @@ sub complete {
    return $self->invoke (method_name => 'complete',
                          method_args => \%args);
 }
-
 
 ## @method keep_alive ()
 # Keeps an update session alive. <p>
@@ -307,7 +305,6 @@ sub complete {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub keep_alive {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -319,7 +316,6 @@ sub keep_alive {
    return $self->invoke (method_name => 'keep_alive',
                          method_args => \%args);
 }
-
 
 ## @method cancel ()
 # Cancels the update session and sets its state to 
@@ -353,7 +349,6 @@ sub keep_alive {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub cancel {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -364,7 +359,6 @@ sub cancel {
    return $self->invoke (method_name => 'cancel',
                          method_args => \%args);
 }
-
 
 ## @method fail ()
 # Terminates the update session with a client specified error message. <p>
@@ -396,7 +390,6 @@ sub cancel {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub fail {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -408,7 +401,6 @@ sub fail {
    return $self->invoke (method_name => 'fail',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes an update session. This removes the session and all information associated with
@@ -444,7 +436,6 @@ sub fail {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -455,7 +446,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the properties of an update session. <p>
@@ -505,7 +495,6 @@ sub delete {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub update {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -517,7 +506,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 1;
 

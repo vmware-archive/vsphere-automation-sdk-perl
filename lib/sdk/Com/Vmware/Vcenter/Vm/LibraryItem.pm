@@ -36,6 +36,12 @@ use Com::Vmware::Vcenter::Vm::LibraryItemStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.library_item';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -80,7 +86,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user that requested the  *method*  is not authorized to perform the  *method* .
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -91,7 +96,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

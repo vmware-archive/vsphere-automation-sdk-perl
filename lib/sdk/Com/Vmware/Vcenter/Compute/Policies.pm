@@ -12,18 +12,26 @@
 
 ## @class Com::Vmware::Vcenter::Compute::Policies
 # The  ``Com::Vmware::Vcenter::Compute::Policies``   *interface*  provides  *methods* 
-#     to manage compute policies. A compute policy defines the intended behavior for a
-#     collection of vSphere objects identified by a tag. A compute policy is an instance of
-#     a capability. It is created by providing a value for the creation type specified by
-#     the capability. See 
+#     to manage compute policies in VMware Cloud on AWS. Usage beyond VMware Cloud on AWS is
+#     not supported. A compute policy defines the intended behavior for a collection of
+#     vSphere objects identified by a tag. A compute policy is an instance of a capability.
+#     It is created by providing a value for the creation type specified by the capability.
+#     See 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::Capabilities::Info.create_spec_type` .
-#     <b>Warning:</b> This  *interface*  is available as technical preview. It may be
-#     changed in a future release.
+#     <b>Warning:</b> This  *interface*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 #
 # Constant String::RESOURCE_TYPE #
 #The resource type for the compute policy. <b>Warning:</b> This  *constant*  is available
-# as technical preview. It may be changed in a future release.
+# as Technology Preview. These are early access APIs provided to test, automate and provide
+# feedback on the feature. Since this can change based on feedback, VMware does not
+# guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 
 package Com::Vmware::Vcenter::Compute::Policies;
 
@@ -44,6 +52,12 @@ use Com::Vmware::Vcenter::Compute::PoliciesStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.compute.policies';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -68,8 +82,12 @@ sub new {
 }
 
 ## @method create ()
-# Creates a new compute policy. <b>Warning:</b> This  *method*  is available as technical
-# preview. It may be changed in a future release.
+# Creates a new compute policy in VMware Cloud on AWS. Usage beyond VMware Cloud on AWS is
+# not supported. <b>Warning:</b> This  *method*  is available as Technology Preview. These
+# are early access APIs provided to test, automate and provide feedback on the feature.
+# Since this can change based on feedback, VMware does not guarantee backwards compatibility
+# and recommends against using them in production environments. Some Technology Preview APIs
+# might only be applicable to specific environments.
 #
 # Note:
 # Privileges required for this operation are ComputePolicy.Manage.
@@ -105,7 +123,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``ComputePolicy.Manage`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -117,11 +134,14 @@ sub create {
                          method_args => \%args);
 }
 
-
 ## @method list ()
-# Returns information about the compute policies available in this vCenter server.
-# <b>Warning:</b> This  *method*  is available as technical preview. It may be changed in a
-# future release.
+# Returns information about the compute policies available in this vCenter server in VMware
+# Cloud on AWS. Usage beyond VMware Cloud on AWS is not supported. <b>Warning:</b> This 
+# *method*  is available as Technology Preview. These are early access APIs provided to
+# test, automate and provide feedback on the feature. Since this can change based on
+# feedback, VMware does not guarantee backwards compatibility and recommends against using
+# them in production environments. Some Technology Preview APIs might only be applicable to
+# specific environments.
 #
 # Note:
 # Privileges required for this operation are System.Read.
@@ -137,16 +157,19 @@ sub create {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
 
-
 ## @method get ()
-# Returns information about a specific compute policy. <b>Warning:</b> This  *method*  is
-# available as technical preview. It may be changed in a future release.
+# Returns information about a specific compute policy in VMware Cloud on AWS. Usage beyond
+# VMware Cloud on AWS is not supported. <b>Warning:</b> This  *method*  is available as
+# Technology Preview. These are early access APIs provided to test, automate and provide
+# feedback on the feature. Since this can change based on feedback, VMware does not
+# guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 #
 # Note:
 # Privileges required for this operation are System.Read.
@@ -174,7 +197,6 @@ sub list {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $policy = $args {policy};
@@ -186,10 +208,13 @@ sub get {
                          method_args => \%args);
 }
 
-
 ## @method delete ()
-# Deletes a specific compute policy. <b>Warning:</b> This  *method*  is available as
-# technical preview. It may be changed in a future release.
+# Deletes a specific compute policy in VMware Cloud on AWS. Usage beyond VMware Cloud on AWS
+# is not supported. <b>Warning:</b> This  *method*  is available as Technology Preview.
+# These are early access APIs provided to test, automate and provide feedback on the
+# feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 #
 # Note:
 # Privileges required for this operation are ComputePolicy.Manage.
@@ -209,7 +234,6 @@ sub get {
 #  <li>  *Method*  execution requires  ``ComputePolicy.Manage`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $policy = $args {policy};
@@ -220,7 +244,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -243,7 +266,11 @@ sub delete {
 #
 # The  ``Com::Vmware::Vcenter::Compute::Policies::Summary``   *class*  contains commonly
 #     used information about a compute policy. <b>Warning:</b> This  *class*  is available
-#     as technical preview. It may be changed in a future release.
+#     as Technology Preview. These are early access APIs provided to test, automate and
+#     provide feedback on the feature. Since this can change based on feedback, VMware does
+#     not guarantee backwards compatibility and recommends against using them in production
+#     environments. Some Technology Preview APIs might only be applicable to specific
+#     environments.
 
 package Com::Vmware::Vcenter::Compute::Policies::Summary;
 
@@ -290,8 +317,11 @@ sub new {
 # Gets the value of 'policy' property.
 #
 # @retval policy - The current value of the field.
-# Identifier of the policy. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Identifier of the policy. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # ID#
 sub get_policy {
@@ -303,8 +333,11 @@ sub get_policy {
 # Sets the given value for 'policy' property.
 # 
 # @param policy  - New value for the field.
-# Identifier of the policy. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Identifier of the policy. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -316,8 +349,11 @@ sub set_policy {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the policy. <b>Warning:</b> This  *field*  is available as technical preview.
-#     It may be changed in a future release.
+# Name of the policy. <b>Warning:</b> This  *field*  is available as Technology Preview.
+#     These are early access APIs provided to test, automate and provide feedback on the
+#     feature. Since this can change based on feedback, VMware does not guarantee backwards
+#     compatibility and recommends against using them in production environments. Some
+#     Technology Preview APIs might only be applicable to specific environments.
 #
 # String#
 sub get_name {
@@ -329,8 +365,11 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the policy. <b>Warning:</b> This  *field*  is available as technical preview.
-#     It may be changed in a future release.
+# Name of the policy. <b>Warning:</b> This  *field*  is available as Technology Preview.
+#     These are early access APIs provided to test, automate and provide feedback on the
+#     feature. Since this can change based on feedback, VMware does not guarantee backwards
+#     compatibility and recommends against using them in production environments. Some
+#     Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -342,8 +381,11 @@ sub set_name {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the policy. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Description of the policy. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 # String#
 sub get_description {
@@ -355,8 +397,11 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the policy. <b>Warning:</b> This  *field*  is available as technical
-#     preview. It may be changed in a future release.
+# Description of the policy. <b>Warning:</b> This  *field*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -369,7 +414,11 @@ sub set_description {
 #
 # @retval capability - The current value of the field.
 # Identifier of the capability this policy is based on. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+#     is available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 # ID#
 sub get_capability {
@@ -382,7 +431,11 @@ sub get_capability {
 # 
 # @param capability  - New value for the field.
 # Identifier of the capability this policy is based on. <b>Warning:</b> This  *field* 
-#     is available as technical preview. It may be changed in a future release.
+#     is available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 sub set_capability {
    my ($self, %args) = @_;

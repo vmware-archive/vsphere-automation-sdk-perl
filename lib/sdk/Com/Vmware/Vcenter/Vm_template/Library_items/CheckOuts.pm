@@ -39,6 +39,12 @@ use Com::Vmware::Vcenter::Vm_template::Library_items::CheckOutsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm_template.library_items.check_outs';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -145,7 +151,6 @@ sub new {
 #      requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub check_out {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -157,7 +162,6 @@ sub check_out {
    return $self->invoke (method_name => 'check_out',
                          method_args => \%args);
 }
-
 
 ## @method check_in ()
 # Checks in a virtual machine into the library item. This  *method*  updates the library
@@ -228,7 +232,6 @@ sub check_out {
 #     requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub check_in {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -241,7 +244,6 @@ sub check_in {
    return $self->invoke (method_name => 'check_in',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns commonly used information about the virtual machines that are checked out of the
@@ -281,7 +283,6 @@ sub check_in {
 #       ``template_library_item``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -292,7 +293,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns the information about a checked out virtual machine. This  *method*  was added in
@@ -340,7 +340,6 @@ sub list {
 #     requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -352,7 +351,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes the checked out virtual machine. This  *method*  was added in vSphere API 6.9.1.
@@ -402,7 +400,6 @@ sub get {
 #       ``template_library_item``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -414,7 +411,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 1;
 

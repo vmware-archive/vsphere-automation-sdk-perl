@@ -12,8 +12,13 @@
 
 ## @class Com::Vmware::Vcenter::Compute::Policies::TagUsage
 # The  ``Com::Vmware::Vcenter::Compute::Policies::TagUsage``   *interface*  provides 
-#     *methods*  to query which tags are used by policies. <b>Warning:</b> This  *interface*
-#      is available as technical preview. It may be changed in a future release.
+#     *methods*  to query which tags are used by policies in VMware Cloud on AWS. Usage
+#     beyond VMware Cloud on AWS is not supported. <b>Warning:</b> This  *interface*  is
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 
 package Com::Vmware::Vcenter::Compute::Policies::TagUsage;
@@ -35,6 +40,12 @@ use Com::Vmware::Vcenter::Compute::Policies::TagUsageStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.compute.policies.tag_usage';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -60,9 +71,13 @@ sub new {
 
 ## @method list ()
 # Returns information about the tags used by policies available in this vCenter server
-# matching the  class Com::Vmware::Vcenter::Compute::Policies::TagUsage::FilterSpec .
-# <b>Warning:</b> This  *method*  is available as technical preview. It may be changed in a
-# future release.
+# matching the  class Com::Vmware::Vcenter::Compute::Policies::TagUsage::FilterSpec  in
+# VMware Cloud on AWS. Usage beyond VMware Cloud on AWS is not supported. <b>Warning:</b>
+# This  *method*  is available as Technology Preview. These are early access APIs provided
+# to test, automate and provide feedback on the feature. Since this can change based on
+# feedback, VMware does not guarantee backwards compatibility and recommends against using
+# them in production environments. Some Technology Preview APIs might only be applicable to
+# specific environments.
 #
 # Note:
 # Privileges required for this operation are System.Read.
@@ -86,7 +101,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -97,7 +111,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -120,7 +133,11 @@ sub list {
 #
 # The  ``Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary``   *class* 
 #     contains common information about a tag used by a policy. <b>Warning:</b> This 
-#     *class*  is available as technical preview. It may be changed in a future release.
+#     *class*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 
 package Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary;
 
@@ -171,8 +188,11 @@ sub new {
 # @retval policy - The current value of the field.
 # Identifier of the policy that uses the tag indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.tag` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # ID#
 sub get_policy {
@@ -186,8 +206,11 @@ sub get_policy {
 # @param policy  - New value for the field.
 # Identifier of the policy that uses the tag indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.tag` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_policy {
    my ($self, %args) = @_;
@@ -201,8 +224,11 @@ sub set_policy {
 # @retval tag_type - The current value of the field.
 # Identifier of the tag type used by the policy indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.policy` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # ID#
 sub get_tag_type {
@@ -216,8 +242,11 @@ sub get_tag_type {
 # @param tag_type  - New value for the field.
 # Identifier of the tag type used by the policy indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.policy` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_tag_type {
    my ($self, %args) = @_;
@@ -231,8 +260,11 @@ sub set_tag_type {
 # @retval tag - The current value of the field.
 # Identifier of the tag used by the policy indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.policy` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # ID#
 sub get_tag {
@@ -246,8 +278,11 @@ sub get_tag {
 # @param tag  - New value for the field.
 # Identifier of the tag used by the policy indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.policy` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_tag {
    my ($self, %args) = @_;
@@ -261,8 +296,11 @@ sub set_tag {
 # @retval tag_name - The current value of the field.
 # Name of the tag used by the policy indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.policy` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # String#
 sub get_tag_name {
@@ -276,8 +314,11 @@ sub get_tag_name {
 # @param tag_name  - New value for the field.
 # Name of the tag used by the policy indicated by 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.policy` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_tag_name {
    my ($self, %args) = @_;
@@ -291,8 +332,11 @@ sub set_tag_name {
 # @retval category_name - The current value of the field.
 # Name of the category that has 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.tag` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 # String#
 sub get_category_name {
@@ -306,8 +350,11 @@ sub get_category_name {
 # @param category_name  - New value for the field.
 # Name of the category that has 
 #     :attr:`Com::Vmware::Vcenter::Compute::Policies::TagUsage::Summary.tag` .
-#     <b>Warning:</b> This  *field*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *field*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 sub set_category_name {
    my ($self, %args) = @_;
@@ -327,8 +374,11 @@ sub set_category_name {
 #     as available in this vCenter server (see 
 #     :func:`Com::Vmware::Vcenter::Compute::Policies::TagUsage.list` ). If multiple 
 #     *fields*  are specified, only the tags used by policies that match an element of each 
-#     *field*  match the filter. <b>Warning:</b> This  *class*  is available as technical
-#     preview. It may be changed in a future release.
+#     *field*  match the filter. <b>Warning:</b> This  *class*  is available as Technology
+#     Preview. These are early access APIs provided to test, automate and provide feedback
+#     on the feature. Since this can change based on feedback, VMware does not guarantee
+#     backwards compatibility and recommends against using them in production environments.
+#     Some Technology Preview APIs might only be applicable to specific environments.
 
 package Com::Vmware::Vcenter::Compute::Policies::TagUsage::FilterSpec;
 
@@ -374,7 +424,11 @@ sub new {
 #
 # @retval policies - The current value of the field.
 # Identifiers that compute policies must have to match the filter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 # Optional#
 sub get_policies {
@@ -387,7 +441,11 @@ sub get_policies {
 # 
 # @param policies  - New value for the field.
 # Identifiers that compute policies must have to match the filter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 sub set_policies {
    my ($self, %args) = @_;
@@ -400,7 +458,11 @@ sub set_policies {
 #
 # @retval tags - The current value of the field.
 # Identifiers that tags must have to match the filter. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 # Optional#
 sub get_tags {
@@ -413,7 +475,11 @@ sub get_tags {
 # 
 # @param tags  - New value for the field.
 # Identifiers that tags must have to match the filter. <b>Warning:</b> This  *field*  is
-#     available as technical preview. It may be changed in a future release.
+#     available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 sub set_tags {
    my ($self, %args) = @_;
@@ -426,7 +492,11 @@ sub set_tags {
 #
 # @retval tag_types - The current value of the field.
 # Identifiers that tag types must have to match the filter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 # Optional#
 sub get_tag_types {
@@ -439,7 +509,11 @@ sub get_tag_types {
 # 
 # @param tag_types  - New value for the field.
 # Identifiers that tag types must have to match the filter. <b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 sub set_tag_types {
    my ($self, %args) = @_;

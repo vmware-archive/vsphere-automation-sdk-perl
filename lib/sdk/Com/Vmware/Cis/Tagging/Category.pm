@@ -35,6 +35,12 @@ use Com::Vmware::Cis::Tagging::CategoryStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.cis.tagging.category';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -79,7 +85,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to create a category.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $create_spec = $args {create_spec};
@@ -90,7 +95,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Fetches the category information for the given category identifier. In order to view the
@@ -112,7 +116,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to read the category.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $category_id = $args {category_id};
@@ -123,7 +126,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates an existing category. To invoke this  *method* , you need the edit privilege on
@@ -150,7 +152,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to update the category.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $category_id = $args {category_id};
@@ -162,7 +163,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes an existing category. To invoke this  *method* , you need the delete privilege on
@@ -182,7 +182,6 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $category_id = $args {category_id};
@@ -193,7 +192,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Enumerates the categories in the system. To invoke this  *method* , you need the read
@@ -206,12 +204,10 @@ sub delete {
 #     getQualifiedName(com.vmware.cis.tagging.Category).
 # The return type will be Array of str
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method list_used_categories ()
 # Enumerates all categories for which the  ``used_by_entity``  is part of the 
@@ -228,7 +224,6 @@ sub list {
 #     getQualifiedName(com.vmware.cis.tagging.Category).
 # The return type will be Array of str
 #
-
 sub list_used_categories {
    my ($self, %args) = @_;
    my $used_by_entity = $args {used_by_entity};
@@ -239,7 +234,6 @@ sub list_used_categories {
    return $self->invoke (method_name => 'list_used_categories',
                          method_args => \%args);
 }
-
 
 ## @method add_to_used_by ()
 # Adds the  ``used_by_entity``  to the 
@@ -264,7 +258,6 @@ sub list_used_categories {
 # if you do not have the privilege to add an entity to the 
 #     :attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`  field.
 #
-
 sub add_to_used_by {
    my ($self, %args) = @_;
    my $category_id = $args {category_id};
@@ -276,7 +269,6 @@ sub add_to_used_by {
    return $self->invoke (method_name => 'add_to_used_by',
                          method_args => \%args);
 }
-
 
 ## @method remove_from_used_by ()
 # Removes the  ``used_by_entity``  from the 
@@ -301,7 +293,6 @@ sub add_to_used_by {
 # if you do not have the privilege to remove an entity from the 
 #     :attr:`Com::Vmware::Cis::Tagging::CategoryModel.used_by`  field.
 #
-
 sub remove_from_used_by {
    my ($self, %args) = @_;
    my $category_id = $args {category_id};
@@ -313,7 +304,6 @@ sub remove_from_used_by {
    return $self->invoke (method_name => 'remove_from_used_by',
                          method_args => \%args);
 }
-
 
 ## @method revoke_propagating_permissions ()
 # Revokes all propagating permissions on the given category. You should then attach a direct
@@ -331,7 +321,6 @@ sub remove_from_used_by {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 #  if you do not have the privilege to revoke propagating permissions on the category.
 #
-
 sub revoke_propagating_permissions {
    my ($self, %args) = @_;
    my $category_id = $args {category_id};
@@ -342,7 +331,6 @@ sub revoke_propagating_permissions {
    return $self->invoke (method_name => 'revoke_propagating_permissions',
                          method_args => \%args);
 }
-
 
 1;
 

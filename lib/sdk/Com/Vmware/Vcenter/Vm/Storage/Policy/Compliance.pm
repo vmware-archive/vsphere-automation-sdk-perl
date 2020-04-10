@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Vm::Storage::Policy::ComplianceStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.storage.policy.compliance';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -89,7 +95,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user does not have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -100,7 +105,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method check ()
 # Returns the storage policy Compliance  class
@@ -143,7 +147,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user does not have the required privileges.
 #
-
 sub check {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -155,7 +158,6 @@ sub check {
    return $self->invoke (method_name => 'check',
                          method_args => \%args);
 }
-
 
 1;
 

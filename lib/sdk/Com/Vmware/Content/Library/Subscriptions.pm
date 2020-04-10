@@ -39,6 +39,12 @@ use Com::Vmware::Content::Library::SubscriptionsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.subscriptions';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -128,7 +134,6 @@ sub new {
 #     ``library``  requires  ``ContentLibrary.AddSubscription`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -141,7 +146,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes the specified subscription of the published library. The subscribed library
@@ -187,7 +191,6 @@ sub create {
 #     ``library``  requires  ``ContentLibrary.DeleteSubscription`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $library = $args {library};
@@ -199,7 +202,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Lists the subscriptions of the published library. This  *method*  was added in vSphere API
@@ -240,7 +242,6 @@ sub delete {
 #     ``library``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $library = $args {library};
@@ -251,7 +252,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the specified subscription of the published library. <p>
@@ -313,7 +313,6 @@ sub list {
 #     ``library``  requires  ``ContentLibrary.UpdateSubscription`` . </li>
 # </ul>
 #
-
 sub update {
    my ($self, %args) = @_;
    my $library = $args {library};
@@ -326,7 +325,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about the specified subscription of the published library. This 
@@ -375,7 +373,6 @@ sub update {
 #     ``library``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $library = $args {library};
@@ -387,7 +384,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

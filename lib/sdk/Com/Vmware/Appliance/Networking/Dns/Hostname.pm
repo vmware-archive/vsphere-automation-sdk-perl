@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Networking::Dns::HostnameStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.dns.hostname';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -70,7 +76,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub test {
    my ($self, %args) = @_;
    my $name = $args {name};
@@ -82,7 +87,6 @@ sub test {
                          method_args => \%args);
 }
 
-
 ## @method set ()
 # Set the Fully Qualified Domain Name.
 #
@@ -92,7 +96,6 @@ sub test {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $name = $args {name};
@@ -104,7 +107,6 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method get ()
 # Get the Fully Qualified Doman Name.
 #
@@ -115,12 +117,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

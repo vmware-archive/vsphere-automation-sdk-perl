@@ -36,6 +36,12 @@ use Com::Vmware::Cis::Tagging::TagAssociationStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.cis.tagging.tag_association';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -88,7 +94,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub attach {
    my ($self, %args) = @_;
    my $tag_id = $args {tag_id};
@@ -100,7 +105,6 @@ sub attach {
    return $self->invoke (method_name => 'attach',
                          method_args => \%args);
 }
-
 
 ## @method attach_multiple_tags_to_object ()
 # Attaches the given tags to the input object. If a tag is already attached to the object,
@@ -129,7 +133,6 @@ sub attach {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub attach_multiple_tags_to_object {
    my ($self, %args) = @_;
    my $object_id = $args {object_id};
@@ -141,7 +144,6 @@ sub attach_multiple_tags_to_object {
    return $self->invoke (method_name => 'attach_multiple_tags_to_object',
                          method_args => \%args);
 }
-
 
 ## @method attach_tag_to_multiple_objects ()
 # Attaches the given tag to the input objects. If a tag is already attached to the object,
@@ -173,7 +175,6 @@ sub attach_multiple_tags_to_object {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub attach_tag_to_multiple_objects {
    my ($self, %args) = @_;
    my $tag_id = $args {tag_id};
@@ -185,7 +186,6 @@ sub attach_tag_to_multiple_objects {
    return $self->invoke (method_name => 'attach_tag_to_multiple_objects',
                          method_args => \%args);
 }
-
 
 ## @method detach ()
 # Detaches the tag from the given object. If the tag is already removed from the object,
@@ -210,7 +210,6 @@ sub attach_tag_to_multiple_objects {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub detach {
    my ($self, %args) = @_;
    my $tag_id = $args {tag_id};
@@ -222,7 +221,6 @@ sub detach {
    return $self->invoke (method_name => 'detach',
                          method_args => \%args);
 }
-
 
 ## @method detach_multiple_tags_from_object ()
 # Detaches the given tags from the input object. If a tag is already removed from the
@@ -251,7 +249,6 @@ sub detach {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub detach_multiple_tags_from_object {
    my ($self, %args) = @_;
    my $object_id = $args {object_id};
@@ -263,7 +260,6 @@ sub detach_multiple_tags_from_object {
    return $self->invoke (method_name => 'detach_multiple_tags_from_object',
                          method_args => \%args);
 }
-
 
 ## @method detach_tag_from_multiple_objects ()
 # Detaches the given tag from the input objects. If a tag is already removed from the
@@ -295,7 +291,6 @@ sub detach_multiple_tags_from_object {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub detach_tag_from_multiple_objects {
    my ($self, %args) = @_;
    my $tag_id = $args {tag_id};
@@ -307,7 +302,6 @@ sub detach_tag_from_multiple_objects {
    return $self->invoke (method_name => 'detach_tag_from_multiple_objects',
                          method_args => \%args);
 }
-
 
 ## @method list_attached_objects ()
 # Fetches the  *list*  of attached objects for the given tag. To invoke this  *method* , you
@@ -332,7 +326,6 @@ sub detach_tag_from_multiple_objects {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub list_attached_objects {
    my ($self, %args) = @_;
    my $tag_id = $args {tag_id};
@@ -343,7 +336,6 @@ sub list_attached_objects {
    return $self->invoke (method_name => 'list_attached_objects',
                          method_args => \%args);
 }
-
 
 ## @method list_attached_objects_on_tags ()
 # Fetches the  *list*  of  class Com::Vmware::Cis::Tagging::TagAssociation::TagToObjects 
@@ -366,7 +358,6 @@ sub list_attached_objects {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub list_attached_objects_on_tags {
    my ($self, %args) = @_;
    my $tag_ids = $args {tag_ids};
@@ -377,7 +368,6 @@ sub list_attached_objects_on_tags {
    return $self->invoke (method_name => 'list_attached_objects_on_tags',
                          method_args => \%args);
 }
-
 
 ## @method list_attached_tags ()
 # Fetches the  *list*  of tags attached to the given object. To invoke this  *method* , you
@@ -400,7 +390,6 @@ sub list_attached_objects_on_tags {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub list_attached_tags {
    my ($self, %args) = @_;
    my $object_id = $args {object_id};
@@ -411,7 +400,6 @@ sub list_attached_tags {
    return $self->invoke (method_name => 'list_attached_tags',
                          method_args => \%args);
 }
-
 
 ## @method list_attached_tags_on_objects ()
 # Fetches the  *list*  of  class Com::Vmware::Cis::Tagging::TagAssociation::ObjectToTags 
@@ -432,7 +420,6 @@ sub list_attached_tags {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub list_attached_tags_on_objects {
    my ($self, %args) = @_;
    my $object_ids = $args {object_ids};
@@ -443,7 +430,6 @@ sub list_attached_tags_on_objects {
    return $self->invoke (method_name => 'list_attached_tags_on_objects',
                          method_args => \%args);
 }
-
 
 ## @method list_attachable_tags ()
 # Fetches the  *list*  of attachable tags for the given object, omitting the tags that have
@@ -468,7 +454,6 @@ sub list_attached_tags_on_objects {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 #  if the user can not be authenticated.
 #
-
 sub list_attachable_tags {
    my ($self, %args) = @_;
    my $object_id = $args {object_id};
@@ -479,7 +464,6 @@ sub list_attachable_tags {
    return $self->invoke (method_name => 'list_attachable_tags',
                          method_args => \%args);
 }
-
 
 1;
 

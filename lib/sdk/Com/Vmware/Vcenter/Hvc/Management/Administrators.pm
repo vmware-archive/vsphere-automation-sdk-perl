@@ -13,8 +13,12 @@
 ## @class Com::Vmware::Vcenter::Hvc::Management::Administrators
 # The  ``Com::Vmware::Vcenter::Hvc::Management::Administrators``  provides  *methods* 
 #     to update, delete, and list groups in the local sso group. This is limited to the
-#     Hybrid Linked Mode service. <b>Warning:</b> This  *interface*  is available as
-#     technical preview. It may be changed in a future release.
+#     Hybrid Linked Mode service. Usage beyond VMware Cloud on AWS is not supported.
+#     <b>Warning:</b> This  *interface*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 #
 
 package Com::Vmware::Vcenter::Hvc::Management::Administrators;
@@ -36,6 +40,12 @@ use Com::Vmware::Vcenter::Hvc::Management::AdministratorsStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.hvc.management.administrators';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -60,8 +70,12 @@ sub new {
 }
 
 ## @method add ()
-# Add the local sso group with the new group. <b>Warning:</b> This  *method*  is available
-# as technical preview. It may be changed in a future release.
+# Add the local sso group with the new group. Usage beyond VMware Cloud on AWS is not
+# supported. <b>Warning:</b> This  *method*  is available as Technology Preview. These are
+# early access APIs provided to test, automate and provide feedback on the feature. Since
+# this can change based on feedback, VMware does not guarantee backwards compatibility and
+# recommends against using them in production environments. Some Technology Preview APIs
+# might only be applicable to specific environments.
 #
 # @param group_name [REQUIRED] Name of the new group to be added. Ex - xyz@abc.com where xyz is the group name and
 #     abc.com is the domain name
@@ -73,7 +87,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-
 sub add {
    my ($self, %args) = @_;
    my $group_name = $args {group_name};
@@ -85,10 +98,13 @@ sub add {
                          method_args => \%args);
 }
 
-
 ## @method remove ()
-# Remove the group from the local sso group. <b>Warning:</b> This  *method*  is available as
-# technical preview. It may be changed in a future release.
+# Remove the group from the local sso group. Usage beyond VMware Cloud on AWS is not
+# supported. <b>Warning:</b> This  *method*  is available as Technology Preview. These are
+# early access APIs provided to test, automate and provide feedback on the feature. Since
+# this can change based on feedback, VMware does not guarantee backwards compatibility and
+# recommends against using them in production environments. Some Technology Preview APIs
+# might only be applicable to specific environments.
 #
 # @param group_name [REQUIRED] Name of the group to be removed. Ex - xyz@abc.com where xyz is the group name and
 #     abc.com is the domain name
@@ -100,7 +116,6 @@ sub add {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-
 sub remove {
    my ($self, %args) = @_;
    my $group_name = $args {group_name};
@@ -112,10 +127,13 @@ sub remove {
                          method_args => \%args);
 }
 
-
 ## @method set ()
-# Sets the groups in the local sso group. <b>Warning:</b> This  *method*  is available as
-# technical preview. It may be changed in a future release.
+# Sets the groups in the local sso group. Usage beyond VMware Cloud on AWS is not supported.
+# <b>Warning:</b> This  *method*  is available as Technology Preview. These are early access
+# APIs provided to test, automate and provide feedback on the feature. Since this can change
+# based on feedback, VMware does not guarantee backwards compatibility and recommends
+# against using them in production environments. Some Technology Preview APIs might only be
+# applicable to specific environments.
 #
 # @param group_names [REQUIRED] Names the groups to be in the CloudAdminGroup Ex - xyz@abc.com where xyz is the group
 #     name and abc.com is the domain name
@@ -127,7 +145,6 @@ sub remove {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-
 sub set {
    my ($self, %args) = @_;
    my $group_names = $args {group_names};
@@ -139,10 +156,13 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method get ()
-# Enumerates the set of all the groups in the local sso group. <b>Warning:</b> This 
-# *method*  is available as technical preview. It may be changed in a future release.
+# Enumerates the set of all the groups in the local sso group. Usage beyond VMware Cloud on
+# AWS is not supported. <b>Warning:</b> This  *method*  is available as Technology Preview.
+# These are early access APIs provided to test, automate and provide feedback on the
+# feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 #
 # @retval 
 # The  *set*  of all the groups.
@@ -151,12 +171,10 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if the system reports an error while responding to the request.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

@@ -39,6 +39,12 @@ use Com::Vmware::Vcenter::Deployment::ImportHistoryStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.deployment.import_history';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -79,12 +85,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method start ()
 # Creates and starts task for importing vCenter historical data. This  *method*  was added
@@ -121,7 +125,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub start {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -132,7 +135,6 @@ sub start {
    return $self->invoke (method_name => 'start',
                          method_args => \%args);
 }
-
 
 ## @method pause ()
 # Pauses the task for importing vCenter historical data. This  *method*  was added in
@@ -154,12 +156,10 @@ sub start {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub pause {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'pause', method_args =>  {});
 }
-
 
 ## @method resume ()
 # Resumes the task for importing vCenter historical data. This  *method*  was added in
@@ -181,12 +181,10 @@ sub pause {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub resume {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'resume', method_args =>  {});
 }
-
 
 ## @method cancel ()
 # Cancels the task for importing vCenter historical data. This  *method*  was added in
@@ -213,12 +211,10 @@ sub resume {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub cancel {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'cancel', method_args =>  {});
 }
-
 
 1;
 

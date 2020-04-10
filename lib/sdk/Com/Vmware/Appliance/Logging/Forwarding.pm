@@ -37,6 +37,12 @@ use Com::Vmware::Appliance::Logging::ForwardingStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.logging.forwarding';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -76,7 +82,6 @@ sub new {
 # The return type will be Array of
 # Com::Vmware::Appliance::Logging::Forwarding::ConnectionStatus
 #
-
 sub test {
    my ($self, %args) = @_;
    my $send_test_message = $args {send_test_message};
@@ -87,7 +92,6 @@ sub test {
    return $self->invoke (method_name => 'test',
                          method_args => \%args);
 }
-
 
 ## @method set ()
 # Sets the configuration for forwarding log messages to remote log servers. This  *method* 
@@ -107,7 +111,6 @@ sub test {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if there is any internal error during the execution of the operation.
 #
-
 sub set {
    my ($self, %args) = @_;
    my $cfg_list = $args {cfg_list};
@@ -119,7 +122,6 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method get ()
 # Returns the configuration for forwarding log messages to remote logging servers. This 
 # *method*  was added in vSphere API 6.7.
@@ -129,12 +131,10 @@ sub set {
 #     servers.
 # The return type will be Array of Com::Vmware::Appliance::Logging::Forwarding::Config
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

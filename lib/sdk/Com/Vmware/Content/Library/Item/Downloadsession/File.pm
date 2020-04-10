@@ -49,6 +49,12 @@ use Com::Vmware::Content::Library::Item::Downloadsession::FileStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.item.downloadsession.file';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -96,7 +102,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -107,7 +112,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method prepare ()
 # Requests a file to be prepared for download.
@@ -155,7 +159,6 @@ sub list {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub prepare {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -168,7 +171,6 @@ sub prepare {
    return $self->invoke (method_name => 'prepare',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieves file download information for a specific file.
@@ -199,7 +201,6 @@ sub prepare {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $download_session_id = $args {download_session_id};
@@ -211,7 +212,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

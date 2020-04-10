@@ -37,6 +37,12 @@ use Com::Vmware::Vcenter::Iso::ImageStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.iso.image';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -100,7 +106,6 @@ sub new {
 #       ``library_item``  requires  ``ContentLibrary.DownloadSession`` . </li>
 # </ul>
 #
-
 sub mount {
    my ($self, %args) = @_;
    my $library_item = $args {library_item};
@@ -112,7 +117,6 @@ sub mount {
    return $self->invoke (method_name => 'mount',
                          method_args => \%args);
 }
-
 
 ## @method unmount ()
 # Unmounts a previously mounted CD-ROM using an ISO image as a backing.
@@ -145,7 +149,6 @@ sub mount {
 #     *parameter*   ``cdrom``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub unmount {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -157,7 +160,6 @@ sub unmount {
    return $self->invoke (method_name => 'unmount',
                          method_args => \%args);
 }
-
 
 1;
 

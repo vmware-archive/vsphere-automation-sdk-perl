@@ -43,6 +43,12 @@ use Com::Vmware::Vcenter::Vm_template::Library_items::VersionsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm_template.library_items.versions';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -103,7 +109,6 @@ sub new {
 #       ``template_library_item``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -114,7 +119,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about the live version of a library item containing a virtual machine
@@ -160,7 +164,6 @@ sub list {
 #     *parameter*   ``version``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -172,7 +175,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method rollback ()
 # Rollbacks a library item containing a virtual machine template to a previous version. The
@@ -232,7 +234,6 @@ sub get {
 #     *parameter*   ``version``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub rollback {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -245,7 +246,6 @@ sub rollback {
    return $self->invoke (method_name => 'rollback',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes the virtual machine template contained in the library item at the specified
@@ -292,7 +292,6 @@ sub rollback {
 #     *parameter*   ``version``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -304,7 +303,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 1;
 

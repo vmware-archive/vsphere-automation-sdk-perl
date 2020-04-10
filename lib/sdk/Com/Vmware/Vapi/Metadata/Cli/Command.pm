@@ -35,6 +35,12 @@ use Com::Vmware::Vapi::Metadata::Cli::CommandStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.cli.command';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -73,7 +79,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if a namespace corresponding to  ``path``  doesn&apos;t exist.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $path = $args {path};
@@ -84,7 +89,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieves information about a command including information about how to execute that
@@ -100,7 +104,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if a command corresponding to  ``identity``  doesn&apos;t exist.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $identity = $args {identity};
@@ -111,7 +114,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method fingerprint ()
 # Returns the aggregate fingerprint of all the command metadata from all the metadata
@@ -124,12 +126,10 @@ sub get {
 # Fingerprint of all the command metadata present on the server.
 # The return type will be String
 #
-
 sub fingerprint {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'fingerprint', method_args =>  {});
 }
-
 
 1;
 

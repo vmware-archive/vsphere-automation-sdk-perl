@@ -37,6 +37,12 @@ use Com::Vmware::Appliance::Update::PendingStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.update.pending';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -85,7 +91,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # session is not authorized to perform this operation
 #
-
 sub list {
    my ($self, %args) = @_;
    my $source_type = $args {source_type};
@@ -97,7 +102,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Gets update information. This  *method*  was added in vSphere API 6.7.
@@ -126,7 +130,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::AlreadyInDesiredState 
 # if the update of this version is already installed
 #
-
 sub get {
    my ($self, %args) = @_;
    my $version = $args {version};
@@ -137,7 +140,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method precheck ()
 # Runs update precheck. This  *method*  was added in vSphere API 6.7.
@@ -169,7 +171,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if another operation is in progress
 #
-
 sub precheck {
    my ($self, %args) = @_;
    my $version = $args {version};
@@ -180,7 +181,6 @@ sub precheck {
    return $self->invoke (method_name => 'precheck',
                          method_args => \%args);
 }
-
 
 ## @method stage ()
 # Starts staging the appliance update. The updates are searched for in the following order:
@@ -212,7 +212,6 @@ sub precheck {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if appliance update state prevents staging
 #
-
 sub stage {
    my ($self, %args) = @_;
    my $version = $args {version};
@@ -223,7 +222,6 @@ sub stage {
    return $self->invoke (method_name => 'stage',
                          method_args => \%args);
 }
-
 
 ## @method validate ()
 # Validates the user provided data before the update installation. This  *method*  was added
@@ -261,7 +259,6 @@ sub stage {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if appliance update state prevents running an check
 #
-
 sub validate {
    my ($self, %args) = @_;
    my $version = $args {version};
@@ -273,7 +270,6 @@ sub validate {
    return $self->invoke (method_name => 'validate',
                          method_args => \%args);
 }
-
 
 ## @method install ()
 # Starts operation of installing the appliance update. Will fail is the update is not
@@ -309,7 +305,6 @@ sub validate {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if appliance update state prevents running an update or not staged
 #
-
 sub install {
    my ($self, %args) = @_;
    my $version = $args {version};
@@ -321,7 +316,6 @@ sub install {
    return $self->invoke (method_name => 'install',
                          method_args => \%args);
 }
-
 
 ## @method stage_and_install ()
 # Starts operation of installing the appliance update. Will stage update if not already
@@ -358,7 +352,6 @@ sub install {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if appliance update state prevents running an update
 #
-
 sub stage_and_install {
    my ($self, %args) = @_;
    my $version = $args {version};
@@ -370,7 +363,6 @@ sub stage_and_install {
    return $self->invoke (method_name => 'stage_and_install',
                          method_args => \%args);
 }
-
 
 1;
 

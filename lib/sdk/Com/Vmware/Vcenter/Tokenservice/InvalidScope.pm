@@ -3,8 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Tokenservice::InvalidScope``   *error*  indicates
 #     requested scope is invalid, unknown, malformed, or exceeds the scope granted by the
-#     resource owner. <b>Warning:</b> This  *class*  is available as technical preview. It
-#     may be changed in a future release.
+#     resource owner.
 
 package Com::Vmware::Vcenter::Tokenservice::InvalidScope;
 

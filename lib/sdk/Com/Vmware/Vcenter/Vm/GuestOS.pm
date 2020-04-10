@@ -107,6 +107,9 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::WINDOWS_HYPERV #
 #Windows Hyper-V
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::WINDOWS_SERVER_2019 #
+#Windows Server 2019. This  *constant*  was added in vSphere API 7.0.0.
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::FREEBSD #
 #FreeBSD 10 or earlier
 #
@@ -311,6 +314,12 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::DEBIAN_10_64 #
 #Debian GNU/Linux 10 (64 bit)
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::DEBIAN_11 #
+#Debian GNU/Linux 11. This  *constant*  was added in vSphere API 7.0.0.
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::DEBIAN_11_64 #
+#Debian GNU/Linux 11 (64 bit). This  *constant*  was added in vSphere API 7.0.0.
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::ASIANUX_3 #
 #Asianux Server 3
 #
@@ -470,6 +479,9 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::DARWIN_18_64 #
 #Mac OS 10.14 (64 bit). This  *constant*  was added in vSphere API 6.7.
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::DARWIN_19_64 #
+#Mac OS 10.15 (64 bit). This  *constant*  was added in vSphere API 7.0.0.
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::VMKERNEL #
 #VMware ESX 4
 #
@@ -482,8 +494,14 @@
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::VMKERNEL_65 #
 #VMware ESX 6.5
 #
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::VMKERNEL_7 #
+#VMware ESX 7. This  *constant*  was added in vSphere API 7.0.0.
+#
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::AMAZONLINUX2_64 #
 #Amazon Linux 2 (64 bit). This  *constant*  was added in vSphere API 6.7.1.
+#
+# Constant Com::Vmware::Vcenter::Vm::GuestOS::CRXPOD_1 #
+#CRX Pod 1. This  *constant*  was added in vSphere API 7.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::GuestOS::OTHER #
 #Other Operating System
@@ -528,6 +546,7 @@ use constant {
     WINDOWS_9_64 =>  'WINDOWS_9_64',
     WINDOWS_9_SERVER_64 =>  'WINDOWS_9_SERVER_64',
     WINDOWS_HYPERV =>  'WINDOWS_HYPERV',
+    WINDOWS_SERVER_2019 =>  'WINDOWS_SERVER_2019',
     FREEBSD =>  'FREEBSD',
     FREEBSD_64 =>  'FREEBSD_64',
     FREEBSD_11 =>  'FREEBSD_11',
@@ -596,6 +615,8 @@ use constant {
     DEBIAN_9_64 =>  'DEBIAN_9_64',
     DEBIAN_10 =>  'DEBIAN_10',
     DEBIAN_10_64 =>  'DEBIAN_10_64',
+    DEBIAN_11 =>  'DEBIAN_11',
+    DEBIAN_11_64 =>  'DEBIAN_11_64',
     ASIANUX_3 =>  'ASIANUX_3',
     ASIANUX_3_64 =>  'ASIANUX_3_64',
     ASIANUX_4 =>  'ASIANUX_4',
@@ -649,11 +670,14 @@ use constant {
     DARWIN_16_64 =>  'DARWIN_16_64',
     DARWIN_17_64 =>  'DARWIN_17_64',
     DARWIN_18_64 =>  'DARWIN_18_64',
+    DARWIN_19_64 =>  'DARWIN_19_64',
     VMKERNEL =>  'VMKERNEL',
     VMKERNEL_5 =>  'VMKERNEL_5',
     VMKERNEL_6 =>  'VMKERNEL_6',
     VMKERNEL_65 =>  'VMKERNEL_65',
+    VMKERNEL_7 =>  'VMKERNEL_7',
     AMAZONLINUX2_64 =>  'AMAZONLINUX2_64',
+    CRXPOD_1 =>  'CRXPOD_1',
     OTHER =>  'OTHER',
     OTHER_64 =>  'OTHER_64',
 };

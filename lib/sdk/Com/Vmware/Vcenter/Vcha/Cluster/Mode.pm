@@ -36,6 +36,17 @@ use Com::Vmware::Vcenter::Vcha::Cluster::ModeStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vcha.cluster.mode';
+
+#
+# Identifiers of the task operations
+#
+our $_VAPI_OPERATION_IDS = ();
+$_VAPI_OPERATION_IDS->{'set_task'} = 'set$task';
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -76,14 +87,12 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
 
-
-## @method set ()
+## @method set_task ()
 # Manipulates the mode of a VCHA Cluster. Following mode transitions are allowed:
 #  enabled -&gt; disabled - Allowed only in healthy and degraded states.
 #  enabled -&gt; maintenance - Allowed only in healthy state.
@@ -108,15 +117,14 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
-sub set {
+sub set_task {
    my ($self, %args) = @_;
    my $mode = $args {mode};
 
-   $self->validate_args (method_name => 'set',
+   $self->validate_args (method_name => 'set$task',
                          method_args => \%args);
-   
-   return $self->invoke (method_name => 'set',
+
+   return $self->invoke (method_name => 'set$task',
                          method_args => \%args);
 }
 

@@ -40,6 +40,12 @@ use Com::Vmware::Content::LocalLibraryStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.local_library';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -99,7 +105,6 @@ sub new {
 #     ``Datastore.AllocateSpace`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -111,7 +116,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes the specified local library. <p>
@@ -144,7 +148,6 @@ sub create {
 #     ``library_id``  requires  ``ContentLibrary.DeleteLocalLibrary`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -155,7 +158,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns a given local library.
@@ -184,7 +186,6 @@ sub delete {
 #     ``library_id``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -195,7 +196,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns the identifiers of all local libraries in the Content Library.
@@ -213,12 +213,10 @@ sub get {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method update ()
 # Updates the properties of a local library. <p>
@@ -269,7 +267,6 @@ sub list {
 #     ``library_id``  requires  ``ContentLibrary.UpdateLocalLibrary`` . </li>
 # </ul>
 #
-
 sub update {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -281,7 +278,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method publish ()
 # Publishes the library to specified subscriptions. If no subscriptions are specified, then
@@ -325,7 +321,6 @@ sub update {
 #     ``library_id``  requires  ``ContentLibrary.PublishLibrary`` . </li>
 # </ul>
 #
-
 sub publish {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -337,7 +332,6 @@ sub publish {
    return $self->invoke (method_name => 'publish',
                          method_args => \%args);
 }
-
 
 1;
 

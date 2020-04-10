@@ -36,6 +36,12 @@ use Com::Vmware::Vcenter::Certificate_management::Vcenter::TlsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.certificate_management.vcenter.tls';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -101,7 +107,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``CertificateManagement.Administer`` . </li>
 # </ul>
 #
-
 sub set {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -112,7 +117,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns the rhttpproxy TLS certificate. This  *method*  was added in vSphere API 6.7.2.
@@ -134,12 +138,10 @@ sub set {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method renew ()
 # Renews the TLS certificate for the given duration period. <p>
@@ -170,7 +172,6 @@ sub get {
 #  <li>  *Method*  execution requires  ``CertificateManagement.Administer`` . </li>
 # </ul>
 #
-
 sub renew {
    my ($self, %args) = @_;
    my $duration = $args {duration};
@@ -181,7 +182,6 @@ sub renew {
    return $self->invoke (method_name => 'renew',
                          method_args => \%args);
 }
-
 
 ## @method replace_vmca_signed ()
 # Replace MACHINE SSL with VMCA signed one with the given Spec.The system will go for
@@ -209,7 +209,6 @@ sub renew {
 #  <li>  *Method*  execution requires  ``CertificateManagement.Administer`` . </li>
 # </ul>
 #
-
 sub replace_vmca_signed {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -220,7 +219,6 @@ sub replace_vmca_signed {
    return $self->invoke (method_name => 'replace_vmca_signed',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -37,6 +37,12 @@ use Com::Vmware::Vcenter::System_config::DeploymentTypeStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.system_config.deployment_type';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -72,12 +78,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if appliance is not in CONFIGURED state.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method reconfigure ()
 # Reconfigure the type of the vCenter appliance. This  *method*  was added in vSphere API
@@ -101,7 +105,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the appliance is not in INITIALIZED or CONFIGURED state.
 #
-
 sub reconfigure {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -112,7 +115,6 @@ sub reconfigure {
    return $self->invoke (method_name => 'reconfigure',
                          method_args => \%args);
 }
-
 
 1;
 

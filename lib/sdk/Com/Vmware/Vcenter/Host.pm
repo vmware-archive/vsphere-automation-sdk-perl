@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::HostStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.host';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -117,7 +123,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -128,7 +133,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Remove a standalone host from the vCenter Server.
@@ -155,7 +159,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $host = $args {host};
@@ -166,7 +169,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns information about at most 2500 visible (subject to permission checks) hosts in
@@ -199,7 +201,6 @@ sub delete {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -210,7 +211,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method connect ()
 # Connect to the host corresponding to  ``host``  previously added to the vCenter server.
@@ -237,7 +237,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub connect {
    my ($self, %args) = @_;
    my $host = $args {host};
@@ -248,7 +247,6 @@ sub connect {
    return $self->invoke (method_name => 'connect',
                          method_args => \%args);
 }
-
 
 ## @method disconnect ()
 # Disconnect the host corresponding to  ``host``  from the vCenter server
@@ -275,7 +273,6 @@ sub connect {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub disconnect {
    my ($self, %args) = @_;
    my $host = $args {host};
@@ -286,7 +283,6 @@ sub disconnect {
    return $self->invoke (method_name => 'disconnect',
                          method_args => \%args);
 }
-
 
 1;
 

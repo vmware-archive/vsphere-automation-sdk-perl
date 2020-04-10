@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Vmon::ServiceStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.vmon.service';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -83,7 +89,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any other error occurs during the execution of the operation.
 #
-
 sub start {
    my ($self, %args) = @_;
    my $service = $args {service};
@@ -94,7 +99,6 @@ sub start {
    return $self->invoke (method_name => 'start',
                          method_args => \%args);
 }
-
 
 ## @method stop ()
 # Stops a service
@@ -114,7 +118,6 @@ sub start {
 # if the operation is denied in the current state of the service. If a stop operation is
 #     in progress, issuing another stop operation will lead to this error.
 #
-
 sub stop {
    my ($self, %args) = @_;
    my $service = $args {service};
@@ -125,7 +128,6 @@ sub stop {
    return $self->invoke (method_name => 'stop',
                          method_args => \%args);
 }
-
 
 ## @method restart ()
 # Restarts a service
@@ -151,7 +153,6 @@ sub stop {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any other error occurs during the execution of the operation.
 #
-
 sub restart {
    my ($self, %args) = @_;
    my $service = $args {service};
@@ -162,7 +163,6 @@ sub restart {
    return $self->invoke (method_name => 'restart',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns the state of a service.
@@ -182,7 +182,6 @@ sub restart {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any other error occurs during the execution of the operation.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $service = $args {service};
@@ -193,7 +192,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the properties of a service.
@@ -222,7 +220,6 @@ sub get {
 #     comes in for a service that is not in 
 #     :attr:`Com::Vmware::Appliance::Vmon::Service::State.STOPPED`  state.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $service = $args {service};
@@ -234,7 +231,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method list_details ()
 # Lists details of services managed by vMon.
@@ -248,12 +244,10 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub list_details {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list_details', method_args =>  {});
 }
-
 
 1;
 

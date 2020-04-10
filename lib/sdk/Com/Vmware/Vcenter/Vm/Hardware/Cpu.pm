@@ -35,6 +35,12 @@ use Com::Vmware::Vcenter::Vm::Hardware::CpuStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.hardware.cpu';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -87,7 +93,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -98,7 +103,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the CPU-related settings of a virtual machine.
@@ -146,7 +150,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -158,7 +161,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 1;
 

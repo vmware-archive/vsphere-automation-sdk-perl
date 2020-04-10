@@ -39,6 +39,12 @@ use Com::Vmware::Content::Library::Item::ChangesStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.item.changes';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -94,7 +100,6 @@ sub new {
 #       ``library_item``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $library_item = $args {library_item};
@@ -105,7 +110,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about a library item change. This  *method*  was added in vSphere API
@@ -145,7 +149,6 @@ sub list {
 #       ``library_item``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $library_item = $args {library_item};
@@ -157,7 +160,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

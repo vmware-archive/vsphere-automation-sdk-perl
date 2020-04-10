@@ -36,6 +36,12 @@ use Com::Vmware::Vcenter::Topology::NodesStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.topology.nodes';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -92,7 +98,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -103,7 +108,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieve details for a given identifier of the vCenter or Platform Services Controller
@@ -137,7 +141,6 @@ sub list {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $node = $args {node};
@@ -148,7 +151,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

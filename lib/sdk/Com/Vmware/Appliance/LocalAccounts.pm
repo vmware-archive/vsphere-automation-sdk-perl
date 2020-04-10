@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::LocalAccountsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.local_accounts';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -73,7 +79,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    my $username = $args {username};
@@ -84,7 +89,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Get a list of the local user accounts. This  *method*  was added in vSphere API 6.7.
@@ -98,12 +102,10 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method create ()
 # Create a new local user account. This  *method*  was added in vSphere API 6.7.
@@ -126,7 +128,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub create {
    my ($self, %args) = @_;
    my $username = $args {username};
@@ -138,7 +139,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method set ()
 # Set local user account properties. This  *method*  was added in vSphere API 6.7.
@@ -157,7 +157,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub set {
    my ($self, %args) = @_;
    my $username = $args {username};
@@ -169,7 +168,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Update selected fields in local user account properties. This  *method*  was added in
@@ -189,7 +187,6 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub update {
    my ($self, %args) = @_;
    my $username = $args {username};
@@ -201,7 +198,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Delete a local user account. This  *method*  was added in vSphere API 6.7.
@@ -217,7 +213,6 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $username = $args {username};
@@ -228,7 +223,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 1;
 

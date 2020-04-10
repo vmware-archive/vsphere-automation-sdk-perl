@@ -35,6 +35,12 @@ use Com::Vmware::Appliance::Recovery::Restore::JobStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.recovery.restore.job';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -67,12 +73,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub cancel {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'cancel', method_args =>  {});
 }
-
 
 ## @method create ()
 # Initiate restore.
@@ -93,7 +97,6 @@ sub cancel {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub create {
    my ($self, %args) = @_;
    my $piece = $args {piece};
@@ -105,7 +108,6 @@ sub create {
                          method_args => \%args);
 }
 
-
 ## @method get ()
 # See restore job progress/result.
 #
@@ -116,12 +118,10 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

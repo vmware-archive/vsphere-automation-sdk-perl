@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Vm::Guest::IdentityStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.guest.identity';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -83,7 +89,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
 # if VMware Tools has not provided any data.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -94,7 +99,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Update::PolicyStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.update.policy';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -75,12 +81,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # session is not authorized to perform this operation
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method set ()
 # Sets the automatic update checking and staging policy. This  *method*  was added in
@@ -98,7 +102,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # session is not authorized to perform this operation
 #
-
 sub set {
    my ($self, %args) = @_;
    my $policy = $args {policy};
@@ -109,7 +112,6 @@ sub set {
    return $self->invoke (method_name => 'set',
                          method_args => \%args);
 }
-
 
 1;
 

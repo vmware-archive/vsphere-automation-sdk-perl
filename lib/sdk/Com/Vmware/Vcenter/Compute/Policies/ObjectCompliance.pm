@@ -1,23 +1,39 @@
 ## @class Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance
 #
 # The  ``Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance``   *enumerated type*
-#     defines the compliance states a policy can be in on a particular object.
-#     <b>Warning:</b> This  *enumeration*  is available as technical preview. It may be
-#     changed in a future release.
+#     defines the compliance states a policy can be in on a particular object in VMware
+#     Cloud on AWS. Usage beyond VMware Cloud on AWS is not supported. <b>Warning:</b> This 
+#     *enumeration*  is available as Technology Preview. These are early access APIs
+#     provided to test, automate and provide feedback on the feature. Since this can change
+#     based on feedback, VMware does not guarantee backwards compatibility and recommends
+#     against using them in production environments. Some Technology Preview APIs might only
+#     be applicable to specific environments.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance::NOT_APPLICABLE #
 #The object is in a state for which the policy does not apply. <b>Warning:</b> This 
-# *constant*  is available as technical preview. It may be changed in a future release.
+# *constant*  is available as Technology Preview. These are early access APIs provided to
+# test, automate and provide feedback on the feature. Since this can change based on
+# feedback, VMware does not guarantee backwards compatibility and recommends against using
+# them in production environments. Some Technology Preview APIs might only be applicable to
+# specific environments.
 #
 # Constant Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance::COMPLIANT #
 #The policy is in compliance on the object. <b>Warning:</b> This  *constant*  is available
-# as technical preview. It may be changed in a future release.
+# as Technology Preview. These are early access APIs provided to test, automate and provide
+# feedback on the feature. Since this can change based on feedback, VMware does not
+# guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 #
 # Constant Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance::NOT_COMPLIANT #
 #The policy is not in compliance on the object. <b>Warning:</b> This  *constant*  is
-# available as technical preview. It may be changed in a future release.
+# available as Technology Preview. These are early access APIs provided to test, automate
+# and provide feedback on the feature. Since this can change based on feedback, VMware does
+# not guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
 
 package Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance;
 

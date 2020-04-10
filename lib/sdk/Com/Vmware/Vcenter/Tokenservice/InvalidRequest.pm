@@ -4,9 +4,7 @@
 # The  ``Com::Vmware::Vcenter::Tokenservice::InvalidRequest``   *error*  indicates that 
 #     class Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec  is missing a
 #     required parameter, includes an unsupported parameter value (other than 
-#     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.grant_type` ).
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     :attr:`Com::Vmware::Vcenter::Tokenservice::TokenExchange::ExchangeSpec.grant_type` )
 
 package Com::Vmware::Vcenter::Tokenservice::InvalidRequest;
 

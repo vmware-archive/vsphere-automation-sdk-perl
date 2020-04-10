@@ -38,6 +38,12 @@ use Com::Vmware::Content::Library::ItemStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.item';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -139,7 +145,6 @@ sub new {
 #     ``ContentLibrary.AddLibraryItem`` . </li>
 # </ul>
 #
-
 sub copy {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -152,7 +157,6 @@ sub copy {
    return $self->invoke (method_name => 'copy',
                          method_args => \%args);
 }
-
 
 ## @method create ()
 # Creates a new library item. <p>
@@ -216,7 +220,6 @@ sub copy {
 #     ``ContentLibrary.AddLibraryItem`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -228,7 +231,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes a library item. <p>
@@ -268,7 +270,6 @@ sub create {
 #       ``library_item_id``  requires  ``ContentLibrary.DeleteLibraryItem`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -279,7 +280,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns the  class Com::Vmware::Content::Library::ItemModel  with the given identifier.
@@ -305,7 +305,6 @@ sub delete {
 #       ``library_item_id``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -316,7 +315,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns the identifiers of all items in the given library.
@@ -343,7 +341,6 @@ sub get {
 #     ``library_id``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -354,7 +351,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method find ()
 # Returns identifiers of all the visible (as determined by authorization policy) library
@@ -383,7 +379,6 @@ sub list {
 #     ``System.Read`` . </li>
 # </ul>
 #
-
 sub find {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -394,7 +389,6 @@ sub find {
    return $self->invoke (method_name => 'find',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the specified properties of a library item. <p>
@@ -448,7 +442,6 @@ sub find {
 #       ``library_item_id``  requires  ``ContentLibrary.UpdateLibraryItem`` . </li>
 # </ul>
 #
-
 sub update {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -460,7 +453,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method publish ()
 # Publishes the library item to specified subscriptions of the library. If no subscriptions
@@ -510,7 +502,6 @@ sub update {
 #       ``library_item_id``  requires  ``ContentLibrary.PublishLibraryItem`` . </li>
 # </ul>
 #
-
 sub publish {
    my ($self, %args) = @_;
    my $library_item_id = $args {library_item_id};
@@ -523,7 +514,6 @@ sub publish {
    return $self->invoke (method_name => 'publish',
                          method_args => \%args);
 }
-
 
 1;
 

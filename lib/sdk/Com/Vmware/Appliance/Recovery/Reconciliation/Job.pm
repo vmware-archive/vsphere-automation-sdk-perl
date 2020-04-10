@@ -37,6 +37,12 @@ use Com::Vmware::Appliance::Recovery::Reconciliation::JobStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.recovery.reconciliation.job';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -79,7 +85,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -90,7 +95,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Get reconciliation job progress/result. This  *method*  was added in vSphere API 6.7.
@@ -105,12 +109,10 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

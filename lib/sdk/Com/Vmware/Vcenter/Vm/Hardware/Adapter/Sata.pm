@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Vm::Hardware::Adapter::SataStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.hardware.adapter.sata';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -92,7 +98,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -103,7 +108,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about a virtual SATA adapter.
@@ -140,7 +144,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -152,7 +155,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method create ()
 # Adds a virtual SATA adapter to the virtual machine.
@@ -211,7 +213,6 @@ sub get {
 # if the guest operating system of the virtual machine is not supported and  *spec* 
 #     includes  *null*   *fields*  that default to guest-specific values.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -223,7 +224,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Removes a virtual SATA adapter from the virtual machine.
@@ -262,7 +262,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -274,7 +273,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 1;
 

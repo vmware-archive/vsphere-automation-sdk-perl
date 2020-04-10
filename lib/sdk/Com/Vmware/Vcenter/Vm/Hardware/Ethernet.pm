@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Vm::Hardware::EthernetStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.hardware.ethernet';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -91,7 +97,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -102,7 +107,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about a virtual Ethernet adapter.
@@ -139,7 +143,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -151,7 +154,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method create ()
 # Adds a virtual Ethernet adapter to the virtual machine.
@@ -205,7 +207,6 @@ sub get {
 # if the guest operating system of the virtual machine is not supported and  *spec* 
 #     includes  *null*   *fields*  that default to guest-specific values.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -217,7 +218,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the configuration of a virtual Ethernet adapter.
@@ -259,7 +259,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -272,7 +271,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Removes a virtual Ethernet adapter from the virtual machine.
@@ -308,7 +306,6 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -320,7 +317,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method connect ()
 # Connects a virtual Ethernet adapter of a powered-on virtual machine to its backing.
@@ -369,7 +365,6 @@ sub delete {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub connect {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -381,7 +376,6 @@ sub connect {
    return $self->invoke (method_name => 'connect',
                          method_args => \%args);
 }
-
 
 ## @method disconnect ()
 # Disconnects a virtual Ethernet adapter of a powered-on virtual machine from its backing.
@@ -431,7 +425,6 @@ sub connect {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub disconnect {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -443,7 +436,6 @@ sub disconnect {
    return $self->invoke (method_name => 'disconnect',
                          method_args => \%args);
 }
-
 
 1;
 

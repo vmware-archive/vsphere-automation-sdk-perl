@@ -66,6 +66,12 @@ use Com::Vmware::Vcenter::Vcha::OperationsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vcha.operations';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -104,12 +110,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # If any other error occurs.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 1;
 

@@ -36,6 +36,12 @@ use Com::Vmware::Content::SubscribedLibraryStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.subscribed_library';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -104,7 +110,6 @@ sub new {
 #     ``Datastore.AllocateSpace`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $client_token = $args {client_token};
@@ -116,7 +121,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes the specified subscribed library. <p>
@@ -144,7 +148,6 @@ sub create {
 #     ``library_id``  requires  ``ContentLibrary.DeleteSubscribedLibrary`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -155,7 +158,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method evict ()
 # Evicts the cached content of an on-demand subscribed library. <p>
@@ -195,7 +197,6 @@ sub delete {
 #     ``library_id``  requires  ``ContentLibrary.EvictSubscribedLibrary`` . </li>
 # </ul>
 #
-
 sub evict {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -206,7 +207,6 @@ sub evict {
    return $self->invoke (method_name => 'evict',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns a given subscribed library.
@@ -235,7 +235,6 @@ sub evict {
 #     ``library_id``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -246,7 +245,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns the identifiers of all subscribed libraries in the Content Library.
@@ -264,12 +262,10 @@ sub get {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method sync ()
 # Forces the synchronization of the subscribed library. <p>
@@ -316,7 +312,6 @@ sub list {
 #     ``library_id``  requires  ``ContentLibrary.SyncLibrary`` . </li>
 # </ul>
 #
-
 sub sync {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -327,7 +322,6 @@ sub sync {
    return $self->invoke (method_name => 'sync',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates the properties of a subscribed library. <p>
@@ -379,7 +373,6 @@ sub sync {
 #     ``library_id``  requires  ``ContentLibrary.UpdateSubscribedLibrary`` . </li>
 # </ul>
 #
-
 sub update {
    my ($self, %args) = @_;
    my $library_id = $args {library_id};
@@ -391,7 +384,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method probe ()
 # Probes remote library subscription information, including URL, SSL certificate and
@@ -412,7 +404,6 @@ sub update {
 #  <li>  *Method*  execution requires  ``ContentLibrary.ProbeSubscription`` . </li>
 # </ul>
 #
-
 sub probe {
    my ($self, %args) = @_;
    my $subscription_info = $args {subscription_info};
@@ -423,7 +414,6 @@ sub probe {
    return $self->invoke (method_name => 'probe',
                          method_args => \%args);
 }
-
 
 1;
 

@@ -37,6 +37,12 @@ use Com::Vmware::Vcenter::Deployment::Install::Initial_config::Remote_psc::Thumb
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.deployment.install.initial_config.remote_psc.thumbprint';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -76,7 +82,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # on exception.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -87,7 +92,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

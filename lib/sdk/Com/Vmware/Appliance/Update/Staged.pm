@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Update::StagedStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.update.staged';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -78,12 +84,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if nothing is staged
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method delete ()
 # Deletes the staged update. This  *method*  was added in vSphere API 6.7.
@@ -97,12 +101,10 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # session is not authorized to perform this operation
 #
-
 sub delete {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'delete', method_args =>  {});
 }
-
 
 1;
 

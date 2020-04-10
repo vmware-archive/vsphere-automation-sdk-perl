@@ -35,6 +35,12 @@ use Com::Vmware::Vcenter::Vm::IdentityStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.identity';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #

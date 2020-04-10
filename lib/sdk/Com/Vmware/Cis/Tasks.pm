@@ -41,6 +41,12 @@ use Com::Vmware::Cis::TasksStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.cis.tasks';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -100,7 +106,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $task = $args {task};
@@ -112,7 +117,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Returns information about at most 1000 visible (subject to permission checks) tasks
@@ -154,7 +158,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter_spec = $args {filter_spec};
@@ -166,7 +169,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method cancel ()
 # Cancel a running operation associated with the task. This is the best effort attempt.
@@ -202,7 +204,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Unsupported 
 # if the task is not cancelable.
 #
-
 sub cancel {
    my ($self, %args) = @_;
    my $task = $args {task};
@@ -213,7 +214,6 @@ sub cancel {
    return $self->invoke (method_name => 'cancel',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -375,6 +375,7 @@ sub new {
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
    $self->{tasks} = $args{'tasks'};
    $self->{services} = $args{'services'};
+   $self->{operations} = $args{'operations'};
    $self->{status} = $args{'status'};
    $self->{targets} = $args{'targets'};
    $self->{users} = $args{'users'};
@@ -383,6 +384,7 @@ sub new {
    $self->set_binding_name('name' => 'com.vmware.cis.tasks.filter_spec');
    $self->set_binding_field('key' => 'tasks', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()))));
    $self->set_binding_field('key' => 'services', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()))));
+   $self->set_binding_field('key' => 'operations', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()))));
    $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Cis::Task', 'type_name' => 'Status')))));
    $self->set_binding_field('key' => 'targets', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'DynamicID'))));
    $self->set_binding_field('key' => 'users', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SetType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType()))));
@@ -441,6 +443,44 @@ sub get_services {
 sub set_services {
    my ($self, %args) = @_;
    $self->{'services'} = $args{'services'}; 
+   return;	
+}
+
+## @method get_operations ()
+# Gets the value of 'operations' property.
+#
+# @retval operations - The current value of the field.
+# Identifiers of operations. Tasks created by these operations match the filter (see 
+#     :attr:`Com::Vmware::Cis::Task::CommonInfo.operation` ). <p>
+# 
+# Note that an operation identifier by itself is not globally unique. To filter on an
+#     operation, the identifier of the service interface containing the operation should
+#     also be specified in  ``services`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+# Optional#
+sub get_operations {
+   my ($self, %args) = @_;
+   return $self->{'operations'}; 	
+}
+
+## @method set_operations ()
+# Sets the given value for 'operations' property.
+# 
+# @param operations  - New value for the field.
+# Identifiers of operations. Tasks created by these operations match the filter (see 
+#     :attr:`Com::Vmware::Cis::Task::CommonInfo.operation` ). <p>
+# 
+# Note that an operation identifier by itself is not globally unique. To filter on an
+#     operation, the identifier of the service interface containing the operation should
+#     also be specified in  ``services`` .</p>
+# 
+# . This  *field*  was added in vSphere API 7.0.0.
+#
+sub set_operations {
+   my ($self, %args) = @_;
+   $self->{'operations'} = $args{'operations'}; 
    return;	
 }
 

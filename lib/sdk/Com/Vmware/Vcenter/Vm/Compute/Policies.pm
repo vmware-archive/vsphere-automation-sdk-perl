@@ -13,8 +13,13 @@
 
 ## @class Com::Vmware::Vcenter::Vm::Compute::Policies
 # The  ``Com::Vmware::Vcenter::Vm::Compute::Policies``   *interface*  provides 
-#     *methods*  to query the status of policies on virtual machines. <b>Warning:</b> This 
-#     *interface*  is available as technical preview. It may be changed in a future release.
+#     *methods*  to query the status of policies on virtual machines in VMware Cloud on AWS.
+#     Usage beyond VMware Cloud on AWS is not supported. <b>Warning:</b> This  *interface* 
+#     is available as Technology Preview. These are early access APIs provided to test,
+#     automate and provide feedback on the feature. Since this can change based on feedback,
+#     VMware does not guarantee backwards compatibility and recommends against using them in
+#     production environments. Some Technology Preview APIs might only be applicable to
+#     specific environments.
 #
 
 package Com::Vmware::Vcenter::Vm::Compute::Policies;
@@ -36,6 +41,12 @@ use Com::Vmware::Vcenter::Vm::Compute::PoliciesStub;
 # Base class
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
+
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm.compute.policies';
+
 
 ## @method new ()
 # Constructor to initialize the object
@@ -60,9 +71,13 @@ sub new {
 }
 
 ## @method get ()
-# Returns information about the compliance of a virtual machine with a compute policy.
-# <b>Warning:</b> This  *method*  is available as technical preview. It may be changed in a
-# future release.
+# Returns information about the compliance of a virtual machine with a compute policy in
+# VMware Cloud on AWS. Usage beyond VMware Cloud on AWS is not supported. <b>Warning:</b>
+# This  *method*  is available as Technology Preview. These are early access APIs provided
+# to test, automate and provide feedback on the feature. Since this can change based on
+# feedback, VMware does not guarantee backwards compatibility and recommends against using
+# them in production environments. Some Technology Preview APIs might only be applicable to
+# specific environments.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine to query the status for.
 # The value must be an identifier for the resource type
@@ -86,7 +101,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if the user doesn&apos;t have the required privileges.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $vm = $args {vm};
@@ -98,7 +112,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -121,8 +134,11 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Compute::Policies::Info``   *class*  contains
 #     information about the compliance of a virtual machine with a compute policy.
-#     <b>Warning:</b> This  *class*  is available as technical preview. It may be changed in
-#     a future release.
+#     <b>Warning:</b> This  *class*  is available as Technology Preview. These are early
+#     access APIs provided to test, automate and provide feedback on the feature. Since this
+#     can change based on feedback, VMware does not guarantee backwards compatibility and
+#     recommends against using them in production environments. Some Technology Preview APIs
+#     might only be applicable to specific environments.
 
 package Com::Vmware::Vcenter::Vm::Compute::Policies::Info;
 
@@ -164,7 +180,11 @@ sub new {
 #
 # @retval status - The current value of the field.
 # The compliance status of the policy on a specified object.<b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 # ObjectCompliance#
 sub get_status {
@@ -177,7 +197,11 @@ sub get_status {
 # 
 # @param status  - New value for the field.
 # The compliance status of the policy on a specified object.<b>Warning:</b> This 
-#     *field*  is available as technical preview. It may be changed in a future release.
+#     *field*  is available as Technology Preview. These are early access APIs provided to
+#     test, automate and provide feedback on the feature. Since this can change based on
+#     feedback, VMware does not guarantee backwards compatibility and recommends against
+#     using them in production environments. Some Technology Preview APIs might only be
+#     applicable to specific environments.
 #
 sub set_status {
    my ($self, %args) = @_;

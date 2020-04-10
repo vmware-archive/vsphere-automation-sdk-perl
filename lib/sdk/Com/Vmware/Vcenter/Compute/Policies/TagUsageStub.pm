@@ -15,7 +15,8 @@ package Com::Vmware::Vcenter::Compute::Policies::TagUsageStub;
 ## @class Com::Vmware::Vcenter::Compute::Policies::TagUsage
 #
 #The {@name TagUsage} {@term service} provides {@term operations} to query
-#which tags are used by policies.
+#which tags are used by policies in VMware Cloud on AWS. Usage beyond
+#VMware Cloud on AWS is not supported.
 #
 
 #

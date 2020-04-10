@@ -40,6 +40,12 @@ use Com::Vmware::Vapi::Metadata::Metamodel::Service::OperationStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vapi.metadata.metamodel.service.operation';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -82,7 +88,6 @@ sub new {
 # if the service element associated with  ``service_id``  does not exist in any of the
 #     package elements.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $service_id = $args {service_id};
@@ -93,7 +98,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieves the metamodel information about an operation element corresponding to 
@@ -121,7 +125,6 @@ sub list {
 # if the operation element associated with  ``operation_id``  does not exist in the
 #     service element.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $service_id = $args {service_id};
@@ -133,7 +136,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

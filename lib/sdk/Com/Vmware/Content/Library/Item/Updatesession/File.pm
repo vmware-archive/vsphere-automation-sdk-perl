@@ -52,6 +52,12 @@ use Com::Vmware::Content::Library::Item::Updatesession::FileStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.content.library.item.updatesession.file';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -110,7 +116,6 @@ sub new {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub validate {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -121,7 +126,6 @@ sub validate {
    return $self->invoke (method_name => 'validate',
                          method_args => \%args);
 }
-
 
 ## @method add ()
 # Requests file content to be changed (either created, or updated). Depending on the source
@@ -180,7 +184,6 @@ sub validate {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub add {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -192,7 +195,6 @@ sub add {
    return $self->invoke (method_name => 'add',
                          method_args => \%args);
 }
-
 
 ## @method remove ()
 # Requests a file to be removed. The file will only be effectively removed when the update
@@ -219,7 +221,6 @@ sub add {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub remove {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -231,7 +232,6 @@ sub remove {
    return $self->invoke (method_name => 'remove',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Lists all files in the library item associated with the update session.
@@ -258,7 +258,6 @@ sub remove {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -269,7 +268,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieves information about a specific file in the snapshot of the library item at the
@@ -300,7 +298,6 @@ sub list {
 #  <li>  *Method*  execution requires  ``System.Anonymous`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $update_session_id = $args {update_session_id};
@@ -312,7 +309,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

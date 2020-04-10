@@ -35,6 +35,12 @@ use Com::Vmware::Vcenter::Inventory::DatastoreStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.inventory.datastore';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -86,7 +92,6 @@ sub new {
 #     requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub find {
    my ($self, %args) = @_;
    my $datastores = $args {datastores};
@@ -97,7 +102,6 @@ sub find {
    return $self->invoke (method_name => 'find',
                          method_args => \%args);
 }
-
 
 1;
 

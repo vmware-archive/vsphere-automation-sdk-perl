@@ -37,6 +37,12 @@ use Com::Vmware::Vcenter::System_config::PscRegistrationStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.system_config.psc_registration';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -74,12 +80,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the appliance is in NOT_INITIALIZED state.
 #
-
 sub get {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'get', method_args =>  {});
 }
-
 
 ## @method repoint ()
 # Repoint this vCenter Server appliance to a different external PSC. This  *method*  was
@@ -106,7 +110,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::NotAllowedInCurrentState 
 # if the appliance is NOT in CONFIGURED state.
 #
-
 sub repoint {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -117,7 +120,6 @@ sub repoint {
    return $self->invoke (method_name => 'repoint',
                          method_args => \%args);
 }
-
 
 1;
 

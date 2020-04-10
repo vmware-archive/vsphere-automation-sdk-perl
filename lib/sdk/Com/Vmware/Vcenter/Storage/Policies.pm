@@ -38,6 +38,12 @@ use Com::Vmware::Vcenter::Storage::PoliciesStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.storage.policies';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -91,7 +97,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::UnableToAllocateResource 
 # if more than 1024 storage policies exist.
 #
-
 sub list {
    my ($self, %args) = @_;
    my $filter = $args {filter};
@@ -102,7 +107,6 @@ sub list {
    return $self->invoke (method_name => 'list',
                          method_args => \%args);
 }
-
 
 ## @method check_compatibility ()
 # Returns datastore compatibility summary about a specific storage policy. This  *method* 
@@ -140,7 +144,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::UnableToAllocateResource 
 # if input more than 1024 datastores.
 #
-
 sub check_compatibility {
    my ($self, %args) = @_;
    my $policy = $args {policy};
@@ -152,7 +155,6 @@ sub check_compatibility {
    return $self->invoke (method_name => 'check_compatibility',
                          method_args => \%args);
 }
-
 
 1;
 

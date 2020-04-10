@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Recovery::Backup::SchedulesStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.recovery.backup.schedules';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -72,12 +78,10 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method run ()
 # Initiate backup with the specified schedule. This  *method*  was added in vSphere API 6.7.
@@ -104,7 +108,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub run {
    my ($self, %args) = @_;
    my $schedule = $args {schedule};
@@ -116,7 +119,6 @@ sub run {
    return $self->invoke (method_name => 'run',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns an existing schedule information based on id. This  *method*  was added in vSphere
@@ -137,7 +139,6 @@ sub run {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $schedule = $args {schedule};
@@ -148,7 +149,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method create ()
 # Creates a schedule. This  *method*  was added in vSphere API 6.7.
@@ -170,7 +170,6 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub create {
    my ($self, %args) = @_;
    my $schedule = $args {schedule};
@@ -182,7 +181,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method update ()
 # Updates a schedule. This  *method*  was added in vSphere API 6.7.
@@ -204,7 +202,6 @@ sub create {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub update {
    my ($self, %args) = @_;
    my $schedule = $args {schedule};
@@ -216,7 +213,6 @@ sub update {
    return $self->invoke (method_name => 'update',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes an existing schedule. This  *method*  was added in vSphere API 6.7.
@@ -232,7 +228,6 @@ sub update {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # if any error occurs during the execution of the operation.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $schedule = $args {schedule};
@@ -243,7 +238,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 1;
 

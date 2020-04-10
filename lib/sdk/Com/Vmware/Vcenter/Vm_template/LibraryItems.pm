@@ -40,6 +40,12 @@ use Com::Vmware::Vcenter::Vm_template::LibraryItemsStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.vm_template.library_items';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -164,7 +170,6 @@ sub new {
 #     requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -175,7 +180,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method deploy ()
 # Deploys a virtual machine as a copy of the source virtual machine template contained in
@@ -293,7 +297,6 @@ sub create {
 #      requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub deploy {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -305,7 +308,6 @@ sub deploy {
    return $self->invoke (method_name => 'deploy',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Returns information about a virtual machine template contained in the library item
@@ -349,7 +351,6 @@ sub deploy {
 #       ``template_library_item``  requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $template_library_item = $args {template_library_item};
@@ -360,7 +361,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 

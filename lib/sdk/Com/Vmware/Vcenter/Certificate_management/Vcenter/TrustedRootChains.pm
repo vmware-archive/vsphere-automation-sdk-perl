@@ -37,6 +37,12 @@ use Com::Vmware::Vcenter::Certificate_management::Vcenter::TrustedRootChainsStub
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.vcenter.certificate_management.vcenter.trusted_root_chains';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -78,12 +84,10 @@ sub new {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method create ()
 # Creates a new trusted root certificate chain from the CreateSpec. This  *method*  was
@@ -111,7 +115,6 @@ sub list {
 #     ``CertificateManagement.Administer`` . </li>
 # </ul>
 #
-
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -122,7 +125,6 @@ sub create {
    return $self->invoke (method_name => 'create',
                          method_args => \%args);
 }
-
 
 ## @method get ()
 # Retrieve a trusted root certificate chain for a given identifier. This  *method*  was
@@ -149,7 +151,6 @@ sub create {
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
 # </ul>
 #
-
 sub get {
    my ($self, %args) = @_;
    my $chain = $args {chain};
@@ -160,7 +161,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 ## @method delete ()
 # Deletes trusted root certificate chain for a given identifier. This  *method*  was added
@@ -183,7 +183,6 @@ sub get {
 #     ``CertificateManagement.Administer`` . </li>
 # </ul>
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $chain = $args {chain};
@@ -194,7 +193,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 1;
 

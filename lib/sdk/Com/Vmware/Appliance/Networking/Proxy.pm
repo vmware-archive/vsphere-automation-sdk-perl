@@ -36,6 +36,12 @@ use Com::Vmware::Appliance::Networking::ProxyStub;
 #
 use base qw(Com::Vmware::Vapi::Bindings::VapiInterface);
 
+#
+# Identifier of the service
+#
+use constant _VAPI_SERVICE_ID => 'com.vmware.appliance.networking.proxy';
+
+
 ## @method new ()
 # Constructor to initialize the object
 #
@@ -78,7 +84,6 @@ sub new {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub test {
    my ($self, %args) = @_;
    my $host = $args {host};
@@ -91,7 +96,6 @@ sub test {
    return $self->invoke (method_name => 'test',
                          method_args => \%args);
 }
-
 
 ## @method set ()
 # Configures which proxy server to use for the specified protocol. This operation sets
@@ -107,7 +111,6 @@ sub test {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub set {
    my ($self, %args) = @_;
    my $protocol = $args {protocol};
@@ -120,7 +123,6 @@ sub set {
                          method_args => \%args);
 }
 
-
 ## @method delete ()
 # Deletes a proxy configuration for a specific protocol. This  *method*  was added in
 # vSphere API 6.7.
@@ -131,7 +133,6 @@ sub set {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub delete {
    my ($self, %args) = @_;
    my $protocol = $args {protocol};
@@ -142,7 +143,6 @@ sub delete {
    return $self->invoke (method_name => 'delete',
                          method_args => \%args);
 }
-
 
 ## @method list ()
 # Gets proxy configuration for all configured protocols. This  *method*  was added in
@@ -156,12 +156,10 @@ sub delete {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub list {
    my ($self, %args) = @_;
    return $self->invoke(method_name => 'list', method_args =>  {});
 }
-
 
 ## @method get ()
 # Gets the proxy configuration for a specific protocol. This  *method*  was added in vSphere
@@ -177,7 +175,6 @@ sub list {
 # @throw Com::Vmware::Vapi::Std::Errors::Error 
 # Generic error.
 #
-
 sub get {
    my ($self, %args) = @_;
    my $protocol = $args {protocol};
@@ -188,7 +185,6 @@ sub get {
    return $self->invoke (method_name => 'get',
                          method_args => \%args);
 }
-
 
 1;
 
@@ -355,8 +351,7 @@ sub new {
 # Gets the value of 'server' property.
 #
 # @retval server - The current value of the field.
-# Hostname or IP address of the proxy server. This  *field*  was added in vSphere API
-#     6.7.
+# URL of the proxy server. This  *field*  was added in vSphere API 6.7.
 #
 # String#
 sub get_server {
@@ -368,8 +363,7 @@ sub get_server {
 # Sets the given value for 'server' property.
 # 
 # @param server  - New value for the field.
-# Hostname or IP address of the proxy server. This  *field*  was added in vSphere API
-#     6.7.
+# URL of the proxy server. This  *field*  was added in vSphere API 6.7.
 #
 sub set_server {
    my ($self, %args) = @_;

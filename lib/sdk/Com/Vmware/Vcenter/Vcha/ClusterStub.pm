@@ -158,16 +158,16 @@ sub new
    # All the methods (operations) info in a hash
    #
    my $operations = {
-      'deploy' => {
+      'deploy$task' => {
                 'input_type'=> $deploy_input_type,
-                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
                 'errors'=> $deploy_error_dict,
                 'input_validator_list'=> $deploy_input_validator_list,
                 'output_validator_list'=> $deploy_output_validator_list,
             },
-      'failover' => {
+      'failover$task' => {
                 'input_type'=> $failover_input_type,
-                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
                 'errors'=> $failover_error_dict,
                 'input_validator_list'=> $failover_input_validator_list,
                 'output_validator_list'=> $failover_output_validator_list,
@@ -179,9 +179,9 @@ sub new
                 'input_validator_list'=> $get_input_validator_list,
                 'output_validator_list'=> $get_output_validator_list,
             },
-      'undeploy' => {
+      'undeploy$task' => {
                 'input_type'=> $undeploy_input_type,
-                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::VoidType(),
+                'output_type'=> new Com::Vmware::Vapi::Bindings::Type::StringType(),
                 'errors'=> $undeploy_error_dict,
                 'input_validator_list'=> $undeploy_input_validator_list,
                 'output_validator_list'=> $undeploy_output_validator_list,
