@@ -8,6 +8,7 @@
 #
 #
 
+#use Com::Vmware::Cis::Task;
 #use Com::Vmware::Esx::Settings;
 #use Com::Vmware::Vapi::Std;
 #use Com::Vmware::Vapi::Std::Errors;

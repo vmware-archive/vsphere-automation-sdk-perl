@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Guest::IPSettings``   *class*  specifies the IP settings
-#     for a virtual network adapter. This  *class*  was added in vSphere API 7.0.0.
+#     for a virtual network adapter. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::IPSettings;
 
@@ -48,7 +48,7 @@ sub new {
 #
 # @retval ipv4 - The current value of the field.
 # Specification to configure IPv4 address, subnet mask and gateway info for this virtual
-#     network adapter. This  *field*  was added in vSphere API 7.0.0.
+#     network adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_ipv4 {
@@ -61,7 +61,7 @@ sub get_ipv4 {
 # 
 # @param ipv4  - New value for the field.
 # Specification to configure IPv4 address, subnet mask and gateway info for this virtual
-#     network adapter. This  *field*  was added in vSphere API 7.0.0.
+#     network adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ipv4 {
    my ($self, %args) = @_;
@@ -74,7 +74,7 @@ sub set_ipv4 {
 #
 # @retval ipv6 - The current value of the field.
 # Specification to configure IPv6 address, subnet mask and gateway info for this virtual
-#     network adapter. This  *field*  was added in vSphere API 7.0.0.
+#     network adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_ipv6 {
@@ -87,7 +87,7 @@ sub get_ipv6 {
 # 
 # @param ipv6  - New value for the field.
 # Specification to configure IPv6 address, subnet mask and gateway info for this virtual
-#     network adapter. This  *field*  was added in vSphere API 7.0.0.
+#     network adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ipv6 {
    my ($self, %args) = @_;
@@ -101,7 +101,7 @@ sub set_ipv6 {
 # @retval windows - The current value of the field.
 # Windows settings to be configured for this specific virtual Network adapter. This is
 #     valid only for Windows guest operating systems. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_windows {
@@ -115,7 +115,7 @@ sub get_windows {
 # @param windows  - New value for the field.
 # Windows settings to be configured for this specific virtual Network adapter. This is
 #     valid only for Windows guest operating systems. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_windows {
    my ($self, %args) = @_;

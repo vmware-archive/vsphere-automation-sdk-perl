@@ -7,7 +7,7 @@
 #     into the sysprep.xml file that VirtualCenter stores on the target virtual disk. For
 #     more detailed information about performing unattended installation, check
 #     https://technet.microsoft.com/en-us/library/cc771830(v=ws.10).aspx. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::UserData;
 
@@ -59,7 +59,7 @@ sub new {
 #     not consist entirely of digits. A computer name is restricted to 15 characters in
 #     length. If the computer name is longer than 15 characters, it will be truncated to 15
 #     characters. Check  class Com::Vmware::Vcenter::Guest::HostnameGenerator  for various
-#     options. This  *field*  was added in vSphere API 7.0.0.
+#     options. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # HostnameGenerator#
 sub get_computer_name {
@@ -76,7 +76,7 @@ sub get_computer_name {
 #     not consist entirely of digits. A computer name is restricted to 15 characters in
 #     length. If the computer name is longer than 15 characters, it will be truncated to 15
 #     characters. Check  class Com::Vmware::Vcenter::Guest::HostnameGenerator  for various
-#     options. This  *field*  was added in vSphere API 7.0.0.
+#     options. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_computer_name {
    my ($self, %args) = @_;
@@ -90,7 +90,7 @@ sub set_computer_name {
 # @retval full_name - The current value of the field.
 # Full name of the end user. Note that this is not the username but full name specified
 #     in &quot;Firstname Lastname&quot; format. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_full_name {
@@ -104,7 +104,7 @@ sub get_full_name {
 # @param full_name  - New value for the field.
 # Full name of the end user. Note that this is not the username but full name specified
 #     in &quot;Firstname Lastname&quot; format. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_full_name {
    my ($self, %args) = @_;
@@ -117,7 +117,7 @@ sub set_full_name {
 #
 # @retval organization - The current value of the field.
 # Name of the organization that owns the computer. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # String#
 sub get_organization {
@@ -130,7 +130,7 @@ sub get_organization {
 # 
 # @param organization  - New value for the field.
 # Name of the organization that owns the computer. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_organization {
    my ($self, %args) = @_;
@@ -143,7 +143,7 @@ sub set_organization {
 #
 # @retval product_key - The current value of the field.
 # The product Key to use for activating Windows guest operating system. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_product_key {
@@ -156,7 +156,7 @@ sub get_product_key {
 # 
 # @param product_key  - New value for the field.
 # The product Key to use for activating Windows guest operating system. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_product_key {
    my ($self, %args) = @_;

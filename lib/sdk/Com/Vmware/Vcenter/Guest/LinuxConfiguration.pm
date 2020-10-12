@@ -8,7 +8,7 @@
 #     Com::Vmware::Vcenter::Guest::WindowsConfiguration   *class*  identifies a Windows
 #     machine.</p>
 # 
-# . This  *class*  was added in vSphere API 7.0.0.
+# . This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::LinuxConfiguration;
 
@@ -56,7 +56,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # The network host name of the Linux virtual machine. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # HostnameGenerator#
 sub get_hostname {
@@ -69,7 +69,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # The network host name of the Linux virtual machine. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -81,7 +81,7 @@ sub set_hostname {
 # Gets the value of 'domain' property.
 #
 # @retval domain - The current value of the field.
-# The fully qualified domain name. This  *field*  was added in vSphere API 7.0.0.
+# The fully qualified domain name. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_domain {
@@ -93,7 +93,7 @@ sub get_domain {
 # Sets the given value for 'domain' property.
 # 
 # @param domain  - New value for the field.
-# The fully qualified domain name. This  *field*  was added in vSphere API 7.0.0.
+# The fully qualified domain name. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain {
    my ($self, %args) = @_;
@@ -113,7 +113,7 @@ sub set_domain {
 # See the https://kb.vmware.com/kb/2145518 for a list of supported time zones for
 #     different versions in Linux.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_time_zone {
@@ -133,7 +133,7 @@ sub get_time_zone {
 # See the https://kb.vmware.com/kb/2145518 for a list of supported time zones for
 #     different versions in Linux.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_time_zone {
    my ($self, %args) = @_;
@@ -171,7 +171,7 @@ sub set_time_zone {
 #  #code for post-customization actions...
 #  fi</code> </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_script_text {
@@ -209,7 +209,7 @@ sub get_script_text {
 #  #code for post-customization actions...
 #  fi</code> </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_script_text {
    my ($self, %args) = @_;

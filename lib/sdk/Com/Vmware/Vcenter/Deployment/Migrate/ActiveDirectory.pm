@@ -15,7 +15,7 @@
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::ActiveDirectory``   *interface* 
 #     provides  *methods*  to check if the migrated vCenter Server appliance can join to the
 #     given domain using the provided credentials. This  *interface*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Deployment::Migrate::ActiveDirectory;
@@ -68,7 +68,7 @@ sub new {
 
 ## @method check ()
 # Checks whether the provided Active Directory user has permission to join the migrated
-# vCenter Server appliance to the domain. This  *method*  was added in vSphere API 7.0.0.
+# vCenter Server appliance to the domain. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param spec [REQUIRED] Information to connect to Active Directory.
 # . The value must be Com::Vmware::Vcenter::Deployment::Migrate::ActiveDirectory::CheckSpec.
@@ -118,7 +118,7 @@ sub check {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::ActiveDirectory::CheckSpec``  
 #     *class*  contains information used to join the migrated vCenter Server appliance to
-#     the Active Directory. This  *class*  was added in vSphere API 7.0.0.
+#     the Active Directory. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::Migrate::ActiveDirectory::CheckSpec;
 
@@ -166,7 +166,7 @@ sub new {
 #
 # @retval dns_servers - The current value of the field.
 # IP addresses of the DNS servers of the Active Directory server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_dns_servers {
@@ -179,7 +179,7 @@ sub get_dns_servers {
 # 
 # @param dns_servers  - New value for the field.
 # IP addresses of the DNS servers of the Active Directory server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_dns_servers {
    my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub set_dns_servers {
 #
 # @retval domain - The current value of the field.
 # The domain name of the Active Directory server to which the migrated vCenter Server
-#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.
+#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_domain {
@@ -205,7 +205,7 @@ sub get_domain {
 # 
 # @param domain  - New value for the field.
 # The domain name of the Active Directory server to which the migrated vCenter Server
-#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.
+#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain {
    my ($self, %args) = @_;
@@ -219,7 +219,7 @@ sub set_domain {
 # @retval username - The current value of the field.
 # Active Directory user that has permission to join the Active Directory after the
 #     vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_username {
@@ -233,7 +233,7 @@ sub get_username {
 # @param username  - New value for the field.
 # Active Directory user that has permission to join the Active Directory after the
 #     vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -247,7 +247,7 @@ sub set_username {
 # @retval password - The current value of the field.
 # Active Directory user password that has permission to join the Active Directory after
 #     the vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_password {
@@ -261,7 +261,7 @@ sub get_password {
 # @param password  - New value for the field.
 # Active Directory user password that has permission to join the Active Directory after
 #     the vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_password {
    my ($self, %args) = @_;

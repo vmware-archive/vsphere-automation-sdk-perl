@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::Ipv6Address``   *class*  specifies the the
 #     settings for a Static IPv6 configuration. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::Ipv6Address;
 
@@ -46,7 +46,7 @@ sub new {
 # Gets the value of 'ip_address' property.
 #
 # @retval ip_address - The current value of the field.
-# Static IPv6 Address. This  *field*  was added in vSphere API 7.0.0.
+# Static IPv6 Address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_ip_address {
@@ -58,7 +58,7 @@ sub get_ip_address {
 # Sets the given value for 'ip_address' property.
 # 
 # @param ip_address  - New value for the field.
-# Static IPv6 Address. This  *field*  was added in vSphere API 7.0.0.
+# Static IPv6 Address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ip_address {
    my ($self, %args) = @_;
@@ -70,7 +70,7 @@ sub set_ip_address {
 # Gets the value of 'prefix' property.
 #
 # @retval prefix - The current value of the field.
-# The CIDR prefix for the interface. This  *field*  was added in vSphere API 7.0.0.
+# The CIDR prefix for the interface. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_prefix {
@@ -82,7 +82,7 @@ sub get_prefix {
 # Sets the given value for 'prefix' property.
 # 
 # @param prefix  - New value for the field.
-# The CIDR prefix for the interface. This  *field*  was added in vSphere API 7.0.0.
+# The CIDR prefix for the interface. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_prefix {
    my ($self, %args) = @_;

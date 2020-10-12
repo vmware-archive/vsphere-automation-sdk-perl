@@ -81,7 +81,7 @@ sub new {
 #     realm=&quot;27da1358-2ba4-11e9-b210-d663bd873d93&quot;,sts=&quot;http://vcenter/sso?vsphere.local&quot;,
 #     Basic realm=&quot;vCenter&quot;</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_challenge {
@@ -104,7 +104,7 @@ sub get_challenge {
 #     realm=&quot;27da1358-2ba4-11e9-b210-d663bd873d93&quot;,sts=&quot;http://vcenter/sso?vsphere.local&quot;,
 #     Basic realm=&quot;vCenter&quot;</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_challenge {
    my ($self, %args) = @_;

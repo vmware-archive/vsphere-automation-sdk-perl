@@ -156,6 +156,7 @@ sub new {
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
    $self->{staging_complete} = $args{'staging_complete'};
    $self->{version} = $args{'version'};
+   $self->{name} = $args{'name'};
    $self->{description} = $args{'description'};
    $self->{priority} = $args{'priority'};
    $self->{severity} = $args{'severity'};
@@ -168,6 +169,7 @@ sub new {
    $self->set_binding_name('name' => 'com.vmware.appliance.update.staged.info');
    $self->set_binding_field('key' => 'staging_complete', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
    $self->set_binding_field('key' => 'version', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage'));
    $self->set_binding_field('key' => 'priority', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Update', 'type_name' => 'CommonInfo::Priority'));
    $self->set_binding_field('key' => 'severity', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Update', 'type_name' => 'CommonInfo::Severity'));
@@ -226,6 +228,30 @@ sub get_version {
 sub set_version {
    my ($self, %args) = @_;
    $self->{'version'} = $args{'version'}; 
+   return;	
+}
+
+## @method get_name ()
+# Gets the value of 'name' property.
+#
+# @retval name - The current value of the field.
+# Name of the update. This  *field*  was added in vSphere API 6.7.
+#
+# String#
+sub get_name {
+   my ($self, %args) = @_;
+   return $self->{'name'}; 	
+}
+
+## @method set_name ()
+# Sets the given value for 'name' property.
+# 
+# @param name  - New value for the field.
+# Name of the update. This  *field*  was added in vSphere API 6.7.
+#
+sub set_name {
+   my ($self, %args) = @_;
+   $self->{'name'} = $args{'name'}; 
    return;	
 }
 

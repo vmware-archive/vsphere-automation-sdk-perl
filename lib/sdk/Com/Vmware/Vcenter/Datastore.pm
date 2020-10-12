@@ -73,7 +73,7 @@ sub new {
 # . The value must be str.
 #
 # @retval 
-# information about the datastore.
+# Information about the datastore associated with  ``datastore`` .
 # The return type will be Com::Vmware::Vcenter::Datastore::Info
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 

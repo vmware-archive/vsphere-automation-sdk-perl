@@ -16,7 +16,7 @@
 #     review. Following approval these certificates should be added as trusted certificates
 #     in the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::TrustedPeerCertificates
-#       *interface* . This  *interface*  was added in vSphere API 7.0.0.
+#       *interface* . This  *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates;
@@ -87,7 +87,7 @@ sub new {
 # :func:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::TrustedPeerCertificates.update`
 #  with the updated  *list*  of certificates.</p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -159,7 +159,7 @@ sub list_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary``
 #     *class*  contains a summary of the current key server certificates. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary;
 
@@ -206,7 +206,7 @@ sub new {
 # Gets the value of 'server_name' property.
 #
 # @retval server_name - The current value of the field.
-# Name of the server. This  *field*  was added in vSphere API 7.0.0.
+# Name of the server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_server_name {
@@ -218,7 +218,7 @@ sub get_server_name {
 # Sets the given value for 'server_name' property.
 # 
 # @param server_name  - New value for the field.
-# Name of the server. This  *field*  was added in vSphere API 7.0.0.
+# Name of the server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_server_name {
    my ($self, %args) = @_;
@@ -230,7 +230,7 @@ sub set_server_name {
 # Gets the value of 'certificate' property.
 #
 # @retval certificate - The current value of the field.
-# Server certificate. This  *field*  was added in vSphere API 7.0.0.
+# Server certificate. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_certificate {
@@ -242,7 +242,7 @@ sub get_certificate {
 # Sets the given value for 'certificate' property.
 # 
 # @param certificate  - New value for the field.
-# Server certificate. This  *field*  was added in vSphere API 7.0.0.
+# Server certificate. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_certificate {
    my ($self, %args) = @_;
@@ -261,7 +261,7 @@ sub set_certificate {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary.certificate`
 #      is  *set* .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_error_messages {
@@ -280,7 +280,7 @@ sub get_error_messages {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary.certificate`
 #      is  *set* .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_error_messages {
    my ($self, %args) = @_;
@@ -293,7 +293,7 @@ sub set_error_messages {
 #
 # @retval trusted - The current value of the field.
 # whether server certificate is already trusted . This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # boolean#
 sub get_trusted {
@@ -306,7 +306,7 @@ sub get_trusted {
 # 
 # @param trusted  - New value for the field.
 # whether server certificate is already trusted . This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_trusted {
    my ($self, %args) = @_;
@@ -324,7 +324,7 @@ sub set_trusted {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::FilterSpec``
 #     *class*  contains  *fields*  used to filter the results when listing remote server
-#     certificates. This  *class*  was added in vSphere API 7.0.0.
+#     certificates. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::FilterSpec;
 
@@ -369,7 +369,7 @@ sub new {
 # @retval server_names - The current value of the field.
 # Names that key server must have to match the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary.server_name`
-#     ). This  *field*  was added in vSphere API 7.0.0.
+#     ). This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_server_names {
@@ -383,7 +383,7 @@ sub get_server_names {
 # @param server_names  - New value for the field.
 # Names that key server must have to match the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary.server_name`
-#     ). This  *field*  was added in vSphere API 7.0.0.
+#     ). This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_server_names {
    my ($self, %args) = @_;
@@ -397,7 +397,7 @@ sub set_server_names {
 # @retval trusted - The current value of the field.
 # Trust status that server certificates must have to match the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary.trusted`
-#     ). This  *field*  was added in vSphere API 7.0.0.
+#     ). This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_trusted {
@@ -411,7 +411,7 @@ sub get_trusted {
 # @param trusted  - New value for the field.
 # Trust status that server certificates must have to match the filter (see 
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates::Summary.trusted`
-#     ). This  *field*  was added in vSphere API 7.0.0.
+#     ). This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_trusted {
    my ($self, %args) = @_;

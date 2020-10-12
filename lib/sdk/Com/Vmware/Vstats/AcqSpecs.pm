@@ -301,28 +301,29 @@ sub update {
 #
 #
 # Constant Com::Vmware::Vstats::AcqSpecs::Status::ENABLED #
-#The acquisition specification is enabled. <b>Warning:</b> This  *constant*  is available
-# as Technology Preview. These are early access APIs provided to test, automate and provide
-# feedback on the feature. Since this can change based on feedback, VMware does not
-# guarantee backwards compatibility and recommends against using them in production
-# environments. Some Technology Preview APIs might only be applicable to specific
-# environments.
+#The acquisition specification is enabled when the stats data collection is going on.
+# <b>Warning:</b> This  *constant*  is available as Technology Preview. These are early
+# access APIs provided to test, automate and provide feedback on the feature. Since this can
+# change based on feedback, VMware does not guarantee backwards compatibility and recommends
+# against using them in production environments. Some Technology Preview APIs might only be
+# applicable to specific environments.
 #
 # Constant Com::Vmware::Vstats::AcqSpecs::Status::DISABLED #
-#The acquisition specification is disabled. <b>Warning:</b> This  *constant*  is available
-# as Technology Preview. These are early access APIs provided to test, automate and provide
-# feedback on the feature. Since this can change based on feedback, VMware does not
-# guarantee backwards compatibility and recommends against using them in production
-# environments. Some Technology Preview APIs might only be applicable to specific
-# environments.
+#The acquisition specification is disabled when the stats data collection is paused. This
+# can happen when the counters are enabled or disabled dynamically on providers.
+# <b>Warning:</b> This  *constant*  is available as Technology Preview. These are early
+# access APIs provided to test, automate and provide feedback on the feature. Since this can
+# change based on feedback, VMware does not guarantee backwards compatibility and recommends
+# against using them in production environments. Some Technology Preview APIs might only be
+# applicable to specific environments.
 #
 # Constant Com::Vmware::Vstats::AcqSpecs::Status::EXPIRED #
-#The acquisition specification is expired. <b>Warning:</b> This  *constant*  is available
-# as Technology Preview. These are early access APIs provided to test, automate and provide
-# feedback on the feature. Since this can change based on feedback, VMware does not
-# guarantee backwards compatibility and recommends against using them in production
-# environments. Some Technology Preview APIs might only be applicable to specific
-# environments.
+#The acquisition specification is expired when the expiration time is exceeded. There is no
+# data collection in that case. <b>Warning:</b> This  *constant*  is available as Technology
+# Preview. These are early access APIs provided to test, automate and provide feedback on
+# the feature. Since this can change based on feedback, VMware does not guarantee backwards
+# compatibility and recommends against using them in production environments. Some
+# Technology Preview APIs might only be applicable to specific environments.
 
 package Com::Vmware::Vstats::AcqSpecs::Status;
 

@@ -4,7 +4,7 @@
 # The  ``Com::Vmware::Vcenter::Guest::GlobalDNSSettings``   *class*  specifies a
 #     collection of global IP settings in the guest operating system. In Linux, DNS server
 #     settings are global. The settings can either be statically set or supplied by a DHCP
-#     server. This  *class*  was added in vSphere API 7.0.0.
+#     server. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::GlobalDNSSettings;
 
@@ -50,7 +50,7 @@ sub new {
 # List of name resolution suffixes for the virtual network adapter. This list applies to
 #     both Windows and Linux guest customization. For Linux, this setting is global, whereas
 #     in Windows, this setting is listed on a per-adapter basis. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_dns_suffix_list {
@@ -65,7 +65,7 @@ sub get_dns_suffix_list {
 # List of name resolution suffixes for the virtual network adapter. This list applies to
 #     both Windows and Linux guest customization. For Linux, this setting is global, whereas
 #     in Windows, this setting is listed on a per-adapter basis. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_dns_suffix_list {
    my ($self, %args) = @_;
@@ -81,7 +81,7 @@ sub set_dns_suffix_list {
 #     list is empty, then the guest operating system is expected to use a DHCP server to get
 #     its DNS server settings. These settings configure the virtual machine to use the
 #     specified DNS servers. These DNS server settings are listed in the order of
-#     preference. This  *field*  was added in vSphere API 7.0.0.
+#     preference. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_dns_servers {
@@ -97,7 +97,7 @@ sub get_dns_servers {
 #     list is empty, then the guest operating system is expected to use a DHCP server to get
 #     its DNS server settings. These settings configure the virtual machine to use the
 #     specified DNS servers. These DNS server settings are listed in the order of
-#     preference. This  *field*  was added in vSphere API 7.0.0.
+#     preference. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_dns_servers {
    my ($self, %args) = @_;

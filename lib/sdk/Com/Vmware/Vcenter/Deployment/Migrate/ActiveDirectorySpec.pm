@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::ActiveDirectorySpec``   *class* 
 #     contains information used to join the migrated vCenter Server appliance to the Active
-#     Directory. This  *class*  was added in vSphere API 7.0.0.
+#     Directory. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::Migrate::ActiveDirectorySpec;
 
@@ -49,7 +49,7 @@ sub new {
 #
 # @retval domain - The current value of the field.
 # The domain name of the Active Directory server to which the migrated vCenter Server
-#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.
+#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_domain {
@@ -62,7 +62,7 @@ sub get_domain {
 # 
 # @param domain  - New value for the field.
 # The domain name of the Active Directory server to which the migrated vCenter Server
-#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.
+#     appliance should be joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain {
    my ($self, %args) = @_;
@@ -76,7 +76,7 @@ sub set_domain {
 # @retval username - The current value of the field.
 # Active Directory user that has permission to join the Active Directory after the
 #     vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_username {
@@ -90,7 +90,7 @@ sub get_username {
 # @param username  - New value for the field.
 # Active Directory user that has permission to join the Active Directory after the
 #     vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -104,7 +104,7 @@ sub set_username {
 # @retval password - The current value of the field.
 # Active Directory user password that has permission to join the Active Directory after
 #     the vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_password {
@@ -118,7 +118,7 @@ sub get_password {
 # @param password  - New value for the field.
 # Active Directory user password that has permission to join the Active Directory after
 #     the vCenter Server is migrated to appliance. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_password {
    my ($self, %args) = @_;

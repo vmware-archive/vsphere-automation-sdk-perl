@@ -45,6 +45,7 @@ sub new {
    $self->{subtasks} = $args{'subtasks'};
    $self->{notifications} = $args{'notifications'};
    $self->{result} = $args{'result'};
+   $self->{last_update_time} = $args{'last_update_time'};
    $self->{description} = $args{'description'};
    $self->{service} = $args{'service'};
    $self->{operation} = $args{'operation'};
@@ -63,6 +64,7 @@ sub new {
    $self->set_binding_field('key' => 'subtasks', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::MapType('binding_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StructType('name' => 'map-entry', 'fields' => {'key' => new Com::Vmware::Vapi::Bindings::Type::StringType(), 'value' =>  new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Esx::Settings', 'type_name' => 'TaskInfo')})))));
    $self->set_binding_field('key' => 'notifications', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Esx::Settings', 'type_name' => 'Notifications')));
    $self->set_binding_field('key' => 'result', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::OpaqueType()));
+   $self->set_binding_field('key' => 'last_update_time', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::DateTimeType()));
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage'));
    $self->set_binding_field('key' => 'service', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'operation', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
@@ -171,6 +173,30 @@ sub get_result {
 sub set_result {
    my ($self, %args) = @_;
    $self->{'result'} = $args{'result'}; 
+   return;	
+}
+
+## @method get_last_update_time ()
+# Gets the value of 'last_update_time' property.
+#
+# @retval last_update_time - The current value of the field.
+# Time when the task was last updated. This  *field*  was added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_last_update_time {
+   my ($self, %args) = @_;
+   return $self->{'last_update_time'}; 	
+}
+
+## @method set_last_update_time ()
+# Sets the given value for 'last_update_time' property.
+# 
+# @param last_update_time  - New value for the field.
+# Time when the task was last updated. This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_last_update_time {
+   my ($self, %args) = @_;
+   $self->{'last_update_time'} = $args{'last_update_time'}; 
    return;	
 }
 

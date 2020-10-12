@@ -2,7 +2,7 @@
 #
 #
 # The {@name DnsAssignedValues)  *class*  describes values assigned by a Domain Name
-#     Server (DNS). This  *class*  was added in vSphere API 7.0.0.
+#     Server (DNS). This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::DnsAssignedValues;
 
@@ -46,7 +46,7 @@ sub new {
 #
 # @retval host_name - The current value of the field.
 # The host name portion of DNS name. For example, &quot;esx01&quot; part of
-#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.
+#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_host_name {
@@ -59,7 +59,7 @@ sub get_host_name {
 # 
 # @param host_name  - New value for the field.
 # The host name portion of DNS name. For example, &quot;esx01&quot; part of
-#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.
+#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_host_name {
    my ($self, %args) = @_;
@@ -72,7 +72,7 @@ sub set_host_name {
 #
 # @retval domain_name - The current value of the field.
 # The domain name portion of the DNS name. &quot;example.com&quot; part of
-#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.
+#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_domain_name {
@@ -85,7 +85,7 @@ sub get_domain_name {
 # 
 # @param domain_name  - New value for the field.
 # The domain name portion of the DNS name. &quot;example.com&quot; part of
-#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.
+#     esx01.example.com. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain_name {
    my ($self, %args) = @_;

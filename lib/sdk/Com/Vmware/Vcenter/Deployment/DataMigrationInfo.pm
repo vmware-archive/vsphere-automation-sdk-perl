@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::DataMigrationInfo``  { *class*  contains the
 #     disk space requirements and time estimates for the different choices available to
-#     migrate the vCenter Server data. This  *class*  was added in vSphere API 7.0.0.
+#     migrate the vCenter Server data. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::DataMigrationInfo;
 
@@ -53,7 +53,7 @@ sub new {
 #
 # @retval core - The current value of the field.
 # Migrate only core data and configuration from vCenter Server. Events, tasks, and stats
-#     will not be migrated. This  *field*  was added in vSphere API 7.0.0.
+#     will not be migrated. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # DataMigrationEstimate#
 sub get_core {
@@ -66,7 +66,7 @@ sub get_core {
 # 
 # @param core  - New value for the field.
 # Migrate only core data and configuration from vCenter Server. Events, tasks, and stats
-#     will not be migrated. This  *field*  was added in vSphere API 7.0.0.
+#     will not be migrated. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_core {
    my ($self, %args) = @_;
@@ -79,7 +79,7 @@ sub set_core {
 #
 # @retval core_events_tasks - The current value of the field.
 # Migrate core, events, and tasks from vCenter Server. Stats will not be migrated. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # DataMigrationEstimate#
 sub get_core_events_tasks {
@@ -92,7 +92,7 @@ sub get_core_events_tasks {
 # 
 # @param core_events_tasks  - New value for the field.
 # Migrate core, events, and tasks from vCenter Server. Stats will not be migrated. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_core_events_tasks {
    my ($self, %args) = @_;
@@ -104,7 +104,7 @@ sub set_core_events_tasks {
 # Gets the value of 'all' property.
 #
 # @retval all - The current value of the field.
-# Migrate all data from vCenter Server. This  *field*  was added in vSphere API 7.0.0.
+# Migrate all data from vCenter Server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # DataMigrationEstimate#
 sub get_all {
@@ -116,7 +116,7 @@ sub get_all {
 # Sets the given value for 'all' property.
 # 
 # @param all  - New value for the field.
-# Migrate all data from vCenter Server. This  *field*  was added in vSphere API 7.0.0.
+# Migrate all data from vCenter Server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_all {
    my ($self, %args) = @_;
@@ -130,7 +130,7 @@ sub set_all {
 # @retval core_events_tasks_with_deferred - The current value of the field.
 # Migrate core, events, and tasks from vCenter Server. Events and tasks will be migrated
 #     after the upgrade. Stats will not be migrated. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_core_events_tasks_with_deferred {
@@ -144,7 +144,7 @@ sub get_core_events_tasks_with_deferred {
 # @param core_events_tasks_with_deferred  - New value for the field.
 # Migrate core, events, and tasks from vCenter Server. Events and tasks will be migrated
 #     after the upgrade. Stats will not be migrated. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_core_events_tasks_with_deferred {
    my ($self, %args) = @_;
@@ -157,7 +157,7 @@ sub set_core_events_tasks_with_deferred {
 #
 # @retval all_with_deferred - The current value of the field.
 # Migrate all data from vCenter Server. Events, tasks, and stats will be migrated after
-#     the upgrade. This  *field*  was added in vSphere API 7.0.0.
+#     the upgrade. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_all_with_deferred {
@@ -170,7 +170,7 @@ sub get_all_with_deferred {
 # 
 # @param all_with_deferred  - New value for the field.
 # Migrate all data from vCenter Server. Events, tasks, and stats will be migrated after
-#     the upgrade. This  *field*  was added in vSphere API 7.0.0.
+#     the upgrade. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_all_with_deferred {
    my ($self, %args) = @_;

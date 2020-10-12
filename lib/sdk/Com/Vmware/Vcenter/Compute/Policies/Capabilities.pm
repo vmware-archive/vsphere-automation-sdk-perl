@@ -100,7 +100,8 @@ sub new {
 # Com::Vmware::Vcenter::Compute::Policies::Capabilities::Summary
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# if the user doesn&apos;t have the required privileges.
+# if the user doesn&apos;t have the required privileges, or when used beyond VMware
+#     Cloud on AWS.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>
@@ -136,7 +137,8 @@ sub list {
 # if a capability with this identifier does not exist.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# if the user doesn&apos;t have the required privileges.
+# if the user doesn&apos;t have the required privileges, or when used beyond VMware
+#     Cloud on AWS.
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
 # if you do not have all of the privileges described as follows: <ul>
 #  <li>  *Method*  execution requires  ``System.Read`` . </li>

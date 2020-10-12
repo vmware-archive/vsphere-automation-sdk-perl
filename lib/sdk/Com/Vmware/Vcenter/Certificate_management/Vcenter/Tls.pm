@@ -68,18 +68,26 @@ sub new {
 # Replaces the rhttpproxy TLS certificate with the specified certificate. This  *method* 
 # can be used in three scenarios : <ol>
 # <li> When the CSR is created and the private key is already stored, this  *method*  can
-# replace the certificate. The certificate but not the private key and root certificate must
+# replace the certificate. The 
+# :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.cert`  (but not 
+# :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.key`  and 
+# :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.root_cert` ) must
 # be provided as input. </li>
 # <li> When the certificate is signed by a third party certificate authority/VMCA and the
 # root certificate of the third party certificate authority/VMCA is already one of the
 # trusted roots in the trust store, this  *method*  can replace the certificate and private
-# key. The certificate and the private key but not the root certificate must be provided as
-# input. </li>
+# key. The  :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.cert` 
+# and  :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.key`  (but
+# not  :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.root_cert` )
+# must be provided as input. </li>
 # <li> When the certificate is signed by a third party certificate authority and the root
 # certificate of the third party certificate authority is not one of the trusted roots in
 # the trust store, this  *method*  can replace the certificate, private key and root CA
-# certificate. The certificate, private key and root certificate must be provided as input.
-# </li>
+# certificate. The 
+# :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.cert` ,
+# :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.key`  and 
+# :attr:`Com::Vmware::Vcenter::Certificate_management::Vcenter::Tls::Spec.root_cert`  must
+# be provided as input. </li>
 # </ol> After this  *method*  completes, the services using the certificate will be
 # restarted for the new certificate to take effect. <p>
 # 

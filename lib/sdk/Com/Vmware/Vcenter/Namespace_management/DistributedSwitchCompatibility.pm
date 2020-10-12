@@ -176,7 +176,10 @@ sub new {
 # Gets the value of 'distributed_switch' property.
 #
 # @retval distributed_switch - The current value of the field.
-# Identifier of the switch.
+# Identifier of the switch. If  ``networkProvider``  is either  *null*  or is set to
+#     NSXT_CONTAINER_PLUGIN, the value of this field will refer to the UUID of a
+#     vim.DistributedVirtualSwitch. Otherwise, the value of the field will refer to the ID
+#     of a vim.DistributedVirtualSwitch.
 #
 # ID#
 sub get_distributed_switch {
@@ -188,7 +191,10 @@ sub get_distributed_switch {
 # Sets the given value for 'distributed_switch' property.
 # 
 # @param distributed_switch  - New value for the field.
-# Identifier of the switch.
+# Identifier of the switch. If  ``networkProvider``  is either  *null*  or is set to
+#     NSXT_CONTAINER_PLUGIN, the value of this field will refer to the UUID of a
+#     vim.DistributedVirtualSwitch. Otherwise, the value of the field will refer to the ID
+#     of a vim.DistributedVirtualSwitch.
 #
 sub set_distributed_switch {
    my ($self, %args) = @_;

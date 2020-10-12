@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Deployment::Migrate
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate``   *interface*  provides  *methods* 
 #     to configure the migration of this appliance from an existing vCenter for Windows.
-#     This  *interface*  was added in vSphere API 7.0.0.
+#     This  *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Deployment::Migrate;
@@ -67,7 +67,7 @@ sub new {
 
 ## @method get ()
 # Get the MigrateSpec parameters used to configure the ongoing appliance migration. This 
-# *method*  was added in vSphere API 7.0.0.
+# *method*  was added in vSphere API 7.0.0.0.
 #
 # @retval 
 # MigrateSpec parameters being used to configure appliance migration.
@@ -86,7 +86,7 @@ sub get {
 
 ## @method check ()
 # Run sanity checks using the MigrateSpec parameters passed. This  *method*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # @param spec [REQUIRED] MigrateSpec parameters to run sanity check on.
 # . The value must be Com::Vmware::Vcenter::Deployment::Migrate::MigrateSpec.
@@ -118,7 +118,7 @@ sub check {
 }
 
 ## @method start ()
-# Start the appliance migration. This  *method*  was added in vSphere API 7.0.0.
+# Start the appliance migration. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param spec [REQUIRED] MigrateSpec parameters to configure the appliance migration.
 # . The value must be Com::Vmware::Vcenter::Deployment::Migrate::MigrateSpec.
@@ -147,7 +147,7 @@ sub start {
 
 ## @method cancel ()
 # Cancel the appliance migration that is in progress. This  *method*  was added in vSphere
-# API 7.0.0.
+# API 7.0.0.0.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
@@ -182,7 +182,7 @@ sub cancel {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::VcsaEmbeddedSpec``   *class* 
 #     contains information used to migrate an embedded vCenter Server for Windows to
-#     embedded vCenter Server appliance. This  *class*  was added in vSphere API 7.0.0.
+#     embedded vCenter Server appliance. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::Migrate::VcsaEmbeddedSpec;
 
@@ -224,7 +224,7 @@ sub new {
 #
 # @retval ceip_enabled - The current value of the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     embedded vCenter Server migration. This  *field*  was added in vSphere API 7.0.0.
+#     embedded vCenter Server migration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_ceip_enabled {
@@ -237,7 +237,7 @@ sub get_ceip_enabled {
 # 
 # @param ceip_enabled  - New value for the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     embedded vCenter Server migration. This  *field*  was added in vSphere API 7.0.0.
+#     embedded vCenter Server migration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ceip_enabled {
    my ($self, %args) = @_;
@@ -254,7 +254,7 @@ sub set_ceip_enabled {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::PscSpec``   *class*  contains
 #     information used to migrate a windows Platform Service Controller to Platform Service
-#     Controller appliance. This  *class*  was added in vSphere API 7.0.0.
+#     Controller appliance. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::Migrate::PscSpec;
 
@@ -296,7 +296,8 @@ sub new {
 #
 # @retval ceip_enabled - The current value of the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     Platform Services Controller migration. This  *field*  was added in vSphere API 7.0.0.
+#     Platform Services Controller migration. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # boolean#
 sub get_ceip_enabled {
@@ -309,7 +310,8 @@ sub get_ceip_enabled {
 # 
 # @param ceip_enabled  - New value for the field.
 # Customer experience improvement program should be enabled or disabled for this
-#     Platform Services Controller migration. This  *field*  was added in vSphere API 7.0.0.
+#     Platform Services Controller migration. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_ceip_enabled {
    my ($self, %args) = @_;
@@ -326,7 +328,7 @@ sub set_ceip_enabled {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::SourceVcWindows``   *class* 
 #     contains information about the windows vCenter Server that is going to be migrated.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::Migrate::SourceVcWindows;
 
@@ -372,7 +374,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # The IP address or DNS resolvable name of the source Windows machine. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_hostname {
@@ -385,7 +387,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # The IP address or DNS resolvable name of the source Windows machine. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -398,7 +400,7 @@ sub set_hostname {
 #
 # @retval username - The current value of the field.
 # The SSO account with administrative privilege to perform the migration operation. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_username {
@@ -411,7 +413,7 @@ sub get_username {
 # 
 # @param username  - New value for the field.
 # The SSO account with administrative privilege to perform the migration operation. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -423,7 +425,8 @@ sub set_username {
 # Gets the value of 'password' property.
 #
 # @retval password - The current value of the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 7.0.0.
+# The SSO administrator account password. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # Secret#
 sub get_password {
@@ -435,7 +438,8 @@ sub get_password {
 # Sets the given value for 'password' property.
 # 
 # @param password  - New value for the field.
-# The SSO administrator account password. This  *field*  was added in vSphere API 7.0.0.
+# The SSO administrator account password. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -453,7 +457,7 @@ sub set_password {
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::MigrationAssistantSpec``   *class* 
 #     contains the information needed to connect to the Migration Assistant that is running
 #     on the source windows vCenter Server machine. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::Migrate::MigrationAssistantSpec;
 
@@ -497,7 +501,7 @@ sub new {
 #
 # @retval https_port - The current value of the field.
 # The HTTPS port being used by Migration Assistant. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_https_port {
@@ -510,7 +514,7 @@ sub get_https_port {
 # 
 # @param https_port  - New value for the field.
 # The HTTPS port being used by Migration Assistant. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_https_port {
    my ($self, %args) = @_;
@@ -523,7 +527,7 @@ sub set_https_port {
 #
 # @retval ssl_thumbprint - The current value of the field.
 # SHA1 thumbprint of the Migration Assistant SSL certificate that will be used for
-#     verification. This  *field*  was added in vSphere API 7.0.0.
+#     verification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_ssl_thumbprint {
@@ -536,7 +540,7 @@ sub get_ssl_thumbprint {
 # 
 # @param ssl_thumbprint  - New value for the field.
 # SHA1 thumbprint of the Migration Assistant SSL certificate that will be used for
-#     verification. This  *field*  was added in vSphere API 7.0.0.
+#     verification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ssl_thumbprint {
    my ($self, %args) = @_;
@@ -553,7 +557,7 @@ sub set_ssl_thumbprint {
 #
 # The  ``Com::Vmware::Vcenter::Deployment::Migrate::MigrateSpec``   *class*  contains
 #     the fields to migrate an existing vCenter Server for Windows to an appliance. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::Migrate::MigrateSpec;
 
@@ -607,7 +611,7 @@ sub new {
 #
 # @retval source_vc_windows - The current value of the field.
 # Information specific to the Windows vCenter Server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # SourceVcWindows#
 sub get_source_vc_windows {
@@ -620,7 +624,7 @@ sub get_source_vc_windows {
 # 
 # @param source_vc_windows  - New value for the field.
 # Information specific to the Windows vCenter Server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_source_vc_windows {
    my ($self, %args) = @_;
@@ -633,7 +637,7 @@ sub set_source_vc_windows {
 #
 # @retval existing_migration_assistant - The current value of the field.
 # Information specific to the Migration Assistant that is running on the Windows vCenter
-#     Server. This  *field*  was added in vSphere API 7.0.0.
+#     Server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # MigrationAssistantSpec#
 sub get_existing_migration_assistant {
@@ -646,7 +650,7 @@ sub get_existing_migration_assistant {
 # 
 # @param existing_migration_assistant  - New value for the field.
 # Information specific to the Migration Assistant that is running on the Windows vCenter
-#     Server. This  *field*  was added in vSphere API 7.0.0.
+#     Server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_existing_migration_assistant {
    my ($self, %args) = @_;
@@ -665,7 +669,7 @@ sub set_existing_migration_assistant {
 #  <li>Tasks</li>
 # </ul> By default only core data will be migrated. Use this spec to define which part
 #     of vCenter history data will be migrated and when. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_history {
@@ -684,7 +688,7 @@ sub get_history {
 #  <li>Tasks</li>
 # </ul> By default only core data will be migrated. Use this spec to define which part
 #     of vCenter history data will be migrated and when. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_history {
    my ($self, %args) = @_;
@@ -697,7 +701,7 @@ sub set_history {
 #
 # @retval vcsa_embedded - The current value of the field.
 # Information specific to an embedded vCenter Server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_vcsa_embedded {
@@ -710,7 +714,7 @@ sub get_vcsa_embedded {
 # 
 # @param vcsa_embedded  - New value for the field.
 # Information specific to an embedded vCenter Server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_vcsa_embedded {
    my ($self, %args) = @_;
@@ -723,7 +727,7 @@ sub set_vcsa_embedded {
 #
 # @retval psc - The current value of the field.
 # Information specific to a Platform Services Controller. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_psc {
@@ -736,7 +740,7 @@ sub get_psc {
 # 
 # @param psc  - New value for the field.
 # Information specific to a Platform Services Controller. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_psc {
    my ($self, %args) = @_;
@@ -749,7 +753,7 @@ sub set_psc {
 #
 # @retval active_directory - The current value of the field.
 # Information specific to the Active Directory server to which the source windows
-#     vCenter Server is joined. This  *field*  was added in vSphere API 7.0.0.
+#     vCenter Server is joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_active_directory {
@@ -762,7 +766,7 @@ sub get_active_directory {
 # 
 # @param active_directory  - New value for the field.
 # Information specific to the Active Directory server to which the source windows
-#     vCenter Server is joined. This  *field*  was added in vSphere API 7.0.0.
+#     vCenter Server is joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_active_directory {
    my ($self, %args) = @_;
@@ -775,7 +779,7 @@ sub set_active_directory {
 #
 # @retval auto_answer - The current value of the field.
 # Use the default option for any questions that may come up during appliance
-#     configuration. This  *field*  was added in vSphere API 7.0.0.
+#     configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_auto_answer {
@@ -788,7 +792,7 @@ sub get_auto_answer {
 # 
 # @param auto_answer  - New value for the field.
 # Use the default option for any questions that may come up during appliance
-#     configuration. This  *field*  was added in vSphere API 7.0.0.
+#     configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auto_answer {
    my ($self, %args) = @_;

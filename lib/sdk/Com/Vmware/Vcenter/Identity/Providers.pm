@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Identity::Providers
 # The  ``Com::Vmware::Vcenter::Identity::Providers``   *interface*  provides  *methods* 
 #     to list, read and modify vCenter Server identity providers. This  *interface*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Identity::Providers;
@@ -66,7 +66,10 @@ sub new {
 }
 
 ## @method list ()
-# Retrieve all identity providers. This  *method*  was added in vSphere API 7.0.0.
+# Retrieve all identity providers. This  *method*  was added in vSphere API 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Read, VcIdentityProviders.Manage.
 #
 # @retval 
 # Commonly used information about the identity providers.
@@ -74,6 +77,11 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
 # if authorization is not given to caller.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li>  *Method*  execution requires  ``VcIdentityProviders.Read``  and 
+#     ``VcIdentityProviders.Manage`` . </li>
+# </ul>
 #
 sub list {
    my ($self, %args) = @_;
@@ -82,7 +90,10 @@ sub list {
 
 ## @method get ()
 # Retrieve detailed information of the specified identity provider. This  *method*  was
-# added in vSphere API 7.0.0.
+# added in vSphere API 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Read, VcIdentityProviders.Manage.
 #
 # @param provider [REQUIRED] the identifier of the provider
 # The value must be an identifier for the resource type
@@ -98,6 +109,11 @@ sub list {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if no provider found with the given provider identifier.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li>  *Method*  execution requires  ``VcIdentityProviders.Read``  and 
+#     ``VcIdentityProviders.Manage`` . </li>
+# </ul>
 #
 sub get {
    my ($self, %args) = @_;
@@ -111,7 +127,11 @@ sub get {
 }
 
 ## @method create ()
-# Create a vCenter Server identity provider. This  *method*  was added in vSphere API 7.0.0.
+# Create a vCenter Server identity provider. This  *method*  was added in vSphere API
+# 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Create, VcIdentityProviders.Manage.
 #
 # @param spec [REQUIRED] the CreateSpec contains the information used to create the provider
 # . The value must be Com::Vmware::Vcenter::Identity::Providers::CreateSpec.
@@ -128,6 +148,14 @@ sub get {
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 # if invalid arguments are provided in createSpec.
 #
+# @throw Com::Vmware::Vapi::Std::Errors::AlreadyExists 
+# if provider exists for provider ID in given spec.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li>  *Method*  execution requires  ``VcIdentityProviders.Create``  and 
+#     ``VcIdentityProviders.Manage`` . </li>
+# </ul>
+#
 sub create {
    my ($self, %args) = @_;
    my $spec = $args {spec};
@@ -140,7 +168,11 @@ sub create {
 }
 
 ## @method update ()
-# Update a vCenter Server identity provider. This  *method*  was added in vSphere API 7.0.0.
+# Update a vCenter Server identity provider. This  *method*  was added in vSphere API
+# 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Manage.
 #
 # @param provider [REQUIRED] the identifier of the provider to update
 # The value must be an identifier for the resource type
@@ -158,6 +190,10 @@ sub create {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if no provider found with the given provider identifier.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``VcIdentityProviders.Manage`` . </li>
+# </ul>
 #
 sub update {
    my ($self, %args) = @_;
@@ -172,7 +208,11 @@ sub update {
 }
 
 ## @method delete ()
-# Delete a vCenter Server identity provider. This  *method*  was added in vSphere API 7.0.0.
+# Delete a vCenter Server identity provider. This  *method*  was added in vSphere API
+# 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Manage.
 #
 # @param provider [REQUIRED] the identifier of the provider to delete
 # The value must be an identifier for the resource type
@@ -184,6 +224,10 @@ sub update {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # if no provider found with the given provider identifier.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``VcIdentityProviders.Manage`` . </li>
+# </ul>
 #
 sub delete {
    my ($self, %args) = @_;
@@ -206,15 +250,15 @@ sub delete {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::ConfigType``   *class*  contains the
 #     possible types of vCenter Server identity providers. This  *enumeration*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::ConfigType::OAUTH2 #
-#Config for OAuth2. This  *constant*  was added in vSphere API 7.0.0.
+#Config for OAuth2. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::ConfigType::OIDC #
-#Config for OIDC. This  *constant*  was added in vSphere API 7.0.0.
+#Config for OIDC. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::ConfigType;
 
@@ -252,27 +296,32 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::IdmProtocol``   *class*  contains
 #     the possible types of communication protocols to the identity management endpoints.
-#     This  *enumeration*  was added in vSphere API 7.0.0.
+#     This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::IdmProtocol::REST #
 #REST protocol based identity management endpoints. This  *constant*  was added in vSphere
-# API 7.0.0.
+# API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::IdmProtocol::SCIM #
-#SCIM protocol based identity management endpoints. This  *constant*  was added in vSphere
-# API 7.0.0.
+#SCIM V1.1 protocol based identity management endpoints. This  *constant*  was added in
+# vSphere API 7.0.0.0.
+#
+# Constant Com::Vmware::Vcenter::Identity::Providers::IdmProtocol::SCIM2_0 #
+#SCIM V2.0 protocol based identity management endpoints. This  *constant*  was added in
+# vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::IdmProtocol::LDAP #
 #LDAP protocol based identity management endpoints. This  *constant*  was added in vSphere
-# API 7.0.0.
+# API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::IdmProtocol;
 
 use constant {
     REST =>  'REST',
     SCIM =>  'SCIM',
+    SCIM2_0 =>  'SCIM2_0',
     LDAP =>  'LDAP',
 };
 
@@ -305,7 +354,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::Oauth2AuthenticationMethod``  
 #     *class*  contains the possible types of OAuth2 authentication methods. This 
-#     *enumeration*  was added in vSphere API 7.0.0.
+#     *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
@@ -313,26 +362,26 @@ sub new {
 #Clients that have received a client_secret value from the Authorization Server,
 # authenticate with the Authorization Server in accordance with Section 3.2.1 of OAuth 2.0
 # [RFC6749] using the HTTP Basic authentication scheme. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::Oauth2AuthenticationMethod::CLIENT_SECRET_POST #
 #Clients that have received a client_secret value from the Authorization Server,
 # authenticate with the Authorization Server in accordance with Section 3.2.1 of OAuth 2.0
 # [RFC6749] by including the Client Credentials in the request body. This  *constant*  was
-# added in vSphere API 7.0.0.
+# added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::Oauth2AuthenticationMethod::CLIENT_SECRET_JWT #
 #Clients that have received a client_secret value from the Authorization Server, create a
 # JWT using an HMAC SHA algorithm, such as HMAC SHA-256. The HMAC (Hash-based Message
 # Authentication Code) is calculated using the octets of the UTF-8 representation of the
-# client_secret as the shared key. This  *constant*  was added in vSphere API 7.0.0.
+# client_secret as the shared key. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Identity::Providers::Oauth2AuthenticationMethod::PRIVATE_KEY_JWT #
 #Clients that have registered a public key sign a JWT using that key. The client
 # authenticates in accordance with JSON Web Token (JWT) Profile for OAuth 2.0 Client
 # Authentication and Authorization Grants [OAuth.JWT] and Assertion Framework for OAuth 2.0
 # Client Authentication and Authorization Grants [OAuth.Assertions]. This  *constant*  was
-# added in vSphere API 7.0.0.
+# added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::Oauth2AuthenticationMethod;
 
@@ -383,7 +432,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::Summary``   *class*  contains
 #     commonly used information about an identity provider. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::Summary;
 
@@ -446,7 +495,7 @@ sub new {
 # Gets the value of 'provider' property.
 #
 # @retval provider - The current value of the field.
-# The identifier of the provider. This  *field*  was added in vSphere API 7.0.0.
+# The identifier of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_provider {
@@ -458,7 +507,7 @@ sub get_provider {
 # Sets the given value for 'provider' property.
 # 
 # @param provider  - New value for the field.
-# The identifier of the provider. This  *field*  was added in vSphere API 7.0.0.
+# The identifier of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_provider {
    my ($self, %args) = @_;
@@ -471,7 +520,7 @@ sub set_provider {
 #
 # @retval name - The current value of the field.
 # The user friendly name for the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # optional#
 sub get_name {
@@ -484,7 +533,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # The user friendly name for the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -497,7 +546,7 @@ sub set_name {
 #
 # @retval config_tag - The current value of the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ConfigType#
 sub get_config_tag {
@@ -510,7 +559,7 @@ sub get_config_tag {
 # 
 # @param config_tag  - New value for the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_config_tag {
    my ($self, %args) = @_;
@@ -522,7 +571,7 @@ sub set_config_tag {
 # Gets the value of 'oauth2' property.
 #
 # @retval oauth2 - The current value of the field.
-# OAuth2 Summary. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 Summary. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oauth2 {
@@ -534,7 +583,7 @@ sub get_oauth2 {
 # Sets the given value for 'oauth2' property.
 # 
 # @param oauth2  - New value for the field.
-# OAuth2 Summary. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 Summary. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oauth2 {
    my ($self, %args) = @_;
@@ -546,7 +595,7 @@ sub set_oauth2 {
 # Gets the value of 'oidc' property.
 #
 # @retval oidc - The current value of the field.
-# OIDC Summary. This  *field*  was added in vSphere API 7.0.0.
+# OIDC Summary. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oidc {
@@ -558,7 +607,7 @@ sub get_oidc {
 # Sets the given value for 'oidc' property.
 # 
 # @param oidc  - New value for the field.
-# OIDC Summary. This  *field*  was added in vSphere API 7.0.0.
+# OIDC Summary. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oidc {
    my ($self, %args) = @_;
@@ -571,7 +620,7 @@ sub set_oidc {
 #
 # @retval is_default - The current value of the field.
 # Specifies whether the provider is the default provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_is_default {
@@ -584,7 +633,7 @@ sub get_is_default {
 # 
 # @param is_default  - New value for the field.
 # Specifies whether the provider is the default provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_is_default {
    my ($self, %args) = @_;
@@ -604,7 +653,7 @@ sub set_is_default {
 #     provider will be as follows: the user&apos;s domain will be parsed from the User
 #     Principal Name (UPN) value that is found in the tokens returned by the identity
 #     provider. This domain will then be implicitly trusted and used to filter any groups
-#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.
+#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_domain_names {
@@ -624,7 +673,7 @@ sub get_domain_names {
 #     provider will be as follows: the user&apos;s domain will be parsed from the User
 #     Principal Name (UPN) value that is found in the tokens returned by the identity
 #     provider. This domain will then be implicitly trusted and used to filter any groups
-#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.
+#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain_names {
    my ($self, %args) = @_;
@@ -653,7 +702,7 @@ sub set_domain_names {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_auth_query_params {
@@ -682,7 +731,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -698,7 +747,8 @@ sub set_auth_query_params {
 #
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::Info``   *class*  contains the
-#     information about an identity provider. This  *class*  was added in vSphere API 7.0.0.
+#     information about an identity provider. This  *class*  was added in vSphere API
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::Info;
 
@@ -735,6 +785,7 @@ sub new {
          'case_map' => {
                'REST' => ['idm_endpoints'],
                'SCIM' => ['idm_endpoints'],
+               'SCIM2_0' => ['idm_endpoints'],
                'LDAP' => ['active_directory_over_ldap'],
             }),
       ];
@@ -779,7 +830,7 @@ sub new {
 #
 # @retval name - The current value of the field.
 # The user friendly name for the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # optional#
 sub get_name {
@@ -792,7 +843,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # The user friendly name for the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -805,7 +856,7 @@ sub set_name {
 #
 # @retval org_ids - The current value of the field.
 # The set of orgIds as part of SDDC creation which provides the basis for tenancy. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Set#
 sub get_org_ids {
@@ -818,7 +869,7 @@ sub get_org_ids {
 # 
 # @param org_ids  - New value for the field.
 # The set of orgIds as part of SDDC creation which provides the basis for tenancy. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_org_ids {
    my ($self, %args) = @_;
@@ -831,7 +882,7 @@ sub set_org_ids {
 #
 # @retval config_tag - The current value of the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ConfigType#
 sub get_config_tag {
@@ -844,7 +895,7 @@ sub get_config_tag {
 # 
 # @param config_tag  - New value for the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_config_tag {
    my ($self, %args) = @_;
@@ -856,7 +907,7 @@ sub set_config_tag {
 # Gets the value of 'oauth2' property.
 #
 # @retval oauth2 - The current value of the field.
-# OAuth2 Info. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 Info. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oauth2 {
@@ -868,7 +919,7 @@ sub get_oauth2 {
 # Sets the given value for 'oauth2' property.
 # 
 # @param oauth2  - New value for the field.
-# OAuth2 Info. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 Info. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oauth2 {
    my ($self, %args) = @_;
@@ -880,7 +931,7 @@ sub set_oauth2 {
 # Gets the value of 'oidc' property.
 #
 # @retval oidc - The current value of the field.
-# OIDC Info. This  *field*  was added in vSphere API 7.0.0.
+# OIDC Info. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oidc {
@@ -892,7 +943,7 @@ sub get_oidc {
 # Sets the given value for 'oidc' property.
 # 
 # @param oidc  - New value for the field.
-# OIDC Info. This  *field*  was added in vSphere API 7.0.0.
+# OIDC Info. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oidc {
    my ($self, %args) = @_;
@@ -905,7 +956,7 @@ sub set_oidc {
 #
 # @retval is_default - The current value of the field.
 # Specifies whether the provider is the default provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_is_default {
@@ -918,7 +969,7 @@ sub get_is_default {
 # 
 # @param is_default  - New value for the field.
 # Specifies whether the provider is the default provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_is_default {
    my ($self, %args) = @_;
@@ -938,7 +989,7 @@ sub set_is_default {
 #     provider will be as follows: the user&apos;s domain will be parsed from the User
 #     Principal Name (UPN) value that is found in the tokens returned by the identity
 #     provider. This domain will then be implicitly trusted and used to filter any groups
-#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.
+#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_domain_names {
@@ -958,7 +1009,7 @@ sub get_domain_names {
 #     provider will be as follows: the user&apos;s domain will be parsed from the User
 #     Principal Name (UPN) value that is found in the tokens returned by the identity
 #     provider. This domain will then be implicitly trusted and used to filter any groups
-#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.
+#     that are also provided in the tokens. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain_names {
    my ($self, %args) = @_;
@@ -987,7 +1038,7 @@ sub set_domain_names {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_auth_query_params {
@@ -1016,7 +1067,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -1029,7 +1080,7 @@ sub set_auth_query_params {
 #
 # @retval idm_protocol - The current value of the field.
 # Communication protocol to the identity management endpoints. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_idm_protocol {
@@ -1042,7 +1093,7 @@ sub get_idm_protocol {
 # 
 # @param idm_protocol  - New value for the field.
 # Communication protocol to the identity management endpoints. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_idm_protocol {
    my ($self, %args) = @_;
@@ -1054,7 +1105,7 @@ sub set_idm_protocol {
 # Gets the value of 'idm_endpoints' property.
 #
 # @retval idm_endpoints - The current value of the field.
-# Identity management endpoints. This  *field*  was added in vSphere API 7.0.0.
+# Identity management endpoints. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_idm_endpoints {
@@ -1066,7 +1117,7 @@ sub get_idm_endpoints {
 # Sets the given value for 'idm_endpoints' property.
 # 
 # @param idm_endpoints  - New value for the field.
-# Identity management endpoints. This  *field*  was added in vSphere API 7.0.0.
+# Identity management endpoints. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_idm_endpoints {
    my ($self, %args) = @_;
@@ -1078,7 +1129,7 @@ sub set_idm_endpoints {
 # Gets the value of 'active_directory_over_ldap' property.
 #
 # @retval active_directory_over_ldap - The current value of the field.
-# Identity management configuration. This  *field*  was added in vSphere API 7.0.0.
+# Identity management configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_active_directory_over_ldap {
@@ -1090,7 +1141,7 @@ sub get_active_directory_over_ldap {
 # Sets the given value for 'active_directory_over_ldap' property.
 # 
 # @param active_directory_over_ldap  - New value for the field.
-# Identity management configuration. This  *field*  was added in vSphere API 7.0.0.
+# Identity management configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_active_directory_over_ldap {
    my ($self, %args) = @_;
@@ -1103,7 +1154,7 @@ sub set_active_directory_over_ldap {
 #
 # @retval upn_claim - The current value of the field.
 # Specifies which claim provides the user principal name (UPN) for the user. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_upn_claim {
@@ -1116,7 +1167,7 @@ sub get_upn_claim {
 # 
 # @param upn_claim  - New value for the field.
 # Specifies which claim provides the user principal name (UPN) for the user. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_upn_claim {
    my ($self, %args) = @_;
@@ -1131,7 +1182,7 @@ sub set_upn_claim {
 # Specifies which claim provides the group membership for the token subject. If empty,
 #     the default behavior for CSP is used. In this case, the groups for the subject will be
 #     comprised of the groups in &apos;group_names&apos; and &apos;group_ids&apos; claims.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_groups_claim {
@@ -1146,7 +1197,7 @@ sub get_groups_claim {
 # Specifies which claim provides the group membership for the token subject. If empty,
 #     the default behavior for CSP is used. In this case, the groups for the subject will be
 #     comprised of the groups in &apos;group_names&apos; and &apos;group_ids&apos; claims.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_groups_claim {
    my ($self, %args) = @_;
@@ -1163,7 +1214,7 @@ sub set_groups_claim {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::CreateSpec``   *class*  contains the
 #     information used to create an identity provider. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::CreateSpec;
 
@@ -1200,6 +1251,7 @@ sub new {
          'case_map' => {
                'REST' => ['idm_endpoints'],
                'SCIM' => ['idm_endpoints'],
+               'SCIM2_0' => ['idm_endpoints'],
                'LDAP' => ['active_directory_over_ldap'],
             }),
       ];
@@ -1244,7 +1296,7 @@ sub new {
 #
 # @retval config_tag - The current value of the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ConfigType#
 sub get_config_tag {
@@ -1257,7 +1309,7 @@ sub get_config_tag {
 # 
 # @param config_tag  - New value for the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_config_tag {
    my ($self, %args) = @_;
@@ -1269,7 +1321,7 @@ sub set_config_tag {
 # Gets the value of 'oauth2' property.
 #
 # @retval oauth2 - The current value of the field.
-# OAuth2 CreateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 CreateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oauth2 {
@@ -1281,7 +1333,7 @@ sub get_oauth2 {
 # Sets the given value for 'oauth2' property.
 # 
 # @param oauth2  - New value for the field.
-# OAuth2 CreateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 CreateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oauth2 {
    my ($self, %args) = @_;
@@ -1293,7 +1345,7 @@ sub set_oauth2 {
 # Gets the value of 'oidc' property.
 #
 # @retval oidc - The current value of the field.
-# OIDC CreateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OIDC CreateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oidc {
@@ -1305,7 +1357,7 @@ sub get_oidc {
 # Sets the given value for 'oidc' property.
 # 
 # @param oidc  - New value for the field.
-# OIDC CreateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OIDC CreateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oidc {
    my ($self, %args) = @_;
@@ -1318,7 +1370,7 @@ sub set_oidc {
 #
 # @retval org_ids - The current value of the field.
 # The set of orgIds as part of SDDC creation which provides the basis for tenancy. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_org_ids {
@@ -1331,7 +1383,7 @@ sub get_org_ids {
 # 
 # @param org_ids  - New value for the field.
 # The set of orgIds as part of SDDC creation which provides the basis for tenancy. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_org_ids {
    my ($self, %args) = @_;
@@ -1347,7 +1399,7 @@ sub set_org_ids {
 #     current provider to True makes all other providers non-default. If no other providers
 #     created in this vCenter Server before, this parameter will be disregarded, and the
 #     provider will always be set to the default. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_is_default {
@@ -1363,7 +1415,7 @@ sub get_is_default {
 #     current provider to True makes all other providers non-default. If no other providers
 #     created in this vCenter Server before, this parameter will be disregarded, and the
 #     provider will always be set to the default. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_is_default {
    my ($self, %args) = @_;
@@ -1378,7 +1430,7 @@ sub set_is_default {
 # The user friendly name for the provider. This name can be used for human-readable
 #     identification purposes, but it does not have to be unique, as the system will use
 #     internal UUIDs to differentiate providers. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_name {
@@ -1393,7 +1445,7 @@ sub get_name {
 # The user friendly name for the provider. This name can be used for human-readable
 #     identification purposes, but it does not have to be unique, as the system will use
 #     internal UUIDs to differentiate providers. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -1409,7 +1461,7 @@ sub set_name {
 #     provider. Tokens from this identity provider will only be validated if the user
 #     belongs to one of these domains, and any domain-qualified groups in the tokens will be
 #     filtered to include only those groups that belong to one of these domains. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_domain_names {
@@ -1425,7 +1477,7 @@ sub get_domain_names {
 #     provider. Tokens from this identity provider will only be validated if the user
 #     belongs to one of these domains, and any domain-qualified groups in the tokens will be
 #     filtered to include only those groups that belong to one of these domains. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain_names {
    my ($self, %args) = @_;
@@ -1454,7 +1506,7 @@ sub set_domain_names {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_auth_query_params {
@@ -1483,7 +1535,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -1496,7 +1548,7 @@ sub set_auth_query_params {
 #
 # @retval idm_protocol - The current value of the field.
 # Communication protocol to the identity management endpoints. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_idm_protocol {
@@ -1509,7 +1561,7 @@ sub get_idm_protocol {
 # 
 # @param idm_protocol  - New value for the field.
 # Communication protocol to the identity management endpoints. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_idm_protocol {
    my ($self, %args) = @_;
@@ -1522,7 +1574,7 @@ sub set_idm_protocol {
 #
 # @retval idm_endpoints - The current value of the field.
 # Identity management endpoints. When specified, at least one endpoint must be provided.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_idm_endpoints {
@@ -1535,7 +1587,7 @@ sub get_idm_endpoints {
 # 
 # @param idm_endpoints  - New value for the field.
 # Identity management endpoints. When specified, at least one endpoint must be provided.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_idm_endpoints {
    my ($self, %args) = @_;
@@ -1548,7 +1600,7 @@ sub set_idm_endpoints {
 #
 # @retval active_directory_over_ldap - The current value of the field.
 # Identity management configuration. If the protocol is LDAP, the configuration must be
-#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.
+#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_active_directory_over_ldap {
@@ -1561,7 +1613,7 @@ sub get_active_directory_over_ldap {
 # 
 # @param active_directory_over_ldap  - New value for the field.
 # Identity management configuration. If the protocol is LDAP, the configuration must be
-#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.
+#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_active_directory_over_ldap {
    my ($self, %args) = @_;
@@ -1574,7 +1626,7 @@ sub set_active_directory_over_ldap {
 #
 # @retval upn_claim - The current value of the field.
 # Specifies which claim provides the user principal name (UPN) for the user. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_upn_claim {
@@ -1587,7 +1639,7 @@ sub get_upn_claim {
 # 
 # @param upn_claim  - New value for the field.
 # Specifies which claim provides the user principal name (UPN) for the user. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_upn_claim {
    my ($self, %args) = @_;
@@ -1601,7 +1653,7 @@ sub set_upn_claim {
 # @retval groups_claim - The current value of the field.
 # Specifies which claim provides the group membership for the token subject. These
 #     groups will be used for mapping to local groups per the claim map. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_groups_claim {
@@ -1615,7 +1667,7 @@ sub get_groups_claim {
 # @param groups_claim  - New value for the field.
 # Specifies which claim provides the group membership for the token subject. These
 #     groups will be used for mapping to local groups per the claim map. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_groups_claim {
    my ($self, %args) = @_;
@@ -1632,7 +1684,7 @@ sub set_groups_claim {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::UpdateSpec``   *class*  contains the
 #     information used to update the identity provider. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::UpdateSpec;
 
@@ -1669,6 +1721,7 @@ sub new {
          'case_map' => {
                'REST' => ['idm_endpoints'],
                'SCIM' => ['idm_endpoints'],
+               'SCIM2_0' => ['idm_endpoints'],
                'LDAP' => ['active_directory_over_ldap'],
             }),
       ];
@@ -1717,7 +1770,7 @@ sub new {
 #
 # @retval config_tag - The current value of the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ConfigType#
 sub get_config_tag {
@@ -1730,7 +1783,7 @@ sub get_config_tag {
 # 
 # @param config_tag  - New value for the field.
 # The config type of the identity provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_config_tag {
    my ($self, %args) = @_;
@@ -1742,7 +1795,7 @@ sub set_config_tag {
 # Gets the value of 'oauth2' property.
 #
 # @retval oauth2 - The current value of the field.
-# OAuth2 UpdateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 UpdateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oauth2 {
@@ -1754,7 +1807,7 @@ sub get_oauth2 {
 # Sets the given value for 'oauth2' property.
 # 
 # @param oauth2  - New value for the field.
-# OAuth2 UpdateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OAuth2 UpdateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oauth2 {
    my ($self, %args) = @_;
@@ -1766,7 +1819,7 @@ sub set_oauth2 {
 # Gets the value of 'oidc' property.
 #
 # @retval oidc - The current value of the field.
-# OIDC UpdateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OIDC UpdateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_oidc {
@@ -1778,7 +1831,7 @@ sub get_oidc {
 # Sets the given value for 'oidc' property.
 # 
 # @param oidc  - New value for the field.
-# OIDC UpdateSpec. This  *field*  was added in vSphere API 7.0.0.
+# OIDC UpdateSpec. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_oidc {
    my ($self, %args) = @_;
@@ -1791,7 +1844,7 @@ sub set_oidc {
 #
 # @retval org_ids - The current value of the field.
 # The set orgIds as part of SDDC creation which provides the basis for tenancy. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_org_ids {
@@ -1804,7 +1857,7 @@ sub get_org_ids {
 # 
 # @param org_ids  - New value for the field.
 # The set orgIds as part of SDDC creation which provides the basis for tenancy. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_org_ids {
    my ($self, %args) = @_;
@@ -1820,7 +1873,7 @@ sub set_org_ids {
 #     true, this provider will be flagged as the default provider and any other providers
 #     that had previously been flagged as the default will be made non-default. If 
 #     ``makeDefault``  is set to false, this provider&apos;s default flag will not be
-#     modified. This  *field*  was added in vSphere API 7.0.0.
+#     modified. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_make_default {
@@ -1836,7 +1889,7 @@ sub get_make_default {
 #     true, this provider will be flagged as the default provider and any other providers
 #     that had previously been flagged as the default will be made non-default. If 
 #     ``makeDefault``  is set to false, this provider&apos;s default flag will not be
-#     modified. This  *field*  was added in vSphere API 7.0.0.
+#     modified. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_make_default {
    my ($self, %args) = @_;
@@ -1851,7 +1904,7 @@ sub set_make_default {
 # The user friendly name for the provider. This name can be used for human-readable
 #     identification purposes, but it does not have to be unique, as the system will use
 #     internal UUIDs to differentiate providers. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_name {
@@ -1866,7 +1919,7 @@ sub get_name {
 # The user friendly name for the provider. This name can be used for human-readable
 #     identification purposes, but it does not have to be unique, as the system will use
 #     internal UUIDs to differentiate providers. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -1882,7 +1935,7 @@ sub set_name {
 #     provider. Tokens from this identity provider will only be validated if the user
 #     belongs to one of these domains, and any domain-qualified groups in the tokens will be
 #     filtered to include only those groups that belong to one of these domains. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_domain_names {
@@ -1898,7 +1951,7 @@ sub get_domain_names {
 #     provider. Tokens from this identity provider will only be validated if the user
 #     belongs to one of these domains, and any domain-qualified groups in the tokens will be
 #     filtered to include only those groups that belong to one of these domains. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain_names {
    my ($self, %args) = @_;
@@ -1917,7 +1970,7 @@ sub set_domain_names {
 #     key is added with &quot;k=v&quot;. If the value is an empty list, then the key is
 #     added without a &quot;=v&quot;. If the value contains multiple strings, then the key
 #     is repeated in the query-string for each string in the value. If the map is empty,
-#     deletes all params. This  *field*  was added in vSphere API 7.0.0.
+#     deletes all params. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_auth_query_params {
@@ -1936,7 +1989,7 @@ sub get_auth_query_params {
 #     key is added with &quot;k=v&quot;. If the value is an empty list, then the key is
 #     added without a &quot;=v&quot;. If the value contains multiple strings, then the key
 #     is repeated in the query-string for each string in the value. If the map is empty,
-#     deletes all params. This  *field*  was added in vSphere API 7.0.0.
+#     deletes all params. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -1949,7 +2002,7 @@ sub set_auth_query_params {
 #
 # @retval idm_protocol - The current value of the field.
 # The protocol to communicate to the identity management endpoints. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_idm_protocol {
@@ -1962,7 +2015,7 @@ sub get_idm_protocol {
 # 
 # @param idm_protocol  - New value for the field.
 # The protocol to communicate to the identity management endpoints. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_idm_protocol {
    my ($self, %args) = @_;
@@ -1975,7 +2028,7 @@ sub set_idm_protocol {
 #
 # @retval idm_endpoints - The current value of the field.
 # Identity management endpoints. When specified, at least one endpoint must be provided.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_idm_endpoints {
@@ -1988,7 +2041,7 @@ sub get_idm_endpoints {
 # 
 # @param idm_endpoints  - New value for the field.
 # Identity management endpoints. When specified, at least one endpoint must be provided.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_idm_endpoints {
    my ($self, %args) = @_;
@@ -2001,7 +2054,7 @@ sub set_idm_endpoints {
 #
 # @retval active_directory_over_ldap - The current value of the field.
 # Identity management configuration. If the protocol is LDAP, the configuration must be
-#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.
+#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_active_directory_over_ldap {
@@ -2014,7 +2067,7 @@ sub get_active_directory_over_ldap {
 # 
 # @param active_directory_over_ldap  - New value for the field.
 # Identity management configuration. If the protocol is LDAP, the configuration must be
-#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.
+#     set, else InvalidArgument is thrown. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_active_directory_over_ldap {
    my ($self, %args) = @_;
@@ -2027,7 +2080,7 @@ sub set_active_directory_over_ldap {
 #
 # @retval upn_claim - The current value of the field.
 # Specifies which claim provides the user principal name (UPN) for the subject of the
-#     token. This  *field*  was added in vSphere API 7.0.0.
+#     token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_upn_claim {
@@ -2040,7 +2093,7 @@ sub get_upn_claim {
 # 
 # @param upn_claim  - New value for the field.
 # Specifies which claim provides the user principal name (UPN) for the subject of the
-#     token. This  *field*  was added in vSphere API 7.0.0.
+#     token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_upn_claim {
    my ($self, %args) = @_;
@@ -2058,7 +2111,7 @@ sub set_upn_claim {
 #     If this field is set to  ``false`` , the existing user principal name (UPN) claim will
 #     be changed to the value specified in 
 #     :attr:`Com::Vmware::Vcenter::Identity::Providers::UpdateSpec.upn_claim` , if any. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_reset_upn_claim {
@@ -2076,7 +2129,7 @@ sub get_reset_upn_claim {
 #     If this field is set to  ``false`` , the existing user principal name (UPN) claim will
 #     be changed to the value specified in 
 #     :attr:`Com::Vmware::Vcenter::Identity::Providers::UpdateSpec.upn_claim` , if any. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_reset_upn_claim {
    my ($self, %args) = @_;
@@ -2089,7 +2142,7 @@ sub set_reset_upn_claim {
 #
 # @retval groups_claim - The current value of the field.
 # Specifies which claim provides the group membership for the token subject. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_groups_claim {
@@ -2102,7 +2155,7 @@ sub get_groups_claim {
 # 
 # @param groups_claim  - New value for the field.
 # Specifies which claim provides the group membership for the token subject. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_groups_claim {
    my ($self, %args) = @_;
@@ -2121,7 +2174,7 @@ sub set_groups_claim {
 #     If this field is set to  ``false`` , the existing groups claim will be changed to the
 #     value specified in 
 #     :attr:`Com::Vmware::Vcenter::Identity::Providers::UpdateSpec.groups_claim` , if any.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_reset_groups_claim {
@@ -2140,7 +2193,7 @@ sub get_reset_groups_claim {
 #     If this field is set to  ``false`` , the existing groups claim will be changed to the
 #     value specified in 
 #     :attr:`Com::Vmware::Vcenter::Identity::Providers::UpdateSpec.groups_claim` , if any.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_reset_groups_claim {
    my ($self, %args) = @_;
@@ -2157,7 +2210,7 @@ sub set_reset_groups_claim {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::Oauth2Summary``   *class*  contains
 #     commonly used information about an OAuth2 identity provider. This  *class*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::Oauth2Summary;
 
@@ -2207,7 +2260,7 @@ sub new {
 #
 # @retval auth_endpoint - The current value of the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # URI#
 sub get_auth_endpoint {
@@ -2220,7 +2273,7 @@ sub get_auth_endpoint {
 # 
 # @param auth_endpoint  - New value for the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_auth_endpoint {
    my ($self, %args) = @_;
@@ -2232,7 +2285,7 @@ sub set_auth_endpoint {
 # Gets the value of 'token_endpoint' property.
 #
 # @retval token_endpoint - The current value of the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_token_endpoint {
@@ -2244,7 +2297,7 @@ sub get_token_endpoint {
 # Sets the given value for 'token_endpoint' property.
 # 
 # @param token_endpoint  - New value for the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_token_endpoint {
    my ($self, %args) = @_;
@@ -2257,7 +2310,7 @@ sub set_token_endpoint {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_client_id {
@@ -2270,7 +2323,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -2285,7 +2338,7 @@ sub set_client_id {
 # The authentication data used as part of request header to acquire or refresh an OAuth2
 #     token. The data format depends on the authentication method used. Example of basic
 #     authentication format: Authorization: Basic [base64Encode(clientId + &quot;:&quot; +
-#     secret)]. This  *field*  was added in vSphere API 7.0.0.
+#     secret)]. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_authentication_header {
@@ -2300,7 +2353,7 @@ sub get_authentication_header {
 # The authentication data used as part of request header to acquire or refresh an OAuth2
 #     token. The data format depends on the authentication method used. Example of basic
 #     authentication format: Authorization: Basic [base64Encode(clientId + &quot;:&quot; +
-#     secret)]. This  *field*  was added in vSphere API 7.0.0.
+#     secret)]. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_authentication_header {
    my ($self, %args) = @_;
@@ -2329,7 +2382,7 @@ sub set_authentication_header {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_auth_query_params {
@@ -2358,7 +2411,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -2375,7 +2428,7 @@ sub set_auth_query_params {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::Oauth2Info``   *class*  contains the
 #     information about an OAuth2 identity provider. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::Oauth2Info;
 
@@ -2433,7 +2486,7 @@ sub new {
 #
 # @retval auth_endpoint - The current value of the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # URI#
 sub get_auth_endpoint {
@@ -2446,7 +2499,7 @@ sub get_auth_endpoint {
 # 
 # @param auth_endpoint  - New value for the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_auth_endpoint {
    my ($self, %args) = @_;
@@ -2458,7 +2511,7 @@ sub set_auth_endpoint {
 # Gets the value of 'token_endpoint' property.
 #
 # @retval token_endpoint - The current value of the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_token_endpoint {
@@ -2470,7 +2523,7 @@ sub get_token_endpoint {
 # Sets the given value for 'token_endpoint' property.
 # 
 # @param token_endpoint  - New value for the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_token_endpoint {
    my ($self, %args) = @_;
@@ -2483,7 +2536,7 @@ sub set_token_endpoint {
 #
 # @retval public_key_uri - The current value of the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_public_key_uri {
@@ -2496,7 +2549,7 @@ sub get_public_key_uri {
 # 
 # @param public_key_uri  - New value for the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_public_key_uri {
    my ($self, %args) = @_;
@@ -2509,7 +2562,7 @@ sub set_public_key_uri {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_client_id {
@@ -2522,7 +2575,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -2535,7 +2588,7 @@ sub set_client_id {
 #
 # @retval client_secret - The current value of the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_client_secret {
@@ -2548,7 +2601,7 @@ sub get_client_secret {
 # 
 # @param client_secret  - New value for the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_client_secret {
    my ($self, %args) = @_;
@@ -2564,7 +2617,7 @@ sub set_client_secret {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_claim_map {
@@ -2580,7 +2633,7 @@ sub get_claim_map {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_claim_map {
    my ($self, %args) = @_;
@@ -2593,7 +2646,7 @@ sub set_claim_map {
 #
 # @retval issuer - The current value of the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_issuer {
@@ -2606,7 +2659,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -2619,7 +2672,7 @@ sub set_issuer {
 #
 # @retval authentication_method - The current value of the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Oauth2AuthenticationMethod#
 sub get_authentication_method {
@@ -2632,7 +2685,7 @@ sub get_authentication_method {
 # 
 # @param authentication_method  - New value for the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_authentication_method {
    my ($self, %args) = @_;
@@ -2661,7 +2714,7 @@ sub set_authentication_method {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_auth_query_params {
@@ -2690,7 +2743,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -2707,7 +2760,7 @@ sub set_auth_query_params {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::Oauth2CreateSpec``   *class* 
 #     contains the information used to create an OAuth2 identity provider. This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::Oauth2CreateSpec;
 
@@ -2765,7 +2818,7 @@ sub new {
 #
 # @retval auth_endpoint - The current value of the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # URI#
 sub get_auth_endpoint {
@@ -2778,7 +2831,7 @@ sub get_auth_endpoint {
 # 
 # @param auth_endpoint  - New value for the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_auth_endpoint {
    my ($self, %args) = @_;
@@ -2790,7 +2843,7 @@ sub set_auth_endpoint {
 # Gets the value of 'token_endpoint' property.
 #
 # @retval token_endpoint - The current value of the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_token_endpoint {
@@ -2802,7 +2855,7 @@ sub get_token_endpoint {
 # Sets the given value for 'token_endpoint' property.
 # 
 # @param token_endpoint  - New value for the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_token_endpoint {
    my ($self, %args) = @_;
@@ -2815,7 +2868,7 @@ sub set_token_endpoint {
 #
 # @retval public_key_uri - The current value of the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_public_key_uri {
@@ -2828,7 +2881,7 @@ sub get_public_key_uri {
 # 
 # @param public_key_uri  - New value for the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_public_key_uri {
    my ($self, %args) = @_;
@@ -2841,7 +2894,7 @@ sub set_public_key_uri {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_client_id {
@@ -2854,7 +2907,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -2867,7 +2920,7 @@ sub set_client_id {
 #
 # @retval client_secret - The current value of the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_client_secret {
@@ -2880,7 +2933,7 @@ sub get_client_secret {
 # 
 # @param client_secret  - New value for the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_client_secret {
    my ($self, %args) = @_;
@@ -2896,7 +2949,7 @@ sub set_client_secret {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_claim_map {
@@ -2912,7 +2965,7 @@ sub get_claim_map {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_claim_map {
    my ($self, %args) = @_;
@@ -2925,7 +2978,7 @@ sub set_claim_map {
 #
 # @retval issuer - The current value of the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_issuer {
@@ -2938,7 +2991,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -2951,7 +3004,7 @@ sub set_issuer {
 #
 # @retval authentication_method - The current value of the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Oauth2AuthenticationMethod#
 sub get_authentication_method {
@@ -2964,7 +3017,7 @@ sub get_authentication_method {
 # 
 # @param authentication_method  - New value for the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_authentication_method {
    my ($self, %args) = @_;
@@ -2993,7 +3046,7 @@ sub set_authentication_method {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_auth_query_params {
@@ -3022,7 +3075,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -3039,7 +3092,7 @@ sub set_auth_query_params {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::Oauth2UpdateSpec``   *class* 
 #     contains the information used to update the OAuth2 identity provider. This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::Oauth2UpdateSpec;
 
@@ -3097,7 +3150,7 @@ sub new {
 #
 # @retval auth_endpoint - The current value of the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_auth_endpoint {
@@ -3110,7 +3163,7 @@ sub get_auth_endpoint {
 # 
 # @param auth_endpoint  - New value for the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_auth_endpoint {
    my ($self, %args) = @_;
@@ -3122,7 +3175,7 @@ sub set_auth_endpoint {
 # Gets the value of 'token_endpoint' property.
 #
 # @retval token_endpoint - The current value of the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_token_endpoint {
@@ -3134,7 +3187,7 @@ sub get_token_endpoint {
 # Sets the given value for 'token_endpoint' property.
 # 
 # @param token_endpoint  - New value for the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_token_endpoint {
    my ($self, %args) = @_;
@@ -3147,7 +3200,7 @@ sub set_token_endpoint {
 #
 # @retval public_key_uri - The current value of the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_public_key_uri {
@@ -3160,7 +3213,7 @@ sub get_public_key_uri {
 # 
 # @param public_key_uri  - New value for the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_public_key_uri {
    my ($self, %args) = @_;
@@ -3173,7 +3226,7 @@ sub set_public_key_uri {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_client_id {
@@ -3186,7 +3239,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -3199,7 +3252,7 @@ sub set_client_id {
 #
 # @retval client_secret - The current value of the field.
 # Shared secret between identity provider and client. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_client_secret {
@@ -3212,7 +3265,7 @@ sub get_client_secret {
 # 
 # @param client_secret  - New value for the field.
 # Shared secret between identity provider and client. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_client_secret {
    my ($self, %args) = @_;
@@ -3228,7 +3281,7 @@ sub set_client_secret {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_claim_map {
@@ -3244,7 +3297,7 @@ sub get_claim_map {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_claim_map {
    my ($self, %args) = @_;
@@ -3257,7 +3310,7 @@ sub set_claim_map {
 #
 # @retval issuer - The current value of the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_issuer {
@@ -3270,7 +3323,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -3283,7 +3336,7 @@ sub set_issuer {
 #
 # @retval authentication_method - The current value of the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_authentication_method {
@@ -3296,7 +3349,7 @@ sub get_authentication_method {
 # 
 # @param authentication_method  - New value for the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_authentication_method {
    my ($self, %args) = @_;
@@ -3315,7 +3368,7 @@ sub set_authentication_method {
 #     key is added with &quot;k=v&quot;. If the value is an empty list, then the key is
 #     added without a &quot;=v&quot;. If the value contains multiple strings, then the key
 #     is repeated in the query-string for each string in the value. If the map is empty,
-#     deletes all params. This  *field*  was added in vSphere API 7.0.0.
+#     deletes all params. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_auth_query_params {
@@ -3334,7 +3387,7 @@ sub get_auth_query_params {
 #     key is added with &quot;k=v&quot;. If the value is an empty list, then the key is
 #     added without a &quot;=v&quot;. If the value contains multiple strings, then the key
 #     is repeated in the query-string for each string in the value. If the map is empty,
-#     deletes all params. This  *field*  was added in vSphere API 7.0.0.
+#     deletes all params. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -3353,7 +3406,7 @@ sub set_auth_query_params {
 #     commonly used information about an OIDC identity provider. OIDC is a discovery
 #     protocol for OAuth2 configuration metadata, so 
 #     ``Com::Vmware::Vcenter::Identity::Providers::OidcSummary``  contains discovered OAuth2
-#     metadata. This  *class*  was added in vSphere API 7.0.0.
+#     metadata. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::OidcSummary;
 
@@ -3407,7 +3460,7 @@ sub new {
 #
 # @retval discovery_endpoint - The current value of the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # optional#
 sub get_discovery_endpoint {
@@ -3420,7 +3473,7 @@ sub get_discovery_endpoint {
 # 
 # @param discovery_endpoint  - New value for the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_discovery_endpoint {
    my ($self, %args) = @_;
@@ -3434,7 +3487,7 @@ sub set_discovery_endpoint {
 # @retval logout_endpoint - The current value of the field.
 # The endpoint to use for terminating the user&apos;s session at the identity provider.
 #     This value is automatically derived from the metadata information provided by the OIDC
-#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.
+#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_logout_endpoint {
@@ -3448,7 +3501,7 @@ sub get_logout_endpoint {
 # @param logout_endpoint  - New value for the field.
 # The endpoint to use for terminating the user&apos;s session at the identity provider.
 #     This value is automatically derived from the metadata information provided by the OIDC
-#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.
+#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_logout_endpoint {
    my ($self, %args) = @_;
@@ -3461,7 +3514,7 @@ sub set_logout_endpoint {
 #
 # @retval auth_endpoint - The current value of the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # URI#
 sub get_auth_endpoint {
@@ -3474,7 +3527,7 @@ sub get_auth_endpoint {
 # 
 # @param auth_endpoint  - New value for the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_auth_endpoint {
    my ($self, %args) = @_;
@@ -3486,7 +3539,7 @@ sub set_auth_endpoint {
 # Gets the value of 'token_endpoint' property.
 #
 # @retval token_endpoint - The current value of the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_token_endpoint {
@@ -3498,7 +3551,7 @@ sub get_token_endpoint {
 # Sets the given value for 'token_endpoint' property.
 # 
 # @param token_endpoint  - New value for the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_token_endpoint {
    my ($self, %args) = @_;
@@ -3511,7 +3564,7 @@ sub set_token_endpoint {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_client_id {
@@ -3524,7 +3577,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -3539,7 +3592,7 @@ sub set_client_id {
 # The authentication data used as part of request header to acquire or refresh an OAuth2
 #     token. The data format depends on the authentication method used. Example of basic
 #     authentication format: Authorization: Basic [base64Encode(clientId + &quot;:&quot; +
-#     secret)]. This  *field*  was added in vSphere API 7.0.0.
+#     secret)]. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_authentication_header {
@@ -3554,7 +3607,7 @@ sub get_authentication_header {
 # The authentication data used as part of request header to acquire or refresh an OAuth2
 #     token. The data format depends on the authentication method used. Example of basic
 #     authentication format: Authorization: Basic [base64Encode(clientId + &quot;:&quot; +
-#     secret)]. This  *field*  was added in vSphere API 7.0.0.
+#     secret)]. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_authentication_header {
    my ($self, %args) = @_;
@@ -3583,7 +3636,7 @@ sub set_authentication_header {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_auth_query_params {
@@ -3612,7 +3665,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -3631,7 +3684,7 @@ sub set_auth_query_params {
 #     information about an OIDC identity provider. OIDC is a discovery protocol for OAuth2
 #     configuration metadata, so  ``Com::Vmware::Vcenter::Identity::Providers::OidcInfo`` 
 #     contains additional discovered OAuth2 metadata. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::OidcInfo;
 
@@ -3693,7 +3746,7 @@ sub new {
 #
 # @retval discovery_endpoint - The current value of the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # URI#
 sub get_discovery_endpoint {
@@ -3706,7 +3759,7 @@ sub get_discovery_endpoint {
 # 
 # @param discovery_endpoint  - New value for the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_discovery_endpoint {
    my ($self, %args) = @_;
@@ -3720,7 +3773,7 @@ sub set_discovery_endpoint {
 # @retval logout_endpoint - The current value of the field.
 # The endpoint to use for terminating the user&apos;s session at the identity provider.
 #     This value is automatically derived from the metadata information provided by the OIDC
-#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.
+#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_logout_endpoint {
@@ -3734,7 +3787,7 @@ sub get_logout_endpoint {
 # @param logout_endpoint  - New value for the field.
 # The endpoint to use for terminating the user&apos;s session at the identity provider.
 #     This value is automatically derived from the metadata information provided by the OIDC
-#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.
+#     discovery endpoint. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_logout_endpoint {
    my ($self, %args) = @_;
@@ -3747,7 +3800,7 @@ sub set_logout_endpoint {
 #
 # @retval auth_endpoint - The current value of the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # URI#
 sub get_auth_endpoint {
@@ -3760,7 +3813,7 @@ sub get_auth_endpoint {
 # 
 # @param auth_endpoint  - New value for the field.
 # Authentication/authorization endpoint of the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_auth_endpoint {
    my ($self, %args) = @_;
@@ -3772,7 +3825,7 @@ sub set_auth_endpoint {
 # Gets the value of 'token_endpoint' property.
 #
 # @retval token_endpoint - The current value of the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_token_endpoint {
@@ -3784,7 +3837,7 @@ sub get_token_endpoint {
 # Sets the given value for 'token_endpoint' property.
 # 
 # @param token_endpoint  - New value for the field.
-# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.
+# Token endpoint of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_token_endpoint {
    my ($self, %args) = @_;
@@ -3797,7 +3850,7 @@ sub set_token_endpoint {
 #
 # @retval public_key_uri - The current value of the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # URI#
 sub get_public_key_uri {
@@ -3810,7 +3863,7 @@ sub get_public_key_uri {
 # 
 # @param public_key_uri  - New value for the field.
 # Endpoint to retrieve the provider public key for validation. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_public_key_uri {
    my ($self, %args) = @_;
@@ -3823,7 +3876,7 @@ sub set_public_key_uri {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_client_id {
@@ -3836,7 +3889,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -3849,7 +3902,7 @@ sub set_client_id {
 #
 # @retval client_secret - The current value of the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_client_secret {
@@ -3862,7 +3915,7 @@ sub get_client_secret {
 # 
 # @param client_secret  - New value for the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_client_secret {
    my ($self, %args) = @_;
@@ -3878,7 +3931,7 @@ sub set_client_secret {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_claim_map {
@@ -3894,7 +3947,7 @@ sub get_claim_map {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_claim_map {
    my ($self, %args) = @_;
@@ -3907,7 +3960,7 @@ sub set_claim_map {
 #
 # @retval issuer - The current value of the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_issuer {
@@ -3920,7 +3973,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The identity provider namespace. It is used to validate the issuer in the acquired
-#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.
+#     OAuth2 token. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -3933,7 +3986,7 @@ sub set_issuer {
 #
 # @retval authentication_method - The current value of the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Oauth2AuthenticationMethod#
 sub get_authentication_method {
@@ -3946,7 +3999,7 @@ sub get_authentication_method {
 # 
 # @param authentication_method  - New value for the field.
 # Authentication method used by the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_authentication_method {
    my ($self, %args) = @_;
@@ -3975,7 +4028,7 @@ sub set_authentication_method {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_auth_query_params {
@@ -4004,7 +4057,7 @@ sub get_auth_query_params {
 #     &quot;=v&quot;.</li>
 # <li>If the value contains multiple strings, then the key is repeated in the
 #     query-string for each string in the value.</li>
-# </ul>. This  *field*  was added in vSphere API 7.0.0.
+# </ul>. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auth_query_params {
    my ($self, %args) = @_;
@@ -4021,7 +4074,7 @@ sub set_auth_query_params {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::OidcCreateSpec``   *class*  contains
 #     the information used to create an OIDC identity provider. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::OidcCreateSpec;
 
@@ -4069,7 +4122,7 @@ sub new {
 #
 # @retval discovery_endpoint - The current value of the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # URI#
 sub get_discovery_endpoint {
@@ -4082,7 +4135,7 @@ sub get_discovery_endpoint {
 # 
 # @param discovery_endpoint  - New value for the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_discovery_endpoint {
    my ($self, %args) = @_;
@@ -4095,7 +4148,7 @@ sub set_discovery_endpoint {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_client_id {
@@ -4108,7 +4161,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -4121,7 +4174,7 @@ sub set_client_id {
 #
 # @retval client_secret - The current value of the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_client_secret {
@@ -4134,7 +4187,7 @@ sub get_client_secret {
 # 
 # @param client_secret  - New value for the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_client_secret {
    my ($self, %args) = @_;
@@ -4150,7 +4203,7 @@ sub set_client_secret {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Map#
 sub get_claim_map {
@@ -4166,7 +4219,7 @@ sub get_claim_map {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_claim_map {
    my ($self, %args) = @_;
@@ -4183,7 +4236,7 @@ sub set_claim_map {
 #
 # The  ``Com::Vmware::Vcenter::Identity::Providers::OidcUpdateSpec``   *class*  contains
 #     the information used to update the OIDC identity provider. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::OidcUpdateSpec;
 
@@ -4231,7 +4284,7 @@ sub new {
 #
 # @retval discovery_endpoint - The current value of the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_discovery_endpoint {
@@ -4244,7 +4297,7 @@ sub get_discovery_endpoint {
 # 
 # @param discovery_endpoint  - New value for the field.
 # Endpoint to retrieve the provider metadata. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_discovery_endpoint {
    my ($self, %args) = @_;
@@ -4257,7 +4310,7 @@ sub set_discovery_endpoint {
 #
 # @retval client_id - The current value of the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_client_id {
@@ -4270,7 +4323,7 @@ sub get_client_id {
 # 
 # @param client_id  - New value for the field.
 # Client identifier to connect to the provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_client_id {
    my ($self, %args) = @_;
@@ -4283,7 +4336,7 @@ sub set_client_id {
 #
 # @retval client_secret - The current value of the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_client_secret {
@@ -4296,7 +4349,7 @@ sub get_client_secret {
 # 
 # @param client_secret  - New value for the field.
 # The secret shared between the client and the provider. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_client_secret {
    my ($self, %args) = @_;
@@ -4312,7 +4365,7 @@ sub set_client_secret {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_claim_map {
@@ -4328,7 +4381,7 @@ sub get_claim_map {
 #     understands. Currently only the key &quot;perms&quot; is supported. The key
 #     &quot;perms&quot; is used for mapping the &quot;perms&quot; claim of incoming JWT. The
 #     value is another map with an external group as the key and a vCenter Server group as
-#     value. This  *field*  was added in vSphere API 7.0.0.
+#     value. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_claim_map {
    my ($self, %args) = @_;
@@ -4346,7 +4399,7 @@ sub set_claim_map {
 # The  ``Com::Vmware::Vcenter::Identity::Providers::ActiveDirectoryOverLdap``   *class* 
 #     contains the information about to how to use an Active Directory over LDAP connection
 #     to allow searching for users and groups if the identity provider is an On-Prem
-#     service. This  *class*  was added in vSphere API 7.0.0.
+#     service. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Identity::Providers::ActiveDirectoryOverLdap;
 
@@ -4398,7 +4451,7 @@ sub new {
 #
 # @retval user_name - The current value of the field.
 # User name to connect to the active directory server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_user_name {
@@ -4411,7 +4464,7 @@ sub get_user_name {
 # 
 # @param user_name  - New value for the field.
 # User name to connect to the active directory server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_user_name {
    my ($self, %args) = @_;
@@ -4424,7 +4477,7 @@ sub set_user_name {
 #
 # @retval password - The current value of the field.
 # Password to connect to the active directory server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Secret#
 sub get_password {
@@ -4437,7 +4490,7 @@ sub get_password {
 # 
 # @param password  - New value for the field.
 # Password to connect to the active directory server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -4449,7 +4502,7 @@ sub set_password {
 # Gets the value of 'users_base_dn' property.
 #
 # @retval users_base_dn - The current value of the field.
-# Base distinguished name for users. This  *field*  was added in vSphere API 7.0.0.
+# Base distinguished name for users. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_users_base_dn {
@@ -4461,7 +4514,7 @@ sub get_users_base_dn {
 # Sets the given value for 'users_base_dn' property.
 # 
 # @param users_base_dn  - New value for the field.
-# Base distinguished name for users. This  *field*  was added in vSphere API 7.0.0.
+# Base distinguished name for users. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_users_base_dn {
    my ($self, %args) = @_;
@@ -4473,7 +4526,7 @@ sub set_users_base_dn {
 # Gets the value of 'groups_base_dn' property.
 #
 # @retval groups_base_dn - The current value of the field.
-# Base distinguished name for groups. This  *field*  was added in vSphere API 7.0.0.
+# Base distinguished name for groups. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_groups_base_dn {
@@ -4485,7 +4538,7 @@ sub get_groups_base_dn {
 # Sets the given value for 'groups_base_dn' property.
 # 
 # @param groups_base_dn  - New value for the field.
-# Base distinguished name for groups. This  *field*  was added in vSphere API 7.0.0.
+# Base distinguished name for groups. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_groups_base_dn {
    my ($self, %args) = @_;
@@ -4498,7 +4551,7 @@ sub set_groups_base_dn {
 #
 # @retval server_endpoints - The current value of the field.
 # Active directory server endpoints. At least one active directory server endpoint must
-#     be set. This  *field*  was added in vSphere API 7.0.0.
+#     be set. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_server_endpoints {
@@ -4511,7 +4564,7 @@ sub get_server_endpoints {
 # 
 # @param server_endpoints  - New value for the field.
 # Active directory server endpoints. At least one active directory server endpoint must
-#     be set. This  *field*  was added in vSphere API 7.0.0.
+#     be set. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_server_endpoints {
    my ($self, %args) = @_;
@@ -4524,7 +4577,7 @@ sub set_server_endpoints {
 #
 # @retval cert_chain - The current value of the field.
 # SSL certificate chain in base64 encoding. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_cert_chain {
@@ -4537,7 +4590,7 @@ sub get_cert_chain {
 # 
 # @param cert_chain  - New value for the field.
 # SSL certificate chain in base64 encoding. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_cert_chain {
    my ($self, %args) = @_;

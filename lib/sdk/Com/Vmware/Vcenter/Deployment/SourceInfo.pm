@@ -1,9 +1,9 @@
 ## @class Com::Vmware::Vcenter::Deployment::SourceInfo
 #
 #
-# The  ``Com::Vmware::Vcenter::Deployment::SourceInfo``  { *class*  contains the
-#     information about the source vCenter Server and the database migration options. This 
-#     *class*  was added in vSphere API 7.0.0.
+# The  ``Com::Vmware::Vcenter::Deployment::SourceInfo``  { *class*  contains information
+#     about the source vCenter Server system and the database migration options. This 
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::SourceInfo;
 
@@ -59,7 +59,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # The IP address or DNS resolvable name of the source vCenter Server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_hostname {
@@ -72,7 +72,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # The IP address or DNS resolvable name of the source vCenter Server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -84,7 +84,7 @@ sub set_hostname {
 # Gets the value of 'version' property.
 #
 # @retval version - The current value of the field.
-# Source vCenter Server version. This  *field*  was added in vSphere API 7.0.0.
+# Source vCenter Server version. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_version {
@@ -96,7 +96,7 @@ sub get_version {
 # Sets the given value for 'version' property.
 # 
 # @param version  - New value for the field.
-# Source vCenter Server version. This  *field*  was added in vSphere API 7.0.0.
+# Source vCenter Server version. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_version {
    my ($self, %args) = @_;
@@ -109,7 +109,7 @@ sub set_version {
 #
 # @retval deployment_type - The current value of the field.
 # Deployment type of the source vCenter Server. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ApplianceType#
 sub get_deployment_type {
@@ -122,7 +122,7 @@ sub get_deployment_type {
 # 
 # @param deployment_type  - New value for the field.
 # Deployment type of the source vCenter Server. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_deployment_type {
    my ($self, %args) = @_;
@@ -135,7 +135,7 @@ sub set_deployment_type {
 #
 # @retval deployment_size - The current value of the field.
 # Deployment size of the source vCenter Server. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ApplianceSize#
 sub get_deployment_size {
@@ -148,7 +148,7 @@ sub get_deployment_size {
 # 
 # @param deployment_size  - New value for the field.
 # Deployment size of the source vCenter Server. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_deployment_size {
    my ($self, %args) = @_;
@@ -161,7 +161,7 @@ sub set_deployment_size {
 #
 # @retval sso_domain_name - The current value of the field.
 # The SSO domain name of the source vCenter Server. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # String#
 sub get_sso_domain_name {
@@ -174,7 +174,7 @@ sub get_sso_domain_name {
 # 
 # @param sso_domain_name  - New value for the field.
 # The SSO domain name of the source vCenter Server. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_sso_domain_name {
    my ($self, %args) = @_;
@@ -187,7 +187,7 @@ sub set_sso_domain_name {
 #
 # @retval active_directory_domain - The current value of the field.
 # The domain name of the Active Directory server to which the source vCenter Server is
-#     joined. This  *field*  was added in vSphere API 7.0.0.
+#     joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_active_directory_domain {
@@ -200,7 +200,7 @@ sub get_active_directory_domain {
 # 
 # @param active_directory_domain  - New value for the field.
 # The domain name of the Active Directory server to which the source vCenter Server is
-#     joined. This  *field*  was added in vSphere API 7.0.0.
+#     joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_active_directory_domain {
    my ($self, %args) = @_;
@@ -213,7 +213,7 @@ sub set_active_directory_domain {
 #
 # @retval dns_servers - The current value of the field.
 # IP addresses of the DNS servers of the Active Directory server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_dns_servers {
@@ -226,7 +226,7 @@ sub get_dns_servers {
 # 
 # @param dns_servers  - New value for the field.
 # IP addresses of the DNS servers of the Active Directory server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_dns_servers {
    my ($self, %args) = @_;
@@ -239,7 +239,7 @@ sub set_dns_servers {
 #
 # @retval data_migration_info - The current value of the field.
 # Contains all the available migrate options, estimated export and import time and the
-#     space required to migrate the data. This  *field*  was added in vSphere API 7.0.0.
+#     space required to migrate the data. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_data_migration_info {
@@ -252,7 +252,7 @@ sub get_data_migration_info {
 # 
 # @param data_migration_info  - New value for the field.
 # Contains all the available migrate options, estimated export and import time and the
-#     space required to migrate the data. This  *field*  was added in vSphere API 7.0.0.
+#     space required to migrate the data. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_data_migration_info {
    my ($self, %args) = @_;

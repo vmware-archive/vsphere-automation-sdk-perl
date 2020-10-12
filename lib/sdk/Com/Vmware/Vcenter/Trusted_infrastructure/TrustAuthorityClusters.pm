@@ -16,7 +16,7 @@
 #     in the cluster. The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters``   *interface*
 #     transforms a ClusterComputeResource into Trust Authority Cluster and vice versa. This 
-#     *interface*  was added in vSphere API 7.0.0.
+#     *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters;
@@ -73,7 +73,7 @@ sub new {
 }
 
 ## @method update_task ()
-# Updates the state of a cluster. This  *method*  was added in vSphere API 7.0.0.
+# Updates the state of a cluster. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Cluster id.
 # The value must be an identifier for the resource type
@@ -108,7 +108,7 @@ sub update_task {
 
 ## @method get ()
 # Get the result of the last Update operation which matches the cluster id. This  *method* 
-# was added in vSphere API 7.0.0.
+# was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are TrustedAdmin.ReadTrustedHosts, System.View.
@@ -153,7 +153,7 @@ sub get {
 ## @method list ()
 # Returns a list of clusters for this vCenter instance which matches the  class
 # Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::FilterSpec . This 
-# *method*  was added in vSphere API 7.0.0.
+# *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are TrustedAdmin.ReadTrustedHosts, System.View.
@@ -205,17 +205,17 @@ sub list {
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::State``  
 #     *enumerated type*  defines the states of the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This 
-#     *enumeration*  was added in vSphere API 7.0.0.
+#     *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::State::ENABLE #
 #The  class Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters  is
-# enabled. This  *constant*  was added in vSphere API 7.0.0.
+# enabled. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::State::DISABLE #
 #The  class Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters  is
-# disabled. This  *constant*  was added in vSphere API 7.0.0.
+# disabled. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::State;
 
@@ -265,7 +265,7 @@ sub new {
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::Summary``
 #     *class*  contains information about  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters  id and state.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::Summary;
 
@@ -308,7 +308,7 @@ sub new {
 # Gets the value of 'cluster' property.
 #
 # @retval cluster - The current value of the field.
-# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_cluster {
@@ -320,7 +320,7 @@ sub get_cluster {
 # Sets the given value for 'cluster' property.
 # 
 # @param cluster  - New value for the field.
-# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -334,7 +334,7 @@ sub set_cluster {
 # @retval state - The current value of the field.
 # The state of the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # State#
 sub get_state {
@@ -348,7 +348,7 @@ sub get_state {
 # @param state  - New value for the field.
 # The state of the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -367,7 +367,7 @@ sub set_state {
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::FilterSpec``  
 #     *class*  contains the data necessary for identifying a  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::FilterSpec;
 
@@ -410,7 +410,7 @@ sub new {
 # Gets the value of 'cluster' property.
 #
 # @retval cluster - The current value of the field.
-# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_cluster {
@@ -422,7 +422,7 @@ sub get_cluster {
 # Sets the given value for 'cluster' property.
 # 
 # @param cluster  - New value for the field.
-# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -436,7 +436,7 @@ sub set_cluster {
 # @retval state - The current value of the field.
 # The state of the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_state {
@@ -450,7 +450,7 @@ sub get_state {
 # @param state  - New value for the field.
 # The state of the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -469,7 +469,7 @@ sub set_state {
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::UpdateSpec``  
 #     *class*  contains the data necessary for update of a  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::UpdateSpec;
 
@@ -512,7 +512,7 @@ sub new {
 # @retval state - The current value of the field.
 # The state of the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_state {
@@ -526,7 +526,7 @@ sub get_state {
 # @param state  - New value for the field.
 # The state of the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters . This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -544,7 +544,7 @@ sub set_state {
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::Info``  
 #     *class*  contains the data necessary for retrieving the  class
 #     Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters  info. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::TrustAuthorityClusters::Info;
 
@@ -587,7 +587,7 @@ sub new {
 # Gets the value of 'cluster' property.
 #
 # @retval cluster - The current value of the field.
-# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_cluster {
@@ -599,7 +599,7 @@ sub get_cluster {
 # Sets the given value for 'cluster' property.
 # 
 # @param cluster  - New value for the field.
-# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Identifies the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -611,7 +611,7 @@ sub set_cluster {
 # Gets the value of 'state' property.
 #
 # @retval state - The current value of the field.
-# The state of the cluster. This  *field*  was added in vSphere API 7.0.0.
+# The state of the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # State#
 sub get_state {
@@ -623,7 +623,7 @@ sub get_state {
 # Sets the given value for 'state' property.
 # 
 # @param state  - New value for the field.
-# The state of the cluster. This  *field*  was added in vSphere API 7.0.0.
+# The state of the cluster. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_state {
    my ($self, %args) = @_;

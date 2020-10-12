@@ -96,7 +96,7 @@ sub set_result {
 #
 # @retval source_info - The current value of the field.
 # Information collected from the source machine. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_source_info {
@@ -109,7 +109,7 @@ sub get_source_info {
 # 
 # @param source_info  - New value for the field.
 # Information collected from the source machine. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_source_info {
    my ($self, %args) = @_;

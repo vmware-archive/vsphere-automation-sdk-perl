@@ -76,9 +76,11 @@ sub set_data_set {
 #
 # @retval defer_import - The current value of the field.
 # Defines how vCenter history will be migrated. If set to true, vCenter history will be
-#     migrated separately after successful upgrade or migration, otherwise it will be
-#     migrated along with core data during the upgrade or migration process. This  *field* 
-#     was added in vSphere API 6.7.
+#     migrated separately after successful upgrade(supported scenarios are upgrade from 6.0
+#     or 6.5 to 6.7) or migration, otherwise it will be migrated along with core data during
+#     the upgrade or migration process. vCSA upgrade with deferred import is no longer
+#     supported for target version 7.0 and later. This  *field*  was added in vSphere API
+#     6.7.
 #
 # Optional#
 sub get_defer_import {
@@ -91,9 +93,11 @@ sub get_defer_import {
 # 
 # @param defer_import  - New value for the field.
 # Defines how vCenter history will be migrated. If set to true, vCenter history will be
-#     migrated separately after successful upgrade or migration, otherwise it will be
-#     migrated along with core data during the upgrade or migration process. This  *field* 
-#     was added in vSphere API 6.7.
+#     migrated separately after successful upgrade(supported scenarios are upgrade from 6.0
+#     or 6.5 to 6.7) or migration, otherwise it will be migrated along with core data during
+#     the upgrade or migration process. vCSA upgrade with deferred import is no longer
+#     supported for target version 7.0 and later. This  *field*  was added in vSphere API
+#     6.7.
 #
 sub set_defer_import {
    my ($self, %args) = @_;

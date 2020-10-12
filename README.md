@@ -24,7 +24,7 @@ This document for the vSphere Automation SDK for perl describes -
    2. The procedure for contributing new samples
 
 ## Supported OnPrem vCenter Releases:
-vCenter 6.0, 6.5, 6.7, 6.7U1 and 7.0
+vCenter 6.0, 6.5, 6.7, 6.7U1, 7.0 and 7.0U1
 
 Please refer to the notes in each sample for detailed compatibility information.
 
@@ -151,5 +151,5 @@ Items added to the repository, including items from the Board members, require 2
 * [vSphere Automation SDK Overview](http://pubs.vmware.com/vsphere-65/index.jsp#com.vmware.vapi.progguide.doc/GUID-AF73991C-FC1C-47DF-8362-184B6544CFDE.html)
 * [VMware Code](https://code.vmware.com/home)
 * [VMware Developer Community](https://communities.vmware.com/community/vmtn/developer)
-* VMware vSphere [REST API Reference documentation](https://code.vmware.com/apis/366/vsphere-automation)
+* VMware vSphere [REST API Reference documentation](https://developer.vmware.com/docs/vsphere-automation/latest/)
 * [VMware Perl forum](https://code.vmware.com/forums/7562/vsphere-automation-sdk-for-perl)

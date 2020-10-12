@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::X509CertChain``   *class* 
-#     contains x509 certificate chain. This  *class*  was added in vSphere API 7.0.0.
+#     contains x509 certificate chain. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::X509CertChain;
 
@@ -43,7 +43,7 @@ sub new {
 # Gets the value of 'cert_chain' property.
 #
 # @retval cert_chain - The current value of the field.
-# Certificate chain in base64 format. This  *field*  was added in vSphere API 7.0.0.
+# Certificate chain in base64 format. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_cert_chain {
@@ -55,7 +55,7 @@ sub get_cert_chain {
 # Sets the given value for 'cert_chain' property.
 # 
 # @param cert_chain  - New value for the field.
-# Certificate chain in base64 format. This  *field*  was added in vSphere API 7.0.0.
+# Certificate chain in base64 format. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cert_chain {
    my ($self, %args) = @_;

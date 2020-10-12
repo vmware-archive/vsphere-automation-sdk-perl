@@ -264,16 +264,20 @@ sub upgrade {
 # API 6.7.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_15 #
-#Hardware version 15, first supported in ESXi 6.7.0 Update 2. This  *constant*  was added
-# in vSphere API 6.7.2.
+#Hardware version 15, first supported in ESXi 6.7 Update 2. This  *constant*  was added in
+# vSphere API 6.7.2.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_16 #
 #Hardware version 16, first supported in Workstation 15.0. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_17 #
-#Hardware version 17, first supported in ESX 7.0. This  *constant*  was added in vSphere
-# API 7.0.0.
+#Hardware version 17, first supported in ESXi 7.0.0-0. This  *constant*  was added in
+# vSphere API 7.0.0.0.
+#
+# Constant Com::Vmware::Vcenter::Vm::Hardware::Version::VMX_18 #
+#Hardware version 18, first supported in ESXi 7.0 U1. This  *constant*  was added in
+# vSphere API 7.0.1.0.
 
 package Com::Vmware::Vcenter::Vm::Hardware::Version;
 
@@ -292,6 +296,7 @@ use constant {
     VMX_15 =>  'VMX_15',
     VMX_16 =>  'VMX_16',
     VMX_17 =>  'VMX_17',
+    VMX_18 =>  'VMX_18',
 };
 
 #

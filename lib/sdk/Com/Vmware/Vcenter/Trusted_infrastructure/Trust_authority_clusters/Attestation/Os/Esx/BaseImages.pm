@@ -15,11 +15,11 @@
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages``
 #     *interface*  provides  *methods*  to manage trusted instances of ESX software on a
-#     cluster level. This  *interface*  was added in vSphere API 7.0.0.
+#     cluster level. This  *interface*  was added in vSphere API 7.0.0.0.
 #
 #
 # Constant String::RESOURCE_TYPE #
-#Resource type for ESX base image. This  *constant*  was added in vSphere API 7.0.0.
+#Resource type for ESX base image. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages;
 
@@ -83,7 +83,7 @@ sub new {
 # Import a boot_imgdb.tgz file which contains metadata that describes a trusted ESX base
 # image. A boot_imgdb.tgz file can be downloaded from a representative host.</p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -128,7 +128,8 @@ sub import_from_imgdb_task {
 
 
 ## @method list_task ()
-# Return a list of trusted ESX base images. This  *method*  was added in vSphere API 7.0.0.
+# Return a list of trusted ESX base images. This  *method*  was added in vSphere API
+# 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -172,7 +173,7 @@ sub list_task {
 
 ## @method delete_task ()
 # Remove a trusted ESX base image of each ESX in the cluster. This  *method*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -210,7 +211,8 @@ sub delete_task {
 
 
 ## @method get_task ()
-# Get the trusted ESX base version details. This  *method*  was added in vSphere API 7.0.0.
+# Get the trusted ESX base version details. This  *method*  was added in vSphere API
+# 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -262,24 +264,24 @@ sub get_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health``
 #     *enumerated type*  is indicator for the consistency of the hosts status in the
-#     cluster. This  *enumeration*  was added in vSphere API 7.0.0.
+#     cluster. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health::NONE #
-#No status available. This  *constant*  was added in vSphere API 7.0.0.
+#No status available. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health::OK #
 #Each host in the cluster is in consistent state with the rest hosts in the cluster. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health::WARNING #
 #Attestation is funtioning, however there is an issue that requires attention. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health::ERROR #
 #Not all hosts in the cluster are in consistent state. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health;
 
@@ -331,7 +333,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Summary``
 #     *class*  contains information that summarizes an ESX base image. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Summary;
 
@@ -376,7 +378,7 @@ sub new {
 # Gets the value of 'version' property.
 #
 # @retval version - The current value of the field.
-# A unique ESX version number. This  *field*  was added in vSphere API 7.0.0.
+# A unique ESX version number. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_version {
@@ -388,7 +390,7 @@ sub get_version {
 # Sets the given value for 'version' property.
 # 
 # @param version  - New value for the field.
-# A unique ESX version number. This  *field*  was added in vSphere API 7.0.0.
+# A unique ESX version number. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_version {
    my ($self, %args) = @_;
@@ -401,7 +403,7 @@ sub set_version {
 #
 # @retval display_name - The current value of the field.
 # A unique ESX version formatted for display. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_display_name {
@@ -414,7 +416,7 @@ sub get_display_name {
 # 
 # @param display_name  - New value for the field.
 # A unique ESX version formatted for display. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_display_name {
    my ($self, %args) = @_;
@@ -427,7 +429,7 @@ sub set_display_name {
 #
 # @retval health - The current value of the field.
 # A health indicator which indicates whether each host in the cluster has this version
-#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.
+#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -440,7 +442,7 @@ sub get_health {
 # 
 # @param health  - New value for the field.
 # A health indicator which indicates whether each host in the cluster has this version
-#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.
+#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -458,7 +460,7 @@ sub set_health {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Info``
 #     *class*  contains information that describes an ESX base image. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Info;
 
@@ -504,7 +506,7 @@ sub new {
 #
 # @retval display_name - The current value of the field.
 # A unique ESX version formatted for display. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # String#
 sub get_display_name {
@@ -517,7 +519,7 @@ sub get_display_name {
 # 
 # @param display_name  - New value for the field.
 # A unique ESX version formatted for display. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_display_name {
    my ($self, %args) = @_;
@@ -530,7 +532,7 @@ sub set_display_name {
 #
 # @retval health - The current value of the field.
 # A health indicator which indicates whether each host in the cluster has this version
-#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.
+#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -543,7 +545,7 @@ sub get_health {
 # 
 # @param health  - New value for the field.
 # A health indicator which indicates whether each host in the cluster has this version
-#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.
+#     of the ESX base image. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -565,7 +567,7 @@ sub set_health {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_details {
@@ -587,7 +589,7 @@ sub get_details {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_details {
    my ($self, %args) = @_;
@@ -605,7 +607,7 @@ sub set_details {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::FilterSpec``
 #     *class*  contains the data necessary for identifying a Trust Authority Host in a
-#     cluster. This  *class*  was added in vSphere API 7.0.0.
+#     cluster. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Os::Esx::BaseImages::FilterSpec;
 
@@ -651,7 +653,7 @@ sub new {
 #
 # @retval version - The current value of the field.
 # Search criteria by ESX base image version numbers. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_version {
@@ -664,7 +666,7 @@ sub get_version {
 # 
 # @param version  - New value for the field.
 # Search criteria by ESX base image version numbers. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_version {
    my ($self, %args) = @_;
@@ -677,7 +679,7 @@ sub set_version {
 #
 # @retval display_name - The current value of the field.
 # Search criteria by ESX base image version version numbers. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_display_name {
@@ -690,7 +692,7 @@ sub get_display_name {
 # 
 # @param display_name  - New value for the field.
 # Search criteria by ESX base image version version numbers. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_display_name {
    my ($self, %args) = @_;
@@ -702,7 +704,7 @@ sub set_display_name {
 # Gets the value of 'health' property.
 #
 # @retval health - The current value of the field.
-# Search criteria by health indicator. This  *field*  was added in vSphere API 7.0.0.
+# Search criteria by health indicator. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_health {
@@ -714,7 +716,7 @@ sub get_health {
 # Sets the given value for 'health' property.
 # 
 # @param health  - New value for the field.
-# Search criteria by health indicator. This  *field*  was added in vSphere API 7.0.0.
+# Search criteria by health indicator. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;

@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::WindowsNetworkAdapterSettings``   *class* 
 #     specifies Windows specific Network settings for a virtual network adapter. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::WindowsNetworkAdapterSettings;
 
@@ -57,7 +57,7 @@ sub new {
 #     empty, and if a DHCP IP address is used, then these settings override the DHCP
 #     settings.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_dns_servers {
@@ -76,7 +76,7 @@ sub get_dns_servers {
 #     empty, and if a DHCP IP address is used, then these settings override the DHCP
 #     settings.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_dns_servers {
    my ($self, %args) = @_;
@@ -88,7 +88,8 @@ sub set_dns_servers {
 # Gets the value of 'dns_domain' property.
 #
 # @retval dns_domain - The current value of the field.
-# A DNS domain suffix such as vmware.com. This  *field*  was added in vSphere API 7.0.0.
+# A DNS domain suffix such as vmware.com. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # Optional#
 sub get_dns_domain {
@@ -100,7 +101,8 @@ sub get_dns_domain {
 # Sets the given value for 'dns_domain' property.
 # 
 # @param dns_domain  - New value for the field.
-# A DNS domain suffix such as vmware.com. This  *field*  was added in vSphere API 7.0.0.
+# A DNS domain suffix such as vmware.com. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_dns_domain {
    my ($self, %args) = @_;
@@ -115,7 +117,7 @@ sub set_dns_domain {
 # List of WINS Servers to set for the Windows guest operating system. A Maximum of two
 #     IP addresses can be specified in this list. The first IP address will be set as the
 #     primary WINS server. The second IP address will be set as the secondary WINS server.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_wins_servers {
@@ -130,7 +132,7 @@ sub get_wins_servers {
 # List of WINS Servers to set for the Windows guest operating system. A Maximum of two
 #     IP addresses can be specified in this list. The first IP address will be set as the
 #     primary WINS server. The second IP address will be set as the secondary WINS server.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_wins_servers {
    my ($self, %args) = @_;
@@ -142,7 +144,7 @@ sub set_wins_servers {
 # Gets the value of 'net_BIOS_mode' property.
 #
 # @retval net_BIOS_mode - The current value of the field.
-# NetBIOS setting for Windows. This  *field*  was added in vSphere API 7.0.0.
+# NetBIOS setting for Windows. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_net_BIOS_mode {
@@ -154,7 +156,7 @@ sub get_net_BIOS_mode {
 # Sets the given value for 'net_BIOS_mode' property.
 # 
 # @param net_BIOS_mode  - New value for the field.
-# NetBIOS setting for Windows. This  *field*  was added in vSphere API 7.0.0.
+# NetBIOS setting for Windows. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_net_BIOS_mode {
    my ($self, %args) = @_;
@@ -170,19 +172,19 @@ sub set_net_BIOS_mode {
 #
 # The  ``Com::Vmware::Vcenter::Guest::WindowsNetworkAdapterSettings::NetBIOSMode``  
 #     *enumerated type*  specifies different NetBIOS settings for Windows guest operating
-#     systems. This  *enumeration*  was added in vSphere API 7.0.0.
+#     systems. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Guest::WindowsNetworkAdapterSettings::NetBIOSMode::USE_DHCP #
 #DHCP server decides whether or not to use NetBIOS. This  *constant*  was added in vSphere
-# API 7.0.0.
+# API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::WindowsNetworkAdapterSettings::NetBIOSMode::ENABLE #
-#Always use NetBIOS. This  *constant*  was added in vSphere API 7.0.0.
+#Always use NetBIOS. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::WindowsNetworkAdapterSettings::NetBIOSMode::DISABLE #
-#Never use NetBIOS. This  *constant*  was added in vSphere API 7.0.0.
+#Never use NetBIOS. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::WindowsNetworkAdapterSettings::NetBIOSMode;
 

@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::NetworkAddress``   *class* 
 #     contains an IP address or DNS resolvable name and a port on which a connection can be
-#     established. This  *class*  was added in vSphere API 7.0.0.
+#     established. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::NetworkAddress;
 
@@ -47,7 +47,7 @@ sub new {
 #
 # @retval hostname - The current value of the field.
 # The IP address or DNS resolvable name of the service. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_hostname {
@@ -60,7 +60,7 @@ sub get_hostname {
 # 
 # @param hostname  - New value for the field.
 # The IP address or DNS resolvable name of the service. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_hostname {
    my ($self, %args) = @_;
@@ -72,7 +72,7 @@ sub set_hostname {
 # Gets the value of 'port' property.
 #
 # @retval port - The current value of the field.
-# The port of the service. This  *field*  was added in vSphere API 7.0.0.
+# The port of the service. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_port {
@@ -84,7 +84,7 @@ sub get_port {
 # Sets the given value for 'port' property.
 # 
 # @param port  - New value for the field.
-# The port of the service. This  *field*  was added in vSphere API 7.0.0.
+# The port of the service. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_port {
    my ($self, %args) = @_;

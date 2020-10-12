@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::ConfigurationSpec``   *class*  specifies the
 #     settings for customizing a guest operating system. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::ConfigurationSpec;
 
@@ -47,7 +47,7 @@ sub new {
 #
 # @retval windows_config - The current value of the field.
 # Guest customization specification for a Windows guest operating system. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_windows_config {
@@ -60,7 +60,7 @@ sub get_windows_config {
 # 
 # @param windows_config  - New value for the field.
 # Guest customization specification for a Windows guest operating system. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_windows_config {
    my ($self, %args) = @_;
@@ -73,7 +73,7 @@ sub set_windows_config {
 #
 # @retval linux_config - The current value of the field.
 # Guest customization specification for a linux guest operating system. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_linux_config {
@@ -86,7 +86,7 @@ sub get_linux_config {
 # 
 # @param linux_config  - New value for the field.
 # Guest customization specification for a linux guest operating system. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_linux_config {
    my ($self, %args) = @_;

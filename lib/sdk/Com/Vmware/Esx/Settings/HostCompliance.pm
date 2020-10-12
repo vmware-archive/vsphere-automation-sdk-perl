@@ -234,7 +234,7 @@ sub set_add_on {
 #     individual hardware module firmware) for every HSP configured, keyed by Hardware
 #     Support Manager (HSM).
 #
-# optional#
+# Optional#
 sub get_hardware_support {
    my ($self, %args) = @_;
    return $self->{'hardware_support'}; 	

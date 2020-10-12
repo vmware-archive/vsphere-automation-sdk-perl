@@ -217,7 +217,7 @@ sub set {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 
 # If there is no cluster associated with  ``cluster``  or no draft associated with 
-#     ``draft``  or no component associated with  ``component``  in the system.
+#     ``draft``  in the system.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::ServiceUnavailable 
 # If the service is not available.

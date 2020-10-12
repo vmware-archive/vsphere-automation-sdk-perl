@@ -152,7 +152,7 @@ sub list {
 }
 
 ## @method create ()
-# Creates a resource pool. This  *method*  was added in vSphere API 7.0.0.
+# Creates a resource pool. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are Resource.CreatePool.
@@ -208,7 +208,7 @@ sub create {
 }
 
 ## @method delete ()
-# Deletes a resource pool. This  *method*  was added in vSphere API 7.0.0.
+# Deletes a resource pool. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param resource_pool [REQUIRED] Identifier of the resource pool to be deleted.
 # The value must be an identifier for the resource type getQualifiedName(ResourcePool).
@@ -245,7 +245,7 @@ sub delete {
 
 ## @method update ()
 # Updates the configuration of a resource pool. This  *method*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are Resource.EditPool.
@@ -322,7 +322,7 @@ sub update {
 #     general, a consumer with more shares gets proportionally more of the resource, subject
 #     to certain other constraints.</p>
 # 
-# . This  *class*  was added in vSphere API 7.0.0.
+# . This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::ResourcePool::SharesInfo;
 
@@ -377,7 +377,7 @@ sub new {
 # @retval level - The current value of the field.
 # The allocation level. It maps to a pre-determined set of numeric values for shares. If
 #     the shares value does not map to a predefined size, then the level is set as CUSTOM.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Level#
 sub get_level {
@@ -391,7 +391,7 @@ sub get_level {
 # @param level  - New value for the field.
 # The allocation level. It maps to a pre-determined set of numeric values for shares. If
 #     the shares value does not map to a predefined size, then the level is set as CUSTOM.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_level {
    my ($self, %args) = @_;
@@ -409,7 +409,7 @@ sub set_level {
 # There is no unit for this value. It is a relative measure based on the settings for
 #     other resource pools.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_shares {
@@ -427,7 +427,7 @@ sub get_shares {
 # There is no unit for this value. It is a relative measure based on the settings for
 #     other resource pools.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_shares {
    my ($self, %args) = @_;
@@ -443,28 +443,28 @@ sub set_shares {
 #
 # The  ``Com::Vmware::Vcenter::ResourcePool::SharesInfo::Level``   *enumerated type* 
 #     defines the possible values for the allocation level. This  *enumeration*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::ResourcePool::SharesInfo::Level::LOW #
 #For CPU: Shares = 500 * number of virtual CPUs.
 #  For Memory: Shares = 5 * virtual machine memory size in MB.
-# . This  *constant*  was added in vSphere API 7.0.0.
+# . This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::ResourcePool::SharesInfo::Level::NORMAL #
 #For CPU: Shares = 1000 * number of virtual CPUs.
 #  For Memory: Shares = 10 * virtual machine memory size in MB.
-# . This  *constant*  was added in vSphere API 7.0.0.
+# . This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::ResourcePool::SharesInfo::Level::HIGH #
 #For CPU: Shares = 2000 * nmumber of virtual CPUs.
 #  For Memory: Shares = 20 * virtual machine memory size in MB.
-# . This  *constant*  was added in vSphere API 7.0.0.
+# . This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::ResourcePool::SharesInfo::Level::CUSTOM #
 #If  *set* , in case there is resource contention the server uses the shares value to
-# determine the resource allocation. This  *constant*  was added in vSphere API 7.0.0.
+# determine the resource allocation. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::ResourcePool::SharesInfo::Level;
 
@@ -507,7 +507,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::ResourcePool::ResourceAllocationInfo``   *class* 
 #     contains resource allocation information of a resource pool. This  *class*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::ResourcePool::ResourceAllocationInfo;
 
@@ -557,7 +557,7 @@ sub new {
 # Amount of resource that is guaranteed available to a resource pool. Reserved resources
 #     are not wasted if they are not used. If the utilization is less than the reservation,
 #     the resources can be utilized by other running virtual machines. Units are MB fo
-#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_reservation {
@@ -572,7 +572,7 @@ sub get_reservation {
 # Amount of resource that is guaranteed available to a resource pool. Reserved resources
 #     are not wasted if they are not used. If the utilization is less than the reservation,
 #     the resources can be utilized by other running virtual machines. Units are MB fo
-#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_reservation {
    my ($self, %args) = @_;
@@ -587,7 +587,7 @@ sub set_reservation {
 # In a resource pool with an expandable reservation, the reservation can grow beyond the
 #     specified value, if the parent resource pool has unreserved resources. A
 #     non-expandable reservation is called a fixed reservation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_expandable_reservation {
@@ -602,7 +602,7 @@ sub get_expandable_reservation {
 # In a resource pool with an expandable reservation, the reservation can grow beyond the
 #     specified value, if the parent resource pool has unreserved resources. A
 #     non-expandable reservation is called a fixed reservation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_expandable_reservation {
    my ($self, %args) = @_;
@@ -618,7 +618,7 @@ sub set_expandable_reservation {
 #     available resources. This is typically used to ensure a consistent performance of
 #     resource pools independent of available resources. If set to -1, then there is no
 #     fixed limit on resource usage (only bounded by available resources and shares). Units
-#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_limit {
@@ -634,7 +634,7 @@ sub get_limit {
 #     available resources. This is typically used to ensure a consistent performance of
 #     resource pools independent of available resources. If set to -1, then there is no
 #     fixed limit on resource usage (only bounded by available resources and shares). Units
-#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_limit {
    my ($self, %args) = @_;
@@ -647,7 +647,7 @@ sub set_limit {
 #
 # @retval shares - The current value of the field.
 # Shares are used in case of resource contention. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # SharesInfo#
 sub get_shares {
@@ -660,7 +660,7 @@ sub get_shares {
 # 
 # @param shares  - New value for the field.
 # Shares are used in case of resource contention. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_shares {
    my ($self, %args) = @_;
@@ -772,7 +772,7 @@ sub set_resource_pools {
 #
 # @retval cpu_allocation - The current value of the field.
 # Resource allocation information for CPU. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # optional#
 sub get_cpu_allocation {
@@ -785,7 +785,7 @@ sub get_cpu_allocation {
 # 
 # @param cpu_allocation  - New value for the field.
 # Resource allocation information for CPU. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_cpu_allocation {
    my ($self, %args) = @_;
@@ -798,7 +798,7 @@ sub set_cpu_allocation {
 #
 # @retval memory_allocation - The current value of the field.
 # Resource allocation information for memory. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # optional#
 sub get_memory_allocation {
@@ -811,7 +811,7 @@ sub get_memory_allocation {
 # 
 # @param memory_allocation  - New value for the field.
 # Resource allocation information for memory. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_memory_allocation {
    my ($self, %args) = @_;
@@ -1133,7 +1133,7 @@ sub set_name {
 # The  ``Com::Vmware::Vcenter::ResourcePool::ResourceAllocationCreateSpec``   *class* 
 #     contains resource allocation information used to create a resource pool, see 
 #     :func:`Com::Vmware::Vcenter::ResourcePool.create` . This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::ResourcePool::ResourceAllocationCreateSpec;
 
@@ -1183,7 +1183,7 @@ sub new {
 # Amount of resource that is guaranteed available to a resource pool. Reserved resources
 #     are not wasted if they are not used. If the utilization is less than the reservation,
 #     the resources can be utilized by other running virtual machines. Units are MB fo
-#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_reservation {
@@ -1198,7 +1198,7 @@ sub get_reservation {
 # Amount of resource that is guaranteed available to a resource pool. Reserved resources
 #     are not wasted if they are not used. If the utilization is less than the reservation,
 #     the resources can be utilized by other running virtual machines. Units are MB fo
-#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_reservation {
    my ($self, %args) = @_;
@@ -1213,7 +1213,7 @@ sub set_reservation {
 # In a resource pool with an expandable reservation, the reservation can grow beyond the
 #     specified value, if the parent resource pool has unreserved resources. A
 #     non-expandable reservation is called a fixed reservation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_expandable_reservation {
@@ -1228,7 +1228,7 @@ sub get_expandable_reservation {
 # In a resource pool with an expandable reservation, the reservation can grow beyond the
 #     specified value, if the parent resource pool has unreserved resources. A
 #     non-expandable reservation is called a fixed reservation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_expandable_reservation {
    my ($self, %args) = @_;
@@ -1244,7 +1244,7 @@ sub set_expandable_reservation {
 #     available resources. This is typically used to ensure a consistent performance of
 #     resource pools independent of available resources. If set to -1, then there is no
 #     fixed limit on resource usage (only bounded by available resources and shares). Units
-#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_limit {
@@ -1260,7 +1260,7 @@ sub get_limit {
 #     available resources. This is typically used to ensure a consistent performance of
 #     resource pools independent of available resources. If set to -1, then there is no
 #     fixed limit on resource usage (only bounded by available resources and shares). Units
-#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_limit {
    my ($self, %args) = @_;
@@ -1273,7 +1273,7 @@ sub set_limit {
 #
 # @retval shares - The current value of the field.
 # Shares are used in case of resource contention. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_shares {
@@ -1286,7 +1286,7 @@ sub get_shares {
 # 
 # @param shares  - New value for the field.
 # Shares are used in case of resource contention. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_shares {
    my ($self, %args) = @_;
@@ -1303,7 +1303,7 @@ sub set_shares {
 #
 # The   *class*  contains information used to create a resource pool, see 
 #     :func:`Com::Vmware::Vcenter::ResourcePool.create` . This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::ResourcePool::CreateSpec;
 
@@ -1350,7 +1350,7 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.
+# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -1362,7 +1362,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.
+# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -1374,7 +1374,7 @@ sub set_name {
 # Gets the value of 'parent' property.
 #
 # @retval parent - The current value of the field.
-# Parent of the created resource pool. This  *field*  was added in vSphere API 7.0.0.
+# Parent of the created resource pool. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_parent {
@@ -1386,7 +1386,7 @@ sub get_parent {
 # Sets the given value for 'parent' property.
 # 
 # @param parent  - New value for the field.
-# Parent of the created resource pool. This  *field*  was added in vSphere API 7.0.0.
+# Parent of the created resource pool. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_parent {
    my ($self, %args) = @_;
@@ -1398,7 +1398,7 @@ sub set_parent {
 # Gets the value of 'cpu_allocation' property.
 #
 # @retval cpu_allocation - The current value of the field.
-# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_cpu_allocation {
@@ -1410,7 +1410,7 @@ sub get_cpu_allocation {
 # Sets the given value for 'cpu_allocation' property.
 # 
 # @param cpu_allocation  - New value for the field.
-# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cpu_allocation {
    my ($self, %args) = @_;
@@ -1422,7 +1422,7 @@ sub set_cpu_allocation {
 # Gets the value of 'memory_allocation' property.
 #
 # @retval memory_allocation - The current value of the field.
-# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_memory_allocation {
@@ -1434,7 +1434,7 @@ sub get_memory_allocation {
 # Sets the given value for 'memory_allocation' property.
 # 
 # @param memory_allocation  - New value for the field.
-# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_memory_allocation {
    my ($self, %args) = @_;
@@ -1451,7 +1451,7 @@ sub set_memory_allocation {
 #
 # The  ``ResourceAllocationUpdateSpec``   *class*  descrives the updates to be made to
 #     the resource allocation settings of a resource pool. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::ResourcePool::ResourceAllocationUpdateSpec;
 
@@ -1501,7 +1501,7 @@ sub new {
 # Amount of resource that is guaranteed available to a resource pool. Reserved resources
 #     are not wasted if they are not used. If the utilization is less than the reservation,
 #     the resources can be utilized by other running virtual machines. Units are MB fo
-#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_reservation {
@@ -1516,7 +1516,7 @@ sub get_reservation {
 # Amount of resource that is guaranteed available to a resource pool. Reserved resources
 #     are not wasted if they are not used. If the utilization is less than the reservation,
 #     the resources can be utilized by other running virtual machines. Units are MB fo
-#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_reservation {
    my ($self, %args) = @_;
@@ -1531,7 +1531,7 @@ sub set_reservation {
 # In a resource pool with an expandable reservation, the reservation can grow beyond the
 #     specified value, if the parent resource pool has unreserved resources. A
 #     non-expandable reservation is called a fixed reservation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_expandable_reservation {
@@ -1546,7 +1546,7 @@ sub get_expandable_reservation {
 # In a resource pool with an expandable reservation, the reservation can grow beyond the
 #     specified value, if the parent resource pool has unreserved resources. A
 #     non-expandable reservation is called a fixed reservation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_expandable_reservation {
    my ($self, %args) = @_;
@@ -1562,7 +1562,7 @@ sub set_expandable_reservation {
 #     available resources. This is typically used to ensure a consistent performance of
 #     resource pools independent of available resources. If set to -1, then there is no
 #     fixed limit on resource usage (only bounded by available resources and shares). Units
-#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_limit {
@@ -1578,7 +1578,7 @@ sub get_limit {
 #     available resources. This is typically used to ensure a consistent performance of
 #     resource pools independent of available resources. If set to -1, then there is no
 #     fixed limit on resource usage (only bounded by available resources and shares). Units
-#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.
+#     are MB for memory, and MHz for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_limit {
    my ($self, %args) = @_;
@@ -1591,7 +1591,7 @@ sub set_limit {
 #
 # @retval shares - The current value of the field.
 # Shares are used in case of resource contention. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_shares {
@@ -1604,7 +1604,7 @@ sub get_shares {
 # 
 # @param shares  - New value for the field.
 # Shares are used in case of resource contention. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_shares {
    my ($self, %args) = @_;
@@ -1620,7 +1620,7 @@ sub set_shares {
 #
 #
 # The   *class*  contains specification for updating the configuration of a resource
-#     pool. This  *class*  was added in vSphere API 7.0.0.
+#     pool. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::ResourcePool::UpdateSpec;
 
@@ -1665,7 +1665,7 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.
+# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_name {
@@ -1677,7 +1677,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.
+# Name of the resource pool. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -1689,7 +1689,7 @@ sub set_name {
 # Gets the value of 'cpu_allocation' property.
 #
 # @retval cpu_allocation - The current value of the field.
-# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_cpu_allocation {
@@ -1701,7 +1701,7 @@ sub get_cpu_allocation {
 # Sets the given value for 'cpu_allocation' property.
 # 
 # @param cpu_allocation  - New value for the field.
-# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for CPU. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cpu_allocation {
    my ($self, %args) = @_;
@@ -1713,7 +1713,7 @@ sub set_cpu_allocation {
 # Gets the value of 'memory_allocation' property.
 #
 # @retval memory_allocation - The current value of the field.
-# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_memory_allocation {
@@ -1725,7 +1725,7 @@ sub get_memory_allocation {
 # Sets the given value for 'memory_allocation' property.
 # 
 # @param memory_allocation  - New value for the field.
-# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.
+# Resource allocation for memory. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_memory_allocation {
    my ($self, %args) = @_;

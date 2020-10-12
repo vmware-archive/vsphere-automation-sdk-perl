@@ -15,7 +15,7 @@
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus``
 #     *interface*  provides  *methods*  to get the Key Provider Service health status. This 
-#     *interface*  was added in vSphere API 7.0.0.
+#     *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus;
@@ -73,7 +73,7 @@ sub new {
 
 ## @method get_task ()
 # Return the Key Provider Service health in the given cluster. This  *method*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -119,22 +119,22 @@ sub get_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health``
 #     *enumerated type*  defines the possible service health states. This  *enumeration* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health::NONE #
-#No status available. This  *constant*  was added in vSphere API 7.0.0.
+#No status available. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health::OK #
-#Service is functioning normally. This  *constant*  was added in vSphere API 7.0.0.
+#Service is functioning normally. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health::WARNING #
 #Service is functioning, however there is an issue that requires attention. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health::ERROR #
-#Service is not functioning. This  *constant*  was added in vSphere API 7.0.0.
+#Service is not functioning. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health;
 
@@ -186,7 +186,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Info``
 #     *class*  contains information that describes the status of the service. This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Info;
 
@@ -229,7 +229,7 @@ sub new {
 # Gets the value of 'health' property.
 #
 # @retval health - The current value of the field.
-# The service health status. This  *field*  was added in vSphere API 7.0.0.
+# The service health status. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -241,7 +241,7 @@ sub get_health {
 # Sets the given value for 'health' property.
 # 
 # @param health  - New value for the field.
-# The service health status. This  *field*  was added in vSphere API 7.0.0.
+# The service health status. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -263,7 +263,7 @@ sub set_health {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_details {
@@ -285,7 +285,7 @@ sub get_details {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::ServiceStatus::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_details {
    my ($self, %args) = @_;

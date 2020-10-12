@@ -114,8 +114,7 @@ sub list {
 # . The value must be str.
 #
 # @retval 
-# The  class Com::Vmware::Vcenter::Cluster::Info  instances that corresponds to the 
-#     ``cluster`` .
+# Information about the cluster associated with  ``cluster`` .
 # The return type will be Com::Vmware::Vcenter::Cluster::Info
 #
 # @throw Com::Vmware::Vapi::Std::Errors::NotFound 

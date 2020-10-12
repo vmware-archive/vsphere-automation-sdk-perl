@@ -125,14 +125,14 @@ sub list {
 #
 #
 # Constant Com::Vmware::Vcenter::Network::Type::STANDARD_PORTGROUP #
-#XXX: ESX based (created and managed on ESX)
+#vSphere standard portgroup (created and managed on ESX)
 #
 # Constant Com::Vmware::Vcenter::Network::Type::DISTRIBUTED_PORTGROUP #
-#XXX: vCenter based (create and managed through vCenter)
+#Distributed virtual portgroup (created and managed through vCenter)
 #
 # Constant Com::Vmware::Vcenter::Network::Type::OPAQUE_NETWORK #
-#A network for whose configuration is managed outside of vSphere. The identifer and name of
-# the network is made available through vSphere so that host and virtual machine virtual
+#A network whose configuration is managed outside of vSphere. The identifer and name of the
+# network is made available through vSphere so that host and virtual machine virtual
 # ethernet devices can connect to them.
 
 package Com::Vmware::Vcenter::Network::Type;

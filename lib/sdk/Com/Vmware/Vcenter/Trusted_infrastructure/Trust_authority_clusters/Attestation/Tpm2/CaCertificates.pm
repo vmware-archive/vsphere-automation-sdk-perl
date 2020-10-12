@@ -23,12 +23,12 @@
 #     registered with the Attestation Service in order to validate TPM EK certificates when
 #     presented at attestation time.</p>
 # 
-# . This  *interface*  was added in vSphere API 7.0.0.
+# . This  *interface*  was added in vSphere API 7.0.0.0.
 #
 #
 # Constant String::RESOURCE_TYPE #
 #Resource type for TPM 2.0 CA certificates. This  *constant*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates;
 
@@ -88,7 +88,7 @@ sub new {
 
 ## @method list_task ()
 # Return a list of configured TPM CA certificates on a cluster. This  *method*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -125,7 +125,8 @@ sub list_task {
 
 
 ## @method create_task ()
-# Add a new TPM CA certificate on a cluster. This  *method*  was added in vSphere API 7.0.0.
+# Add a new TPM CA certificate on a cluster. This  *method*  was added in vSphere API
+# 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -165,7 +166,8 @@ sub create_task {
 
 
 ## @method delete_task ()
-# Remove a TPM CA certificate on a cluster. This  *method*  was added in vSphere API 7.0.0.
+# Remove a TPM CA certificate on a cluster. This  *method*  was added in vSphere API
+# 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -205,7 +207,7 @@ sub delete_task {
 
 ## @method get_task ()
 # Get the TPM CA certificate details on a cluster. This  *method*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -258,24 +260,24 @@ sub get_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health``
 #     *enumerated type*  is indicator for the consistency of the hosts status in the
-#     cluster. This  *enumeration*  was added in vSphere API 7.0.0.
+#     cluster. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health::NONE #
-#No status available. This  *constant*  was added in vSphere API 7.0.0.
+#No status available. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health::OK #
 #Each host in the cluster is in consistent state with the rest hosts in the cluster. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health::WARNING #
 #Attestation is funtioning, however there is an issue that requires attention. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health::ERROR #
 #Not all hosts in the cluster are in consistent state. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health;
 
@@ -327,7 +329,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Summary``
 #     *class*  contains information that summarizes a TPM CA certificate. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Summary;
 
@@ -371,7 +373,7 @@ sub new {
 #
 # @retval name - The current value of the field.
 # A unique name for the TPM CA certificate. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ID#
 sub get_name {
@@ -384,7 +386,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # A unique name for the TPM CA certificate. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -397,7 +399,7 @@ sub set_name {
 #
 # @retval health - The current value of the field.
 # A health indicator which indicates whether each host in the cluster has the same CA
-#     certs. This  *field*  was added in vSphere API 7.0.0.
+#     certs. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -410,7 +412,7 @@ sub get_health {
 # 
 # @param health  - New value for the field.
 # A health indicator which indicates whether each host in the cluster has the same CA
-#     certs. This  *field*  was added in vSphere API 7.0.0.
+#     certs. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -428,7 +430,7 @@ sub set_health {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Info``
 #     *class*  contains information that describes a TPM CA certificate. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Info;
 
@@ -473,7 +475,7 @@ sub new {
 # Gets the value of 'cert_chain' property.
 #
 # @retval cert_chain - The current value of the field.
-# The CA certificate chain. This  *field*  was added in vSphere API 7.0.0.
+# The CA certificate chain. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # X509CertChain#
 sub get_cert_chain {
@@ -485,7 +487,7 @@ sub get_cert_chain {
 # Sets the given value for 'cert_chain' property.
 # 
 # @param cert_chain  - New value for the field.
-# The CA certificate chain. This  *field*  was added in vSphere API 7.0.0.
+# The CA certificate chain. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cert_chain {
    my ($self, %args) = @_;
@@ -498,7 +500,7 @@ sub set_cert_chain {
 #
 # @retval health - The current value of the field.
 # A health indicator which indicates whether each host in the cluster has the same CA
-#     certs. This  *field*  was added in vSphere API 7.0.0.
+#     certs. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -511,7 +513,7 @@ sub get_health {
 # 
 # @param health  - New value for the field.
 # A health indicator which indicates whether each host in the cluster has the same CA
-#     certs. This  *field*  was added in vSphere API 7.0.0.
+#     certs. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -533,7 +535,7 @@ sub set_health {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_details {
@@ -555,7 +557,7 @@ sub get_details {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_details {
    my ($self, %args) = @_;
@@ -573,7 +575,7 @@ sub set_details {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::CreateSpec``
 #     *class*  contains information that describes a TPM CA certificate. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::CaCertificates::CreateSpec;
 
@@ -617,7 +619,7 @@ sub new {
 #
 # @retval name - The current value of the field.
 # A unique name for the TPM CA certificate. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ID#
 sub get_name {
@@ -630,7 +632,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # A unique name for the TPM CA certificate. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -661,7 +663,7 @@ sub set_name {
 # Similarly, when added as a chain the list must be ordered in the direction from root
 #     to leaf.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_cert_chain {
@@ -692,7 +694,7 @@ sub get_cert_chain {
 # Similarly, when added as a chain the list must be ordered in the direction from root
 #     to leaf.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cert_chain {
    my ($self, %args) = @_;
