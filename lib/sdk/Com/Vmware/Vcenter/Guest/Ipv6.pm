@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::Ipv6``   *class*  specifies the IPv6 settings that
 #     need to be applied to a virtual network adapter. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::Ipv6;
 
@@ -57,7 +57,7 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# The IPv6 configuration type. This  *field*  was added in vSphere API 7.0.0.
+# The IPv6 configuration type. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Type#
 sub get_type {
@@ -69,7 +69,7 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# The IPv6 configuration type. This  *field*  was added in vSphere API 7.0.0.
+# The IPv6 configuration type. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -81,7 +81,7 @@ sub set_type {
 # Gets the value of 'ipv6' property.
 #
 # @retval ipv6 - The current value of the field.
-# IPv6 address. This  *field*  was added in vSphere API 7.0.0.
+# IPv6 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_ipv6 {
@@ -93,7 +93,7 @@ sub get_ipv6 {
 # Sets the given value for 'ipv6' property.
 # 
 # @param ipv6  - New value for the field.
-# IPv6 address. This  *field*  was added in vSphere API 7.0.0.
+# IPv6 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ipv6 {
    my ($self, %args) = @_;
@@ -105,7 +105,7 @@ sub set_ipv6 {
 # Gets the value of 'gateways' property.
 #
 # @retval gateways - The current value of the field.
-# gateways for the IPv6 address. This  *field*  was added in vSphere API 7.0.0.
+# gateways for the IPv6 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_gateways {
@@ -117,7 +117,7 @@ sub get_gateways {
 # Sets the given value for 'gateways' property.
 # 
 # @param gateways  - New value for the field.
-# gateways for the IPv6 address. This  *field*  was added in vSphere API 7.0.0.
+# gateways for the IPv6 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_gateways {
    my ($self, %args) = @_;
@@ -133,20 +133,20 @@ sub set_gateways {
 #
 # The  ``Com::Vmware::Vcenter::Guest::Ipv6::Type``   *enumerated type*  specifies
 #     different types of the IPv6 configuration. This  *enumeration*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Guest::Ipv6::Type::DHCP #
-#DHCP IPv6 configuration. This  *constant*  was added in vSphere API 7.0.0.
+#DHCP IPv6 configuration. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::Ipv6::Type::STATIC #
-#Static IPv6 configuration. This  *constant*  was added in vSphere API 7.0.0.
+#Static IPv6 configuration. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::Ipv6::Type::USER_INPUT_REQUIRED #
 #Indicates that the IPv6 settings are not specified in advance. The user must provide a
 # valid value when the actual customization spec is applied to a virtual machine. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::Ipv6::Type;
 

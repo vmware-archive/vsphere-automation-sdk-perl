@@ -2,25 +2,25 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::ApplianceSize``   *enumerated type*  defines
 #     the vCenter Server Appliance sizes. This  *enumeration*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceSize::TINY #
-#Appliance size of &apos;tiny&apos;. This  *constant*  was added in vSphere API 7.0.0.
+#Appliance size of &apos;tiny&apos;. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceSize::SMALL #
-#Appliance size of &apos;small&apos;. This  *constant*  was added in vSphere API 7.0.0.
+#Appliance size of &apos;small&apos;. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceSize::MEDIUM #
-#Appliance size of &apos;medium&apos;. This  *constant*  was added in vSphere API 7.0.0.
+#Appliance size of &apos;medium&apos;. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceSize::LARGE #
-#Appliance size of &apos;large&apos;. This  *constant*  was added in vSphere API 7.0.0.
+#Appliance size of &apos;large&apos;. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Deployment::ApplianceSize::XLARGE #
 #Appliance size of &apos;extra large&apos;. This  *constant*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::ApplianceSize;
 

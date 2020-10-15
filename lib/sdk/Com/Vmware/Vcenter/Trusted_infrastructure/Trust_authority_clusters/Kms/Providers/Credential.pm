@@ -14,7 +14,7 @@
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Credential``
 #     *interface*  provides  *methods*  to add a credential for external key management
-#     service(s). This  *interface*  was added in vSphere API 7.0.0.
+#     service(s). This  *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Credential;
@@ -71,7 +71,7 @@ sub new {
 }
 
 ## @method set_task ()
-# Set the key server credential. This  *method*  was added in vSphere API 7.0.0.
+# Set the key server credential. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type

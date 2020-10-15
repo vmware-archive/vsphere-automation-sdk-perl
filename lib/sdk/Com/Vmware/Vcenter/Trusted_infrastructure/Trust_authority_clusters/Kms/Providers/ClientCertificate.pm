@@ -14,7 +14,7 @@
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ClientCertificate``
 #     *interface*  provides  *methods*  to add and retrieve client certificate. This 
-#     *interface*  was added in vSphere API 7.0.0.
+#     *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ClientCertificate;
@@ -75,7 +75,7 @@ sub new {
 ## @method create_task ()
 # Generate a new self signed client certificate. Existing client certificate is overwritten.
 # The key server will use this certificate to validate the client connection. This  *method*
-#  was added in vSphere API 7.0.0.
+#  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -113,7 +113,7 @@ sub create_task {
 
 
 ## @method get_task ()
-# Return the existing client certificate. This  *method*  was added in vSphere API 7.0.0.
+# Return the existing client certificate. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -165,7 +165,7 @@ sub get_task {
 # An optional private key can be specified if the certificate has already been
 # provisioned.</p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -229,7 +229,7 @@ sub update_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ClientCertificate::Info``
 #     *class*  contains the client certificate used by the hosts in a cluster for
-#     authenticating with the Provider. This  *class*  was added in vSphere API 7.0.0.
+#     authenticating with the Provider. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ClientCertificate::Info;
 
@@ -270,7 +270,7 @@ sub new {
 # Gets the value of 'certificate' property.
 #
 # @retval certificate - The current value of the field.
-# Public certificate. This  *field*  was added in vSphere API 7.0.0.
+# Public certificate. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_certificate {
@@ -282,7 +282,7 @@ sub get_certificate {
 # Sets the given value for 'certificate' property.
 # 
 # @param certificate  - New value for the field.
-# Public certificate. This  *field*  was added in vSphere API 7.0.0.
+# Public certificate. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_certificate {
    my ($self, %args) = @_;
@@ -300,7 +300,7 @@ sub set_certificate {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ClientCertificate::UpdateSpec``
 #     *class*  contains  *fields*  that describe the client certificate update for a Key
-#     Provider. This  *class*  was added in vSphere API 7.0.0.
+#     Provider. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ClientCertificate::UpdateSpec;
 
@@ -344,7 +344,7 @@ sub new {
 #
 # @retval certificate - The current value of the field.
 # Public certificate used by every host in the cluster. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_certificate {
@@ -357,7 +357,7 @@ sub get_certificate {
 # 
 # @param certificate  - New value for the field.
 # Public certificate used by every host in the cluster. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_certificate {
    my ($self, %args) = @_;
@@ -369,7 +369,7 @@ sub set_certificate {
 # Gets the value of 'private_key' property.
 #
 # @retval private_key - The current value of the field.
-# Private part of the certificate. This  *field*  was added in vSphere API 7.0.0.
+# Private part of the certificate. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_private_key {
@@ -381,7 +381,7 @@ sub get_private_key {
 # Sets the given value for 'private_key' property.
 # 
 # @param private_key  - New value for the field.
-# Private part of the certificate. This  *field*  was added in vSphere API 7.0.0.
+# Private part of the certificate. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_private_key {
    my ($self, %args) = @_;

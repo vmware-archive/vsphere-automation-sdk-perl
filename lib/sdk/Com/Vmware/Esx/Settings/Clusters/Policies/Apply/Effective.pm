@@ -350,6 +350,7 @@ sub new {
    $self->{disable_dpm} = $args{'disable_dpm'};
    $self->{disable_hac} = $args{'disable_hac'};
    $self->{evacuate_offline_vms} = $args{'evacuate_offline_vms'};
+   $self->{enforce_hcl_validation} = $args{'enforce_hcl_validation'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Esx::Settings::Clusters::Policies::Apply::Effective::EffectivePolicySpec');
    $self->set_binding_name('name' => 'com.vmware.esx.settings.clusters.policies.apply.effective.effective_policy_spec');
@@ -359,6 +360,7 @@ sub new {
    $self->set_binding_field('key' => 'disable_dpm', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
    $self->set_binding_field('key' => 'disable_hac', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
    $self->set_binding_field('key' => 'evacuate_offline_vms', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
+   $self->set_binding_field('key' => 'enforce_hcl_validation', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
    bless $self, $class;
    return $self;
 }
@@ -508,6 +510,32 @@ sub get_evacuate_offline_vms {
 sub set_evacuate_offline_vms {
    my ($self, %args) = @_;
    $self->{'evacuate_offline_vms'} = $args{'evacuate_offline_vms'}; 
+   return;	
+}
+
+## @method get_enforce_hcl_validation ()
+# Gets the value of 'enforce_hcl_validation' property.
+#
+# @retval enforce_hcl_validation - The current value of the field.
+# Enforce Hcl validation, when applicable, to prevent remediation if hardware
+#     compatibility issues are found. This  *field*  was added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_enforce_hcl_validation {
+   my ($self, %args) = @_;
+   return $self->{'enforce_hcl_validation'}; 	
+}
+
+## @method set_enforce_hcl_validation ()
+# Sets the given value for 'enforce_hcl_validation' property.
+# 
+# @param enforce_hcl_validation  - New value for the field.
+# Enforce Hcl validation, when applicable, to prevent remediation if hardware
+#     compatibility issues are found. This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_enforce_hcl_validation {
+   my ($self, %args) = @_;
+   $self->{'enforce_hcl_validation'} = $args{'enforce_hcl_validation'}; 
    return;	
 }
 

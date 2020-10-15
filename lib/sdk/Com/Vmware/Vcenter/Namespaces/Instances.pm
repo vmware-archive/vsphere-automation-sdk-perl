@@ -92,7 +92,9 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unsupported 
 # if  :attr:`Com::Vmware::Vcenter::Namespaces::Instances::CreateSpec.cluster`  is not
-#     enabled for Namespaces.
+#     enabled for Namespaces, or if the networks field is set when the 
+#     :attr:`Com::Vmware::Vcenter::Namespaces::Instances::CreateSpec.cluster`  hosting the
+#     namespace uses NSXT_CONTAINER_PLUGIN as its network provider.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the user can not be authenticated.
@@ -1091,6 +1093,7 @@ sub new {
    $self->{resource_spec} = $args{'resource_spec'};
    $self->{access_list} = $args{'access_list'};
    $self->{storage_specs} = $args{'storage_specs'};
+   $self->{networks} = $args{'networks'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Namespaces::Instances::Info');
    $self->set_binding_name('name' => 'com.vmware.vcenter.namespaces.instances.info');
@@ -1102,6 +1105,7 @@ sub new {
    $self->set_binding_field('key' => 'resource_spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::DynamicStructType()));
    $self->set_binding_field('key' => 'access_list', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespaces', 'type_name' => 'Instances::Access')));
    $self->set_binding_field('key' => 'storage_specs', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespaces', 'type_name' => 'Instances::StorageSpec')));
+   $self->set_binding_field('key' => 'networks', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
    bless $self, $class;
    return $self;
 }
@@ -1297,6 +1301,32 @@ sub get_storage_specs {
 sub set_storage_specs {
    my ($self, %args) = @_;
    $self->{'storage_specs'} = $args{'storage_specs'}; 
+   return;	
+}
+
+## @method get_networks ()
+# Gets the value of 'networks' property.
+#
+# @retval networks - The current value of the field.
+# vSphere Networks associated with the namespace. This  *field*  was added in vSphere
+#     API 7.0.1.0.
+#
+# Optional#
+sub get_networks {
+   my ($self, %args) = @_;
+   return $self->{'networks'}; 	
+}
+
+## @method set_networks ()
+# Sets the given value for 'networks' property.
+# 
+# @param networks  - New value for the field.
+# vSphere Networks associated with the namespace. This  *field*  was added in vSphere
+#     API 7.0.1.0.
+#
+sub set_networks {
+   my ($self, %args) = @_;
+   $self->{'networks'} = $args{'networks'}; 
    return;	
 }
 
@@ -1649,6 +1679,7 @@ sub new {
    $self->{resource_spec} = $args{'resource_spec'};
    $self->{access_list} = $args{'access_list'};
    $self->{storage_specs} = $args{'storage_specs'};
+   $self->{networks} = $args{'networks'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Namespaces::Instances::CreateSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.namespaces.instances.create_spec');
@@ -1658,6 +1689,7 @@ sub new {
    $self->set_binding_field('key' => 'resource_spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::DynamicStructType()));
    $self->set_binding_field('key' => 'access_list', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespaces', 'type_name' => 'Instances::Access'))));
    $self->set_binding_field('key' => 'storage_specs', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespaces', 'type_name' => 'Instances::StorageSpec'))));
+   $self->set_binding_field('key' => 'networks', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
    bless $self, $class;
    return $self;
 }
@@ -1817,6 +1849,34 @@ sub get_storage_specs {
 sub set_storage_specs {
    my ($self, %args) = @_;
    $self->{'storage_specs'} = $args{'storage_specs'}; 
+   return;	
+}
+
+## @method get_networks ()
+# Gets the value of 'networks' property.
+#
+# @retval networks - The current value of the field.
+# vSphere Namespaces network objects to be associated with the namespace. The values of
+#     this list need to reference names of pre-existing  ``Networks.Info``   *class* s. This
+#      *field*  was added in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_networks {
+   my ($self, %args) = @_;
+   return $self->{'networks'}; 	
+}
+
+## @method set_networks ()
+# Sets the given value for 'networks' property.
+# 
+# @param networks  - New value for the field.
+# vSphere Namespaces network objects to be associated with the namespace. The values of
+#     this list need to reference names of pre-existing  ``Networks.Info``   *class* s. This
+#      *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_networks {
+   my ($self, %args) = @_;
+   $self->{'networks'} = $args{'networks'}; 
    return;	
 }
 

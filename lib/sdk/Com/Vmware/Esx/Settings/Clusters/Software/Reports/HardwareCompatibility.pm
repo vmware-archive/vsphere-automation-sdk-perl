@@ -75,6 +75,9 @@ sub new {
 ## @method get ()
 # Returns the hcl validation check summary.
 #
+# Note:
+# Privileges required for this operation are VcIntegrity.HardwareCompatibility.Read.
+#
 # @param cluster [REQUIRED] identifier of the cluster.
 # The value must be an identifier for the resource type
 #     getQualifiedName(ClusterComputeResource).
@@ -97,6 +100,13 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # if the caller is not authenticated.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+# <li>  *Method*  execution requires  ``VcIntegrity.HardwareCompatibility.Read`` .
+#     </li>
+# <li> The resource  ``ClusterComputeResource``  referenced by the  *parameter*  
+#     ``cluster``  requires  ``VcIntegrity.HardwareCompatibility.Read`` . </li>
+# </ul>
 #
 sub get {
    my ($self, %args) = @_;

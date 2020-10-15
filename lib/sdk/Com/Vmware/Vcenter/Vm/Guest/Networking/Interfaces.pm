@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces``   *interface* 
 #     provides  *methods*  for retrieving guest operating system network interface
-#     information. This  *interface*  was added in vSphere API 7.0.0.
+#     information. This  *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces;
@@ -67,7 +67,7 @@ sub new {
 
 ## @method list ()
 # Returns information about the networking interfaces in the guest operating system. This 
-# *method*  was added in vSphere API 7.0.0.
+# *method*  was added in vSphere API 7.0.0.0.
 #
 # @param vm [REQUIRED] Virtual machine ID
 # The value must be an identifier for the resource type
@@ -110,28 +110,29 @@ sub list {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressOrigin``  
 #     *enumerated type*  specifies how an IP address was obtained for an interface. See RFC
-#     4293 IpAddressOriginTC. This  *enumeration*  was added in vSphere API 7.0.0.
+#     4293 IpAddressOriginTC. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressOrigin::OTHER #
 #Any other type of address configuration other than the below mentioned ones will fall
 # under this category. For e.g., automatic address configuration for the link local address
-# falls under this type. This  *constant*  was added in vSphere API 7.0.0.
+# falls under this type. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressOrigin::MANUAL #
-#The address is configured manually. This  *constant*  was added in vSphere API 7.0.0.
+#The address is configured manually. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressOrigin::DHCP #
-#The address is configured through dhcp. This  *constant*  was added in vSphere API 7.0.0.
+#The address is configured through dhcp. This  *constant*  was added in vSphere API
+# 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressOrigin::LINKLAYER #
 #The address is obtained through stateless autoconfiguration (autoconf). See RFC 4862, IPv6
-# Stateless Address Autoconfiguration. This  *constant*  was added in vSphere API 7.0.0.
+# Stateless Address Autoconfiguration. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressOrigin::RANDOM #
 #The address is chosen by the system at random e.g., an IPv4 address within 169.254/16, or
-# an RFC 3041 privacy address. This  *constant*  was added in vSphere API 7.0.0.
+# an RFC 3041 privacy address. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressOrigin;
 
@@ -172,36 +173,37 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus``  
 #     *enumerated type*  defines the present status of an address on an interface. See RFC
-#     4293 IpAddressStatusTC. This  *enumeration*  was added in vSphere API 7.0.0.
+#     4293 IpAddressStatusTC. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus::PREFERRED #
-#Indicates that this is a valid address. This  *constant*  was added in vSphere API 7.0.0.
+#Indicates that this is a valid address. This  *constant*  was added in vSphere API
+# 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus::DEPRECATED #
 #Indicates that this is a valid but deprecated address that should no longer be used as a
-# source address. This  *constant*  was added in vSphere API 7.0.0.
+# source address. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus::INVALID #
 #Indicates that this isn&apos;t a valid address. This  *constant*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus::INACCESSIBLE #
 #Indicates that the address is not accessible because interface is not operational. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus::UNKNOWN #
 #Indicates that the status cannot be determined. This  *constant*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus::TENTATIVE #
 #Indicates that the uniqueness of the address on the link is presently being verified. This
-#  *constant*  was added in vSphere API 7.0.0.
+#  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus::DUPLICATE #
 #Indicates the address has been determined to be non-unique on the link, this address will
-# not be reachable. This  *constant*  was added in vSphere API 7.0.0.
+# not be reachable. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressStatus;
 
@@ -255,7 +257,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressInfo``  
 #     *class*  describes a specific IP Address. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpAddressInfo;
 
@@ -307,7 +309,7 @@ sub new {
 #     fields of up to four hexadecimal digits. A colon separates each field (:). For
 #     example, 2001:DB8:101::230:6eff:fe04:d9ff. The address can also consist of the symbol
 #     &apos;::&apos; to represent multiple 16-bit groups of contiguous 0&apos;s only once in
-#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.
+#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_ip_address {
@@ -324,7 +326,7 @@ sub get_ip_address {
 #     fields of up to four hexadecimal digits. A colon separates each field (:). For
 #     example, 2001:DB8:101::230:6eff:fe04:d9ff. The address can also consist of the symbol
 #     &apos;::&apos; to represent multiple 16-bit groups of contiguous 0&apos;s only once in
-#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.
+#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ip_address {
    my ($self, %args) = @_;
@@ -340,7 +342,7 @@ sub set_ip_address {
 #     valid range of values is 0-32 for IPv4, and 0-128 for IPv6. A value of n corresponds
 #     to an IP address mask that has n contiguous 1-bits from the most significant bit
 #     (MSB), with all other bits set to 0. A value of zero is valid only if the calling
-#     context defines it. This  *field*  was added in vSphere API 7.0.0.
+#     context defines it. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_prefix_length {
@@ -356,7 +358,7 @@ sub get_prefix_length {
 #     valid range of values is 0-32 for IPv4, and 0-128 for IPv6. A value of n corresponds
 #     to an IP address mask that has n contiguous 1-bits from the most significant bit
 #     (MSB), with all other bits set to 0. A value of zero is valid only if the calling
-#     context defines it. This  *field*  was added in vSphere API 7.0.0.
+#     context defines it. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_prefix_length {
    my ($self, %args) = @_;
@@ -368,7 +370,7 @@ sub set_prefix_length {
 # Gets the value of 'origin' property.
 #
 # @retval origin - The current value of the field.
-# How this address was configured. This  *field*  was added in vSphere API 7.0.0.
+# How this address was configured. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_origin {
@@ -380,7 +382,7 @@ sub get_origin {
 # Sets the given value for 'origin' property.
 # 
 # @param origin  - New value for the field.
-# How this address was configured. This  *field*  was added in vSphere API 7.0.0.
+# How this address was configured. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_origin {
    my ($self, %args) = @_;
@@ -392,7 +394,7 @@ sub set_origin {
 # Gets the value of 'state' property.
 #
 # @retval state - The current value of the field.
-# The state of this ipAddress. This  *field*  was added in vSphere API 7.0.0.
+# The state of this ipAddress. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # IpAddressStatus#
 sub get_state {
@@ -404,7 +406,7 @@ sub get_state {
 # Sets the given value for 'state' property.
 # 
 # @param state  - New value for the field.
-# The state of this ipAddress. This  *field*  was added in vSphere API 7.0.0.
+# The state of this ipAddress. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_state {
    my ($self, %args) = @_;
@@ -421,7 +423,7 @@ sub set_state {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpConfigInfo``  
 #     *class*  describes the protocol version independent address reporting data object for
-#     network interfaces. This  *class*  was added in vSphere API 7.0.0.
+#     network interfaces. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::IpConfigInfo;
 
@@ -465,7 +467,7 @@ sub new {
 #
 # @retval ip_addresses - The current value of the field.
 # IP addresses configured on the interface. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # List#
 sub get_ip_addresses {
@@ -478,7 +480,7 @@ sub get_ip_addresses {
 # 
 # @param ip_addresses  - New value for the field.
 # IP addresses configured on the interface. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_ip_addresses {
    my ($self, %args) = @_;
@@ -490,7 +492,7 @@ sub set_ip_addresses {
 # Gets the value of 'dhcp' property.
 #
 # @retval dhcp - The current value of the field.
-# Client side DHCP for an interface. This  *field*  was added in vSphere API 7.0.0.
+# Client side DHCP for an interface. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_dhcp {
@@ -502,7 +504,7 @@ sub get_dhcp {
 # Sets the given value for 'dhcp' property.
 # 
 # @param dhcp  - New value for the field.
-# Client side DHCP for an interface. This  *field*  was added in vSphere API 7.0.0.
+# Client side DHCP for an interface. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_dhcp {
    my ($self, %args) = @_;
@@ -519,7 +521,7 @@ sub set_dhcp {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::Info``   *class* 
 #     describes a virtual network adapter configured in the guest operating system. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces::Info;
 
@@ -571,7 +573,7 @@ sub new {
 #
 # @retval dns_values - The current value of the field.
 # Client DNS values. Data assigned by DNS. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_dns_values {
@@ -584,7 +586,7 @@ sub get_dns_values {
 # 
 # @param dns_values  - New value for the field.
 # Client DNS values. Data assigned by DNS. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_dns_values {
    my ($self, %args) = @_;
@@ -596,7 +598,7 @@ sub set_dns_values {
 # Gets the value of 'mac_address' property.
 #
 # @retval mac_address - The current value of the field.
-# MAC address of the adapter. This  *field*  was added in vSphere API 7.0.0.
+# MAC address of the adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_mac_address {
@@ -608,7 +610,7 @@ sub get_mac_address {
 # Sets the given value for 'mac_address' property.
 # 
 # @param mac_address  - New value for the field.
-# MAC address of the adapter. This  *field*  was added in vSphere API 7.0.0.
+# MAC address of the adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_mac_address {
    my ($self, %args) = @_;
@@ -622,7 +624,7 @@ sub set_mac_address {
 # @retval dns - The current value of the field.
 # DNS configuration of the adapter. See 
 #     :attr:`Com::Vmware::Vcenter::Vm::Guest::Networking::Info.dns`  for system wide
-#     settings. This  *field*  was added in vSphere API 7.0.0.
+#     settings. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_dns {
@@ -636,7 +638,7 @@ sub get_dns {
 # @param dns  - New value for the field.
 # DNS configuration of the adapter. See 
 #     :attr:`Com::Vmware::Vcenter::Vm::Guest::Networking::Info.dns`  for system wide
-#     settings. This  *field*  was added in vSphere API 7.0.0.
+#     settings. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_dns {
    my ($self, %args) = @_;
@@ -649,7 +651,7 @@ sub set_dns {
 #
 # @retval ip - The current value of the field.
 # IP configuration settings of the adapter. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_ip {
@@ -662,7 +664,7 @@ sub get_ip {
 # 
 # @param ip  - New value for the field.
 # IP configuration settings of the adapter. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_ip {
    my ($self, %args) = @_;
@@ -675,7 +677,7 @@ sub set_ip {
 #
 # @retval wins_servers - The current value of the field.
 # The IP addresses of any WINS name servers for the adapter. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_wins_servers {
@@ -688,7 +690,7 @@ sub get_wins_servers {
 # 
 # @param wins_servers  - New value for the field.
 # The IP addresses of any WINS name servers for the adapter. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_wins_servers {
    my ($self, %args) = @_;
@@ -701,7 +703,7 @@ sub set_wins_servers {
 #
 # @retval nic - The current value of the field.
 # Link to the corresponding virtual device. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_nic {
@@ -714,7 +716,7 @@ sub get_nic {
 # 
 # @param nic  - New value for the field.
 # Link to the corresponding virtual device. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_nic {
    my ($self, %args) = @_;

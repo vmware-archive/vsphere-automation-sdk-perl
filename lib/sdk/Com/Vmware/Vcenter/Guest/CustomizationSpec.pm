@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpec``   *class*  contains
 #     information required to customize a virtual machine when deploying it or migrating it
-#     to a new host. This  *class*  was added in vSphere API 7.0.0.
+#     to a new host. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpec;
 
@@ -49,7 +49,7 @@ sub new {
 #
 # @retval configuration_spec - The current value of the field.
 # Settings to be applied to the guest during the customization. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # ConfigurationSpec#
 sub get_configuration_spec {
@@ -62,7 +62,7 @@ sub get_configuration_spec {
 # 
 # @param configuration_spec  - New value for the field.
 # Settings to be applied to the guest during the customization. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_configuration_spec {
    my ($self, %args) = @_;
@@ -75,7 +75,7 @@ sub set_configuration_spec {
 #
 # @retval global_DNS_settings - The current value of the field.
 # Global DNS settings constitute the DNS settings that are not specific to a particular
-#     virtual network adapter. This  *field*  was added in vSphere API 7.0.0.
+#     virtual network adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # GlobalDNSSettings#
 sub get_global_DNS_settings {
@@ -88,7 +88,7 @@ sub get_global_DNS_settings {
 # 
 # @param global_DNS_settings  - New value for the field.
 # Global DNS settings constitute the DNS settings that are not specific to a particular
-#     virtual network adapter. This  *field*  was added in vSphere API 7.0.0.
+#     virtual network adapter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_global_DNS_settings {
    my ($self, %args) = @_;
@@ -104,7 +104,7 @@ sub set_global_DNS_settings {
 #     Com::Vmware::Vcenter::Guest::AdapterMapping   *class*  maps a network adapter&apos;s
 #     MAC address to its  class Com::Vmware::Vcenter::Guest::IPSettings . May be empty if
 #     there are no network adapters, else should match number of network adapters configured
-#     for the VM. This  *field*  was added in vSphere API 7.0.0.
+#     for the VM. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_interfaces {
@@ -120,7 +120,7 @@ sub get_interfaces {
 #     Com::Vmware::Vcenter::Guest::AdapterMapping   *class*  maps a network adapter&apos;s
 #     MAC address to its  class Com::Vmware::Vcenter::Guest::IPSettings . May be empty if
 #     there are no network adapters, else should match number of network adapters configured
-#     for the VM. This  *field*  was added in vSphere API 7.0.0.
+#     for the VM. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_interfaces {
    my ($self, %args) = @_;

@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Guest::Networking
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking``   *interface*  provides 
 #     *methods*  for retrieving guest operating system network information. This 
-#     *interface*  was added in vSphere API 7.0.0.
+#     *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking;
@@ -66,7 +66,7 @@ sub new {
 
 ## @method get ()
 # Returns information about the network configuration in the guest operating system. This 
-# *method*  was added in vSphere API 7.0.0.
+# *method*  was added in vSphere API 7.0.0.0.
 #
 # @param vm [REQUIRED] Virtual machine ID
 # The value must be an identifier for the resource type
@@ -118,7 +118,7 @@ sub get {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Info``   *class*  contains
 #     information about networking as configured in the guest operating system. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Info;
 
@@ -162,7 +162,7 @@ sub new {
 #
 # @retval dns_values - The current value of the field.
 # Client DNS values. Data assigned by DNS. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_dns_values {
@@ -175,7 +175,7 @@ sub get_dns_values {
 # 
 # @param dns_values  - New value for the field.
 # Client DNS values. Data assigned by DNS. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_dns_values {
    my ($self, %args) = @_;
@@ -188,7 +188,7 @@ sub set_dns_values {
 #
 # @retval dns - The current value of the field.
 # Client DNS configuration. How DNS queries are resolved. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_dns {
@@ -201,7 +201,7 @@ sub get_dns {
 # 
 # @param dns  - New value for the field.
 # Client DNS configuration. How DNS queries are resolved. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_dns {
    my ($self, %args) = @_;

@@ -17,7 +17,7 @@
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals``
 #     *interface*  configures the token policies and STS trust necessary for the workload
 #     vCenter to query the trusted services for their status. This  *interface*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals;
@@ -78,7 +78,7 @@ sub new {
 
 ## @method create_task ()
 # Creates a profile with the specified connection information on all hosts from a Trust
-# Authority Cluster. This  *method*  was added in vSphere API 7.0.0.
+# Authority Cluster. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The ID of the Trust Authority Cluster to configure.
 # The value must be an identifier for the resource type
@@ -122,7 +122,7 @@ sub create_task {
 
 ## @method delete_task ()
 # Removes the read-only policy configured on ESX for a specific principal. This  *method* 
-# was added in vSphere API 7.0.0.
+# was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The ID of the Trust Authority Cluster to configure.
 # The value must be an identifier for the resource type
@@ -158,7 +158,7 @@ sub delete_task {
 
 ## @method get_task ()
 # Retrieve information for a specific profile. This  *method*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # @param cluster [REQUIRED] The ID of the Trust Authority Cluster on which the profile is configured.
 # The value must be an identifier for the resource type
@@ -198,7 +198,7 @@ sub get_task {
 
 ## @method list_task ()
 # Lists all policies configured on a specific cluster. This  *method*  was added in vSphere
-# API 7.0.0.
+# API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The ID of the Trust Authority Cluster on which the profile is configured.
 # The value must be an identifier for the resource type
@@ -248,22 +248,22 @@ sub list_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Health``
 #     *enumerated type*  defines the possible health states. This  *enumeration*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Health::NONE #
-#None. No status available. This  *constant*  was added in vSphere API 7.0.0.
+#None. No status available. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Health::OK #
-#OK. Health is normal. This  *constant*  was added in vSphere API 7.0.0.
+#OK. Health is normal. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Health::WARNING #
 #Warning. Health is normal, however there is an issue that requires attention. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Health::ERROR #
-#Error. Not healthy. This  *constant*  was added in vSphere API 7.0.0.
+#Error. Not healthy. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Health;
 
@@ -315,7 +315,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::CreateSpec``
 #     *class*  contains the information necessary to establish trust between a workload
-#     vCenter and a Trust Authority Host. This  *class*  was added in vSphere API 7.0.0.
+#     vCenter and a Trust Authority Host. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::CreateSpec;
 
@@ -363,7 +363,7 @@ sub new {
 #
 # @retval certificates - The current value of the field.
 # The certificates used by the vCenter STS to sign tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # List#
 sub get_certificates {
@@ -376,7 +376,7 @@ sub get_certificates {
 # 
 # @param certificates  - New value for the field.
 # The certificates used by the vCenter STS to sign tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_certificates {
    my ($self, %args) = @_;
@@ -389,7 +389,7 @@ sub set_certificates {
 #
 # @retval issuer_alias - The current value of the field.
 # A user-friendly alias of the service which created and signed the security token. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_issuer_alias {
@@ -402,7 +402,7 @@ sub get_issuer_alias {
 # 
 # @param issuer_alias  - New value for the field.
 # A user-friendly alias of the service which created and signed the security token. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_issuer_alias {
    my ($self, %args) = @_;
@@ -415,7 +415,7 @@ sub set_issuer_alias {
 #
 # @retval issuer - The current value of the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_issuer {
@@ -428,7 +428,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -441,7 +441,7 @@ sub set_issuer {
 #
 # @retval principal - The current value of the field.
 # The principal used by the vCenter to retrieve tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # StsPrincipal#
 sub get_principal {
@@ -454,7 +454,7 @@ sub get_principal {
 # 
 # @param principal  - New value for the field.
 # The principal used by the vCenter to retrieve tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_principal {
    my ($self, %args) = @_;
@@ -472,7 +472,7 @@ sub set_principal {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::FilterSpec``
 #     *class*  contains data which identifies a connection profile on the trusted vCenter.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::FilterSpec;
 
@@ -518,7 +518,7 @@ sub new {
 #
 # @retval id - The current value of the field.
 # The unqiue identifier of a connection profile. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_id {
@@ -531,7 +531,7 @@ sub get_id {
 # 
 # @param id  - New value for the field.
 # The unqiue identifier of a connection profile. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -544,7 +544,7 @@ sub set_id {
 #
 # @retval principals - The current value of the field.
 # The principal used by the vCenter to retrieve tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_principals {
@@ -557,7 +557,7 @@ sub get_principals {
 # 
 # @param principals  - New value for the field.
 # The principal used by the vCenter to retrieve tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_principals {
    my ($self, %args) = @_;
@@ -570,7 +570,7 @@ sub set_principals {
 #
 # @retval issuer - The current value of the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_issuer {
@@ -583,7 +583,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -601,7 +601,7 @@ sub set_issuer {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Info``
 #     *class*  contains the information necessary to establish trust between a workload
-#     vCenter and a Trust Authority Host. This  *class*  was added in vSphere API 7.0.0.
+#     vCenter and a Trust Authority Host. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Info;
 
@@ -655,7 +655,7 @@ sub new {
 #
 # @retval id - The current value of the field.
 # The unqiue identifier of a connection profile. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ID#
 sub get_id {
@@ -668,7 +668,7 @@ sub get_id {
 # 
 # @param id  - New value for the field.
 # The unqiue identifier of a connection profile. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -681,7 +681,7 @@ sub set_id {
 #
 # @retval principal - The current value of the field.
 # The principal used by the vCenter to retrieve tokens. Currently this is the vCenter
-#     solution user. This  *field*  was added in vSphere API 7.0.0.
+#     solution user. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # StsPrincipal#
 sub get_principal {
@@ -694,7 +694,7 @@ sub get_principal {
 # 
 # @param principal  - New value for the field.
 # The principal used by the vCenter to retrieve tokens. Currently this is the vCenter
-#     solution user. This  *field*  was added in vSphere API 7.0.0.
+#     solution user. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_principal {
    my ($self, %args) = @_;
@@ -707,7 +707,7 @@ sub set_principal {
 #
 # @retval issuer_alias - The current value of the field.
 # A user-friendly alias of the service which created and signed the security token. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_issuer_alias {
@@ -720,7 +720,7 @@ sub get_issuer_alias {
 # 
 # @param issuer_alias  - New value for the field.
 # A user-friendly alias of the service which created and signed the security token. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_issuer_alias {
    my ($self, %args) = @_;
@@ -733,7 +733,7 @@ sub set_issuer_alias {
 #
 # @retval issuer - The current value of the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_issuer {
@@ -746,7 +746,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;
@@ -759,7 +759,7 @@ sub set_issuer {
 #
 # @retval certificates - The current value of the field.
 # The certificates used by the vCenter STS to sign tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # List#
 sub get_certificates {
@@ -772,7 +772,7 @@ sub get_certificates {
 # 
 # @param certificates  - New value for the field.
 # The certificates used by the vCenter STS to sign tokens. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_certificates {
    my ($self, %args) = @_;
@@ -785,7 +785,7 @@ sub set_certificates {
 #
 # @retval health - The current value of the field.
 # The consistency of the profile across the hosts in the cluster. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -798,7 +798,7 @@ sub get_health {
 # 
 # @param health  - New value for the field.
 # The consistency of the profile across the hosts in the cluster. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -811,7 +811,7 @@ sub set_health {
 #
 # @retval message - The current value of the field.
 # A localizable message describing the health of the profile. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_message {
@@ -824,7 +824,7 @@ sub get_message {
 # 
 # @param message  - New value for the field.
 # A localizable message describing the health of the profile. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_message {
    my ($self, %args) = @_;
@@ -843,7 +843,7 @@ sub set_message {
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Summary``
 #     *class*  contains a summary of the information necessary to establish trust between a
 #     workload vCenter and a Trust Authority Host. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::ConsumerPrincipals::Summary;
 
@@ -891,7 +891,7 @@ sub new {
 #
 # @retval id - The current value of the field.
 # The unqiue identifier of a connection profile. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # ID#
 sub get_id {
@@ -904,7 +904,7 @@ sub get_id {
 # 
 # @param id  - New value for the field.
 # The unqiue identifier of a connection profile. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -917,7 +917,7 @@ sub set_id {
 #
 # @retval principal - The current value of the field.
 # The principal used by the vCenter to retrieve tokens. Currently this is the vCenter
-#     solution user. This  *field*  was added in vSphere API 7.0.0.
+#     solution user. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # StsPrincipal#
 sub get_principal {
@@ -930,7 +930,7 @@ sub get_principal {
 # 
 # @param principal  - New value for the field.
 # The principal used by the vCenter to retrieve tokens. Currently this is the vCenter
-#     solution user. This  *field*  was added in vSphere API 7.0.0.
+#     solution user. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_principal {
    my ($self, %args) = @_;
@@ -943,7 +943,7 @@ sub set_principal {
 #
 # @retval issuer_alias - The current value of the field.
 # A user-friendly alias of the service which created and signed the security token. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_issuer_alias {
@@ -956,7 +956,7 @@ sub get_issuer_alias {
 # 
 # @param issuer_alias  - New value for the field.
 # A user-friendly alias of the service which created and signed the security token. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_issuer_alias {
    my ($self, %args) = @_;
@@ -969,7 +969,7 @@ sub set_issuer_alias {
 #
 # @retval issuer - The current value of the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_issuer {
@@ -982,7 +982,7 @@ sub get_issuer {
 # 
 # @param issuer  - New value for the field.
 # The service which created and signed the security token. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_issuer {
    my ($self, %args) = @_;

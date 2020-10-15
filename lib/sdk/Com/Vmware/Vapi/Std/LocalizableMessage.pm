@@ -146,7 +146,7 @@ sub set_args {
 #
 # @retval params - The current value of the field.
 # Named arguments to be substituted into the message template. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_params {
@@ -159,7 +159,7 @@ sub get_params {
 # 
 # @param params  - New value for the field.
 # Named arguments to be substituted into the message template. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_params {
    my ($self, %args) = @_;
@@ -172,7 +172,7 @@ sub set_params {
 #
 # @retval localized - The current value of the field.
 # Localized string value as per request requirements. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_localized {
@@ -185,7 +185,7 @@ sub get_localized {
 # 
 # @param localized  - New value for the field.
 # Localized string value as per request requirements. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_localized {
    my ($self, %args) = @_;

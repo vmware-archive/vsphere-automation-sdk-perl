@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Tools::Installer
 # The  ``Com::Vmware::Vcenter::Vm::Tools::Installer``  (@term service} provides 
 #     *methods*  to install VMware Tools in the guest operating system. This  *interface* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Vm::Tools::Installer;
@@ -66,7 +66,7 @@ sub new {
 
 ## @method get ()
 # Get information about the VMware Tools installer. This  *method*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # @param vm [REQUIRED] Identifier of the virtual machine.
 # The value must be an identifier for the resource type
@@ -102,7 +102,7 @@ sub get {
 # need to do guest-specific actions. On Linux, this includes opening an archive and running
 # the installer. To monitor the status of the Tools install, clients should check the 
 # ``versionStatus``  and  ``runState``  from  :func:`Com::Vmware::Vcenter::Vm::Tools.get` .
-# This  *method*  was added in vSphere API 7.0.0.
+# This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param vm [REQUIRED] Virtual machine ID
 # The value must be an identifier for the resource type
@@ -134,7 +134,7 @@ sub connect {
 
 ## @method disconnect ()
 # Disconnect the VMware Tools installer CD image. This  *method*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # @param vm [REQUIRED] Virtual machine ID
 # The value must be an identifier for the resource type
@@ -182,7 +182,7 @@ sub disconnect {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Tools::Installer::Info``   *class*  contains
 #     information about the VMWare Tools installer. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Tools::Installer::Info;
 
@@ -224,7 +224,7 @@ sub new {
 #
 # @retval is_connected - The current value of the field.
 # Flag indicating whether the VMware Tools installer is mounted as a CD-ROM. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_is_connected {
@@ -237,7 +237,7 @@ sub get_is_connected {
 # 
 # @param is_connected  - New value for the field.
 # Flag indicating whether the VMware Tools installer is mounted as a CD-ROM. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_is_connected {
    my ($self, %args) = @_;

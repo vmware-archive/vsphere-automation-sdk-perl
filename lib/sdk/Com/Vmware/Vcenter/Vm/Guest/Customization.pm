@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Guest::Customization
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Customization``   *interface*  provides 
 #     *methods*  to apply a customization specification to a virtual machine. This 
-#     *interface*  was added in vSphere API 7.0.0.
+#     *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Vm::Guest::Customization;
@@ -72,7 +72,7 @@ sub new {
 # ``spec``  has  *null*  values, then any pending customization settings for the virtual
 # machine are cleared. If there is a pending customization for the virtual machine and 
 # ``spec``  has valid content, then the existing customization setting will be overwritten
-# with the new settings. This  *method*  was added in vSphere API 7.0.0.
+# with the new settings. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param vm [REQUIRED] The unique identifier of the virtual machine that needs to be customized.
 # The value must be an identifier for the resource type
@@ -135,7 +135,7 @@ sub set {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Customization::SetSpec``   *class*  contains
 #     specification information that has to be applied to a virtual machine. This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Customization::SetSpec;
 
@@ -181,7 +181,7 @@ sub new {
 # The name of the customization specification that has be retrieved from the virtual
 #     center inventory and applied for the virtual machine. Either one of  ``name``  or 
 #     ``spec``  or none of them should be specified. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_name {
@@ -196,7 +196,7 @@ sub get_name {
 # The name of the customization specification that has be retrieved from the virtual
 #     center inventory and applied for the virtual machine. Either one of  ``name``  or 
 #     ``spec``  or none of them should be specified. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -210,7 +210,7 @@ sub set_name {
 # @retval spec - The current value of the field.
 # The customization specification that has to be applied for the virtual machine. Either
 #     one of  ``name``  or  ``spec``  or none of them should be specified. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_spec {
@@ -224,7 +224,7 @@ sub get_spec {
 # @param spec  - New value for the field.
 # The customization specification that has to be applied for the virtual machine. Either
 #     one of  ``name``  or  ``spec``  or none of them should be specified. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_spec {
    my ($self, %args) = @_;
@@ -232,6 +232,238 @@ sub set_spec {
    return;	
 }
 
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Vm::Guest::Customization::Info
+#
+#
+# The  ``Com::Vmware::Vcenter::Vm::Guest::Customization::Info``   *class*  contains the
+#     status of a customization operation applied to a virtual machine. This  *class*  was
+#     added in vSphere API 7.0.0.0.
+
+package Com::Vmware::Vcenter::Vm::Guest::Customization::Info;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Vm::Guest::Customization::Info structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+         $validatorList = [
+         new Com::Vmware::Vapi::Data::UnionValidator(
+         'discriminant_name' => 'status',
+         'case_map' => {
+               'FAILED' => ['error', 'start_time', 'end_time'],
+               'RUNNING' => ['start_time'],
+               'SUCCEEDED' => ['start_time', 'end_time'],
+               'PENDING' => [],
+            }),
+      ];
+
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{status} = $args{'status'};
+   $self->{error} = $args{'error'};
+   $self->{start_time} = $args{'start_time'};
+   $self->{end_time} = $args{'end_time'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Vm::Guest::Customization::Info');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.vm.guest.customization.info');
+   $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Vm::Guest', 'type_name' => 'Customization::Info::Status'));
+   $self->set_binding_field('key' => 'error', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'start_time', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::DateTimeType()));
+   $self->set_binding_field('key' => 'end_time', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::DateTimeType()));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_status ()
+# Gets the value of 'status' property.
+#
+# @retval status - The current value of the field.
+# The status of the customization operation. This  *field*  was added in vSphere API
+#     7.0.0.0.
+#
+# Status#
+sub get_status {
+   my ($self, %args) = @_;
+   return $self->{'status'}; 	
+}
+
+## @method set_status ()
+# Sets the given value for 'status' property.
+# 
+# @param status  - New value for the field.
+# The status of the customization operation. This  *field*  was added in vSphere API
+#     7.0.0.0.
+#
+sub set_status {
+   my ($self, %args) = @_;
+   $self->{'status'} = $args{'status'}; 
+   return;	
+}
+
+## @method get_error ()
+# Gets the value of 'error' property.
+#
+# @retval error - The current value of the field.
+# Description of the error if the 
+#     :attr:`Com::Vmware::Vcenter::Vm::Guest::Customization::Info.status`  of customization
+#     operation is 
+#     :attr:`Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status.FAILED` . This 
+#     *field*  was added in vSphere API 7.0.0.0.
+#
+# Optional#
+sub get_error {
+   my ($self, %args) = @_;
+   return $self->{'error'}; 	
+}
+
+## @method set_error ()
+# Sets the given value for 'error' property.
+# 
+# @param error  - New value for the field.
+# Description of the error if the 
+#     :attr:`Com::Vmware::Vcenter::Vm::Guest::Customization::Info.status`  of customization
+#     operation is 
+#     :attr:`Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status.FAILED` . This 
+#     *field*  was added in vSphere API 7.0.0.0.
+#
+sub set_error {
+   my ($self, %args) = @_;
+   $self->{'error'} = $args{'error'}; 
+   return;	
+}
+
+## @method get_start_time ()
+# Gets the value of 'start_time' property.
+#
+# @retval start_time - The current value of the field.
+# Time when the customization process has started inside the guest operating system.
+#     This  *field*  was added in vSphere API 7.0.0.0.
+#
+# Optional#
+sub get_start_time {
+   my ($self, %args) = @_;
+   return $self->{'start_time'}; 	
+}
+
+## @method set_start_time ()
+# Sets the given value for 'start_time' property.
+# 
+# @param start_time  - New value for the field.
+# Time when the customization process has started inside the guest operating system.
+#     This  *field*  was added in vSphere API 7.0.0.0.
+#
+sub set_start_time {
+   my ($self, %args) = @_;
+   $self->{'start_time'} = $args{'start_time'}; 
+   return;	
+}
+
+## @method get_end_time ()
+# Gets the value of 'end_time' property.
+#
+# @retval end_time - The current value of the field.
+# Time when the customization process has completed inside the guest operating system.
+#     This  *field*  was added in vSphere API 7.0.0.0.
+#
+# Optional#
+sub get_end_time {
+   my ($self, %args) = @_;
+   return $self->{'end_time'}; 	
+}
+
+## @method set_end_time ()
+# Sets the given value for 'end_time' property.
+# 
+# @param end_time  - New value for the field.
+# Time when the customization process has completed inside the guest operating system.
+#     This  *field*  was added in vSphere API 7.0.0.0.
+#
+sub set_end_time {
+   my ($self, %args) = @_;
+   $self->{'end_time'} = $args{'end_time'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status
+#
+# The  ``Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status``   *enumerated
+#     type*  defines the status values that can be reported for the customization operation.
+#     This  *enumeration*  was added in vSphere API 7.0.0.0.
+#
+#
+#
+# Constant Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status::PENDING #
+#The customization process has not yet started inside the guest operating system. This 
+# *constant*  was added in vSphere API 7.0.0.0.
+#
+# Constant Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status::RUNNING #
+#The customization process is currently running inside the guest operating system. This 
+# *constant*  was added in vSphere API 7.0.0.0.
+#
+# Constant Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status::SUCCEEDED #
+#The customization process has completed successfully inside the guest operating system.
+# This  *constant*  was added in vSphere API 7.0.0.0.
+#
+# Constant Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status::FAILED #
+#The customizatio process has failed inside the guest operating system. This  *constant* 
+# was added in vSphere API 7.0.0.0.
+
+package Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status;
+
+use constant {
+    PENDING =>  'PENDING',
+    RUNNING =>  'RUNNING',
+    SUCCEEDED =>  'SUCCEEDED',
+    FAILED =>  'FAILED',
+};
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiEnum);
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status enumeration.
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $self = $class->SUPER::new();
+   my $bindingType = new Com::Vmware::Vapi::Bindings::Type::EnumType(
+                           'name' => 'com.vmware.vcenter.vm.guest.customization.info.status',
+                           'binding_class' => 'Com::Vmware::Vcenter::Vm::Guest::Customization::Info::Status');
+   $class->SUPER::set_binding_type('binding_type' => $bindingType);
+
+   bless $self, $class;
+   return $self;
+}
 
 1;
 

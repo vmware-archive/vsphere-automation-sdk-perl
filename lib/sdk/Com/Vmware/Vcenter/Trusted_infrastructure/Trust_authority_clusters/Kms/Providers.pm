@@ -16,11 +16,11 @@
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers``
 #     *interface*  provides  *methods*  to create, update and delete Key Providers that
-#     handoff to key servers. This  *interface*  was added in vSphere API 7.0.0.
+#     handoff to key servers. This  *interface*  was added in vSphere API 7.0.0.0.
 #
 #
 # Constant String::RESOURCE_TYPE #
-#Resource type for a Key Provider. This  *constant*  was added in vSphere API 7.0.0.
+#Resource type for a Key Provider. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers;
 
@@ -80,7 +80,11 @@ sub new {
 }
 
 ## @method list_task ()
-# Return a list of summary of Key Providers. This  *method*  was added in vSphere API 7.0.0.
+# Return a list of summary of Key Providers. This  *method*  was added in vSphere API
+# 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Read, VcIdentityProviders.Manage.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -116,7 +120,10 @@ sub list_task {
 
 
 ## @method create_task ()
-# Add a new Key Provider. This  *method*  was added in vSphere API 7.0.0.
+# Add a new Key Provider. This  *method*  was added in vSphere API 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Create, VcIdentityProviders.Manage.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -156,7 +163,10 @@ sub create_task {
 
 
 ## @method update_task ()
-# Update an existing Key Provider. This  *method*  was added in vSphere API 7.0.0.
+# Update an existing Key Provider. This  *method*  was added in vSphere API 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Manage.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -199,7 +209,10 @@ sub update_task {
 
 
 ## @method delete_task ()
-# Remove a Key Provider. This  *method*  was added in vSphere API 7.0.0.
+# Remove a Key Provider. This  *method*  was added in vSphere API 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Manage.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -237,7 +250,10 @@ sub delete_task {
 
 
 ## @method get_task ()
-# Return information about a Key Provider. This  *method*  was added in vSphere API 7.0.0.
+# Return information about a Key Provider. This  *method*  was added in vSphere API 7.0.0.0.
+#
+# Note:
+# Privileges required for this operation are VcIdentityProviders.Read, VcIdentityProviders.Manage.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -289,22 +305,22 @@ sub get_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health``
 #     *enumerated type*  defines the possible health states. This  *enumeration*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health::NONE #
-#No status available. This  *constant*  was added in vSphere API 7.0.0.
+#No status available. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health::OK #
-#Health is normal. This  *constant*  was added in vSphere API 7.0.0.
+#Health is normal. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health::WARNING #
 #Health is normal, however there is an issue that requires attention. This  *constant*  was
-# added in vSphere API 7.0.0.
+# added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health::ERROR #
-#Not healthy. This  *constant*  was added in vSphere API 7.0.0.
+#Not healthy. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health;
 
@@ -356,7 +372,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ServerInfo``
 #     *class*  contains  *fields*  that describe the status of a key server. This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::ServerInfo;
 
@@ -406,7 +422,7 @@ sub new {
 #
 # @retval health - The current value of the field.
 # The connection status health of the server. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -419,7 +435,7 @@ sub get_health {
 # 
 # @param health  - New value for the field.
 # The connection status health of the server. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -439,7 +455,7 @@ sub set_health {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health.OK`
 #     , this  *field*  will provide an actionable description of the issue.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_details {
@@ -459,7 +475,7 @@ sub get_details {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health.OK`
 #     , this  *field*  will provide an actionable description of the issue.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_details {
    my ($self, %args) = @_;
@@ -471,7 +487,8 @@ sub set_details {
 # Gets the value of 'client_trust_server' property.
 #
 # @retval client_trust_server - The current value of the field.
-# Whether this client trusts the server. This  *field*  was added in vSphere API 7.0.0.
+# Whether this client trusts the server. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # boolean#
 sub get_client_trust_server {
@@ -483,7 +500,8 @@ sub get_client_trust_server {
 # Sets the given value for 'client_trust_server' property.
 # 
 # @param client_trust_server  - New value for the field.
-# Whether this client trusts the server. This  *field*  was added in vSphere API 7.0.0.
+# Whether this client trusts the server. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_client_trust_server {
    my ($self, %args) = @_;
@@ -495,7 +513,8 @@ sub set_client_trust_server {
 # Gets the value of 'server_trust_client' property.
 #
 # @retval server_trust_client - The current value of the field.
-# Whether the server trusts this client. This  *field*  was added in vSphere API 7.0.0.
+# Whether the server trusts this client. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # boolean#
 sub get_server_trust_client {
@@ -507,7 +526,8 @@ sub get_server_trust_client {
 # Sets the given value for 'server_trust_client' property.
 # 
 # @param server_trust_client  - New value for the field.
-# Whether the server trusts this client. This  *field*  was added in vSphere API 7.0.0.
+# Whether the server trusts this client. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_server_trust_client {
    my ($self, %args) = @_;
@@ -519,7 +539,7 @@ sub set_server_trust_client {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the server. This  *field*  was added in vSphere API 7.0.0.
+# Name of the server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -531,7 +551,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the server. This  *field*  was added in vSphere API 7.0.0.
+# Name of the server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -549,7 +569,7 @@ sub set_name {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Status``
 #     *class*  contains  *fields*  that describe the status of the Key Provider. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Status;
 
@@ -594,7 +614,7 @@ sub new {
 # Gets the value of 'health' property.
 #
 # @retval health - The current value of the field.
-# The health of the provider. This  *field*  was added in vSphere API 7.0.0.
+# The health of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -606,7 +626,7 @@ sub get_health {
 # Sets the given value for 'health' property.
 # 
 # @param health  - New value for the field.
-# The health of the provider. This  *field*  was added in vSphere API 7.0.0.
+# The health of the provider. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -626,7 +646,7 @@ sub set_health {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health.OK`
 #     , this  *field*  will provide an actionable description of the issue.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_details {
@@ -646,7 +666,7 @@ sub get_details {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Health.OK`
 #     , this  *field*  will provide an actionable description of the issue.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_details {
    my ($self, %args) = @_;
@@ -658,7 +678,7 @@ sub set_details {
 # Gets the value of 'servers' property.
 #
 # @retval servers - The current value of the field.
-# Health of the key servers. This  *field*  was added in vSphere API 7.0.0.
+# Health of the key servers. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_servers {
@@ -670,7 +690,7 @@ sub get_servers {
 # Sets the given value for 'servers' property.
 # 
 # @param servers  - New value for the field.
-# Health of the key servers. This  *field*  was added in vSphere API 7.0.0.
+# Health of the key servers. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_servers {
    my ($self, %args) = @_;
@@ -688,7 +708,7 @@ sub set_servers {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Server``
 #     *class*  contains  *fields*  that describe a connection endpoint. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Server;
 
@@ -735,7 +755,7 @@ sub new {
 # 
 #  A unique string chosen by the client.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -751,7 +771,7 @@ sub get_name {
 # 
 #  A unique string chosen by the client.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -763,7 +783,7 @@ sub set_name {
 # Gets the value of 'address' property.
 #
 # @retval address - The current value of the field.
-# The server&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The server&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # NetworkAddress#
 sub get_address {
@@ -775,7 +795,7 @@ sub get_address {
 # Sets the given value for 'address' property.
 # 
 # @param address  - New value for the field.
-# The server&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The server&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -794,7 +814,7 @@ sub set_address {
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KmipServerCreateSpec``
 #     *class*  contains  *fields*  that describe Key Management Interoperability Protocol
 #     (KMIP) desired key server configuration. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KmipServerCreateSpec;
 
@@ -842,7 +862,7 @@ sub new {
 # Key servers must be configured for active-active replication. If the server port is 
 #     *null* , a default value for KMIP&apos;s port will be used.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_servers {
@@ -859,7 +879,7 @@ sub get_servers {
 # Key servers must be configured for active-active replication. If the server port is 
 #     *null* , a default value for KMIP&apos;s port will be used.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_servers {
    my ($self, %args) = @_;
@@ -871,7 +891,7 @@ sub set_servers {
 # Gets the value of 'username' property.
 #
 # @retval username - The current value of the field.
-# Username for authentication. This  *field*  was added in vSphere API 7.0.0.
+# Username for authentication. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_username {
@@ -883,7 +903,7 @@ sub get_username {
 # Sets the given value for 'username' property.
 # 
 # @param username  - New value for the field.
-# Username for authentication. This  *field*  was added in vSphere API 7.0.0.
+# Username for authentication. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -901,7 +921,7 @@ sub set_username {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerCreateSpec``
 #     *class*  contains  *fields*  that describe the desired configuration for the key
-#     server. This  *class*  was added in vSphere API 7.0.0.
+#     server. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerCreateSpec;
 
@@ -957,7 +977,7 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# Type of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Type of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Type#
 sub get_type {
@@ -969,7 +989,7 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# Type of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Type of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -981,7 +1001,7 @@ sub set_type {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Description of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_description {
@@ -993,7 +1013,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Description of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -1005,7 +1025,7 @@ sub set_description {
 # Gets the value of 'proxy_server' property.
 #
 # @retval proxy_server - The current value of the field.
-# Proxy server configuration. This  *field*  was added in vSphere API 7.0.0.
+# Proxy server configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_proxy_server {
@@ -1017,7 +1037,7 @@ sub get_proxy_server {
 # Sets the given value for 'proxy_server' property.
 # 
 # @param proxy_server  - New value for the field.
-# Proxy server configuration. This  *field*  was added in vSphere API 7.0.0.
+# Proxy server configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_proxy_server {
    my ($self, %args) = @_;
@@ -1029,7 +1049,7 @@ sub set_proxy_server {
 # Gets the value of 'connection_timeout' property.
 #
 # @retval connection_timeout - The current value of the field.
-# Connection timeout in seconds. This  *field*  was added in vSphere API 7.0.0.
+# Connection timeout in seconds. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_connection_timeout {
@@ -1041,7 +1061,7 @@ sub get_connection_timeout {
 # Sets the given value for 'connection_timeout' property.
 # 
 # @param connection_timeout  - New value for the field.
-# Connection timeout in seconds. This  *field*  was added in vSphere API 7.0.0.
+# Connection timeout in seconds. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_connection_timeout {
    my ($self, %args) = @_;
@@ -1054,7 +1074,7 @@ sub set_connection_timeout {
 #
 # @retval kmip_server - The current value of the field.
 # Configuration information for Key Management Interoperability Protocol (KMIP) based
-#     key server. This  *field*  was added in vSphere API 7.0.0.
+#     key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_kmip_server {
@@ -1067,7 +1087,7 @@ sub get_kmip_server {
 # 
 # @param kmip_server  - New value for the field.
 # Configuration information for Key Management Interoperability Protocol (KMIP) based
-#     key server. This  *field*  was added in vSphere API 7.0.0.
+#     key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_kmip_server {
    my ($self, %args) = @_;
@@ -1084,13 +1104,13 @@ sub set_kmip_server {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerCreateSpec::Type``
 #     *enumerated type*  lists the key server types. This  *enumeration*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerCreateSpec::Type::KMIP #
 #Key Management Interoperability Protocol (KMIP) based key management server. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerCreateSpec::Type;
 
@@ -1131,7 +1151,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CreateSpec``
 #     *class*  contains  *fields*  that describe the desired configuration for a new Key
-#     Provider. This  *class*  was added in vSphere API 7.0.0.
+#     Provider. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CreateSpec;
 
@@ -1180,7 +1200,7 @@ sub new {
 # 
 #  A unique string chosen by the client.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_provider {
@@ -1196,7 +1216,7 @@ sub get_provider {
 # 
 #  A unique string chosen by the client.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_provider {
    my ($self, %args) = @_;
@@ -1212,7 +1232,7 @@ sub set_provider {
 # 
 #  A unique Key ID.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_master_key_id {
@@ -1228,7 +1248,7 @@ sub get_master_key_id {
 # 
 #  A unique Key ID.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_master_key_id {
    my ($self, %args) = @_;
@@ -1241,7 +1261,7 @@ sub set_master_key_id {
 #
 # @retval key_server - The current value of the field.
 # Key server associated with this Provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # KeyServerCreateSpec#
 sub get_key_server {
@@ -1254,7 +1274,7 @@ sub get_key_server {
 # 
 # @param key_server  - New value for the field.
 # Key server associated with this Provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_key_server {
    my ($self, %args) = @_;
@@ -1272,7 +1292,7 @@ sub set_key_server {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KmipServerUpdateSpec``
 #     *class*  contains  *fields*  that describe new configuration for KMIP based key
-#     server. This  *class*  was added in vSphere API 7.0.0.
+#     server. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KmipServerUpdateSpec;
 
@@ -1324,7 +1344,7 @@ sub new {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_servers {
@@ -1345,7 +1365,7 @@ sub get_servers {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_servers {
    my ($self, %args) = @_;
@@ -1361,7 +1381,7 @@ sub set_servers {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_username {
@@ -1377,7 +1397,7 @@ sub get_username {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -1395,7 +1415,7 @@ sub set_username {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerUpdateSpec``
 #     *class*  contains  *fields*  that describe new configuration for an existing key
-#     server. This  *class*  was added in vSphere API 7.0.0.
+#     server. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerUpdateSpec;
 
@@ -1455,7 +1475,7 @@ sub new {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_type {
@@ -1471,7 +1491,7 @@ sub get_type {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -1487,7 +1507,7 @@ sub set_type {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_description {
@@ -1503,7 +1523,7 @@ sub get_description {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -1519,7 +1539,7 @@ sub set_description {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_proxy_server {
@@ -1535,7 +1555,7 @@ sub get_proxy_server {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_proxy_server {
    my ($self, %args) = @_;
@@ -1551,7 +1571,7 @@ sub set_proxy_server {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_connection_timeout {
@@ -1567,7 +1587,7 @@ sub get_connection_timeout {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_connection_timeout {
    my ($self, %args) = @_;
@@ -1583,7 +1603,7 @@ sub set_connection_timeout {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_kmip_server {
@@ -1599,7 +1619,7 @@ sub get_kmip_server {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_kmip_server {
    my ($self, %args) = @_;
@@ -1616,13 +1636,13 @@ sub set_kmip_server {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerUpdateSpec::Type``
 #     *enumerated type*  list the key server types. This  *enumeration*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerUpdateSpec::Type::KMIP #
 #Key Management Interoperability Protocol (KMIP) based key management server. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerUpdateSpec::Type;
 
@@ -1663,7 +1683,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::UpdateSpec``
 #     *class*  contains  *fields*  that describe the new configuration for an existing
-#     provider. This  *class*  was added in vSphere API 7.0.0.
+#     provider. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::UpdateSpec;
 
@@ -1714,7 +1734,7 @@ sub new {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_master_key_id {
@@ -1734,7 +1754,7 @@ sub get_master_key_id {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_master_key_id {
    my ($self, %args) = @_;
@@ -1750,7 +1770,7 @@ sub set_master_key_id {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_key_server {
@@ -1766,7 +1786,7 @@ sub get_key_server {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_key_server {
    my ($self, %args) = @_;
@@ -1784,7 +1804,7 @@ sub set_key_server {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Summary``
 #     *class*  contains  *fields*  that summarize a provider. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Summary;
 
@@ -1831,7 +1851,7 @@ sub new {
 # 
 #  A unique string chosen by the client.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_provider {
@@ -1847,7 +1867,7 @@ sub get_provider {
 # 
 #  A unique string chosen by the client.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_provider {
    my ($self, %args) = @_;
@@ -1859,7 +1879,8 @@ sub set_provider {
 # Gets the value of 'health' property.
 #
 # @retval health - The current value of the field.
-# Health of the provider in the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Health of the provider in the cluster. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -1871,7 +1892,8 @@ sub get_health {
 # Sets the given value for 'health' property.
 # 
 # @param health  - New value for the field.
-# Health of the provider in the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Health of the provider in the cluster. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -1889,7 +1911,7 @@ sub set_health {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KmipServerInfo``
 #     *class*  contains  *fields*  that describe the current configuration of a KMIP based
-#     key server. This  *class*  was added in vSphere API 7.0.0.
+#     key server. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KmipServerInfo;
 
@@ -1932,7 +1954,7 @@ sub new {
 # Gets the value of 'servers' property.
 #
 # @retval servers - The current value of the field.
-# List of KMIP compliant key servers. This  *field*  was added in vSphere API 7.0.0.
+# List of KMIP compliant key servers. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_servers {
@@ -1944,7 +1966,7 @@ sub get_servers {
 # Sets the given value for 'servers' property.
 # 
 # @param servers  - New value for the field.
-# List of KMIP compliant key servers. This  *field*  was added in vSphere API 7.0.0.
+# List of KMIP compliant key servers. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_servers {
    my ($self, %args) = @_;
@@ -1960,7 +1982,7 @@ sub set_servers {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_username {
@@ -1976,7 +1998,7 @@ sub get_username {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_username {
    my ($self, %args) = @_;
@@ -1994,7 +2016,7 @@ sub set_username {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerInfo``
 #     *class*  contains  *fields*  that describe the current configuration of a key server.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerInfo;
 
@@ -2050,7 +2072,7 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# Type of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Type of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Type#
 sub get_type {
@@ -2062,7 +2084,7 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# Type of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Type of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -2074,7 +2096,7 @@ sub set_type {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Description of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_description {
@@ -2086,7 +2108,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the key server. This  *field*  was added in vSphere API 7.0.0.
+# Description of the key server. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -2102,7 +2124,7 @@ sub set_description {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_proxy_server {
@@ -2118,7 +2140,7 @@ sub get_proxy_server {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_proxy_server {
    my ($self, %args) = @_;
@@ -2134,7 +2156,7 @@ sub set_proxy_server {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_connection_timeout {
@@ -2150,7 +2172,7 @@ sub get_connection_timeout {
 # 
 # </p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_connection_timeout {
    my ($self, %args) = @_;
@@ -2163,7 +2185,7 @@ sub set_connection_timeout {
 #
 # @retval kmip_server - The current value of the field.
 # Configuration information for KMIP based key server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # optional#
 sub get_kmip_server {
@@ -2176,7 +2198,7 @@ sub get_kmip_server {
 # 
 # @param kmip_server  - New value for the field.
 # Configuration information for KMIP based key server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_kmip_server {
    my ($self, %args) = @_;
@@ -2193,13 +2215,13 @@ sub set_kmip_server {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerInfo::Type``
 #     *enumerated type*  list the key server types. This  *enumeration*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerInfo::Type::KMIP #
 #Key Management Interoperability Protocol (KMIP) based key management server. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::KeyServerInfo::Type;
 
@@ -2240,7 +2262,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Info``
 #     *class*  contains  *fields*  that describe the current configuration of a provider.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Info;
 
@@ -2289,7 +2311,7 @@ sub new {
 # 
 #  A unique Key identifier.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_master_key_id {
@@ -2305,7 +2327,7 @@ sub get_master_key_id {
 # 
 #  A unique Key identifier.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_master_key_id {
    my ($self, %args) = @_;
@@ -2318,7 +2340,7 @@ sub set_master_key_id {
 #
 # @retval key_server - The current value of the field.
 # Key server associated with this provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # KeyServerInfo#
 sub get_key_server {
@@ -2331,7 +2353,7 @@ sub get_key_server {
 # 
 # @param key_server  - New value for the field.
 # Key server associated with this provider. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_key_server {
    my ($self, %args) = @_;
@@ -2343,7 +2365,8 @@ sub set_key_server {
 # Gets the value of 'status' property.
 #
 # @retval status - The current value of the field.
-# Status of the provider in the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Status of the provider in the cluster. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # Status#
 sub get_status {
@@ -2355,7 +2378,8 @@ sub get_status {
 # Sets the given value for 'status' property.
 # 
 # @param status  - New value for the field.
-# Status of the provider in the cluster. This  *field*  was added in vSphere API 7.0.0.
+# Status of the provider in the cluster. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_status {
    my ($self, %args) = @_;

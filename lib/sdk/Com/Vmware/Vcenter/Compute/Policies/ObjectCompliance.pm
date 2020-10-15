@@ -11,6 +11,14 @@
 #
 #
 #
+# Constant Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance::UNKNOWN #
+#The object has an unknown compliance state. <b>Warning:</b> This  *constant*  is available
+# as Technology Preview. These are early access APIs provided to test, automate and provide
+# feedback on the feature. Since this can change based on feedback, VMware does not
+# guarantee backwards compatibility and recommends against using them in production
+# environments. Some Technology Preview APIs might only be applicable to specific
+# environments.
+#
 # Constant Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance::NOT_APPLICABLE #
 #The object is in a state for which the policy does not apply. <b>Warning:</b> This 
 # *constant*  is available as Technology Preview. These are early access APIs provided to
@@ -38,6 +46,7 @@
 package Com::Vmware::Vcenter::Compute::Policies::ObjectCompliance;
 
 use constant {
+    UNKNOWN =>  'UNKNOWN',
     NOT_APPLICABLE =>  'NOT_APPLICABLE',
     COMPLIANT =>  'COMPLIANT',
     NOT_COMPLIANT =>  'NOT_COMPLIANT',

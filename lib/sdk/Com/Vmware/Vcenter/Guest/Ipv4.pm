@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::Ipv4``   *class*  specifies the IPv4 settings that
 #     need to be applied to a virtual network adapter. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::Ipv4;
 
@@ -59,7 +59,7 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# The type of the IPv4 configuration. This  *field*  was added in vSphere API 7.0.0.
+# The type of the IPv4 configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Type#
 sub get_type {
@@ -71,7 +71,7 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# The type of the IPv4 configuration. This  *field*  was added in vSphere API 7.0.0.
+# The type of the IPv4 configuration. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -83,7 +83,7 @@ sub set_type {
 # Gets the value of 'ip_address' property.
 #
 # @retval ip_address - The current value of the field.
-# The static IPv4 address. This  *field*  was added in vSphere API 7.0.0.
+# The static IPv4 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_ip_address {
@@ -95,7 +95,7 @@ sub get_ip_address {
 # Sets the given value for 'ip_address' property.
 # 
 # @param ip_address  - New value for the field.
-# The static IPv4 address. This  *field*  was added in vSphere API 7.0.0.
+# The static IPv4 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ip_address {
    my ($self, %args) = @_;
@@ -108,7 +108,7 @@ sub set_ip_address {
 #
 # @retval prefix - The current value of the field.
 # The IPv4 CIDR prefix, for example, 24. See http://www.oav.net/mirrors/cidr.html for
-#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 7.0.0.
+#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_prefix {
@@ -121,7 +121,7 @@ sub get_prefix {
 # 
 # @param prefix  - New value for the field.
 # The IPv4 CIDR prefix, for example, 24. See http://www.oav.net/mirrors/cidr.html for
-#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 7.0.0.
+#     netmask-to-prefix conversion. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_prefix {
    my ($self, %args) = @_;
@@ -133,7 +133,7 @@ sub set_prefix {
 # Gets the value of 'gateways' property.
 #
 # @retval gateways - The current value of the field.
-# Gateways for the IPv4 address. This  *field*  was added in vSphere API 7.0.0.
+# Gateways for the IPv4 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_gateways {
@@ -145,7 +145,7 @@ sub get_gateways {
 # Sets the given value for 'gateways' property.
 # 
 # @param gateways  - New value for the field.
-# Gateways for the IPv4 address. This  *field*  was added in vSphere API 7.0.0.
+# Gateways for the IPv4 address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_gateways {
    my ($self, %args) = @_;
@@ -161,20 +161,20 @@ sub set_gateways {
 #
 # The  ``Com::Vmware::Vcenter::Guest::Ipv4::Type``   *enumerated type*  specifies
 #     different types of the IPv4 configuration. This  *enumeration*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Guest::Ipv4::Type::DHCP #
-#DHCP configuration. This  *constant*  was added in vSphere API 7.0.0.
+#DHCP configuration. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::Ipv4::Type::STATIC #
-#Static configuration. This  *constant*  was added in vSphere API 7.0.0.
+#Static configuration. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::Ipv4::Type::USER_INPUT_REQUIRED #
 #Indicates that the IPv4 settings are not specified in advance. The user must provide a
 # valid value when the actual customization spec is applied to a virtual machine. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::Ipv4::Type;
 

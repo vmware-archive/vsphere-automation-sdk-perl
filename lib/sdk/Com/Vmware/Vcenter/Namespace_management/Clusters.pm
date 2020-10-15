@@ -444,11 +444,15 @@ sub new {
 #
 # Constant Com::Vmware::Vcenter::Namespace_management::Clusters::NetworkProvider::NSXT_CONTAINER_PLUGIN #
 #NSX-T Container Plugin.
+#
+# Constant Com::Vmware::Vcenter::Namespace_management::Clusters::NetworkProvider::VSPHERE_NETWORK #
+#vSphere Networking. This  *constant*  was added in vSphere API 7.0.1.0.
 
 package Com::Vmware::Vcenter::Namespace_management::Clusters::NetworkProvider;
 
 use constant {
     NSXT_CONTAINER_PLUGIN =>  'NSXT_CONTAINER_PLUGIN',
+    VSPHERE_NETWORK =>  'VSPHERE_NETWORK',
 };
 
 #
@@ -1058,11 +1062,13 @@ sub new {
          'discriminant_name' => 'network_provider',
          'case_map' => {
                'NSXT_CONTAINER_PLUGIN' => ['ncp_cluster_network_info'],
+               'VSPHERE_NETWORK' => ['workload_networks', 'load_balancers'],
             }),
       ];
 
 
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{size_hint} = $args{'size_hint'};
    $self->{stat_summary} = $args{'stat_summary'};
    $self->{config_status} = $args{'config_status'};
    $self->{messages} = $args{'messages'};
@@ -1075,14 +1081,27 @@ sub new {
    $self->{tls_endpoint_certificate} = $args{'tls_endpoint_certificate'};
    $self->{network_provider} = $args{'network_provider'};
    $self->{ncp_cluster_network_info} = $args{'ncp_cluster_network_info'};
+   $self->{workload_networks} = $args{'workload_networks'};
+   $self->{workload_ntp_servers} = $args{'workload_ntp_servers'};
+   $self->{load_balancers} = $args{'load_balancers'};
    $self->{service_cidr} = $args{'service_cidr'};
+   $self->{master_management_network} = $args{'master_management_network'};
    $self->{master_DNS} = $args{'master_DNS'};
    $self->{worker_DNS} = $args{'worker_DNS'};
+   $self->{master_storage_policy} = $args{'master_storage_policy'};
+   $self->{ephemeral_storage_policy} = $args{'ephemeral_storage_policy'};
+   $self->{login_banner} = $args{'login_banner'};
+   $self->{Master_DNS_names} = $args{'Master_DNS_names'};
+   $self->{image_storage} = $args{'image_storage'};
+   $self->{default_image_registry} = $args{'default_image_registry'};
+   $self->{default_image_repository} = $args{'default_image_repository'};
    $self->{master_DNS_search_domains} = $args{'master_DNS_search_domains'};
+   $self->{master_NTP_servers} = $args{'master_NTP_servers'};
    $self->{default_kubernetes_service_content_library} = $args{'default_kubernetes_service_content_library'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Namespace_management::Clusters::Info');
    $self->set_binding_name('name' => 'com.vmware.vcenter.namespace_management.clusters.info');
+   $self->set_binding_field('key' => 'size_hint', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'SizingHint')));
    $self->set_binding_field('key' => 'stat_summary', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::Stats'));
    $self->set_binding_field('key' => 'config_status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::ConfigStatus'));
    $self->set_binding_field('key' => 'messages', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::Message')));
@@ -1095,13 +1114,53 @@ sub new {
    $self->set_binding_field('key' => 'tls_endpoint_certificate', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'network_provider', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::NetworkProvider'));
    $self->set_binding_field('key' => 'ncp_cluster_network_info', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::NCPClusterNetworkInfo')));
+   $self->set_binding_field('key' => 'workload_networks', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::WorkloadNetworksInfo')));
+   $self->set_binding_field('key' => 'workload_ntp_servers', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
+   $self->set_binding_field('key' => 'load_balancers', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'LoadBalancers::Info'))));
    $self->set_binding_field('key' => 'service_cidr', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Ipv4Cidr'));
+   $self->set_binding_field('key' => 'master_management_network', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::NetworkSpec')));
    $self->set_binding_field('key' => 'master_DNS', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
    $self->set_binding_field('key' => 'worker_DNS', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
+   $self->set_binding_field('key' => 'master_storage_policy', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'ephemeral_storage_policy', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'login_banner', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'Master_DNS_names', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
+   $self->set_binding_field('key' => 'image_storage', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::ImageStorageSpec')));
+   $self->set_binding_field('key' => 'default_image_registry', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::ImageRegistry')));
+   $self->set_binding_field('key' => 'default_image_repository', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'master_DNS_search_domains', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
+   $self->set_binding_field('key' => 'master_NTP_servers', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
    $self->set_binding_field('key' => 'default_kubernetes_service_content_library', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    bless $self, $class;
    return $self;
+}
+
+## @method get_size_hint ()
+# Gets the value of 'size_hint' property.
+#
+# @retval size_hint - The current value of the field.
+# Current setting for  ``Com::Vmware::Vcenter::Namespace_management::SizingHint`` . This
+#     affects the size and resources allocated to the Kubernetes API server. This  *field* 
+#     was added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_size_hint {
+   my ($self, %args) = @_;
+   return $self->{'size_hint'}; 	
+}
+
+## @method set_size_hint ()
+# Sets the given value for 'size_hint' property.
+# 
+# @param size_hint  - New value for the field.
+# Current setting for  ``Com::Vmware::Vcenter::Namespace_management::SizingHint`` . This
+#     affects the size and resources allocated to the Kubernetes API server. This  *field* 
+#     was added in vSphere API 7.0.1.0.
+#
+sub set_size_hint {
+   my ($self, %args) = @_;
+   $self->{'size_hint'} = $args{'size_hint'}; 
+   return;	
 }
 
 ## @method get_stat_summary ()
@@ -1416,6 +1475,86 @@ sub set_ncp_cluster_network_info {
    return;	
 }
 
+## @method get_workload_networks ()
+# Gets the value of 'workload_networks' property.
+#
+# @retval workload_networks - The current value of the field.
+# Information about workload networks associated with the cluster. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_workload_networks {
+   my ($self, %args) = @_;
+   return $self->{'workload_networks'}; 	
+}
+
+## @method set_workload_networks ()
+# Sets the given value for 'workload_networks' property.
+# 
+# @param workload_networks  - New value for the field.
+# Information about workload networks associated with the cluster. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+sub set_workload_networks {
+   my ($self, %args) = @_;
+   $self->{'workload_networks'} = $args{'workload_networks'}; 
+   return;	
+}
+
+## @method get_workload_ntp_servers ()
+# Gets the value of 'workload_ntp_servers' property.
+#
+# @retval workload_ntp_servers - The current value of the field.
+# Information about NTP server DNS names or IP addresses to use for workloads such as
+#     Tanzu Kubernetes Grid VMs, specified in order of preference. This  *field*  was added
+#     in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_workload_ntp_servers {
+   my ($self, %args) = @_;
+   return $self->{'workload_ntp_servers'}; 	
+}
+
+## @method set_workload_ntp_servers ()
+# Sets the given value for 'workload_ntp_servers' property.
+# 
+# @param workload_ntp_servers  - New value for the field.
+# Information about NTP server DNS names or IP addresses to use for workloads such as
+#     Tanzu Kubernetes Grid VMs, specified in order of preference. This  *field*  was added
+#     in vSphere API 7.0.1.0.
+#
+sub set_workload_ntp_servers {
+   my ($self, %args) = @_;
+   $self->{'workload_ntp_servers'} = $args{'workload_ntp_servers'}; 
+   return;	
+}
+
+## @method get_load_balancers ()
+# Gets the value of 'load_balancers' property.
+#
+# @retval load_balancers - The current value of the field.
+# Information related to the Load balancer used for provisioning virtual servers in the
+#     namespace. This  *field*  was added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_load_balancers {
+   my ($self, %args) = @_;
+   return $self->{'load_balancers'}; 	
+}
+
+## @method set_load_balancers ()
+# Sets the given value for 'load_balancers' property.
+# 
+# @param load_balancers  - New value for the field.
+# Information related to the Load balancer used for provisioning virtual servers in the
+#     namespace. This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_load_balancers {
+   my ($self, %args) = @_;
+   $self->{'load_balancers'} = $args{'load_balancers'}; 
+   return;	
+}
+
 ## @method get_service_cidr ()
 # Gets the value of 'service_cidr' property.
 #
@@ -1437,6 +1576,32 @@ sub get_service_cidr {
 sub set_service_cidr {
    my ($self, %args) = @_;
    $self->{'service_cidr'} = $args{'service_cidr'}; 
+   return;	
+}
+
+## @method get_master_management_network ()
+# Gets the value of 'master_management_network' property.
+#
+# @retval master_management_network - The current value of the field.
+# Specification for the management network on Kubernetes API server. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_master_management_network {
+   my ($self, %args) = @_;
+   return $self->{'master_management_network'}; 	
+}
+
+## @method set_master_management_network ()
+# Sets the given value for 'master_management_network' property.
+# 
+# @param master_management_network  - New value for the field.
+# Specification for the management network on Kubernetes API server. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+sub set_master_management_network {
+   my ($self, %args) = @_;
+   $self->{'master_management_network'} = $args{'master_management_network'}; 
    return;	
 }
 
@@ -1492,6 +1657,194 @@ sub set_worker_DNS {
    return;	
 }
 
+## @method get_master_storage_policy ()
+# Gets the value of 'master_storage_policy' property.
+#
+# @retval master_storage_policy - The current value of the field.
+# Identifier of storage policy associated with Kubernetes API server. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_master_storage_policy {
+   my ($self, %args) = @_;
+   return $self->{'master_storage_policy'}; 	
+}
+
+## @method set_master_storage_policy ()
+# Sets the given value for 'master_storage_policy' property.
+# 
+# @param master_storage_policy  - New value for the field.
+# Identifier of storage policy associated with Kubernetes API server. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+sub set_master_storage_policy {
+   my ($self, %args) = @_;
+   $self->{'master_storage_policy'} = $args{'master_storage_policy'}; 
+   return;	
+}
+
+## @method get_ephemeral_storage_policy ()
+# Gets the value of 'ephemeral_storage_policy' property.
+#
+# @retval ephemeral_storage_policy - The current value of the field.
+# Identifier of storage policy associated with ephemeral disks of all the Kubernetes
+#     Pods in the cluster. This  *field*  was added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_ephemeral_storage_policy {
+   my ($self, %args) = @_;
+   return $self->{'ephemeral_storage_policy'}; 	
+}
+
+## @method set_ephemeral_storage_policy ()
+# Sets the given value for 'ephemeral_storage_policy' property.
+# 
+# @param ephemeral_storage_policy  - New value for the field.
+# Identifier of storage policy associated with ephemeral disks of all the Kubernetes
+#     Pods in the cluster. This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_ephemeral_storage_policy {
+   my ($self, %args) = @_;
+   $self->{'ephemeral_storage_policy'} = $args{'ephemeral_storage_policy'}; 
+   return;	
+}
+
+## @method get_login_banner ()
+# Gets the value of 'login_banner' property.
+#
+# @retval login_banner - The current value of the field.
+# Disclaimer to be displayed prior to login via the Kubectl plugin. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_login_banner {
+   my ($self, %args) = @_;
+   return $self->{'login_banner'}; 	
+}
+
+## @method set_login_banner ()
+# Sets the given value for 'login_banner' property.
+# 
+# @param login_banner  - New value for the field.
+# Disclaimer to be displayed prior to login via the Kubectl plugin. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+sub set_login_banner {
+   my ($self, %args) = @_;
+   $self->{'login_banner'} = $args{'login_banner'}; 
+   return;	
+}
+
+## @method get_Master_DNS_names ()
+# Gets the value of 'Master_DNS_names' property.
+#
+# @retval Master_DNS_names - The current value of the field.
+# List of additional DNS names to associate with the Kubernetes API server. These DNS
+#     names are embedded in the TLS certificate presented by the API server. This  *field* 
+#     was added in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_Master_DNS_names {
+   my ($self, %args) = @_;
+   return $self->{'Master_DNS_names'}; 	
+}
+
+## @method set_Master_DNS_names ()
+# Sets the given value for 'Master_DNS_names' property.
+# 
+# @param Master_DNS_names  - New value for the field.
+# List of additional DNS names to associate with the Kubernetes API server. These DNS
+#     names are embedded in the TLS certificate presented by the API server. This  *field* 
+#     was added in vSphere API 7.0.1.0.
+#
+sub set_Master_DNS_names {
+   my ($self, %args) = @_;
+   $self->{'Master_DNS_names'} = $args{'Master_DNS_names'}; 
+   return;	
+}
+
+## @method get_image_storage ()
+# Gets the value of 'image_storage' property.
+#
+# @retval image_storage - The current value of the field.
+# Specification for storage to be used for container images. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+# optional#
+sub get_image_storage {
+   my ($self, %args) = @_;
+   return $self->{'image_storage'}; 	
+}
+
+## @method set_image_storage ()
+# Sets the given value for 'image_storage' property.
+# 
+# @param image_storage  - New value for the field.
+# Specification for storage to be used for container images. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+sub set_image_storage {
+   my ($self, %args) = @_;
+   $self->{'image_storage'} = $args{'image_storage'}; 
+   return;	
+}
+
+## @method get_default_image_registry ()
+# Gets the value of 'default_image_registry' property.
+#
+# @retval default_image_registry - The current value of the field.
+# Default image registry to use when Kubernetes Pod container specification does not
+#     specify it as part of the container image name. This  *field*  was added in vSphere
+#     API 7.0.1.0.
+#
+# Optional#
+sub get_default_image_registry {
+   my ($self, %args) = @_;
+   return $self->{'default_image_registry'}; 	
+}
+
+## @method set_default_image_registry ()
+# Sets the given value for 'default_image_registry' property.
+# 
+# @param default_image_registry  - New value for the field.
+# Default image registry to use when Kubernetes Pod container specification does not
+#     specify it as part of the container image name. This  *field*  was added in vSphere
+#     API 7.0.1.0.
+#
+sub set_default_image_registry {
+   my ($self, %args) = @_;
+   $self->{'default_image_registry'} = $args{'default_image_registry'}; 
+   return;	
+}
+
+## @method get_default_image_repository ()
+# Gets the value of 'default_image_repository' property.
+#
+# @retval default_image_repository - The current value of the field.
+# Default image repository to use when Kubernetes Pod container specification does not
+#     specify it as part of the container image name. This  *field*  was added in vSphere
+#     API 7.0.1.0.
+#
+# Optional#
+sub get_default_image_repository {
+   my ($self, %args) = @_;
+   return $self->{'default_image_repository'}; 	
+}
+
+## @method set_default_image_repository ()
+# Sets the given value for 'default_image_repository' property.
+# 
+# @param default_image_repository  - New value for the field.
+# Default image repository to use when Kubernetes Pod container specification does not
+#     specify it as part of the container image name. This  *field*  was added in vSphere
+#     API 7.0.1.0.
+#
+sub set_default_image_repository {
+   my ($self, %args) = @_;
+   $self->{'default_image_repository'} = $args{'default_image_repository'}; 
+   return;	
+}
+
 ## @method get_master_DNS_search_domains ()
 # Gets the value of 'master_DNS_search_domains' property.
 #
@@ -1515,6 +1868,32 @@ sub get_master_DNS_search_domains {
 sub set_master_DNS_search_domains {
    my ($self, %args) = @_;
    $self->{'master_DNS_search_domains'} = $args{'master_DNS_search_domains'}; 
+   return;	
+}
+
+## @method get_master_NTP_servers ()
+# Gets the value of 'master_NTP_servers' property.
+#
+# @retval master_NTP_servers - The current value of the field.
+# List of NTP server DNS names or IP addresses to use on Kubernetes API server,
+#     specified in order of preference. This  *field*  was added in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_master_NTP_servers {
+   my ($self, %args) = @_;
+   return $self->{'master_NTP_servers'}; 	
+}
+
+## @method set_master_NTP_servers ()
+# Sets the given value for 'master_NTP_servers' property.
+# 
+# @param master_NTP_servers  - New value for the field.
+# List of NTP server DNS names or IP addresses to use on Kubernetes API server,
+#     specified in order of preference. This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_master_NTP_servers {
+   my ($self, %args) = @_;
+   $self->{'master_NTP_servers'} = $args{'master_NTP_servers'}; 
    return;	
 }
 
@@ -1704,6 +2083,215 @@ sub get_gateway {
 sub set_gateway {
    my ($self, %args) = @_;
    $self->{'gateway'} = $args{'gateway'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksEnableSpec
+#
+#
+# The 
+#     ``Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksEnableSpec`` 
+#     contains the specification required to configure workload networks for a vSphere
+#     Namespaces Cluster during Enable operation. These workload networks will be used as
+#     backing network for Tanzu Kubernetes Cluster VMs and Kubernetes control plane VMs.
+#     This  *class*  was added in vSphere API 7.0.1.0.
+
+package Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksEnableSpec;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksEnableSpec structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{supervisor_primary_workload_network} = $args{'supervisor_primary_workload_network'};
+   $self->{network_list} = $args{'network_list'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksEnableSpec');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.namespace_management.clusters.workload_networks_enable_spec');
+   $self->set_binding_field('key' => 'supervisor_primary_workload_network', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Networks::CreateSpec'));
+   $self->set_binding_field('key' => 'network_list', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Networks::CreateSpec'))));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_supervisor_primary_workload_network ()
+# Gets the value of 'supervisor_primary_workload_network' property.
+#
+# @retval supervisor_primary_workload_network - The current value of the field.
+# The  ``CreateSpec``  of the vSphere Namespaces network that will be used by Kubernetes
+#     control plane VMs to expose Kubernetes API server to devops users and other workloads.
+#     It can also used as backing network for Tanzu Kubernetes Cluster VMs. This  *field* 
+#     was added in vSphere API 7.0.1.0.
+#
+# CreateSpec#
+sub get_supervisor_primary_workload_network {
+   my ($self, %args) = @_;
+   return $self->{'supervisor_primary_workload_network'}; 	
+}
+
+## @method set_supervisor_primary_workload_network ()
+# Sets the given value for 'supervisor_primary_workload_network' property.
+# 
+# @param supervisor_primary_workload_network  - New value for the field.
+# The  ``CreateSpec``  of the vSphere Namespaces network that will be used by Kubernetes
+#     control plane VMs to expose Kubernetes API server to devops users and other workloads.
+#     It can also used as backing network for Tanzu Kubernetes Cluster VMs. This  *field* 
+#     was added in vSphere API 7.0.1.0.
+#
+sub set_supervisor_primary_workload_network {
+   my ($self, %args) = @_;
+   $self->{'supervisor_primary_workload_network'} = $args{'supervisor_primary_workload_network'}; 
+   return;	
+}
+
+## @method get_network_list ()
+# Gets the value of 'network_list' property.
+#
+# @retval network_list - The current value of the field.
+# ``CreateSpecs``   *class* es for additional list of vSphere Namespaces networks to be
+#     associated with this cluster. This  *field*  was added in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_network_list {
+   my ($self, %args) = @_;
+   return $self->{'network_list'}; 	
+}
+
+## @method set_network_list ()
+# Sets the given value for 'network_list' property.
+# 
+# @param network_list  - New value for the field.
+# ``CreateSpecs``   *class* es for additional list of vSphere Namespaces networks to be
+#     associated with this cluster. This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_network_list {
+   my ($self, %args) = @_;
+   $self->{'network_list'} = $args{'network_list'}; 
+   return;	
+}
+
+
+1;
+
+
+## @class Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksInfo
+#
+#
+# The  ``Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksInfo`` 
+#     contains information related to configuration of vSphere Namespaces Network objects.
+#     This  *class*  was added in vSphere API 7.0.1.0.
+
+package Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksInfo;
+
+#
+# Base class
+#
+use base qw(Com::Vmware::Vapi::Bindings::VapiStruct);
+
+#
+# vApi modules
+#
+use Com::Vmware::Vapi::Data::UnionValidator;
+
+## @method new ()
+# Constructor to initialize the Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksInfo structure
+#
+# @retval
+# Blessed object
+#
+sub new {
+   my ($class, %args) = @_;
+   $class = ref($class) || $class;
+   my $validatorList = [];
+
+      
+
+   my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{supervisor_primary_workload_network} = $args{'supervisor_primary_workload_network'};
+   $self->{network_list} = $args{'network_list'};
+
+   $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Namespace_management::Clusters::WorkloadNetworksInfo');
+   $self->set_binding_name('name' => 'com.vmware.vcenter.namespace_management.clusters.workload_networks_info');
+   $self->set_binding_field('key' => 'supervisor_primary_workload_network', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Networks::Info'));
+   $self->set_binding_field('key' => 'network_list', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Networks::Info'))));
+   bless $self, $class;
+   return $self;
+}
+
+## @method get_supervisor_primary_workload_network ()
+# Gets the value of 'supervisor_primary_workload_network' property.
+#
+# @retval supervisor_primary_workload_network - The current value of the field.
+# vSphere Namespaces network used by Kubernetes control plane VMs to access
+#     load-balanced services on the various workload networks. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+# Info#
+sub get_supervisor_primary_workload_network {
+   my ($self, %args) = @_;
+   return $self->{'supervisor_primary_workload_network'}; 	
+}
+
+## @method set_supervisor_primary_workload_network ()
+# Sets the given value for 'supervisor_primary_workload_network' property.
+# 
+# @param supervisor_primary_workload_network  - New value for the field.
+# vSphere Namespaces network used by Kubernetes control plane VMs to access
+#     load-balanced services on the various workload networks. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+sub set_supervisor_primary_workload_network {
+   my ($self, %args) = @_;
+   $self->{'supervisor_primary_workload_network'} = $args{'supervisor_primary_workload_network'}; 
+   return;	
+}
+
+## @method get_network_list ()
+# Gets the value of 'network_list' property.
+#
+# @retval network_list - The current value of the field.
+# List of vSphere Namespaces networks associated with this cluster. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_network_list {
+   my ($self, %args) = @_;
+   return $self->{'network_list'}; 	
+}
+
+## @method set_network_list ()
+# Sets the given value for 'network_list' property.
+# 
+# @param network_list  - New value for the field.
+# List of vSphere Namespaces networks associated with this cluster. This  *field*  was
+#     added in vSphere API 7.0.1.0.
+#
+sub set_network_list {
+   my ($self, %args) = @_;
+   $self->{'network_list'} = $args{'network_list'}; 
    return;	
 }
 
@@ -2912,6 +3500,7 @@ sub new {
          'discriminant_name' => 'network_provider',
          'case_map' => {
                'NSXT_CONTAINER_PLUGIN' => ['ncp_cluster_network_spec'],
+               'VSPHERE_NETWORK' => ['workload_networks_spec', 'load_balancer_config_spec'],
             }),
       ];
 
@@ -2921,6 +3510,9 @@ sub new {
    $self->{service_cidr} = $args{'service_cidr'};
    $self->{network_provider} = $args{'network_provider'};
    $self->{ncp_cluster_network_spec} = $args{'ncp_cluster_network_spec'};
+   $self->{workload_networks_spec} = $args{'workload_networks_spec'};
+   $self->{workload_ntp_servers} = $args{'workload_ntp_servers'};
+   $self->{load_balancer_config_spec} = $args{'load_balancer_config_spec'};
    $self->{master_management_network} = $args{'master_management_network'};
    $self->{master_DNS} = $args{'master_DNS'};
    $self->{worker_DNS} = $args{'worker_DNS'};
@@ -2941,6 +3533,9 @@ sub new {
    $self->set_binding_field('key' => 'service_cidr', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Ipv4Cidr'));
    $self->set_binding_field('key' => 'network_provider', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::NetworkProvider'));
    $self->set_binding_field('key' => 'ncp_cluster_network_spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::NCPClusterNetworkEnableSpec')));
+   $self->set_binding_field('key' => 'workload_networks_spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::WorkloadNetworksEnableSpec')));
+   $self->set_binding_field('key' => 'workload_ntp_servers', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
+   $self->set_binding_field('key' => 'load_balancer_config_spec', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'LoadBalancers::ConfigSpec')));
    $self->set_binding_field('key' => 'master_management_network', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::NetworkSpec'));
    $self->set_binding_field('key' => 'master_DNS', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
    $self->set_binding_field('key' => 'worker_DNS', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
@@ -3057,6 +3652,92 @@ sub get_ncp_cluster_network_spec {
 sub set_ncp_cluster_network_spec {
    my ($self, %args) = @_;
    $self->{'ncp_cluster_network_spec'} = $args{'ncp_cluster_network_spec'}; 
+   return;	
+}
+
+## @method get_workload_networks_spec ()
+# Gets the value of 'workload_networks_spec' property.
+#
+# @retval workload_networks_spec - The current value of the field.
+# Specification for the workload networks to be associated with the cluster. This 
+#     *field*  was added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_workload_networks_spec {
+   my ($self, %args) = @_;
+   return $self->{'workload_networks_spec'}; 	
+}
+
+## @method set_workload_networks_spec ()
+# Sets the given value for 'workload_networks_spec' property.
+# 
+# @param workload_networks_spec  - New value for the field.
+# Specification for the workload networks to be associated with the cluster. This 
+#     *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_workload_networks_spec {
+   my ($self, %args) = @_;
+   $self->{'workload_networks_spec'} = $args{'workload_networks_spec'}; 
+   return;	
+}
+
+## @method get_workload_ntp_servers ()
+# Gets the value of 'workload_ntp_servers' property.
+#
+# @retval workload_ntp_servers - The current value of the field.
+# List of NTP server DNS names or IP addresses to use for workloads such as Tanzu
+#     Kubernetes Grid VMs, specified in order of preference. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_workload_ntp_servers {
+   my ($self, %args) = @_;
+   return $self->{'workload_ntp_servers'}; 	
+}
+
+## @method set_workload_ntp_servers ()
+# Sets the given value for 'workload_ntp_servers' property.
+# 
+# @param workload_ntp_servers  - New value for the field.
+# List of NTP server DNS names or IP addresses to use for workloads such as Tanzu
+#     Kubernetes Grid VMs, specified in order of preference. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+sub set_workload_ntp_servers {
+   my ($self, %args) = @_;
+   $self->{'workload_ntp_servers'} = $args{'workload_ntp_servers'}; 
+   return;	
+}
+
+## @method get_load_balancer_config_spec ()
+# Gets the value of 'load_balancer_config_spec' property.
+#
+# @retval load_balancer_config_spec - The current value of the field.
+# A null dictates configuration derived from a user-provisioned load balancer that will
+#     be used to operate a load balancer that fronts vSphere Namespaces cluster servers,
+#     Tanzu Kubernetes Grid API servers, and other servers upon request. This configuration
+#     is required for network providers that do not have a default load balancer included.
+#     This  *field*  was added in vSphere API 7.0.1.0.
+#
+# optional#
+sub get_load_balancer_config_spec {
+   my ($self, %args) = @_;
+   return $self->{'load_balancer_config_spec'}; 	
+}
+
+## @method set_load_balancer_config_spec ()
+# Sets the given value for 'load_balancer_config_spec' property.
+# 
+# @param load_balancer_config_spec  - New value for the field.
+# A null dictates configuration derived from a user-provisioned load balancer that will
+#     be used to operate a load balancer that fronts vSphere Namespaces cluster servers,
+#     Tanzu Kubernetes Grid API servers, and other servers upon request. This configuration
+#     is required for network providers that do not have a default load balancer included.
+#     This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_load_balancer_config_spec {
+   my ($self, %args) = @_;
+   $self->{'load_balancer_config_spec'} = $args{'load_balancer_config_spec'}; 
    return;	
 }
 
@@ -3436,6 +4117,7 @@ sub new {
          'discriminant_name' => 'network_provider',
          'case_map' => {
                'NSXT_CONTAINER_PLUGIN' => ['ncp_cluster_network_spec'],
+               'VSPHERE_NETWORK' => [],
             }),
       ];
 
@@ -3456,6 +4138,7 @@ sub new {
    $self->{default_image_repository} = $args{'default_image_repository'};
    $self->{tls_endpoint_certificate} = $args{'tls_endpoint_certificate'};
    $self->{default_kubernetes_service_content_library} = $args{'default_kubernetes_service_content_library'};
+   $self->{workload_ntp_servers} = $args{'workload_ntp_servers'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Namespace_management::Clusters::UpdateSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.namespace_management.clusters.update_spec');
@@ -3474,6 +4157,7 @@ sub new {
    $self->set_binding_field('key' => 'default_image_repository', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'tls_endpoint_certificate', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'default_kubernetes_service_content_library', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'workload_ntp_servers', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
    bless $self, $class;
    return $self;
 }
@@ -3874,6 +4558,34 @@ sub set_default_kubernetes_service_content_library {
    return;	
 }
 
+## @method get_workload_ntp_servers ()
+# Gets the value of 'workload_ntp_servers' property.
+#
+# @retval workload_ntp_servers - The current value of the field.
+# List of NTP server DNS names or IP addresses to use for workloads such as Tanzu
+#     Kubernetes Grid VMs, specified in order of preference. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_workload_ntp_servers {
+   my ($self, %args) = @_;
+   return $self->{'workload_ntp_servers'}; 	
+}
+
+## @method set_workload_ntp_servers ()
+# Sets the given value for 'workload_ntp_servers' property.
+# 
+# @param workload_ntp_servers  - New value for the field.
+# List of NTP server DNS names or IP addresses to use for workloads such as Tanzu
+#     Kubernetes Grid VMs, specified in order of preference. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+sub set_workload_ntp_servers {
+   my ($self, %args) = @_;
+   $self->{'workload_ntp_servers'} = $args{'workload_ntp_servers'}; 
+   return;	
+}
+
 
 1;
 
@@ -3913,6 +4625,7 @@ sub new {
          'discriminant_name' => 'network_provider',
          'case_map' => {
                'NSXT_CONTAINER_PLUGIN' => ['ncp_cluster_network_spec'],
+               'VSPHERE_NETWORK' => [],
             }),
       ];
 
@@ -3932,6 +4645,7 @@ sub new {
    $self->{default_image_registry} = $args{'default_image_registry'};
    $self->{default_image_repository} = $args{'default_image_repository'};
    $self->{default_kubernetes_service_content_library} = $args{'default_kubernetes_service_content_library'};
+   $self->{workload_ntp_servers} = $args{'workload_ntp_servers'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Vcenter::Namespace_management::Clusters::SetSpec');
    $self->set_binding_name('name' => 'com.vmware.vcenter.namespace_management.clusters.set_spec');
@@ -3949,6 +4663,7 @@ sub new {
    $self->set_binding_field('key' => 'default_image_registry', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vcenter::Namespace_management', 'type_name' => 'Clusters::ImageRegistry')));
    $self->set_binding_field('key' => 'default_image_repository', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
    $self->set_binding_field('key' => 'default_kubernetes_service_content_library', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::StringType()));
+   $self->set_binding_field('key' => 'workload_ntp_servers', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::StringType())));
    bless $self, $class;
    return $self;
 }
@@ -4310,6 +5025,34 @@ sub get_default_kubernetes_service_content_library {
 sub set_default_kubernetes_service_content_library {
    my ($self, %args) = @_;
    $self->{'default_kubernetes_service_content_library'} = $args{'default_kubernetes_service_content_library'}; 
+   return;	
+}
+
+## @method get_workload_ntp_servers ()
+# Gets the value of 'workload_ntp_servers' property.
+#
+# @retval workload_ntp_servers - The current value of the field.
+# List of NTP server DNS names or IP addresses to use for workloads such as Tanzu
+#     Kubernetes Grid VMs, specified in order of preference. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_workload_ntp_servers {
+   my ($self, %args) = @_;
+   return $self->{'workload_ntp_servers'}; 	
+}
+
+## @method set_workload_ntp_servers ()
+# Sets the given value for 'workload_ntp_servers' property.
+# 
+# @param workload_ntp_servers  - New value for the field.
+# List of NTP server DNS names or IP addresses to use for workloads such as Tanzu
+#     Kubernetes Grid VMs, specified in order of preference. This  *field*  was added in
+#     vSphere API 7.0.1.0.
+#
+sub set_workload_ntp_servers {
+   my ($self, %args) = @_;
+   $self->{'workload_ntp_servers'} = $args{'workload_ntp_servers'}; 
    return;	
 }
 

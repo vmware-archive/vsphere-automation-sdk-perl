@@ -452,7 +452,7 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the Harbor project. Should be between 2-63 characters long alphanumeric string
+# Name of the Harbor project. Should be between 1-63 characters long alphanumeric string
 #     and may contain the following characters: a-z,0-9, and &apos;-&apos;. Must be starting
 #     with characters or numbers, with the &apos;-&apos; character allowed anywhere except
 #     the first or last character.
@@ -467,7 +467,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the Harbor project. Should be between 2-63 characters long alphanumeric string
+# Name of the Harbor project. Should be between 1-63 characters long alphanumeric string
 #     and may contain the following characters: a-z,0-9, and &apos;-&apos;. Must be starting
 #     with characters or numbers, with the &apos;-&apos; character allowed anywhere except
 #     the first or last character.
@@ -579,7 +579,7 @@ sub set_project {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the Harbor project. Should be between 2-63 characters long alphanumeric string
+# Name of the Harbor project. Should be between 1-63 characters long alphanumeric string
 #     and may contain the following characters: a-z,0-9, and &apos;-&apos;. Must be starting
 #     with characters or numbers, with the &apos;-&apos; character allowed anywhere except
 #     the first or last character.
@@ -594,7 +594,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the Harbor project. Should be between 2-63 characters long alphanumeric string
+# Name of the Harbor project. Should be between 1-63 characters long alphanumeric string
 #     and may contain the following characters: a-z,0-9, and &apos;-&apos;. Must be starting
 #     with characters or numbers, with the &apos;-&apos; character allowed anywhere except
 #     the first or last character.
@@ -700,7 +700,7 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the Harbor project. Should be between 2-63 characters long alphanumeric string
+# Name of the Harbor project. Should be between 1-63 characters long alphanumeric string
 #     and may contain the following characters: a-z,0-9, and &apos;-&apos;. Must be starting
 #     with characters or numbers, with the &apos;-&apos; character allowed anywhere except
 #     the first or last character.
@@ -715,7 +715,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the Harbor project. Should be between 2-63 characters long alphanumeric string
+# Name of the Harbor project. Should be between 1-63 characters long alphanumeric string
 #     and may contain the following characters: a-z,0-9, and &apos;-&apos;. Must be starting
 #     with characters or numbers, with the &apos;-&apos; character allowed anywhere except
 #     the first or last character.

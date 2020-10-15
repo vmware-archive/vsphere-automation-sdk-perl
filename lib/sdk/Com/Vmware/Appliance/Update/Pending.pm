@@ -465,10 +465,12 @@ sub new {
       
 
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
+   $self->{name} = $args{'name'};
    $self->{contents} = $args{'contents'};
    $self->{services_will_be_stopped} = $args{'services_will_be_stopped'};
    $self->{eulas} = $args{'eulas'};
    $self->{staged} = $args{'staged'};
+   $self->{knowledge_base} = $args{'knowledge_base'};
    $self->{description} = $args{'description'};
    $self->{priority} = $args{'priority'};
    $self->{severity} = $args{'severity'};
@@ -479,10 +481,12 @@ sub new {
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Update::Pending::Info');
    $self->set_binding_name('name' => 'com.vmware.appliance.update.pending.info');
+   $self->set_binding_field('key' => 'name', 'value' => new Com::Vmware::Vapi::Bindings::Type::StringType());
    $self->set_binding_field('key' => 'contents', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage')));
    $self->set_binding_field('key' => 'services_will_be_stopped', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Update', 'type_name' => 'ServiceInfo')));
    $self->set_binding_field('key' => 'eulas', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage')));
    $self->set_binding_field('key' => 'staged', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
+   $self->set_binding_field('key' => 'knowledge_base', 'value' => new Com::Vmware::Vapi::Bindings::Type::URIType());
    $self->set_binding_field('key' => 'description', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Vapi::Std', 'type_name' => 'LocalizableMessage'));
    $self->set_binding_field('key' => 'priority', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Update', 'type_name' => 'CommonInfo::Priority'));
    $self->set_binding_field('key' => 'severity', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Update', 'type_name' => 'CommonInfo::Severity'));
@@ -492,6 +496,30 @@ sub new {
    $self->set_binding_field('key' => 'size', 'value' => new Com::Vmware::Vapi::Bindings::Type::LongType());
    bless $self, $class;
    return $self;
+}
+
+## @method get_name ()
+# Gets the value of 'name' property.
+#
+# @retval name - The current value of the field.
+# Name of the update. This  *field*  was added in vSphere API 6.7.
+#
+# String#
+sub get_name {
+   my ($self, %args) = @_;
+   return $self->{'name'}; 	
+}
+
+## @method set_name ()
+# Sets the given value for 'name' property.
+# 
+# @param name  - New value for the field.
+# Name of the update. This  *field*  was added in vSphere API 6.7.
+#
+sub set_name {
+   my ($self, %args) = @_;
+   $self->{'name'} = $args{'name'}; 
+   return;	
 }
 
 ## @method get_contents ()
@@ -593,6 +621,32 @@ sub get_staged {
 sub set_staged {
    my ($self, %args) = @_;
    $self->{'staged'} = $args{'staged'}; 
+   return;	
+}
+
+## @method get_knowledge_base ()
+# Gets the value of 'knowledge_base' property.
+#
+# @retval knowledge_base - The current value of the field.
+# URL for the knowledge base article describing this update. This  *field*  was added in
+#     vSphere API 6.7.
+#
+# URI#
+sub get_knowledge_base {
+   my ($self, %args) = @_;
+   return $self->{'knowledge_base'}; 	
+}
+
+## @method set_knowledge_base ()
+# Sets the given value for 'knowledge_base' property.
+# 
+# @param knowledge_base  - New value for the field.
+# URL for the knowledge base article describing this update. This  *field*  was added in
+#     vSphere API 6.7.
+#
+sub set_knowledge_base {
+   my ($self, %args) = @_;
+   $self->{'knowledge_base'} = $args{'knowledge_base'}; 
    return;	
 }
 

@@ -13,7 +13,7 @@
 ## @class Com::Vmware::Vcenter::Vm::Guest::Networking::Routes
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Routes``   *interface*  provides 
 #     *methods*  for retrieving guest operating system network routing information. This 
-#     *interface*  was added in vSphere API 7.0.0.
+#     *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Routes;
@@ -66,7 +66,7 @@ sub new {
 
 ## @method list ()
 # Returns information about network routing in the guest operating system. This  *method* 
-# was added in vSphere API 7.0.0.
+# was added in vSphere API 7.0.0.0.
 #
 # @param vm [REQUIRED] Virtual machine ID
 # The value must be an identifier for the resource type
@@ -118,7 +118,7 @@ sub list {
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::Networking::Routes::Info``   *class* 
 #     describes an individual host, network or default destination network reachable through
-#     a gateway. This  *class*  was added in vSphere API 7.0.0.
+#     a gateway. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::Networking::Routes::Info;
 
@@ -171,7 +171,7 @@ sub new {
 #     each field (:). For example, 2001:DB8:101::230:6eff:fe04:d9ff. The address can also
 #     consist of symbol &apos;::&apos; to represent multiple 16-bit groups of contiguous
 #     0&apos;s only once in an address as described in RFC 2373. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # String#
 sub get_network {
@@ -189,7 +189,7 @@ sub get_network {
 #     each field (:). For example, 2001:DB8:101::230:6eff:fe04:d9ff. The address can also
 #     consist of symbol &apos;::&apos; to represent multiple 16-bit groups of contiguous
 #     0&apos;s only once in an address as described in RFC 2373. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_network {
    my ($self, %args) = @_;
@@ -204,7 +204,7 @@ sub set_network {
 # The prefix length. For IPv4 the value range is 0-32. For IPv6 prefixLength is a
 #     decimal value range 0-128. The property represents the number of contiguous,
 #     higher-order bits of the address that make up the network portion of the IP address.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_prefix_length {
@@ -219,7 +219,7 @@ sub get_prefix_length {
 # The prefix length. For IPv4 the value range is 0-32. For IPv6 prefixLength is a
 #     decimal value range 0-128. The property represents the number of contiguous,
 #     higher-order bits of the address that make up the network portion of the IP address.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_prefix_length {
    my ($self, %args) = @_;
@@ -237,7 +237,7 @@ sub set_prefix_length {
 #     up to four hexadecimal digits. A colon separates each field (:). For example,
 #     2001:DB8:101::230:6eff:fe04:d9ff. The address can also consist of symbol
 #     &apos;::&apos; to represent multiple 16-bit groups of contiguous 0&apos;s only once in
-#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.
+#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_gateway_address {
@@ -255,7 +255,7 @@ sub get_gateway_address {
 #     up to four hexadecimal digits. A colon separates each field (:). For example,
 #     2001:DB8:101::230:6eff:fe04:d9ff. The address can also consist of symbol
 #     &apos;::&apos; to represent multiple 16-bit groups of contiguous 0&apos;s only once in
-#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.
+#     an address as described in RFC 2373. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_gateway_address {
    my ($self, %args) = @_;
@@ -271,7 +271,7 @@ sub set_gateway_address {
 #     :func:`Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces.list`  The index refers
 #     to the relative position of an element in a  *list* . For example, an index of 0
 #     refers to the first element in the  *list*  while an index of 1 refers to the second
-#     element. This  *field*  was added in vSphere API 7.0.0.
+#     element. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_interface_index {
@@ -287,7 +287,7 @@ sub get_interface_index {
 #     :func:`Com::Vmware::Vcenter::Vm::Guest::Networking::Interfaces.list`  The index refers
 #     to the relative position of an element in a  *list* . For example, an index of 0
 #     refers to the first element in the  *list*  while an index of 1 refers to the second
-#     element. This  *field*  was added in vSphere API 7.0.0.
+#     element. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_interface_index {
    my ($self, %args) = @_;

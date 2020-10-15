@@ -5,7 +5,7 @@
 #     attempt to connect to an unknown or not-yet-trusted endpoint failed because the system
 #     was unable to verify the identity of the endpoint. <p>
 # 
-# Typically the { :attr:`Com::Vmware::Vapi::Std::Errors::Error.data`   *field*  of this
+# Typically the  :attr:`Com::Vmware::Vapi::Std::Errors::Error.data`   *field*  of this
 #     error will contain information that can be presented to a human to allow them to
 #     decide whether to trust the endpoint. If they decide to trust the endpoint, the
 #     request can be resubmitted with an indication that the endpoint should be trusted.

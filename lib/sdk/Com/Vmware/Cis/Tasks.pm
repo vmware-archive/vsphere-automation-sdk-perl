@@ -457,7 +457,7 @@ sub set_services {
 #     operation, the identifier of the service interface containing the operation should
 #     also be specified in  ``services`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_operations {
@@ -476,7 +476,7 @@ sub get_operations {
 #     operation, the identifier of the service interface containing the operation should
 #     also be specified in  ``services`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_operations {
    my ($self, %args) = @_;

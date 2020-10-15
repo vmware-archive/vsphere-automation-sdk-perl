@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::AdapterMapping``   *class*  specifies the
 #     association between a virtual network adapter and its IP settings. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::AdapterMapping;
 
@@ -47,7 +47,7 @@ sub new {
 #
 # @retval mac_address - The current value of the field.
 # The MAC address of a network adapter being customized. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_mac_address {
@@ -60,7 +60,7 @@ sub get_mac_address {
 # 
 # @param mac_address  - New value for the field.
 # The MAC address of a network adapter being customized. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_mac_address {
    my ($self, %args) = @_;
@@ -73,7 +73,7 @@ sub set_mac_address {
 #
 # @retval adapter - The current value of the field.
 # The IP settings for the associated virtual network adapter. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # IPSettings#
 sub get_adapter {
@@ -86,7 +86,7 @@ sub get_adapter {
 # 
 # @param adapter  - New value for the field.
 # The IP settings for the associated virtual network adapter. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_adapter {
    my ($self, %args) = @_;

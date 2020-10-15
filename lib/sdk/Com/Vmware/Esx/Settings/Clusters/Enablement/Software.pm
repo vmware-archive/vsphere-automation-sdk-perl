@@ -74,7 +74,7 @@ sub new {
 # Returns whether the given cluster is managed with a single software specification.
 #
 # Note:
-# Privileges required for this operation are VcIntegrity.lifecycleSoftwareSpecification.Read.
+# Privileges required for this operation are VcIntegrity.lifecycleSettings.Read, VcIntegrity.lifecycleSoftwareSpecification.Read.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -97,6 +97,12 @@ sub new {
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthenticated 
 # If the caller is not authenticated.
+# @throw Com::Vmware::Vapi::Std::Errors::Unauthorized
+# if you do not have all of the privileges described as follows: <ul>
+#  <li>  *Method*  execution requires  ``VcIntegrity.lifecycleSettings.Read`` . </li>
+# <li> The resource  ``ClusterComputeResource``  referenced by the  *parameter*  
+#     ``cluster``  requires  ``VcIntegrity.lifecycleSettings.Read`` . </li>
+# </ul>
 #
 sub get {
    my ($self, %args) = @_;

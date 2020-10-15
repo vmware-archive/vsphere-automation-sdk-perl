@@ -1,15 +1,15 @@
 ## @class Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipalType
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipalType``   *enum*  can
-#     be either users or groups. This  *enumeration*  was added in vSphere API 7.0.0.
+#     be either users or groups. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipalType::STS_USER #
-#The principal is a user. This  *constant*  was added in vSphere API 7.0.0.
+#The principal is a user. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipalType::STS_GROUP #
-#The principal is a group. This  *constant*  was added in vSphere API 7.0.0.
+#The principal is a group. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipalType;
 

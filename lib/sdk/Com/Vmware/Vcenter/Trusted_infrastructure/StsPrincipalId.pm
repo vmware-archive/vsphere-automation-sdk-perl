@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipalId``   *class* 
-#     contains an IDM principal ID. This  *class*  was added in vSphere API 7.0.0.
+#     contains an IDM principal ID. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipalId;
 
@@ -45,7 +45,7 @@ sub new {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# The principal&apos;s username. This  *field*  was added in vSphere API 7.0.0.
+# The principal&apos;s username. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -57,7 +57,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# The principal&apos;s username. This  *field*  was added in vSphere API 7.0.0.
+# The principal&apos;s username. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -69,7 +69,7 @@ sub set_name {
 # Gets the value of 'domain' property.
 #
 # @retval domain - The current value of the field.
-# The principal&apos;s domain. This  *field*  was added in vSphere API 7.0.0.
+# The principal&apos;s domain. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_domain {
@@ -81,7 +81,7 @@ sub get_domain {
 # Sets the given value for 'domain' property.
 # 
 # @param domain  - New value for the field.
-# The principal&apos;s domain. This  *field*  was added in vSphere API 7.0.0.
+# The principal&apos;s domain. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain {
    my ($self, %args) = @_;

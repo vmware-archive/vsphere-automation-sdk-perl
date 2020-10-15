@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Deployment::DataMigrationEstimate``  { *class*  contains
 #     estimated time and disk space required for the vCenter Server database migration. This
-#      *class*  was added in vSphere API 7.0.0.
+#      *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Deployment::DataMigrationEstimate;
 
@@ -49,7 +49,7 @@ sub new {
 #
 # @retval estimated_export_time - The current value of the field.
 # The time estimated to export data from the source vCenter Server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_estimated_export_time {
@@ -62,7 +62,7 @@ sub get_estimated_export_time {
 # 
 # @param estimated_export_time  - New value for the field.
 # The time estimated to export data from the source vCenter Server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_estimated_export_time {
    my ($self, %args) = @_;
@@ -75,7 +75,7 @@ sub set_estimated_export_time {
 #
 # @retval estimated_import_time - The current value of the field.
 # The time estimated to import data to the upgraded vCenter Server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_estimated_import_time {
@@ -88,7 +88,7 @@ sub get_estimated_import_time {
 # 
 # @param estimated_import_time  - New value for the field.
 # The time estimated to import data to the upgraded vCenter Server. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_estimated_import_time {
    my ($self, %args) = @_;
@@ -101,7 +101,7 @@ sub set_estimated_import_time {
 #
 # @retval required_free_disk_space_on_source - The current value of the field.
 # The extra free space required on source vCenter Server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # double#
 sub get_required_free_disk_space_on_source {
@@ -114,7 +114,7 @@ sub get_required_free_disk_space_on_source {
 # 
 # @param required_free_disk_space_on_source  - New value for the field.
 # The extra free space required on source vCenter Server. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_required_free_disk_space_on_source {
    my ($self, %args) = @_;

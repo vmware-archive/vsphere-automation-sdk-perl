@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Guest::WindowsConfiguration``   *class*  specifies the
 #     settings for customizing a windows guest operating system. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::WindowsConfiguration;
 
@@ -49,7 +49,7 @@ sub new {
 #
 # @retval reboot - The current value of the field.
 # A value specifying the action that should be taken after customization. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_reboot {
@@ -62,7 +62,7 @@ sub get_reboot {
 # 
 # @param reboot  - New value for the field.
 # A value specifying the action that should be taken after customization. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_reboot {
    my ($self, %args) = @_;
@@ -76,7 +76,7 @@ sub set_reboot {
 # @retval sysprep - The current value of the field.
 # Customization settings like user details, administrator details, etc for the windows
 #     guest operating system. Exactly one of  ``sysprep``  or  ``sysprepXml``  must be
-#     specified. This  *field*  was added in vSphere API 7.0.0.
+#     specified. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_sysprep {
@@ -90,7 +90,7 @@ sub get_sysprep {
 # @param sysprep  - New value for the field.
 # Customization settings like user details, administrator details, etc for the windows
 #     guest operating system. Exactly one of  ``sysprep``  or  ``sysprepXml``  must be
-#     specified. This  *field*  was added in vSphere API 7.0.0.
+#     specified. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_sysprep {
    my ($self, %args) = @_;
@@ -107,7 +107,7 @@ sub set_sysprep {
 #     Check
 #     https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/update-windows-settings-and-scripts-create-your-own-answer-file-sxs
 #     Exactly one of  ``sysprep``  or  ``sysprepXml``  must be specified. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_sysprep_xml {
@@ -124,7 +124,7 @@ sub get_sysprep_xml {
 #     Check
 #     https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/update-windows-settings-and-scripts-create-your-own-answer-file-sxs
 #     Exactly one of  ``sysprep``  or  ``sysprepXml``  must be specified. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_sysprep_xml {
    my ($self, %args) = @_;
@@ -140,19 +140,20 @@ sub set_sysprep_xml {
 #
 # The  ``Com::Vmware::Vcenter::Guest::WindowsConfiguration::RebootOption``   *enumerated
 #     type*  specifies what should be done to the guest after the customization. This 
-#     *enumeration*  was added in vSphere API 7.0.0.
+#     *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Guest::WindowsConfiguration::RebootOption::REBOOT #
-#Reboot the guest after customization. This  *constant*  was added in vSphere API 7.0.0.
+#Reboot the guest after customization. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::WindowsConfiguration::RebootOption::NO_REBOOT #
 #Take no action. Leave the guest OS running after customization. This option can be used to
-# look at values for debugging purposes. This  *constant*  was added in vSphere API 7.0.0.
+# look at values for debugging purposes. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::WindowsConfiguration::RebootOption::SHUTDOWN #
-#Shutdown the guest after customization. This  *constant*  was added in vSphere API 7.0.0.
+#Shutdown the guest after customization. This  *constant*  was added in vSphere API
+# 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::WindowsConfiguration::RebootOption;
 

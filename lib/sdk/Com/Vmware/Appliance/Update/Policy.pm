@@ -355,6 +355,7 @@ sub new {
    $self->{auto_stage} = $args{'auto_stage'};
    $self->{auto_update} = $args{'auto_update'};
    $self->{manual_control} = $args{'manual_control'};
+   $self->{certificate_check} = $args{'certificate_check'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Update::Policy::Info');
    $self->set_binding_name('name' => 'com.vmware.appliance.update.policy.info');
@@ -365,6 +366,7 @@ sub new {
    $self->set_binding_field('key' => 'auto_stage', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
    $self->set_binding_field('key' => 'auto_update', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
    $self->set_binding_field('key' => 'manual_control', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
+   $self->set_binding_field('key' => 'certificate_check', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
    bless $self, $class;
    return $self;
 }
@@ -549,6 +551,40 @@ sub set_manual_control {
    return;	
 }
 
+## @method get_certificate_check ()
+# Gets the value of 'certificate_check' property.
+#
+# @retval certificate_check - The current value of the field.
+# Indicates whether certificates will be checked during patching. <p>
+# 
+# Warning: If this  *field*  is set to false, an insecure connection is made to the
+#     update repository which can potentially put the appliance security at risk.</p>
+# 
+# . This  *field*  was added in vSphere API 6.7.
+#
+# boolean#
+sub get_certificate_check {
+   my ($self, %args) = @_;
+   return $self->{'certificate_check'}; 	
+}
+
+## @method set_certificate_check ()
+# Sets the given value for 'certificate_check' property.
+# 
+# @param certificate_check  - New value for the field.
+# Indicates whether certificates will be checked during patching. <p>
+# 
+# Warning: If this  *field*  is set to false, an insecure connection is made to the
+#     update repository which can potentially put the appliance security at risk.</p>
+# 
+# . This  *field*  was added in vSphere API 6.7.
+#
+sub set_certificate_check {
+   my ($self, %args) = @_;
+   $self->{'certificate_check'} = $args{'certificate_check'}; 
+   return;	
+}
+
 
 1;
 
@@ -590,6 +626,7 @@ sub new {
    $self->{password} = $args{'password'};
    $self->{check_schedule} = $args{'check_schedule'};
    $self->{auto_stage} = $args{'auto_stage'};
+   $self->{certificate_check} = $args{'certificate_check'};
 
    $self->set_binding_class('binding_class' => 'Com::Vmware::Appliance::Update::Policy::Config');
    $self->set_binding_name('name' => 'com.vmware.appliance.update.policy.config');
@@ -598,6 +635,7 @@ sub new {
    $self->set_binding_field('key' => 'password', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::SecretType()));
    $self->set_binding_field('key' => 'check_schedule', 'value' => new Com::Vmware::Vapi::Bindings::Type::ListType(new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Appliance::Update', 'type_name' => 'Policy::Time')));
    $self->set_binding_field('key' => 'auto_stage', 'value' => new Com::Vmware::Vapi::Bindings::Type::BooleanType());
+   $self->set_binding_field('key' => 'certificate_check', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::BooleanType()));
    bless $self, $class;
    return $self;
 }
@@ -723,6 +761,40 @@ sub get_auto_stage {
 sub set_auto_stage {
    my ($self, %args) = @_;
    $self->{'auto_stage'} = $args{'auto_stage'}; 
+   return;	
+}
+
+## @method get_certificate_check ()
+# Gets the value of 'certificate_check' property.
+#
+# @retval certificate_check - The current value of the field.
+# Indicates whether certificates will be checked during patching. <p>
+# 
+# Warning: Setting this  *field*  to false will result in an insecure connection to
+#     update repository which can potentially put the appliance security at risk.</p>
+# 
+# . This  *field*  was added in vSphere API 6.7.
+#
+# Optional#
+sub get_certificate_check {
+   my ($self, %args) = @_;
+   return $self->{'certificate_check'}; 	
+}
+
+## @method set_certificate_check ()
+# Sets the given value for 'certificate_check' property.
+# 
+# @param certificate_check  - New value for the field.
+# Indicates whether certificates will be checked during patching. <p>
+# 
+# Warning: Setting this  *field*  to false will result in an insecure connection to
+#     update repository which can potentially put the appliance security at risk.</p>
+# 
+# . This  *field*  was added in vSphere API 6.7.
+#
+sub set_certificate_check {
+   my ($self, %args) = @_;
+   $self->{'certificate_check'} = $args{'certificate_check'}; 
    return;	
 }
 

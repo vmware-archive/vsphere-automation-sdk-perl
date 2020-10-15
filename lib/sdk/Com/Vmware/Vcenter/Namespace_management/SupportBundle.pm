@@ -118,7 +118,7 @@ sub new {
 # if the user can not be authenticated.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Unauthorized 
-# if the user does not have System.Read privilege.
+# if the user does not have Global.Diagnostics privilege.
 #
 sub create {
    my ($self, %args) = @_;

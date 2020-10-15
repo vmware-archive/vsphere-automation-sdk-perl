@@ -14,12 +14,12 @@
 ## @class Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services``   *interface* 
 #     contains information about the registered instances of the Key Provider Service in
-#     vCenter. This  *interface*  was added in vSphere API 7.0.0.
+#     vCenter. This  *interface*  was added in vSphere API 7.0.0.0.
 #
 #
 # Constant String::RESOURCE_TYPE #
 #The resource type for the Key Provider Service instance. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services;
 
@@ -71,7 +71,7 @@ sub new {
 
 ## @method list ()
 # Returns basic information about all registered Key Provider Service instances in this
-# vCenter. This  *method*  was added in vSphere API 7.0.0.
+# vCenter. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are TrustedAdmin.ReadTrustedHosts, System.View.
@@ -109,7 +109,7 @@ sub list {
 
 ## @method get ()
 # Returns the detailed information about a registered Key Provider Service instance in this
-# vCenter. This  *method*  was added in vSphere API 7.0.0.
+# vCenter. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are TrustedAdmin.ReadTrustedHosts, System.View.
@@ -149,7 +149,7 @@ sub get {
 
 ## @method create ()
 # Registers a Key Provider Service instance in this vCenter. This  *method*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are TrustedAdmin.ManageTrustedHosts.
@@ -193,7 +193,7 @@ sub create {
 
 ## @method delete ()
 # Removes a currently registered Key Provider Service instance from this vCenter. This 
-# *method*  was added in vSphere API 7.0.0.
+# *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are TrustedAdmin.ManageTrustedHosts.
@@ -251,7 +251,7 @@ sub delete {
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::Summary``  
 #     *class*  contains basic information about a registered Key Provider Service instance.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::Summary;
 
@@ -298,7 +298,7 @@ sub new {
 # Gets the value of 'service' property.
 #
 # @retval service - The current value of the field.
-# The service&apos;s unique identifier. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s unique identifier. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_service {
@@ -310,7 +310,7 @@ sub get_service {
 # Sets the given value for 'service' property.
 # 
 # @param service  - New value for the field.
-# The service&apos;s unique identifier. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s unique identifier. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_service {
    my ($self, %args) = @_;
@@ -322,7 +322,7 @@ sub set_service {
 # Gets the value of 'address' property.
 #
 # @retval address - The current value of the field.
-# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # NetworkAddress#
 sub get_address {
@@ -334,7 +334,7 @@ sub get_address {
 # Sets the given value for 'address' property.
 # 
 # @param address  - New value for the field.
-# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -347,7 +347,7 @@ sub set_address {
 #
 # @retval group - The current value of the field.
 # The group determines the Attestation Service instances this Key Provider Service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_group {
@@ -360,7 +360,7 @@ sub get_group {
 # 
 # @param group  - New value for the field.
 # The group determines the Attestation Service instances this Key Provider Service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_group {
    my ($self, %args) = @_;
@@ -373,7 +373,7 @@ sub set_group {
 #
 # @retval trust_authority_cluster - The current value of the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_trust_authority_cluster {
@@ -386,7 +386,7 @@ sub get_trust_authority_cluster {
 # 
 # @param trust_authority_cluster  - New value for the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_trust_authority_cluster {
    my ($self, %args) = @_;
@@ -403,7 +403,7 @@ sub set_trust_authority_cluster {
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::Info``   *class* 
 #     contains all the stored information about a registered Key Provider Service instance.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::Info;
 
@@ -450,7 +450,7 @@ sub new {
 # Gets the value of 'address' property.
 #
 # @retval address - The current value of the field.
-# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # NetworkAddress#
 sub get_address {
@@ -462,7 +462,7 @@ sub get_address {
 # Sets the given value for 'address' property.
 # 
 # @param address  - New value for the field.
-# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -475,7 +475,7 @@ sub set_address {
 #
 # @retval trusted_CA - The current value of the field.
 # The service&apos;s TLS certificate chain. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # X509CertChain#
 sub get_trusted_CA {
@@ -488,7 +488,7 @@ sub get_trusted_CA {
 # 
 # @param trusted_CA  - New value for the field.
 # The service&apos;s TLS certificate chain. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_trusted_CA {
    my ($self, %args) = @_;
@@ -501,7 +501,7 @@ sub set_trusted_CA {
 #
 # @retval group - The current value of the field.
 # The group determines the Attestation Service instances this Key Provider Service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_group {
@@ -514,7 +514,7 @@ sub get_group {
 # 
 # @param group  - New value for the field.
 # The group determines the Attestation Service instances this Key Provider Service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_group {
    my ($self, %args) = @_;
@@ -527,7 +527,7 @@ sub set_group {
 #
 # @retval trust_authority_cluster - The current value of the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider Service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_trust_authority_cluster {
@@ -540,7 +540,7 @@ sub get_trust_authority_cluster {
 # 
 # @param trust_authority_cluster  - New value for the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider Service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_trust_authority_cluster {
    my ($self, %args) = @_;
@@ -557,7 +557,7 @@ sub set_trust_authority_cluster {
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::CreateSpec``  
 #     *class*  contains the data necessary for registering a Key Provider Service instance
-#     to the environment. This  *class*  was added in vSphere API 7.0.0.
+#     to the environment. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::CreateSpec;
 
@@ -604,7 +604,7 @@ sub new {
 # Gets the value of 'address' property.
 #
 # @retval address - The current value of the field.
-# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # NetworkAddress#
 sub get_address {
@@ -616,7 +616,7 @@ sub get_address {
 # Sets the given value for 'address' property.
 # 
 # @param address  - New value for the field.
-# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.
+# The service&apos;s address. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -629,7 +629,7 @@ sub set_address {
 #
 # @retval trusted_CA - The current value of the field.
 # The service&apos;s TLS certificate chain. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # X509CertChain#
 sub get_trusted_CA {
@@ -642,7 +642,7 @@ sub get_trusted_CA {
 # 
 # @param trusted_CA  - New value for the field.
 # The service&apos;s TLS certificate chain. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_trusted_CA {
    my ($self, %args) = @_;
@@ -655,7 +655,7 @@ sub set_trusted_CA {
 #
 # @retval group - The current value of the field.
 # The group determines the Attestation Service instances this Key Provider service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_group {
@@ -668,7 +668,7 @@ sub get_group {
 # 
 # @param group  - New value for the field.
 # The group determines the Attestation Service instances this Key Provider service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_group {
    my ($self, %args) = @_;
@@ -681,7 +681,7 @@ sub set_group {
 #
 # @retval trust_authority_cluster - The current value of the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider Service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_trust_authority_cluster {
@@ -694,7 +694,7 @@ sub get_trust_authority_cluster {
 # 
 # @param trust_authority_cluster  - New value for the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider Service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_trust_authority_cluster {
    my ($self, %args) = @_;
@@ -711,7 +711,7 @@ sub set_trust_authority_cluster {
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::FilterSpec``  
 #     *class*  contains the data necessary for identifying a Key Provider Service instance.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Kms::Services::FilterSpec;
 
@@ -759,7 +759,7 @@ sub new {
 #
 # @retval services - The current value of the field.
 # A set of IDs by which to filter the services. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_services {
@@ -772,7 +772,7 @@ sub get_services {
 # 
 # @param services  - New value for the field.
 # A set of IDs by which to filter the services. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_services {
    my ($self, %args) = @_;
@@ -784,7 +784,7 @@ sub set_services {
 # Gets the value of 'address' property.
 #
 # @retval address - The current value of the field.
-# A set of address by which to filter. This  *field*  was added in vSphere API 7.0.0.
+# A set of address by which to filter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_address {
@@ -796,7 +796,7 @@ sub get_address {
 # Sets the given value for 'address' property.
 # 
 # @param address  - New value for the field.
-# A set of address by which to filter. This  *field*  was added in vSphere API 7.0.0.
+# A set of address by which to filter. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_address {
    my ($self, %args) = @_;
@@ -809,7 +809,7 @@ sub set_address {
 #
 # @retval group - The current value of the field.
 # The group determines the Attestation Service instances this Key Provider Service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_group {
@@ -822,7 +822,7 @@ sub get_group {
 # 
 # @param group  - New value for the field.
 # The group determines the Attestation Service instances this Key Provider Service can
-#     accept reports from. This  *field*  was added in vSphere API 7.0.0.
+#     accept reports from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_group {
    my ($self, %args) = @_;
@@ -835,7 +835,7 @@ sub set_group {
 #
 # @retval trust_authority_cluster - The current value of the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider Service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_trust_authority_cluster {
@@ -848,7 +848,7 @@ sub get_trust_authority_cluster {
 # 
 # @param trust_authority_cluster  - New value for the field.
 # The cluster specifies the Trust Authority Cluster this Key Provider Service belongs
-#     to. This  *field*  was added in vSphere API 7.0.0.
+#     to. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_trust_authority_cluster {
    my ($self, %args) = @_;

@@ -5,7 +5,7 @@
 #     *class*  has fields for  *string* ,  *long* ,  *double* , date time and nested
 #     messages. Only one will be used depending on the type of data sent. For  *date* , 
 #     *double*  and  *long*  it is possible to set additional formatting details. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vapi::Std::LocalizationParam;
 
@@ -59,7 +59,7 @@ sub new {
 #
 # @retval s - The current value of the field.
 # *String*  value associated with the parameter. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_s {
@@ -72,7 +72,7 @@ sub get_s {
 # 
 # @param s  - New value for the field.
 # *String*  value associated with the parameter. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_s {
    my ($self, %args) = @_;
@@ -85,7 +85,7 @@ sub set_s {
 #
 # @retval dt - The current value of the field.
 # Date and time value associated with the parameter. Use the  ``format``   *field*  to
-#     specify date and time display style. This  *field*  was added in vSphere API 7.0.0.
+#     specify date and time display style. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_dt {
@@ -98,7 +98,7 @@ sub get_dt {
 # 
 # @param dt  - New value for the field.
 # Date and time value associated with the parameter. Use the  ``format``   *field*  to
-#     specify date and time display style. This  *field*  was added in vSphere API 7.0.0.
+#     specify date and time display style. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_dt {
    my ($self, %args) = @_;
@@ -111,7 +111,7 @@ sub set_dt {
 #
 # @retval i - The current value of the field.
 # *long*  value associated with the parameter. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_i {
@@ -124,7 +124,7 @@ sub get_i {
 # 
 # @param i  - New value for the field.
 # *long*  value associated with the parameter. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_i {
    my ($self, %args) = @_;
@@ -138,7 +138,7 @@ sub set_i {
 # @retval d - The current value of the field.
 # The  *double*  value associated with the parameter. The number of displayed fractional
 #     digits is changed via  ``precision``   *field* . This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_d {
@@ -152,7 +152,7 @@ sub get_d {
 # @param d  - New value for the field.
 # The  *double*  value associated with the parameter. The number of displayed fractional
 #     digits is changed via  ``precision``   *field* . This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_d {
    my ($self, %args) = @_;
@@ -169,7 +169,7 @@ sub set_d {
 #     It can also be used for proper handling of pluralization and gender forms in
 #     localization. Recursive  ``Com::Vmware::Vapi::Std::NestedLocalizableMessage`` 
 #     instances can be used for localizing short lists of items. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_l {
@@ -186,7 +186,7 @@ sub get_l {
 #     It can also be used for proper handling of pluralization and gender forms in
 #     localization. Recursive  ``Com::Vmware::Vapi::Std::NestedLocalizableMessage`` 
 #     instances can be used for localizing short lists of items. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_l {
    my ($self, %args) = @_;
@@ -200,7 +200,7 @@ sub set_l {
 # @retval format - The current value of the field.
 # Format associated with the date and time value in  ``dt``   *field* . The 
 #     *enumeration value*   ``SHORT_DATETIME``  will be used as default. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_format {
@@ -214,7 +214,7 @@ sub get_format {
 # @param format  - New value for the field.
 # Format associated with the date and time value in  ``dt``   *field* . The 
 #     *enumeration value*   ``SHORT_DATETIME``  will be used as default. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_format {
    my ($self, %args) = @_;
@@ -227,7 +227,7 @@ sub set_format {
 #
 # @retval precision - The current value of the field.
 # Number of fractional digits to include in formatted  *double*  value. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_precision {
@@ -240,7 +240,7 @@ sub get_precision {
 # 
 # @param precision  - New value for the field.
 # Number of fractional digits to include in formatted  *double*  value. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_precision {
    my ($self, %args) = @_;
@@ -258,57 +258,57 @@ sub set_precision {
 #     lists possible date and time formatting options. It combines the Unicode CLDR format
 #     types - full, long, medium and short with 3 different presentations - date only, time
 #     only and combined date and time presentation. This  *enumeration*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::SHORT_DATE #
 #The date and time value will be formatted as short date, for example <i>2019-01-28</i>.
-# This  *constant*  was added in vSphere API 7.0.0.
+# This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::MED_DATE #
 #The date and time value will be formatted as medium date, for example <i>2019 Jan 28</i>.
-# This  *constant*  was added in vSphere API 7.0.0.
+# This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::LONG_DATE #
 #The date and time value will be formatted as long date, for example <i>2019 Jan 28</i>.
-# This  *constant*  was added in vSphere API 7.0.0.
+# This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::FULL_DATE #
 #The date and time value will be formatted as full date, for example <i>2019 Jan 28,
-# Mon</i>. This  *constant*  was added in vSphere API 7.0.0.
+# Mon</i>. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::SHORT_TIME #
 #The date and time value will be formatted as short time, for example <i>12:59</i>. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::MED_TIME #
 #The date and time value will be formatted as medium time, for example <i>12:59:01</i>.
-# This  *constant*  was added in vSphere API 7.0.0.
+# This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::LONG_TIME #
 #The date and time value will be formatted as long time, for example <i>12:59:01 Z</i>.
-# This  *constant*  was added in vSphere API 7.0.0.
+# This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::FULL_TIME #
 #The date and time value will be formatted as full time, for example <i>12:59:01 Z</i>.
-# This  *constant*  was added in vSphere API 7.0.0.
+# This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::SHORT_DATE_TIME #
 #The date and time value will be formatted as short date and time, for example
-# <i>2019-01-28 12:59</i>. This  *constant*  was added in vSphere API 7.0.0.
+# <i>2019-01-28 12:59</i>. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::MED_DATE_TIME #
 #The date and time value will be formatted as medium date and time, for example <i>2019 Jan
-# 28 12:59:01</i>. This  *constant*  was added in vSphere API 7.0.0.
+# 28 12:59:01</i>. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::LONG_DATE_TIME #
 #The date and time value will be formatted as long date and time, for example <i>2019 Jan
-# 28 12:59:01 Z</i>. This  *constant*  was added in vSphere API 7.0.0.
+# 28 12:59:01 Z</i>. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat::FULL_DATE_TIME #
 #The date and time value will be formatted as full date and time, for example <i>2019 Jan
-# 28, Mon 12:59:01 Z</i>. This  *constant*  was added in vSphere API 7.0.0.
+# 28, Mon 12:59:01 Z</i>. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vapi::Std::LocalizationParam::DateTimeFormat;
 

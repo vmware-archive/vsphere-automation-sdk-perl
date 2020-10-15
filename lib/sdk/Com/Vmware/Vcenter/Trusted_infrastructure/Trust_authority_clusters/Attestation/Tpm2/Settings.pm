@@ -15,7 +15,7 @@
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings``
 #     *interface*  provides  *methods*  to get or update settings related to the TPM 2.0
-#     attestation protocol behavior. This  *interface*  was added in vSphere API 7.0.0.
+#     attestation protocol behavior. This  *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings;
@@ -73,7 +73,7 @@ sub new {
 }
 
 ## @method get_task ()
-# Return the TPM 2.0 protocol settings. This  *method*  was added in vSphere API 7.0.0.
+# Return the TPM 2.0 protocol settings. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -109,7 +109,7 @@ sub get_task {
 
 
 ## @method update_task ()
-# Set the TPM 2.0 protocol settings. This  *method*  was added in vSphere API 7.0.0.
+# Set the TPM 2.0 protocol settings. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] The id of the cluster on which the operation will be executed.
 # The value must be an identifier for the resource type
@@ -156,24 +156,24 @@ sub update_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health``
 #     *enumerated type*  is indicator for the consistency of the hosts status in the
-#     cluster. This  *enumeration*  was added in vSphere API 7.0.0.
+#     cluster. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health::NONE #
-#No status available. This  *constant*  was added in vSphere API 7.0.0.
+#No status available. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health::OK #
 #Each host in the cluster is in consistent state with the rest hosts in the cluster. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health::WARNING #
 #Attestation is functioning, however there is an issue that requires attention. This 
-# *constant*  was added in vSphere API 7.0.0.
+# *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health::ERROR #
 #Not all hosts in the cluster are in consistent state. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health;
 
@@ -225,7 +225,7 @@ sub new {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Info``
 #     *class*  contains information that describes the TPM 2.0 protocol settings. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Info;
 
@@ -279,7 +279,7 @@ sub new {
 #     proceed with attestation if the endorsement key has been added to the list of
 #     configured trusted endorsement keys.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_require_endorsement_keys {
@@ -298,7 +298,7 @@ sub get_require_endorsement_keys {
 #     proceed with attestation if the endorsement key has been added to the list of
 #     configured trusted endorsement keys.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_require_endorsement_keys {
    my ($self, %args) = @_;
@@ -318,7 +318,7 @@ sub set_require_endorsement_keys {
 #     certificates. Only endorsement key certificates that are signed by a trusted TPM CA
 #     certificate will be able to successfully attest.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_require_certificate_validation {
@@ -338,7 +338,7 @@ sub get_require_certificate_validation {
 #     certificates. Only endorsement key certificates that are signed by a trusted TPM CA
 #     certificate will be able to successfully attest.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_require_certificate_validation {
    my ($self, %args) = @_;
@@ -351,7 +351,7 @@ sub set_require_certificate_validation {
 #
 # @retval health - The current value of the field.
 # A health indicator which indicates whether each host in the cluster has the same
-#     attestation settings. This  *field*  was added in vSphere API 7.0.0.
+#     attestation settings. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Health#
 sub get_health {
@@ -364,7 +364,7 @@ sub get_health {
 # 
 # @param health  - New value for the field.
 # A health indicator which indicates whether each host in the cluster has the same
-#     attestation settings. This  *field*  was added in vSphere API 7.0.0.
+#     attestation settings. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_health {
    my ($self, %args) = @_;
@@ -386,7 +386,7 @@ sub set_health {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_details {
@@ -408,7 +408,7 @@ sub get_details {
 #     :attr:`Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::Health.NONE`
 #     , this member will provide an actionable description of the issues present.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_details {
    my ($self, %args) = @_;
@@ -426,7 +426,7 @@ sub set_details {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::UpdateSpec``
 #     *class*  contains information that describes changes to the TPM 2.0 protocol settings.
-#     This  *class*  was added in vSphere API 7.0.0.
+#     This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Attestation::Tpm2::Settings::UpdateSpec;
 
@@ -470,7 +470,7 @@ sub new {
 #
 # @retval require_endorsement_keys - The current value of the field.
 # Require registered TPM endorsement keys. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_require_endorsement_keys {
@@ -483,7 +483,7 @@ sub get_require_endorsement_keys {
 # 
 # @param require_endorsement_keys  - New value for the field.
 # Require registered TPM endorsement keys. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_require_endorsement_keys {
    my ($self, %args) = @_;
@@ -496,7 +496,7 @@ sub set_require_endorsement_keys {
 #
 # @retval require_certificate_validation - The current value of the field.
 # Require TPM endorsement key certificate validation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_require_certificate_validation {
@@ -509,7 +509,7 @@ sub get_require_certificate_validation {
 # 
 # @param require_certificate_validation  - New value for the field.
 # Require TPM endorsement key certificate validation. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_require_certificate_validation {
    my ($self, %args) = @_;

@@ -4,7 +4,7 @@
 # The  ``Com::Vmware::Vcenter::Guest::WindowsSysprep``   *class*  provides all the
 #     settings like user details, administrator details, etc that need to applied for a
 #     windows guest operating system during customization. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::WindowsSysprep;
 
@@ -60,7 +60,7 @@ sub new {
 #     customization completes. The logon may be driven by 
 #     :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.auto_logon`  setting. These commands
 #     are directly mapped to the GuiRunOnce key in the. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_gui_run_once_commands {
@@ -81,7 +81,7 @@ sub get_gui_run_once_commands {
 #     customization completes. The logon may be driven by 
 #     :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.auto_logon`  setting. These commands
 #     are directly mapped to the GuiRunOnce key in the. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_gui_run_once_commands {
    my ($self, %args) = @_;
@@ -94,7 +94,7 @@ sub set_gui_run_once_commands {
 #
 # @retval user_data - The current value of the field.
 # Personal data pertaining to the owner of the virtual machine. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # UserData#
 sub get_user_data {
@@ -107,7 +107,7 @@ sub get_user_data {
 # 
 # @param user_data  - New value for the field.
 # Personal data pertaining to the owner of the virtual machine. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_user_data {
    my ($self, %args) = @_;
@@ -120,7 +120,7 @@ sub set_user_data {
 #
 # @retval domain - The current value of the field.
 # Information needed to join a workgroup or domain. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_domain {
@@ -133,7 +133,7 @@ sub get_domain {
 # 
 # @param domain  - New value for the field.
 # Information needed to join a workgroup or domain. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_domain {
    my ($self, %args) = @_;
@@ -146,7 +146,7 @@ sub set_domain {
 #
 # @retval gui_unattended - The current value of the field.
 # Information related to unattended installation. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # GuiUnattended#
 sub get_gui_unattended {
@@ -159,7 +159,7 @@ sub get_gui_unattended {
 # 
 # @param gui_unattended  - New value for the field.
 # Information related to unattended installation. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_gui_unattended {
    my ($self, %args) = @_;

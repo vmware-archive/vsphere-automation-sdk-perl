@@ -3,7 +3,7 @@
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::DhcpConfigInfo``   *class*  specifies when
 #     Dynamic Host Configuration Protocol is enabled. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::DhcpConfigInfo;
 
@@ -47,7 +47,7 @@ sub new {
 #
 # @retval ipv4_enabled - The current value of the field.
 # True if IPv4 DHCP is enabled, false otherwise. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # boolean#
 sub get_ipv4_enabled {
@@ -60,7 +60,7 @@ sub get_ipv4_enabled {
 # 
 # @param ipv4_enabled  - New value for the field.
 # True if IPv4 DHCP is enabled, false otherwise. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_ipv4_enabled {
    my ($self, %args) = @_;
@@ -73,7 +73,7 @@ sub set_ipv4_enabled {
 #
 # @retval ipv6_enabled - The current value of the field.
 # True if IPv6 DHCP is enabled, false otherwise. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # boolean#
 sub get_ipv6_enabled {
@@ -86,7 +86,7 @@ sub get_ipv6_enabled {
 # 
 # @param ipv6_enabled  - New value for the field.
 # True if IPv6 DHCP is enabled, false otherwise. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_ipv6_enabled {
    my ($self, %args) = @_;

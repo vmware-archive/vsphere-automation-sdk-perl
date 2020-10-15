@@ -2,7 +2,8 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm::Guest::DnsConfigInfo``   *class*  describes the
-#     configuration of RFC 1034 DNS settings. This  *class*  was added in vSphere API 7.0.0.
+#     configuration of RFC 1034 DNS settings. This  *class*  was added in vSphere API
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::DnsConfigInfo;
 
@@ -51,7 +52,7 @@ sub new {
 #     colon separates each field (:). For example, 2001:DB8:101::230:6eff:fe04:d9ff. The
 #     address can also consist of the symbol &apos;::&apos; to represent multiple 16-bit
 #     groups of contiguous 0&apos;s only once in an address as described in RFC 2373. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_ip_addresses {
@@ -69,7 +70,7 @@ sub get_ip_addresses {
 #     colon separates each field (:). For example, 2001:DB8:101::230:6eff:fe04:d9ff. The
 #     address can also consist of the symbol &apos;::&apos; to represent multiple 16-bit
 #     groups of contiguous 0&apos;s only once in an address as described in RFC 2373. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_ip_addresses {
    my ($self, %args) = @_;
@@ -82,7 +83,7 @@ sub set_ip_addresses {
 #
 # @retval search_domains - The current value of the field.
 # The domain in which to search for hosts, placed in order of preference. These are the
-#     domain name portion of the DNS names. This  *field*  was added in vSphere API 7.0.0.
+#     domain name portion of the DNS names. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_search_domains {
@@ -95,7 +96,7 @@ sub get_search_domains {
 # 
 # @param search_domains  - New value for the field.
 # The domain in which to search for hosts, placed in order of preference. These are the
-#     domain name portion of the DNS names. This  *field*  was added in vSphere API 7.0.0.
+#     domain name portion of the DNS names. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_search_domains {
    my ($self, %args) = @_;

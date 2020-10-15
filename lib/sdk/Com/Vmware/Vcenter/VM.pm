@@ -157,7 +157,7 @@ sub create {
 # 
 # </p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are Datastore.AllocateSpace, VirtualMachine.Inventory.CreateFromExisting, Resource.AssignVMToPool, VirtualMachine.Provisioning.Clone.
@@ -232,7 +232,7 @@ sub clone_task {
 # 
 # </p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are Datastore.AllocateSpace, VirtualMachine.Inventory.CreateFromExisting, Resource.AssignVMToPool, VirtualMachine.Provisioning.Clone.
@@ -309,7 +309,7 @@ sub clone {
 # 
 # </p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are Resource.AssignVMToPool, Resource.ColdMigrate.
@@ -371,7 +371,7 @@ sub relocate_task {
 # 
 # </p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # Note:
 # Privileges required for this operation are Resource.AssignVMToPool, Resource.ColdMigrate.
@@ -2360,7 +2360,7 @@ sub set_scsi_adapters {
 #
 # The  ``Com::Vmware::Vcenter::VM::GuestCustomizationSpec``   *class*  contains
 #     information required to customize a virtual machine when deploying it. This  *class* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::VM::GuestCustomizationSpec;
 
@@ -2402,7 +2402,7 @@ sub new {
 #
 # @retval name - The current value of the field.
 # Name of the customization specification. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_name {
@@ -2415,7 +2415,7 @@ sub get_name {
 # 
 # @param name  - New value for the field.
 # Name of the customization specification. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -2430,7 +2430,7 @@ sub set_name {
 ## @class Com::Vmware::Vcenter::VM::DiskCloneSpec
 #
 #
-# Document-based disk clone spec. This  *class*  was added in vSphere API 7.0.0.
+# Document-based disk clone spec. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::VM::DiskCloneSpec;
 
@@ -2471,7 +2471,7 @@ sub new {
 # Gets the value of 'datastore' property.
 #
 # @retval datastore - The current value of the field.
-# Destination datastore to clone disk. This  *field*  was added in vSphere API 7.0.0.
+# Destination datastore to clone disk. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_datastore {
@@ -2483,7 +2483,7 @@ sub get_datastore {
 # Sets the given value for 'datastore' property.
 # 
 # @param datastore  - New value for the field.
-# Destination datastore to clone disk. This  *field*  was added in vSphere API 7.0.0.
+# Destination datastore to clone disk. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -2500,7 +2500,7 @@ sub set_datastore {
 #
 # The  ``Com::Vmware::Vcenter::VM::ClonePlacementSpec``   *class*  contains information
 #     used to place a clone of a virtual machine onto resources within the vCenter
-#     inventory. This  *class*  was added in vSphere API 7.0.0.
+#     inventory. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::VM::ClonePlacementSpec;
 
@@ -2550,7 +2550,7 @@ sub new {
 #
 # @retval folder - The current value of the field.
 # Virtual machine folder into which the cloned virtual machine should be placed. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_folder {
@@ -2563,7 +2563,7 @@ sub get_folder {
 # 
 # @param folder  - New value for the field.
 # Virtual machine folder into which the cloned virtual machine should be placed. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_folder {
    my ($self, %args) = @_;
@@ -2576,7 +2576,7 @@ sub set_folder {
 #
 # @retval resource_pool - The current value of the field.
 # Resource pool into which the cloned virtual machine should be placed. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_resource_pool {
@@ -2589,7 +2589,7 @@ sub get_resource_pool {
 # 
 # @param resource_pool  - New value for the field.
 # Resource pool into which the cloned virtual machine should be placed. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_resource_pool {
    my ($self, %args) = @_;
@@ -2611,7 +2611,7 @@ sub set_resource_pool {
 # If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_host {
@@ -2633,7 +2633,7 @@ sub get_host {
 # If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_host {
    my ($self, %args) = @_;
@@ -2655,7 +2655,7 @@ sub set_host {
 # If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_cluster {
@@ -2677,7 +2677,7 @@ sub get_cluster {
 # If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -2692,7 +2692,7 @@ sub set_cluster {
 # Datastore on which the cloned virtual machine&apos;s configuration state should be
 #     stored. This datastore will also be used for any virtual disks that are created as
 #     part of the virtual machine clone operation unless individually overridden. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_datastore {
@@ -2707,7 +2707,7 @@ sub get_datastore {
 # Datastore on which the cloned virtual machine&apos;s configuration state should be
 #     stored. This datastore will also be used for any virtual disks that are created as
 #     part of the virtual machine clone operation unless individually overridden. This 
-#     *field*  was added in vSphere API 7.0.0.
+#     *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -2722,7 +2722,7 @@ sub set_datastore {
 ## @class Com::Vmware::Vcenter::VM::CloneSpec
 #
 #
-# Document-based clone spec. This  *class*  was added in vSphere API 7.0.0.
+# Document-based clone spec. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::VM::CloneSpec;
 
@@ -2775,7 +2775,7 @@ sub new {
 # Gets the value of 'source' property.
 #
 # @retval source - The current value of the field.
-# Virtual machine to clone from. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine to clone from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_source {
@@ -2787,7 +2787,7 @@ sub get_source {
 # Sets the given value for 'source' property.
 # 
 # @param source  - New value for the field.
-# Virtual machine to clone from. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine to clone from. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_source {
    my ($self, %args) = @_;
@@ -2799,7 +2799,7 @@ sub set_source {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Virtual machine name. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine name. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -2811,7 +2811,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Virtual machine name. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine name. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -2823,7 +2823,8 @@ sub set_name {
 # Gets the value of 'placement' property.
 #
 # @retval placement - The current value of the field.
-# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine placement information. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # Optional#
 sub get_placement {
@@ -2835,7 +2836,8 @@ sub get_placement {
 # Sets the given value for 'placement' property.
 # 
 # @param placement  - New value for the field.
-# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine placement information. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -2847,7 +2849,7 @@ sub set_placement {
 # Gets the value of 'disks_to_remove' property.
 #
 # @retval disks_to_remove - The current value of the field.
-# Set of Disks to Remove. This  *field*  was added in vSphere API 7.0.0.
+# Set of Disks to Remove. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_disks_to_remove {
@@ -2859,7 +2861,7 @@ sub get_disks_to_remove {
 # Sets the given value for 'disks_to_remove' property.
 # 
 # @param disks_to_remove  - New value for the field.
-# Set of Disks to Remove. This  *field*  was added in vSphere API 7.0.0.
+# Set of Disks to Remove. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_disks_to_remove {
    my ($self, %args) = @_;
@@ -2871,7 +2873,7 @@ sub set_disks_to_remove {
 # Gets the value of 'disks_to_update' property.
 #
 # @retval disks_to_update - The current value of the field.
-# Map of Disks to Update. This  *field*  was added in vSphere API 7.0.0.
+# Map of Disks to Update. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_disks_to_update {
@@ -2883,7 +2885,7 @@ sub get_disks_to_update {
 # Sets the given value for 'disks_to_update' property.
 # 
 # @param disks_to_update  - New value for the field.
-# Map of Disks to Update. This  *field*  was added in vSphere API 7.0.0.
+# Map of Disks to Update. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_disks_to_update {
    my ($self, %args) = @_;
@@ -2896,7 +2898,7 @@ sub set_disks_to_update {
 #
 # @retval power_on - The current value of the field.
 # Attempt to perform a  :attr:`Com::Vmware::Vcenter::VM::CloneSpec.power_on`  after
-#     clone. This  *field*  was added in vSphere API 7.0.0.
+#     clone. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_power_on {
@@ -2909,7 +2911,7 @@ sub get_power_on {
 # 
 # @param power_on  - New value for the field.
 # Attempt to perform a  :attr:`Com::Vmware::Vcenter::VM::CloneSpec.power_on`  after
-#     clone. This  *field*  was added in vSphere API 7.0.0.
+#     clone. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_power_on {
    my ($self, %args) = @_;
@@ -2922,7 +2924,7 @@ sub set_power_on {
 #
 # @retval guest_customization_spec - The current value of the field.
 # Guest customization spec to apply to the virtual machine after the virtual machine is
-#     deployed. This  *field*  was added in vSphere API 7.0.0.
+#     deployed. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_guest_customization_spec {
@@ -2935,7 +2937,7 @@ sub get_guest_customization_spec {
 # 
 # @param guest_customization_spec  - New value for the field.
 # Guest customization spec to apply to the virtual machine after the virtual machine is
-#     deployed. This  *field*  was added in vSphere API 7.0.0.
+#     deployed. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_guest_customization_spec {
    my ($self, %args) = @_;
@@ -2950,7 +2952,7 @@ sub set_guest_customization_spec {
 ## @class Com::Vmware::Vcenter::VM::DiskRelocateSpec
 #
 #
-# Document-based disk relocate spec. This  *class*  was added in vSphere API 7.0.0.
+# Document-based disk relocate spec. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::VM::DiskRelocateSpec;
 
@@ -2991,7 +2993,8 @@ sub new {
 # Gets the value of 'datastore' property.
 #
 # @retval datastore - The current value of the field.
-# Destination datastore to relocate disk. This  *field*  was added in vSphere API 7.0.0.
+# Destination datastore to relocate disk. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # Optional#
 sub get_datastore {
@@ -3003,7 +3006,8 @@ sub get_datastore {
 # Sets the given value for 'datastore' property.
 # 
 # @param datastore  - New value for the field.
-# Destination datastore to relocate disk. This  *field*  was added in vSphere API 7.0.0.
+# Destination datastore to relocate disk. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -3020,7 +3024,7 @@ sub set_datastore {
 #
 # The  ``Com::Vmware::Vcenter::VM::RelocatePlacementSpec``   *class*  contains
 #     information used to change the placement of an existing virtual machine within the
-#     vCenter inventory. This  *class*  was added in vSphere API 7.0.0.
+#     vCenter inventory. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::VM::RelocatePlacementSpec;
 
@@ -3070,7 +3074,7 @@ sub new {
 #
 # @retval folder - The current value of the field.
 # Virtual machine folder into which the virtual machine should be placed. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_folder {
@@ -3083,7 +3087,7 @@ sub get_folder {
 # 
 # @param folder  - New value for the field.
 # Virtual machine folder into which the virtual machine should be placed. This  *field* 
-#     was added in vSphere API 7.0.0.
+#     was added in vSphere API 7.0.0.0.
 #
 sub set_folder {
    my ($self, %args) = @_;
@@ -3096,7 +3100,7 @@ sub set_folder {
 #
 # @retval resource_pool - The current value of the field.
 # Resource pool into which the virtual machine should be placed. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_resource_pool {
@@ -3109,7 +3113,7 @@ sub get_resource_pool {
 # 
 # @param resource_pool  - New value for the field.
 # Resource pool into which the virtual machine should be placed. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_resource_pool {
    my ($self, %args) = @_;
@@ -3131,7 +3135,7 @@ sub set_resource_pool {
 # If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_host {
@@ -3153,7 +3157,7 @@ sub get_host {
 # If  ``host``  and  ``cluster``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_host {
    my ($self, %args) = @_;
@@ -3175,7 +3179,7 @@ sub set_host {
 # If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_cluster {
@@ -3197,7 +3201,7 @@ sub get_cluster {
 # If  ``cluster``  and  ``host``  are both specified,  ``host``  must be a member of 
 #     ``cluster`` .</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_cluster {
    my ($self, %args) = @_;
@@ -3212,7 +3216,7 @@ sub set_cluster {
 # Datastore on which the virtual machine&apos;s configuration state should be stored.
 #     This datastore will also be used for any virtual disks that are associated with the
 #     virtual machine, unless individually overridden. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 # Optional#
 sub get_datastore {
@@ -3227,7 +3231,7 @@ sub get_datastore {
 # Datastore on which the virtual machine&apos;s configuration state should be stored.
 #     This datastore will also be used for any virtual disks that are associated with the
 #     virtual machine, unless individually overridden. This  *field*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 #
 sub set_datastore {
    my ($self, %args) = @_;
@@ -3242,7 +3246,7 @@ sub set_datastore {
 ## @class Com::Vmware::Vcenter::VM::RelocateSpec
 #
 #
-# Document-based relocate spec. This  *class*  was added in vSphere API 7.0.0.
+# Document-based relocate spec. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::VM::RelocateSpec;
 
@@ -3285,7 +3289,8 @@ sub new {
 # Gets the value of 'placement' property.
 #
 # @retval placement - The current value of the field.
-# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine placement information. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # Optional#
 sub get_placement {
@@ -3297,7 +3302,8 @@ sub get_placement {
 # Sets the given value for 'placement' property.
 # 
 # @param placement  - New value for the field.
-# Virtual machine placement information. This  *field*  was added in vSphere API 7.0.0.
+# Virtual machine placement information. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_placement {
    my ($self, %args) = @_;
@@ -3309,7 +3315,7 @@ sub set_placement {
 # Gets the value of 'disks' property.
 #
 # @retval disks - The current value of the field.
-# Individual disk relocation map. This  *field*  was added in vSphere API 7.0.0.
+# Individual disk relocation map. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_disks {
@@ -3321,7 +3327,7 @@ sub get_disks {
 # Sets the given value for 'disks' property.
 # 
 # @param disks  - New value for the field.
-# Individual disk relocation map. This  *field*  was added in vSphere API 7.0.0.
+# Individual disk relocation map. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_disks {
    my ($self, %args) = @_;

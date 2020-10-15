@@ -81,7 +81,7 @@ sub new {
 # if the system reports an error while responding to the request.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::AlreadyExists 
-# if the datacenter with the same name is already present.
+# if a datacenter with the same name is already present.
 #
 # @throw Com::Vmware::Vapi::Std::Errors::InvalidArgument 
 # if the datacenter name is empty or invalid as per the underlying implementation.
@@ -201,8 +201,7 @@ sub list {
 # . The value must be str.
 #
 # @retval 
-# The  class Com::Vmware::Vcenter::Datacenter::Info  instances that corresponds to the 
-#     ``datacenter`` .
+# Information about the datacenter associated with  ``datacenter`` .
 # The return type will be Com::Vmware::Vcenter::Datacenter::Info
 #
 # @throw Com::Vmware::Vapi::Std::Errors::Error 

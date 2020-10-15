@@ -7,7 +7,7 @@
 #     that VirtualCenter stores on the target virtual disk. For more information about
 #     performing unattended installation, check
 #     https://technet.microsoft.com/en-us/library/cc771830(v=ws.10).aspx. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::Domain;
 
@@ -65,7 +65,7 @@ sub new {
 #
 # @retval type - The current value of the field.
 # The type of network to join after the customization. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Type#
 sub get_type {
@@ -78,7 +78,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # The type of network to join after the customization. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -91,7 +91,7 @@ sub set_type {
 #
 # @retval workgroup - The current value of the field.
 # The workgroup that the virtual machine should join. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # optional#
 sub get_workgroup {
@@ -104,7 +104,7 @@ sub get_workgroup {
 # 
 # @param workgroup  - New value for the field.
 # The workgroup that the virtual machine should join. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_workgroup {
    my ($self, %args) = @_;
@@ -117,7 +117,7 @@ sub set_workgroup {
 #
 # @retval domain - The current value of the field.
 # The domain to which the virtual machine should be joined. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # optional#
 sub get_domain {
@@ -130,7 +130,7 @@ sub get_domain {
 # 
 # @param domain  - New value for the field.
 # The domain to which the virtual machine should be joined. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_domain {
    my ($self, %args) = @_;
@@ -143,7 +143,7 @@ sub set_domain {
 #
 # @retval domain_username - The current value of the field.
 # The domain user that has permission to join the domain after virtual machine is
-#     joined. This  *field*  was added in vSphere API 7.0.0.
+#     joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_domain_username {
@@ -156,7 +156,7 @@ sub get_domain_username {
 # 
 # @param domain_username  - New value for the field.
 # The domain user that has permission to join the domain after virtual machine is
-#     joined. This  *field*  was added in vSphere API 7.0.0.
+#     joined. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain_username {
    my ($self, %args) = @_;
@@ -170,7 +170,7 @@ sub set_domain_username {
 # @retval domain_password - The current value of the field.
 # The domain user password that has permission to join the 
 #     :attr:`Com::Vmware::Vcenter::Guest::Domain.domain_username`  after customization. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 # optional#
 sub get_domain_password {
@@ -184,7 +184,7 @@ sub get_domain_password {
 # @param domain_password  - New value for the field.
 # The domain user password that has permission to join the 
 #     :attr:`Com::Vmware::Vcenter::Guest::Domain.domain_username`  after customization. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_domain_password {
    my ($self, %args) = @_;
@@ -200,17 +200,17 @@ sub set_domain_password {
 #
 # The  ``Com::Vmware::Vcenter::Guest::Domain::Type``   *enumerated type*  defines the
 #     types of network the virtual machine should join to after the customization is
-#     completed. This  *enumeration*  was added in vSphere API 7.0.0.
+#     completed. This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Guest::Domain::Type::WORKGROUP #
 #The virtual machine should be be joined to a workgroup. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::Domain::Type::DOMAIN #
 #The virtual machine should be be joined to a domain. This  *constant*  was added in
-# vSphere API 7.0.0.
+# vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::Domain::Type;
 

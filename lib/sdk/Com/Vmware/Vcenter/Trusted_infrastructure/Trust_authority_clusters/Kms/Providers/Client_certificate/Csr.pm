@@ -14,7 +14,7 @@
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Client_certificate::Csr``
 #     *interface*  provides  *methods*  to create a certificate signing request(CSR). This 
-#     *interface*  was added in vSphere API 7.0.0.
+#     *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Client_certificate::Csr;
@@ -82,7 +82,7 @@ sub new {
 # 
 #  Calling the API repeatedly will result in a generating a new CSR each time.</p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -133,7 +133,7 @@ sub create_task {
 # 
 # </p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -196,7 +196,7 @@ sub get_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Client_certificate::Csr::Info``
 #     *class*  contains the certificate signing request. This  *class*  was added in vSphere
-#     API 7.0.0.
+#     API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::Client_certificate::Csr::Info;
 
@@ -237,7 +237,7 @@ sub new {
 # Gets the value of 'csr' property.
 #
 # @retval csr - The current value of the field.
-# Certificate signing request. This  *field*  was added in vSphere API 7.0.0.
+# Certificate signing request. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_csr {
@@ -249,7 +249,7 @@ sub get_csr {
 # Sets the given value for 'csr' property.
 # 
 # @param csr  - New value for the field.
-# Certificate signing request. This  *field*  was added in vSphere API 7.0.0.
+# Certificate signing request. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_csr {
    my ($self, %args) = @_;

@@ -8,6 +8,7 @@
 #
 #
 
+#use Com::Vmware::Cis::Task;
 #use Com::Vmware::Esx::Settings;
 #use Com::Vmware::Vapi::Std::Errors;
 
@@ -161,10 +162,21 @@ sub new {
    $class = ref($class) || $class;
    my $validatorList = [];
 
-      
+         $validatorList = [
+         new Com::Vmware::Vapi::Data::UnionValidator(
+         'discriminant_name' => 'status',
+         'case_map' => {
+               'OK' => ['progress'],
+               'ERROR' => ['progress'],
+               'SKIPPED' => [],
+               'TIMED_OUT' => [],
+            }),
+      ];
+
 
    my $self = $class->SUPER::new('validator_list' => $validatorList, %args);
    $self->{status} = $args{'status'};
+   $self->{progress} = $args{'progress'};
    $self->{start_time} = $args{'start_time'};
    $self->{end_time} = $args{'end_time'};
    $self->{notifications} = $args{'notifications'};
@@ -172,6 +184,7 @@ sub new {
    $self->set_binding_class('binding_class' => 'Com::Vmware::Esx::Settings::Clusters::Software::Reports::LastApplyResult::ApplyStatus');
    $self->set_binding_name('name' => 'com.vmware.esx.settings.clusters.software.reports.last_apply_result.apply_status');
    $self->set_binding_field('key' => 'status', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Esx::Settings::Clusters::Software::Reports', 'type_name' => 'LastApplyResult::ApplyStatus::Status'));
+   $self->set_binding_field('key' => 'progress', 'value' => new Com::Vmware::Vapi::Bindings::Type::OptionalType('element_type' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Cis::Task', 'type_name' => 'Progress')));
    $self->set_binding_field('key' => 'start_time', 'value' => new Com::Vmware::Vapi::Bindings::Type::DateTimeType());
    $self->set_binding_field('key' => 'end_time', 'value' => new Com::Vmware::Vapi::Bindings::Type::DateTimeType());
    $self->set_binding_field('key' => 'notifications', 'value' => new Com::Vmware::Vapi::Bindings::Type::ReferenceType('module_ctx' => 'Com::Vmware::Esx::Settings', 'type_name' => 'Notifications'));
@@ -200,6 +213,30 @@ sub get_status {
 sub set_status {
    my ($self, %args) = @_;
    $self->{'status'} = $args{'status'}; 
+   return;	
+}
+
+## @method get_progress ()
+# Gets the value of 'progress' property.
+#
+# @retval progress - The current value of the field.
+# Progress of the operation. This  *field*  was added in vSphere API 7.0.1.0.
+#
+# Optional#
+sub get_progress {
+   my ($self, %args) = @_;
+   return $self->{'progress'}; 	
+}
+
+## @method set_progress ()
+# Sets the given value for 'progress' property.
+# 
+# @param progress  - New value for the field.
+# Progress of the operation. This  *field*  was added in vSphere API 7.0.1.0.
+#
+sub set_progress {
+   my ($self, %args) = @_;
+   $self->{'progress'} = $args{'progress'}; 
    return;	
 }
 

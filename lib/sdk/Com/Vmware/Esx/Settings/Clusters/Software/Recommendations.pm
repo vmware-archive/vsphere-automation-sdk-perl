@@ -394,7 +394,8 @@ sub set_current_series_recommendation {
 # Gets the value of 'base_image_explanation_details' property.
 #
 # @retval base_image_explanation_details - The current value of the field.
-# Details about why some base images are excluded in recommendation.
+# Details about why some base images are excluded in latest and current series
+#     recommendations. This is not applicable for specified base image recommendations.
 #
 # List#
 sub get_base_image_explanation_details {
@@ -406,7 +407,8 @@ sub get_base_image_explanation_details {
 # Sets the given value for 'base_image_explanation_details' property.
 # 
 # @param base_image_explanation_details  - New value for the field.
-# Details about why some base images are excluded in recommendation.
+# Details about why some base images are excluded in latest and current series
+#     recommendations. This is not applicable for specified base image recommendations.
 #
 sub set_base_image_explanation_details {
    my ($self, %args) = @_;

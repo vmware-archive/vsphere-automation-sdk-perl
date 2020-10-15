@@ -120,7 +120,7 @@ sub get {
 #
 #
 # Describes the virtual disk backing a local guest disk. This  *class*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Vm::Guest::LocalFilesystem::VirtualDiskMapping;
 
@@ -161,7 +161,7 @@ sub new {
 # Gets the value of 'disk' property.
 #
 # @retval disk - The current value of the field.
-# The virtual disk. This  *field*  was added in vSphere API 7.0.0.
+# The virtual disk. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_disk {
@@ -173,7 +173,7 @@ sub get_disk {
 # Sets the given value for 'disk' property.
 # 
 # @param disk  - New value for the field.
-# The virtual disk. This  *field*  was added in vSphere API 7.0.0.
+# The virtual disk. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_disk {
    my ($self, %args) = @_;
@@ -288,7 +288,7 @@ sub set_free_space {
 #
 # @retval filesystem - The current value of the field.
 # Filesystem type, if known. For example, ext3 or NTFS. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_filesystem {
@@ -301,7 +301,7 @@ sub get_filesystem {
 # 
 # @param filesystem  - New value for the field.
 # Filesystem type, if known. For example, ext3 or NTFS. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_filesystem {
    my ($self, %args) = @_;
@@ -314,7 +314,7 @@ sub set_filesystem {
 #
 # @retval mappings - The current value of the field.
 # VirtualDisks backing the guest partition, if known. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # optional#
 sub get_mappings {
@@ -327,7 +327,7 @@ sub get_mappings {
 # 
 # @param mappings  - New value for the field.
 # VirtualDisks backing the guest partition, if known. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_mappings {
    my ($self, %args) = @_;

@@ -18,7 +18,7 @@
 #     Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::CurrentPeerCertificates
 #       *interface* </p>
 # 
-# . This  *interface*  was added in vSphere API 7.0.0.
+# . This  *interface*  was added in vSphere API 7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::TrustedPeerCertificates;
@@ -86,7 +86,7 @@ sub new {
 # The client will not trust the server connection until a server certificate has been
 # set.</p>
 # 
-# . This  *method*  was added in vSphere API 7.0.0.
+# . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -130,7 +130,7 @@ sub update_task {
 
 ## @method get_task ()
 # Return the list of trusted server certificates. This  *method*  was added in vSphere API
-# 7.0.0.
+# 7.0.0.0.
 #
 # @param cluster [REQUIRED] Identifier of the cluster.
 # The value must be an identifier for the resource type
@@ -193,7 +193,7 @@ sub get_task {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::TrustedPeerCertificates::Info``
 #     *class*  contains x509 certificate list. This  *class*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::TrustedPeerCertificates::Info;
 
@@ -235,7 +235,7 @@ sub new {
 #
 # @retval certificates - The current value of the field.
 # List of certificate strings, PEM format. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # List#
 sub get_certificates {
@@ -248,7 +248,7 @@ sub get_certificates {
 # 
 # @param certificates  - New value for the field.
 # List of certificate strings, PEM format. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_certificates {
    my ($self, %args) = @_;
@@ -266,7 +266,7 @@ sub set_certificates {
 # The 
 #     ``Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::TrustedPeerCertificates::UpdateSpec``
 #     *class*  contains  *fields*  that describe the server certificate update for a Key
-#     Provider. This  *class*  was added in vSphere API 7.0.0.
+#     Provider. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::Trust_authority_clusters::Kms::Providers::TrustedPeerCertificates::UpdateSpec;
 
@@ -308,7 +308,7 @@ sub new {
 #
 # @retval certificates - The current value of the field.
 # Public certificates of key server to trust. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # Optional#
 sub get_certificates {
@@ -321,7 +321,7 @@ sub get_certificates {
 # 
 # @param certificates  - New value for the field.
 # Public certificates of key server to trust. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_certificates {
    my ($self, %args) = @_;

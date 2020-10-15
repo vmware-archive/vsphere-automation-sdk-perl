@@ -2,7 +2,7 @@
 #
 #
 # The  ``Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipal``   *class* 
-#     contains a IDM principal. This  *class*  was added in vSphere API 7.0.0.
+#     contains a IDM principal. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Trusted_infrastructure::StsPrincipal;
 
@@ -45,7 +45,7 @@ sub new {
 # Gets the value of 'id' property.
 #
 # @retval id - The current value of the field.
-# The principal&apos;s ID. This  *field*  was added in vSphere API 7.0.0.
+# The principal&apos;s ID. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # StsPrincipalId#
 sub get_id {
@@ -57,7 +57,7 @@ sub get_id {
 # Sets the given value for 'id' property.
 # 
 # @param id  - New value for the field.
-# The principal&apos;s ID. This  *field*  was added in vSphere API 7.0.0.
+# The principal&apos;s ID. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -70,7 +70,7 @@ sub set_id {
 #
 # @retval type - The current value of the field.
 # The type of the principal (user or group). This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # StsPrincipalType#
 sub get_type {
@@ -83,7 +83,7 @@ sub get_type {
 # 
 # @param type  - New value for the field.
 # The type of the principal (user or group). This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_type {
    my ($self, %args) = @_;

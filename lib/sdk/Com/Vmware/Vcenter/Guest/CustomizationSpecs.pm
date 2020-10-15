@@ -115,7 +115,7 @@ sub list {
 }
 
 ## @method create ()
-# Creates a customization specification. This  *method*  was added in vSphere API 7.0.0.
+# Creates a customization specification. This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param spec [REQUIRED] The information i.e. name, description and the settings i.e hostname, ip address etc
 #     for the new customization specification that needs to be created.
@@ -155,7 +155,7 @@ sub create {
 
 ## @method get ()
 # Returns the guest customization specification from vCenter with the specified identifier.
-# This  *method*  was added in vSphere API 7.0.0.
+# This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param name [REQUIRED] The name of the customization specification.
 # The value must be an identifier for the resource type
@@ -192,7 +192,7 @@ sub get {
 ## @method set ()
 # Sets an existing specification, possibly after retrieving (by using 
 # :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.get` ) and editing it. This 
-# *method*  was added in vSphere API 7.0.0.
+# *method*  was added in vSphere API 7.0.0.0.
 #
 # @param name [REQUIRED] The name of the customization specification that needs to be set.
 # The value must be an identifier for the resource type
@@ -236,7 +236,7 @@ sub set {
 
 ## @method delete ()
 # Deletes a customization specification with the specified identifier. This  *method*  was
-# added in vSphere API 7.0.0.
+# added in vSphere API 7.0.0.0.
 #
 # @param name [REQUIRED] The name of the customization specification that needs to be deleted.
 # The value must be an identifier for the resource type
@@ -269,7 +269,7 @@ sub delete {
 ## @method export ()
 # Returns the content of the customization specification in the specified format. Note that
 # any passwords in the customization specification will be set to blank values during the
-# export  *method* . This  *method*  was added in vSphere API 7.0.0.
+# export  *method* . This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param name [REQUIRED] The name of the customization specification that has to be returned.
 # The value must be an identifier for the resource type
@@ -314,7 +314,7 @@ sub export {
 # Converts a well formatted string to a  class
 # Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec . The resulting object can be
 # passed to  :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.create`   *method* .
-# This  *method*  was added in vSphere API 7.0.0.
+# This  *method*  was added in vSphere API 7.0.0.0.
 #
 # @param customization_spec [REQUIRED] content to be converted to the spec.
 # . The value must be String.
@@ -406,15 +406,15 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format``   *enumerated type* 
 #     specifies the formats the customization specification can be exported to. This 
-#     *enumeration*  was added in vSphere API 7.0.0.
+#     *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format::JSON #
-#JSON format. This  *constant*  was added in vSphere API 7.0.0.
+#JSON format. This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format::XML #
-#XML format. This  *constant*  was added in vSphere API 7.0.0.
+#XML format. This  *constant*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Format;
 
@@ -463,7 +463,7 @@ sub new {
 #
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Metadata``   *class*  contains
 #     metadata i.e. name and description related to a customization specification. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Metadata;
 
@@ -506,7 +506,7 @@ sub new {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_description {
@@ -518,7 +518,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -530,7 +530,7 @@ sub set_description {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -542,7 +542,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -560,7 +560,7 @@ sub set_name {
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec``   *class* 
 #     contains specification information and specification object that can be passed to the 
 #     :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.create`   *method* . This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::CreateSpec;
 
@@ -605,7 +605,7 @@ sub new {
 # Gets the value of 'spec' property.
 #
 # @retval spec - The current value of the field.
-# The specification object. This  *field*  was added in vSphere API 7.0.0.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # CustomizationSpec#
 sub get_spec {
@@ -617,7 +617,7 @@ sub get_spec {
 # Sets the given value for 'spec' property.
 # 
 # @param spec  - New value for the field.
-# The specification object. This  *field*  was added in vSphere API 7.0.0.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_spec {
    my ($self, %args) = @_;
@@ -629,7 +629,7 @@ sub set_spec {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_description {
@@ -641,7 +641,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -653,7 +653,7 @@ sub set_description {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -665,7 +665,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -683,7 +683,7 @@ sub set_name {
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec``   *class*  contains the
 #     specification information and specification object. This is passed to the 
 #     :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.set`   *method* . This  *class*
-#      was added in vSphere API 7.0.0.
+#      was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Spec;
 
@@ -735,7 +735,7 @@ sub new {
 #     If specified when updating a specification, the changes will only be applied if the
 #     current fingerprint matches the specified fingerprint. This field can be used to guard
 #     against updates that has happened between the specification content was read and until
-#     it is applied. This  *field*  was added in vSphere API 7.0.0.
+#     it is applied. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_fingerprint {
@@ -752,7 +752,7 @@ sub get_fingerprint {
 #     If specified when updating a specification, the changes will only be applied if the
 #     current fingerprint matches the specified fingerprint. This field can be used to guard
 #     against updates that has happened between the specification content was read and until
-#     it is applied. This  *field*  was added in vSphere API 7.0.0.
+#     it is applied. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_fingerprint {
    my ($self, %args) = @_;
@@ -764,7 +764,7 @@ sub set_fingerprint {
 # Gets the value of 'spec' property.
 #
 # @retval spec - The current value of the field.
-# The specification object. This  *field*  was added in vSphere API 7.0.0.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # CustomizationSpec#
 sub get_spec {
@@ -776,7 +776,7 @@ sub get_spec {
 # Sets the given value for 'spec' property.
 # 
 # @param spec  - New value for the field.
-# The specification object. This  *field*  was added in vSphere API 7.0.0.
+# The specification object. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_spec {
    my ($self, %args) = @_;
@@ -788,7 +788,7 @@ sub set_spec {
 # Gets the value of 'description' property.
 #
 # @retval description - The current value of the field.
-# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_description {
@@ -800,7 +800,7 @@ sub get_description {
 # Sets the given value for 'description' property.
 # 
 # @param description  - New value for the field.
-# Description of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Description of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_description {
    my ($self, %args) = @_;
@@ -812,7 +812,7 @@ sub set_description {
 # Gets the value of 'name' property.
 #
 # @retval name - The current value of the field.
-# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_name {
@@ -824,7 +824,7 @@ sub get_name {
 # Sets the given value for 'name' property.
 # 
 # @param name  - New value for the field.
-# Name of the specification. This  *field*  was added in vSphere API 7.0.0.
+# Name of the specification. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_name {
    my ($self, %args) = @_;
@@ -842,7 +842,7 @@ sub set_name {
 # The  ``Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info``   *class*  describes a
 #     guest customization specification and the timestamp when it was last modified. This is
 #     returned by the  :func:`Com::Vmware::Vcenter::Guest::CustomizationSpecs.get`  
-#     *method* . This  *class*  was added in vSphere API 7.0.0.
+#     *method* . This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::CustomizationSpecs::Info;
 
@@ -886,7 +886,7 @@ sub new {
 #
 # @retval last_modified - The current value of the field.
 # Time when the specification was last modified. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 # DateTime#
 sub get_last_modified {
@@ -899,7 +899,7 @@ sub get_last_modified {
 # 
 # @param last_modified  - New value for the field.
 # Time when the specification was last modified. This  *field*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 sub set_last_modified {
    my ($self, %args) = @_;
@@ -912,7 +912,7 @@ sub set_last_modified {
 #
 # @retval spec - The current value of the field.
 # The Spec object including specification and metadata information. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 # Spec#
 sub get_spec {
@@ -925,7 +925,7 @@ sub get_spec {
 # 
 # @param spec  - New value for the field.
 # The Spec object including specification and metadata information. This  *field*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 #
 sub set_spec {
    my ($self, %args) = @_;

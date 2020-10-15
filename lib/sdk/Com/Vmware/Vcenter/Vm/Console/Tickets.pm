@@ -12,12 +12,8 @@
 
 ## @class Com::Vmware::Vcenter::Vm::Console::Tickets
 # The  ``Com::Vmware::Vcenter::Vm::Console::Tickets``   *interface*  provides  *methods*
-#     for managing the virtual machine console tickets. <b>Warning:</b> This  *interface* 
-#     is available as Technology Preview. These are early access APIs provided to test,
-#     automate and provide feedback on the feature. Since this can change based on feedback,
-#     VMware does not guarantee backwards compatibility and recommends against using them in
-#     production environments. Some Technology Preview APIs might only be applicable to
-#     specific environments.
+#     for managing the virtual machine console tickets. This  *interface*  was added in
+#     vSphere API 7.0.0.2.
 #
 
 package Com::Vmware::Vcenter::Vm::Console::Tickets;
@@ -87,11 +83,7 @@ sub new {
 # https://www.vmware.com/support/developer/html-console This ticket can be acquired only
 # when the VM is turned on.</p>
 # 
-# . <b>Warning:</b> This  *method*  is available as Technology Preview. These are early
-# access APIs provided to test, automate and provide feedback on the feature. Since this can
-# change based on feedback, VMware does not guarantee backwards compatibility and recommends
-# against using them in production environments. Some Technology Preview APIs might only be
-# applicable to specific environments.
+# . This  *method*  was added in vSphere API 7.0.0.2.
 #
 # @param vm [REQUIRED] Virtual machine identifier.
 # The value must be an identifier for the resource type
@@ -152,29 +144,15 @@ sub create {
 ## @class Com::Vmware::Vcenter::Vm::Console::Tickets::Type
 #
 # The  ``Com::Vmware::Vcenter::Vm::Console::Tickets::Type``   *enumerated type*  defines
-#     the types of console tickets. <b>Warning:</b> This  *enumeration*  is available as
-#     Technology Preview. These are early access APIs provided to test, automate and provide
-#     feedback on the feature. Since this can change based on feedback, VMware does not
-#     guarantee backwards compatibility and recommends against using them in production
-#     environments. Some Technology Preview APIs might only be applicable to specific
-#     environments.
+#     the types of console tickets. This  *enumeration*  was added in vSphere API 7.0.0.2.
 #
 #
 #
 # Constant Com::Vmware::Vcenter::Vm::Console::Tickets::Type::VMRC #
-#Virtual machine remote console ticket. <b>Warning:</b> This  *constant*  is available as
-# Technology Preview. These are early access APIs provided to test, automate and provide
-# feedback on the feature. Since this can change based on feedback, VMware does not
-# guarantee backwards compatibility and recommends against using them in production
-# environments. Some Technology Preview APIs might only be applicable to specific
-# environments.
+#Virtual machine remote console ticket. This  *constant*  was added in vSphere API 7.0.0.2.
 #
 # Constant Com::Vmware::Vcenter::Vm::Console::Tickets::Type::WEBMKS #
-#Web socket console ticket. <b>Warning:</b> This  *constant*  is available as Technology
-# Preview. These are early access APIs provided to test, automate and provide feedback on
-# the feature. Since this can change based on feedback, VMware does not guarantee backwards
-# compatibility and recommends against using them in production environments. Some
-# Technology Preview APIs might only be applicable to specific environments.
+#Web socket console ticket. This  *constant*  was added in vSphere API 7.0.0.2.
 
 package Com::Vmware::Vcenter::Vm::Console::Tickets::Type;
 
@@ -222,12 +200,8 @@ sub new {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm::Console::Tickets::CreateSpec``   *class*  defines the
-#     information used to create the virtual machine console ticket. <b>Warning:</b> This 
-#     *class*  is available as Technology Preview. These are early access APIs provided to
-#     test, automate and provide feedback on the feature. Since this can change based on
-#     feedback, VMware does not guarantee backwards compatibility and recommends against
-#     using them in production environments. Some Technology Preview APIs might only be
-#     applicable to specific environments.
+#     information used to create the virtual machine console ticket. This  *class*  was
+#     added in vSphere API 7.0.0.2.
 
 package Com::Vmware::Vcenter::Vm::Console::Tickets::CreateSpec;
 
@@ -268,12 +242,8 @@ sub new {
 # Gets the value of 'type' property.
 #
 # @retval type - The current value of the field.
-# The type of virtual machine console ticket. <b>Warning:</b> This  *field*  is
-#     available as Technology Preview. These are early access APIs provided to test,
-#     automate and provide feedback on the feature. Since this can change based on feedback,
-#     VMware does not guarantee backwards compatibility and recommends against using them in
-#     production environments. Some Technology Preview APIs might only be applicable to
-#     specific environments.
+# The type of virtual machine console ticket. This  *field*  was added in vSphere API
+#     7.0.0.2.
 #
 # Type#
 sub get_type {
@@ -285,12 +255,8 @@ sub get_type {
 # Sets the given value for 'type' property.
 # 
 # @param type  - New value for the field.
-# The type of virtual machine console ticket. <b>Warning:</b> This  *field*  is
-#     available as Technology Preview. These are early access APIs provided to test,
-#     automate and provide feedback on the feature. Since this can change based on feedback,
-#     VMware does not guarantee backwards compatibility and recommends against using them in
-#     production environments. Some Technology Preview APIs might only be applicable to
-#     specific environments.
+# The type of virtual machine console ticket. This  *field*  was added in vSphere API
+#     7.0.0.2.
 #
 sub set_type {
    my ($self, %args) = @_;
@@ -306,12 +272,8 @@ sub set_type {
 #
 #
 # The  ``Com::Vmware::Vcenter::Vm::Console::Tickets::Summary``   *class*  contains
-#     commonly used information about the virtual machine console ticket. <b>Warning:</b>
-#     This  *class*  is available as Technology Preview. These are early access APIs
-#     provided to test, automate and provide feedback on the feature. Since this can change
-#     based on feedback, VMware does not guarantee backwards compatibility and recommends
-#     against using them in production environments. Some Technology Preview APIs might only
-#     be applicable to specific environments.
+#     commonly used information about the virtual machine console ticket. This  *class*  was
+#     added in vSphere API 7.0.0.2.
 
 package Com::Vmware::Vcenter::Vm::Console::Tickets::Summary;
 
@@ -352,11 +314,7 @@ sub new {
 # Gets the value of 'ticket' property.
 #
 # @retval ticket - The current value of the field.
-# Console ticket URI. <b>Warning:</b> This  *field*  is available as Technology Preview.
-#     These are early access APIs provided to test, automate and provide feedback on the
-#     feature. Since this can change based on feedback, VMware does not guarantee backwards
-#     compatibility and recommends against using them in production environments. Some
-#     Technology Preview APIs might only be applicable to specific environments.
+# Console ticket URI. This  *field*  was added in vSphere API 7.0.0.2.
 #
 # URI#
 sub get_ticket {
@@ -368,11 +326,7 @@ sub get_ticket {
 # Sets the given value for 'ticket' property.
 # 
 # @param ticket  - New value for the field.
-# Console ticket URI. <b>Warning:</b> This  *field*  is available as Technology Preview.
-#     These are early access APIs provided to test, automate and provide feedback on the
-#     feature. Since this can change based on feedback, VMware does not guarantee backwards
-#     compatibility and recommends against using them in production environments. Some
-#     Technology Preview APIs might only be applicable to specific environments.
+# Console ticket URI. This  *field*  was added in vSphere API 7.0.0.2.
 #
 sub set_ticket {
    my ($self, %args) = @_;

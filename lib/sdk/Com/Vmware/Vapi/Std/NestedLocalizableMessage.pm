@@ -5,7 +5,7 @@
 #     nested within a parameter localizable string or message template. This  *class*  is
 #     useful for modeling composite messages. Such messages are necessary to do correct
 #     pluralization of phrases, represent lists of several items etc. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vapi::Std::NestedLocalizableMessage;
 
@@ -53,7 +53,7 @@ sub new {
 # This identifier is typically used to retrieve a locale-specific string or message
 #     template from a message catalog.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 # String#
 sub get_id {
@@ -70,7 +70,7 @@ sub get_id {
 # This identifier is typically used to retrieve a locale-specific string or message
 #     template from a message catalog.</p>
 # 
-# . This  *field*  was added in vSphere API 7.0.0.
+# . This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_id {
    my ($self, %args) = @_;
@@ -83,7 +83,7 @@ sub set_id {
 #
 # @retval params - The current value of the field.
 # Named Arguments to be substituted into the message template. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_params {
@@ -96,7 +96,7 @@ sub get_params {
 # 
 # @param params  - New value for the field.
 # Named Arguments to be substituted into the message template. This  *field*  was added
-#     in vSphere API 7.0.0.
+#     in vSphere API 7.0.0.0.
 #
 sub set_params {
    my ($self, %args) = @_;

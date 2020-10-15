@@ -6,7 +6,7 @@
 #     into the sysprep.xml file that VirtualCenter stores on the target virtual disk. For
 #     more detailed information about performing unattended installations, check
 #     https://technet.microsoft.com/en-us/library/cc771830(v=ws.10).aspx. This  *class*  was
-#     added in vSphere API 7.0.0.
+#     added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Guest::GuiUnattended;
 
@@ -57,7 +57,7 @@ sub new {
 #     See the  :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.password`  property. If 
 #     :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.auto_logon`  flag is set, then 
 #     :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.password`  must not be  *null*  or
-#     the guest customization will fail. This  *field*  was added in vSphere API 7.0.0.
+#     the guest customization will fail. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # boolean#
 sub get_auto_logon {
@@ -73,7 +73,7 @@ sub get_auto_logon {
 #     See the  :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.password`  property. If 
 #     :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.auto_logon`  flag is set, then 
 #     :attr:`Com::Vmware::Vcenter::Guest::GuiUnattended.password`  must not be  *null*  or
-#     the guest customization will fail. This  *field*  was added in vSphere API 7.0.0.
+#     the guest customization will fail. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auto_logon {
    my ($self, %args) = @_;
@@ -89,7 +89,7 @@ sub set_auto_logon {
 #     , then this property specifies the number of times the machine should automatically
 #     log on as Administrator. Generally it should be 1, but if the setup requires a number
 #     of reboots, you may want to increase it. This number may be determined by the list of
-#     commands. This  *field*  was added in vSphere API 7.0.0.
+#     commands. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_auto_logon_count {
@@ -105,7 +105,7 @@ sub get_auto_logon_count {
 #     , then this property specifies the number of times the machine should automatically
 #     log on as Administrator. Generally it should be 1, but if the setup requires a number
 #     of reboots, you may want to increase it. This number may be determined by the list of
-#     commands. This  *field*  was added in vSphere API 7.0.0.
+#     commands. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_auto_logon_count {
    my ($self, %args) = @_;
@@ -119,7 +119,7 @@ sub set_auto_logon_count {
 # @retval password - The current value of the field.
 # The new administrator password for the machine. To specify that the password should be
 #     set to blank (that is, no password), leave it unset. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_password {
@@ -133,7 +133,7 @@ sub get_password {
 # @param password  - New value for the field.
 # The new administrator password for the machine. To specify that the password should be
 #     set to blank (that is, no password), leave it unset. This  *field*  was added in
-#     vSphere API 7.0.0.
+#     vSphere API 7.0.0.0.
 #
 sub set_password {
    my ($self, %args) = @_;
@@ -147,7 +147,7 @@ sub set_password {
 # @retval time_zone - The current value of the field.
 # The time zone index for the virtual machine. Numbers correspond to time zones at
 #     https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 # long#
 sub get_time_zone {
@@ -161,7 +161,7 @@ sub get_time_zone {
 # @param time_zone  - New value for the field.
 # The time zone index for the virtual machine. Numbers correspond to time zones at
 #     https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values. This
-#      *field*  was added in vSphere API 7.0.0.
+#      *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_time_zone {
    my ($self, %args) = @_;

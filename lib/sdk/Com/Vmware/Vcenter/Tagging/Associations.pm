@@ -14,7 +14,7 @@
 ## @class Com::Vmware::Vcenter::Tagging::Associations
 # The  ``Com::Vmware::Vcenter::Tagging::Associations``   *interface*  provides 
 #     *methods*  to list tag associations. This  *interface*  was added in vSphere API
-#     7.0.0.
+#     7.0.0.0.
 #
 
 package Com::Vmware::Vcenter::Tagging::Associations;
@@ -67,7 +67,7 @@ sub new {
 
 ## @method list ()
 # Returns tag associations that match the specified iteration spec. This  *method*  was
-# added in vSphere API 7.0.0.
+# added in vSphere API 7.0.0.0.
 #
 # @param iterate [OPTIONAL] The specification of a page to be retrieved.
 # If  *null* , the first page will be retrieved.
@@ -116,7 +116,7 @@ sub list {
 # Failures to retrieve results will be returned as Error responses. These last statuses
 #     are only returned when the iterator is operating as expected.</p>
 # 
-# . This  *enumeration*  was added in vSphere API 7.0.0.
+# . This  *enumeration*  was added in vSphere API 7.0.0.0.
 #
 #
 #
@@ -127,14 +127,15 @@ sub list {
 # The number of results returned may be less than the usual size. In other words, the
 # iterator may not fill the page. The iterator has returned at least 1 result.</p>
 # 
-# . This  *constant*  was added in vSphere API 7.0.0.
+# . This  *constant*  was added in vSphere API 7.0.0.0.
 #
 # Constant Com::Vmware::Vcenter::Tagging::Associations::LastIterationStatus::END_OF_DATA #
 #Iterator has finished iterating through its inventory. There are currently no more
 # entities to return and the caller can terminate iteration. If the iterator returned some
 # data, the marker may be set to allow the iterator to continue from where it left off when
 # additional data does become available. This value is used to indicate that all available
-# data has been returned by the iterator. This  *constant*  was added in vSphere API 7.0.0.
+# data has been returned by the iterator. This  *constant*  was added in vSphere API
+# 7.0.0.0.
 
 package Com::Vmware::Vcenter::Tagging::Associations::LastIterationStatus;
 
@@ -184,7 +185,7 @@ sub new {
 # The  ``Com::Vmware::Vcenter::Tagging::Associations::IterationSpec``   *class* 
 #     contains  *fields*  used to break results into pages when listing tags associated to
 #     objects see  :func:`Com::Vmware::Vcenter::Tagging::Associations.list` ). This  *class*
-#      was added in vSphere API 7.0.0.
+#      was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Tagging::Associations::IterationSpec;
 
@@ -226,7 +227,7 @@ sub new {
 #
 # @retval marker - The current value of the field.
 # Marker is an opaque token that allows the caller to request the next page of tag
-#     associations. This  *field*  was added in vSphere API 7.0.0.
+#     associations. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_marker {
@@ -239,7 +240,7 @@ sub get_marker {
 # 
 # @param marker  - New value for the field.
 # Marker is an opaque token that allows the caller to request the next page of tag
-#     associations. This  *field*  was added in vSphere API 7.0.0.
+#     associations. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_marker {
    my ($self, %args) = @_;
@@ -255,7 +256,7 @@ sub set_marker {
 #
 #
 # The  ``Com::Vmware::Vcenter::Tagging::Associations::Summary``  describes a tag
-#     association. This  *class*  was added in vSphere API 7.0.0.
+#     association. This  *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Tagging::Associations::Summary;
 
@@ -298,7 +299,7 @@ sub new {
 # Gets the value of 'tag' property.
 #
 # @retval tag - The current value of the field.
-# The identifier of a tag. This  *field*  was added in vSphere API 7.0.0.
+# The identifier of a tag. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # ID#
 sub get_tag {
@@ -310,7 +311,7 @@ sub get_tag {
 # Sets the given value for 'tag' property.
 # 
 # @param tag  - New value for the field.
-# The identifier of a tag. This  *field*  was added in vSphere API 7.0.0.
+# The identifier of a tag. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_tag {
    my ($self, %args) = @_;
@@ -322,7 +323,8 @@ sub set_tag {
 # Gets the value of 'object' property.
 #
 # @retval object - The current value of the field.
-# The identifier of an associated object. This  *field*  was added in vSphere API 7.0.0.
+# The identifier of an associated object. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 # DynamicID#
 sub get_object {
@@ -334,7 +336,8 @@ sub get_object {
 # Sets the given value for 'object' property.
 # 
 # @param object  - New value for the field.
-# The identifier of an associated object. This  *field*  was added in vSphere API 7.0.0.
+# The identifier of an associated object. This  *field*  was added in vSphere API
+#     7.0.0.0.
 #
 sub set_object {
    my ($self, %args) = @_;
@@ -351,7 +354,7 @@ sub set_object {
 #
 # The  ``Com::Vmware::Vcenter::Tagging::Associations::ListResult``   *class*  contains
 #     the list of tag associations in a page, as well as related metadata fields. This 
-#     *class*  was added in vSphere API 7.0.0.
+#     *class*  was added in vSphere API 7.0.0.0.
 
 package Com::Vmware::Vcenter::Tagging::Associations::ListResult;
 
@@ -396,7 +399,7 @@ sub new {
 # Gets the value of 'associations' property.
 #
 # @retval associations - The current value of the field.
-# List of tag associations. This  *field*  was added in vSphere API 7.0.0.
+# List of tag associations. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # List#
 sub get_associations {
@@ -408,7 +411,7 @@ sub get_associations {
 # Sets the given value for 'associations' property.
 # 
 # @param associations  - New value for the field.
-# List of tag associations. This  *field*  was added in vSphere API 7.0.0.
+# List of tag associations. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_associations {
    my ($self, %args) = @_;
@@ -421,7 +424,7 @@ sub set_associations {
 #
 # @retval marker - The current value of the field.
 # Marker is an opaque data structure that allows the caller to request the next page of
-#     tag associations. This  *field*  was added in vSphere API 7.0.0.
+#     tag associations. This  *field*  was added in vSphere API 7.0.0.0.
 #
 # Optional#
 sub get_marker {
@@ -434,7 +437,7 @@ sub get_marker {
 # 
 # @param marker  - New value for the field.
 # Marker is an opaque data structure that allows the caller to request the next page of
-#     tag associations. This  *field*  was added in vSphere API 7.0.0.
+#     tag associations. This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_marker {
    my ($self, %args) = @_;
@@ -448,7 +451,7 @@ sub set_marker {
 # @retval status - The current value of the field.
 # The last status for the iterator that indicates whether any more results can be
 #     expected if the caller continues to make requests for more data using the iterator.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 # LastIterationStatus#
 sub get_status {
@@ -462,7 +465,7 @@ sub get_status {
 # @param status  - New value for the field.
 # The last status for the iterator that indicates whether any more results can be
 #     expected if the caller continues to make requests for more data using the iterator.
-#     This  *field*  was added in vSphere API 7.0.0.
+#     This  *field*  was added in vSphere API 7.0.0.0.
 #
 sub set_status {
    my ($self, %args) = @_;
